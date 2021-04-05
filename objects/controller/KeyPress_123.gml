@@ -1,0 +1,2 @@
+/// @description Screenshot
+screenshot();

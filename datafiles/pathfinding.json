@@ -1,0 +1,70 @@
+{
+    "test_rTest1_fromBlockToGround": [
+        "xy",354,87,16,
+        "pathfinding","npcTest","test_rTest1_groundCycle"
+    ],
+    "test_rTest1_groundCycle": [
+        "#start",
+        "xy",277,152,8,
+        "xy",326,130,8,
+        "jump",70,
+        "goto","start"
+    ],
+
+    "simple":[
+        "xy","x","y",4
+    ],
+    "simpleEnterRoom":[
+        "xy","x","y",2,
+        15,
+        "alpha",0,-0.05
+    ],
+    "simpleTwo": [
+        "xy","x1","y1",6,
+        "xy","x2","y2",6
+    ],
+    "simpleBackAndForth": [
+        "#start",
+        "xy","x1","y1",6,
+        "xy","x2","y2",6,
+        "goto","start"
+    ],
+    "enterFade":[
+        "alpha",0,
+        "alpha",1,0.05
+    ],
+    "simpleAlwaysJump":[
+        "jumpCheck",true,
+        "xy","x","y",4
+    ],
+
+    "pro_citra_archiveLeave":[
+        "xy",218,179,3,
+        "jump",
+        "xy",270,250,16,
+        "xy",186,324,3,
+        15,
+        "alpha",0,-0.05
+    ],
+    "pro_eugene_archiveLeave":[
+        "xy",96,324,8,
+        60,
+        "xy",198,330,8,
+        "alpha",0,-0.05
+    ],
+    "pro_eugene_cliffJump":[
+        "jump",
+        "xy",863,1376,8
+    ],
+    "pro_charlie_ledgeJump":[
+        "jump",
+        "xy",1181,403,4
+    ],
+    "pro_charlie_reactorWalk":[
+        "xy",2328,658,4,
+        "jump",
+        "xy",2412,692,4,
+        "jump",
+        "xy",2524,726,4
+    ]
+}

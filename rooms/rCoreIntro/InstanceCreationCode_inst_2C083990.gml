@@ -1,0 +1,1 @@
+key="pro_coreSpeech";

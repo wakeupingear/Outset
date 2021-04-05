@@ -1,0 +1,18 @@
+Advice:
+Jack Moffat
+Matt Headley
+Jackson Headley
+Abraham Gallardo
+Nicholas Lin
+
+Testers:
+Ryan Tsai
+Navid Ghodsi
+
+Code:
+Shaun Spaulding
+Matharooo
+
+Shaders:
+Xor
+EmperorCookie https://github.com/EmperorCookie/GMS-FXAA

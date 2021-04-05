@@ -1,0 +1,1 @@
+if hasData("pScaff") instance_destroy();
