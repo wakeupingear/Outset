@@ -34,8 +34,61 @@
             "A substantial plank covered in all-natural splinters.",
             "Acquired a WOODEN PLANK!"
         ],
-        "iPhoneNote1":["Clue #1","A clue to the whereabouts of the CELL PHONES","Acquired a CELL PHONE!"],
-        "iPhoneNote2":["Clue #1","A clue to the whereabouts of the CELL PHONES","Acquired a CELL PHONE?"]
+        "iPhoneNote1":[
+            "Clue #1",
+            "A clue to the whereabouts of the CELL PHONES",
+            "Acquired a CELL PHONE!",
+            "next",[
+                "$popup",{"sprite":"sHaroldNote","text":[
+                    {
+                        "text": "WHOA THERE!",
+                        "xPos":74,
+                        "yPos":31
+                    },
+                    {
+                        "text": "Try looking in \nTHE PIT!",
+                        "xPos":80,
+                        "yPos":68
+                    }]
+                }]
+        ],
+        "iPhoneNote2":[
+            "Clue #2",
+            "Another clue to the whereabouts of the CELL PHONES",
+            "Acquired a CELL PHONE?",
+            "next",[
+                "$popup",{"sprite":"sHaroldNote","index":1,"text":[
+                    {
+                        "text": "OHO! FOILED\n   AGAIN!",
+                        "xPos":74,
+                        "yPos":31
+                    },
+                    {
+                        "text": "Keep going\nEAST!",
+                        "xPos":80,
+                        "yPos":78
+                    }]
+                }]
+        ],
+        "iPhoneNote3":[
+            "Clue #3",
+            "Yet another clue to the whereabouts of the CELL PHONES",
+            "Acquired a CELL - nope, just another note...",
+            "next",[
+                "$popup",{"sprite":"sHaroldNote","index":2,"text":[
+                    {
+                        "text": "LOOK UP!",
+                        "xPos":74,
+                        "yPos":31
+                    },
+                    {
+                        "text": "No, not that\n far UP!!!",
+                        "xPos":80,
+                        "yPos":68
+                    }]
+                }]
+        ],
+        "iWrench":["Wrench","Some kind of WRENCH...","Acquired{30} SOME KIND OF WRENCH!",""]
     },
     "guiSide":["Left","Right"],
     "pauseLabels": {

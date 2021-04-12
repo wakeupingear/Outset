@@ -2,7 +2,13 @@
 if global.alive{
 if pathfinding //process commands
 {
-	if distance_to_point(pfX,pfY)<=pfRad||(pathfindingInterrupt&&!global.menuOpen)||reachedTarget
+	show_debug_message(pfX)
+	show_debug_message(pfY)
+	var _pfX=pfX;
+	if _pfX=="x" _pfX=x;
+	var _pfY=pfY;
+	if _pfY=="y" _pfY=y;
+	if distance_to_point(_pfX,_pfY)<=pfRad||(pathfindingInterrupt&&!global.menuOpen)||reachedTarget
 	{
 		reachedTarget=true;
 		move=0;
@@ -19,7 +25,7 @@ if pathfinding //process commands
 		if pathfindingInterrupt||reachedTarget move=0
 		else 
 		{
-			if x<pfX move=1;
+			if x<_pfX move=1;
 			else move=-1;
 			
 			if jumpCheck&&jump==0&&groundCollision(x,y+1)&&!groundCollision(x+move*4,y+6) jump=1;

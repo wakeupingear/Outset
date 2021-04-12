@@ -388,5 +388,59 @@
         "He hid the CELL PHONES around NOTDON and says that you all have to find them.",
         "Look at me, now. Be safe. No jumping off cliffs or electrocution.",
         "Come back to the REACTOR once you've found them."
+    ],
+
+    "pro_switchSmittenLocation":["$smitten.setRoom",["rNotdon","pro_launchWindow"]],
+
+    "pro_haroldPoster":["$popup",{"sprite":"sHaroldRecruitPopup","interactable":[260,108],"text":[{
+            "text":"DRAFTED!",
+            "xPos":16,
+            "yPos":39
+        }],
+        "objs":[{
+            "obj":"oHaroldRecruitNote",
+            "xPos":52,
+            "yPos":120
+        }]
+    }],
+
+    "pro_haroldLetter":["$popup",{"sprite":"sHaroldRecruitNote","text":[{
+            "text":"IMPORTANT CHORES!\n 1: Get THE WRENCH from the ARCHIVES\n 2: Take WRENCH to REACTOR\n 3: EXPLOSION!",
+            "xPos":23,
+            "yPos":43
+        }]
+    }],
+
+    "archivesWrenches":["$popup",{"sprite":"sArchivesWrenchesPopup","interactable":[260,108],"objs":[{
+            "obj":"oArchivesWrenchesSelect",
+            "xPos":150,
+            "yPos":90
+        }]
+    }],
+
+    "pro_reactorWin":[
+        "?smitten","So, what about those CELL PHONES?",
+        ""
+    ],
+
+    "pro_nighttimeCamp":[
+        "?charlie","So, uh, what happens if the fire gets too big?",
+        "?eugene","A wonderful thing called ARSON, big man CHARLIE.",
+        "?nora","Interesting... you'd think that V would have noticed the campfire light. It only seems to come when everyone is in the same place.",
+        "?smitten","Yeah, like Citra and her big mouth. Or a fart.",
+        120,
+        "?charlie","Um, weird question, but",
+        "Does anyone remember where we came from?",
+        "Not like right now, but before we lived in Notdon. Before CITRA and HAROLD.",
+        "question1","",
+        "yes1",
+            120,
+            "ply","But you can't articulate the your inner nature into words...",
+            "$goto","#continue",
+        "no1",
+        "#continue",
+        "Clouds open up",
+        "?smitten","Finally, back to the action.",
+        "Souldrop rains down"
     ]
 }

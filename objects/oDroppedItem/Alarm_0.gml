@@ -1,2 +1,2 @@
 /// @description Set item properties
-image_index=global.itemData[? item];
+image_index=global.itemData[? item].index;

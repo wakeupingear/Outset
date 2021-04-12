@@ -3,16 +3,26 @@ image_blend=global.hudColorList[global.hudColor];
 alarm[0]=60;
 fade=0;
 open=false;
-surf=-1;
 screenSurf=-1;
 
 text=textLoad("titleText");
 titleAlpha=0;
 textAlpha=0;
 
+surf=-1;
+topLeft=[lengthdir_x(point_distance(192,108,0,0),point_direction(192,108,0,0)),
+lengthdir_y(point_distance(192,108,0,0),point_direction(192,108,0,0))];
+botRight=[lengthdir_x(point_distance(192,108,384,216),point_direction(192,108,384,216)),
+lengthdir_y(point_distance(192,108,384,216),point_direction(192,108,384,216))];
+blurFunc=function(){
+	draw_sprite(sprite_index,image_index,192,108);
+	show_debug_message(topLeft)
+	show_debug_message(botRight)
+}
+
 numOfFiles=0;
 while file_exists("file"+string(numOfFiles)+".ini") numOfFiles++;
-fileData={}
+fileData={};
 var _locations=textLoad("roomNames");
 for (var i=0;i<numOfFiles;i++)
 {
@@ -32,10 +42,3 @@ for (var i=0;i<numOfFiles;i++)
 load(global.lastFile);
 global.plyX=0; //reset positions
 global.plyY=0;
-
-topLeft=[2];
-topLeft[0]=lengthdir_x(point_distance(192,108,0,0),point_direction(192,108,0,0));
-topLeft[1]=lengthdir_y(point_distance(192,108,0,0),point_direction(192,108,0,0));
-botRight=[2];
-botRight[0]=lengthdir_x(point_distance(192,108,384,216),point_direction(192,108,384,216));
-botRight[1]=lengthdir_y(point_distance(192,108,384,216),point_direction(192,108,384,216));

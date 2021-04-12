@@ -14,4 +14,4 @@ if instance_exists(oGrapple)&&oGrapple.state!=0//&&false
 		pixelLine(oGrapple.points[|_size-1].x,oGrapple.points[|_size-1].y,oGrapple.x,oGrapple.y);
 	}
 }
-draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,0,image_blend,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,0,image_blend,image_alpha);

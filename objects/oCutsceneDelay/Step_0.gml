@@ -6,14 +6,14 @@ if mode==0
 	delayCount--;
 	}
 
-	if delayCount<=0&&!global.menuOpen
+	if delayCount<=0&&!(force||global.menuOpen)
 	{
 		event_user(0);
 	}
 }
 else if mode==1
 {
-	if (!global.menuOpen||merge)&&!global.transitioning
+	if (!global.menuOpen||merge||force)&&!global.transitioning
 	{
 		if diagCondition(delay,args) event_user(0);
 	}

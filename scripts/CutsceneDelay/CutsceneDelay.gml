@@ -22,9 +22,11 @@ function createCutsceneDelay(_val,_name){
 	if variable_struct_exists(_val,"args") _cd.args=_val.args;
 	if variable_struct_exists(_val,"merge") _cd.merge=_val.merge;
 	if variable_struct_exists(_val,"scr") _cd.scr=asset_get_index(_val.scr);
+	var _layer="above";
+	if variable_struct_exists(_val,"force") _layer="force"
 	if _cd.delay!="alive"
 	{
-		with _cd eventAddObject(oCutsceneDelay,startroom,key,delay,"above",args);
+		with _cd eventAddObject(oCutsceneDelay,startroom,key,delay,_layer,args);
 	}
 	if _cd.startroom!="any"&&_cd.startroom!=room instance_destroy(_cd,false);
 }

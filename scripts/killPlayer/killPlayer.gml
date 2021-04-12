@@ -12,6 +12,8 @@ function killPlayer(){
 		global.soulButtons=[];
 		var _pId=instance_nearest(x,y,ply);
 		instance_deactivate_object(oSouldropCoin);
+		if instance_exists(oInventory) oInventory.open=false;
+		if instance_exists(oPopup) oPopup.mode=-14;
 		eventRemove(oParachute,room,ply,0,"people",[]);
 		if !hasData("respInt")&&!isDev //tutorial
 		{

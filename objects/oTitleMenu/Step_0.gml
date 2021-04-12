@@ -1,7 +1,7 @@
 /// @description Animation
 
 if open{
-if fade<1 fade+=0.1;
+if fade<1 fade+=0.05;
 if (buttonPressed(control.select)||(mouse_check_button_pressed(mb_left)&&abs(mouse_x-192)>90))&&fade>0.1
 {
 	open=false;
@@ -9,7 +9,7 @@ if (buttonPressed(control.select)||(mouse_check_button_pressed(mb_left)&&abs(mou
 }
 else
 {
-	if fade>0 fade-=0.1;
+	if fade>0 fade-=0.05;
 	if anyButtonPressed()
 	{
 		if titleAlpha==1&&textAlpha==1 open=true;

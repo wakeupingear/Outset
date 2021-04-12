@@ -45,6 +45,8 @@ tooFar=function(){
 }
 
 points=ds_list_create();
+pullObj=ds_list_create();
+pullObjList=[oDroppedItem];
 
 //step event is run by the player as a function to control the exact timing
 step=function(){ 
@@ -215,6 +217,34 @@ else if state<0 //reset
 		ds_list_clear(points);
 		if instance_exists(oGrapplePoint) instance_destroy(oGrapplePoint);
 		state=0;
+	}
+}
+
+if state!=0
+{
+	for (var i=0;i<array_length(pullObjList);i++)
+	{
+		if place_meeting(x,y,pullObjList[i]) 
+		{
+			var _in=instance_place(x,y,pullObjList[i]);
+			_in.grappleOffX=x-oGrapple.x;
+			_in.grappleOffY=y-oGrapple.y;
+			ds_list_add(pullObj,_in);
+		}
+	}
+	for (var i=0;i<ds_list_size(pullObj);i++)
+	{
+		if !instance_exists(pullObj[|i])
+		{
+			ds_list_delete(pullObj,i);
+			i--;
+			continue;
+		}
+		with pullObj[|i]
+		{
+			x=oGrapple.x+grappleOffX;
+			y=oGrapple.y+grappleOffY;
+		}
 	}
 }
 }

@@ -22,6 +22,12 @@ if mode>-1&&mode<2
 			alarm[0]=int64(string_digits(sentence));
 			sentence="";
 		}
+		else if sentence=="hold" //wait for an external object to continue
+		{
+			mode=3;
+			boxHidden=true;
+			sentence="";
+		}
 		
 		charWaitList=array_create(string_length(sentence),0); //process pauses and add them to the charWaitList
 		for (var i=1;i<string_length(sentence);i++) 

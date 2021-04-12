@@ -26,7 +26,7 @@ if isHtml
 else if buttonPressed(control.fullscreen) window_set_fullscreen(!window_get_fullscreen());
 
 //open inventory
-if !global.menuOpen&&!global.transitioning&&global.notPause&&buttonPressed(control.select)
+if global.alive&&!global.menuOpen&&!global.transitioning&&global.notPause&&buttonPressed(control.select)
 {
 	global.menuOpen=true;
 	instance_create_depth(ply.x,ply.y,-10001,oInventory);
@@ -55,3 +55,5 @@ if isDev||isTest
 
 //room time
 global.roomTime++;
+
+show_debug_message(DEBUG_getNPCLocation("smitten"));

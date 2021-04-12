@@ -17,7 +17,7 @@ if instance_exists(oSoulBranch)
 			while x<0 x+=10000;
 			image_xscale=startXS;
 			image_yscale=startYS;
-			if isHit setHitCoord();
+			if isHit updateColl();
 			if autoParent!=-1
 			{
 				array_push(autoParent.children,id);
@@ -39,6 +39,6 @@ if instance_exists(oSoulBranch)
 				resetSoulChildrenBranches(children);
 			}
 		}
-		if instance_exists(oSoulBranchHit) with oSoulBranchHit if isHit setHitCoord();
+		if instance_exists(oSoulBranchHit) with oSoulBranchHit if isHit updateColl();
 	}
 }

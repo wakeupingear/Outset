@@ -37,6 +37,7 @@ function scrVariables(){
 	global.hudColor=0;
 	global.name="Big Chungus";
 	global.startXscale=1;
+	global.maxBreath=10;//30
 	
 	global.completedChapters=0;
 	global.currentChapter="P";
@@ -166,6 +167,10 @@ function scrVariables(){
 	addLocation("smitten","rNotdon","pro_reactorLeft",2269,628,1,1,""); //left of reactor
 	addLocation("smitten","rNotdon","pro_reactor",2715,772,1,1,""); //under reactor
 		addLocationPathFrom("smitten","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleAlwaysJump","");
+	addLocation("smitten","rNotdon","pro_launch",1808,676,-1,1,""); //inside launch control
+		addLocationPathFrom("smitten","pro_reactor","rNotdon","pro_launch","rNotdon","pro_smitten_launchWalk","");
+	addLocation("smitten","rNotdon","pro_launchWindow",1808,644,-1,1,""); //at launch window
+		addLocationPathFrom("smitten","pro_launch","rNotdon","pro_launchWindow","rNotdon","pro_smitten_toWindow","");
 	#endregion
 	
 	#region Charlie
@@ -182,7 +187,7 @@ function scrVariables(){
 	addLocation("charlie","rNotdon","pro_electro",2296,650,-1,1,""); //watching the power demo
 	addLocation("charlie","rNotdon","pro_electroPanic",2296,650,-1,1,"simpleBackAndForth{2280,705,2312,650}"); //panic
 	addLocation("charlie","rNotdon","pro_electroTouch",2515,725,1,1,""); //touching the reactor
-		addLocationPathFrom("charlie","pro_electroPanic","rNotdon","pro_electroTouch","rNotdon","pro_charlie_reactorWalk","");
+		addLocationPathFrom("charlie","pro_electroPanic","rNotdon","pro_electroTouch","rNotdon","simpleAlwaysJump","");
 	addLocation("charlie","rNotdon","pro_reactorLeft",2160,628,1,1,""); //left of reactor
 	addLocation("charlie","rNotdon","pro_reactor",2601,740,1,1,""); //close to reactor
 		addLocationPathFrom("charlie","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleAlwaysJump","");
@@ -234,6 +239,9 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iGrappleAir",{index: 0, viewable: false});
 	ds_map_add(global.itemData,"iPlank",{index: 1, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote1",{index: 2, viewable: true});
+	ds_map_add(global.itemData,"iPhoneNote2",{index: 2, viewable: true});
+	ds_map_add(global.itemData,"iPhoneNote3",{index: 2, viewable: true});
+	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) ds_map_add(global.itemData,"iWrench"+string(i),{index: 2, viewable: true});
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -368,11 +376,12 @@ function scrVariables(){
 		global.plyX=global.startX;
 		global.startY=144;
 		global.plyY=global.startY;
-		global.startRoom=rVR8;
+		global.startRoom=rNotdon;
 		ds_list_add(global.playerItems,"iGrapple",1,"iGrappleSwing",1,"iGrappleDown",1,"iGrappleArc",1);
 	}
 	else if isTest
 	{
+		addData("respInt");
 		global.devSkips=true;
 		ds_list_add(global.playerItems,"iGrapple",1);
 		scr_pro_3();
@@ -380,7 +389,7 @@ function scrVariables(){
 	
 	
 	//npc sprite mask data
-	global.physCollPoints=ds_map_create()
+	global.physCollPoints=ds_map_create();
 	ds_map_add(global.physCollPoints,"sPly",[[-3,2,-3,2,-3,2],[8,8,4,4,-1,-1]]);
 	ds_map_add(global.physCollPoints,"sTestPersonBig",[[-8,7,-8,7],[11,11,-8,-8]]);
 	ds_map_add(global.physCollPoints,"sTestPersonHarold",[[-8,7,-8,7],[11,11,-8,-8]]);

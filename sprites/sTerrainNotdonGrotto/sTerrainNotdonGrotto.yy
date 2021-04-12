@@ -27,6 +27,9 @@
     {"compositeImage":{"FrameId":{"name":"d3e51ea3-7862-4942-beb0-39bb98db56ed","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"d3e51ea3-7862-4942-beb0-39bb98db56ed","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"LayerId":{"name":"40c44897-04b8-4355-acbd-9bf206b5a4f2","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sTerrainNotdonGrotto","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"resourceVersion":"1.0","name":"d3e51ea3-7862-4942-beb0-39bb98db56ed","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"cc3dbc0e-a618-494e-850f-7d764652574b","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"cc3dbc0e-a618-494e-850f-7d764652574b","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"LayerId":{"name":"40c44897-04b8-4355-acbd-9bf206b5a4f2","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTerrainNotdonGrotto","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"resourceVersion":"1.0","name":"cc3dbc0e-a618-494e-850f-7d764652574b","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sTerrainNotdonGrotto","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},
@@ -36,12 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"4493470a-d68f-40a4-8f47-e7cbcf74430d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d3e51ea3-7862-4942-beb0-39bb98db56ed","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"e8b1a685-5689-4cc6-aef9-934fb1390033","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cc3dbc0e-a618-494e-850f-7d764652574b","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -67,6 +71,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"40c44897-04b8-4355-acbd-9bf206b5a4f2","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "notdon",
     "path": "folders/Sprites/terrain/notdon.yy",

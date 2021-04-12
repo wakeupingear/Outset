@@ -60,11 +60,22 @@
         "jump",
         "xy",1181,403,4
     ],
-    "pro_charlie_reactorWalk":[
-        "xy",2328,658,4,
+    "pro_smitten_launchWalk":[
+        "xyj",1851,438,4,
+        90,
+        "xy",1888,664,8,
+        "xy",1838,708,4,
+        60,
         "jump",
-        "xy",2412,692,4,
+        "xy",1808,676,2,
+        "cutsceneForce",["$removeDroppedItem",["iPhoneNote3",1808,676,"rNotdon"],"$cutsceneDelayCancel","pro_switchSmittenLocation"]
+    ],
+    "pro_smitten_toWindow":[
+        "xyj",1855,"y",3,
+        45,
+        "xy",1887,668,2,
+        10,
         "jump",
-        "xy",2524,726,4
+        "xy",1808,644,2
     ]
 }

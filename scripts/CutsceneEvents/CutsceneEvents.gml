@@ -58,6 +58,11 @@ function scr_pro_3(){
 	var _str={key:"pro_reactorRace",delay:100,args:[]};
 	_str[$ "room"]="rNotdon"
 	//createCutsceneDelay(_str,"cutsceneDelay");
+	
+	_str={key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"]};
+	_str[$ "room"]="rNotdon";
+	createCutsceneDelay(_str,"cutsceneCondition");
+	
 	//position characters
 	setNPCRoom("citra","rNotdon","pro_reactor");
 	setNPCRoom("eugene","rNotdon","pro_reactor");
@@ -67,7 +72,13 @@ function scr_pro_3(){
 	setNPCRoom("charlie","rNotdon","pro_reactorLeft");
 	setNPCRoom("matt","rNotdon","pro_electro");
 	
-	ds_list_add(global.droppedItems,"iPhoneNote1",3191,856,rNotdon);
+	setNPCRoom("smitten","rNotdon","pro_reactor");
+	DEBUG_moveNPC("smitten",rNotdon,"pro_launch",60);
+	
+	ds_list_add(global.droppedItems,
+	"iPhoneNote1",3191,856,rNotdon,
+	"iPhoneNote2",2361,772,rNotdon,
+	"iPhoneNote3",1808,676,rNotdon);
 	
 	with controller
 	{

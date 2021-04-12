@@ -1,6 +1,6 @@
 ///@params key
 function textLoad(_key) {
-	var _arr=global.langScript[$ _key]
+	var _arr=global.langScript[$ _key];
 	if !is_undefined(_arr)
 	{
 		//var _len=ds_list_size(_t)

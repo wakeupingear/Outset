@@ -3,7 +3,7 @@
 function createDroppedItems(){
 	for (var i=0;i<ds_list_size(global.droppedItems);i+=4) if room==global.droppedItems[|i+3]
 	{
-		var _i=instance_create_layer(global.droppedItems[|i+1],global.droppedItems[|i+2],"player",oDroppedItem);
+		var _i=instance_create_depth(global.droppedItems[|i+1],global.droppedItems[|i+2],layer_get_depth(layer_get_id("people")),oDroppedItem);
 		_i.item=global.droppedItems[|i];
 	}
 }

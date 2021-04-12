@@ -30,9 +30,21 @@ if !touch&&place_meeting(x,y,ply)
 			with _i
 			{
 				if object_index==oSoulButton image_index=1;
-				if array_length(children)==0||(active&&((image_xscale!=endXS||image_yscale!=endYS))) active=false;
+				if (active&&((image_xscale!=endXS||image_yscale!=endYS))) active=false;
+				else if array_length(children)>0
+				{
+					var _canReset=true;
+					for (var k=0;k<array_length(children);k++) if children[k].stop==-1||array_pos(global.soulButtons,children[k].stop)>-1
+					{
+						_canReset=false;
+						break;
+					}
+					if _canReset active=false;
+				}
+				else active=false;
 			}
 		}
+		global.soulButtons=[];
 		while instance_exists(oSoulDoor) instance_destroy(oSoulDoor);
 		instance_create_layer(x,y,"player",ply);
 		ply.xscale=xscale;

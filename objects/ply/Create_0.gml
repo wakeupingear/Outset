@@ -15,10 +15,13 @@ if !instance_exists(oGrapple) instance_create_depth(x,y,depth-1,oGrapple);
 interactTextLast=-1;
 interactTextAlpha=0;
 
+breath=-1;
+breathAlpha=0;
+
 drawInteract = function(){
 	setFont(fontSizes.small);
-	var _xPos=(x-camX())*guiX()-string_width(global.interactTextLabels[interactTextLast])/2;
-	var _yPos=(y-camY()-7)*guiY()-string_height(global.interactTextLabels[interactTextLast]);
+	var _xPos=toGuiX(x)-string_width(global.interactTextLabels[interactTextLast])/2;
+	var _yPos=toGuiY(y)-string_height(global.interactTextLabels[interactTextLast]);
 	surface_set_target(global.guiSurf);
 	draw_set_color(c_white);
 	draw_set_alpha(interactTextAlpha);

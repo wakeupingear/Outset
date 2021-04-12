@@ -26,3 +26,28 @@ function addToStruct(originalStruct,addStruct){
 	}
 	return originalStruct;
 }
+
+//Objects
+function destroyArray(arr,flag){
+	if is_undefined(flag) flag=true;
+	for (var i=0;i<array_length(arr);i++)
+	{
+		if instance_exists(arr[i]) instance_destroy(arr[i],flag);
+	}
+}
+
+//string
+function explodeString(del,str)
+{
+    var arr;
+   str+=del;
+    var len = string_length(del);
+    var ind = 0;
+    repeat (string_count(del, str)) {
+        var pos = string_pos(del, str) - 1;
+        arr[ind] = string_copy(str, 1, pos);
+        str = string_delete(str, 1, pos + len);
+        ind++;
+    }
+    return arr;
+}

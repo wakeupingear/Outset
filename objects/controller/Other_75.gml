@@ -1,5 +1,4 @@
 /// @description Controllers
-
 switch(async_load[? "event_type"])             // Parse the async_load map to see which event has been triggered
 {
 case "gamepad discovered":                     // A game pad has been discovered

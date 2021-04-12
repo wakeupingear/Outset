@@ -1,29 +1,13 @@
 /// @description Set collision position
-coll.x=x;
-coll.y=y;
-coll.image_xscale=image_xscale;
+inRange=!((x+image_xscale<camX()||x>camX()+384)||(y+image_yscale<camY()||y>camY()+216));
 
-if global.alive
+if inRange&&touchingPly()
 {
-	time=(time+0.005) mod 1;
-
-	with coll
-	{
-		if touch
-		{
-			if !place_meeting(x,y,ply) 
-			{
-				touch=false;
-				with parent 
-				{
-					if place_meeting(x,y,ply) global.inWater=true;
-					else global.inWater=false;
-				}
-			}
-		}
-		else if place_meeting(x,y,ply)
-		{
-			touch=true;
-		}
-	}
+	touch=true;
+	global.inWater=true;
+}
+else 
+{
+	if touch global.inWater=false;
+	touch=false;
 }

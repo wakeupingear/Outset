@@ -1,13 +1,13 @@
 /// @description Extend
 if active
 {
-	if (image_xscale!=endXS||image_yscale!=endYS)
+	if (image_xscale!=endXS||image_yscale!=endYS)&&(stop==-1||array_pos(global.soulButtons,stop)>-1)
 	{
 		image_xscale+=xSpd;
 		image_yscale+=ySpd;
 		if isHit
 		{
-			setHitCoord();
+			updateColl();
 			if place_meeting(x,y,ply)
 			{
 				var _i=id;
@@ -26,13 +26,13 @@ if active
 				ply.vsp=ySpd;
 			}
 			if object_index==oSoulButton x=x;
-			else if stop==-1||array_pos(global.soulButtons,stop)>-1 activateSoulChildren(children);
-			else 
+			else activateSoulChildren(children);
+			/*else 
 			{
 				stop.image_index=1;
 				stop.platform=id;
 				activateSoulChildrenEnds(children);
-			}
+			}*/
 		}
 	}
 }
@@ -42,7 +42,7 @@ else
 	{
 		image_xscale-=xSpd;
 		image_yscale-=ySpd;
-		if isHit setHitCoord();
+		if isHit updateColl();
 		if (image_xscale==startXS&&image_yscale==startYS) 
 		{
 			if parentPlat!=-1 deactivateSoulParent(parentPlat,parentPlat.children);

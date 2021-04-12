@@ -22,6 +22,7 @@ sentenceFormatted=false;
 textInd=0;
 top=true;
 
+boxHidden=false; //used for things like popups
 portInd=0;
 lastName="";
 nameAlpha=1;

@@ -239,7 +239,7 @@ persistentEventsSet=function(key){
 				break;
 			case oCutsceneDelay:
 				var _exists=false;
-				if key!="any"&&room_get_name(room)!=key _exists=false;
+				/*if key!="any"&&room_get_name(room)!=key _exists=false;
 				else for (var k=0;k<instance_number(_arr[i]);k++) 
 				{
 					var _obj=instance_find(_arr[i],k);
@@ -248,10 +248,11 @@ persistentEventsSet=function(key){
 						_exists=true;
 						break;
 					}
-				}
+				}*/
 				if !_exists
 				{
 					var _d=instance_create_depth(0,0,0,_arr[i]);
+					_d.force=(_arr[i+3]=="force");
 					_d.key=_arr[i+1];
 					_d.originalKey=_d.key;
 					_d.delay=_arr[i+2];

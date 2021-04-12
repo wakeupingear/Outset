@@ -18,8 +18,17 @@ function scrSetText(){
 	{
 		for (var i=0;i<array_length(_iKeys);i++)
 		{
-			global.itemData[? _iKeys[i]].itemName=_i[$ _iKeys[i]][0];
-			global.itemData[? _iKeys[i]].flavortext=_i[$ _iKeys[i]][1];
+			if variable_struct_exists(_i,string_letters(_iKeys[i]))
+			{
+				var _newStr=string_letters(_iKeys[i]);
+				global.itemData[? _iKeys[i]].itemName=_i[$ _newStr][0];
+				global.itemData[? _iKeys[i]].flavortext=_i[$ _newStr][1];
+			}
+			else
+			{
+				global.itemData[? _iKeys[i]].itemName=_i[$ _iKeys[i]][0];
+				global.itemData[? _iKeys[i]].flavortext=_i[$ _iKeys[i]][1];
+			}
 		}
 	}
 	catch(_exception) show_error("Error: An item's text isn't set properly in the text file",true);

@@ -1,4 +1,7 @@
 {
+  "ConfigValues": {
+    "Testing": {"option_linux_sync":"true","option_linux_interpolate_pixels":"false","option_linux_allow_fullscreen":"true","option_linux_homepage":"http://willfarhat.com/outset","option_linux_maintainer_email":"outsetgame@outlook.com","option_linux_display_name":"Outset",},
+  },
   "option_linux_display_name": "Created with GameMaker Studio 2",
   "option_linux_version": "1.0.0.0",
   "option_linux_maintainer_email": "",

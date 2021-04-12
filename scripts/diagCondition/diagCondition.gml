@@ -25,6 +25,10 @@ function diagCondition(key,args){
 				return (instance_exists(ply)&&!instance_exists(oPlayerSoul)&&ply.y>args[0]);
 			case "plyRightAbove":
 				return (instance_exists(ply)&&!instance_exists(oPlayerSoul)&&ply.x>args[0]&&ply.y<args[1]);
+			case "plyInsideBox":
+				return (instance_exists(ply)&&point_in_rectangle(ply.x,ply.y,args[0],args[1],args[2],args[3]));
+			case "hasItem":
+				return (hasItem(args[0]));
 			case "objRight":
 				var _a=asset_get_index(args[0])
 				return (instance_exists(_a)&&_a.x>args[1]);
