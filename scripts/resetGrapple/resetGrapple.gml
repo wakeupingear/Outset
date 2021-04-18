@@ -9,7 +9,6 @@ function resetGrapple(){
 			grappleTime=0;
 			xDir=0;
 			yDir=0;
-			followObj=-1;
 			if !place_meeting(x,y,ply)&&grappleMode!=grappleState.arc
 			{
 				var _d=ceil(distance_to_object(ply)/2)*2;
@@ -18,6 +17,7 @@ function resetGrapple(){
 			else if grappleMode==grappleState.down ply.state=moveState.falling;
 			grappleMode=0;
 			state=-1;
+			followObj=-1;
 			}
 		}
 	}

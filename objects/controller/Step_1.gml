@@ -1,6 +1,7 @@
 ///@description Inputs, Screen, Dev
 
 //process inputs
+array_copy(global.lastInputs,0,global.inputs,0,array_length(global.inputs));
 for (var i=0;i<global.numOfInputs;i++)
 {
 	if i==control.confirm&&mouse_check_button(mb_left) global.inputs[i]++;
@@ -56,4 +57,5 @@ if isDev||isTest
 //room time
 global.roomTime++;
 
-show_debug_message(DEBUG_getNPCLocation("smitten"));
+//playtime
+if room!=rTitle global.playtime+=round(delta_time);

@@ -6,8 +6,10 @@ function drawBlur(surface,alpha,xPos,yPos,topLeft,botRight,drawFunc){
 	draw_clear_alpha(c_black,0);
 	
 	shader_set(shd_blur);
+	gpu_set_blendmode_ext(bm_one,bm_inv_src_alpha);
 	draw_surface(application_surface,0,0);
 	shader_reset();
+	gpu_set_blendmode(bm_normal);
 	
 	if drawFunc!=-1 drawFunc();
 	

@@ -13,8 +13,7 @@ function scr_pro_2(){
 	destroyArray([oMissile],false);
 	destroyArray([oVShip,oVBarrier,oExplosion,npc]);
 	
-	var _str={key:"pro_electroTest",condition:"plyRight",args:[2082]};
-	_str[$ "room"]="rNotdon"
+	var _str={key:"pro_electroTest",condition:"plyRight",args:[2082],myRoom: "rNotdon"};
 	createCutsceneDelay(_str,"cutsceneCondition");
 	//position characters
 	setNPCRoom("citra","rNotdon","pro_electro");
@@ -55,12 +54,10 @@ function scr_pro_3(){
 	destroyArray([oMissile],false);
 	destroyArray([oVShip,oVBarrier,oExplosion,npc]);
 	
-	var _str={key:"pro_reactorRace",delay:100,args:[]};
-	_str[$ "room"]="rNotdon"
+	var _str={key:"pro_reactorRace",delay:100,args:[],myRoom: "rNotdon"};
 	//createCutsceneDelay(_str,"cutsceneDelay");
 	
-	_str={key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"]};
-	_str[$ "room"]="rNotdon";
+	_str={key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"],myRoom: "rNotdon"};
 	createCutsceneDelay(_str,"cutsceneCondition");
 	
 	//position characters
@@ -75,10 +72,9 @@ function scr_pro_3(){
 	setNPCRoom("smitten","rNotdon","pro_reactor");
 	DEBUG_moveNPC("smitten",rNotdon,"pro_launch",60);
 	
-	ds_list_add(global.droppedItems,
-	"iPhoneNote1",3191,856,rNotdon,
-	"iPhoneNote2",2361,772,rNotdon,
-	"iPhoneNote3",1808,676,rNotdon);
+	addDroppedItem("iPhoneNote1",3191,856,rNotdon);
+	addDroppedItem("iPhoneNote2",2361,772,rNotdon);
+	addDroppedItem("iPhoneNote3",1808,676,rNotdon);
 	
 	with controller
 	{

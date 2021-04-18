@@ -1,0 +1,1 @@
+if destroyOnCleanup event_perform(ev_destroy,0);

@@ -15,13 +15,35 @@ if !instance_exists(oGrapple) instance_create_depth(x,y,depth-1,oGrapple);
 interactTextLast=-1;
 interactTextAlpha=0;
 
-breath=-1;
+itemFillMax=1;
+setItemFill=function(){
+	if ds_list_size(global.inventory)>0
+	{
+		switch (global.inventory[|global.itemSlot])
+		{
+			default:
+				switch (string_letters(global.inventory[|global.itemSlot]))
+				{
+					case "iWrench":
+						itemFillMax=-1;
+						break;
+					default:
+						itemFillMax=30;
+						break;
+				}
+				break;
+		}
+	}
+}
+setItemFill();
+
+breath=global.maxBreath;
 breathAlpha=0;
 
 drawInteract = function(){
 	setFont(fontSizes.small);
 	var _xPos=toGuiX(x)-string_width(global.interactTextLabels[interactTextLast])/2;
-	var _yPos=toGuiY(y)-string_height(global.interactTextLabels[interactTextLast]);
+	var _yPos=toGuiY(y-8)-string_height(global.interactTextLabels[interactTextLast]);
 	surface_set_target(global.guiSurf);
 	draw_set_color(c_white);
 	draw_set_alpha(interactTextAlpha);

@@ -16,6 +16,65 @@ if !global.transitioning&&!global.menuOpen&&(state<moveState.jumping||(state==mo
 else if !global.transitioning&&!global.menuOpen&&jump>0&&state<moveState.falling&&buttonHold(control.jump)&&jump<jumpHoldTime jump++;
 else jump=0;
 
+//item usage
+if !global.menuOpen&&!global.transitioning&&ds_list_size(global.inventory)>0
+{
+	if buttonPressed(control.swapLeft)
+	{
+		if global.itemSlot==0 global.itemSlot=ds_list_size(global.inventory)-2;
+		else global.itemSlot-=2;
+		setItemFill();
+	}
+	if buttonPressed(control.swapRight)
+	{
+		if global.itemSlot==ds_list_size(global.inventory)-2 global.itemSlot=0;
+		else global.itemSlot+=2;
+		setItemFill();
+	}
+	
+	if global.inputs[control.item]>=itemFillMax
+	{
+		if buttonHold(control.item) //Hold to charge
+		{
+			switch (global.inventory[|global.itemSlot])
+			{
+				default:
+					switch (string_letters(global.inventory[|global.itemSlot]))
+					{
+						case "iPhoneNote":
+							if state>moveState.running 
+							{
+								global.inputs[control.item]=0;
+								break;
+							}
+							conversation(global.itemText[$ global.inventory[|global.itemSlot]][4]);
+							break;
+						default: break;
+					}
+					break;
+			}
+		}
+		else if buttonReleased(control.item)
+		{
+			switch (global.inventory[|global.itemSlot])
+			{
+				default:
+					switch (string_letters(global.inventory[|global.itemSlot]))
+					{
+						case "iWrench":
+							var _ang=(buttonHold(control.down))? 270 : 90-xscale*90*(!buttonHold(control.up));
+							var _p=projectile(x,y,depth+1,{sprite: sItems,type:1,spd:4,dir: _ang,destroyInd: 1,data: {item: global.inventory[|global.itemSlot]},destroyOnCleanup: true});
+							_p.type=1;
+							removeItem(global.inventory[|global.itemSlot]);
+							break;
+						default: break;
+					}
+					break;
+			}
+		}
+	}
+}
+
 //grapple movement
 with oGrapple if active step();
 

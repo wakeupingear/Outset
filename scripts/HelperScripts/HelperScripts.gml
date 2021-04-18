@@ -27,7 +27,7 @@ function addToStruct(originalStruct,addStruct){
 	return originalStruct;
 }
 
-//Objects
+//objects
 function destroyArray(arr,flag){
 	if is_undefined(flag) flag=true;
 	for (var i=0;i<array_length(arr);i++)
@@ -50,4 +50,16 @@ function explodeString(del,str)
         ind++;
     }
     return arr;
+}
+
+//controller
+function gp_anykey(slot){
+	for (var i=gp_face1; i<gp_axisrv;i++) if gamepad_button_check(slot,i) return true;
+	return false;
+}
+
+//bitwise
+function roundToZero(num){
+	num|=0;
+	return num;
 }

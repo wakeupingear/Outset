@@ -15,6 +15,19 @@ else if mode==1
 {
 	if (!global.menuOpen||merge||force)&&!global.transitioning
 	{
-		if diagCondition(delay,args) event_user(0);
+		if is_string(delay) //format delay into an array
+		{
+			if array_length(args)>0&&!is_array(args[0])
+			{
+				subArgs[0]=args;
+			}
+			else array_copy(subArgs,0,args,0,array_length(args));
+			explodedDelay=explodeString("&&",delay);
+		}
+		for (var i=0;i<array_length(explodedDelay);i++)
+		{
+			if !diagCondition(explodedDelay[i],subArgs[i]) break;
+			if i+1==array_length(explodedDelay) event_user(0);
+		}
 	}
 }

@@ -14,6 +14,7 @@ function killPlayer(){
 		instance_deactivate_object(oSouldropCoin);
 		if instance_exists(oInventory) oInventory.open=false;
 		if instance_exists(oPopup) oPopup.mode=-14;
+		if instance_exists(oTextbox) instance_destroy(oTextbox);
 		eventRemove(oParachute,room,ply,0,"people",[]);
 		if !hasData("respInt")&&!isDev //tutorial
 		{

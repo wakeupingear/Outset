@@ -11,7 +11,7 @@ if instance_exists(oCursor) for (var i=1;i<image_number;i++)
 		{
 			parentObj.exiting=true;
 			addData("wr"+string(i));
-			conversation(["$addItem",["iWrench"+string(i),"text"]]);
+			oTextbox.text=array_combine(oTextbox.text,["$addItem",["iWrench"+string(i),"text"]]);
 			break;
 		}
 	}

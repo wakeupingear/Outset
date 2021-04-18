@@ -50,5 +50,6 @@ function eventAddObject(object,objRoom,xStart,yStart,objLayer,args){
 }
 
 function eventAddObjectDefault(xStart,yStart){
-	eventAddObject(object_index,room,xStart,yStart,layer_get_name(layer),[]);
+	if layer==-1 eventAddObject(object_index,room,xStart,yStart,"any",[]);
+	else eventAddObject(object_index,room,xStart,yStart,layer_get_name(layer),[]);
 }

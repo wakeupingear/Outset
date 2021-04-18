@@ -62,17 +62,17 @@ setFollowTo=function(autoStill){
 	}
 }
 
-setRoomCamera=function(i){
-	if is_array(positions[i][4])
+setRoomCamera=function(arr){
+	if is_array(arr[4])
 	{
-		xTo=lerp(positions[i][4][0],followObj.x,positions[i][4][1]);
+		xTo=lerp(arr[4][0],followObj.x,arr[4][1]);
 	}
-	else if !is_string(positions[i][4]) xTo=positions[i][4];
-	if is_array(positions[i][5])
+	else if !is_string(arr[4]) xTo=arr[4];
+	if is_array(arr[5])
 	{
-		yTo=lerp(positions[i][5][0],followObj.y,positions[i][5][1]);
+		yTo=lerp(arr[5][0],followObj.y,arr[5][1]);
 	}
-	else if !is_string(positions[i][5]) yTo=positions[i][5];
+	else if !is_string(arr[5]) yTo=arr[5];
 }
 
 clampCam();

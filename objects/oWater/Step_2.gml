@@ -8,6 +8,14 @@ if inRange&&touchingPly()
 }
 else 
 {
-	if touch global.inWater=false;
+	x-=10000;
+	if touch 
+	{
+		with ply if !place_meeting(x,y,oWater) 
+		{
+			global.inWater=false;
+		}
+	}
 	touch=false;
+	x+=10000;
 }

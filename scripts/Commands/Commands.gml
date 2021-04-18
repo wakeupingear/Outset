@@ -320,7 +320,7 @@ function commandProcess(command){
 							break;
 						case "createLayer":
 							lastObj=instance_create_layer(tCoord(_val[0]),tCoord(_val[1]),layer_get_id(_val[2]),asset_get_index(_val[3]));
-							lastObj.depth--;
+							//lastObj.depth--; //breaks layer hierarchy
 							if is_struct(_val) setObjFromStruct(lastObj,_val);
 							break;
 						case "popup":
@@ -345,30 +345,7 @@ function commandProcess(command){
 							break;
 						//data
 						case "addItem":
-							if !is_array(_val)
-							{
-								var _item=_val;
-								processItem(_item);
-								if instance_exists(oGrapple) with oGrapple event_user(0); //set upgrade variables
-							}
-							else
-							{
-								var _item=_val[0];
-								processItem(_item);
-								if instance_exists(oGrapple) with oGrapple event_user(0); //set upgrade variables
-								if array_length(_val)>1 
-								{
-									var _itemText=textLoad("itemText");
-									if variable_struct_exists(_itemText,_item) _itemText=_itemText[$ _item];
-									else _itemText=_itemText[$ string_letters(_item)];
-									if array_length(_itemText)>3&&object_index==oTextbox&&_itemText[3]!=""
-									{
-										if _itemText[3]=="next" text=array_combine(text,_itemText[4]);
-										else text=array_combine(text,_itemText[3]);
-									}
-									return _itemText[2];
-								}
-							}
+							addItem(_val);
 							break;
 						case "removeDroppedItem":
 							_val[3]=asset_get_index(_val[3]);
@@ -394,14 +371,7 @@ function commandProcess(command){
 							if is_array(_val) var _item=_val[0];
 							else var _item=_val;
 							diag+=2;
-							var _rep=1;
-							if is_array(_val)
-							{
-								_rep=_val[1];
-							}
-							var _pos=ds_list_find_index(global.playerItems,_item);
-							if global.playerItems[|i+1]-_rep<=0 repeat 2 ds_list_delete(global.playerItems,_pos);
-							else global.playerItems[|i+1]-=_rep;
+							removeItem(_item);
 							break;
 						case "addData":
 							addData(_val);
@@ -461,6 +431,9 @@ function commandProcess(command){
 							}
 							break;
 						//mechanics
+						case "projectile":
+							projectile(_val[0],_val[1],_val[2],_val[3]);
+							break;
 						case "rumble":
 							rumbleStart(_val);
 							break;
@@ -673,10 +646,19 @@ function setObjFromStruct(obj,struct){
 		switch (_names[i])
 		{
 			case "index":
-				obj.image_index=asset_get_index(struct[$ _names[i]]);
+				obj.image_index=struct.index;
 				break;
 			case "sprite":
-				obj.sprite_index=asset_get_index(struct[$ _names[i]]);
+				if !is_string(struct.sprite) obj.sprite_index=struct.sprite;
+				else obj.sprite_index=asset_get_index(struct.sprite);
+				break;
+			case "dir":
+				obj.direction=struct.dir;
+				break;
+			case "angle":
+				obj.image_angle=struct.angle;
+			case "blend":
+				obj.image_blend=struct.blend;
 				break;
 			default:
 				variable_instance_set(obj,_names[i],struct[$ _names[i]]);

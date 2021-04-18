@@ -21,13 +21,13 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"oPowerPlantTemp","path":"objects/oPowerPlantTemp/oPowerPlantTemp.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "notdon",
-    "path": "folders/Objects/aesthetic/notdon.yy",
+    "name": "aesthetic",
+    "path": "folders/Objects/notdon/aesthetic.yy",
   },
   "resourceVersion": "1.0",
   "name": "oPowerPlantTemp",

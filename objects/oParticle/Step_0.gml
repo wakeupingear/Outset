@@ -8,7 +8,7 @@ if alwaysMove||global.alive
 	}
 	image_alpha-=fade;
 	image_angle+=angSpd;
-	if x<-50||x>room_width+50||y<-50||y>room_height+50||image_alpha<0
+	if offscreen(x,y)||image_alpha<0
 	{
 		if !startOffscreen instance_destroy();
 	}

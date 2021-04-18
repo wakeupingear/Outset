@@ -23,7 +23,7 @@ function setRoomEra(){
 		var _layers=layer_get_all(); //set current era layer to active
 		for (var i=0;i<array_length(_layers);i++)
 		{
-			if string_pos(_eras[|_pos],string_lower(layer_get_name(_layers[i])))>0
+			if string_pos(_eras[|_pos],string_lower(layer_get_name(_layers[i])))>0||layer_get_name(_layers[i])=="mykoSpawn"
 			{
 				instance_activate_layer(_layers[i]);
 				layer_set_visible(_layers[i],true);

@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "notdon",
-    "path": "folders/Objects/interactable/notdon.yy",
+    "name": "interactions",
+    "path": "folders/Objects/notdon/interactions.yy",
   },
   "resourceVersion": "1.0",
   "name": "oHaroldRecruitNote",

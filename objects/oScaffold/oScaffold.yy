@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "notdon",
-    "path": "folders/Objects/aesthetic/notdon.yy",
+    "name": "aesthetic",
+    "path": "folders/Objects/notdon/aesthetic.yy",
   },
   "resourceVersion": "1.0",
   "name": "oScaffold",

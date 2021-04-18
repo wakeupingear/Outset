@@ -39,6 +39,7 @@ function scrVariables(){
 	global.startXscale=1;
 	global.maxBreath=10;//30
 	
+	global.playtime=0;
 	global.completedChapters=0;
 	global.currentChapter="P";
 	global.notdonEra=notdonEras.pro1;
@@ -46,6 +47,8 @@ function scrVariables(){
 	
 	global.data =ds_list_create(); //dump misc values here
 	global.playerItems=ds_list_create(); //format: "iNameOfItem", number of items
+	global.inventory=ds_list_create();
+	global.itemSlot=0;
 	global.characterLocations=ds_map_create(); //format: x,y,room,name index
 	ds_map_add(global.characterLocations,"test",[304,20,rTest1,0,"t1"]);
 	ds_map_add(global.characterLocations,"harold",[34,132,rTest1,2,"t1"]);
@@ -60,6 +63,7 @@ function scrVariables(){
 	ds_map_add(global.characterLocations,"babishOrange",[0,0,rCoreIntro,3,""]);
 	ds_map_add(global.characterLocations,"craigKrisper",[0,0,rCoreIntro,3,""]);
 
+	global.itemText={};
 	global.droppedItems=ds_list_create(); //format: "iNameOfItem", x, y, room
 	ds_list_add(global.droppedItems,"iPlank",35,135,rTest2);
 	global.visitedRooms=ds_list_create();
@@ -241,7 +245,7 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iPhoneNote1",{index: 2, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote2",{index: 2, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote3",{index: 2, viewable: true});
-	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) ds_map_add(global.itemData,"iWrench"+string(i),{index: 2, viewable: true});
+	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) ds_map_add(global.itemData,"iWrench"+string(i),{index: 3, viewable: true});
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -283,6 +287,7 @@ function scrVariables(){
 	global.rooms.rNotdon.npcs=[npcCharlie,npcEugene,npcCitra,npcHarold,npcNora,npcSmitten,npcChet,npcMatt];
 		addRoomCamera("rNotdon",1562,0,1778,546,1620,468); //bounce pad
 		addRoomCamera("rNotdon",2216,748,2562,2000,2374,798,"notdonEraLater"); //the nook
+		addSoulCamera("rNotdon",928-172,398-148,1052,398+108,914,398); //cliffside
 	global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	global.rooms.rNotdonArchives.inside=true;
 	
@@ -366,11 +371,14 @@ function scrVariables(){
 	];
 	global.numOfInputs=array_length(global.keyboardInputs)/2;
 	global.inputs=array_create(global.numOfInputs); //filled in inputForPlayer1
+	global.lastInputs=array_create(global.numOfInputs); //filled in inputForPlayer1
 	
 	//dev exceptions
 	global.devSkips=false;
+	global.devTeleport=false;
 	if isDev
 	{
+		global.devTeleport=true;
 		global.devSkips=true;
 		global.startX=208;
 		global.plyX=global.startX;
@@ -382,17 +390,19 @@ function scrVariables(){
 	else if isTest
 	{
 		addData("respInt");
+		global.devTeleport=true;
 		global.devSkips=true;
 		ds_list_add(global.playerItems,"iGrapple",1);
 		scr_pro_3();
+		//global.startRoom=rVR1;
 	}
 	
 	
 	//npc sprite mask data
 	global.physCollPoints=ds_map_create();
 	ds_map_add(global.physCollPoints,"sPly",[[-3,2,-3,2,-3,2],[8,8,4,4,-1,-1]]);
-	ds_map_add(global.physCollPoints,"sTestPersonBig",[[-8,7,-8,7],[11,11,-8,-8]]);
-	ds_map_add(global.physCollPoints,"sTestPersonHarold",[[-8,7,-8,7],[11,11,-8,-8]]);
+	ds_map_add(global.physCollPoints,"sTestPersonBig",[[-8,7,-1],[11,11,-8]]);
+	ds_map_add(global.physCollPoints,"sTestPersonHarold",[[-8,7,-1],[11,11,-8]]);
 	ds_map_add(global.physCollPoints,"sGrapple",[[-3,3,-3,3],[-3,3,-3,3]]);
 	ds_map_add(global.physCollPoints,"sPlaceholderBounce",[[-12,12],[4,4]]);
 	ds_map_add(global.physCollPoints,"sPlaceholderBounceAngle",[[-12,12],[11,11]]);

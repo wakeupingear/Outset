@@ -27,7 +27,6 @@ else
 
 //set era-specific stuff
 setRoomEra();
-
 setRoomLighting(_rName);
 
 //load npcs
@@ -52,3 +51,20 @@ if !global.alive&&room==global.dieRoom setFrozenNPC();
 //water check
 global.inWater=false;
 if instance_exists(ply) with ply global.inWater=place_meeting(x,y,oWater);
+
+//DEBUG: player position
+if global.devTeleport
+{
+	if instance_exists(ply)
+	{
+		with ply
+		{
+			global.menuOpen=false;
+			x=xstart;
+			y=ystart;
+			oCamera.x=x;
+			oCamera.y=y;
+		}
+	}
+	global.devTeleport=false;
+}

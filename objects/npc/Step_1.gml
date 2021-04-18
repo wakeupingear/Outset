@@ -2,8 +2,6 @@
 if global.alive{
 if pathfinding //process commands
 {
-	show_debug_message(pfX)
-	show_debug_message(pfY)
 	var _pfX=pfX;
 	if _pfX=="x" _pfX=x;
 	var _pfY=pfY;

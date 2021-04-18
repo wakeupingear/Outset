@@ -217,6 +217,13 @@ else if state<0 //reset
 		ds_list_clear(points);
 		if instance_exists(oGrapplePoint) instance_destroy(oGrapplePoint);
 		state=0;
+		
+		if place_meeting(x,y,oDroppedItem)
+		{
+			var _i=instance_place(x,y,oDroppedItem);
+			_i.x=ply.x;
+			_i.y=ply.y;
+		}
 	}
 }
 

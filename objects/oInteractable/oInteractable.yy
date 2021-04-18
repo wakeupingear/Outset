@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "interactable",
-    "path": "folders/Objects/interactable.yy",
+    "name": "control",
+    "path": "folders/Objects/control.yy",
   },
   "resourceVersion": "1.0",
   "name": "oInteractable",

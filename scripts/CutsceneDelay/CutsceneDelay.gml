@@ -7,9 +7,9 @@ function createCutsceneDelay(_val,_name){
 		_cd.key=_val.key;
 		_cd.originalKey=_val.key;
 	}
-	if variable_struct_exists(_val,"room") 
+	if variable_struct_exists(_val,"myRoom") 
 	{
-		_cd.startroom=asset_get_index(_val[$ "room"]);
+		_cd.startroom=asset_get_index(_val[$ "myRoom"]);
 		_cd.persistent=false;
 	}
 	_cd.mode=(_name=="cutsceneCondition");
@@ -26,7 +26,11 @@ function createCutsceneDelay(_val,_name){
 	if variable_struct_exists(_val,"force") _layer="force"
 	if _cd.delay!="alive"
 	{
-		with _cd eventAddObject(oCutsceneDelay,startroom,key,delay,_layer,args);
+		with _cd 
+		{
+			if eventExists(oCutsceneDelay,startroom,key,delay,_layer,args) instance_destroy();
+			else eventAddObject(oCutsceneDelay,startroom,key,delay,_layer,args);
+		}
 	}
 	if _cd.startroom!="any"&&_cd.startroom!=room instance_destroy(_cd,false);
 }

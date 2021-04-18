@@ -10,6 +10,10 @@ function buttonHold(input){
 	return false;
 }
 
+function buttonReleased(input){
+	return (global.inputs[input]==0&&global.lastInputs[input]>0);
+}
+
 function anyButtonPressed(){
 	for (var i=0;i<array_length(global.inputs);i++) if global.inputs[i]==1 return true;
 	return false;

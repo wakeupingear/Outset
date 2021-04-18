@@ -9,7 +9,7 @@ if followMode==1
 	{
 		if _x>positions[i][0]&&followObj.y>positions[i][1]&&_x<positions[i][2]&&followObj.y<positions[i][3]&&cameraCondition(positions[i][6])
 		{
-			setRoomCamera(i);
+			setRoomCamera(positions[i]);
 			break;
 		}
 	}
@@ -17,7 +17,7 @@ if followMode==1
 	{
 		if _x>soulPositions[i][0]&&followObj.y>soulPositions[i][1]&&_x<soulPositions[i][2]&&followObj.y<soulPositions[i][3]&&cameraCondition(positions[i][6])
 		{
-			setRoomCamera(i);
+			setRoomCamera(soulPositions[i]);
 			break;
 		}
 	}
