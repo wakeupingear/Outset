@@ -3,7 +3,15 @@
 function diagInteract(){
 	if !global.menuOpen&&!global.transitioning&&distance_to_object(ply)<64&&(ply.state==moveState.standing||ply.state==moveState.running)
 	{
-		if touching(ply,[0,0])||(object_is_ancestor(object_index,npc)&&touching(ply,[round(sprite_width*xscale*0.75),0]))
+		var _alreadyTalking=false;
+		for (var i=0;i<instance_number(oTextbox);i++)
+		{
+			if instance_find(oTextbox,i).trackObj==id{
+				_alreadyTalking=true;
+				break;
+			}
+		}
+		if !_alreadyTalking&&(touching(ply,[0,0])||(object_is_ancestor(object_index,npc)&&touching(ply,[round(sprite_width*xscale*0.75),0])))
 		{
 			global.interactText=check;
 			if buttonPressed(control.up)||buttonPressed(control.confirm)

@@ -95,6 +95,12 @@ function commandProcess(command){
 					}
 					else switch _name
 					{
+						case "persistence":
+							persistent=_val;
+							break;
+						case "touch":
+							mustTouch=_val;
+							break;
 						case "skip":
 							skip=true;
 							break;
@@ -117,6 +123,8 @@ function commandProcess(command){
 							break;
 						case "camSetInstant":
 						case "camSet":
+							thisCameraChanged=true;
+							global.menuOpen=true;
 							oCamera.followMode=0;
 							if _val[0]!="x"
 							{
@@ -135,6 +143,8 @@ function commandProcess(command){
 							}
 							break;
 						case "camReset":
+							thisCameraChanged=false;
+							global.menuOpen=false;
 							with oCamera
 							{
 								camSpd=originalSpd;
@@ -431,8 +441,12 @@ function commandProcess(command){
 							}
 							break;
 						//mechanics
+						case "particle":
+							lastObj=instance_create_depth(_val[0],_val[1],layer_get_depth(layer_get_id(_val[2])),oParticle);
+							setObjFromStruct(lastObj,_val[3]);
+							break;
 						case "projectile":
-							projectile(_val[0],_val[1],_val[2],_val[3]);
+							lastObj=projectile(_val[0],_val[1],_val[2],_val[3]);
 							break;
 						case "rumble":
 							rumbleStart(_val);
@@ -615,7 +629,12 @@ function getObject(objName)
 {
 	if objName=="lastObj" return lastObj;
 	var _a=asset_get_index(objName);
-	if _a==-1 return objName;
+	if _a==-1 
+	{
+		var _npcA=asset_get_index("npc"+capitalizeFirstLetter(objName));
+		if _npcA!=-1 return _npcA;
+		return objName;
+	}
 	if !instance_exists(_a) return _a;
 	return instance_nearest(0,0,_a);
 }
@@ -627,7 +646,8 @@ function getNpc(objName)
 		if instance_exists(objName) objName=objName.object_index;
 		objName=object_get_name(objName);
 	}
-	return string_lower(string_replace(objName,"npc",""));
+	objName=string_replace(objName,"npc","");
+	return string_lower(string_char_at(objName,1))+string_copy(objName,2,string_length(objName)-1);
 }
 
 function tCoord(coord){
@@ -657,6 +677,10 @@ function setObjFromStruct(obj,struct){
 				break;
 			case "angle":
 				obj.image_angle=struct.angle;
+				break;
+			case "alpha":
+				obj.image_alpha=struct.alpha;
+				break;
 			case "blend":
 				obj.image_blend=struct.blend;
 				break;

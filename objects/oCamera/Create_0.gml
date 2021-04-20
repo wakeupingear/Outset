@@ -41,7 +41,12 @@ clampCam = function(){
 }
 
 setFollowTo=function(autoStill){
-	if followObj.object_index==oPlayerCam||object_is_ancestor(followObj.object_index,oPhysicsObj)
+	if !instance_exists(followObj)
+	{
+		followMode=0;
+		return false;
+	}
+	else if followObj.object_index==oPlayerCam||object_is_ancestor(followObj.object_index,oPhysicsObj)
 	{
 		xTo=followObj.x;
 		//if ply.state>=moveState.jumping||true
@@ -60,6 +65,7 @@ setFollowTo=function(autoStill){
 		xTo=followObj.x;
 		yTo=followObj.y;
 	}
+	return true;
 }
 
 setRoomCamera=function(arr){

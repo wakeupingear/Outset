@@ -1,5 +1,8 @@
 /// @description Text
 if !wait&&global.notPause{
+var _touchingPly=false;
+if trackObj!=-1&&instance_exists(trackObj)&&!object_is_ancestor(trackObj.object_index,ply) with trackObj _touchingPly=place_meeting(x,y,ply);	
+
 if mode>-1&&mode<2
 {
 	if mode==0
@@ -13,7 +16,11 @@ if mode>-1&&mode<2
 			if character!=""
 			{
 				var _obj=asset_get_index("npc"+characterFirstLetterUpper);
-				if instance_exists(_obj) _obj.pathfindingInterrupt=false;
+				if instance_exists(_obj) 
+				{
+					trackObj=_obj;
+					_obj.pathfindingInterrupt=false;
+				}
 			}
 			mode=-1;
 		}
@@ -71,40 +78,43 @@ if mode>-1&&mode<2
 }
 else if mode==2
 {
-	if question
-	{
-		if !questionChoice&&buttonPressed(control.right) questionChoice=1;
-		else if questionChoice&&buttonPressed(control.left) questionChoice=0;
-	}
-	if buttonPressed(control.confirm)
+	if (!global.menuOpen&&(!mustTouch||_touchingPly))||thisCameraChanged
 	{
 		if question
 		{
-			if !questionChoice
-			{
-				for (var i=diag;i<array_length(text);i++) if text[i]=="#yes"+string(questionNum) 
-				{
-					diag=i;
-					break;
-				}
-			}
-			else
-			{
-				for (var i=diag;i<array_length(text);i++) if text[i]=="#no"+string(questionNum) 
-				{
-					diag=i;
-					break;
-				}
-			}
-			question=false;
-			questionNum=0;
+			if !questionChoice&&buttonPressed(control.right) questionChoice=1;
+			else if questionChoice&&buttonPressed(control.left) questionChoice=0;
 		}
-		mode=0;
-		skip=false;
-		if lastName!=portName
+		if buttonPressed(control.confirm)
 		{
-			alarm[1]=1;
-			lastName=portName;
+			if question
+			{
+				if !questionChoice
+				{
+					for (var i=diag;i<array_length(text);i++) if text[i]=="#yes"+string(questionNum) 
+					{
+						diag=i;
+						break;
+					}
+				}
+				else
+				{
+					for (var i=diag;i<array_length(text);i++) if text[i]=="#no"+string(questionNum) 
+					{
+						diag=i;
+						break;
+					}
+				}
+				question=false;
+				questionNum=0;
+			}
+			mode=0;
+			skip=false;
+			if lastName!=portName
+			{
+				alarm[1]=1;
+				lastName=portName;
+			}
 		}
 	}
 }

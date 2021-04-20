@@ -2,6 +2,7 @@ global.plyX=x;
 global.plyY=y;
 event_inherited();
 image_alpha=1;
+xscale=1;
 
 while groundCollision(x,y) y--;
 

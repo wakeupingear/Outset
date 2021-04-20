@@ -17,12 +17,13 @@ else if mode==1
 	{
 		if is_string(delay) //format delay into an array
 		{
+			explodedDelay=explodeString("&&",delay);
+			subArgs=array_create(array_length(explodedDelay))
 			if array_length(args)>0&&!is_array(args[0])
 			{
 				subArgs[0]=args;
 			}
 			else array_copy(subArgs,0,args,0,array_length(args));
-			explodedDelay=explodeString("&&",delay);
 		}
 		for (var i=0;i<array_length(explodedDelay);i++)
 		{

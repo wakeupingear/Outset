@@ -1,4 +1,5 @@
 function createPopup(struct){
+	global.menuOpen=true;
 	var _parent=-1;
 	if instance_exists(oPopup) with oPopup if mode>=0&&stackType!=1 _parent=id;
 	

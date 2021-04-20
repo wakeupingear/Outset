@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index,0,x,y,image_xscale,max(round(oReactorBeam.image_yscale-20),0),0,-1,1);

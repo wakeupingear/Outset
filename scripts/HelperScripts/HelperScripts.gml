@@ -11,12 +11,6 @@ function array_pos(array,val){
 	return -1;
 }
 
-function array_remove(array,pos,count){
-	for (var k=pos+count;k<array_length(array);k++) array[k-count]=array[k];
-	array_resize(array,array_length(array)-count);
-	return array;
-}
-
 //structs
 function addToStruct(originalStruct,addStruct){
 	var _n=variable_struct_get_names(addStruct);

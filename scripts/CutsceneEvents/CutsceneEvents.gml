@@ -4,6 +4,8 @@ function scr_pro_2(){
 	global.notdonEra=notdonEras.pro2;
 	global.startX=1772;
 	global.startY=455;
+	global.plyX=global.startX;
+	global.plyY=global.startY;
 	global.startRoom=rNotdon;
 	global.menuOpen=false;
 	global.timeOfDay=times.night;
@@ -11,7 +13,7 @@ function scr_pro_2(){
 	
 	//destroy all old objects
 	destroyArray([oMissile],false);
-	destroyArray([oVShip,oVBarrier,oExplosion,npc]);
+	destroyArray([oVShip,oVBarrier,oExplosion,npc,oTextbox]);
 	
 	var _str={key:"pro_electroTest",condition:"plyRight",args:[2082],myRoom: "rNotdon"};
 	createCutsceneDelay(_str,"cutsceneCondition");
@@ -45,6 +47,8 @@ function scr_pro_3(){
 	global.notdonEra=notdonEras.pro3;
 	global.startX=2574;
 	global.startY=719;
+	global.plyX=global.startX;
+	global.plyY=global.startY;
 	global.startRoom=rNotdon;
 	global.menuOpen=false;
 	global.timeOfDay=times.day;
@@ -52,10 +56,10 @@ function scr_pro_3(){
 	
 	//destroy all old objects
 	destroyArray([oMissile],false);
-	destroyArray([oVShip,oVBarrier,oExplosion,npc]);
+	destroyArray([oVShip,oVBarrier,oExplosion,npc,oTextbox]);
 	
-	var _str={key:"pro_reactorRace",delay:100,args:[],myRoom: "rNotdon"};
-	//createCutsceneDelay(_str,"cutsceneDelay");
+	var _str={key:"pro_reactorSetV",delay:100,args:[],myRoom: "rNotdon"};
+	createCutsceneDelay(_str,"cutsceneDelay");
 	
 	_str={key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"],myRoom: "rNotdon"};
 	createCutsceneDelay(_str,"cutsceneCondition");
@@ -84,5 +88,36 @@ function scr_pro_3(){
 		setTerrain();
 	}
 	
+	save(global.lastFile);
+}
+
+function scr_pro_4(){	
+	global.notdonEra=notdonEras.present;
+	global.startX=3296;
+	global.startY=1408;
+	global.plyX=global.startX;
+	global.plyY=global.startY;
+	if instance_exists(ply)
+	{
+		ply.x=global.startX;
+		ply.y=global.startY;
+	}
+	killPlayer(true);
+	global.startRoom=rNotdon;
+	global.menuOpen=false;
+	global.timeOfDay=times.night;
+	setRoomLighting(room_get_name(room));
+	
+	//destroy all old objects
+	destroyArray([oMissile],false);
+	destroyArray([oVShip,oVBarrier,oExplosion,npc]);
+	
+	with controller
+	{
+		setRoomEra(); //reload npcs and era layers
+		createNPCs();
+		createDroppedItems();
+		setTerrain();
+	}
 	save(global.lastFile);
 }

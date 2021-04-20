@@ -23,9 +23,9 @@ if lightningFrame>3
 				barriersPos[1]=0.05;
 				break;
 			case "leftBarrier":
-				var _l=instance_create_layer(rightBar.x,rightBar.y,"people",oLightningBolt);
-				eventAddObject(oVBarrier,room,rightBar.x,rightBar.y,"people",[-1]); //args is xscale
-				var _b=instance_create_layer(rightBar.x,rightBar.y,"people",oVBarrier);
+				var _l=instance_create_layer(leftBar.x,leftBar.y,"people",oLightningBolt);
+				eventAddObject(oVBarrier,room,leftBar.x,leftBar.y,"people",[-1]); //args is xscale
+				var _b=instance_create_layer(leftBar.x,leftBar.y,"people",oVBarrier);
 				_l.trigger=_b;
 				with _b
 				{

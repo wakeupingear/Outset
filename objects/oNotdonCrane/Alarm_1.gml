@@ -1,5 +1,5 @@
 /// @description Scale
-image_xscale-=0.01
+image_xscale-=0.01;
 image_angle-=90/200;
 if image_xscale>-1 alarm[1]=1;
 else

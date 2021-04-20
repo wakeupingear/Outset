@@ -40,6 +40,10 @@ periodwait=18;
 exclamationWait=15;
 questionmarkWait=15;
 
+trackObj=-1;
+mustTouch=true; //inputs not reliant on touching the object
+thisCameraChanged=false;
+
 lastObj=-2;
 
 setCharacterDiag = function(){

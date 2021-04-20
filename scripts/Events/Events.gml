@@ -32,7 +32,7 @@ function eventRemove(object,objRoom,xStart,yStart,objLayer,args){
 		objLayer==_arr[i+3]&&
 		array_equals(args,_arr[i+4])
 		{
-			global.persistentEvents[? objRoom]=array_remove(_arr,i,5);
+			array_delete(_arr,i,5);
 			break;
 		}
 	}

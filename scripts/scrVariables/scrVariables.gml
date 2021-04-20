@@ -60,8 +60,8 @@ function scrVariables(){
 	ds_map_add(global.characterLocations,"matt",[0,0,-1,9,""]);
 	ds_map_add(global.characterLocations,"chet",[0,0,-1,10,""]);
 
-	ds_map_add(global.characterLocations,"babishOrange",[0,0,rCoreIntro,3,""]);
-	ds_map_add(global.characterLocations,"craigKrisper",[0,0,rCoreIntro,3,""]);
+	ds_map_add(global.characterLocations,"babishOrange",[477,926,rCoreIntro,3,"pro_core"]);
+	ds_map_add(global.characterLocations,"craigKrisper",[444,926,rCoreIntro,3,"pro_core"]);
 
 	global.itemText={};
 	global.droppedItems=ds_list_create(); //format: "iNameOfItem", x, y, room
@@ -209,10 +209,12 @@ function scrVariables(){
 	
 	#region Babish Orange
 	global.characters.babishOrange={portrait:[empty],diagColor: c_nearWhite, font: fontSizes.myko};
+	addLocation("babishOrange","rCoreIntro","pro_core",477,926,1,1,""); //core start
 	#endregion
 	
 	#region Craig Krisper
 	global.characters.craigKrisper={portrait:[empty],diagColor: c_nearWhite, font: fontSizes.myko};
+	addLocation("craigKrisper","rCoreIntro","pro_core",444,926,1,1,""); //core start
 	#endregion
 	
 	var _cL=variable_struct_get_names(global.characters) //add arbitray yscale and check to each character
@@ -276,19 +278,19 @@ function scrVariables(){
 			music: global.regionMusic[_reg],
 			name: "???", //loads in setText
 			camera: [],
-			soulCamera:[],
-			npcs: []
+			soulCamera:[]
+			//npcs: []
 		};
 	}
 	global.rooms.rTitle.darkness=0;
-	global.rooms.rTest1.npcs=[npcTest,npcHarold];
+	//global.rooms.rTest1.npcs=[npcTest,npcHarold];
 	global.rooms.rTest1.inside=true;
 		addRoomCamera("rCoreIntro",576-192,980-192,576+192,980+192,576,980); //center
 	global.rooms.rNotdon.npcs=[npcCharlie,npcEugene,npcCitra,npcHarold,npcNora,npcSmitten,npcChet,npcMatt];
 		addRoomCamera("rNotdon",1562,0,1778,546,1620,468); //bounce pad
 		addRoomCamera("rNotdon",2216,748,2562,2000,2374,798,"notdonEraLater"); //the nook
 		addSoulCamera("rNotdon",928-172,398-148,1052,398+108,914,398); //cliffside
-	global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
+	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	global.rooms.rNotdonArchives.inside=true;
 	
 	}
@@ -389,6 +391,7 @@ function scrVariables(){
 	}
 	else if isTest
 	{
+		global.startRoom=rCoreIntro;
 		addData("respInt");
 		global.devTeleport=true;
 		global.devSkips=true;

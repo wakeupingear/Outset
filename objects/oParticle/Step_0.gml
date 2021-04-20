@@ -1,14 +1,13 @@
 if alwaysMove||global.alive
 {
-	x+=lengthdir_x(spd,direction);
-	y+=lengthdir_y(spd,direction);
-	if falling
-	{
-		if direction mod 270 !=0 direction-=sign(direction-270);
-	}
+	x+=lengthdir_x(spd,direction)+hsp;
+	y+=lengthdir_y(spd,direction)+vsp;
+	vsp+=grav;
 	image_alpha-=fade;
-	image_angle+=angSpd;
-	if offscreen(x,y)||image_alpha<0
+	if point image_angle=point_direction(xprevious,yprevious,x,y);
+	else image_angle+=angSpd;
+	if image_alpha<0 instance_destroy();
+	else if offscreen(x,y)
 	{
 		if !startOffscreen instance_destroy();
 	}

@@ -14,4 +14,4 @@ vsp=yDir*5;
 collPointX[0]=round(lengthdir_x(24,image_angle));
 collPointY[0]=round(lengthdir_y(24,image_angle));
 
-if image_index==1 hitTerrain=false;
+//if image_index==1 hitTerrain=false;

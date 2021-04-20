@@ -71,9 +71,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5d7f2cbf-ce5a-478a-b4d4-f6301c293f79","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "soulPlatforms",
-    "path": "folders/Sprites/platforming/soulPlatforms.yy",
+    "name": "Outset",
+    "path": "Outset.yyp",
   },
   "resourceVersion": "1.0",
   "name": "sSoulButtonGrey",

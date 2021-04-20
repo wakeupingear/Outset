@@ -27,6 +27,8 @@ function setRoomEra(){
 			{
 				instance_activate_layer(_layers[i]);
 				layer_set_visible(_layers[i],true);
+				array_delete(_layers,i,1);
+				i--;
 			}
 		}
 		ds_list_delete(_eras,_pos); //remove current era from list

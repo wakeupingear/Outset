@@ -4,7 +4,13 @@ else
 {
 	if guns[fireSide]==1
 	{
-		
+		var _xs=((fireSide==1)-(fireSide==0));
+		var _g=instance_create_layer(oCamera.x+irandom_range(30,140)*_xs,camY()-32,"people",oMissile);
+		_g.scope=true;
+		_g.yDir=1;
+		_g.xDir=0;
+		_g.hitTerrain=true;
+		_g.image_index=1;
 	}
 	else if guns[fireSide]==2
 	{

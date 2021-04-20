@@ -1,5 +1,6 @@
 event_inherited();
 image_speed=0;
+depth--;
 
 xLerp=0.65;
 yLerp=0.65;
@@ -28,6 +29,13 @@ if global.roomTime>1
 		leftBar= new Vector2(2004,595);
 		rightBar= new Vector2(2004,595);
 	}
+	else if global.notdonEra==notdonEras.pro3
+	{
+		hoverPos=new Vector2(2167,340);
+		leftBar= new Vector2(1908,464);
+		rightBar= new Vector2(2720,784);
+		guns=[1,1];
+	}
 }
 
 if !eventExists(object_index,room,hoverPos.x,hoverPos.y,"bg",[]) eventAddObject(object_index,room,hoverPos.x,hoverPos.y,"bg",[]);
@@ -44,6 +52,7 @@ setPosTo= function(_x,_y){
 	xTo=xOff;
 	yTo=yOff;
 	setBGPosition(xstart,ystart);
+	moving=true;
 }
 setPosTo(hoverPos.x,hoverPos.y);
 

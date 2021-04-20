@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function positionNpc(moveToLocation){ //0= don't, 1=do, 2=pathfind
 	if object_is_ancestor(object_index,enem) return true;
-	npcKey=string_lower(string_replace(object_get_name(object_index),"npc",""));
+	npcKey=getNpc(object_index);
 	if global.characterLocations[? npcKey][2]!=room return false;
 	if instance_number(object_index)>1
 	{

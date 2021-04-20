@@ -13,6 +13,7 @@
         "end",
 
         "$zoom",0.1,-0.02,"#dev",
+        "$persistence",true,
         30,
         "$global.notdonEra",1,
         "$roomChange",[1368,407,"rNotdon",4,-1,0,-1],
@@ -24,6 +25,7 @@
 
     "pro_coreSpeech":[
         60,
+        "$touch",true,
         "?babishOrange","So, ready to be the only survivors of the apocalypse?",
         "?craigKrisper","I suppose, no matter what the WORLD throws at us.",
         "And we have these THREE to pick up the pieces once the earth settles.",
@@ -32,6 +34,7 @@
         30,"$zoom",[0.1,-0.02],
         30,
         "$global.notdonEra",1,
+        "$persistence",true,
         "$roomChange",[1368,407,"rNotdon",4,-1,0,-1],
         20,
         "$camSetInstant",[1246,398],
@@ -181,6 +184,7 @@
     ],
 
     "pro_lbJumpEugeneAuto":[
+        10,
         "#eugene.parachuteAdd",
         "$camSet",[1150,420],"$goto","dev",
         60,
@@ -258,7 +262,6 @@
         60,"!!!",
         30,
         "$createLayer",[1297,476,"bg","oVShip"],
-        "$oVShip.moving",true,
         "$camSpd",0.02,
         "$camSet",[1294,222],
         60,
@@ -302,7 +305,6 @@
         "$createLayer",[2178,643,"above","oLightningBolt"],
         30,
         "$createLayer",[2167,680,"bg","oVShip"],
-        "$oVShip.moving",true,
         "$oPowerPlantTemp.mode",0,
         "$charlie.setRoom",["rNotdon","pro_electroPanic"],
         "?harold","COMRADES! RESET THE BREAKERS!",
@@ -439,9 +441,30 @@
         "Ye gods! The door is stuck!"
     ],
 
-    "pro_reactorWin":[
-        "?smitten","So, what about those CELL PHONES?",
-        ""
+    "pro_haroldCraneFail":[
+        "$touch",false,
+        "?harold","you goofed son!",
+        "$cutscene","pro_reactorSetV"
+    ],
+
+    "pro_haroldCraneSuccess":[
+        "$touch",false,
+        "?harold","LOCKED AND LOADED, BABY!",
+        "$cutscene","pro_reactorSetV"
+    ],
+
+    "pro_reactorSetV":[
+        "$camSet",[2176,576],
+        30,
+        "$createLayer",[2167,980,"bg","oVShip"],
+        "$oVShip.addVarQueue",["lightningQueue","rightBarrier"],
+        "$oVShip.addVarQueue",["lightningQueue","leftBarrier"],
+        "$oVShip.alarm[2]",10,
+        "$oVShip.alarm[4]",70,
+        30,
+        "$createLayer",[2120,587,"people","oReactorButton"],
+        "$createLayer",[2215,587,"people","oReactorButton"],
+        "$camReset"
     ],
 
     "pro_nighttimeCamp":[
@@ -463,5 +486,31 @@
         "Clouds open up",
         "?smitten","Finally, back to the action.",
         "Souldrop rains down"
+    ],
+
+    "pro_reactorShock":[
+        "$create",[0,0,0,"oVShock"],
+        "$cutsceneDelay",{"key":"pro_reactorWin","delay":180}
+    ],
+
+    "pro_reactorWin":[
+        "$camSet",[2455,666],
+        "?citra","And that, kids, is the power of TECHNOLOGY!",
+        "?harold","AND WEAPONRY!",
+        "?smitten","Dang.{30} How do I do TECHNOLOGY?",
+        "$skip","?citra","Well, it's a long vocational study, where you begin to understand the bond between NATURE and the ARTIFIC",
+        "?eugene","So, what about those CELL PHONES?",
+        "?harold","WHOA THERE! HAROLD has got you covered!",
+        "GO LONG!",
+        "$particle",[2370,672,"people",{"sprite":"sNotdonHaroldPhoneSpin","angSpd":20,"fade":1,"alpha":90}],
+        90,
+        "$particle",[2370,672,"people",{"sprite":"sNotdonHaroldPhoneThrow","dir":25,"grav":0.0185,"spd":3,"fade":0.1,"alpha":23,"alwaysMove":true,"point":true}],
+        "$camFollow","lastObj",
+        120,
+        "$script","scr_pro_4",
+        120,
+        "$camSet",[3296,832],
+        120,
+        "$camReset"
     ]
 }
