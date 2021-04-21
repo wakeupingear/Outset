@@ -396,7 +396,7 @@ function scrVariables(){
 		global.devTeleport=true;
 		global.devSkips=true;
 		ds_list_add(global.playerItems,"iGrapple",1);
-		scr_pro_3();
+		scr_pro_4();
 		//global.startRoom=rVR1;
 	}
 	
