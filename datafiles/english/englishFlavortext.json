@@ -1,0 +1,28 @@
+{
+    "notdon_podium":[
+        "A speaker's podium. Seems like the mic is still plugged in...",
+        "$question1","Yell into it?",
+        "#yes1",
+            "Ow.",
+            "end",
+        "#no1"
+    ],
+    "notdon_adultDoor1":[
+        "$if1","hasData",["notAdDoor"],
+        "#true1",
+            "$roomChange",[192,0,"rArchive",0,0,0,1],
+            "end",
+        "#false1",
+            "The adult dorms. Clearly, adults only.",
+            "$trackObj.key","notdon_adultDoor2"
+    ],
+    "notdon_adultDoor2":[
+        "The adult dorms. Yep, definitely a place for adults, not kids.",
+        "$trackObj.key","notdon_adultDoor3"
+    ],
+    "notdon_adultDoor3":[
+        "Eh, no one's watching...?",
+        "$addData","notAdDoor",
+        "$cutscene","notdon_adultDoor1"
+    ]
+}

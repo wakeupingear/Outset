@@ -10,7 +10,6 @@ function createCutsceneDelay(_val,_name){
 	if variable_struct_exists(_val,"myRoom") 
 	{
 		_cd.startroom=asset_get_index(_val[$ "myRoom"]);
-		_cd.persistent=false;
 	}
 	_cd.mode=(_name=="cutsceneCondition");
 	if !_cd.mode
@@ -24,7 +23,7 @@ function createCutsceneDelay(_val,_name){
 	if variable_struct_exists(_val,"scr") _cd.scr=asset_get_index(_val.scr);
 	var _layer="above";
 	if variable_struct_exists(_val,"force") _layer="force"
-	if _cd.delay!="alive"
+	if _cd.delay!="alive"||true //not sure what this is for
 	{
 		with _cd 
 		{

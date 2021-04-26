@@ -18,3 +18,7 @@ function anyButtonPressed(){
 	for (var i=0;i<array_length(global.inputs);i++) if global.inputs[i]==1 return true;
 	return false;
 }
+
+function buttonFreeze(input){
+	global.inputs[input]=-1;
+}

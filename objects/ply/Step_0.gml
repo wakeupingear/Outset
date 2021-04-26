@@ -84,7 +84,7 @@ else
 {
 	if oGrapple.state<2||oGrapple.grappleMode==grappleState.arc physics();
 	else grapplePhysics();
-	if place_meeting(x,y,oLadder)&&buttonPressed(control.up)
+	if (buttonPressed(control.up)||buttonPressed(control.down))&&place_meeting(x,y,oLadder)
 	{
 		resetGrapple();
 		state=moveState.ladder;

@@ -2,8 +2,14 @@
 try
 {
 	global.pathfindingScripts=loadStringJson("pathfinding");
-	global.langScript=loadStringJson(global.lang);
-	global.langScript=addToStruct(global.langScript,loadStringJson(global.lang+"Prologue"));
+	global.langScript={};
+	var _importTextData=function(name){
+		global.langScript=addToStruct(global.langScript,loadStringJson(global.lang+"/"+global.lang+name));
+	}
+	
+	_importTextData("");
+	_importTextData("Flavortext");
+	_importTextData("Prologue");
 	scrSetText();
 }
 catch(_exception) 

@@ -219,7 +219,6 @@ removeMenuButtons=function(){
 	if instance_exists(oPauseButton) instance_destroy(oPauseButton);
 }
 
-
 persistentEventsSet=function(key){
 	if !is_string(key) key=room_get_name(key);
 	if ds_map_exists(global.persistentEvents,key){

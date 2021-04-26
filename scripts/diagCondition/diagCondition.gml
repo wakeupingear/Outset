@@ -6,11 +6,6 @@ function diagCondition(key,args){
 		key=string_replace(key,"Exists","");
 		return instance_exists(asset_get_index(key));
 	}
-	else if string_pos("hasData",key)>0
-	{
-		key=string_replace(key,"hasData","");
-		return hasData(key);
-	}
 	else switch (key)
 	{
 		case "alive": return (global.alive);

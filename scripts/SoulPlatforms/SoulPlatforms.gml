@@ -106,7 +106,7 @@ function deactivateSoulParent(parent,parentTree){
 function startSoulPlatforms(){
 	with oSoulBranch 
 	{
-		if (image_xscale!=startXS||image_yscale!=startYS) 
+		if (image_xscale!=startXS||image_yscale!=startYS)
 		{
 			active=true;
 			if (image_xscale==endXS&&image_yscale==endYS)

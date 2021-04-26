@@ -1,32 +1,35 @@
-if !moving
+if global.alive
 {
-	if touchIsTrigger&&distance_to_object(ply)<12
+	if !moving
 	{
-		if !place_meeting(x,y-1,ply) touch=false;
-		else if !touch
+		if touchIsTrigger&&distance_to_object(ply)<12
 		{
-			touch=true;
-			moving=true;
+			if !place_meeting(x,y-1,ply) touch=false;
+			else if !touch
+			{
+				touch=true;
+				moving=true;
+			}
 		}
 	}
-}
-else if global.alive
-{
-	if distance_to_object(ply)<12&&place_meeting(x,y-1,ply) 
+	else
 	{
-		plyRelX=ply.x-x;
-		plyRelY=ply.y-y;
-		touch=true;
-	}
-	else touch=false;
-	x+=moveDir*(xTarget-xstart)/spd;
-	y+=moveDir*(yTarget-ystart)/spd;
+		if distance_to_object(ply)<12&&place_meeting(x,y-1,ply) 
+		{
+			plyRelX=ply.x-x;
+			plyRelY=ply.y-y;
+			touch=true;
+		}
+		else touch=false;
+		x+=moveDir*xSpd;
+		y+=moveDir*ySpd;
 	
-	platformMovePlayer();
+		platformMovePlayer();
 	
-	if (x==xstart&&y==ystart)||(x==xTarget&&y==yTarget)
-	{
-		moveDir*=-1;
-		moving=false;
+		if (moveDir==1&&x==max(xstart,xTarget)&&y==max(ystart,yTarget))||(moveDir==-1&&x==min(xstart,xTarget)&&y==min(ystart,yTarget))
+		{
+			moveDir*=-1;
+			moving=false;
+		}
 	}
 }

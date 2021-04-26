@@ -3,8 +3,11 @@ inRange=!((x+image_xscale<camX()||x>camX()+384)||(y+image_yscale<camY()||y>camY(
 
 if inRange&&touchingPly()
 {
-	touch=true;
-	global.inWater=true;
+	if global.alive
+	{
+		touch=true;
+		global.inWater=true;
+	}
 }
 else 
 {

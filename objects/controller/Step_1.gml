@@ -4,14 +4,32 @@
 array_copy(global.lastInputs,0,global.inputs,0,array_length(global.inputs));
 for (var i=0;i<global.numOfInputs;i++)
 {
-	if i==control.confirm&&mouse_check_button(mb_left) global.inputs[i]++;
-	else if keyboard_check(global.keyboardInputs[i*2])||keyboard_check(global.keyboardInputs[i*2+1]) global.inputs[i]++;
-	else if global.controllerConnected&&(gamepadPressed(global.controllerInputs[i*2])||gamepadPressed(global.controllerInputs[i*2+1]))
+	var _isPressed=false
+	
+	if i==control.confirm&&mouse_check_button(mb_left) _isPressed=true; //mouse exception
+	
+	if !_isPressed for (var k=0;k<array_length(global.keyboardInputs[i]);k++)
 	{
-		global.inputs[i]++;
+		if keyboard_check(global.keyboardInputs[i][k])
+		{
+			_isPressed=true;
+			break;
+		}
 	}
-	else global.inputs[i]=0;
-	//controller input processing goes between the if and the else
+	if global.controllerConnected&&!_isPressed for (var k=0;k<array_length(global.controllerInputs[i]);k++)
+	{
+		if gamepadPressed(global.controllerInputs[i][k])
+		{
+			_isPressed=true;
+			break;
+		}
+	}
+	
+	if !_isPressed global.inputs[i]=0;
+	else
+	{
+		if global.inputs[i]!=-1 global.inputs[i]++;
+	}
 }
 
 //html resizing

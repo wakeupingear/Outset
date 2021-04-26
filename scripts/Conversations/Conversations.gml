@@ -1,8 +1,8 @@
 function conversation(textData){
 	
-	//global.menuOpen=true;
-	//if instance_exists(oTextbox)&&oTextbox.mode>-1 var _t=instance_find(oTextbox,0);
-	//else var _t=instance_create_depth(120,150,-1005,oTextbox);
+	global.menuOpen=true;
+	if instance_exists(oTextbox)&&oTextbox.mode>-1 var _t=instance_find(oTextbox,0);
+	else var _t=instance_create_depth(120,150,-1005,oTextbox);
 	var _canStart=true;
 	for (var i=0;i<instance_number(oTextbox);i++) if !instance_find(oTextbox,i).mustTouch
 	{
@@ -34,7 +34,7 @@ function conversation(textData){
 
 function conversationForced(textData){
 	
-	//global.menuOpen=true;
+	global.menuOpen=true;
 	var _t=instance_create_depth(120,150,-1005,oTextbox);
 	if is_string(textData) textData=textLoad(textData);
 	_t.text=textData;

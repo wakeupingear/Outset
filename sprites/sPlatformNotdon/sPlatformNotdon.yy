@@ -8,13 +8,13 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 15,
-  "bbox_top": 0,
+  "bbox_right": 23,
+  "bbox_top": 1,
   "bbox_bottom": 3,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 16,
+  "width": 24,
   "height": 4,
   "textureGroupId": {
     "name": "Default",
@@ -54,7 +54,7 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 8,
+    "xorigin": 12,
     "yorigin": 2,
     "eventToFunction": {},
     "eventStubScript": null,
@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"23c0a8b6-ed5c-452b-a3aa-87dc60743177","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "interactions",
     "path": "folders/Sprites/notdon/interactions.yy",

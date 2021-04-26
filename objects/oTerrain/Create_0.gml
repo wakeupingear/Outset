@@ -1,4 +1,5 @@
 terrain=ds_list_create();
+terrainSprites=[];
 terrainColor=ds_list_create();
 surf=-1;
 render=false;

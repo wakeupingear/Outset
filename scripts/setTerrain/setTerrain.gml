@@ -40,6 +40,7 @@ function setTerrain(){
 				{
 					var _i=instance_create_depth(layer_sprite_get_x(_assets[i]),layer_sprite_get_y(_assets[i]),layer_get_depth(_layers[k]),_objType);
 					_i.sprite_index=layer_sprite_get_sprite(_assets[i]);
+					if array_pos(_t.terrainSprites,_i.sprite_index)==-1 array_push(_t.terrainSprites,_i.sprite_index);
 					_i.image_index=layer_sprite_get_index(_assets[i]);
 					_i.image_blend=layer_sprite_get_blend(_assets[i]);
 					_i.image_xscale=layer_sprite_get_xscale(_assets[i]);

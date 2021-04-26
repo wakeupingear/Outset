@@ -9,7 +9,7 @@ else
 		_g.scope=true;
 		_g.yDir=1;
 		_g.xDir=0;
-		_g.hitTerrain=true;
+		_g.hitTerrain=2;
 		_g.image_index=1;
 	}
 	else if guns[fireSide]==2

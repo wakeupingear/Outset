@@ -7,7 +7,7 @@ function platformMovePlayer(){
 	{
 		ply.x=x+plyRelX;
 		ply.y=y+plyRelY;
-		if buttonPressed(control.jump) ply.jumpAdd=abs(min(1.5*(y-yprevious),0));
+		if buttonPressed(control.jump) ply.jumpAdd=abs(min(0.75*(y-yprevious),0));
 		with ply if groundCollision(x,y) hurtPlayer(global.maxDamage,0,0);
 	}
 	else if place_meeting(x,y,ply)

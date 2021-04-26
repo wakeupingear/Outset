@@ -8,7 +8,16 @@ function createSoulDoors(){
 			_d.targetroom=_arr[i+2];
 			_d.target_x=_arr[i+3];
 			_d.target_y=_arr[i+4];
-			with _d if !place_meeting(target_x,target_y,oSave) instance_destroy();
+			with _d if !place_meeting(target_x,target_y,oSave) 
+			{
+				if !instance_exists(oSave) instance_destroy();
+				else
+				{
+					var _s=instance_nearest(x,y,oSave);
+					x=_s.x;
+					y=_s.y;
+				}
+			}
 		}
 	}
 }

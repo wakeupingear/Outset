@@ -78,7 +78,7 @@ if mode>-1&&mode<2
 }
 else if mode==2
 {
-	if (!global.menuOpen&&(!mustTouch||_touchingPly))||thisCameraChanged
+	//if (!global.menuOpen&&(!mustTouch||_touchingPly))||thisCameraChanged
 	{
 		if question
 		{

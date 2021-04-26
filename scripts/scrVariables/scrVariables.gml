@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scrVariables(){
 	//preferences
-	global.lang="english";
+	global.lang="english"; //language
 	global.langScript=-1; //empty to load the script into
 	if !isHtml&&steam_initialised() global.lang=steam_current_game_language(); //get the user's default language if possible
 	global.lastFile=0;
@@ -65,7 +65,7 @@ function scrVariables(){
 
 	global.itemText={};
 	global.droppedItems=ds_list_create(); //format: "iNameOfItem", x, y, room
-	ds_list_add(global.droppedItems,"iPlank",35,135,rTest2);
+	//ds_list_add(global.droppedItems,"iPlank",35,135,rTest2);
 	global.visitedRooms=ds_list_create();
 	
 	global.soulDoors=ds_map_create(); //format: "roomName": [dieX,dieY,endRoom,endX,endY]
@@ -243,6 +243,7 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iGrappleArc",{index: 0, viewable: false});
 	ds_map_add(global.itemData,"iGrappleDown",{index: 0, viewable: false});
 	ds_map_add(global.itemData,"iGrappleAir",{index: 0, viewable: false});
+	ds_map_add(global.itemData,"iSlate",{index: 2, viewable: false});
 	ds_map_add(global.itemData,"iPlank",{index: 1, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote1",{index: 2, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote2",{index: 2, viewable: true});
@@ -288,8 +289,9 @@ function scrVariables(){
 		addRoomCamera("rCoreIntro",576-192,980-192,576+192,980+192,576,980); //center
 	global.rooms.rNotdon.npcs=[npcCharlie,npcEugene,npcCitra,npcHarold,npcNora,npcSmitten,npcChet,npcMatt];
 		addRoomCamera("rNotdon",1562,0,1778,546,1620,468); //bounce pad
-		addRoomCamera("rNotdon",2216,748,2562,2000,2374,798,"notdonEraLater"); //the nook
+		addRoomCamera("rNotdon",2216,698,2562,2000,2374,798,"notdonEraLater"); //the nook
 		addSoulCamera("rNotdon",928-172,398-148,1052,398+108,914,398); //cliffside
+		addSoulCamera("rNotdon",3444,1148,5000,1336,"x",1294); //pier
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	global.rooms.rNotdonArchives.inside=true;
 	
@@ -338,40 +340,40 @@ function scrVariables(){
 	global.inWater=false;
 	
 	global.controllerInputs=[
-	gp_padu,leftStickUp, //up
-	gp_padd,leftStickDown, //down
-	gp_padl,leftStickLeft, //left
-	gp_padr,leftStickRight, //right
-	gp_face1,gp_face1, //jump
-	gp_select,-1,
-	gp_start,gp_start,
-	gp_face3,gp_shoulderrb,
-	gp_face4,gp_face3,
-	gp_shoulderl,-1,
-	gp_shoulderr,-1,
-	gp_face2,-1,
-	gp_shoulderlb,-1,
-	-1,-1,
-	gp_stickr,-1
+	[gp_padu,leftStickUp], //up
+	[gp_padd,leftStickDown], //down
+	[gp_padl,leftStickLeft], //left
+	[gp_padr,leftStickRight], //right
+	[gp_face1], //jump
+	[gp_select], //menu
+	[gp_start], //pause
+	[gp_face3,gp_shoulderrb], //grapple 1
+	[gp_face4], //item
+	[gp_shoulderl], //left swap
+	[gp_shoulderr], //right swap
+	[gp_face2], //confirm
+	[gp_shoulderlb], //grapple 2
+	[], //fullscreen
+	[gp_stickr] //debug
 	];
 	global.keyboardInputs=[
-	vk_up,ord("W"),
-	vk_down,ord("S"),
-	vk_left,ord("A"),
-	vk_right,ord("D"),
-	vk_space,ord("J"),
-	vk_tab,-1,
-	vk_escape,-1,
-	vk_lshift,ord("L"),
-	ord("I"),-1,
-	ord("Q"),ord("U"),
-	ord("E"),ord("O"),
-	vk_enter,ord("K"),
-	vk_control,ord("H"),
-	vk_insert,vk_f4,
-	ord("T"),-1
+	[vk_up,ord("W")], //up
+	[vk_down,ord("S")], //down
+	[vk_left,ord("A")], //left
+	[vk_right,ord("D")], //right
+	[vk_space,ord("J")], //jump
+	[vk_tab], //menu
+	[vk_escape], //pause
+	[vk_lshift,vk_rshift,ord("L")], //grapple
+	[ord("I")], //item
+	[ord("Q"),ord("U")], //left swap
+	[ord("E"),ord("O")], //right swap
+	[vk_enter,ord("K")], //confirm
+	[vk_control,ord("H")], //grapple 2
+	[vk_insert,vk_f4], //fullscreen
+	[ord("T")] //debug
 	];
-	global.numOfInputs=array_length(global.keyboardInputs)/2;
+	global.numOfInputs=array_length(global.keyboardInputs);
 	global.inputs=array_create(global.numOfInputs); //filled in inputForPlayer1
 	global.lastInputs=array_create(global.numOfInputs); //filled in inputForPlayer1
 	

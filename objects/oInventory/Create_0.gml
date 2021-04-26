@@ -2,7 +2,7 @@ image_speed=0;
 image_blend=global.hudColorList[global.hudColor];
 fade=0;
 
-mode=!hasData("iSlate");
+mode=!hasItem("iSlate");
 open=true;
 
 surf=-1;

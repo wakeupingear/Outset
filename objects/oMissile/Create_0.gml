@@ -17,6 +17,6 @@ scopeBlend=[c_white,c_soulBlue];
 
 collPointX=[24];
 collPointY=[0];
-hitTerrain=true;
+hitTerrain=1;
 
 alarm[0]=1;

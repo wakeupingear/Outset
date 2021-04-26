@@ -1,4 +1,7 @@
 {
+  "ConfigValues": {
+    "Testing": {"textureGroupId":"{\"name\":\"texTerrain\",\"path\":\"texturegroups/texTerrain\"}",},
+  },
   "bboxMode": 0,
   "collisionKind": 4,
   "type": 0,
@@ -75,6 +78,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c24c3f1d-d1e7-4908-a278-96fefe5c033a","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "test",
     "path": "folders/Sprites/terrain/test.yy",

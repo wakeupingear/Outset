@@ -58,11 +58,9 @@ function scr_pro_3(){
 	destroyArray([oMissile],false);
 	destroyArray([oVShip,oVBarrier,oExplosion,npc,oTextbox]);
 	
-	var _str={key:"pro_reactorSetV",delay:100,args:[],myRoom: "rNotdon"};
-	createCutsceneDelay(_str,"cutsceneDelay");
+	createCutsceneDelay({key:"pro_reactorSetV",delay:100,args:[],myRoom: "rNotdon"},"cutsceneDelay");
 	
-	_str={key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"],myRoom: "rNotdon"};
-	createCutsceneDelay(_str,"cutsceneCondition");
+	createCutsceneDelay({key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"],myRoom: "rNotdon"},"cutsceneCondition");
 	
 	//position characters
 	setNPCRoom("citra","rNotdon","pro_reactor");
@@ -76,9 +74,9 @@ function scr_pro_3(){
 	setNPCRoom("smitten","rNotdon","pro_reactor");
 	DEBUG_moveNPC("smitten",rNotdon,"pro_launch",60);
 	
-	addDroppedItem("iPhoneNote1",3191,856,rNotdon);
-	addDroppedItem("iPhoneNote2",2361,772,rNotdon);
-	addDroppedItem("iPhoneNote3",1808,676,rNotdon);
+	addDroppedItem(3191,856,rNotdon,"iPhoneNote1");
+	addDroppedItem(2361,772,rNotdon,"iPhoneNote2");
+	addDroppedItem(1808,676,rNotdon,"iPhoneNote3");
 	
 	with controller
 	{
@@ -93,8 +91,8 @@ function scr_pro_3(){
 
 function scr_pro_4(){	
 	global.notdonEra=notdonEras.present;
-	global.startX=3296;
-	global.startY=1408;
+	global.startX=3236;
+	global.startY=1311;
 	global.plyX=global.startX;
 	global.plyY=global.startY;
 	if instance_exists(ply)
@@ -110,7 +108,9 @@ function scr_pro_4(){
 	
 	//destroy all old objects
 	destroyArray([oMissile],false);
-	destroyArray([oVShip,oVBarrier,oExplosion,npc]);
+	destroyArray([oVShip,oVBarrier,oExplosion,npc,oReactorBeam,oReactorBeamBG]);
+	
+	createCutsceneDelay({key:"pro_reactorRespawn",condition:"alive",myRoom: "rNotdon"},"cutsceneCondition");
 	
 	with controller
 	{

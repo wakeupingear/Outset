@@ -6,11 +6,11 @@ if instance_exists(oSoulBranch) with oSoulBranch
 	image_yscale=endYS;
 }
 //x-=10000;
-setAdjacentSoul();
+with oSoulPlatformSpawn setAdjacentSoul();
 //x+=10000;
 if instance_exists(oSoulBranch)
 {
-	if !active
+	//if !active
 	{
 		with oSoulBranch //if x<0 //checking x causes problems where not all platforms start retracted
 		{
@@ -24,14 +24,10 @@ if instance_exists(oSoulBranch)
 			}
 		}
 	}
-	else 
+	//else 
 	{
-		with oSoulBranch
-		{
-			while x<0 x+=10000;
-			active=true;
-		}
-		with oSoulBranch
+		if !global.alive startSoulPlatforms();
+		/*with oSoulBranch
 		{
 			if stop!=-1&&array_pos(global.soulButtons,stop)==-1
 			{
@@ -39,6 +35,6 @@ if instance_exists(oSoulBranch)
 				resetSoulChildrenBranches(children);
 			}
 		}
-		if instance_exists(oSoulBranchHit) with oSoulBranchHit if isHit updateColl();
+		if instance_exists(oSoulBranchHit) with oSoulBranchHit if isHit updateColl();*/
 	}
 }

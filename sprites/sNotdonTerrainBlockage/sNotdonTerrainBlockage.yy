@@ -1,4 +1,7 @@
 {
+  "ConfigValues": {
+    "Testing": {"textureGroupId":"{\"name\":\"texTerrain\",\"path\":\"texturegroups/texTerrain\"}",},
+  },
   "bboxMode": 0,
   "collisionKind": 0,
   "type": 0,
@@ -83,6 +86,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"87de6f6c-124c-4f84-9c4e-3cb63472c0d5","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "notdon",
     "path": "folders/Sprites/terrain/notdon.yy",

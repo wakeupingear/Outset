@@ -24,7 +24,7 @@ function commandProcess(command){
 			else while command[diag]!="#false"+_num diag++;
 			diag++;
 		}
-		else if string_pos("question",command[diag])==1
+		else if string_pos("question",command[diag])==2
 		{
 			questionNum=int64(string_digits(command[diag]));
 			question=true;
@@ -107,6 +107,31 @@ function commandProcess(command){
 						case "hurt":
 							if _obj.object_index==ply hurtPlayer(_val,0,0);
 							else _obj.myHealth-=_val;
+							break;
+						case "sound":
+							if is_struct(_val)
+							{
+								var _loop=false;
+								_val.sound=asset_get_index(_val.sound);
+								var _n=variable_struct_get_names(_val);
+								for (var i=0;i<array_length(_n);i++)
+								{
+									switch _n[i]
+									{
+										case "loop":
+											_loop=_val.loop;
+											break;
+										case "wait":
+											if is_real(_val.wait) alarm[0]=command[diag];
+											else alarm[0]=audio_sound_length(_val.sound);
+											wait=true;
+											break;
+										default: break;
+									}
+								}
+								playSound(_val.sound,false);
+							}
+							else playSound(_val,false);
 							break;
 						//camera
 						case "zoom":
@@ -462,6 +487,7 @@ function commandProcess(command){
 							break;
 						default:
 							variable_instance_set(_obj,_name,_val);
+							if _name=="key" with _obj event_perform(ev_alarm,0);
 							break;
 					}
 			}
@@ -628,6 +654,7 @@ function processTextVariables(text)
 function getObject(objName)
 {
 	if objName=="lastObj" return lastObj;
+	if objName=="trackObj" return trackObj;
 	var _a=asset_get_index(objName);
 	if _a==-1 
 	{

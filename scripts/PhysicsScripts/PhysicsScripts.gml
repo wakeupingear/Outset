@@ -90,7 +90,7 @@ function physics(){
 				else while groundCollision(x,y) x-=xscale;
 				continue;
 			}
-			while groundCollision(x,y) y-=sign(vsp)*0.5;
+			while groundCollision(x,y) y-=sign(vsp);
 			if groundCollision(x,y+1) //land
 			{
 				jumpAdd=0;

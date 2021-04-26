@@ -1,7 +1,7 @@
-draw_self()
-show_debug_message(string_copy(sentence,1,textInd))
+//draw_self()
+//show_debug_message(string_copy(sentence,1,textInd))
 
-/*x=camX()+(1-image_alpha)*64*(!global.hudSide-global.hudSide);
+x=camX()+(1-image_alpha)*64*(!global.hudSide-global.hudSide);
 y=camY()+132*(!top);
 
 leftShift=0;
@@ -25,4 +25,4 @@ if !boxHidden
 		draw_sprite_ext(portRight[i],portInd,x+384-(16+textX+rightShift*i),y+textY+16,1,1,0,-1,image_alpha)
 		rightShift+=(32+padding);
 	}
-}*/
+}

@@ -1,4 +1,7 @@
 {
+  "ConfigValues": {
+    "Testing": {"textureGroupId":"{\"name\":\"Default\",\"path\":\"texturegroups/Default\"}",},
+  },
   "spriteId": {
     "name": "sTilNotdon",
     "path": "sprites/sTilNotdon/sTilNotdon.yy",
