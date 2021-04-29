@@ -38,6 +38,9 @@ function killPlayer(saveText){
 			if _pId!=-1 instance_create_depth(ply.x,ply.y,ply.depth,oPlayerSoul);
 			//roomChange(global.plyX,global.plyY,global.nextRoom,1,0,0,1);
 		}
-		if _pId!=-1 instance_destroy(_pId);
+		if _pId!=-1 
+		{
+			destroyArray([_pId,oGrapple,oGrapplePoint]);
+		}
 	}
 }

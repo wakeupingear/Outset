@@ -1,5 +1,5 @@
 /// @description Draw and reset interactText
-if global.interactText==-1&&interactTextAlpha>0
+if (global.interactText==-1||global.menuOpen)&&interactTextAlpha>0
 {
 	interactTextAlpha-=0.1;
 	drawInteract();
@@ -12,7 +12,7 @@ else if global.interactText>-1
 }
 global.interactText=-1;
 
-if global.inWater
+if global.inWater&&!global.menuOpen
 {
 	if breathAlpha<1 breathAlpha+=0.1;
 }

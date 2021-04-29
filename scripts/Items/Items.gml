@@ -45,12 +45,12 @@ function removeItem(item){
 	}
 }
 
-function addDroppedItem(xPos,yPos,roomID,item){
-	ds_list_add(global.droppedItems,item,xPos,yPos,roomID);
+function addDroppedItem(xPos,yPos,roomID,itemName){
+	ds_list_add(global.droppedItems,itemName,xPos,yPos,roomID);
 	if roomID==room
 	{
 		var _i=instance_create_depth(xPos,yPos,layer_get_depth(layer_get_id("people"))-1,oDroppedItem);
-		_i.item=item;
+		_i.item=itemName;
 	}
 }
 
@@ -61,6 +61,46 @@ function createDroppedItems(){
 		var _i=instance_create_depth(global.droppedItems[|i+1],global.droppedItems[|i+2],layer_get_depth(layer_get_id("people"))-1,oDroppedItem);
 		_i.item=global.droppedItems[|i];
 	}
+}
+
+function removeDroppedItem(xPos,yPos,roomID,itemName){
+	for (var i=0;i<ds_list_size(global.droppedItems);i+=4) if global.droppedItems[|i]==xPos&&global.droppedItems[|i+1]==yPos&&global.droppedItems[|i+2]==roomID&&global.droppedItems[|i+3]==itemName
+	{
+		repeat 4 ds_list_delete(global.droppedItems,i);
+		if room==roomID&&instance_exists(oDroppedItem)
+		{
+			for (var k=0;k<instance_number(oDroppedItem);k++)
+			{
+				with instance_find(oDroppedItem,k) if x==xPos&&y==yPos&&item==itemName
+				{
+					instance_destroy();
+					break;
+				}
+			}
+		}
+		return true;
+	}
+	return false;
+}
+
+function removeDroppedItemName(itemName){
+	for (var i=0;i<ds_list_size(global.droppedItems);i+=4) if global.droppedItems[|i+3]==itemName
+	{
+		repeat 4 ds_list_delete(global.droppedItems,i);
+		if room==roomID&&instance_exists(oDroppedItem)
+		{
+			for (var k=0;k<instance_number(oDroppedItem);k++)
+			{
+				with instance_find(oDroppedItem,k) if item==itemName
+				{
+					instance_destroy();
+					break;
+				}
+			}
+		}
+		return true;
+	}
+	return false;
 }
 
 function hasItem(item){

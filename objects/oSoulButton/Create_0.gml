@@ -2,10 +2,10 @@ event_inherited();
 isHit=true;
 hit=instance_create_depth(x,y,depth,grappleHit);
 hit.sprite_index=sprite_index;
-hit.visible=false;
 updateColl=function(){
 	hit.image_xscale=image_xscale;
-	hit.image_yscale=image_yscale;
+	hit.image_yscale=image_yscale;if image_xscale==0||image_yscale==0 hit.x=-1000;
+	else hit.x=x;
 	if instance_exists(oGrapple)&&oGrapple.followObj==id resetGrapple();
 }
 

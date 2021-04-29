@@ -106,6 +106,21 @@ function scr_pro_4(){
 	global.timeOfDay=times.night;
 	setRoomLighting(room_get_name(room));
 	
+	//swap items
+	var _items=["iPhoneNote1","iPhoneNote3","iPhoneNote2"];
+	for (var i=0;i<array_length(_items);i++)
+	{
+		if hasItem(_items[i])
+		{
+			removeItem(_items[i]);
+			//add to chest
+		}
+		else
+		{
+			removeDroppedItemName(_items[i]);
+		}
+	}
+	
 	//destroy all old objects
 	destroyArray([oMissile],false);
 	destroyArray([oVShip,oVBarrier,oExplosion,npc,oReactorBeam,oReactorBeamBG]);

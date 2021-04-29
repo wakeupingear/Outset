@@ -17,7 +17,8 @@ else if !global.transitioning&&!global.menuOpen&&jump>0&&state<moveState.falling
 else jump=0;
 
 //item usage
-if !global.menuOpen&&!global.transitioning&&ds_list_size(global.inventory)>0
+if buttonPressed(control.item)&&state>moveState.running global.inputs[control.item]=0; //-1
+else if !global.menuOpen&&!global.transitioning&&ds_list_size(global.inventory)>0
 {
 	if buttonPressed(control.swapLeft)
 	{
@@ -82,7 +83,7 @@ with oGrapple if active step();
 if state==moveState.ladder ladderPhysics();
 else 
 {
-	if oGrapple.state<2||oGrapple.grappleMode==grappleState.arc physics();
+	if !instance_exists(oGrapple)||(oGrapple.state<2||oGrapple.grappleMode==grappleState.arc) physics();
 	else grapplePhysics();
 	if (buttonPressed(control.up)||buttonPressed(control.down))&&place_meeting(x,y,oLadder)
 	{
