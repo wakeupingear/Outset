@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"74bed56b-eb20-4fdb-9a94-708f4f291bed","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "notdon",
-    "path": "folders/Sprites/terrain/notdon.yy",
+    "name": "terrain",
+    "path": "folders/Sprites/notdon/terrain.yy",
   },
   "resourceVersion": "1.0",
   "name": "sNotdonTerrainHang",

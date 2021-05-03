@@ -60,25 +60,26 @@ var _width=min(386,room_width);
 var _height=min(218,room_height);
 var _posX=max(floor(camX()),0);
 var _posY=max(floor(camY()),0);
+var _col=[color_get_red(image_blend)/255,color_get_green(image_blend)/255,color_get_blue(image_blend)/255];
 switch (roomType)
 {
 	case worldRegion.notdon:
 		shader_set(shd_outlineTerrain);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_pixel"),texture_get_texel_width(surface_get_texture(surf)),texture_get_texel_height(surface_get_texture(surf)));
-		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[worldRegion.notdon].outlineCol[0],colorData[worldRegion.notdon].outlineCol[1],colorData[worldRegion.notdon].outlineCol[2]);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[worldRegion.notdon].outlineCol[0]*_col[0],colorData[worldRegion.notdon].outlineCol[1]*_col[1],colorData[worldRegion.notdon].outlineCol[2]*_col[2]);
 		break;
 	case worldRegion.vr:
 		shader_set(shd_outlineTerrainTop);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_pixel"),texture_get_texel_width(surface_get_texture(surf)),texture_get_texel_height(surface_get_texture(surf)));
-		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[worldRegion.notdon].outlineCol[0],colorData[worldRegion.notdon].outlineCol[1],colorData[worldRegion.notdon].outlineCol[2]);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[worldRegion.notdon].outlineCol[0]*_col[0],colorData[worldRegion.notdon].outlineCol[1]*_col[1],colorData[worldRegion.notdon].outlineCol[2]*_col[2]);
 		break;
 	default: break;
 }
 
-draw_surface_part(surf,
+draw_surface_part_ext(surf,
 _posX,_posY,
 _width,_height,
-_posX,_posY
+_posX,_posY,1,1,image_blend,image_alpha
 );
 
 if shader_current()!=-1 shader_reset();

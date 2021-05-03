@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5cc8172c-2b53-49bf-bf3e-8da62fa7c96f","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "notdon",
-    "path": "folders/Sprites/terrain/notdon.yy",
+    "name": "terrain",
+    "path": "folders/Sprites/notdon/terrain.yy",
   },
   "resourceVersion": "1.0",
   "name": "sNotdonTerrainCurve1",

@@ -1,4 +1,4 @@
-if !instance_exists(oWaterController) instance_create_depth(0,0,layer_get_depth(layer_get_id("water"))-1,oWaterController);
+if !instance_exists(oWaterController) instance_create_depth(0,0,layer_get_depth(layer_get_id("water"))+1,oWaterController);
 
 inRange=false;
 touch=false;

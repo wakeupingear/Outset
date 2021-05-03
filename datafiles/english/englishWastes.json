@@ -1,0 +1,15 @@
+{
+    "wastes_hotel_rocketPickup":[
+        "$if1","hasItem",["iRocketBook"],
+        "#false1",
+            "Stacks of laminated instructions sit on the workbench.",
+            "'THE ROCKET EQUATION'\nor\n'GRAVITY IS A HARSH MISTRESS'",
+            "$question","Take one?",
+            "#yes1",
+                "$addItem",["iRocketBook"],
+            "#no1",
+                "end",
+        "#true1",
+            "More identical copies of that rocket thing."
+    ]
+}

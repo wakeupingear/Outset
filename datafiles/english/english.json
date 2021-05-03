@@ -90,7 +90,8 @@
                     }]
                 }]
         ],
-        "iWrench":["Wrench","Some kind of WRENCH...","Acquired{30} SOME KIND OF WRENCH!",""]
+        "iWrench":["Wrench","Some kind of WRENCH...","Acquired{30} SOME KIND OF WRENCH!",""],
+        "iRocketBook":["Rocket Instructions","A laminated infographic about basic rocketry.","Acquired ROCKET INSTRUCTIONS!",""]
     },
     "guiSide":["Left","Right"],
     "pauseLabels": {

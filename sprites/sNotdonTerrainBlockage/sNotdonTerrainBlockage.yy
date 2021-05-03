@@ -88,8 +88,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "notdon",
-    "path": "folders/Sprites/terrain/notdon.yy",
+    "name": "terrain",
+    "path": "folders/Sprites/notdon/terrain.yy",
   },
   "resourceVersion": "1.0",
   "name": "sNotdonTerrainBlockage",

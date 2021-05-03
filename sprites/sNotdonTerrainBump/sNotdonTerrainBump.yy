@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"30e04357-0c7f-47d4-81f6-3a5618083e0e","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "notdon",
-    "path": "folders/Sprites/terrain/notdon.yy",
+    "name": "terrain",
+    "path": "folders/Sprites/notdon/terrain.yy",
   },
   "resourceVersion": "1.0",
   "name": "sNotdonTerrainBump",

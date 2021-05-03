@@ -20,7 +20,6 @@ function drawBlur(surface,alpha,xPos,yPos,topLeft,botRight,drawFunc){
 	shader_set_uniform_f(shader_get_uniform(shd_cutout,"left"),topLeft[0]*alpha+xPos);
 	shader_set_uniform_f(shader_get_uniform(shd_cutout,"right"),botRight[0]*alpha+xPos);
 	draw_surface(surface,camX(),camY());
+	drawEffectObj(global.blurObj);
 	shader_reset();
-	
-	for (var i=0;i<instance_number(oBlurObj);i++) with instance_find(oBlurObj,i) draw();
 }

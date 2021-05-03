@@ -41,6 +41,7 @@ function killPlayer(saveText){
 		if _pId!=-1 
 		{
 			destroyArray([_pId,oGrapple,oGrapplePoint]);
+			instance_create_depth(x,y,depth-1,oGrapple);
 		}
 	}
 }

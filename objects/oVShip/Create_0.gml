@@ -11,29 +11,29 @@ maxChange=8;
 guns=[1,1];
 fireSide=1; //starts on right because the timing is nice for the prologue - doesn't really matter
 
-hoverPos=new Vector2(x,y);
-leftBar= new Vector2(1375,416);
-rightBar= new Vector2(1375,416);
+hoverPos=new Vec2(x,y);
+leftBar= new Vec2(1375,416);
+rightBar= new Vec2(1375,416);
 if global.roomTime>1
 {
 	if global.notdonEra==notdonEras.pro1 
 	{
-		hoverPos=new Vector2(1295,120);
-		leftBar= new Vector2(1375,416);
-		rightBar= new Vector2(1375,416);
+		hoverPos=new Vec2(1295,120);
+		leftBar= new Vec2(1375,416);
+		rightBar= new Vec2(1375,416);
 		guns=[3,3];
 	}
 	else if global.notdonEra==notdonEras.pro2 
 	{
-		hoverPos=new Vector2(2167,340);
-		leftBar= new Vector2(2004,595);
-		rightBar= new Vector2(2004,595);
+		hoverPos=new Vec2(2167,340);
+		leftBar= new Vec2(2004,595);
+		rightBar= new Vec2(2004,595);
 	}
 	else if global.notdonEra==notdonEras.pro3
 	{
-		hoverPos=new Vector2(2167,340);
-		leftBar= new Vector2(1908,464);
-		rightBar= new Vector2(2720,784);
+		hoverPos=new Vec2(2167,340);
+		leftBar= new Vec2(1908,464);
+		rightBar= new Vec2(2720,784);
 		guns=[1,1];
 	}
 }

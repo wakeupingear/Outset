@@ -108,7 +108,7 @@ function scrVariables(){
 	addLocation("harold","rTest1","t1",34,132,1,1,"");
 	addLocation("harold","rNotdon","pro_electro",2183,719,1,1,""); //running the power demo
 	#endregion
-	
+	 
 	#region Citra
 	global.characters.citra={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("citra","rNotdon","pro_lb1",1288,404,-1,1,"");
@@ -249,6 +249,7 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iPhoneNote2",{index: 2, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote3",{index: 2, viewable: true});
 	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) ds_map_add(global.itemData,"iWrench"+string(i),{index: 3, viewable: true});
+	ds_map_add(global.itemData,"iRocketBook",{index: 3, viewable: true});
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -266,7 +267,7 @@ function scrVariables(){
 		var _name=room_get_name(i);
 		var _ln=string_lower(_name);
 		var _reg=worldRegion.notdon;
-		if string_pos("wastes",_ln)>0||string_pos("titan",_ln)>0 _reg=worldRegion.west;
+		if string_pos("wastes",_ln)>0||string_pos("titan",_ln)>0 show_message(_name) //_reg=worldRegion.west;
 		else if string_pos("air",_ln)>0 _reg=worldRegion.sky;
 		else if string_pos("breadnought",_ln)>0 _reg=worldRegion.breadnought;
 		else if string_pos("deep",_ln)>0 _reg=worldRegion.deeptown;
@@ -294,6 +295,7 @@ function scrVariables(){
 		addSoulCamera("rNotdon",3444,1148,5000,1336,"x",1294); //pier
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	global.rooms.rNotdonArchives.inside=true;
+	global.rooms.rNotdonWell.inside=true;
 	
 	}
 	
@@ -338,6 +340,9 @@ function scrVariables(){
 	
 	global.maxDamage=127;
 	global.inWater=false;
+	
+	global.blurObj=ds_list_create();
+	global.reflectObj=ds_list_create();
 	
 	global.controllerInputs=[
 	[gp_padu,leftStickUp], //up
@@ -384,11 +389,7 @@ function scrVariables(){
 	{
 		global.devTeleport=true;
 		global.devSkips=true;
-		global.startX=208;
-		global.plyX=global.startX;
-		global.startY=144;
-		global.plyY=global.startY;
-		global.startRoom=rNotdon;
+		global.startRoom=rWastesRocketStand;
 		ds_list_add(global.playerItems,"iGrapple",1,"iGrappleSwing",1,"iGrappleDown",1,"iGrappleArc",1);
 	}
 	else if isTest

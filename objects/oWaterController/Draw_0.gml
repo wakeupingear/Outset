@@ -14,3 +14,12 @@ shader_set_uniform_f(shader_get_uniform(shd_water,"u_time"),time);
 shader_set_uniform_f(shader_get_uniform(shd_water,"u_yoff"),(camY() mod 384)/384);
 draw_surface(surf,camX(),camY());
 shader_reset();
+
+if instance_exists(ply)&&ply.breathAlpha>0
+{
+	oTerrain.image_blend=merge_color(c_white,c_blue,sqrt(ply.breathAlpha)*0.3);
+	shader_set(shd_invisDraw);
+	shader_set_uniform_f(shader_get_uniform(shd_invisDraw,"u_color"),58/255,61/255,146/255,ply.breathAlpha*0.5);
+	draw_surface(surf,camX(),camY());
+	shader_reset();
+}

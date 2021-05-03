@@ -1,6 +1,10 @@
 var _rName=room_get_name(room);
 global.roomTime=0;
 
+//reset effect objects
+ds_list_empty(global.blurObj);
+ds_list_empty(global.reflectObj);
+
 //change music
 if instance_exists(oMusicChange) instance_destroy(oMusicChange);
 instance_create_depth(x,y,0,oMusicChange);
