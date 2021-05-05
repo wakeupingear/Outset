@@ -233,6 +233,7 @@
     {"id":{"name":"setRoomEra","path":"scripts/setRoomEra/setRoomEra.yy",},"order":39,},
     {"id":{"name":"oVShock","path":"objects/oVShock/oVShock.yy",},"order":2,},
     {"id":{"name":"Oscillate","path":"scripts/Oscillate/Oscillate.yy",},"order":45,},
+    {"id":{"name":"sRocketBookPopup","path":"sprites/sRocketBookPopup/sRocketBookPopup.yy",},"order":0,},
     {"id":{"name":"sVShip","path":"sprites/sVShip/sVShip.yy",},"order":0,},
     {"id":{"name":"npcHarold","path":"objects/npcHarold/npcHarold.yy",},"order":0,},
     {"id":{"name":"sPlaceholderPixelG","path":"sprites/sPlaceholderPixelG/sPlaceholderPixelG.yy",},"order":5,},
@@ -484,6 +485,8 @@
     {"folderPath":"folders/Objects/wastes/aesthetic.yy","order":1,"resourceVersion":"1.0","name":"aesthetic","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/wastes/events.yy","order":2,"resourceVersion":"1.0","name":"events","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/wastes/interactions.yy","order":3,"resourceVersion":"1.0","name":"interactions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/wastes.yy","order":14,"resourceVersion":"1.0","name":"wastes","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/wastes/interactions.yy","order":1,"resourceVersion":"1.0","name":"interactions","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

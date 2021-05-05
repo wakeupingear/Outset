@@ -3,8 +3,8 @@ image_blend=merge_color(c_white,c_black,darken);
 
 if topLeft==-1
 {
-	topLeft[0]=lengthdir_x(point_distance(x,y,0,0),point_direction(x,y,0,0));
-	topLeft[1]=lengthdir_y(point_distance(x,y,0,0),point_direction(x,y,0,0));
+	topLeft[0]=lengthdir_x(point_distance(x,y,-1,-1),point_direction(x,y,-1,-1));
+	topLeft[1]=lengthdir_y(point_distance(x,y,-1,-1),point_direction(x,y,-1,-1));
 	botRight=-1;
 	botRight[0]=lengthdir_x(point_distance(x,y,384,216),point_direction(x,y,384,216));
 	botRight[1]=lengthdir_y(point_distance(x,y,384,216),point_direction(x,y,384,216));

@@ -7,7 +7,6 @@ function setNPCRoom(npcName,roomName,key){
 	global.characterLocations[? npcName][4]=key;
 	var _obj=asset_get_index("npc"+string_upper(string_char_at(npcName,1))+string_copy(npcName,2,string_length(npcName)-1));
 	var _rm=room_get_name(room);
-	//if npcName=="smitten" show_message(_lastKey)
 	if instance_exists(_obj)&&variable_struct_exists(_struct,"pathFrom")&&variable_struct_exists(_struct.pathFrom,_rm)&&variable_struct_exists(_struct.pathFrom[$ _rm],_lastKey)
 	{
 		pathfindingStart(_obj,_struct.pathFrom[$ _rm][$ _lastKey].path);

@@ -91,7 +91,15 @@
                 }]
         ],
         "iWrench":["Wrench","Some kind of WRENCH...","Acquired{30} SOME KIND OF WRENCH!",""],
-        "iRocketBook":["Rocket Instructions","A laminated infographic about basic rocketry.","Acquired ROCKET INSTRUCTIONS!",""]
+        "iRocketBook":["Rocket Instructions","A laminated infographic about basic rocketry.","Acquired ROCKET INSTRUCTIONS!","next",[
+            "$popup",{"sprite":"sRocketBookPopup","text":[
+                {"text": "THE ROCKET EQUATION","xPos":3,"yPos":3},
+                {"text": "1: Load Propellent","xPos":2,"yPos":32},
+                {"text": "2: Start Igniter","xPos":116,"yPos":32},
+                {"text": "3: IMMEDIATELY Start Turbopump","xPos":2,"yPos":136},
+                {"text": "4: Liftoff!","xPos":207,"yPos":32}
+            ]
+            }]]
     },
     "guiSide":["Left","Right"],
     "pauseLabels": {

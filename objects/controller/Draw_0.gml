@@ -19,6 +19,8 @@ if global.lightAlpha>0
 	draw_surface_ext(global.lightSurf,camX(),camY(),1,1,0,-1,1);
 }
 
+if global.notPause&&global.menuOpen
+
 if !global.notPause//&&global.alive
 {
 	if pauseMenuCopied==-1

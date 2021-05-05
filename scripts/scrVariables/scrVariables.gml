@@ -249,7 +249,7 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iPhoneNote2",{index: 2, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote3",{index: 2, viewable: true});
 	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) ds_map_add(global.itemData,"iWrench"+string(i),{index: 3, viewable: true});
-	ds_map_add(global.itemData,"iRocketBook",{index: 3, viewable: true});
+	ds_map_add(global.itemData,"iRocketBook",{index: 5, viewable: true});
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -267,7 +267,7 @@ function scrVariables(){
 		var _name=room_get_name(i);
 		var _ln=string_lower(_name);
 		var _reg=worldRegion.notdon;
-		if string_pos("wastes",_ln)>0||string_pos("titan",_ln)>0 show_message(_name) //_reg=worldRegion.west;
+		if string_pos("wastes",_ln)>0||string_pos("titan",_ln)>0 _reg=worldRegion.west;
 		else if string_pos("air",_ln)>0 _reg=worldRegion.sky;
 		else if string_pos("breadnought",_ln)>0 _reg=worldRegion.breadnought;
 		else if string_pos("deep",_ln)>0 _reg=worldRegion.deeptown;
@@ -406,7 +406,7 @@ function scrVariables(){
 	
 	//npc sprite mask data
 	global.physCollPoints=ds_map_create();
-	ds_map_add(global.physCollPoints,"sPly",[[-3,2,-3,2,-3,2],[8,8,4,4,-1,-1]]);
+	ds_map_add(global.physCollPoints,"sPly",[[-3,2,-3,2,-3,2,-3,2],[8,8,4,4,-1,-1,6,6]]);
 	ds_map_add(global.physCollPoints,"sTestPersonBig",[[-8,7,-1],[11,11,-8]]);
 	ds_map_add(global.physCollPoints,"sTestPersonHarold",[[-8,7,-1],[11,11,-8]]);
 	ds_map_add(global.physCollPoints,"sGrapple",[[-3,3,-3,3],[-3,3,-3,3]]);

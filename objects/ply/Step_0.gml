@@ -42,6 +42,7 @@ else if !global.menuOpen&&!global.transitioning&&ds_list_size(global.inventory)>
 				default:
 					switch (string_letters(global.inventory[|global.itemSlot]))
 					{
+						case "iRocketBook":
 						case "iPhoneNote":
 							if state>moveState.running 
 							{

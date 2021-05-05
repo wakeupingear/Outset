@@ -10,6 +10,7 @@ try
 	_importTextData("");
 	_importTextData("Flavortext");
 	_importTextData("Prologue");
+	_importTextData("Wastes");
 	scrSetText();
 }
 catch(_exception) 

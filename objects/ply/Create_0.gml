@@ -28,7 +28,7 @@ setItemFill=function(){
 						itemFillMax=-1;
 						break;
 					default:
-						itemFillMax=30;
+						itemFillMax=15;
 						break;
 				}
 				break;
