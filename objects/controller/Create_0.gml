@@ -272,7 +272,6 @@ persistentEventsSet=function(key){
 	}
 }
 
-
 if !isDev 
 {
 	load(global.lastFile);

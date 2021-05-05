@@ -10,6 +10,7 @@ function scrVariables(){
 	global.sfxVol=0.8;
 	global.guiScale=clamp(round(3*display_get_height()/1080),3,6)/3;
 	global.hudSide=0;
+	global.hudAlpha=0.8;
 	global.accessibility=ds_list_create();
 	ds_list_add(global.accessibility,"shake","interactPrompt");
 	

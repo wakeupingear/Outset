@@ -26,6 +26,7 @@ boxHidden=false; //used for things like popups
 portInd=0;
 lastName="";
 nameAlpha=1;
+barAlpha=0;
 
 question=false;
 questionNum=0;
