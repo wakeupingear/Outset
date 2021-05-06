@@ -51,6 +51,9 @@ else if !global.menuOpen&&!global.transitioning&&ds_list_size(global.inventory)>
 							}
 							conversation(global.itemText[$ global.inventory[|global.itemSlot]][4]);
 							break;
+						case "iSolitaire":
+							
+							break;
 						default: break;
 					}
 					break;

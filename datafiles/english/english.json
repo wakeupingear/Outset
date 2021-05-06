@@ -99,7 +99,12 @@
                 {"text": "3: IMMEDIATELY Start Turbopump","xPos":2,"yPos":136},
                 {"text": "4: Liftoff!","xPos":207,"yPos":32}
             ]
-            }]]
+            }]],
+        "iSolitaire":[
+            "$question1","Play a relaxing game of Solitaire?",
+            "#yes1",
+            "#no1"
+        ]
     },
     "guiSide":["Left","Right"],
     "pauseLabels": {

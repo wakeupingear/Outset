@@ -251,6 +251,7 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iPhoneNote3",{index: 2, viewable: true});
 	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) ds_map_add(global.itemData,"iWrench"+string(i),{index: 3, viewable: true});
 	ds_map_add(global.itemData,"iRocketBook",{index: 5, viewable: true});
+	ds_map_add(global.itemData,"iSolitaire",{index: 6, viewable: true});
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -292,6 +293,7 @@ function scrVariables(){
 	global.rooms.rNotdon.npcs=[npcCharlie,npcEugene,npcCitra,npcHarold,npcNora,npcSmitten,npcChet,npcMatt];
 		addRoomCamera("rNotdon",1562,0,1778,546,1620,468); //bounce pad
 		addRoomCamera("rNotdon",2216,698,2562,2000,2374,798,"notdonEraLater"); //the nook
+		addRoomCamera("rNotdon",1786,556,1920,768,1760,"y","notdonEraLaunchExists"); //mission control
 		addSoulCamera("rNotdon",928-172,398-148,1052,398+108,914,398); //cliffside
 		addSoulCamera("rNotdon",3444,1148,5000,1336,"x",1294); //pier
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];

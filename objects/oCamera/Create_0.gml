@@ -87,7 +87,8 @@ cameraCondition=function(cond){
 	if cond==-1 return true;
 	switch (cond)
 	{
-		case "notdonEraLater": return (global.notdonEra>=notdonEras.present);
+		case "notdonEraPresent": return (global.notdonEra>=notdonEras.present);
+		case "notdonEraLaunchExists": return (global.notdonEra>=notdonEras.pro1);
 		default: return false;
 	}
 }
