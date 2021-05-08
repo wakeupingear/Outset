@@ -99,11 +99,15 @@
                 {"text": "3: IMMEDIATELY Start Turbopump","xPos":2,"yPos":136},
                 {"text": "4: Liftoff!","xPos":207,"yPos":32}
             ]
-            }]],
-        "iSolitaire":[
+        }]],
+        "iSolitaire":["Deck of Cards","Perfect for a quick game.","Acquired a DECK OF CARDS!","next",[
             "$question1","Play a relaxing game of Solitaire?",
             "#yes1",
+                "$popup",{"sprite":"sSolitaireTable","mouse":[192,108],"objs":[{
+                    "obj":"oSolitaireControl"
+                }]},
             "#no1"
+            ]
         ]
     },
     "guiSide":["Left","Right"],

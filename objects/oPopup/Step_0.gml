@@ -18,6 +18,25 @@
 		else mode=-1;
 		
 		if below!=-1 createPopupCursor(below);
-		else if mode==-1&&instance_exists(oCursor) instance_destroy(oCursor)
+		else if mode==-1&&instance_exists(oCursor) instance_destroy(oCursor);
+		
+		if mode<0
+		{
+			switch sprite_index
+			{
+				case sSolitaireTable:
+					if instance_exists(oSolitaireControl) instance_destroy(oSolitaireControl);
+					if instance_exists(oCard) with oCard
+					{
+						var _dir=point_direction(x,y,camX()+192,camY()+108)+180+irandom_range(-30,30);
+						target_x=x+lengthdir_x(204,_dir);
+						target_y=y+lengthdir_y(130,_dir);
+						moving=true;
+						alarm[0]=20;
+					}
+					break;
+				default: break;
+			}
+		}
 	}
 }

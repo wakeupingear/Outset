@@ -13,7 +13,7 @@ function ladderPhysics(){
 			else x-=move;
 		}
 	}
-	var _ymove=buttonHold(control.down)-buttonHold(control.up);
+	var _ymove=(buttonHold(control.down)-buttonHold(control.up))*(!global.menuOpen);
 	y=round(y+_ymove*2);
 	if groundCollision(x,y) 
 	{

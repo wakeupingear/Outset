@@ -42,6 +42,7 @@ else if !global.menuOpen&&!global.transitioning&&ds_list_size(global.inventory)>
 				default:
 					switch (string_letters(global.inventory[|global.itemSlot]))
 					{
+						case "iSolitaire":
 						case "iRocketBook":
 						case "iPhoneNote":
 							if state>moveState.running 
@@ -50,9 +51,6 @@ else if !global.menuOpen&&!global.transitioning&&ds_list_size(global.inventory)>
 								break;
 							}
 							conversation(global.itemText[$ global.inventory[|global.itemSlot]][4]);
-							break;
-						case "iSolitaire":
-							
 							break;
 						default: break;
 					}

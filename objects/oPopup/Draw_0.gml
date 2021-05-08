@@ -32,6 +32,8 @@ if objs!=-1
 		objList=ds_list_create();
 		for (var i=0;i<array_length(objs);i++)
 		{
+			if !variable_struct_exists(objs[i],"xPos") objs[i].xPos=0;
+			if !variable_struct_exists(objs[i],"yPos") objs[i].yPos=0;
 			var _o=instance_create_depth(0,0,depth,asset_get_index(objs[i].obj));
 			_o.parentObj=id;
 			ds_list_add(objList,_o);
@@ -39,6 +41,12 @@ if objs!=-1
 	}
 	for (var i=0;i<ds_list_size(objList);i++)
 	{
+		if !instance_exists(objList[|i])
+		{
+			ds_list_delete(objList,i);
+			i--;
+			continue;
+		}
 		objList[|i].x=xx-sprite_get_xoffset(sprite_index)+objs[i].xPos;
 		objList[|i].y=yy-sprite_get_yoffset(sprite_index)+objs[i].yPos;
 		objList[|i].image_alpha=image_alpha;

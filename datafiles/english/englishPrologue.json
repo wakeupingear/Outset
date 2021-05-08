@@ -394,7 +394,7 @@
 
     "pro_switchSmittenLocation":["$smitten.setRoom",["rNotdon","pro_launchWindow"]],
 
-    "pro_haroldPoster":["$popup",{"sprite":"sHaroldRecruitPopup","interactable":[260,108],"text":[{
+    "pro_haroldPoster":["$popup",{"sprite":"sHaroldRecruitPopup","mouse":[260,108],"text":[{
             "text":"DRAFTED!",
             "xPos":16,
             "yPos":39
@@ -424,7 +424,7 @@
                 "$addData","wrBoard",
                 "$cutsceneCondition",{"key":"pro_haroldWrench","myRoom": "rNotdon","condition":"plyRight&&hasItem","args":[[2330],["iWrench"]]},
             "#true2",
-            "$popup",{"sprite":"sArchivesWrenchesPopup","interactable":[260,108],"objs":[{
+            "$popup",{"sprite":"sArchivesWrenchesPopup","mouse":[260,108],"objs":[{
                 "obj":"oArchivesWrenchesSelect",
                 "xPos":150,
                 "yPos":90

@@ -6,7 +6,7 @@ y=108-(sprite_height/2-sprite_get_yoffset(sprite_index));
 surf=-1;
 exiting=false;
 
-interactable=-1;
+mouse=-1;
 original=(instance_number(oPopup)==1);
 animMode=0; //0: move up; 1: move in from right
 mode=1;
