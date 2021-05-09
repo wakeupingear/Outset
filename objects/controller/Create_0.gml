@@ -20,6 +20,7 @@ if isHtml
 	height = base_height;
 }
 if !isDev&&!isTest randomize();
+randomize();
 
 #macro c_nearBlack make_color_rgb(25,25,25)
 #macro c_nearWhite make_color_rgb(230,230,230)

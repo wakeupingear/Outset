@@ -29,8 +29,8 @@
 					if instance_exists(oCard) with oCard
 					{
 						var _dir=point_direction(x,y,camX()+192,camY()+108)+180+irandom_range(-30,30);
-						target_x=x+lengthdir_x(204,_dir);
-						target_y=y+lengthdir_y(130,_dir);
+						target_x=x+lengthdir_x(244,_dir);
+						target_y=y+lengthdir_y(140,_dir);
 						moving=true;
 						alarm[0]=20;
 					}

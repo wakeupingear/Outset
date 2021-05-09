@@ -10,7 +10,7 @@ if topLeft==-1
 	botRight[1]=lengthdir_y(point_distance(x,y,384,216),point_direction(x,y,384,216));
 }
 
-if original drawBlur(surf,max(image_alpha,instance_number(oPopup)-1),192,108,topLeft,botRight,-1);
+if original surf=drawBlur(surf,max(image_alpha,instance_number(oPopup)-1),192,108,topLeft,botRight,-1);
 
 if animMode==0
 {

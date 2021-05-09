@@ -22,4 +22,5 @@ function drawBlur(surface,alpha,xPos,yPos,topLeft,botRight,drawFunc){
 	draw_surface(surface,camX(),camY());
 	drawEffectObj(global.blurObj);
 	shader_reset();
+	return surface; //stops memory leak
 }

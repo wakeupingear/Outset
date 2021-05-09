@@ -22,12 +22,6 @@ enum cards {
 }
 global.cardNames=["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
 
-deckDown=ds_list_create();
-deckUp=ds_list_create();
-
-stacks=array_create(7,ds_list_create());
-piles=array_create(4,ds_list_create());
-
 order=ds_list_create(); //random card order
 shuffle=function(){ //shuffle the order
 	for (var i = 0; i <52; i++) order[| i] = i;
@@ -39,57 +33,65 @@ createCard=function(_x,_y,inDeck){ //create a card object
 	var _number=order[|instance_number(oCard)];
 	var _suit=_number div 13;
 	var _card=_number mod 13;
-	var _nc=instance_create_depth(camX(),camY(),depth-1-instance_number(oCard),oCard);
-	_nc.moving=!inDeck;
-	_nc.image_index=_card;
+	var _nc=instance_create_depth(camX()-32,camY()-40,depth-1-instance_number(oCard),oCard);
+	if _suit==suits.clubs||_suit==suits.spades _nc.textCol=c_black;
+	_nc.card=_card;
 	_nc.suit=_suit;
 	_nc.target_x=_x+camX();
 	_nc.target_y=_y+camY();
 	_nc.inDeck=inDeck;
-	
-	/*if !inDeck with _nc
-	{
-		while place_meeting(target_x,target_y+52,oCard)  target_y+=8;
-		if target_y!=_y
-		{
-			var _p=instance_place(target_x,target_y-8,oCard);
-			_p.child=id;
-			parent=_p;
-		}
-	}*/
 	
 	return _nc;
 }
 
 newGame=function(){
 	shuffle();
-	for (var i=0;i<array_length(stacks);i++) 
+	
+	if instance_exists(oCardCell) instance_destroy(oCardCell);
+	if instance_exists(oCardFoundation) instance_destroy(oCardFoundation);
+	if instance_exists(oCardDraw) instance_destroy(oCardDraw);
+	
+	for (var i=0;i<7;i++) 
 	{
+		var _startX=56+i*44;
+		var _startY=88;
+		var _cell=instance_create_depth(camX()+_startX,camY()+_startY,depth,oCardCell);
+		var _lastCard=-1;
 		for (var k=0;k<=i;k++) 
 		{
-			var _c=createCard(100+i*40,20+k*16,false);
-			if k==i _c.image_xscale=1;
-			if k>0
+			var _c=createCard(_startX,_startY+2+k*8,false);
+			if k==i//||true
 			{
-				parent=stacks[i][|k-1];
-				parent.child=id;
+				_c.image_xscale=1;
 			}
-			ds_list_add(stacks[i],_c);
+			if _lastCard!=-1
+			{
+				_c.parent=_lastCard;
+				_lastCard.child=_c;
+			}
+			else 
+			{
+				_c.parent=_cell;
+				_cell.child=_c;
+			}
+			_lastCard=_c;
 		}
 	}
 	
-	var _lastCard=-1;
+	var _d=instance_create_depth(camX()+56,camY()+40,depth,oCardDraw);
 	while instance_number(oCard)<52
 	{
-		var _c=createCard(20,30,true);
-		_lastCard.child=_c;
-		_c.parent=_lastCard;
-		_lastCard=_c;
+		var _c=createCard(56,40,true);
+		ds_queue_enqueue(_d.cardQueue,_c);
+		ds_list_add(_d.cardList,_c);
 	}
+	
+	for (var i=0;i<4;i++) instance_create_depth(camX()+188+i*44,camY()+40,depth,oCardFoundation);
 }
 
 newGame();
 
 draw=function(){
-	//if instance_exists(oCard) with oCard draw();
+	if instance_exists(oCardFoundation) with oCardFoundation draw();
+	if instance_exists(oCardCell) with oCardCell draw();
 }

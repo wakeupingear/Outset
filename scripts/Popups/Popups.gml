@@ -20,7 +20,7 @@ function createPopup(struct){
 function createPopupCursor(obj){
 	if obj.mouse!=-1
 	{
-		if !instance_exists(oCursor) instance_create_depth(camX()+obj.mouse[0],camY()+obj.mouse[1],obj.depth-20,oCursor);
+		if !instance_exists(oCursor) instance_create_depth(camX()+obj.mouse[0],camY()+obj.mouse[1],obj.depth-200,oCursor);
 	}
 	else if instance_exists(oCursor) instance_destroy(oCursor)
 }
