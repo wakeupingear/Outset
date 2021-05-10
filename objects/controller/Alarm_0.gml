@@ -7,10 +7,10 @@ try
 		global.langScript=addToStruct(global.langScript,loadStringJson(global.lang+"/"+global.lang+name));
 	}
 	
-	_importTextData("");
-	_importTextData("Flavortext");
+	_importTextData("Hud");
 	_importTextData("Prologue");
 	_importTextData("Wastes");
+	_importTextData("English");
 	scrSetText();
 }
 catch(_exception) 

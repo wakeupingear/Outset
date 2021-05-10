@@ -21,6 +21,8 @@ enum cards {
 	king
 }
 global.cardNames=["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+image_xscale=384;
+image_yscale=216;
 
 order=ds_list_create(); //random card order
 shuffle=function(){ //shuffle the order

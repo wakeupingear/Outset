@@ -12,16 +12,17 @@ if buttonPressed(control.confirm)&&ds_list_size(cardList)>0&&place_meeting(x,y,o
 			_c.moving=true;
 			_c.child=-1;
 			_c.parent=-1;
+			topCard=-1;
 		}
 	}
 	else if place_meeting(x,y,oCard)
 	{
 		var _lastObj=-1;
-		show_debug_message(min(3,ds_queue_size(cardQueue)))
-		for (var i=0;i<min(3,ds_queue_size(cardQueue));i++)
+		var _rep=min(1,ds_queue_size(cardQueue));
+		for (var i=0;i<_rep;i++)
 		{
 			var _c=ds_queue_dequeue(cardQueue);
-			show_debug_message(_c)
+			_c.child=-1;
 			_c.target_x=x+36+i*12;
 			_c.alarm[2]=1;
 			_c.moving=true;

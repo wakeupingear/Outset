@@ -67,7 +67,7 @@ else if mode>0
 		{
 			if parent!=-1 parent.child=id;
 		}
-		else
+		else if _cardPlace.object_index!=oCardFoundation||child==-1
 		{
 			if parent!=-1
 			{
@@ -87,6 +87,10 @@ else if mode>0
 			target_y=parent.y;
 			isFound=place_meeting(target_x,target_y,oCardFoundation);
 			if !isFound target_y+=2+6*(parent.object_index==oCard);
+			else //check win condition
+			{
+				if card==cards.king with oSolitaireControl event_user(0);
+			}
 			_yOff=8;
 			startDepth=parent.depth-1;
 			for (var i=child;i!=-1;i=i.child) 

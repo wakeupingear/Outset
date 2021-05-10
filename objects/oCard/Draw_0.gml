@@ -1,2 +1,2 @@
-if sign(image_xscale)==1 draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha); //0 => card
+if sign(image_xscale)==1 draw_sprite_ext(sprite_index,2+suit,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha); //0 => card
 else draw_sprite_ext(sprite_index,13,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);

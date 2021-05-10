@@ -104,12 +104,17 @@
             "$question1","Play a relaxing game of Solitaire?",
             "#yes1",
                 "$popup",{"sprite":"sSolitaireTable","mouse":[192,108],"objs":[{
-                    "obj":"oSolitaireControl"
+                    "obj":"oSolitaireControl",
+                    "yPos":60
                 }]},
             "#no1"
             ]
         ]
     },
+    "solitaire_win":[
+        "You feel a sense of pride and accomplishment"
+    ],
+
     "guiSide":["Left","Right"],
     "pauseLabels": {
         "musVol": "Music Volume",
