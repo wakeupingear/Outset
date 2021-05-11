@@ -25,10 +25,16 @@ for (var i=0;i<global.numOfInputs;i++)
 		}
 	}
 	
-	if !_isPressed global.inputs[i]=0;
+	if !_isPressed 
+	{
+		if global.inputs[i]>0 global.doubleInput[i]=global.doubleInputTime[i];
+		else if global.doubleInput[i]>0 global.doubleInput[i]--;
+		global.inputs[i]=0;
+	}
 	else
 	{
 		if global.inputs[i]!=-1 global.inputs[i]++;
+		if global.inputs[i]>1 global.doubleInput[i]=0;
 	}
 }
 

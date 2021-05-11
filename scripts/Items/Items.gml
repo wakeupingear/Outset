@@ -38,7 +38,7 @@ function removeItem(item){
 	if _in>-1 
 	{
 		repeat 2 ds_list_delete(global.inventory,_in);
-		if global.itemSlot>ds_list_size(global.inventory)
+		if global.itemSlot>=ds_list_size(global.inventory)
 		{
 			global.itemSlot=max(global.itemSlot-2,0);
 		}

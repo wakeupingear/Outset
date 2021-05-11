@@ -1,9 +1,9 @@
 /// @description Move + animation
 if moving
 {
-	x+=(target_x-x)/10;
-	y+=(target_y-y)/10;
-	if abs(x-target_x)<3&&abs(y-target_y)<3
+	x+=(target_x-x)/6;
+	y+=(target_y-y)/6;
+	if abs(x-target_x)<2&&abs(y-target_y)<2
 	{
 		x=target_x;
 		y=target_y;
@@ -116,7 +116,46 @@ else if mode==0
 {
 	if inDeck||child==-1||global.inputs[control.confirm]>1 mask_index=sCard;
 	else mask_index=sCardHit;
-	if buttonPressed(control.confirm)&&sign(image_xscale==1)&&place_meeting(x,y,oMouse)
+	if buttonDoublePressed(control.confirm)&&child==-1&&place_meeting(x,y,oMouse)
+	{
+		var _c=-1;
+		if card==cards.ace
+		{
+			with oCardFoundation if !place_meeting(x,y,oCard)  _c=id;
+		}
+		else for (var i=0;i<instance_number(oCard);i++)
+		{
+			var _i=instance_find(oCard,i);
+			if _i==id||!_i.isFound continue;
+			if _i.suit==suit&&_i.card=card-1
+			{
+				_c=_i;
+				break;
+			}
+		}
+		
+		if _c!=-1
+		{
+			isFound=true;
+			moving=true;
+			target_x=_c.x;
+			target_y=_c.y;
+			if parent!=-1
+			{
+				parent.child=-1;
+				if sign(parent.image_xscale)==-1 parent.alarm[2]=1;
+			}
+			if inDeck
+			{
+				ds_queue_dequeue(oCardDraw.cardQueue);
+				ds_list_delete(oCardDraw.cardList,ds_list_find_index(oCardDraw.cardList,id));
+				if parent!=-1 oCardDraw.topCard=parent;
+				else oCardDraw.topCard=-1;
+			}
+			parent=_c;
+		}
+	}
+	else if buttonPressed(control.confirm)&&sign(image_xscale==1)&&place_meeting(x,y,oMouse)
 	{
 		if !inDeck&&!isFound
 		{

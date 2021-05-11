@@ -1,6 +1,7 @@
 ///@description Step function goes here
 image_alpha=0;
 
+move=0; //unused - compatability with physics objs
 state=0;
 xDir=0;
 yDir=0;

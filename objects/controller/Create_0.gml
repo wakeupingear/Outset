@@ -19,8 +19,13 @@ if isHtml
 	width = base_width;
 	height = base_height;
 }
-if !isDev&&!isTest randomize();
-randomize();
+if (!isDev&&!isTest)//||true
+{
+	randomize();
+	window_set_cursor(cr_none);
+}
+//gml_pragma("PNGCrush");
+
 
 #macro c_nearBlack make_color_rgb(25,25,25)
 #macro c_nearWhite make_color_rgb(230,230,230)

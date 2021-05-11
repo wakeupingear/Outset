@@ -12,7 +12,6 @@ else if mode<0 //fade out
 	{
 		if mode==-1&&instance_exists(oTextbox) 
 		{
-			global.menuOpen=false;
 			oTextbox.mode=0;
 			oTextbox.boxHidden=false;
 		}

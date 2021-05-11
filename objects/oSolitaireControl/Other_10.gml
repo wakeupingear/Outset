@@ -5,17 +5,15 @@ var _allStacked=true;
 for (var i=0;i<ds_list_size(_cl);i++)
 {
 	var _i=_cl[|i];
-	if !_cl.moving&&place_meeting(x,y,_i)
+	if !_i.moving&&place_meeting(x,y,_i)
 	{
 		_allStacked=false;
 		break;
 	}
 }
-show_message(_allStacked)
-if _allStacked
+if _allStacked||true
 {
 	conversation("solitaire_win");
-	oPopup.mode=-2;
-	instance_destroy();
+	oPopup.exiting=true;
 }
 ds_list_destroy(_cl);

@@ -10,7 +10,7 @@ try
 	_importTextData("Hud");
 	_importTextData("Prologue");
 	_importTextData("Wastes");
-	_importTextData("English");
+	_importTextData("Notdon");
 	scrSetText();
 }
 catch(_exception) 

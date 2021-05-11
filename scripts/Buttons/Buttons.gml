@@ -22,3 +22,7 @@ function anyButtonPressed(){
 function buttonFreeze(input){
 	global.inputs[input]=-1;
 }
+
+function buttonDoublePressed(input){
+	return buttonPressed(input)&&global.doubleInput[input]>0;
+}

@@ -384,6 +384,14 @@ function scrVariables(){
 	global.numOfInputs=array_length(global.keyboardInputs);
 	global.inputs=array_create(global.numOfInputs); //filled in inputForPlayer1
 	global.lastInputs=array_create(global.numOfInputs); //filled in inputForPlayer1
+	global.doubleInput=array_create(global.numOfInputs);
+	global.doubleInputTime=array_create(global.numOfInputs);
+	for (var i=0;i<global.numOfInputs;i++) switch i
+	{
+		default:
+			global.doubleInputTime[i]=20;
+			break;
+	}
 	
 	//dev exceptions
 	global.devSkips=false;

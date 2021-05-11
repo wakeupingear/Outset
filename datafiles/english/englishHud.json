@@ -107,12 +107,13 @@
                     "obj":"oSolitaireControl",
                     "yPos":60
                 }]},
+                "$goto","no1",
             "#no1"
             ]
         ]
     },
     "solitaire_win":[
-        "You feel a sense of pride and accomplishment"
+        "You feel a sense of pride and accomplishment."
     ],
 
     "guiSide":["Left","Right"],
