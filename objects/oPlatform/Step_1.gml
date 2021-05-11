@@ -24,12 +24,22 @@ if global.alive
 		x+=moveDir*xSpd;
 		y+=moveDir*ySpd;
 	
-		platformMovePlayer();
-	
-		if (moveDir==1&&x==max(xstart,xTarget)&&y==max(ystart,yTarget))||(moveDir==-1&&x==min(xstart,xTarget)&&y==min(ystart,yTarget))
+		if (moveDir==1&&x>=max(xstart,xTarget)&&y>=max(ystart,yTarget))||(moveDir==-1&&x<=min(xstart,xTarget)&&y<=min(ystart,yTarget))
 		{
+			if moveDir==1
+			{
+				x=max(xstart,xTarget);
+				y=max(ystart,yTarget);
+			}
+			else 
+			{
+				x=min(xstart,xTarget);
+				y=min(ystart,yTarget);
+			}
 			moveDir*=-1;
 			moving=false;
 		}
+		
+		platformMovePlayer();
 	}
 }

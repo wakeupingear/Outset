@@ -1,11 +1,11 @@
-image_speed=3;
+image_speed=2;
 spr=sConveyor;
 sprW=sprite_get_width(spr);
 sprH=sprite_get_height(spr);
 
 objs=ds_list_create();
 
-function moveObjects(xDir,yDir) {
+moveObjects=function(xDir,yDir) {
 	ds_list_clear(objs);
 	instance_place_list(x+xDir,y+yDir,oPhysicsObj,objs,false);
 	if instance_exists(oGrapple)&&oGrapple.state>0&&place_meeting(x,y,oGrapple)

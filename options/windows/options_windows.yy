@@ -1,7 +1,7 @@
 {
   "ConfigValues": {
     "Dev": {"option_windows_enable_steam":"false","option_windows_description_info":"","option_windows_copyright_info":"Will Farhat 2021","option_windows_product_info":"Outset","option_windows_company_info":"Will Farhat","option_windows_vsync":"true","option_windows_allow_fullscreen_switching":"true","option_windows_resize_window":"false","option_windows_display_name":"Outset","option_windows_icon":"icons/icon.ico",},
-    "Testing": {"option_windows_sleep_margin":"5","option_windows_use_x64":"true",},
+    "Testing": {"option_windows_sleep_margin":"5","option_windows_use_x64":"true","option_windows_enable_steam":"false",},
   },
   "option_windows_display_name": "Outset",
   "option_windows_executable_name": "${project_name}.exe",

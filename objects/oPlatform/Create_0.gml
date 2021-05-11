@@ -4,9 +4,9 @@ plyRelX=0;
 plyRelY=0;
 
 xSpd=0;
-xSpd=0;
+ySpd=0;
 
-touch=false;
+touch=true;
 touchIsTrigger=true;
 moving=false;
 moveDir=1

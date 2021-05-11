@@ -58,7 +58,7 @@ function scr_pro_3(){
 	destroyArray([oMissile],false);
 	destroyArray([oVShip,oVBarrier,oExplosion,npc,oTextbox]);
 	
-	//createCutsceneDelay({key:"pro_reactorSetV",delay:100,args:[],myRoom: "rNotdon"},"cutsceneDelay");
+	createCutsceneDelay({key:"pro_reactorSetV",delay:100,args:[],myRoom: "rNotdon"},"cutsceneDelay");
 	
 	//createCutsceneDelay({key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"],myRoom: "rNotdon"},"cutsceneCondition");
 	

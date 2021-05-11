@@ -410,8 +410,9 @@ function scrVariables(){
 		global.devTeleport=true;
 		global.devSkips=true;
 		ds_list_add(global.playerItems,"iGrapple",1);
+		//global.notdonEra=notdonEras.present;
 		scr_pro_3();
-		//global.startRoom=rVR1;
+		//global.startRoom=rNotdon;
 	}
 	
 	
