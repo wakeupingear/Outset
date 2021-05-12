@@ -129,6 +129,8 @@ function physics(){
 		lastState=state;
 		if currentAnimation=="" animating=true;
 	}
+	
+	if groundCollision(x,y) show_debug_message(delta_time)
 }
 
 function push(xDir,yDir){

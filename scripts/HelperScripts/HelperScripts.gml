@@ -30,6 +30,10 @@ function destroyArray(arr,flag){
 	}
 }
 
+function isObj(_id,obj){
+	return _id.object_index==obj||object_is_ancestor(_id.object_index,obj);
+}
+
 //string
 function explodeString(del,str)
 {
@@ -44,6 +48,18 @@ function explodeString(del,str)
         ind++;
     }
     return arr;
+}
+function listString(list)
+{
+	var _str="{";
+	for (var i=0;i<ds_list_size(list);i++)
+	{
+		if i>0 _str+=", ";
+		var _val=list[|i];
+		if is_string(_val) _str+=_val;
+		else if is_real(_val) _str+=string(_val);
+	}
+	return _str+"}";
 }
 
 //controller

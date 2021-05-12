@@ -26,11 +26,12 @@
         "$cutscene","notdon_adultDoor1"
     ],
     "notdon_stuck":[
-        120,
+        "Hey!",
         "$camSet",[1422,584],
         30,
         "weirdchamp",
-        "$ply.impulse",[0,60],
+        "$oGravityField.pause",30,
+        "$ply.impulse",[0,1],
         "$camReset"
     ]
 }

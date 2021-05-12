@@ -1,6 +1,7 @@
 image_speed=0;
 
 objects=ds_list_create();
+pause=-1;
 
 xDir=0;
 yDir=0;

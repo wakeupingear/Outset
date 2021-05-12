@@ -1,5 +1,6 @@
 //Move objects
-if place_meeting(x,y,oPhysicsObj)
+if pause>-1 pause--;
+else if place_meeting(x,y,oPhysicsObj)
 {
 	if xDir==0 xDir="hsp"
 	if yDir==0 yDir="vsp"

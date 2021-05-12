@@ -2,6 +2,7 @@ spd=2;
 spr=sConveyor;
 sprW=sprite_get_width(spr);
 sprH=sprite_get_height(spr);
+playerMoved=false;
 
 objs=ds_list_create();
 
@@ -18,19 +19,37 @@ moveObjects=function(_xDir,_yDir) {
 	for (var i=0;i<ds_list_size(objs);i++)
 	{
 		var _i=objs[|i];
+		if sign(_yDir)==-1&&isObj(_i,ply) //stop adjacent conveyors from moving the player multiple times
+		{
+			if playerMoved continue;
+			with oConveyor playerMoved=true;
+		}
 		with _i
 		{
 			x+=_yDir;
 			y+=_xDir;
 			if object_index==oGrapple&&place_meeting(x,y,oConveyor)
 			{
+				var _c=instance_place(x,y,oConveyor);
+				while place_meeting(x,y,_c)
+				{
+					x-=sign(_yDir);
+					y-=sign(_xDir);
+				}
+				xDir=0;
+				yDir=0;
+				with _c
+				{
+					if place_meeting(x-1,y,oGrapple) oGrapple.xDir=1;
+					else if place_meeting(x+1,y,oGrapple) oGrapple.xDir=-1;
+					else if place_meeting(x,y-1,oGrapple) oGrapple.yDir=1;
+					else oGrapple.yDir=-1;
+				}
 				while place_meeting(x,y-2000,oConveyor) 
 				{
-					x-=_xDir*2;
-					y-=_yDir*2;
+					x+=xDir;
+					y+=yDir;
 				}
-				xDir=_yDir;
-				yDir=-_xDir;
 				ply.hsp=0;
 				ply.vsp=0;
 			}
