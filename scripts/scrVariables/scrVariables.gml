@@ -60,6 +60,7 @@ function scrVariables(){
 	ds_map_add(global.characterLocations,"charlie",[0,0,rNotdon,8,"pro_lb1"]);
 	ds_map_add(global.characterLocations,"matt",[0,0,-1,9,""]);
 	ds_map_add(global.characterLocations,"chet",[0,0,-1,10,""]);
+	ds_map_add(global.characterLocations,"alex",[0,0,rNotdonAmphitheater,10,"c1_treadmill"]);
 
 	ds_map_add(global.characterLocations,"babishOrange",[477,926,rCoreIntro,3,"pro_core"]);
 	ds_map_add(global.characterLocations,"craigKrisper",[444,926,rCoreIntro,3,"pro_core"]);
@@ -207,6 +208,11 @@ function scrVariables(){
 	global.characters.chet={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("chet","rNotdon","pro_search1",2137,628,1,1,""); //starting search
 	#endregion
+	
+	#region Alex
+	global.characters.alex={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
+	addLocation("alex","rNotdonAmphitheater","c1_treadmill",196,256,1,1,"c1_treadmill"); //treadmill
+	#endregion 
 	
 	#region Babish Orange
 	global.characters.babishOrange={portrait:[empty],diagColor: c_nearWhite, font: fontSizes.myko};
@@ -410,9 +416,9 @@ function scrVariables(){
 		global.devTeleport=true;
 		global.devSkips=true;
 		ds_list_add(global.playerItems,"iGrapple",1);
-		//global.notdonEra=notdonEras.present;
-		scr_pro_3();
-		//global.startRoom=rNotdon;
+		global.notdonEra=notdonEras.present;
+		//scr_pro_3();
+		global.startRoom=rNotdon;
 	}
 	
 	

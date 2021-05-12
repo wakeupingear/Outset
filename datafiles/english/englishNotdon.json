@@ -24,5 +24,13 @@
         "Eh, no one's watching...?",
         "$addData","notAdDoor",
         "$cutscene","notdon_adultDoor1"
+    ],
+    "notdon_stuck":[
+        120,
+        "$camSet",[1422,584],
+        30,
+        "weirdchamp",
+        "$ply.impulse",[0,60],
+        "$camReset"
     ]
 }

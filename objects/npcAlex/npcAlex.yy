@@ -23,17 +23,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":10,"eventType":7,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "test",
-    "path": "folders/Objects/npcs/test.yy",
+    "name": "notdon",
+    "path": "folders/Objects/npcs/notdon.yy",
   },
   "resourceVersion": "1.0",
-  "name": "npcTest",
+  "name": "npcAlex",
   "tags": [],
   "resourceType": "GMObject",
 }

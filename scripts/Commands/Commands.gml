@@ -539,7 +539,9 @@ function pathfindCommandProcess(command){
 				jumpCheck=true;
 			case "xy":
 				pfX=command[pfInd+1];
+				if is_string(pfX)&&string_pos("x+",pfX)>0 pfX=x+int64(string_digits(pfX));
 				pfY=command[pfInd+2];
+				if is_string(pfY)&&string_pos("x+",pfY)>0 pfY=y+int64(string_digits(pfY));
 				pfRad=command[pfInd+3];
 				pfInd+=4;
 				reachedTarget=false;

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "s2frame",
-    "path": "sprites/s2frame/s2frame.yy",
+    "name": "s4frame",
+    "path": "sprites/s4frame/s4frame.yy",
   },
   "solid": false,
   "visible": true,
