@@ -40,11 +40,12 @@ moveObjects=function(_xDir,_yDir) {
 				yDir=0;
 				with _c
 				{
-					if place_meeting(x-1,y,oGrapple) oGrapple.xDir=1;
-					else if place_meeting(x+1,y,oGrapple) oGrapple.xDir=-1;
-					else if place_meeting(x,y-1,oGrapple) oGrapple.yDir=1;
-					else oGrapple.yDir=-1;
+					if place_meeting(x,y-1,oGrapple) oGrapple.yDir=1;
+					else if place_meeting(x,y+1,oGrapple) oGrapple.yDir=-1;
+					else if place_meeting(x-1,y,oGrapple) oGrapple.xDir=1;
+					else oGrapple.xDir=-1;
 				}
+				show_message("X: "+string(xDir)+"; Y: "+string(yDir));
 				while place_meeting(x,y-2000,oConveyor) 
 				{
 					x+=xDir;
