@@ -415,7 +415,7 @@ function scrVariables(){
 		addData("respInt");
 		global.devTeleport=true;
 		global.devSkips=true;
-		ds_list_add(global.playerItems,"iGrapple",1);
+		ds_list_add(global.playerItems,"iGrapple",1,"iSolitaire",1);
 		global.notdonEra=notdonEras.present;
 		//scr_pro_3();
 		global.startRoom=rNotdon;
