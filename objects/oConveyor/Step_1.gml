@@ -11,9 +11,10 @@ for (var i=0;i<ds_list_size(objs);i++)
 		if !_touch _i.hsp+=image_speed;
 	}
 }
+moveObjects(0,1);
 moveObjects(-1,0);
 moveObjects(1,0);
-moveObjects(0,1);
 moveObjects(0,-1);
+if !canMoveGrapple&&instance_exists(oGrapple) with oGrapple if state<2||!place_meeting(x,y,oConveyor) with oConveyor canMoveGrapple=true;
 }
 else image_speed=0;
