@@ -61,6 +61,11 @@ function listString(list)
 	}
 	return _str+"}";
 }
+function string_set(str,newstr,pos){
+	string_delete(str,pos,1);
+	string_insert(newstr,str,pos);
+	return str;
+}
 
 //controller
 function gp_anykey(slot){

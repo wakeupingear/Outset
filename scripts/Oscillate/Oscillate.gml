@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function oscillateVars(period,vAmp) constructor{
 	pos=0;
 	step=2*pi/period;

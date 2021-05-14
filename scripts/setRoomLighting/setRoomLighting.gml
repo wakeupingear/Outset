@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function setRoomLighting(roomName){
 	if !variable_struct_exists(global.rooms,roomName) global.lightAlpha=0;
 	else if variable_struct_exists(global.rooms[$ roomName],"darkness") global.lightAlpha=global.rooms[$ roomName].darkness;

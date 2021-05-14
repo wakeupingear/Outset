@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function positionNpc(moveToLocation){ //0= don't, 1=do, 2=pathfind
 	if object_is_ancestor(object_index,enem) return true;
 	npcKey=getNpc(object_index);

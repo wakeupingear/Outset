@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function hurtPlayer(newDamage,newHsp,newVsp){
 	if ply.alarm[0]==-1&&!global.transitioning&&(!instance_exists(oTextbox)||oTextbox.image_alpha<1){
 	//damage numbers go here

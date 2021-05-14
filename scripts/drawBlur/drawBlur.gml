@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function drawBlur(surface,alpha,xPos,yPos,topLeft,botRight,drawFunc){
 	if !surface_exists(surface) surface=surface_create(384,216);
 	surface_set_target(surface);

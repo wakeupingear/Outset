@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function eventExists(object,objRoom,xStart,yStart,objLayer,args){
 	if !is_string(objRoom) objRoom=room_get_name(objRoom);
 	if !ds_map_exists(global.persistentEvents,objRoom)||global.persistentEvents[? objRoom]==[] return false;

@@ -1,5 +1,3 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function setTerrain(){
 	var _layerNames=layer_get_all();
 	var _layers=[];
@@ -28,19 +26,30 @@ function setTerrain(){
 			}
 		}
 		else var _t=instance_create_depth(0,0,_depth,oTerrain);
+		with _t event_user(0);
+		
 		for (var k=0;k<array_length(_layers);k++)
 		{
+			var _currentTerrain=_t;
 			var _assets=layer_get_all_elements(_layers[k]);
 			var _isEraTerrain=(string_pos("hit",string_lower(layer_get_name(_layers[k])))>0);
 			if array_length(_assets)>0
 			{
 				var _objType=hitobj;
 				if _isEraTerrain _objType=oTerrainHitobj;
+				var _name=layer_get_name(_layers[k]);
+				var _nameNum=string_digits(_name)
+				if _nameNum!=""
+				{
+					_currentTerrain=instance_create_depth(0,0,_depth-2+4*(string_pos("below",string_lower(_name))>0),oTerrain);
+					_currentTerrain.roomRegion=int64(_nameNum);
+					with _currentTerrain event_user(0);
+				}
 				for (var i=0;i<array_length(_assets);i++)
 				{
 					var _i=instance_create_depth(layer_sprite_get_x(_assets[i]),layer_sprite_get_y(_assets[i]),layer_get_depth(_layers[k]),_objType);
 					_i.sprite_index=layer_sprite_get_sprite(_assets[i]);
-					if array_pos(_t.terrainSprites,_i.sprite_index)==-1 array_push(_t.terrainSprites,_i.sprite_index);
+					if array_pos(_currentTerrain.terrainSprites,_i.sprite_index)==-1 array_push(_currentTerrain.terrainSprites,_i.sprite_index);
 					_i.image_index=layer_sprite_get_index(_assets[i]);
 					_i.image_blend=layer_sprite_get_blend(_assets[i]);
 					_i.image_xscale=layer_sprite_get_xscale(_assets[i]);
@@ -48,7 +57,7 @@ function setTerrain(){
 					_i.image_angle=layer_sprite_get_angle(_assets[i]);
 					_i.visible=false;
 					layer_sprite_alpha(_assets[i],0);
-					ds_list_add(_t.terrain,_i);
+					ds_list_add(_currentTerrain.terrain,_i);
 				}
 			}
 			if _isEraTerrain layer_set_visible(_layers[k],false);

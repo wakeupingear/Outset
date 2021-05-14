@@ -21,6 +21,7 @@ function save(_num){
 	ini_write_real("Progress","playtime",global.playtime);
 	ini_write_real("Progress","completedChapters",global.completedChapters);
 	ini_write_string("Progress","currentChapter",global.currentChapter);
+	ini_write_string("Progress","dungeonProgress",global.dungeonProgress);
 	ini_write_real("Progress","timeOfDay",global.timeOfDay);
 	ini_write_real("Progress","notdonEra",global.notdonEra);
 	ini_close();
@@ -59,6 +60,7 @@ function load(_num){
 	global.completedChapters=ini_read_real("Progress","completedChapters",0);
 	global.playtime=ini_read_real("Progress","playtime",0);
 	global.currentChapter=ini_read_string("Progress","currentChapter","P");
+	global.currentChapter=ini_read_string("Progress","dungeonProgress",global.currentChapter);
 	global.timeOfDay=ini_read_real("Progress","timeOfDay",times.day);
 	global.notdonEra=ini_read_real("Progress","notdonEra",notdonEras.myko);
 	

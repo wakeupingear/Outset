@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function scrVariables(){
 	//preferences
 	global.lang="english"; //language
@@ -42,6 +42,8 @@ function scrVariables(){
 	
 	global.playtime=0;
 	global.completedChapters=0;
+	global.dungeonProgress="";
+	for (var i=0;i<15;i++) global.dungeonProgress+="0";
 	global.currentChapter="P";
 	global.notdonEra=notdonEras.pro1;
 	global.timeOfDay=times.day;

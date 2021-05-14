@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function draw_sprite_repeated(_x,_y,sprite,index,xscale,yscale,angle,blend,alpha,xSep,ySep){
 	var _yStart=_y;
 	while _x<room_width

@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function setAdjacentSoul(){
 	//var _l=ds_list_create()
 	//show_message(instance_place_list(xstart-1,ystart,oSoulBranch,_l,false)+instance_place_list(xstart+1,ystart,oSoulBranch,_l,false)+instance_place_list(xstart,ystart-1,oSoulBranch,_l,false)+instance_place_list(xstart,ystart+1,oSoulBranch,_l,false))

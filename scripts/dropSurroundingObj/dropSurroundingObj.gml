@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function dropSurroundingObj(arr){
 	var _l=ds_list_create();
 	for (var i=0;i<array_length(arr);i+=2)

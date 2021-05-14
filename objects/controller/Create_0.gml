@@ -141,6 +141,19 @@ enum fontSizes {
 	notdon,
 	myko
 }
+
+enum dungeons {
+	vr,
+	water,
+	factory,
+	temple,
+	vents,
+	needle,
+	lab,
+	junkyard,
+	stronghold,
+	core
+}
 scrVariables();
 loadPrefs();
 setFont(fontSizes.medium);

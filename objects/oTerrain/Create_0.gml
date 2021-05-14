@@ -24,19 +24,4 @@ addColorData(worldRegion.west,"363636","4C4C4C");
 addColorData(worldRegion.core,"E2E2E2");
 addColorData(worldRegion.vr,"959595","555555");
 
-if room==rStartup instance_destroy();
-else
-{
-	terrainBlend=colorData[global.rooms[$ room_get_name(room)].region].baseColor;
-	switch (room)
-	{
-		default:
-			switch (global.rooms[$ room_get_name(room)].region)
-			{
-				default:
-					roomType=global.rooms[$ room_get_name(room)].region;
-					break;
-			}
-			break;
-	}
-}
+roomRegion=global.rooms[$ room_get_name(room)].region;

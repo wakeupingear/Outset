@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function createNPCs(){
 	var _rName=room_get_name(room);
 	//if !is_undefined(global.rooms[$ _rName])&&variable_struct_exists(global.rooms[$ _rName],"npcs")
