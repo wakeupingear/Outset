@@ -1,5 +1,4 @@
-xOff+=2;
-yOff+=2;
+xOff+=0.5/(1.1-image_xscale);
+yOff+=0.5/(1.1-image_xscale);
 event_user(0);
-
-if x>room_width||y>room_height instance_destroy();
+if x>camX()+384*2||y>camY()+216*2 instance_destroy();

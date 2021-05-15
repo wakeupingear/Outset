@@ -30,7 +30,7 @@ if (!isDev&&!isTest)//||true
 #macro c_nearBlack make_color_rgb(25,25,25)
 #macro c_nearWhite make_color_rgb(230,230,230)
 #macro c_darkBlue make_color_rgb(0,0,25)
-#macro c_soulBlue $2E3192
+#macro c_soulBlue make_color_rgb(58,61,146)
 //#macro c_coinColorPoint [4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782]
 #macro leftStickUp 300
 #macro leftStickDown 301
