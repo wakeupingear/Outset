@@ -1,5 +1,12 @@
 /// @description Set parents of child branches
 //setSoulParent();
+var _i=layer_get_id("water");
+if layer_exists(_i)
+{
+	var _d=layer_get_depth(_i)+1;
+	if instance_exists(oSoulBranch) with oSoulBranch if object_index==oSoulBranch depth=_d;
+}
+
 if instance_exists(oSoulBranch) with oSoulBranch
 {
 	image_xscale=endXS;

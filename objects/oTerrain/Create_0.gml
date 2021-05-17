@@ -24,4 +24,6 @@ addColorData(worldRegion.west,"363636","4C4C4C");
 addColorData(worldRegion.core,"E2E2E2");
 addColorData(worldRegion.vr,"959595","555555");
 
-roomRegion=global.rooms[$ room_get_name(room)].region;
+roomRegion=worldRegion.notdon;
+var _n=room_get_name(room);
+if variable_struct_exists(global.rooms,_n) roomRegion=global.rooms[$ room_get_name(room)].region;

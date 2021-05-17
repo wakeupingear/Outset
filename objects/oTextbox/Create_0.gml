@@ -14,6 +14,7 @@ rightShift=0; //right text offset
 
 wait=false; //whether the wait timer (alarm[0]) is active
 skip=false; //whether the text automatically skips
+saved=false;
 
 character="";
 characterFirstLetterUpper="";

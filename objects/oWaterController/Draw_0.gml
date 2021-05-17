@@ -23,3 +23,5 @@ if instance_exists(ply)&&ply.breathAlpha>0
 	draw_surface(surf,camX(),camY());
 	shader_reset();
 }
+
+with oWater if inRange draw_self();

@@ -72,3 +72,10 @@ if global.devTeleport
 	}
 	global.devTeleport=false;
 }
+
+if instance_exists(oPlayerCam) 
+{
+	oPlayerCam.x=ply.x;
+	oPlayerCam.y=ply.y;
+}
+with oCamera findCameraPosition(true);

@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Outset",
-    "path": "Outset.yyp",
+    "name": "terrain",
+    "path": "folders/Sprites/wastes/terrain.yy",
   },
   "resourceVersion": "1.0",
   "name": "_658bcff7_b7b6_45ce_810e_7a12b0f0f2ac",

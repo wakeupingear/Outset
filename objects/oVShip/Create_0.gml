@@ -45,7 +45,7 @@ else
 }
 moving=false;
 
-yVars=new oscillateVars(240,12)
+yVars=new oscillateVars(4,12)
 
 setPosTo= function(_x,_y){
 	setBGPosition(_x,_y);

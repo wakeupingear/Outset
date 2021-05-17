@@ -142,6 +142,11 @@ enum fontSizes {
 	myko
 }
 
+enum chapters {
+	prologue,
+	
+}
+
 enum dungeons {
 	vr,
 	water,

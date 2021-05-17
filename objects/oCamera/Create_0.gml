@@ -88,7 +88,37 @@ cameraCondition=function(cond){
 	switch (cond)
 	{
 		case "notdonEraPresent": return (global.notdonEra>=notdonEras.present);
+		case "notdonEraPastPro3": return (global.notdonEra>=notdonEras.pro3);
 		case "notdonEraLaunchExists": return (global.notdonEra>=notdonEras.pro1);
 		default: return false;
+	}
+}
+
+findCameraPosition=function(snap){
+	var _x=followObj.x;
+	if followObj.object_index==oPlayerCam&&instance_exists(ply) _x=ply.x;
+	else _x=followObj.x;
+	if global.alive for (var i=0;i<array_length(positions);i++)
+	{
+		if _x>positions[i][0]&&followObj.y>positions[i][1]&&_x<positions[i][2]&&followObj.y<positions[i][3]&&cameraCondition(positions[i][6])
+		{
+			setRoomCamera(positions[i]);
+			break;
+		}
+	}
+	else for (var i=0;i<array_length(soulPositions);i++)
+	{
+		if _x>soulPositions[i][0]&&followObj.y>soulPositions[i][1]&&_x<soulPositions[i][2]&&followObj.y<soulPositions[i][3]&&cameraCondition(positions[i][6])
+		{
+			setRoomCamera(soulPositions[i]);
+			break;
+		}
+	}
+	if snap
+	{
+		x=xTo;
+		y=yTo;
+		var _vm=matrix_build_lookat(x,y,-10,x,y,0,0,1,0);
+		camera_set_view_mat(global.cam,_vm);
 	}
 }

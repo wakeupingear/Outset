@@ -25,6 +25,8 @@ function save(_num){
 	ini_write_real("Progress","timeOfDay",global.timeOfDay);
 	ini_write_real("Progress","notdonEra",global.notdonEra);
 	ini_close();
+	
+	if !instance_exists(oSaveIcon)&&room!=rStartup&&room!=rTitle instance_create_depth(0,0,-10005,oSaveIcon); //5 above dialogue
 }
 
 function load(_num){
@@ -59,7 +61,7 @@ function load(_num){
 	
 	global.completedChapters=ini_read_real("Progress","completedChapters",0);
 	global.playtime=ini_read_real("Progress","playtime",0);
-	global.currentChapter=ini_read_string("Progress","currentChapter","P");
+	global.currentChapter=ini_read_real("Progress","currentChapter",chapters.prologue);
 	global.currentChapter=ini_read_string("Progress","dungeonProgress",global.currentChapter);
 	global.timeOfDay=ini_read_real("Progress","timeOfDay",times.day);
 	global.notdonEra=ini_read_real("Progress","notdonEra",notdonEras.myko);

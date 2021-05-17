@@ -2,25 +2,7 @@ if followMode==1
 {
 	if setFollowTo(false)
 	{
-		var _x=followObj.x;
-		if followObj.object_index==oPlayerCam&&instance_exists(ply) var _x=ply.x;
-		else var _x=followObj.x;
-		if global.alive for (var i=0;i<array_length(positions);i++)
-		{
-			if _x>positions[i][0]&&followObj.y>positions[i][1]&&_x<positions[i][2]&&followObj.y<positions[i][3]&&cameraCondition(positions[i][6])
-			{
-				setRoomCamera(positions[i]);
-				break;
-			}
-		}
-		else for (var i=0;i<array_length(soulPositions);i++)
-		{
-			if _x>soulPositions[i][0]&&followObj.y>soulPositions[i][1]&&_x<soulPositions[i][2]&&followObj.y<soulPositions[i][3]&&cameraCondition(positions[i][6])
-			{
-				setRoomCamera(soulPositions[i]);
-				break;
-			}
-		}
+		findCameraPosition(false);
 	}
 }
 

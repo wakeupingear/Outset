@@ -18,7 +18,7 @@ else jump=0;
 
 //item usage
 if buttonPressed(control.item)&&state>moveState.running global.inputs[control.item]=0; //-1
-else if !global.menuOpen&&!global.transitioning&&ds_list_size(global.inventory)>0
+else if !global.menuOpen&&!global.transitioning&&global.alive&&ds_list_size(global.inventory)>0
 {
 	if buttonPressed(control.swapLeft)
 	{
@@ -140,7 +140,6 @@ if global.inWater&&global.alive
 	if breath<=-1 killPlayer();
 }
 else breath=global.maxBreath;
-
 //test jump height - 44.69 (nice)
 //if y<jumpStart&&(jumpStart-y)>jumpMax jumpMax=(jumpStart-y);
 //show_debug_message(jumpMax)

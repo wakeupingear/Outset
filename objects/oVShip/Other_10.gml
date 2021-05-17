@@ -1,3 +1,7 @@
 event_inherited();
 
-if !moving yVars.pos=oscillate(yVars,"y",false,true);
+if !moving 
+{
+	yVars=oscillate(yVars,"y",false,true);
+	yOff-=yVars.change; //start moving up
+}

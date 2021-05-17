@@ -2,8 +2,9 @@
 
 function oscillateVars(period,vAmp) constructor{
 	pos=0;
-	step=2*pi/period;
+	step=2*pi/period/60;
 	amp=vAmp;
+	change=0;
 }
 
 function oscillate(vars,axis,reset,onlyAlive){
@@ -12,12 +13,12 @@ function oscillate(vars,axis,reset,onlyAlive){
 		if axis=="x" x-=round(sin(vars.pos)*vars.amp);
 		else if axis=="y" y-=round(sin(vars.pos)*vars.amp);
 	}
-	var _newPos=vars.pos;
-	if global.alive||!onlyAlive _newPos=(_newPos+vars.step) mod (2*pi);
+	if global.alive||!onlyAlive vars.pos=(vars.pos+vars.step) mod (2*pi);
 	if argument_count>1
 	{
-		if axis=="x" x+=round(sin(_newPos)*vars.amp);
-		else if axis=="y" y+=round(sin(_newPos)*vars.amp);
+		change=round(sin(vars.pos)*vars.amp);
+		if axis=="x" x+=change;
+		else if axis=="y" y+=change;
 	}
-	return _newPos;
+	return vars;
 }

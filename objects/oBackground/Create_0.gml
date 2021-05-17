@@ -1,6 +1,7 @@
 image_speed=0;
 
-tile=false;
+tileX=false;
+tileY=false;
 tileWidth=sprite_width;
 tileHeight=sprite_width;
 

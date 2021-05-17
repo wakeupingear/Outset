@@ -6,7 +6,7 @@ function scrVariables(){
 	global.langScript=-1; //empty to load the script into
 	if !isHtml&&steam_initialised() global.lang=steam_current_game_language(); //get the user's default language if possible
 	global.lastFile=0;
-	global.musicVol=0.5;
+	global.musicVol=0.5*(!isDev&&!isTest);
 	global.sfxVol=0.8;
 	global.guiScale=clamp(round(3*display_get_height()/1080),3,6)/3;
 	global.hudSide=0;
@@ -44,7 +44,7 @@ function scrVariables(){
 	global.completedChapters=0;
 	global.dungeonProgress="";
 	for (var i=0;i<15;i++) global.dungeonProgress+="0";
-	global.currentChapter="P";
+	global.currentChapter=chapters.prologue;
 	global.notdonEra=notdonEras.pro1;
 	global.timeOfDay=times.day;
 	
@@ -240,7 +240,7 @@ function scrVariables(){
 	}
 	global.characterNames=[];
 	global.music=-1;
-	global.regionMusic=[-1,-1,-1,-1,-1,-1,-1,-1];
+	global.regionMusic=[mus_notdon,-1,-1,-1,-1,-1,-1,-1];
 	global.itemData=ds_map_create();
 	ds_map_add(global.itemData,"iGrapple",{
 		index: 0,
@@ -268,6 +268,11 @@ function scrVariables(){
 	}
 	addSoulCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
 		if is_undefined(condition) condition=-1;
+		array_push(global.rooms[$ roomName].soulCamera,[left,top,right,bottom,xPos,yPos,condition]);
+	}
+	addBothCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
+		if is_undefined(condition) condition=-1;
+		array_push(global.rooms[$ roomName].camera,[left,top,right,bottom,xPos,yPos,condition]);
 		array_push(global.rooms[$ roomName].soulCamera,[left,top,right,bottom,xPos,yPos,condition]);
 	}
 	if file_exists("rooms.json") global.rooms=loadStringJson("rooms"); //precalculate the room data
@@ -300,14 +305,19 @@ function scrVariables(){
 		addRoomCamera("rCoreIntro",576-192,980-192,576+192,980+192,576,980); //center
 	global.rooms.rNotdon.npcs=[npcCharlie,npcEugene,npcCitra,npcHarold,npcNora,npcSmitten,npcChet,npcMatt];
 		addRoomCamera("rNotdon",1562,0,1778,546,1620,468); //bounce pad
-		addRoomCamera("rNotdon",2216,698,2562,2000,2374,798,"notdonEraLater"); //the nook
+		addRoomCamera("rNotdon",2216,698,2562,2000,2374,798,"notdonEraPastPro3"); //the nook
 		addRoomCamera("rNotdon",1786,556,1920,768,1760,"y","notdonEraLaunchExists"); //mission control
 		addSoulCamera("rNotdon",928-172,398-148,1052,398+108,914,398); //cliffside
 		addSoulCamera("rNotdon",3444,1148,5000,1336,"x",1294); //pier
+		addRoomCamera("rNotdon",1254,530,1782,660,"x",598); //launch level 1
+		addRoomCamera("rNotdon",1254,660,1782,842,"x",748); //launch level 2
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	global.rooms.rNotdonArchives.inside=true;
+	global.rooms.rNotdonAdults.inside=true;
+		addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	global.rooms.rNotdonWell.inside=true;
-	
+	global.rooms.rWastesNotdon.inside=true;
+		addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
 	}
 	
 	global.persistentEvents=ds_map_create(); //Format: object id, 4 indexes of data

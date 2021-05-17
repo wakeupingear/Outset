@@ -68,6 +68,7 @@ function commandProcess(command){
 			if _obj=="global"
 			{
 				variable_global_set(_name,_val);
+				saved=true;
 			}
 			/*else if asset_get_index(_obj)==-1
 			{
@@ -374,6 +375,7 @@ function commandProcess(command){
 						//room
 						case "setRoom":
 							setNPCRoom(getNpc(_obj),_val[0],_val[1]);
+							saved=true;
 							break;
 						case "roomChange":
 							roomChange(_val[0],_val[1],asset_get_index(_val[2]),_val[3],_val[4],_val[5],_val[6]);
@@ -381,6 +383,7 @@ function commandProcess(command){
 						//data
 						case "addItem":
 							addItem(_val);
+							saved=true;
 							break;
 						case "removeDroppedItem":
 							_val[3]=asset_get_index(_val[3]);
@@ -401,21 +404,25 @@ function commandProcess(command){
 									break;
 								}
 							}
+							saved=true;
 							break;
 						case "removeItem":
 							if is_array(_val) var _item=_val[0];
 							else var _item=_val;
 							diag+=2;
 							removeItem(_item);
+							saved=true;
 							break;
 						case "addData":
 							addData(_val);
+							saved=true;
 							break;
 						case "removeData":
 							if ds_list_find_index(global.data,_val)>-1 ds_list_delete(global.data,ds_list_find_index(global.data,_val));
 							else show_debug_message("Error: Trying to remove "+_val+" from global.data.");
 							diag+=2;
 							break;
+							saved=true;
 						case "script":
 							if is_array(_val)
 							{
@@ -433,6 +440,7 @@ function commandProcess(command){
 						case "cutsceneCondition":
 						case "cutsceneDelay":
 							createCutsceneDelay(_val,_name);
+							saved=true;
 							break;
 						case "cutsceneDelayCancel":
 							cancelCutsceneDelay(_val);
@@ -497,6 +505,7 @@ function commandProcess(command){
 			case "lie": //keep
 				global.lies++;
 				diag++;
+				saved=true;
 				break;
 			//npc
 			case "idleText": //keep

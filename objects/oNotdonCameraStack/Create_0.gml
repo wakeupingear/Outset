@@ -3,7 +3,7 @@ event_inherited();
 isHit=true;
 switch global.currentChapter
 {
-	case "P":
+	case chapters.prologue:
 		key="pro_camera";
 		break;
 	default: break;

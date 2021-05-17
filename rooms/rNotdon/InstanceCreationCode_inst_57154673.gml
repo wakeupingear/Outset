@@ -1,0 +1,1 @@
+if getDungeonProgress(dungeons.water)>1 instance_destroy();

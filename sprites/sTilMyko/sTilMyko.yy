@@ -8,9 +8,9 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 12,
-  "bbox_right": 23,
+  "bbox_right": 47,
   "bbox_top": 0,
-  "bbox_bottom": 23,
+  "bbox_bottom": 35,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"157330b5-178f-4e56-bd80-e23e1f0f1265","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "tiles",
     "path": "folders/Sprites/tiles.yy",

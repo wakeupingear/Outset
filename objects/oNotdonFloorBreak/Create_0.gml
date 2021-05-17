@@ -1,3 +1,3 @@
 event_inherited();
 
-image_index=!(getDungeonProgress(dungeons.water)>1);
+image_index=(getDungeonProgress(dungeons.water)>1);

@@ -93,6 +93,7 @@ function scr_pro_3(){
 
 function scr_pro_4(){	
 	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.prologue;
 	global.startX=3236;
 	global.startY=1311;
 	global.plyX=global.startX;

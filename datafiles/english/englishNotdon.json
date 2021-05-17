@@ -10,7 +10,7 @@
     "notdon_adultDoor1":[
         "$if1","hasData",["notAdDoor"],
         "#true1",
-            "$roomChange",[192,0,"rArchive",0,0,0,1],
+            "$roomChange",[656,375,"rNotdonAdults",0,0,0,-1],
             "end",
         "#false1",
             "The adult dorms. Clearly, adults only.",
