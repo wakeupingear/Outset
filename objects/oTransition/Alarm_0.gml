@@ -20,6 +20,7 @@ if instance_exists(ply)
 			setFollowTo(true);
 			x=xTo;
 			y=yTo;
+			findCameraPosition(true);
 		}
 	}
 }

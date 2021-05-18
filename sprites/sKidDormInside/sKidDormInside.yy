@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 9,
-  "bbox_right": 102,
-  "bbox_top": 16,
-  "bbox_bottom": 63,
+  "bbox_left": 15,
+  "bbox_right": 263,
+  "bbox_top": 46,
+  "bbox_bottom": 159,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 112,
-  "height": 64,
+  "width": 280,
+  "height": 160,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"7a6b84a8-d4f6-4260-823e-989143b54f67","path":"sprites/sKidDorm/sKidDorm.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7a6b84a8-d4f6-4260-823e-989143b54f67","path":"sprites/sKidDorm/sKidDorm.yy",},"LayerId":{"name":"888f0759-4a33-47a9-856f-9f74c62771c4","path":"sprites/sKidDorm/sKidDorm.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sKidDorm","path":"sprites/sKidDorm/sKidDorm.yy",},"resourceVersion":"1.0","name":"7a6b84a8-d4f6-4260-823e-989143b54f67","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"7a6b84a8-d4f6-4260-823e-989143b54f67","path":"sprites/sKidDormInside/sKidDormInside.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"7a6b84a8-d4f6-4260-823e-989143b54f67","path":"sprites/sKidDormInside/sKidDormInside.yy",},"LayerId":{"name":"888f0759-4a33-47a9-856f-9f74c62771c4","path":"sprites/sKidDormInside/sKidDormInside.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sKidDormInside","path":"sprites/sKidDormInside/sKidDormInside.yy",},"resourceVersion":"1.0","name":"7a6b84a8-d4f6-4260-823e-989143b54f67","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sKidDorm","path":"sprites/sKidDorm/sKidDorm.yy",},
+    "spriteId": {"name":"sKidDormInside","path":"sprites/sKidDormInside/sKidDormInside.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"ec9cf8eb-fdb6-40df-8030-84d167040539","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7a6b84a8-d4f6-4260-823e-989143b54f67","path":"sprites/sKidDorm/sKidDorm.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"6d4a32ef-3902-46de-a415-8e3d08958c06","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"7a6b84a8-d4f6-4260-823e-989143b54f67","path":"sprites/sKidDormInside/sKidDormInside.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sKidDorm","path":"sprites/sKidDorm/sKidDorm.yy",},
+    "parent": {"name":"sKidDormInside","path":"sprites/sKidDormInside/sKidDormInside.yy",},
     "resourceVersion": "1.3",
-    "name": "sKidDorm",
+    "name": "sKidDormInside",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/notdon/aesthetic.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sKidDorm",
+  "name": "sKidDormInside",
   "tags": [],
   "resourceType": "GMSprite",
 }

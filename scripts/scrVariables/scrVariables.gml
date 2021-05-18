@@ -313,6 +313,7 @@ function scrVariables(){
 		addRoomCamera("rNotdon",1254,660,1782,842,"x",748); //launch level 2
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	global.rooms.rNotdonArchives.inside=true;
+	global.rooms.rNotdonDorms.inside=true;
 	global.rooms.rNotdonAdults.inside=true;
 		addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	global.rooms.rNotdonWell.inside=true;
