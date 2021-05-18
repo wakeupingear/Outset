@@ -10,7 +10,7 @@
   "bbox_left": 2,
   "bbox_right": 69,
   "bbox_top": 48,
-  "bbox_bottom": 103,
+  "bbox_bottom": 128,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -27,6 +27,9 @@
     {"compositeImage":{"FrameId":{"name":"d1e91ce4-a18c-474c-b3e2-c9feab74097a","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"d1e91ce4-a18c-474c-b3e2-c9feab74097a","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"LayerId":{"name":"4b2970d8-e3f3-45d3-9fb7-ff0ca7384491","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sHaroldHouse","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"resourceVersion":"1.0","name":"d1e91ce4-a18c-474c-b3e2-c9feab74097a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"0bb6e355-b623-4798-be4a-448714c23c2c","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"0bb6e355-b623-4798-be4a-448714c23c2c","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"LayerId":{"name":"4b2970d8-e3f3-45d3-9fb7-ff0ca7384491","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sHaroldHouse","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"resourceVersion":"1.0","name":"0bb6e355-b623-4798-be4a-448714c23c2c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sHaroldHouse","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},
@@ -36,12 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"896315f9-e172-40bf-a7bf-addd27488c79","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d1e91ce4-a18c-474c-b3e2-c9feab74097a","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"49a6aec8-fe37-474b-8502-1c275d7b6a78","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0bb6e355-b623-4798-be4a-448714c23c2c","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,

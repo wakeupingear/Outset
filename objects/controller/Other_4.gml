@@ -1,5 +1,6 @@
 var _rName=room_get_name(room);
 global.roomTime=0;
+if !visitedRoom(room) ds_list_add(global.visitedRooms,room);
 
 //reset effect objects
 ds_list_empty(global.blurObj);
@@ -66,8 +67,6 @@ if global.devTeleport
 			global.menuOpen=false;
 			x=xstart;
 			y=ystart;
-			oCamera.x=x;
-			oCamera.y=y;
 		}
 	}
 	global.devTeleport=false;
@@ -77,5 +76,9 @@ if instance_exists(oPlayerCam)
 {
 	oPlayerCam.x=ply.x;
 	oPlayerCam.y=ply.y;
+	oCamera.x=oPlayerCam.x;
+	oCamera.y=oPlayerCam.y;
+	oCamera.xTo=oCamera.x;
+	oCamera.yTo=oCamera.y;
 }
 with oCamera findCameraPosition(true);

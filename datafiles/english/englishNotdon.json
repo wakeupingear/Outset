@@ -33,5 +33,9 @@
         "$oGravityField.pause",30,
         "$ply.impulse",[0,1],
         "$camReset"
+    ],
+    "notdon_trebuchet":[
+        "A miniature model of the superior seige engine.",
+        "It's called a... catapult?"
     ]
 }

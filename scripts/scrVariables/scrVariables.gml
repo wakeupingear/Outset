@@ -291,7 +291,7 @@ function scrVariables(){
 		else if string_pos("vr",_ln)>0 _reg=worldRegion.vr;
 		global.rooms[$ _name] ={
 			region: _reg,
-			inside: false,
+			inside: true,
 			music: global.regionMusic[_reg],
 			name: "???", //loads in setText
 			camera: [],
@@ -301,9 +301,9 @@ function scrVariables(){
 	}
 	global.rooms.rTitle.darkness=0;
 	//global.rooms.rTest1.npcs=[npcTest,npcHarold];
-	global.rooms.rTest1.inside=true;
 		addRoomCamera("rCoreIntro",576-192,980-192,576+192,980+192,576,980); //center
 	global.rooms.rNotdon.npcs=[npcCharlie,npcEugene,npcCitra,npcHarold,npcNora,npcSmitten,npcChet,npcMatt];
+	global.rooms.rNotdon.inside=false;
 		addRoomCamera("rNotdon",1562,0,1778,546,1620,468); //bounce pad
 		addRoomCamera("rNotdon",2216,698,2562,2000,2374,798,"notdonEraPastPro3"); //the nook
 		addRoomCamera("rNotdon",1786,556,1920,768,1760,"y","notdonEraLaunchExists"); //mission control
@@ -312,13 +312,8 @@ function scrVariables(){
 		addRoomCamera("rNotdon",1254,530,1782,660,"x",598); //launch level 1
 		addRoomCamera("rNotdon",1254,660,1782,842,"x",748); //launch level 2
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
-	global.rooms.rNotdonArchives.inside=true;
-	global.rooms.rNotdonDorms.inside=true;
-	global.rooms.rNotdonAdults.inside=true;
-		addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
-	global.rooms.rNotdonWell.inside=true;
-	global.rooms.rWastesNotdon.inside=true;
-		addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
+	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
+	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
 	}
 	
 	global.persistentEvents=ds_map_create(); //Format: object id, 4 indexes of data

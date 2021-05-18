@@ -9,16 +9,16 @@ if inRange&&touchingPly()
 		global.inWater=true;
 	}
 }
-else 
+else if touch
 {
 	x-=10000;
-	if touch 
+	with ply
 	{
-		with ply if !place_meeting(x,y,oWater) 
+		if !place_meeting(x-4,y,oWater)&&!place_meeting(x+4,y,oWater)&&!place_meeting(x,y-4,oWater)&&!place_meeting(x,y+4,oWater)
 		{
 			global.inWater=false;
+			touch=false;
 		}
 	}
-	touch=false;
 	x+=10000;
 }
