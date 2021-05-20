@@ -4,6 +4,7 @@ function scrVariables(){
 	//preferences
 	global.lang="english"; //language
 	global.langScript=-1; //empty to load the script into
+	global.buttonText="";
 	if !isHtml&&steam_initialised() global.lang=steam_current_game_language(); //get the user's default language if possible
 	global.lastFile=0;
 	global.musicVol=0.5*(!isDev&&!isTest);
@@ -22,6 +23,11 @@ function scrVariables(){
 	global.dieY=0;
 	global.dieRoom=0;
 	global.soulButtons=[];
+	
+	global.scanColor=c_black;
+	global.scanInRangeList=ds_list_create();
+	global.scanObjs=ds_list_create();
+	global.scanObj=-1;
 	
 	//saved files
 	global.maxHealth=6;
@@ -74,6 +80,8 @@ function scrVariables(){
 	
 	global.soulDoors=ds_map_create(); //format: "roomName": [dieX,dieY,endRoom,endX,endY]
 	global.souldropCollect=ds_list_create(); //format: unique coin id
+	
+	global.scanList=ds_list_create(); //format: id
 	
 	
 	//not saved files
@@ -330,10 +338,10 @@ function scrVariables(){
 	global.lightObj=[ply,oGrapple,npcCitra,npcHarold,
 	oSave,
 	oGravityField,
-	oPowerPlantTemp
+	oPowerPlantTemp,
 	];
 	
-	global.coinColorPoint=$EE1C24;
+	global.coinColorPoint=4280556782;
 	
 	global.npcStates={};
 	
@@ -425,7 +433,7 @@ function scrVariables(){
 		global.devSkips=true;
 		ds_list_add(global.playerItems,"iGrapple",1,"iSolitaire",1);
 		global.notdonEra=notdonEras.present;
-		//scr_pro_3();
+		scr_pro_4();
 		global.startRoom=rNotdon;
 	}
 	

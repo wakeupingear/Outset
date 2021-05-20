@@ -4,7 +4,7 @@
 array_copy(global.lastInputs,0,global.inputs,0,array_length(global.inputs));
 for (var i=0;i<global.numOfInputs;i++)
 {
-	var _isPressed=false
+	var _isPressed=false;
 	
 	if i==control.confirm&&mouse_check_button(mb_left) _isPressed=true; //mouse exception
 	

@@ -34,6 +34,12 @@ function isObj(_id,obj){
 	return _id.object_index==obj||object_is_ancestor(_id.object_index,obj);
 }
 
+function isInRange(_x,_y){
+	_x-=sprite_get_xoffset(sprite_index);
+	_y-=sprite_get_yoffset(sprite_index);
+	return !((_x+sprite_width<camX()||_x>camX()+384)||(_y+sprite_height<camY()||_y>camY()+216));
+}
+
 //string
 function explodeString(del,str)
 {

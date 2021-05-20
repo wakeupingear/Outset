@@ -16,6 +16,8 @@ function save(_num){
 	ini_write_string("Progress","droppedItems",ds_list_write(global.droppedItems));
 	ini_write_string("Progress","visitedRooms",ds_list_write(global.visitedRooms));
 	ini_write_string("Progress","soulDoors",ds_map_write(global.soulDoors));
+	ini_write_string("Progress","souldrop",ds_list_write(global.souldropCollect));
+	ini_write_string("Progress","scanList",ds_list_write(global.scanList));
 	ini_write_string("Progress","persistentEvents",ds_map_write(global.persistentEvents));
 	
 	ini_write_real("Progress","playtime",global.playtime);
@@ -57,6 +59,8 @@ function load(_num){
 	ds_list_read(global.droppedItems,ini_read_string("Progress","droppedItems",""));
 	ds_list_read(global.visitedRooms,ini_read_string("Progress","visitedRooms",""));
 	ds_map_read(global.soulDoors,ini_read_string("Progress","soulDoors",""));
+	ds_list_read(global.souldropCollect,ini_read_string("Progress","souldrop",""));
+	ds_list_read(global.scanList,ini_read_string("Progress","scanList",""));
 	ds_map_read(global.persistentEvents,ini_read_string("Progress","persistentEvents",""));
 	
 	global.completedChapters=ini_read_real("Progress","completedChapters",0);

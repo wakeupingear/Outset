@@ -34,3 +34,6 @@ else
 		global.notPause=false;
 	}
 }
+
+scanTime=(scanTime+1) % 255;
+global.scanColor=make_color_hsv(scanTime,255,255);

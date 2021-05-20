@@ -20,6 +20,13 @@
         "Enter",
         "Press"
     ],
+    "buttonText":{
+        "up":"Up",
+        "down":"Down",
+        "left":"Left",
+        "right":"Right",
+        "tab":"Tab"
+    },
     "itemText": {
         "iGrapple": [
             "Grappling Hook",

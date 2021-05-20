@@ -49,7 +49,7 @@ if !touch&&place_meeting(x,y,ply)
 		instance_create_layer(x,y,"player",ply);
 		ply.xscale=xscale;
 		
-		instance_activate_object(oSouldropCoin);
+		if hasData("reacSt") instance_activate_object(oSouldropCoin);
 	}
 	if !isDev save(global.lastFile);
 }

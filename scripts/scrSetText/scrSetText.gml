@@ -39,4 +39,6 @@ function scrSetText(){
 	//character names
 	global.characterNames=global.langScript[$ "names"];
 	
+	//buttons
+	global.buttonText=textLoad("buttonText");
 }

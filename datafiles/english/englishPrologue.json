@@ -524,6 +524,21 @@
 
     "pro_reactorRespawn":[
         "Your pocket is buzzing.",
-        "$addItem",["iSlate"]
+        "$addItem",["iSlate"],
+        "$create",[0,0,0,"oButtonPrompt"],
+        "$lastObj.button",5
+    ],
+
+    "pro_slateTOS":[
+        "SLATE V1.2 - 'For the kids'\n\nOnly the technology of the\npast can save us from V.\n\nYOUR OBJECTIVE:\nLEAVE NOTDON.\nSCAN what you find.\n",
+        "Do you accept this?"
+    ],
+
+    "pro_slateScanner":[
+        60,
+        "$script","activateScanObjs",
+        "$create",[0,0,0,"oButtonPrompt"],
+        "$lastObj.button",1,
+        "$lastObj.holdTime",30
     ]
 }

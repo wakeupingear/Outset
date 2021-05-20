@@ -5,3 +5,5 @@ tiers=[
 {d:20,sc:0.8,rate:3}
 ];
 count=array_create(array_length(tiers));
+
+if !eventExistsDefault(x,y) eventAddObjectDefault(x,y);

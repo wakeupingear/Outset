@@ -1,5 +1,5 @@
 /// @description Set collision position
-inRange=!((x+image_xscale<camX()||x>camX()+384)||(y+image_yscale<camY()||y>camY()+216));
+inRange=isInRange(x,y);
 
 if inRange&&touchingPly()
 {

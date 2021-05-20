@@ -21,7 +21,7 @@ function killPlayer(saveText){
 		}
 		global.dieRoom=room;
 		global.soulButtons=[];
-		instance_deactivate_object(oSouldropCoin);
+		if instance_exists(oSouldropCoin) instance_deactivate_object(oSouldropCoin);
 		if instance_exists(oInventory) oInventory.open=false;
 		if instance_exists(oPopup) oPopup.mode=-14;
 		eventRemove(oParachute,room,ply,0,"people",[]);

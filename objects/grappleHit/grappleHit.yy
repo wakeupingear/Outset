@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sPlaceholderPixelW",
+    "path": "sprites/sPlaceholderPixelW/sPlaceholderPixelW.yy",
+  },
   "solid": false,
   "visible": false,
   "spriteMaskId": null,

@@ -169,6 +169,7 @@ image_alpha=0;
 getHudX=function(){
 	return (image_alpha)*64*(!global.hudSide-global.hudSide)-24;//+camX()
 }
+scanTime=0;
 
 //pause variables
 surfPosX=0;
