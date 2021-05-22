@@ -540,5 +540,10 @@
         "$create",[0,0,0,"oButtonPrompt"],
         "$lastObj.button",1,
         "$lastObj.holdTime",30
+    ],
+
+    "pro_rollTitle":[
+        60,
+        "$camSet",["x",0]
     ]
 }

@@ -23,6 +23,9 @@ function scrVariables(){
 	global.dieY=0;
 	global.dieRoom=0;
 	global.soulButtons=[];
+	global.soulLevels=[1,2];
+	for (var i=1;i<array_length(global.soulLevels);i++) global.soulLevels[i]+=global.soulLevels[i-1];
+	show_debug_message(global.soulLevels)
 	
 	global.scanColor=c_black;
 	global.scanInRangeList=ds_list_create();
@@ -32,6 +35,7 @@ function scrVariables(){
 	//saved files
 	global.maxHealth=6;
 	global.souldrop=0;
+	global.level=0;
 	global.lies=0;
 	global.plyHealth=ceil(global.maxHealth);
 	global.damageTime=60;
