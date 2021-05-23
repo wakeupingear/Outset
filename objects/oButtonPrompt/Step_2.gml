@@ -1,4 +1,5 @@
 /// @description Position
+visible=(!global.menuOpen&&!global.transitioning);
 if instance_exists(ply)
 {
 	x=ply.x;

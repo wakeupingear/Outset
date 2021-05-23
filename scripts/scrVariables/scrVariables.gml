@@ -23,9 +23,8 @@ function scrVariables(){
 	global.dieY=0;
 	global.dieRoom=0;
 	global.soulButtons=[];
-	global.soulLevels=[1,2];
+	global.soulLevels=[1,2,3,4,5,6,7,8,9];
 	for (var i=1;i<array_length(global.soulLevels);i++) global.soulLevels[i]+=global.soulLevels[i-1];
-	show_debug_message(global.soulLevels)
 	
 	global.scanColor=c_black;
 	global.scanInRangeList=ds_list_create();
@@ -343,6 +342,7 @@ function scrVariables(){
 	oSave,
 	oGravityField,
 	oPowerPlantTemp,
+	oSouldropRain,oSouldropRainController
 	];
 	
 	global.coinColorPoint=4280556782;
@@ -437,7 +437,7 @@ function scrVariables(){
 		global.devSkips=true;
 		ds_list_add(global.playerItems,"iGrapple",1,"iSolitaire",1);
 		global.notdonEra=notdonEras.present;
-		scr_pro_4();
+		scr_c1_1();
 		global.startRoom=rNotdon;
 	}
 	

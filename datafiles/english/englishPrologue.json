@@ -542,8 +542,19 @@
         "$lastObj.holdTime",30
     ],
 
+    "pro_souldropLevel":[
+        "$if","isChapter",[0],
+        "#true",
+            "A familiar force sweeps across your being...",
+            "But now it's time to say goodbye?",
+            "$cutscene","pro_rollTitle",
+        "#false"
+    ],
+
     "pro_rollTitle":[
         60,
-        "$camSet",["x",0]
+        "$camSet",["x",0],
+        30,
+        "$script","scr_c1_1"
     ]
 }

@@ -1,0 +1,1 @@
+if !scanDraw() draw_self();

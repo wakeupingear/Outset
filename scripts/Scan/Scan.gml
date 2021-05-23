@@ -13,6 +13,7 @@ function scanDraw(){
 	var _inRange=(global.alive&&!isScanned&&isInRange(x,y));
 	if _inRange
 	{
+		var _touch=place_meeting(x,y,ply);
 		if !isAdded 
 		{
 			ds_list_add(global.scanInRangeList,id);
@@ -20,7 +21,7 @@ function scanDraw(){
 		}
 		if global.scanObj==id
 		{
-			if global.inputs[control.down]>=holdTime
+			if global.inputs[control.up]>=holdTime
 			{
 				isScanned=true;
 				ds_list_add(global.scanList,id);
@@ -28,10 +29,11 @@ function scanDraw(){
 				global.scanObj=-1;
 				if scanFunc!=-1 scanFunc();
 			}
-			else if buttonHold(control.down)<=0 global.scanObj=-1;
+			else if buttonHold(control.up)<=0 global.scanObj=-1;
 		}
-		else if global.scanObj==-1&&buttonPressed(control.down)&&place_meeting(x,y,ply) global.scanObj=id;
+		else if global.scanObj==-1&&buttonPressed(control.up)&&_touch global.scanObj=id;
 		drawScanEffect();
+		if _touch global.interactText=6;
 	}
 	else
 	{

@@ -18,7 +18,8 @@
         "Admire",
         "Investigate",
         "Enter",
-        "Press"
+        "Press",
+        "Scan"
     ],
     "buttonText":{
         "up":"Up",

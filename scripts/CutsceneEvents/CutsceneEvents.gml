@@ -139,3 +139,16 @@ function scr_pro_4(){
 	}
 	save(global.lastFile);
 }
+
+function scr_c1_1(){
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.c1;
+	global.startRoom=rNotdon;
+	global.timeOfDay=times.day;
+	
+	destroyArray([oSouldropRainController],true);
+	addData("reacSt");
+	addItem("iSlate");
+	if room==rNotdon roomChange(global.startX,global.startY,global.startRoom,0,0,0,1);
+	save(global.lastFile);
+}

@@ -144,7 +144,11 @@ enum fontSizes {
 
 enum chapters {
 	prologue,
-	
+	c1,
+	wastes,
+	island,
+	air,
+	deep
 }
 
 enum dungeons {

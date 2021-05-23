@@ -18,6 +18,7 @@ function diagCondition(key,args){
 			case "plyInsideBox": return (instance_exists(ply)&&point_in_rectangle(ply.x,ply.y,args[0],args[1],args[2],args[3]));
 			case "hasItem": return (hasItem(args[0]));
 			case "hasData": return (hasData(args[0]));
+			case "isChapter": return (args[0]==global.currentChapter);
 			case "objRight":
 				var _a=asset_get_index(args[0]);
 				return (instance_exists(_a)&&_a.x>args[1]);

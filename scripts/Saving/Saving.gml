@@ -2,6 +2,7 @@ function save(_num){
 	ini_open("file"+string(_num)+".ini");
 	ini_write_real("Player","health",global.maxHealth);
 	ini_write_real("Player","souldrop",global.souldrop);
+	ini_write_real("Player","level",global.level);
 	ini_write_real("Player","lies",global.lies);
 	ini_write_real("Player","room",global.startRoom);
 	ini_write_real("Player","x",global.startX);
@@ -36,6 +37,7 @@ function load(_num){
 	ini_open("file"+string(_num)+".ini");
 	global.maxHealth=ini_read_real("Player","health",6);
 	global.souldrop=ini_read_real("Player","souldrop",0);
+	global.level=ini_read_real("Player","level",0);
 	global.lies=ini_read_real("Player","lies",0);
 	global.plyHealth=ceil(global.maxHealth);
 	global.startRoom=ini_read_real("Player","room",rTest1);
@@ -66,7 +68,7 @@ function load(_num){
 	global.completedChapters=ini_read_real("Progress","completedChapters",0);
 	global.playtime=ini_read_real("Progress","playtime",0);
 	global.currentChapter=ini_read_real("Progress","currentChapter",chapters.prologue);
-	global.currentChapter=ini_read_string("Progress","dungeonProgress",global.currentChapter);
+	global.dungeonProgress=ini_read_string("Progress","dungeonProgress",global.dungeonProgress);
 	global.timeOfDay=ini_read_real("Progress","timeOfDay",times.day);
 	global.notdonEra=ini_read_real("Progress","notdonEra",notdonEras.myko);
 	

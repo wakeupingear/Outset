@@ -3,6 +3,10 @@ image_blend=global.hudColorList[global.hudColor];
 fade=0;
 instance_create_depth(camX()+20,camY()+20,depth-1,oCursor);
 
+global.inputs[control.left]=-1;
+global.inputs[control.right]=-1;
+global.inputs[control.up]=-1;
+global.inputs[control.down]=-1;
 
 mode=!hasItem("iSlate");
 contentMode=0;

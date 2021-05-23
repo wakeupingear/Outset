@@ -722,6 +722,12 @@ function setObjFromStruct(obj,struct){
 			case "blend":
 				obj.image_blend=struct.blend;
 				break;
+			case "xscale":
+				obj.image_xscale=struct.xscale;
+				break;
+			case "yscale":
+				obj.image_yscale=struct.yscale;
+				break;
 			default:
 				variable_instance_set(obj,_names[i],struct[$ _names[i]]);
 				break;
