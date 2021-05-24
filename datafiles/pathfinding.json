@@ -78,9 +78,13 @@
         "jump",
         "xy",1808,644,2
     ],
+
     "c1_treadmill":[
         "#start",
         "xy","x+30","y",3,
         "goto","start"
+    ],
+    "c1_graduationTrip":[
+        "xy",2462,698,16
     ]
 }

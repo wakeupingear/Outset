@@ -144,9 +144,26 @@ function scr_c1_1(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
 	global.startRoom=rNotdon;
-	global.timeOfDay=times.day;
 	
 	destroyArray([oSouldropRainController],true);
+	addData("reacSt");
+	addItem("iSlate");
+	if room==rNotdon roomChange(global.startX,global.startY,global.startRoom,0,0,0,1);
+	save(global.lastFile);
+}
+
+function scr_c1_2(){
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.c1;
+	global.startRoom=rNotdon;
+	global.timeOfDay=times.day;
+	global.startX=2528;
+	global.startY=695;
+	
+	destroyArray([oSouldropRainController],true);
+	
+	createCutsceneDelay({key:"c1_graduationTrip",condition:"plyRight",args:[2720],myRoom:"rNotdon"},"cutsceneCondition");
+	
 	addData("reacSt");
 	addItem("iSlate");
 	if room==rNotdon roomChange(global.startX,global.startY,global.startRoom,0,0,0,1);

@@ -9,6 +9,7 @@ try
 	
 	_importTextData("Hud");
 	_importTextData("Prologue");
+	_importTextData("C1");
 	_importTextData("Wastes");
 	_importTextData("Notdon");
 	scrSetText();

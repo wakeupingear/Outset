@@ -261,7 +261,7 @@
         "$shake",[3,3,30],
         60,"!!!",
         30,
-        "$createLayer",[1297,476,"bg2","oVShip"],
+        "$create",[1297,476,0,"oPlayerMove"],
         "$camSpd",0.02,
         "$camSet",[1294,222],
         60,

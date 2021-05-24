@@ -1,0 +1,6 @@
+{
+    "c1_graduationTrip":[
+        "$createLayer",[0,0,"people","oPlayerMove"],
+        "$lastObj.moveCommand","c1_graduationTrip"
+    ]
+}

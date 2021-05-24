@@ -377,6 +377,7 @@
     {"id":{"name":"shd_cutout","path":"shaders/shd_cutout/shd_cutout.yy",},"order":0,},
     {"id":{"name":"oWrenchGear","path":"objects/oWrenchGear/oWrenchGear.yy",},"order":4,},
     {"id":{"name":"distFromCenter","path":"scripts/distFromCenter/distFromCenter.yy",},"order":8,},
+    {"id":{"name":"oPlayerMove","path":"objects/oPlayerMove/oPlayerMove.yy",},"order":9,},
     {"id":{"name":"sPlaceholderPurpleSq","path":"sprites/sPlaceholderPurpleSq/sPlaceholderPurpleSq.yy",},"order":12,},
     {"id":{"name":"oSave","path":"objects/oSave/oSave.yy",},"order":9,},
     {"id":{"name":"oPlaceholder","path":"objects/oPlaceholder/oPlaceholder.yy",},"order":2,},
@@ -563,6 +564,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/english","resourceVersion":"1.0","name":"englishNotdon.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/english","resourceVersion":"1.0","name":"englishWastes.json","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"characters.json","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/english","resourceVersion":"1.0","name":"englishC1.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.2.560",

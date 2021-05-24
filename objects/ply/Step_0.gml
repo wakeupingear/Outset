@@ -120,6 +120,18 @@ if object_index==ply
 		}
 	}
 }
+
+//lock to pathfinding
+if instance_exists(oPlayerMove)
+{
+	x=oPlayerMove.x;
+	y=oPlayerMove.y;
+	xscale=oPlayerMove.xscale;
+	yscale=oPlayerMove.yscale;
+	hsp=oPlayerMove.hsp;
+	vsp=oPlayerMove.vsp;
+}
+
 //collect souldrop
 while place_meeting(x,y,oSouldropCoin)
 {
