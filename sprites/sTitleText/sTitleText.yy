@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"97f11226-a61e-42b9-9193-3c444116b77e","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "menus",
-    "path": "folders/Sprites/menus.yy",
+    "path": "folders/Sprites/notdon/menus.yy",
   },
   "resourceVersion": "1.0",
   "name": "sTitleText",

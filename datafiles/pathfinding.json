@@ -85,6 +85,8 @@
         "goto","start"
     ],
     "c1_graduationTrip":[
-        "xy",2462,698,16
+        "xy",2786,775,2,
+        "jump",
+        "xyj",2997,911,4
     ]
 }

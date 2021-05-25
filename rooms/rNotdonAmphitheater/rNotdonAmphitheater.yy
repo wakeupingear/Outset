@@ -63,6 +63,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oPlatformButton","path":"objects/oPlatformButton/oPlatformButton.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":98.0,"y":246.0,"resourceVersion":"1.0","name":"inst_462348AE","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oConveyor","path":"objects/oConveyor/oConveyor.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":36.0,"scaleY":24.0,"imageIndex":0,"imageSpeed":-1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":177.0,"y":268.0,"resourceVersion":"1.0","name":"inst_55810B60","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"npcTest","path":"objects/npcTest/npcTest.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":189.0,"y":256.0,"resourceVersion":"1.0","name":"inst_376D0544","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"npcCharlie","path":"objects/npcCharlie/npcCharlie.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":259.0,"y":260.0,"resourceVersion":"1.0","name":"inst_6ABB2167","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"people","tags":[],"resourceType":"GMRInstanceLayer",},
     {"tilesetId":{"name":"tilNotdon","path":"tilesets/tilNotdon/tilNotdon.yy",},"x":0,"y":0,"tiles":{"SerialiseWidth":24,"SerialiseHeight":21,"TileSerialiseData":[
 2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,2147483648,
@@ -145,6 +146,7 @@
     {"name":"inst_462348AE","path":"rooms/rNotdonAmphitheater/rNotdonAmphitheater.yy",},
     {"name":"inst_55810B60","path":"rooms/rNotdonAmphitheater/rNotdonAmphitheater.yy",},
     {"name":"inst_376D0544","path":"rooms/rNotdonAmphitheater/rNotdonAmphitheater.yy",},
+    {"name":"inst_6ABB2167","path":"rooms/rNotdonAmphitheater/rNotdonAmphitheater.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

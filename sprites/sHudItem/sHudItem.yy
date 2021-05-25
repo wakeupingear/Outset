@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "menus",
-    "path": "folders/Sprites/menus.yy",
+    "path": "folders/Sprites/notdon/menus.yy",
   },
   "resourceVersion": "1.0",
   "name": "sHudItem",

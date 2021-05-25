@@ -77,9 +77,10 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ebff2a1e-be3f-4928-9f1a-63eafaba4c03","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"69c99dcd-04dd-4abb-9f98-32e033cd50df","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "menus",
-    "path": "folders/Sprites/menus.yy",
+    "path": "folders/Sprites/notdon/menus.yy",
   },
   "resourceVersion": "1.0",
   "name": "sTitlePlaceholder",

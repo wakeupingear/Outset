@@ -82,7 +82,7 @@
   "nineSlice": null,
   "parent": {
     "name": "dialogue",
-    "path": "folders/Sprites/menus/dialogue.yy",
+    "path": "folders/Sprites/notdon/menus/dialogue.yy",
   },
   "resourceVersion": "1.0",
   "name": "sTextbox",

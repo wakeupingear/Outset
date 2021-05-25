@@ -161,6 +161,11 @@ function scr_c1_2(){
 	global.startY=695;
 	
 	destroyArray([oSouldropRainController],true);
+	setNPCRoom("charlie","rNotdonAmphitheater","c1_underStage");
+	setNPCRoom("citra","rNotdon","c1_stage");
+	setNPCRoom("eugene","rNotdon","c1_stage");
+	setNPCRoom("nora","rNotdon","c1_stage");
+	setNPCRoom("smitten","rNotdon","c1_stage");
 	
 	createCutsceneDelay({key:"c1_graduationTrip",condition:"plyRight",args:[2720],myRoom:"rNotdon"},"cutsceneCondition");
 	

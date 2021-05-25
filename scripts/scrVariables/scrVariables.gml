@@ -138,6 +138,8 @@ function scrVariables(){
 		addLocationPathFrom("citra","pro_arch2","rNotdonArchives","pro_lb3","rNotdon","pro_citra_archiveLeave","");
 	addLocation("citra","rNotdon","pro_electro",2129,628,1,1,"");
 	addLocation("citra","rNotdon","pro_reactor",2754,732,-1,1,""); //standing next to the reactor
+	
+	addLocation("citra","rNotdon","c1_stage",2975,908,-1,1,""); //stage
 	#endregion
 	
 	#region Eugene
@@ -160,6 +162,8 @@ function scrVariables(){
 		addLocationPathFrom("eugene","pro_lbJump","rNotdon","pro_grotto","rNotdon","pro_eugene_cliffJump","");
 	addLocation("eugene","rNotdon","pro_electro",2128,628,1,1,""); //watching the power demo
 	addLocation("eugene","rNotdon","pro_reactor",2754,772,1,1,""); //standing under the reactor
+	
+	addLocation("eugene","rNotdon","c1_stage",3040,772,1,1,""); //stage
 	#endregion
 	
 	#region Nora
@@ -172,6 +176,8 @@ function scrVariables(){
 	addLocation("nora","rNotdon","pro_reactorLeft",2244,628,1,1,""); //left of reactor
 	addLocation("nora","rNotdon","pro_reactor",2691,772,1,1,""); //under reactor
 		addLocationPathFrom("nora","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleAlwaysJump","");
+		
+	addLocation("nora","rNotdon","c1_stage",3063,908,-1,1,""); //stage
 	#endregion
 	
 	#region Smitten
@@ -190,6 +196,8 @@ function scrVariables(){
 		addLocationPathFrom("smitten","pro_reactor","rNotdon","pro_launch","rNotdon","pro_smitten_launchWalk","");
 	addLocation("smitten","rNotdon","pro_launchWindow",1808,644,-1,1,""); //at launch window
 		addLocationPathFrom("smitten","pro_launch","rNotdon","pro_launchWindow","rNotdon","pro_smitten_toWindow","");
+		
+	addLocation("smitten","rNotdon","c1_stage",3022,908,-1,1,""); //stage
 	#endregion
 	
 	#region Charlie
@@ -210,6 +218,9 @@ function scrVariables(){
 	addLocation("charlie","rNotdon","pro_reactorLeft",2160,628,1,1,""); //left of reactor
 	addLocation("charlie","rNotdon","pro_reactor",2601,740,1,1,""); //close to reactor
 		addLocationPathFrom("charlie","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleAlwaysJump","");
+		
+	addLocation("charlie","rNotdonAmphitheater","c1_underStage",258,260,1,1,""); //under stage
+	addLocation("charlie","rNotdon","c1_stage",2993,908,-1,1,""); //stage
 	#endregion
 	
 	#region Matt
@@ -322,6 +333,7 @@ function scrVariables(){
 		addSoulCamera("rNotdon",3444,1148,5000,1336,"x",1294); //pier
 		addRoomCamera("rNotdon",1254,530,1782,660,"x",598); //launch level 1
 		addRoomCamera("rNotdon",1254,660,1782,842,"x",748); //launch level 2
+		addRoomCamera("rNotdon",2822,756,3168,970,2995,888,"notdonEraPresent"); //stage
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
