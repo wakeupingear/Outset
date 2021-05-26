@@ -449,6 +449,7 @@ function scrVariables(){
 		global.devSkips=true;
 		ds_list_add(global.playerItems,"iGrapple",1,"iSolitaire",1);
 		global.notdonEra=notdonEras.present;
+		//scr_pro_3();
 		scr_c1_2();
 		global.startRoom=rNotdon;
 	}

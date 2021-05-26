@@ -9,7 +9,8 @@ grappleMode=0; //0=normal, 1=swing, 2=arc, 3=down
 upgrades=[];
 collPointX=[];
 
-trackList=[oSouldropCoin];
+trackList=[oSouldropCoin,oDroppedItem];
+dragObj=ds_list_create();
 
 grappleDist=80; //max distance
 grappleTime=0; //time that the grapple has been moving/pulling
@@ -176,17 +177,6 @@ else if state==1 //move in direction
 		}
 		resetHitPlace();
 	}
-	
-	for (var i=0;i<array_length(trackList);i++)
-	{
-		if place_meeting(x,y,trackList[i]) 
-		{
-			var _i=instance_place(x,y,trackList[i]);
-			_i.followGrapple=true;
-			_i.xOff=_i.x-x;
-			_i.yOff=_i.y-y;
-		}
-	}
 }
 else if state==2 //pull player
 {
@@ -265,6 +255,39 @@ if state!=0
 		{
 			x=oGrapple.x+grappleOffX;
 			y=oGrapple.y+grappleOffY;
+		}
+	}
+}
+
+if abs(state)==1 
+{
+	for (var i=0;i<array_length(trackList);i++)
+	{
+		if place_meeting(x,y,trackList[i]) 
+		{
+			var _i=instance_place(x,y,trackList[i]);
+			if !_i.followGrapple
+			{
+				_i.followGrapple=true;
+				_i.xOff=_i.x-x;
+				_i.yOff=_i.y-y;
+				ds_list_add(dragObj,_i);
+			}
+		}
+	}
+	for (var i=0;i<ds_list_size(dragObj);i++) 
+	{
+		if instance_exists(dragObj[|i])
+		{
+			var _i=dragObj[|i];
+			_i.x=x+_i.xOff;
+			_i.y=y+_i.yOff;
+		}
+		else
+		{
+			ds_list_delete(dragObj,i);
+			i--;
+			continue;
 		}
 	}
 }

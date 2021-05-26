@@ -18,6 +18,15 @@ function resetGrapple(){
 			grappleMode=0;
 			state=-1;
 			followObj=-1;
+			
+			for (var i=0;i<ds_list_size(dragObj);i++) if instance_exists(dragObj[|i]) 
+			{
+				var _i=dragObj[|i];
+				_i.followGrapple=false;
+				_i.x=x;
+				_i.y=y;
+			}
+			ds_list_clear(dragObj);
 			}
 		}
 	}
