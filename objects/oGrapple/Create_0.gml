@@ -9,6 +9,8 @@ grappleMode=0; //0=normal, 1=swing, 2=arc, 3=down
 upgrades=[];
 collPointX=[];
 
+trackList=[oSouldropCoin];
+
 grappleDist=80; //max distance
 grappleTime=0; //time that the grapple has been moving/pulling
 grappleReach=3; //final reach distance
@@ -173,6 +175,17 @@ else if state==1 //move in direction
 			resetGrapple();
 		}
 		resetHitPlace();
+	}
+	
+	for (var i=0;i<array_length(trackList);i++)
+	{
+		if place_meeting(x,y,trackList[i]) 
+		{
+			var _i=instance_place(x,y,trackList[i]);
+			_i.followGrapple=true;
+			_i.xOff=_i.x-x;
+			_i.yOff=_i.y-y;
+		}
 	}
 }
 else if state==2 //pull player

@@ -1,4 +1,4 @@
-
+            
 
 function diagInteract(){
 	if !global.menuOpen&&!global.transitioning&&distance_to_object(ply)<64&&(ply.state==moveState.standing||ply.state==moveState.running)

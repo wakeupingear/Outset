@@ -6,7 +6,6 @@ tiers=[
 ];
 count=array_create(array_length(tiers));
 
-if !eventExistsDefault(x,y) eventAddObjectDefault(x,y);
 yOff=-sprite_height-32;
 image_speed=0;
 

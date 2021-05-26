@@ -19,7 +19,8 @@
         "Investigate",
         "Enter",
         "Press",
-        "Scan"
+        "Scan",
+        "Resonate"
     ],
     "buttonText":{
         "up":"Up",
