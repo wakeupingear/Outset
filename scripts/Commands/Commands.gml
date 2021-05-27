@@ -373,9 +373,14 @@ function commandProcess(command){
 							_obj.y=_val[1];
 							break;
 						//room
+						case "setRoomTeleport":
 						case "setRoom":
 							setNPCRoom(getNpc(_obj),_val[0],_val[1]);
 							saved=true;
+							if command[diag]=="setroomTeleport"
+							{
+								with instance_create_layer(0,0,"people",getObject(_obj)) positionNpc(1);
+							}
 							break;
 						case "roomChange":
 							roomChange(_val[0],_val[1],asset_get_index(_val[2]),_val[3],_val[4],_val[5],_val[6]);

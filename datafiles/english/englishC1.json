@@ -1,6 +1,76 @@
 {
     "c1_graduationTrip":[
         "$createLayer",[0,0,"people","oPlayerMove"],
-        "$lastObj.moveCommand","c1_graduationTrip"
-    ]
+        "$lastObj.moveCommand","c1_graduationTrip",
+        "$cutsceneDelay",{"key":"c1_graduationInterrupt","delay":60}
+    ],
+    "c1_graduationInterrupt":[
+        "$cutscene","c1_shoe",
+        "$addData","shoeTrip",
+        "$npcCitra.facePlayer",true,
+        240,
+        "?citra","...kids.",
+        "?smitten","Nice one, ditzo!",
+        "?eugene","I don't know if you know, but your shoe is untied.",
+        "?citra","A{15}HEM!",
+        30,
+        "$npcCitra.facePlayer",false,
+        30,
+        "$cutscene","c1_graduationSpeech"
+    ],
+    "c1_graduationSpeech":[
+        "So the KIDS are leaving! Not for good, just until we know the ANSWERS.",
+        "Scan to the EAST! Scan to the WEST! Scan UP too, I suppose.",
+        "Just keep going until we can FIX THE REACTOR.",
+        "Please, give it up for the KIDS!",
+        "applause",
+        "Now let us depart before anything else can stop us!",
+        "$citra.setRoom",["rNotdon","c1_bay"],
+        "$nora.setRoom",["rNotdon","c1_bay"],
+        "$eugene.setRoom",["rNotdon","c1_bay"],
+        "$smitten.setRoom",["rNotdon","c1_bay"],
+        "$if1","charlie.getRoom",["rNotdon.c1_stage"],
+            "#true1",
+                "$charlie.setRoomTeleport",["rNotdon","c1_bay"],
+                "$goto","trip",
+            "#false1",
+                "charlie go brrr",
+        "#trip",
+        "$cutsceneDelay",{"delay":180,"key":"c1_shoeTrip"}
+    ],
+    "c1_shoeTrip":[
+        "$if1","hasData",["shoeTrip"],
+            "#true1",
+                "Oh right, your shoe is untied.",
+                "$goto","tieQ",
+            "#false1",
+                "Wait, your shoe is untied.",
+            "#tieQ",
+            "$question1","Tie it?",
+                "#yes1",
+                    "#tie",
+                    "$cutscene","c1_shoe",
+                "#no1",
+                    "$if2","hasData","shoeTrip",
+                        "#true1",
+                            60,
+                            "No, you know that you'd just trip over it again.",
+                            "$goto","tie",
+                        "#false1",
+                            "You doubt your own ability to avoid tripping on a stray lace.",
+                            "$question2","Give in to your insecurities and tie it?",
+                            "#yes2",
+                                "You feel vaguely confident in your decision.",
+                                "$goto","tie",
+                            "#no2",
+                                "Your will strengthens.",
+                                "...Oh right, you're supposed to stay with the OTHERS!"
+    ],
+    "c1_shoe":[
+        "$popup",{"sprite":"sShoe","mouse":[260,108],"forceOpen":true,"objs":[{
+            "obj":"oShoelaces",
+            "xPos":0,
+            "yPos":0
+        }]
+    }]
 }

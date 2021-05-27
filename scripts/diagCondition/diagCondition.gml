@@ -1,10 +1,15 @@
 
 
 function diagCondition(key,args){
-	if string_pos("Exists",key)>0
+	if string_pos(".exists",key)>0
 	{
-		key=string_replace(key,"Exists","");
-		return instance_exists(asset_get_index(key));
+		key=string_replace(key,".exists","");
+		return instance_exists(getObject(key));
+	}
+	else if string_pos(".getRoom",key)>0
+	{
+		key=string_replace(key,".getRoom","");
+		return (room_get_name(global.characterLocations[? key][1])+"."+global.characterLocations[? key][4]==args[0]);
 	}
 	else switch (key)
 	{

@@ -26,3 +26,5 @@ yy=0;
 
 objs=-1;
 objList=-1;
+
+forceOpen=false;

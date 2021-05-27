@@ -16,7 +16,7 @@ function positionNpc(moveToLocation){ //0= don't, 1=do, 2=pathfind
 	}
 	else if moveToLocation==2
 	{
-		
+		//to be implemented
 	}
 	var _rm=room_get_name(room);
 	check=global.characters[$ npcKey].ch;

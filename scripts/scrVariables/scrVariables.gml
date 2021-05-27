@@ -140,6 +140,7 @@ function scrVariables(){
 	addLocation("citra","rNotdon","pro_reactor",2754,732,-1,1,""); //standing next to the reactor
 	
 	addLocation("citra","rNotdon","c1_stage",2975,908,-1,1,""); //stage
+	addLocation("citra","rNotdon","c1_bay",1557,644,-1,1,""); //launch bay
 	#endregion
 	
 	#region Eugene
@@ -164,6 +165,7 @@ function scrVariables(){
 	addLocation("eugene","rNotdon","pro_reactor",2754,772,1,1,""); //standing under the reactor
 	
 	addLocation("eugene","rNotdon","c1_stage",3040,772,1,1,""); //stage
+	addLocation("eugene","rNotdon","c1_bay",1645,644,1,1,""); //launch bay
 	#endregion
 	
 	#region Nora
@@ -178,6 +180,7 @@ function scrVariables(){
 		addLocationPathFrom("nora","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleAlwaysJump","");
 		
 	addLocation("nora","rNotdon","c1_stage",3063,908,-1,1,""); //stage
+	addLocation("nora","rNotdon","c1_bay",1622,644,-1,1,""); //launch bay
 	#endregion
 	
 	#region Smitten
@@ -198,6 +201,7 @@ function scrVariables(){
 		addLocationPathFrom("smitten","pro_launch","rNotdon","pro_launchWindow","rNotdon","pro_smitten_toWindow","");
 		
 	addLocation("smitten","rNotdon","c1_stage",3022,908,-1,1,""); //stage
+	addLocation("smitten","rNotdon","c1_bay",1604,644,-1,1,""); //launch bay
 	#endregion
 	
 	#region Charlie
@@ -221,6 +225,7 @@ function scrVariables(){
 		
 	addLocation("charlie","rNotdonAmphitheater","c1_underStage",258,260,1,1,""); //under stage
 	addLocation("charlie","rNotdon","c1_stage",2993,908,-1,1,""); //stage
+	addLocation("charlie","rNotdon","c1_bay",1672,644,-1,1,""); //launch bay
 	#endregion
 	
 	#region Matt

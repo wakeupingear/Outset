@@ -7,3 +7,5 @@ yVars=new oscillateVars(1.5,3);
 yVars.pos=random(x mod (24*pi));
 
 followGrapple=false;
+
+if !global.alive instance_deactivate_object(id);

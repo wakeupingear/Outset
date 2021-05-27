@@ -223,7 +223,7 @@
     "pro_respawn":[
         "$cutsceneCondition",{"key":"pro_bounceTransition","myRoom":"rNotdon","condition":"plyRightAbove","args":[1562,356]},
         "You're not sure what happened, but you're alive.",
-        "if1","oVShipExists",
+        "if1","oVShip.exists",
             "#true1",
                 "?citra","There's no time to mourn, head east and get on that BOUNCE PAD!",
                 120,
@@ -240,7 +240,7 @@
             "?ply","No!",
             "$camSet",[1150,420],
             60,
-            "if2","eugeneExists",
+            "if2","eugene.exists",
                 "#true2",
                     "?charlie","what have i done?",
                     "?smitten","It was EUGENE! He stole the parachutes and forced us to wear them!",
