@@ -25,7 +25,6 @@
   "gridY": 12,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"8c69a68e-c344-41a6-9be6-9465aedd6318","path":"sprites/sMykoTurretColl/sMykoTurretColl.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8c69a68e-c344-41a6-9be6-9465aedd6318","path":"sprites/sMykoTurretColl/sMykoTurretColl.yy",},"LayerId":{"name":"3a0b6e49-ba85-4e08-957d-e24a50e90e41","path":"sprites/sMykoTurretColl/sMykoTurretColl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"8c69a68e-c344-41a6-9be6-9465aedd6318","path":"sprites/sMykoTurretColl/sMykoTurretColl.yy",},"LayerId":{"name":"12a5f562-53f2-4e30-ab2d-32dece55ac29","path":"sprites/sMykoTurretColl/sMykoTurretColl.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sMykoTurretColl","path":"sprites/sMykoTurretColl/sMykoTurretColl.yy",},"resourceVersion":"1.0","name":"8c69a68e-c344-41a6-9be6-9465aedd6318","tags":[],"resourceType":"GMSpriteFrame",},
   ],
@@ -68,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"12a5f562-53f2-4e30-ab2d-32dece55ac29","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "aesthetic",
     "path": "folders/Sprites/myko/aesthetic.yy",

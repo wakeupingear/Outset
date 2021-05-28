@@ -438,6 +438,7 @@
     {"roomId":{"name":"rNotdonDorms","path":"rooms/rNotdonDorms/rNotdonDorms.yy",},},
     {"roomId":{"name":"rNotdonAdults","path":"rooms/rNotdonAdults/rNotdonAdults.yy",},},
     {"roomId":{"name":"rHarold","path":"rooms/rHarold/rHarold.yy",},},
+    {"roomId":{"name":"","path":"",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":5,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

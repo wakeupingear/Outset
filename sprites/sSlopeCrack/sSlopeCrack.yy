@@ -25,10 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"5830e494-5a11-45b7-8ea9-d661593d34b1","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5830e494-5a11-45b7-8ea9-d661593d34b1","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"LayerId":{"name":"11d627d6-1a16-4a3f-a805-b4f0d6c045fd","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"5830e494-5a11-45b7-8ea9-d661593d34b1","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"LayerId":{"name":"224b7ed3-ebd5-4910-a247-718e6b830520","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"5830e494-5a11-45b7-8ea9-d661593d34b1","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"LayerId":{"name":"301bef3d-12c5-4b38-a3e0-3fd22312aeb6","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"5830e494-5a11-45b7-8ea9-d661593d34b1","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"LayerId":{"name":"2b691ec8-0bfc-4fe2-82a2-41ce402fee99","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"5830e494-5a11-45b7-8ea9-d661593d34b1","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"LayerId":{"name":"301bef3d-12c5-4b38-a3e0-3fd22312aeb6","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sSlopeCrack","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"resourceVersion":"1.0","name":"5830e494-5a11-45b7-8ea9-d661593d34b1","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"04f49324-9b56-4ee3-8515-7565a80f3985","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"04f49324-9b56-4ee3-8515-7565a80f3985","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"LayerId":{"name":"2b691ec8-0bfc-4fe2-82a2-41ce402fee99","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
@@ -91,6 +89,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"2b691ec8-0bfc-4fe2-82a2-41ce402fee99","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"301bef3d-12c5-4b38-a3e0-3fd22312aeb6","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "vr",
     "path": "folders/Sprites/platforming/breakables/vr.yy",

@@ -102,7 +102,7 @@
     ],
 
     "pro_arch1Citra":[
-        "if1","eugeneExists",
+        "$if1","eugene.exists",
             "#true1",
                 "Oh, can I help you, uh...",
                 "EUGENE!",

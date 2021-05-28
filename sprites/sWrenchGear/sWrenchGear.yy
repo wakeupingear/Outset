@@ -25,8 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"cf0de020-7c47-419f-83e9-fd7f3af25d5c","path":"sprites/sWrenchGear/sWrenchGear.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cf0de020-7c47-419f-83e9-fd7f3af25d5c","path":"sprites/sWrenchGear/sWrenchGear.yy",},"LayerId":{"name":"0049b4bd-55a7-4f09-844a-8e03cb18135e","path":"sprites/sWrenchGear/sWrenchGear.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"cf0de020-7c47-419f-83e9-fd7f3af25d5c","path":"sprites/sWrenchGear/sWrenchGear.yy",},"LayerId":{"name":"dfcd74da-5729-4911-8c93-d4d4690cf5e2","path":"sprites/sWrenchGear/sWrenchGear.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"cf0de020-7c47-419f-83e9-fd7f3af25d5c","path":"sprites/sWrenchGear/sWrenchGear.yy",},"LayerId":{"name":"0049b4bd-55a7-4f09-844a-8e03cb18135e","path":"sprites/sWrenchGear/sWrenchGear.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sWrenchGear","path":"sprites/sWrenchGear/sWrenchGear.yy",},"resourceVersion":"1.0","name":"cf0de020-7c47-419f-83e9-fd7f3af25d5c","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"9bc82cec-7006-4191-b53c-b7d468e01693","path":"sprites/sWrenchGear/sWrenchGear.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"9bc82cec-7006-4191-b53c-b7d468e01693","path":"sprites/sWrenchGear/sWrenchGear.yy",},"LayerId":{"name":"dfcd74da-5729-4911-8c93-d4d4690cf5e2","path":"sprites/sWrenchGear/sWrenchGear.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},

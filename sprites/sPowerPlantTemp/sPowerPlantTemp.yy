@@ -77,6 +77,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"b90f63cf-e0d5-429f-b6f8-0903b3731cd2","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"fe57cae1-136c-498b-b29b-5c1c86c3a76a","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "aesthetic",
     "path": "folders/Sprites/notdon/aesthetic.yy",

@@ -35,7 +35,8 @@
             "#false1",
                 "charlie go brrr",
         "#trip",
-        "$cutsceneDelay",{"delay":180,"key":"c1_shoeTrip"}
+        "$cutsceneDelay",{"delay":180,"key":"c1_shoeTrip"},
+        "$cutsceneCondition",{"key":"c1_vStart","condition":"plyLeft","args":[2008]}
     ],
     "c1_shoeTrip":[
         "$if1","hasData",["shoeTrip"],
@@ -50,12 +51,12 @@
                     "#tie",
                     "$cutscene","c1_shoe",
                 "#no1",
-                    "$if2","hasData","shoeTrip",
-                        "#true1",
+                    "$if2","hasData",["shoeTrip"],
+                        "#true2",
                             60,
                             "No, you know that you'd just trip over it again.",
                             "$goto","tie",
-                        "#false1",
+                        "#false2",
                             "You doubt your own ability to avoid tripping on a stray lace.",
                             "$question2","Give in to your insecurities and tie it?",
                             "#yes2",
@@ -66,11 +67,32 @@
                                 "...Oh right, you're supposed to stay with the OTHERS!"
     ],
     "c1_shoe":[
-        "end",  
         "$popup",{"sprite":"sShoe","mouse":[260,108],"forceOpen":true,"objs":[{
             "obj":"oShoelaces",
             "xPos":0,
             "yPos":0
         }]
-    }]
+    }],
+    "c1_vStart":[
+        "$createLayer",[1582,700,"bg2","oVShip"],
+        "$lastObj.addVarQueue",["lightningQueue","rightBarrier"],
+        "$lastObj.addVarQueue",["lightningQueue","leftBarrier"]
+    ],
+    "c1_haroldDoor":[
+        "There's a sign on the door.",
+        "Shop Hours: Soon to Dusk",
+        "Until then: BUZZ OFF, COMRADE!",
+        "$if1","oVShip.exists",
+            "#true1",
+                "$trackObj.setText","c1_haroldDoorEnter",
+                "$cutscene","c1_haroldDoorEnter",
+            "#false1"
+    ],
+    "c1_haroldDoorEnter":[
+        "You notice that the door isn't actually unlocked.",
+        "$question1","Go in?",
+            "#yes1",
+                "$roomChange",[194,174,"rHarold",4,0,0,1],
+            "#no1"
+    ]
 }

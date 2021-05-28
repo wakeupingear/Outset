@@ -89,6 +89,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"11d627d6-1a16-4a3f-a805-b4f0d6c045fd","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"224b7ed3-ebd5-4910-a247-718e6b830520","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "vr",
     "path": "folders/Sprites/platforming/breakables/vr.yy",

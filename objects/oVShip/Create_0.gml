@@ -36,6 +36,15 @@ if global.roomTime>1
 		rightBar= new Vec2(2720,784);
 		guns=[1,1];
 	}
+	else if global.notdonEra==notdonEras.present
+	{
+		if global.currentChapter=chapters.c1
+		{
+			hoverPos=new Vec2(1582,408);
+			leftBar= new Vec2(1057,424);
+			rightBar= new Vec2(1904,464);
+		}
+	}
 }
 
 if !eventExists(object_index,room,hoverPos.x,hoverPos.y,"bg",[]) eventAddObject(object_index,room,hoverPos.x,hoverPos.y,"bg",[]);

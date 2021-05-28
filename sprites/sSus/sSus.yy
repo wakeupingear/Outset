@@ -26,8 +26,8 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"d21a7fd0-dc76-4942-b7a4-dada42f56467","path":"sprites/sSus/sSus.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"d21a7fd0-dc76-4942-b7a4-dada42f56467","path":"sprites/sSus/sSus.yy",},"LayerId":{"name":"e74b9ce5-3174-4bd2-82f6-543f053765e9","path":"sprites/sSus/sSus.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"d21a7fd0-dc76-4942-b7a4-dada42f56467","path":"sprites/sSus/sSus.yy",},"LayerId":{"name":"d588000a-c945-4c0e-ab7a-ee18980ad3df","path":"sprites/sSus/sSus.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"d21a7fd0-dc76-4942-b7a4-dada42f56467","path":"sprites/sSus/sSus.yy",},"LayerId":{"name":"4c4bddf2-c2da-46c9-9873-64ab9f3cbcd2","path":"sprites/sSus/sSus.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"d21a7fd0-dc76-4942-b7a4-dada42f56467","path":"sprites/sSus/sSus.yy",},"LayerId":{"name":"d588000a-c945-4c0e-ab7a-ee18980ad3df","path":"sprites/sSus/sSus.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sSus","path":"sprites/sSus/sSus.yy",},"resourceVersion":"1.0","name":"d21a7fd0-dc76-4942-b7a4-dada42f56467","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

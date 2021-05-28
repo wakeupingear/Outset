@@ -71,6 +71,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"terrain2","resourceVersion":"1.0","name":"a5e516fe-8c58-4689-bcaa-c49d6c83db96","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"grid","resourceVersion":"1.0","name":"ab2d9369-e656-49a3-9353-1239b800de53","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "terrain",
     "path": "folders/Sprites/terrain.yy",
