@@ -5,7 +5,6 @@
         "$cutsceneDelay",{"key":"c1_graduationInterrupt","delay":60}
     ],
     "c1_graduationInterrupt":[
-        "$cutscene","c1_shoe",
         "$addData","shoeTrip",
         "$npcCitra.facePlayer",true,
         240,
@@ -67,6 +66,7 @@
                                 "...Oh right, you're supposed to stay with the OTHERS!"
     ],
     "c1_shoe":[
+        "end",  
         "$popup",{"sprite":"sShoe","mouse":[260,108],"forceOpen":true,"objs":[{
             "obj":"oShoelaces",
             "xPos":0,

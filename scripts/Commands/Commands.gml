@@ -637,8 +637,8 @@ function pathfindCommandProcess(command){
 				break;
 			case "cutsceneForce":
 				cancelCutsceneDelay(command[pfInd+1]);
-				if is_array(command[pfInd+1]) conversation(command[pfInd+1]);
-				else conversation(textLoad(command[pfInd+1]));
+				if is_array(command[pfInd+1]) conversationForced(command[pfInd+1]);
+				else conversationForced(textLoad(command[pfInd+1]));
 				pfInd+=2;
 				break;
 			case "cutscene":
@@ -646,6 +646,10 @@ function pathfindCommandProcess(command){
 				if is_array(command[pfInd+1]) conversation(command[pfInd+1]);
 				else conversation(textLoad(command[pfInd+1]));
 				pfInd+=2;
+				break;
+			case "simple":
+				pathfindingStart(id,"simple");
+				_loop=true;
 				break;
 			default: 
 				_loop=true;
