@@ -40,7 +40,9 @@
     ],
 
     "notdon_mykoObservatory":[
-        "The observatory"
+        "$popup",{"sprite":"sMykoObservatoryPhoto"},
+        "$popup",{"sprite":"sMykoObservatoryPhoto","index":1},
+        "$popup",{"sprite":"sMykoObservatoryPhoto","index":2}
     ],
 
 
