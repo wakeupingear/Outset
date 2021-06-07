@@ -17,7 +17,8 @@ else if mode==1
 	{
 		if is_string(delay) //format delay into an array
 		{
-			explodedDelay=explodeString("&&",delay);
+			if condition==0 explodedDelay=["true"];
+			else explodedDelay=explodeString("&&",delay);
 			subArgs=array_create(array_length(explodedDelay))
 			if array_length(args)>0&&!is_array(args[0])
 			{

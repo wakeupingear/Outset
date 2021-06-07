@@ -2,6 +2,8 @@ if alwaysMove||global.alive
 {
 	x+=lengthdir_x(spd,direction)+hsp;
 	y+=lengthdir_y(spd,direction)+vsp;
+	image_xscale+=xscaleSpd;
+	image_yscale+=yscaleSpd;
 	vsp+=grav;
 	image_alpha-=fade;
 	if point image_angle=point_direction(xprevious,yprevious,x,y);

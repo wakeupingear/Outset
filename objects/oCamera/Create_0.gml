@@ -28,6 +28,7 @@ yTo=y;
 jumpHeight=45;
 
 shakeTime=0;
+shakeToggle=false;
 shakeX=0;
 shakeY=0;
 

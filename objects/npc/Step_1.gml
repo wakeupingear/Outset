@@ -1,13 +1,15 @@
 /// @description Pathfinding and physics
+var _pfX=pfX;
+if _pfX=="x" _pfX=x;
+var _pfY=pfY;
+if _pfY=="y" _pfY=y;
+	
 if global.alive{
 if pathfinding //process commands
 {
-	var _pfX=pfX;
-	if _pfX=="x" _pfX=x;
-	var _pfY=pfY;
-	if _pfY=="y" _pfY=y;
 	if distance_to_point(_pfX,_pfY)<=pfRad||(pathfindingInterrupt&&!global.menuOpen)||reachedTarget
 	{
+		teleportOffscreen=false;
 		reachedTarget=true;
 		move=0;
 		//if pathfindingInterrupt pathfindingInterrupt=false;
@@ -49,6 +51,12 @@ if blockPlayer
 else
 {
 	physics();
+	if pathfinding&&teleportOffscreen&&!isInRange(x,y)&&!isInRange(_pfX,_pfY)
+	{
+		pfX=_pfX;
+		pfY=_pfY;
+		while groundCollision(x,y) y--;
+	}
 	if blockWall!=-1
 	{
 		instance_destroy(blockWall);

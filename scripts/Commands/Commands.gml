@@ -51,6 +51,15 @@ function commandProcess(command){
 			}
 			diag++;
 		}
+		else if string_char_at(command[diag],1)==":"
+		{
+			portInd=array_pos(global.characters[$ character],command[diag+1]);
+			if portInd==-1
+			{
+				show_debug_message("'"+character+"' does not have expression '"+command[diag+1]+"'");
+			}
+			diag++;
+		}
 		else if string_char_at(command[diag],1)=="$"
 		{
 			var _data=string_replace_all(string_copy(command[diag],2,string_length(command[diag])-1)," ","");
@@ -199,8 +208,13 @@ function commandProcess(command){
 							break;
 						case "shake":
 							oCamera.shakeX=_val[0];
-							oCamera.shakeY=_val[0];
+							oCamera.shakeY=_val[1];
 							oCamera.shakeTime=_val[2];
+							break;
+						case "shakeToggle":
+							oCamera.shakeX=_val[0];
+							oCamera.shakeY=_val[1];
+							oCamera.shakeToggle=(oCamera.shakeX!=0||oCamera.shakeY!=0);
 							break;
 						case "reset":
 							with oCamera
@@ -549,9 +563,13 @@ function pathfindCommandProcess(command){
 		}
 		else switch (command[pfInd])
 		{
+			case "xyjt":
+				teleportOffscreen=true
 			case "xyj":
 				jumpCheck=true;
+			case "xyt":
 			case "xy":
+				if command=="xyt" teleportOffscreen=true;
 				pfX=command[pfInd+1];
 				if is_string(pfX)&&string_pos("x+",pfX)>0 pfX=x+int64(string_digits(pfX));
 				pfY=command[pfInd+2];
@@ -614,6 +632,12 @@ function pathfindCommandProcess(command){
 				oCamera.shakeY=command[pfInd+2];
 				oCamera.shakeTime=command[pfInd+3];
 				pfInd+=4;
+				break;
+			case "shakeToggle":
+				oCamera.shakeX=command[pfInd+1];
+				oCamera.shakeY=command[pfInd+2];
+				oCamera.shakeToggle=(oCamera.shakeX!=0||oCamera.shakeY!=0);
+				pfInd+=3;
 				break;
 			case "speed":
 				getObject(command[pfInd+1]).image_speed=command[pfInd+2];

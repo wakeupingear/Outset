@@ -6,3 +6,6 @@ move=0;
 ymove=0;
 ladder=false;
 xscale=1;
+
+plyMove=0;
+plySpd=0;

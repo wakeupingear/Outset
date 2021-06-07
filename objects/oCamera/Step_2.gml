@@ -15,9 +15,9 @@ if abs(x-xTo)<1 x=xTo;
 if abs(y-yTo)<1 y=yTo;
 clampCam();
 
-if shakeTime>0
+if shakeTime>0||shakeToggle
 {
-	shakeTime--;
+	if !shakeToggle shakeTime--;
 	shakeRandX=irandom_range(-shakeX,shakeX);
 	shakeRandY=irandom_range(-shakeY,shakeY);
 }

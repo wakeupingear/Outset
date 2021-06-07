@@ -119,9 +119,13 @@ function scrVariables(){
 	#endregion
 	
 	#region Harold
-	global.characters.harold={portrait: [portHarold],diagColor: c_nearWhite,font: fontSizes.harold};
+	global.characters.harold={portrait: [portHarold],diagColor: c_nearWhite,font: fontSizes.harold,
+		portIndList:["smile","neutral","sideNeutral","shifty","angry","sad","surprised"]
+	};
 	addLocation("harold","rTest1","t1",34,132,1,1,"");
 	addLocation("harold","rNotdon","pro_electro",2183,719,1,1,""); //running the power demo
+	
+	addLocation("harold","rHaroldVRStart","c1_haroldVR",151,170,1,1,""); //house start
 	#endregion
 	 
 	#region Citra
@@ -206,6 +210,7 @@ function scrVariables(){
 	addLocation("smitten","rNotdon","c1_stage",3022,908,-1,1,""); //stage
 	addLocation("smitten","rNotdon","c1_bay",1604,644,-1,1,""); //launch bay
 		addLocationPathFrom("smitten","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
+	addLocation("smitten","rNotdon","c1_backpack",2292,628,-1,1,""); //backpack
 	#endregion
 	
 	#region Charlie
@@ -285,6 +290,7 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iGrappleDown",{index: 0, viewable: false});
 	ds_map_add(global.itemData,"iGrappleAir",{index: 0, viewable: false});
 	ds_map_add(global.itemData,"iSlate",{index: 2, viewable: false});
+	ds_map_add(global.itemData,"iBackpack",{index: 2, viewable: false});
 	ds_map_add(global.itemData,"iPlank",{index: 1, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote1",{index: 2, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote2",{index: 2, viewable: true});
@@ -460,7 +466,7 @@ function scrVariables(){
 		ds_list_add(global.playerItems,"iGrapple",1,"iSolitaire",1);
 		global.notdonEra=notdonEras.present;
 		//scr_pro_3();
-		scr_c1_2();
+		scr_c1_4();
 		global.startRoom=rNotdon;
 	}
 	

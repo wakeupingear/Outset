@@ -47,10 +47,10 @@ if global.roomTime>1
 	}
 }
 
-if !eventExists(object_index,room,hoverPos.x,hoverPos.y,"bg",[]) eventAddObject(object_index,room,hoverPos.x,hoverPos.y,"bg",[]);
+if !eventExists(object_index,room,hoverPos.x,hoverPos.y,"bg2",[]) eventAddObject(object_index,room,hoverPos.x,hoverPos.y,"bg2",[]);
 else
 {
-	alarm[4]=60;
+	if global.currentChapter!=chapters.c1 alarm[4]=60;
 }
 moving=false;
 

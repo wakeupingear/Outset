@@ -1,6 +1,8 @@
 image_speed=0
 
 spd=0; //speed in direction
+xscaleSpd=0;
+yscaleSpd=0;
 fade=0; //fade out (subtracted from image_alpha)
 grav=0; //force of gravity
 vsp=0; //vertical spd

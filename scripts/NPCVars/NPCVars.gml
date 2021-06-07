@@ -23,6 +23,7 @@ function npcMovementVars(){
 		stuckTime=0; //counts how long the object has been moving towards a point without actually going anywhere
 		reachedTarget=true; //whether the object has reached its last pathfinding coordinate
 		jumpCheck=false; //whether the object should check for holes to jump over
+		teleportOffscreen=false; //teleport to position when offscreen
 		
 		facePlayer=false; //whether the object faces the player
 		blockPlayer=false;
@@ -133,7 +134,7 @@ function npcGetStartY(npcKey){
 	return global.characterLocations[? npcKey][1];
 }
 function npcGetLocation(npcKey){
-	return room_get_name(global.characterLocations[? npcKey][2])+"_"+global.characterLocations[? npcKey][4];
+	return room_get_name(global.characterLocations[? npcKey][2])+"."+global.characterLocations[? npcKey][4];
 }
 function npcGetRoom(npcKey){
 	return global.characterLocations[? npcKey][2];

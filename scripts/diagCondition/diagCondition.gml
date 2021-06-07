@@ -13,6 +13,7 @@ function diagCondition(key,args){
 	}
 	else switch (key)
 	{
+		case "true": return true;
 		case "alive": return (global.alive);
 			case "!alive": return (!global.alive);
 			case "plyWithinDistance": return (instance_exists(ply)&&!instance_exists(oPlayerSoul)&&point_distance(ply.x,ply.y,args[0],args[1])<args[2]);

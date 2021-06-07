@@ -90,7 +90,8 @@
         "xyj",2997,911,4
     ],
     "c1_enterLaunchBay":[
-        "xyj",1771,475,2,
+        "xyjt",1805,452,2,
+        "xy",1771,475,2,
         "jump",
         "cutsceneForce",["$oGravityFieldAll.pause",300],
         "simple"

@@ -12,6 +12,11 @@ switch (transition)
 			if image_alpha>1.4
 			{
 				mode=1;
+				if instance_exists(ply)&&ymove==0
+				{
+					plyMove=buttonHold(control.right)-buttonHold(control.left);
+					plySpd=max(abs(ply.hsp),ply.hspMax);
+				}
 				if global.nextRoom!=startRoom room_goto(global.nextRoom);
 				else room_restart();
 				image_alpha=1.05;
@@ -24,6 +29,11 @@ switch (transition)
 		}
 		else
 		{
+			if instance_exists(ply)
+			{
+				ply.move=plyMove;
+				ply.hsp=plySpd*plyMove;
+			}
 			image_alpha-=0.075;
 			if image_alpha<=0 instance_destroy();
 		}

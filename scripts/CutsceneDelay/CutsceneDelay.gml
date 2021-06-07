@@ -1,6 +1,6 @@
 
 
-function createCutsceneDelay(_val,_name){
+function createCutsceneDelay(_val){
 	var _cd=instance_create_layer(0,0,"above",oCutsceneDelay);
 	if variable_struct_exists(_val,"key") 
 	{
@@ -11,13 +11,16 @@ function createCutsceneDelay(_val,_name){
 	{
 		_cd.startroom=asset_get_index(_val[$ "myRoom"]);
 	}
-	_cd.mode=(_name=="cutsceneCondition");
+	_cd.mode=(!variable_struct_exists(_val,"delay"));
 	if !_cd.mode
 	{
 		_cd.delay=_val.delay;
 		_cd.delayCount=_cd.delay;
 	}
-	else _cd.delay=_val.condition;
+	else 
+	{
+		if variable_struct_exists(_val,"condition") _cd.delay=_val.condition;
+	}
 	if variable_struct_exists(_val,"args") _cd.args=_val.args;
 	if variable_struct_exists(_val,"merge") _cd.merge=_val.merge;
 	if variable_struct_exists(_val,"scr") _cd.scr=asset_get_index(_val.scr);
