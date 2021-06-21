@@ -64,6 +64,7 @@ function scrVariables(){
 	global.characterLocations=ds_map_create(); //format: x,y,room,name index
 	ds_map_add(global.characterLocations,"test",[304,20,rTest1,0,"t1"]);
 	ds_map_add(global.characterLocations,"harold",[34,132,rTest1,2,"t1"]);
+	ds_map_add(global.characterLocations,"craig",[34,132,rTest1,2,"t1"]);
 	ds_map_add(global.characterLocations,"citra",[0,0,rNotdon,4,"pro_lb1"]);
 	ds_map_add(global.characterLocations,"eugene",[0,0,rNotdon,5,"pro_lb1"]);
 	ds_map_add(global.characterLocations,"nora",[0,0,rNotdon,6,"pro_lb1"]);
@@ -99,6 +100,7 @@ function scrVariables(){
 		if _path!="" global.characters[$ _npc].locations[$ _room][$ _key].path=_path;
 	}
 	addLocationPathFrom = function(_npc,_from,_fromRoom,_to,_toRoom,_path,_text){
+		if is_undefined(_text) _text="";
 		if !variable_struct_exists(global.characters[$ _npc].locations[$ _toRoom][$ _to],"pathFrom") variable_struct_set(global.characters[$ _npc].locations[$ _toRoom][$ _to],"pathFrom",{});
 		if !variable_struct_exists(global.characters[$ _npc].locations[$ _toRoom][$ _to].pathFrom,_fromRoom) variable_struct_set(global.characters[$ _npc].locations[$ _toRoom][$ _to].pathFrom,_fromRoom,{});
 		global.characters[$ _npc].locations[$ _toRoom][$ _to].pathFrom[$ _fromRoom][$ _from]={};
@@ -127,6 +129,13 @@ function scrVariables(){
 	
 	addLocation("harold","rHaroldVRStart","c1_haroldVR",151,170,1,1,""); //house start
 	#endregion
+	
+	#region Craig
+	global.characters.craig={portrait: [portHarold],diagColor: c_nearWhite,font: fontSizes.harold,
+		portIndList:["smile","neutral","sideNeutral","shifty","angry","sad","surprised"]
+	};
+	addLocation("craig","rTest1","t1",34,132,1,1,"");
+	#endregion
 	 
 	#region Citra
 	global.characters.citra={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
@@ -146,6 +155,8 @@ function scrVariables(){
 	addLocation("citra","rNotdon","c1_stage",2975,908,-1,1,""); //stage
 	addLocation("citra","rNotdon","c1_bay",1557,644,-1,1,""); //launch bay
 		addLocationPathFrom("citra","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
+	addLocation("citra","rNotdon","c1_video",1924,452,-1,1,""); //video
+		addLocationPathFrom("citra","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
 	#endregion
 	
 	#region Eugene
@@ -172,6 +183,8 @@ function scrVariables(){
 	addLocation("eugene","rNotdon","c1_stage",3040,772,1,1,""); //stage
 	addLocation("eugene","rNotdon","c1_bay",1645,644,1,1,""); //launch bay
 		addLocationPathFrom("eugene","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
+	addLocation("eugene","rNotdon","c1_video",1772,463,-1,1,""); //video
+		addLocationPathFrom("eugene","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
 	#endregion
 	
 	#region Nora
@@ -188,6 +201,8 @@ function scrVariables(){
 	addLocation("nora","rNotdon","c1_stage",3063,908,-1,1,""); //stage
 	addLocation("nora","rNotdon","c1_bay",1622,644,-1,1,""); //launch bay
 		addLocationPathFrom("nora","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
+	addLocation("nora","rNotdon","c1_video",1804,452,-1,1,""); //video
+		addLocationPathFrom("nora","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
 	#endregion
 	
 	#region Smitten
@@ -211,6 +226,9 @@ function scrVariables(){
 	addLocation("smitten","rNotdon","c1_bay",1604,644,-1,1,""); //launch bay
 		addLocationPathFrom("smitten","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
 	addLocation("smitten","rNotdon","c1_backpack",2292,628,-1,1,""); //backpack
+	addLocation("smitten","rNotdon","c1_video",1829,452,1,1,""); //video
+		addLocationPathFrom("smitten","c1_backpack","rNotdon","c1_video","rNotdon","simpleAlwaysJump","");
+		addLocationPathFrom("smitten","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
 	#endregion
 	
 	#region Charlie
@@ -236,6 +254,8 @@ function scrVariables(){
 	addLocation("charlie","rNotdon","c1_stage",2993,908,-1,1,""); //stage
 	addLocation("charlie","rNotdon","c1_bay",1672,644,-1,1,""); //launch bay
 		addLocationPathFrom("charlie","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
+	addLocation("charlie","rNotdon","c1_video",1887,452,1,1,""); //video
+		addLocationPathFrom("charlie","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
 	#endregion
 	
 	#region Matt
@@ -374,6 +394,10 @@ function scrVariables(){
 	];
 	
 	global.coinColorPoint=4280556782;
+	
+	global.alphabet=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 
+	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+	"!","#","$","*"];
 	
 	global.npcStates={};
 	

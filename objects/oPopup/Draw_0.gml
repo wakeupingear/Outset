@@ -34,7 +34,7 @@ if objs!=-1
 		{
 			if !variable_struct_exists(objs[i],"xPos") objs[i].xPos=0;
 			if !variable_struct_exists(objs[i],"yPos") objs[i].yPos=0;
-			var _o=instance_create_depth(0,0,depth,asset_get_index(objs[i].obj));
+			var _o=instance_create_depth(0,0,depth-1,asset_get_index(objs[i].obj));
 			_o.parentObj=id;
 			ds_list_add(objList,_o);
 		}
@@ -51,6 +51,6 @@ if objs!=-1
 		objList[|i].y=yy-sprite_get_yoffset(sprite_index)+objs[i].yPos;
 		objList[|i].image_alpha=image_alpha;
 		objList[|i].image_blend=image_blend;
-		with objList[|i] draw();
+		with objList[|i] if variable_instance_exists(id,"draw") draw();
 	}
 }

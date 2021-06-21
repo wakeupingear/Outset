@@ -1,11 +1,12 @@
 /// @description Press
 if global.alive
 {
-	if distance_to_object(ply)<8&&place_meeting(x,y,ply)
+	if pressed||(distance_to_object(ply)<8&&place_meeting(x,y,ply))
 	{
 		global.interactText=check;
-		if (buttonPressed(control.confirm)||buttonPressed(control.up))
+		if (pressed||buttonPressed(control.confirm)||buttonPressed(control.up))
 		{
+			pressed=false;
 			if platform.moving||platform.moveDir==moveDir
 			{
 				platform.moveDir=moveDir;

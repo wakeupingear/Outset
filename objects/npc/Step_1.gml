@@ -51,10 +51,11 @@ if blockPlayer
 else
 {
 	physics();
+	show_debug_message(isInRange(x,y))
 	if pathfinding&&teleportOffscreen&&!isInRange(x,y)&&!isInRange(_pfX,_pfY)
 	{
-		pfX=_pfX;
-		pfY=_pfY;
+		x=_pfX;
+		y=_pfY;
 		while groundCollision(x,y) y--;
 	}
 	if blockWall!=-1

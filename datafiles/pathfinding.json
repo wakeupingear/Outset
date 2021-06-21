@@ -95,5 +95,10 @@
         "jump",
         "cutsceneForce",["$oGravityFieldAll.pause",300],
         "simple"
+    ],
+    "c1_enterMissionControl":[
+        "xy",1856,452,4,
+        60,
+        "xyt","endX","endY",2
     ]
 }

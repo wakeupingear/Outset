@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sMissile",
-    "path": "sprites/sMissile/sMissile.yy",
+    "name": "sCursor",
+    "path": "sprites/sCursor/sCursor.yy",
   },
   "solid": false,
   "visible": true,

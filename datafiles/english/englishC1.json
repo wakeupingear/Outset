@@ -183,5 +183,43 @@
         "...Loser!",
         "$smitten.xscale",1
     ],
-    "c1_backpackSmittenIdle":[[["What are you looking at?"],["Delicious cookie, by the way."]]]
+    "c1_backpackSmittenIdle":[[["What are you looking at?"],["Delicious cookie, by the way."]]],
+
+    "c1_groupForgetName":[
+        "$smitten.setRoom",["rNotdon","c1_video"],
+        "$popup",{"sprite":"sEmpty","forceOpen":true,"objs":[{
+            "obj":"oKeyboard",
+            "output":0
+        }]},
+        "?smitten","Hellooooooooo? Anyone in there?",
+        "?eugene","How socially awkward.",
+        "?citra","{name}, don't listen to them!{60} Also, sorry.",
+        "So now that everyone is all present and concious, HAROLD has a presentation!",
+        "?craig","NOT HAROLD!",
+        "CRAIG!",
+        "DIFFERENT PERSON, DIFFERENT NAME!",
+        "?citra","Oh. Right.{30} CRAIG. Show us your video.",
+        "?craig","OHO! Time for a SHORT VIDEO PRESENTATION!",
+        "$popup",{"sprite":"sEmpty","forceOpen":true,"objs":[{
+            "obj":"oHaroldVideo"
+        }]},
+        "?eugene","Death",
+        "?ply","Somehow, the SHORT VIDEO PRESENTATION fills you with a sense of urgency.",
+        "?citra","...Oh, it is over?",
+        "Then let us go immediately!",
+        "$oPlatform.moving",true,
+        "$citra.setRoom",["rNotdon","c1_bay"],
+        "$eugene.setRoom",["rNotdon","c1_bay"],
+        "$nora.setRoom",["rNotdon","c1_bay"],
+        "$smitten.setRoom",["rNotdon","c1_bay"],
+        "$charlie.setRoom",["rNotdon","c1_bay"],
+        120,
+        "$ply.alpha",0,
+        "$setTime",1,
+        120,
+        "$script","scr_c1_5",
+        "$ply.alpha",1,
+        120
+    ],
+    "c1_jack":["So you wake up in a gear..."]
 }
