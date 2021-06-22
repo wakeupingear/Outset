@@ -183,7 +183,7 @@
         "...Loser!",
         "$smitten.xscale",1
     ],
-    "c1_backpackSmittenIdle":[[["What are you looking at?"],["Delicious cookie, by the way."]]],
+    "c1_backpackSmittenIdle":[["What are you looking at?"],["Delicious cookie, by the way."]],
 
     "c1_groupForgetName":[
         "$smitten.setRoom",["rNotdon","c1_video"],
@@ -221,5 +221,12 @@
         "$ply.alpha",1,
         120
     ],
-    "c1_jack":["So you wake up in a gear..."]
+    "c1_jack":["So you wake up in a gear..."],
+
+    "c1_bayCitra":[
+        "Stay here, please! As we all saw, there was been another POWER OUTAGE yesterday.",
+        "MATT has assured us that it will be fixed soon, so sit quietly and wait.",
+        "$citra.setIdleText"
+    ],
+    "c1_bayCitraIdle":[["No need to be the hero!"],["It will be alright."]]
 }

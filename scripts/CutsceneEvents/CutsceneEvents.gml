@@ -229,7 +229,11 @@ function scr_c1_5(){
 	global.currentChapter=chapters.c1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
+	addData("notdonPowerless");
+	setRoomLighting(room_get_name(room));
 	setDungeonProgress(dungeons.vr,2);
+	
+	instance_create_depth(1474,357,depth,oNotdonPowerLadder);
 	
 	setNPCRoom("smitten","rNotdon","c1_bay");
 	setNPCRoom("citra","rNotdon","c1_bay");

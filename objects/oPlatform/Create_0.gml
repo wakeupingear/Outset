@@ -9,4 +9,6 @@ ySpd=0;
 touch=true;
 touchIsTrigger=true;
 moving=false;
-moveDir=1
+moveDir=1;
+
+alarm[0]=1; //position

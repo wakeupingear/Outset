@@ -11,7 +11,7 @@ function save(_num){
 	ini_write_string("Player","name",global.name);
 	ini_write_real("Player","xscale",global.startXscale);
 	
-	ini_write_string("Progress","data",ds_list_write(global.data));  //Attempting to WriteValue for unsupported type 6
+	ini_write_string("Progress","data",ds_map_write(global.data));  //Attempting to WriteValue for unsupported type 6
 	ini_write_string("Progress","playerItems",ds_list_write(global.playerItems));
 	ini_write_string("Progress","characterLocations",ds_map_write(global.characterLocations));
 	ini_write_string("Progress","droppedItems",ds_list_write(global.droppedItems));
@@ -49,7 +49,7 @@ function load(_num){
 	global.hudColor=ini_read_real("Player","hudcolor",0);
 	global.name=ini_read_string("Player","name","");
 	global.startXscale=ini_read_real("Player","xscale",1);
-	ds_list_read(global.data,ini_read_string("Progress","data",""));
+	ds_map_read(global.data,ini_read_string("Progress","data",""));
 	ds_list_read(global.playerItems,ini_read_string("Progress","playerItems",""));
 	ds_list_clear(global.inventory);
 	for (var i=0;i<ds_list_size(global.playerItems);i+=2) 
@@ -111,6 +111,6 @@ function loadPrefs(){
 	audio_group_set_gain(audiogroup_music,global.musicVol,0);
 	audio_group_set_gain(audiogroup_sounds,global.sfxVol,0);
 	
-	display_set_gui_size(1920*global.guiScale,1080*global.guiScale);
+	display_set_gui_size(floor(1920*global.guiScale),floor(1080*global.guiScale));
 	setFont(fontSizes.medium);
 }

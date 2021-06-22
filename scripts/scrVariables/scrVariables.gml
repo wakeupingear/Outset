@@ -57,7 +57,7 @@ function scrVariables(){
 	global.notdonEra=notdonEras.pro1;
 	global.timeOfDay=times.day;
 	
-	global.data =ds_list_create(); //dump misc values here
+	global.data =ds_map_create(); //dump misc values here
 	global.playerItems=ds_list_create(); //format: "iNameOfItem", number of items
 	global.inventory=ds_list_create();
 	global.itemSlot=0;
@@ -467,7 +467,7 @@ function scrVariables(){
 	for (var i=0;i<global.numOfInputs;i++) switch i
 	{
 		default:
-			global.doubleInputTime[i]=20;
+			global.douxbleInputTime[i]=20;
 			break;
 	}
 	
@@ -490,7 +490,7 @@ function scrVariables(){
 		ds_list_add(global.playerItems,"iGrapple",1,"iSolitaire",1);
 		global.notdonEra=notdonEras.present;
 		//scr_pro_3();
-		scr_c1_4();
+		scr_c1_5();
 		global.startRoom=rNotdon;
 	}
 	

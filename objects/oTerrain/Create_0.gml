@@ -19,7 +19,7 @@ addColorData=function(region,color,outlineCol){
 	}
 }
 
-addColorData(worldRegion.notdon,"363636","4C4C4C");
+addColorData(worldRegion.notdon,"333333","4C4C4C");
 addColorData(worldRegion.west,"363636","4C4C4C");
 addColorData(worldRegion.core,"E2E2E2");
 addColorData(worldRegion.vr,"959595","555555");

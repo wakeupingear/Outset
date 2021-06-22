@@ -2,7 +2,7 @@ if global.alive
 {
 	if !moving
 	{
-		if touchIsTrigger&&distance_to_object(ply)<12
+		if touchIsTrigger&&distance_to_object(ply)<12&&roomHasPower()
 		{
 			if !place_meeting(x,y-1,ply) touch=false;
 			else if !touch

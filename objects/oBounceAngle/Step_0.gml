@@ -1,7 +1,7 @@
 /// @description Touch objects
 if image_index==0
 {
-	if place_meeting(x,y,oPhysicsObj)
+	if roomHasPower()&&place_meeting(x,y,oPhysicsObj)
 	{
 		var _o=instance_place(x,y,oPhysicsObj);
 		_o.x=x;

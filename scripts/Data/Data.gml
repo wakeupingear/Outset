@@ -1,5 +1,6 @@
 function hasData(key){
-	return (ds_list_find_index(global.data,key)>-1);
+	if !ds_map_exists(global.data,key) return false;
+	return global.data[? key];
 }
 
 function getDungeonProgress(dungeon){

@@ -10,7 +10,7 @@ if global.lightAlpha>0
 	{
 		if !variable_instance_exists(id,"drawLight")
 		{
-			if distance_to_point(camX()+192,camY()+108)-24<200 draw_circle(round(x)-camX(),round(y)-camY(),24,false);
+			if distance_to_point(camX()+192,camY()+108)-24<200 draw_circle(floor(x)-camX(),floor(y)-camY(),24,false);
 		}
 		else drawLight();
 	}

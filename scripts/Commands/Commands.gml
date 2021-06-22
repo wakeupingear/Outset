@@ -443,8 +443,7 @@ function commandProcess(command){
 							saved=true;
 							break;
 						case "removeData":
-							if ds_list_find_index(global.data,_val)>-1 ds_list_delete(global.data,ds_list_find_index(global.data,_val));
-							else show_debug_message("Error: Trying to remove "+_val+" from global.data.");
+							global.data[? _val]=false;
 							diag+=2;
 							break;
 							saved=true;
@@ -561,6 +560,7 @@ function pathfindCommandProcess(command){
 		if pfInd>=array_length(command)||is_undefined(command[pfInd])||command[pfInd]=="end"
 		{
 			pathfinding=false;
+			event_user(0); //set text at location
 		}
 		else if is_real(command[pfInd])
 		{

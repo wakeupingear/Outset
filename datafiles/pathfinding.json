@@ -100,5 +100,12 @@
         "xy",1856,452,4,
         60,
         "xyt","endX","endY",2
+    ],
+
+    "c1_jumpingSwitch":[
+        "#start",
+        "jump",
+        180,
+        "goto","start"
     ]
 }

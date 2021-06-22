@@ -42,7 +42,7 @@ if !render||!surface_exists(surf)
 	{
 		case worldRegion.notdon:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
-			draw_sprite_repeated(0,0,sSus,0,1,1,0,c_white,1,0,0);
+			draw_sprite_repeated(0,0,sNotdonTerrainTexture,0,1,1,0,c_white,1,0,0);
 			gpu_set_blendmode(bm_normal);
 			break;
 		case worldRegion.vr:

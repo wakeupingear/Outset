@@ -1,7 +1,7 @@
 /// @description Press
 if global.alive
 {
-	if pressed||(distance_to_object(ply)<8&&place_meeting(x,y,ply))
+	if (pressed||(distance_to_object(ply)<8&&place_meeting(x,y,ply)))&&roomHasPower()
 	{
 		global.interactText=check;
 		if (pressed||buttonPressed(control.confirm)||buttonPressed(control.up))

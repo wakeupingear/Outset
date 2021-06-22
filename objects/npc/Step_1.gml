@@ -51,7 +51,6 @@ if blockPlayer
 else
 {
 	physics();
-	show_debug_message(isInRange(x,y))
 	if pathfinding&&teleportOffscreen&&!isInRange(x,y)&&!isInRange(_pfX,_pfY)
 	{
 		x=_pfX;
