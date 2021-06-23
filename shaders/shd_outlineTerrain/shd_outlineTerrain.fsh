@@ -1,6 +1,7 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
+uniform float u_alpha;
 uniform vec2 u_pixel;
 uniform vec3 u_color;
 
@@ -29,7 +30,8 @@ void main()
 	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - offsetX-offsetX-offsetY-offsetY).a);
   
 	 if (alpha<13.0) {
-	  gl_FragColor.rgb=u_color;
+	  if (u_alpha==1.0) gl_FragColor.rgb=u_color;
+	  else gl_FragColor.rgb*=(1.0-u_alpha);
 	 }
  }
 

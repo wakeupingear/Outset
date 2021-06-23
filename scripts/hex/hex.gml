@@ -1,6 +1,7 @@
 
 
 function hex(hexVal){
+var newVal=string_copy(hexVal,5,2)+string_copy(hexVal,3,2)+string_copy(hexVal,1,2);
 var result=0;
  
 // special unicode values
@@ -9,8 +10,8 @@ var NINE=ord("9");
 var A=ord("A");
 var F=ord("F");
  
-for (var i=1; i<=string_length(hexVal); i++){
-    var c=ord(string_char_at(string_upper(hexVal), i));
+for (var i=1; i<=string_length(newVal); i++){
+    var c=ord(string_char_at(string_upper(newVal), i));
     // you could also multiply by 16 but you get more nerd points for bitshifts
     result=result<<4;
     // if the character is a number or letter, add the value

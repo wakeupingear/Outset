@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "background",
-    "path": "folders/Sprites/background.yy",
+    "name": "terrain",
+    "path": "folders/Sprites/island/terrain.yy",
   },
   "resourceVersion": "1.0",
   "name": "sGroundGradient",

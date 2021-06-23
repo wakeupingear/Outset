@@ -45,6 +45,16 @@ if !render||!surface_exists(surf)
 			draw_sprite_repeated(0,0,sNotdonTerrainTexture,0,1,1,0,c_white,1,0,0);
 			gpu_set_blendmode(bm_normal);
 			break;
+		case worldRegion.east:
+			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
+			for (var i=0;i<instance_number(oTerrainGradient);i++)
+			{
+				var _g=instance_find(oTerrainGradient,i);
+				draw_sprite_ext(_g.sprite_index,_g.image_index,-100,_g.y,(room_width+200)/_g.sprite_width,_g.image_yscale,0,-1,_g.image_alpha);
+			}
+			draw_sprite_repeated(0,0,sIslandGroundTexture,0,1,1,0,c_white,0.3,0,0);
+			gpu_set_blendmode(bm_normal);
+			break;
 		case worldRegion.vr:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
 			draw_sprite_repeated(0,0,sMykoBrickGreyTile,0,1,1,0,c_white,1,0,0);
@@ -61,15 +71,21 @@ var _height=min(218,room_height);
 var _posX=max(floor(camX()),0);
 var _posY=max(floor(camY()),0);
 var _col=[color_get_red(image_blend)/255,color_get_green(image_blend)/255,color_get_blue(image_blend)/255];
+var _outlineAlpha=1;
 switch (roomType)
 {
+	case worldRegion.east:
+		_outlineAlpha=0.3;
+		break
 	case worldRegion.notdon:
 		shader_set(shd_outlineTerrain);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_pixel"),texture_get_texel_width(surface_get_texture(surf)),texture_get_texel_height(surface_get_texture(surf)));
-		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[worldRegion.notdon].outlineCol[0]*_col[0],colorData[worldRegion.notdon].outlineCol[1]*_col[1],colorData[worldRegion.notdon].outlineCol[2]*_col[2]);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[roomType].outlineCol[0]*_col[0],colorData[roomType].outlineCol[1]*_col[1],colorData[roomType].outlineCol[2]*_col[2]);
 		break;
 	case worldRegion.vr:
 		shader_set(shd_outlineTerrainTop);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_pixel"),texture_get_texel_width(surface_get_texture(surf)),texture_get_texel_height(surface_get_texture(surf)));
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[worldRegion.notdon].outlineCol[0]*_col[0],colorData[worldRegion.notdon].outlineCol[1]*_col[1],colorData[worldRegion.notdon].outlineCol[2]*_col[2]);
 		break;
