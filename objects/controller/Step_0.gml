@@ -14,6 +14,7 @@ if !global.notPause
 			surfPosY=0;
 			removeMenuButtons(0);
 			instance_activate_all();
+			if !hasData("reacSt") instance_deactivate_object(oSouldropCoin);
 			global.notPause=true;
 			setRoomEra(); //only activate room specifc eras
 		}

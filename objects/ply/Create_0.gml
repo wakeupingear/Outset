@@ -1,3 +1,6 @@
+image_speed=0;
+if isDev sprite_index=sPly;
+mask_index=sPly;
 if object_index==ply&&!global.alive
 {
 	instance_create_layer(global.plyX,global.plyY,layer,oPlayerSoul);
@@ -24,8 +27,12 @@ setItemFill=function(){
 			default:
 				switch (string_letters(global.inventory[|global.itemSlot]))
 				{
+					case "iLavaSwitch":
 					case "iWrench":
 						itemFillMax=-1;
+						break;
+					case "iFormula":
+						itemFillMax=60;
 						break;
 					default:
 						itemFillMax=15;
@@ -58,6 +65,23 @@ drawLight=function(){
 	if image_alpha!=0 draw_circle(round(x)-camX(),round(y)-camY(),24,false);
 }
 
+//animation
+animation.ladder={type: animType.singleFrame,startFrame: 16};
+animation.ladderMove={frameTime:9, type: animType.loop,startFrame: 16,endFrame: 17};
+animation.zipline={type: animType.singleFrame,startFrame: 18};
+animation.jumping.startFrame=13;
+
+animation.lookingUp={type: animType.singleFrame,startFrame: 14};
+animation.lookingDown={type: animType.singleFrame,startFrame: 12};
+
+stateToAnim[moveState.running]="walking";
+stateToAnim[moveState.jumping]="jumping";
+stateToAnim[moveState.zipline]="zipline";
+stateToAnim[moveState.ladder]="ladder";
+stateToAnim[moveState.ladderMove]="ladderMove";
+
+hasBackpack=false;
+event_user(0);
 
 //for jump testing
 //jumpStart=y;

@@ -443,7 +443,7 @@ function commandProcess(command){
 							saved=true;
 							break;
 						case "removeData":
-							global.data[? _val]=false;
+							removeData();
 							diag+=2;
 							break;
 							saved=true;

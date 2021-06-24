@@ -58,7 +58,21 @@ if instance_exists(ply)
 				draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,c_red,1);
 			}
 		}
-		draw_sprite(sItems,global.itemData[? global.inventory[|global.itemSlot]].index,getHudX()+camX()-12,52+camY());
+		var _ind=global.itemData[? global.inventory[|global.itemSlot]].index;
+		switch global.inventory[|global.itemSlot]
+		{
+			case "iFormula":
+				itemIndexTime++;
+				if itemIndexTime>15
+				{
+					itemIndexTime=0;
+					itemIndex=!itemIndex
+				}
+				_ind+=itemIndex;
+				break;
+			default: break;
+		}
+		draw_sprite(sItems,_ind,getHudX()+camX()-12,52+camY());
 	}
 }
 

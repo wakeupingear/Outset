@@ -11,6 +11,9 @@ try
 	_importTextData("Prologue");
 	_importTextData("C1");
 	_importTextData("Wastes");
+	_importTextData("Air");
+	_importTextData("Deep");
+	_importTextData("Island");
 	_importTextData("Notdon");
 	scrSetText();
 }

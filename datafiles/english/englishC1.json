@@ -187,7 +187,7 @@
 
     "c1_groupForgetName":[
         "$smitten.setRoom",["rNotdon","c1_video"],
-        "$popup",{"sprite":"sEmpty","forceOpen":true,"objs":[{
+        "$popup",{"sprite":"empty","forceOpen":true,"objs":[{
             "obj":"oKeyboard",
             "output":0
         }]},
@@ -200,7 +200,7 @@
         "DIFFERENT PERSON, DIFFERENT NAME!",
         "?citra","Oh. Right.{30} CRAIG. Show us your video.",
         "?craig","OHO! Time for a SHORT VIDEO PRESENTATION!",
-        "$popup",{"sprite":"sEmpty","forceOpen":true,"objs":[{
+        "$popup",{"sprite":"empty","forceOpen":true,"objs":[{
             "obj":"oHaroldVideo"
         }]},
         "?eugene","Death",

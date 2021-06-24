@@ -3,6 +3,10 @@ function hasData(key){
 	return global.data[? key];
 }
 
+function removeData(key){
+	global.data[? key]=false;
+}
+
 function getDungeonProgress(dungeon){
 	return string_char_at(global.dungeonProgress,dungeon+1);
 }

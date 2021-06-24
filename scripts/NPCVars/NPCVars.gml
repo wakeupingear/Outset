@@ -25,7 +25,6 @@ function npcMovementVars(){
 		jumpCheck=false; //whether the object should check for holes to jump over
 		teleportOffscreen=false; //teleport to position when offscreen
 		
-		facePlayer=false; //whether the object faces the player
 		blockPlayer=false;
 		blockWall=-1;
 	}
@@ -64,8 +63,10 @@ function physicsVars(){
 function npcAnimVars(){
 	animation={
 		standing: {type: animType.singleFrame,startFrame: 0},
+		jumping: {type: animType.singleFrame,startFrame: 3},
+		attacked: {type: animType.singleFrame,startFrame: 2},
 		walking: {
-			frameTime: 15,
+			frameTime: 7,
 			type: animType.loop,
 			startFrame: 0,
 			endFrame: 1
@@ -78,19 +79,17 @@ function npcAnimVars(){
 		}*/
 	}
 	
-	currentAnimation=""; //currently active animation
+	currentAnimation="standing"; //currently active animation
 	animCount=0; //progress in the animation
 	animDir=1; //direction of frame progression
 	animating=true; //whether a non-default animation is set
+	stateToAnim=array_create(20,"standing"); //array mapping state to animation name
 }
 
 function npcAnimation(){
+	setStateAnimation();
 	if animating {
-	if currentAnimation==""
-	{
-	
-	}
-	else switch (animation[$ currentAnimation].type)
+	switch (animation[$ currentAnimation].type)
 	{
 		case animType.singleFrame: 
 			image_index=animation[$ currentAnimation].startFrame; 

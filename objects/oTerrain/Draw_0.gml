@@ -52,7 +52,7 @@ if !render||!surface_exists(surf)
 				var _g=instance_find(oTerrainGradient,i);
 				draw_sprite_ext(_g.sprite_index,_g.image_index,-100,_g.y,(room_width+200)/_g.sprite_width,_g.image_yscale,0,-1,_g.image_alpha);
 			}
-			draw_sprite_repeated(0,0,sIslandGroundTexture,0,1,1,0,c_white,0.3,0,0);
+			//draw_sprite_repeated(0,0,sIslandGroundTexture,0,1,1,0,c_white,0.3,0,0);
 			gpu_set_blendmode(bm_normal);
 			break;
 		case worldRegion.vr:
@@ -76,7 +76,6 @@ switch (roomType)
 {
 	case worldRegion.east:
 		_outlineAlpha=0.3;
-		break
 	case worldRegion.notdon:
 		shader_set(shd_outlineTerrain);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);

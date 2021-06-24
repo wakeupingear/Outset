@@ -15,3 +15,4 @@ if instance_exists(oGrapple)&&oGrapple.state!=0//&&false
 	}
 }
 draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,0,image_blend,image_alpha);
+if hasBackpack draw_sprite_ext(sPlyBackpack,image_index,x,y,xscale,yscale,0,image_blend,image_alpha);

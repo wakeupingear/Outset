@@ -21,12 +21,12 @@ function positionNpc(moveToLocation){ //0= don't, 1=do, 2=pathfind
 	var _rm=room_get_name(room);
 	check=global.characters[$ npcKey].ch;
 	xscale=global.characters[$ npcKey].locations[$ _rm][$ global.characterLocations[? npcKey][4]].xs;
+	facePlayer=false; //whether the object faces the player
 	if xscale==0 
 	{
 		facePlayer=true;
 		xscale=1;
 	}
-	else facePlayer=false;
 	yscale=global.characters[$ npcKey].locations[$ _rm][$ global.characterLocations[? npcKey][4]].ys;
 	return true;
 }

@@ -1,3 +1,5 @@
+image_speed=0;
+
 npcKey="";
 location="";
 if !positionNpc(1) instance_destroy();

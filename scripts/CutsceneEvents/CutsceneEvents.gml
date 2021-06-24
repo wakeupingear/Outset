@@ -241,3 +241,12 @@ function scr_c1_5(){
 	setNPCRoom("nora","rNotdon","c1_bay");
 	setNPCRoom("smitten","rNotdon","c1_bay");
 }
+
+function scr_island_1(){
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.island;
+	global.startRoom=rIsland;
+	global.timeOfDay=times.night;
+	
+	createCutsceneDelay({key:"island_xavierIntro",condition:"plyRight",args:[564],myRoom:"rIsland"});
+}

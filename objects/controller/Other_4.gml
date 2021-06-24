@@ -2,6 +2,12 @@ var _rName=room_get_name(room);
 global.roomTime=0;
 if !visitedRoom(room) ds_list_add(global.visitedRooms,room);
 
+//show layers
+var _l=layer_get_id("bg");
+if _l>-1 layer_set_visible(_l,true);
+_l=layer_get_id("bg2");
+if _l>-1 layer_set_visible(_l,true);
+
 //change music
 if instance_exists(oMusicChange) instance_destroy(oMusicChange);
 instance_create_depth(x,y,0,oMusicChange);

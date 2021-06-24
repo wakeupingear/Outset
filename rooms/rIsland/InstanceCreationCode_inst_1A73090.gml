@@ -1,0 +1,1 @@
+if !hasData("islandFlood") x=3600;

@@ -11,7 +11,9 @@
         "Charlie",
         "Matt",
         "Chet",
-        "Craig"
+        "Craig",
+
+        "Xavier"
     ],
     "textInteract": [
         "Check",
@@ -21,7 +23,8 @@
         "Enter",
         "Press",
         "Scan",
-        "Resonate"
+        "Resonate",
+        "Retract"
     ],
     "buttonText":{
         "up":"Up",
@@ -42,6 +45,7 @@
         "iGrappleArc":["","",""],
         "iSlate":["Slate","","Acquired a CELL PHONE!"],
         "iBackpack":["Backpack","","Acquired YOUR BACKPACK!"],
+        "iLadder":["Ladder","","Acquired a LADDER!"],
         "iPlank": [
             "Wooden Plank",
             "A substantial plank covered in all-natural splinters.",
@@ -121,7 +125,9 @@
                 "$goto","no1",
             "#no1"
             ]
-        ]
+        ],
+        "iLavaSwitch":["Toggle?","","Acquired{30} A TOGGLE?"],
+        "iFormula":["Liquid","","Acquired A VIAL OF LIQUID!"]
     },
     "solitaire_win":[
         "You feel a sense of pride and accomplishment."

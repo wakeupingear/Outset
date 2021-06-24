@@ -60,7 +60,8 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 	yDir=0;
 	x=ply.x-(ply.xscale==1);
 	y=ply.y+grapplePlyYoff;
-	if ply.state<=moveState.running||upgrades[4]||(buttonHold(control.down)&&buttonPressed(control.grapple)&&upgrades[grappleState.down])
+	var _onGround=(ply.state<=moveState.running||ply.state==moveState.zipline);
+	if _onGround||upgrades[4]||(buttonHold(control.down)&&buttonPressed(control.grapple)&&upgrades[grappleState.down])
 	{
 		if buttonPressed(control.swing)
 		{
@@ -83,7 +84,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 		{
 			if buttonHold(control.down) //down
 			{
-				if upgrades[grappleState.down]&&(ply.state>moveState.running||upgrades[4])
+				if upgrades[grappleState.down]&&(!_onGround||upgrades[4])
 				{
 					state=1;
 					grappleMode=grappleState.down;
@@ -142,8 +143,16 @@ else if state==1 //move in direction
 	}
 	else
 	{
-		x+=xDir*grappleSpd;
-		y+=yDir*grappleSpd;
+		if xDir!=0 repeat grappleSpd
+		{
+			x+=xDir;
+			if groundCollision(x,y) break;
+		}
+		if yDir!=0 repeat grappleSpd
+		{
+			y+=yDir;
+			if groundCollision(x,y) break;
+		}
 		var _x=x;
 		var _y=y;
 		if tooFar()
@@ -176,6 +185,11 @@ else if state==1 //move in direction
 			resetGrapple();
 		}
 		resetHitPlace();
+	}
+	if state>1&&instance_exists(followObj)&&object_is_ancestor(followObj,npc)
+	{
+		show_message(followObj)
+		with followObj event_user(1);
 	}
 }
 else if state==2 //pull player

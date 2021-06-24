@@ -52,10 +52,23 @@ else if !global.menuOpen&&!global.transitioning&&global.alive&&ds_list_size(glob
 							}
 							conversation(global.itemText[$ global.inventory[|global.itemSlot]][4]);
 							break;
+						case "iLadder":
+							var _l=instance_create_layer(x+xscale*12,y,"people",oItemLadder);
+							_l.image_xscale=xscale;
+							with _l eventAddObject(object_index,room,x,y,"people",[image_xscale]);
+							removeItem(global.inventory[|global.itemSlot]);
+							break;
+						case "iLavaSwitch":
+							scr_toggleLava();
+							break;
+						case "iFormula":
+							killPlayer();
+							break;
 						default: break;
 					}
 					break;
 			}
+			buttonFreeze(control.item);
 		}
 		else if buttonReleased(control.item)
 		{
@@ -82,7 +95,7 @@ else if !global.menuOpen&&!global.transitioning&&global.alive&&ds_list_size(glob
 with oGrapple if active step();
 
 //movement
-if state==moveState.ladder ladderPhysics();
+if state==moveState.ladder||state==moveState.ladderMove ladderPhysics();
 else 
 {
 	if !instance_exists(oGrapple)||(oGrapple.state<2||oGrapple.grappleMode==grappleState.arc) physics();

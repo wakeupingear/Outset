@@ -77,13 +77,15 @@ enum animType {
 enum moveState {
 	floating,
 	ladder,
+	ladderMove,
 	standing,
 	running,
 	jumping,
 	falling,
 	//grapple specific
 	pulling,
-	hanging
+	hanging,
+	zipline
 }
 
 enum grappleState {
@@ -174,6 +176,8 @@ getHudX=function(){
 	return (image_alpha)*64*(!global.hudSide-global.hudSide)-24;//+camX()
 }
 scanTime=0;
+itemIndex=0;
+itemIndexTime=0;
 
 //pause variables
 surfPosX=0;

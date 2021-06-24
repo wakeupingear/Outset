@@ -73,6 +73,8 @@ function scrVariables(){
 	ds_map_add(global.characterLocations,"matt",[0,0,-1,9,""]);
 	ds_map_add(global.characterLocations,"chet",[0,0,-1,10,""]);
 	ds_map_add(global.characterLocations,"alex",[0,0,rNotdonAmphitheater,10,"c1_treadmill"]);
+	
+	ds_map_add(global.characterLocations,"xavier",[0,0,rIsland,11,"island_arrival"]);
 
 	ds_map_add(global.characterLocations,"babishOrange",[477,926,rCoreIntro,3,"pro_core"]);
 	ds_map_add(global.characterLocations,"craigKrisper",[444,926,rCoreIntro,3,"pro_core"]);
@@ -283,6 +285,13 @@ function scrVariables(){
 	addLocation("craigKrisper","rCoreIntro","pro_core",444,926,1,1,""); //core start
 	#endregion
 	
+	#region Xavier
+	global.characters.xavier={portrait: [portHarold],diagColor: c_nearWhite,font: fontSizes.myko,
+		portIndList:["smile","neutral","sideNeutral","shifty","angry","sad","surprised"]
+	};
+	addLocation("xavier","rIsland","island_arrival",609,530,0,1,"");
+	#endregion
+	
 	var _cL=variable_struct_get_names(global.characters) //add arbitray yscale and check to each character
 	for (var i=0;i<array_length(_cL);i++)
 	{
@@ -311,6 +320,7 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iGrappleAir",{index: 0, viewable: false});
 	ds_map_add(global.itemData,"iSlate",{index: 2, viewable: false});
 	ds_map_add(global.itemData,"iBackpack",{index: 2, viewable: false});
+	ds_map_add(global.itemData,"iLadder",{index: 7, viewable: true});
 	ds_map_add(global.itemData,"iPlank",{index: 1, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote1",{index: 2, viewable: true});
 	ds_map_add(global.itemData,"iPhoneNote2",{index: 2, viewable: true});
@@ -318,6 +328,8 @@ function scrVariables(){
 	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) ds_map_add(global.itemData,"iWrench"+string(i),{index: 3, viewable: true});
 	ds_map_add(global.itemData,"iRocketBook",{index: 5, viewable: true});
 	ds_map_add(global.itemData,"iSolitaire",{index: 6, viewable: true});
+	ds_map_add(global.itemData,"iLavaSwitch",{index: 8, viewable: true});
+	ds_map_add(global.itemData,"iFormula",{index: 9, viewable: true});
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -360,7 +372,6 @@ function scrVariables(){
 	global.rooms.rTitle.darkness=0;
 	//global.rooms.rTest1.npcs=[npcTest,npcHarold];
 		addRoomCamera("rCoreIntro",576-192,980-192,576+192,980+192,576,980); //center
-	global.rooms.rNotdon.npcs=[npcCharlie,npcEugene,npcCitra,npcHarold,npcNora,npcSmitten,npcChet,npcMatt];
 	global.rooms.rNotdon.inside=false;
 		addRoomCamera("rNotdon",1562,0,1778,546,1620,468); //bounce pad
 		addRoomCamera("rNotdon",2216,698,2562,2000,2374,798,"notdonEraPastPro3"); //the nook
@@ -373,6 +384,8 @@ function scrVariables(){
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
+	
+	global.rooms.rIsland.inside=false;
 	}
 	
 	global.persistentEvents=ds_map_create(); //Format: object id, 4 indexes of data
@@ -467,7 +480,7 @@ function scrVariables(){
 	for (var i=0;i<global.numOfInputs;i++) switch i
 	{
 		default:
-			global.douxbleInputTime[i]=20;
+			global.doubleInputTime[i]=20;
 			break;
 	}
 	
@@ -484,13 +497,17 @@ function scrVariables(){
 	else if isTest
 	{
 		global.startRoom=rCoreIntro;
+		addData("reacSt")
 		addData("respInt");
 		global.devTeleport=true;
 		global.devSkips=true;
-		ds_list_add(global.playerItems,"iGrapple",1,"iSolitaire",1);
+		addItem("iGrapple");
+		addItem("iFormula");
+		addItem("iLavaSwitch");
 		global.notdonEra=notdonEras.present;
 		//scr_pro_3();
 		scr_c1_5();
+		scr_island_1();
 		global.startRoom=rNotdon;
 	}
 	
@@ -498,6 +515,7 @@ function scrVariables(){
 	//npc sprite mask data
 	global.physCollPoints=ds_map_create();
 	ds_map_add(global.physCollPoints,"sPly",[[-3,2,-3,2,-3,2,-3,2],[8,8,4,4,-1,-1,6,6]]);
+	ds_map_add(global.physCollPoints,"sPlySprite",global.physCollPoints[? "sPly"]);
 	ds_map_add(global.physCollPoints,"sTestPersonBig",[[-8,7,-1],[11,11,-8]]);
 	ds_map_add(global.physCollPoints,"sTestPersonHarold",[[-8,7,-1],[11,11,-8]]);
 	ds_map_add(global.physCollPoints,"sGrapple",[[-3,3,-3,3],[-3,3,-3,3]]);

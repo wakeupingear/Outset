@@ -3,7 +3,6 @@ function addItem(item){
 	{
 		var _item=item;
 		processItem(_item);
-		if instance_exists(oGrapple) with oGrapple event_user(0); //set upgrade variables
 	}
 	else
 	{
@@ -23,6 +22,10 @@ function addItem(item){
 			return _itemText[2];
 		}
 	}
+	
+	
+	if instance_exists(oGrapple) with oGrapple event_user(0); //set upgrade variables
+	if instance_exists(ply) with ply event_user(0);
 }
 
 function removeItem(item){
@@ -32,17 +35,20 @@ function removeItem(item){
 		_rep=item[1];
 	}
 	var _pos=ds_list_find_index(global.playerItems,item);
-	if global.playerItems[|_pos+1]-_rep<=0 repeat 2 ds_list_delete(global.playerItems,_pos);
-	else global.playerItems[|_pos+1]-=_rep;
-	var _in=ds_list_find_index(global.inventory,item);
-	if _in>-1 
+	if global.playerItems[|_pos+1]-_rep<=0 
 	{
-		repeat 2 ds_list_delete(global.inventory,_in);
-		if global.itemSlot>=ds_list_size(global.inventory)
+		repeat 2 ds_list_delete(global.playerItems,_pos);
+		var _in=ds_list_find_index(global.inventory,item);
+		if _in>-1
 		{
-			global.itemSlot=max(global.itemSlot-2,0);
+			repeat 2 ds_list_delete(global.inventory,_in);
+			if global.itemSlot>=ds_list_size(global.inventory)
+			{
+				global.itemSlot=max(global.itemSlot-2,0);
+			}
 		}
 	}
+	else global.playerItems[|_pos+1]-=_rep;
 }
 
 function addDroppedItem(xPos,yPos,roomID,itemName){
