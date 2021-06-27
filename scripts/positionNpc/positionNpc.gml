@@ -1,6 +1,9 @@
 
 
 function positionNpc(moveToLocation){ //0= don't, 1=do, 2=pathfind
+	facePlayer=false; //whether the object faces the player
+	xscale=image_xscale;
+	yscale=image_yscale;
 	if object_is_ancestor(object_index,enem) return true;
 	npcKey=getNpc(object_index);
 	if global.characterLocations[? npcKey][2]!=room return false;
@@ -21,7 +24,6 @@ function positionNpc(moveToLocation){ //0= don't, 1=do, 2=pathfind
 	var _rm=room_get_name(room);
 	check=global.characters[$ npcKey].ch;
 	xscale=global.characters[$ npcKey].locations[$ _rm][$ global.characterLocations[? npcKey][4]].xs;
-	facePlayer=false; //whether the object faces the player
 	if xscale==0 
 	{
 		facePlayer=true;

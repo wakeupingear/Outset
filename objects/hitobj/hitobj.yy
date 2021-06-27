@@ -7,7 +7,10 @@
   "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "npcHit",
+    "path": "objects/npcHit/npcHit.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

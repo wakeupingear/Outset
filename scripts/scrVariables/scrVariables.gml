@@ -82,6 +82,7 @@ function scrVariables(){
 	global.itemText={};
 	global.droppedItems=ds_list_create(); //format: "iNameOfItem", x, y, room
 	//ds_list_add(global.droppedItems,"iPlank",35,135,rTest2);
+	ds_list_add(global.droppedItems,"iGrapple",192,64,rVR4);
 	global.visitedRooms=ds_list_create();
 	
 	global.soulDoors=ds_map_create(); //format: "roomName": [dieX,dieY,endRoom,endX,endY]
@@ -403,7 +404,7 @@ function scrVariables(){
 	oSave,
 	oGravityField,
 	oPowerPlantTemp,
-	oSouldropRain,oSouldropRainController
+	oSouldropRain,oSouldropRainController,oSouldropCoin
 	];
 	
 	global.coinColorPoint=4280556782;
@@ -507,7 +508,7 @@ function scrVariables(){
 		global.notdonEra=notdonEras.present;
 		//scr_pro_3();
 		scr_c1_5();
-		scr_island_1();
+		//scr_island_1();
 		global.startRoom=rNotdon;
 	}
 	
@@ -518,7 +519,9 @@ function scrVariables(){
 	ds_map_add(global.physCollPoints,"sPlySprite",global.physCollPoints[? "sPly"]);
 	ds_map_add(global.physCollPoints,"sTestPersonBig",[[-8,7,-1],[11,11,-8]]);
 	ds_map_add(global.physCollPoints,"sTestPersonHarold",[[-8,7,-1],[11,11,-8]]);
-	ds_map_add(global.physCollPoints,"sGrapple",[[-3,3,-3,3],[-3,3,-3,3]]);
+	ds_map_add(global.physCollPoints,"sGrapple",[[-3,3,-3,3,0],[-3,3,-3,3,0]]);
 	ds_map_add(global.physCollPoints,"sPlaceholderBounce",[[-12,12],[4,4]]);
 	ds_map_add(global.physCollPoints,"sPlaceholderBounceAngle",[[-12,12],[11,11]]);
+	
+	ds_map_add(global.physCollPoints,"sJoe",[[-16,16],[32,32]]);
 }

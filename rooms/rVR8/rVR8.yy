@@ -176,7 +176,9 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oRingCrack","path":"objects/oRingCrack/oRingCrack.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":-1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":90.0,"y":150.0,"resourceVersion":"1.0","name":"inst_531C5D4E","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oCrackButton","path":"objects/oCrackButton/oCrackButton.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":90.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":150.0,"y":72.0,"resourceVersion":"1.0","name":"inst_5E866DF8","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":600,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":12,"gridY":12,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"inactiveBlocks","tags":[],"resourceType":"GMRInstanceLayer",},
-    {"instances":[],"visible":true,"depth":700,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":12,"gridY":12,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"people","tags":[],"resourceType":"GMRInstanceLayer",},
+    {"instances":[
+        {"properties":[],"isDnd":false,"objectId":{"name":"oSpike","path":"objects/oSpike/oSpike.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":25.5,"scaleY":3.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":210.0,"y":393.0,"resourceVersion":"1.0","name":"inst_34134B17","tags":[],"resourceType":"GMRInstance",},
+      ],"visible":true,"depth":700,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":12,"gridY":12,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"people","tags":[],"resourceType":"GMRInstanceLayer",},
     {"assets":[
         {"spriteId":{"name":"sVRTerrain","path":"sprites/sVRTerrain/sVRTerrain.yy",},"headPosition":7.0,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"animationSpeed":0.0,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"graphic_329FCEC3","tags":[],"resourceType":"GMRSpriteGraphic",},
       ],"visible":true,"depth":800,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"terrain","tags":[],"resourceType":"GMRAssetLayer",},
@@ -345,6 +347,7 @@
     {"name":"inst_76D504DC","path":"rooms/rVR8/rVR8.yy",},
     {"name":"inst_707804B8","path":"rooms/rVR8/rVR8.yy",},
     {"name":"inst_4EBFF8B","path":"rooms/rVR8/rVR8.yy",},
+    {"name":"inst_34134B17","path":"rooms/rVR8/rVR8.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

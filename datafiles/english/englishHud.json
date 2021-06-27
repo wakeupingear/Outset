@@ -24,7 +24,8 @@
         "Press",
         "Scan",
         "Resonate",
-        "Retract"
+        "Retract",
+        "Sit"
     ],
     "buttonText":{
         "up":"Up",
@@ -37,7 +38,10 @@
         "iGrapple": [
             "Grappling Hook",
             "Your trusty hook. Unlike people, it always comes back.",
-            "Acquired the GRAPPLING HOOK!"
+            [
+                "Acquired the GRAPPLING HOOK!",
+                "$script","scr_toggleVRCracks"
+            ]
         ],
         "iGrappleSwing":["","",""],
         "iGrappleAir":["","",""],

@@ -442,6 +442,10 @@ function commandProcess(command){
 							addData(_val);
 							saved=true;
 							break;
+						case "addDataPair":
+							addDataPair(_val[0],_val[1]);
+							saved=true;
+							break;
 						case "removeData":
 							removeData();
 							diag+=2;

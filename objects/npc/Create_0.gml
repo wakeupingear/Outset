@@ -2,20 +2,18 @@ image_speed=0;
 
 npcKey="";
 location="";
+text=[];
 if !positionNpc(1) instance_destroy();
 else {
 npcMovementVars();
+npcAnimVars();
 if object_is_ancestor(object_index,enem) 
 {
-	hsp=0;
-	vsp=-5;
 	npcHealthVars();
 }
 else 
 {
-	text=[];
 	lastSentence=-1; //for random selections in Idle conversation
-	npcAnimVars();
 	event_user(0);
 	
 	var _rN=room_get_name(room);

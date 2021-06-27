@@ -15,7 +15,7 @@
 
     "island_xavierIntro":[
         "?xavier","My lord!",
-        "My lineage has blessed me with the honor of welcoming you{30} to TEST SITE C: ISLA NOMA DOMA!",
+        "I am Xavier Correnti, 7th generation OVERSEER of TEST SITE C: ISLA NOMA DOMA!",
         "$question1","Shall I start the EXPERIMENT?",
         "#yes1",
             "WOOHEEEHAAAAAAAAAHAAAAA!",

@@ -12,7 +12,7 @@ function explosionRange(num,xMin,yMin,xMax,yMax,delay){
 	}
 }
 
-function explosionCircle(num,_x,_y,radius){
+function explosionCircle(num,_x,_y,radius,delay){
 	for (var i=0;i<num;i++)
 	{
 		var _ang=irandom_range(0,359);

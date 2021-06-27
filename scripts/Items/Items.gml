@@ -14,10 +14,16 @@ function addItem(item){
 			var _itemText=textLoad("itemText");
 			if variable_struct_exists(_itemText,_item) _itemText=_itemText[$ _item];
 			else _itemText=_itemText[$ string_letters(_item)];
-			if array_length(_itemText)>3&&object_index==oTextbox&&_itemText[3]!=""
+			if object_index==oTextbox 
 			{
-				if _itemText[3]=="next" text=array_combine(text,_itemText[4]);
-				else text=array_combine(text,_itemText[3]);
+				if is_array(_itemText[2]) text=array_combine(text,_itemText[2]);
+				else array_insert(text,diag,_itemText[2]);
+				
+				if array_length(_itemText)>3&&_itemText[3]!=""
+				{
+					if _itemText[3]=="next" text=array_combine(text,_itemText[4]);
+					//else text=array_combine(text,_itemText[3]);
+				}
 			}
 			return _itemText[2];
 		}
@@ -62,7 +68,7 @@ function addDroppedItem(xPos,yPos,roomID,itemName){
 
 function createDroppedItems(){
 	if instance_exists(oDroppedItem) instance_destroy(oDroppedItem);
-	for (var i=0;i<ds_list_size(global.droppedItems);i+=4) if true||room==global.droppedItems[|i+3]
+	for (var i=0;i<ds_list_size(global.droppedItems);i+=4) if room==global.droppedItems[|i+3]
 	{
 		var _i=instance_create_depth(global.droppedItems[|i+1],global.droppedItems[|i+2],layer_get_depth(layer_get_id("people"))-1,oDroppedItem);
 		_i.item=global.droppedItems[|i];

@@ -41,6 +41,7 @@ function physicsVars(){
 	hspAcc=0.6; //perframe horizontal acceleration
 	vsp=0; //vertical speed
 	vspMax=8; //max vertical speed
+	collType=npcHit; //type of collision to interact with
 	collPointX=[0] //collision x coordinate - default is a single point right below the player
 	collPointY=[8] //collision y
 	if !is_undefined(global.physCollPoints[?sprite_get_name(sprite_index)]) //import the sprite's coordinates if it exists
@@ -87,7 +88,7 @@ function npcAnimVars(){
 }
 
 function npcAnimation(){
-	setStateAnimation();
+	setStateAnimation(false);
 	if animating {
 	switch (animation[$ currentAnimation].type)
 	{
@@ -124,6 +125,7 @@ function npcAnimation(){
 
 function npcHealthVars(){
 	myHealth=1;
+	damage=1;
 }
 
 function npcGetStartX(npcKey){

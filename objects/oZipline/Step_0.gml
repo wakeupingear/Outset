@@ -16,7 +16,9 @@ if !moving
 else
 {
 	plyDist+=dir*spd;
-	ply.hsp=spd*dir*((image_angle>270||image_angle<90)-(image_angle>90&&image_angle<270));
+	var _spd=spd*dir//*((image_angle>270||image_angle<90)-(image_angle>90&&image_angle<270));
+	ply.hsp=round(_spd*cos(image_angle*pi/(180)));
+	ply.vsp=round(_spd*sin(image_angle*pi/(180)));
 	var _collided=false;
 	var _xDist=x+lengthdir_x(plyDist,image_angle)-ply.x;
 	ply.x+=_xDist mod 1;
@@ -45,10 +47,18 @@ else
 	if buttonPressed(control.jump)||(instance_exists(oGrapple)&&oGrapple.state==2)
 	{
 		moving=false;
-		if !buttonPressed(control.jump) touch=true;
-		ply.state=moveState.standing;
-		ply.vsp=0;
-		ply.jump=1;
+		if buttonPressed(control.jump) 
+		{
+			ply.state=moveState.jumping;
+			touch=true;
+			ply.jump=1;
+			ply.vsp-=5;
+		}
+		else
+		{
+			ply.state=moveState.standing;
+			ply.vsp=0;
+		}
 		ply.x=round(ply.x);
 		ply.y=round(ply.y);
 	}

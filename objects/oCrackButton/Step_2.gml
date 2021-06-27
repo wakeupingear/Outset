@@ -6,7 +6,7 @@ if active
 		place_meeting(x,y-1,hitobj)||place_meeting(x,y+1,hitobj)) image_alpha+=0.1;
 	if place_meeting(x,y,ply)
 	{
-		with oTileCrack active=!active;
+		scr_toggleVRCracks();
 		playerButtonFeedback(ply);
 	}
 }

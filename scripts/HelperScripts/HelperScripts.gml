@@ -72,6 +72,14 @@ function string_set(str,newstr,pos){
 	string_insert(newstr,str,pos);
 	return str;
 }
+function string_contains(str,substr){
+	return string_pos(substr,str)>-1;
+}
+
+//debug
+function printCoords(_x,_y){
+	show_debug_message("X: "+string(_x)+"; Y: "+string(_y));
+}
 
 //controller
 function gp_anykey(slot){

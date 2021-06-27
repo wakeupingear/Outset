@@ -13,6 +13,7 @@ function hurtPlayer(newDamage,newHsp,newVsp){
 		impulse(newHsp,newVsp,ply);
 		ply.alarm[0]=global.damageTime;
 		ply.image_blend=c_red;
+		shake(2,2,15);
 	}
 	}
 }

@@ -7,6 +7,7 @@ if lastActive!=active
 		alarm[1]=-1;
 		y=-20;
 		if isHit>0 hit.y=y;
+		renderTerrain();
 		var _dist=0;
 		for (var i=0;i<destFrames[1]-destFrames[0];i++) if parts[i]!=-1
 		{

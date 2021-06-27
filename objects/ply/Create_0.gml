@@ -9,6 +9,7 @@ if object_index==ply&&!global.alive
 
 npcMovementVars();
 npcAnimVars();
+collType=hitobj;
 
 x=global.plyX;
 y=global.plyY;

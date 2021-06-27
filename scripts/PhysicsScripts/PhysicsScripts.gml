@@ -51,13 +51,19 @@ function physics(){
 	repeat abs(round(hsp))
 	{
 		x+=sign(hsp);
-		if groundCollision(x,y)&&state!=moveState.floating //horizontally moving into collision
+		if groundCollision(x,y) //horizontally moving into collision
 		{
 			if !groundCollision(x,y-maxYChange)&&groundCollision(x-sign(hsp),y+1) //moving up slope
 			{
 				y=round(y-maxYChange);
 				while !groundCollision(x,y+1) y++;
 				state=moveState.running;
+			}
+			else if !groundCollision(x,y+maxYChange)&&groundCollision(x-sign(hsp),y-1) //moving down slope
+			{
+				y=round(y+maxYChange);
+				while !groundCollision(x,y-1) y--;
+				state=moveState.falling;
 			}
 			else 
 			{
@@ -124,8 +130,8 @@ function physics(){
 	if state==moveState.running&&hsp==0 state=moveState.standing;
 }
 
-function setStateAnimation(){
-	if lastState!=state
+function setStateAnimation(forceChange){
+	if lastState!=state||forceChange
 	{
 		lastState=state;
 		animating=true;
@@ -147,7 +153,7 @@ function push(xDir,yDir){
 
 function groundCollision(_x,_y){
 	if state==moveState.floating return false;
-	for (var i=0;i<array_length(collPointX);i++) if collision_point(_x+collPointX[i],_y+collPointY[i],hitobj,true,true) return true;
+	for (var i=0;i<array_length(collPointX);i++) if collision_point(_x+collPointX[i],_y+collPointY[i],collType,true,true) return true;
 	return false;
 }
 
@@ -168,6 +174,11 @@ function grapplePhysics(){
 					{
 						y-=maxYChange+1;
 						while !groundCollision(x,y+1) y++;
+					}
+					else if !groundCollision(x,y+maxYChange+1)
+					{
+						y+=maxYChange-1;
+						while !groundCollision(x,y-1) y--;
 					}
 					else
 					{

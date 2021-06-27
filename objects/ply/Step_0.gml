@@ -3,7 +3,7 @@ if global.transitioning move=move;
 else if state==moveState.floating
 {
 	move=0;
-	if (isDev||isTest)&&(!instance_exists(oGrapple)||oGrapple.state<2)
+	if (isDev||isTest)&&(!instance_exists(oGrapple)||oGrapple.state<2)//&&false
 	{
 		x=round(x+4*(-buttonHold(control.left)+buttonHold(control.right)));
 		y=round(y+4*(-buttonHold(control.up)+buttonHold(control.down)));
@@ -18,7 +18,7 @@ else jump=0;
 
 //item usage
 if buttonPressed(control.item)&&state>moveState.running global.inputs[control.item]=0; //-1
-else if !global.menuOpen&&!global.transitioning&&global.alive&&ds_list_size(global.inventory)>0
+else if visible&&!global.menuOpen&&!global.transitioning&&global.alive&&ds_list_size(global.inventory)>0
 {
 	if buttonPressed(control.swapLeft)
 	{
@@ -120,15 +120,35 @@ if object_index==ply
 	}
 	else if place_meeting(x,y,enem)
 	{
-		with instance_place(x,y,enem) 
+		var _e=instance_place(x,y,enem);
+		if (instance_exists(oGrapple)&&oGrapple.state>1)||abs(hsp)>2
 		{
-			hurtPlayer(damage,hsp,vsp);
-			switch (object_index)
+			if global.alive
 			{
-				case oMissile:
-					instance_destroy();
-					break;
-				default: break;
+				shake(1,1,10);
+				_e.hsp+=hsp;
+				_e.vsp+=vsp;
+				hurtEnem(_e,1);
+			}
+			if !object_is_ancestor(_e.object_index,enemWall)
+			{
+				hsp=-hsp;
+				vsp=-vsp;
+			}
+			resetGrapple();
+		}
+		else
+		{
+			if _e.image_blend!=c_red&&_e.damage>0 with _e
+			{
+				hurtPlayer(damage,hsp,vsp);
+				switch (object_index)
+				{
+					case oMissile:
+						instance_destroy();
+						break;
+					default: break;
+				}
 			}
 		}
 	}

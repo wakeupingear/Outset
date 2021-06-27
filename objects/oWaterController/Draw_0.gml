@@ -17,7 +17,9 @@ shader_reset();
 
 if instance_exists(ply)&&ply.breathAlpha>0
 {
-	oTerrain.image_blend=merge_color(c_white,c_blue,sqrt(ply.breathAlpha)*0.3);
+	var _color=merge_color(c_white,c_blue,sqrt(ply.breathAlpha)*0.3);
+	oTerrain.image_blend=_color;
+	if instance_exists(enemWall) enemWall.image_blend=_color;
 	shader_set(shd_invisDraw);
 	shader_set_uniform_f(shader_get_uniform(shd_invisDraw,"u_color"),58/255,61/255,146/255,ply.breathAlpha*0.5);
 	draw_surface(surf,camX(),camY());

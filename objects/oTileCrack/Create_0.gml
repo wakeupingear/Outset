@@ -1,4 +1,5 @@
 image_speed=0;
+visible=false;
 
 active=true;
 if layer!=-1&&string_pos("inactive",string_lower(layer_get_name(layer)))>0 active=false;

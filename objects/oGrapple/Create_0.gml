@@ -186,9 +186,8 @@ else if state==1 //move in direction
 		}
 		resetHitPlace();
 	}
-	if state>1&&instance_exists(followObj)&&object_is_ancestor(followObj,npc)
+	if state>1&&instance_exists(followObj)&&object_is_ancestor(followObj.object_index,npc)&&!object_is_ancestor(followObj.object_index,enem)
 	{
-		show_message(followObj)
 		with followObj event_user(1);
 	}
 }

@@ -65,5 +65,7 @@ function setTerrain(){
 				if _isEraTerrain layer_set_visible(_layers[k],false);
 			}
 		}
+		
+		if instance_exists(enemWall) with enemWall ds_list_add(oTerrain.terrain,_i);
 	}
 }

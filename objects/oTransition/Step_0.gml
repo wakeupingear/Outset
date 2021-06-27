@@ -15,6 +15,7 @@ switch (transition)
 				if instance_exists(ply)&&ymove==0
 				{
 					plyMove=buttonHold(control.right)-buttonHold(control.left);
+					if plyMove==-xscale plyMove=0;
 					plySpd=max(abs(ply.hsp),ply.hspMax);
 				}
 				if global.nextRoom!=startRoom room_goto(global.nextRoom);
