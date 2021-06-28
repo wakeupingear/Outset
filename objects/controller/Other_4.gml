@@ -87,3 +87,46 @@ with oCamera findCameraPosition(true);
 
 //souldrop
 alarm[2]=3;
+
+
+//background
+switch room //room specific elements
+{
+	case rNotdon:
+		instance_create_layer(2175,600,"bg2",oReactorBG);
+		var _m=instance_create_layer(588,678,"bg2",oNotdonMountains);
+		_m.image_xscale=-1;
+		_m.tileX=3;
+		instance_create_layer(2119,744,"bg2",oNotdonMountains);
+		instance_create_layer(1011,211,"bg2",oNotdonMountains);
+		instance_create_layer(0,0,"bg2",oOvercast);
+		var _o=instance_create_layer(0,0,"bg",oOvercast);
+		_o.image_index=1;
+		break;
+	case rWastesNotdon:
+	case rNotdonWell:
+		var _b=instance_create_layer(0,0,"bg",oBackground);
+		_b.sprite_index=sNotdonUnderBG;
+		_b.tileX=true;
+		_b.tileY=true;
+		break;
+	case rIsland:
+		instance_create_layer(1456,-70,"bg",oIslandTreeBG);
+		var _t=instance_create_layer(1231,-70,"bg",oIslandTreeBG);
+		with _t
+		{
+			image_blend=merge_color(c_white,c_black,0.3);
+			xLerp=0.65;
+			yLerp=0.65;
+		}
+	default: break;
+}
+switch room //skybox
+{
+	case rNotdon:
+		instance_create_layer(0,0,"bg",oSkyNotdon);
+	case rIsland:
+		instance_create_layer(0,0,"bg",oSkyIsland);
+		break;
+	default: break;
+}

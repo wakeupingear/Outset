@@ -61,66 +61,82 @@ function physicsVars(){
 	maxYChange=3; //the highest slope that the object can go up
 }
 
-function npcAnimVars(){
-	animation={
-		standing: {type: animType.singleFrame,startFrame: 0},
-		jumping: {type: animType.singleFrame,startFrame: 3},
-		attacked: {type: animType.singleFrame,startFrame: 2},
-		walking: {
-			frameTime: 7,
-			type: animType.loop,
-			startFrame: 0,
-			endFrame: 1
-		}
-		/* example: {
-			frameTime: 15,
-			type: animType.loop,
-			startFrame: 2,
-			endFrame: 4
-		}*/
+function Animation() constructor{ 
+	currentAnimation= "standing"; //currently active animation
+	animCount= 0; //progress in the animation
+	animDir= 1; //direction of frame progression
+	animating= true; //whether a non-default animation is set
+	standing= {type: animType.singleFrame,startFrame: 0};
+}
+function setAnimation(currentAnimation,animation){
+	animation.animating=true;
+	animation.currentAnimation=currentAnimation;
+	animation.animCount=0;
+	return animation[$ currentAnimation].startFrame;
+}
+function updateAnimation(index,animation){
+	if animation.animating {
+	switch (animation[$ animation.currentAnimation].type)
+	{
+		case animType.singleFrame: 
+			index=animation[$ animation.currentAnimation].startFrame; 
+			animation.animating=false;
+			break;
+		case animType.oneOff:
+		case animType.loop:
+			animation.animCount++
+			if animation.animCount>animation[$ animation.currentAnimation].frameTime
+			{
+				var _dir=sign(animation[$ animation.currentAnimation].endFrame-animation[$ animation.currentAnimation].startFrame);
+				animation.animCount=0;
+				index+=_dir;
+				var _repeats=(animation[$ animation.currentAnimation].type!=animType.oneOff);
+				if ((_dir==1&&index>animation[$ animation.currentAnimation].endFrame)||(_dir==-1&&index<animation[$ animation.currentAnimation].endFrame))
+				{
+					if !_repeats 
+					{
+						animation.animating=false;
+						index-=_dir;
+					}
+					else index=animation[$ animation.currentAnimation].startFrame;
+				}
+				
+			}
+			break;
+		case animType.pingPong:
+			animation.animCount++;
+			if animation.animCount>animation[$ animation.currentAnimation].frameTime
+			{
+				animation.animCount=0;
+				index+=animation.animDir;
+				if index==animation[$ animation.currentAnimation].startFrame||index==animation[$ animation.currentAnimation].endFrame 
+				{
+					animation.animDir*=-1;
+				}
+			}
+			break;
 	}
+	}
+	return index;
+}
+
+function npcAnimVars(){
+	animation=new Animation();
+	animation.jumping= {type: animType.singleFrame,startFrame: 3};
+	animation.attacked= {type: animType.singleFrame,startFrame: 2};
+	animation.walking= {
+		frameTime: 7,
+		type: animType.loop,
+		startFrame: 0,
+		endFrame: 1
+	};
 	
-	currentAnimation="standing"; //currently active animation
-	animCount=0; //progress in the animation
-	animDir=1; //direction of frame progression
-	animating=true; //whether a non-default animation is set
 	stateToAnim=array_create(20,"standing"); //array mapping state to animation name
 }
 
 function npcAnimation(){
 	setStateAnimation(false);
-	if animating {
-	switch (animation[$ currentAnimation].type)
-	{
-		case animType.singleFrame: 
-			image_index=animation[$ currentAnimation].startFrame; 
-			animating=false;
-			break;
-		case animType.oneOff:
-		case animType.loop:
-			animCount++
-			if animCount>animation[$ currentAnimation].frameTime
-			{
-				animCount=0;
-				image_index++;
-				if image_index>animation[$ currentAnimation].endFrame 
-				{
-					image_index=animation[$ currentAnimation].startFrame;
-					animating = (animation[$ currentAnimation].type!=animType.oneOff);
-				}
-			}
-			break;
-		case animType.pingPong:
-			animCount++
-			if animCount>animation[$ currentAnimation].frameTime
-			{
-				animCount=0;
-				image_index+=animDir;
-				if image_index==animation[$ currentAnimation].endFrame||image_index==animation[$ currentAnimation].endFrame animDir*=-1
-			}
-			break;
-	}
-	}
+	image_index=updateAnimation(image_index,animation);
 }
 
 function npcHealthVars(){

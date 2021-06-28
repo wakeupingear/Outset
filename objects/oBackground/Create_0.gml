@@ -2,8 +2,8 @@ image_speed=0;
 
 tileX=false;
 tileY=false;
-tileWidth=sprite_width;
-tileHeight=sprite_width;
+tileWidth=-1;
+tileHeight=-1;
 
 xOff=0;
 yOff=0;

@@ -11,7 +11,7 @@ eject=function(die){
 	if buttonPressed(control.jump) ply.state=moveState.falling;
 	else ply.state=moveState.falling;
 	ply.visible=true;
-	ply.vsp=0;
+	ply.vsp=round((y-yprevious)*1.5);
 	ply.hsp=0;
 	
 	if die

@@ -1,6 +1,6 @@
 /// @description Animation
 if global.alive{
-if facePlayer&&currentAnimation!="attacked"&&instance_exists(ply)
+if facePlayer&&animation.currentAnimation!="attacked"&&instance_exists(ply)
 {
 	if ply.x>x xscale=1;
 	else xscale=-1;

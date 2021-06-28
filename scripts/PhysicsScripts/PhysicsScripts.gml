@@ -134,8 +134,7 @@ function setStateAnimation(forceChange){
 	if lastState!=state||forceChange
 	{
 		lastState=state;
-		animating=true;
-		currentAnimation=stateToAnim[state];
+		setAnimation(stateToAnim[state],animation);
 	}
 }
 

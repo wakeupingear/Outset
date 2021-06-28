@@ -1,4 +1,9 @@
 /// @description Draw
+if tileWidth==-1
+{
+	tileWidth=sprite_width;
+	tileHeight=sprite_width;
+}
 for (var i=0;i<1+(tileX)*ceil(room_width/tileWidth);i++)
 {
 	for (var k=0;k<1+(tileY)*ceil(room_height/tileHeight);k++)

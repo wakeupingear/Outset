@@ -509,7 +509,7 @@ function scrVariables(){
 		//scr_pro_3();
 		scr_c1_5();
 		//scr_island_1();
-		global.startRoom=rNotdon;
+		global.startRoom=rIsland;
 	}
 	
 	
@@ -524,4 +524,5 @@ function scrVariables(){
 	ds_map_add(global.physCollPoints,"sPlaceholderBounceAngle",[[-12,12],[11,11]]);
 	
 	ds_map_add(global.physCollPoints,"sJoe",[[-16,16],[32,32]]);
+	ds_map_add(global.physCollPoints,"sBotBuster",[[-7,7],[8,8]]);
 }

@@ -1,4 +1,10 @@
 /// @description Position
+if tileWidth==-1
+{
+	tileWidth=sprite_width;
+	tileHeight=sprite_width;
+}
+
 x=camX()*xLerp+xOff;
 y=camY()*yLerp+yOff;
 

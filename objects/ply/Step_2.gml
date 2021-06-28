@@ -4,26 +4,26 @@ if state==moveState.standing
 {
 	if buttonHold(control.up)
 	{
-		if currentAnimation!="lookingUp"
+		if animation.currentAnimation!="lookingUp"
 		{
-			currentAnimation="lookingUp";
-			animating=true;
+			animation.currentAnimation="lookingUp";
+			animation.animating=true;
 		}
 	}
 	else if buttonHold(control.down)
 	{
-		if currentAnimation!="lookingDown"
+		if animation.currentAnimation!="lookingDown"
 		{
-			currentAnimation="lookingDown";
-			animating=true;
+			animation.currentAnimation="lookingDown";
+			animation.animating=true;
 		}
 	}
 	else
 	{
-		if currentAnimation!="standing"
+		if animation.currentAnimation!="standing"
 		{
-			currentAnimation="standing";
-			animating=true;
+			animation.currentAnimation="standing";
+			animation.animating=true;
 		}
 	}
 }

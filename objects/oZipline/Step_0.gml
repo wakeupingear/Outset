@@ -9,6 +9,7 @@ if !moving
 	}
 	else if (buttonPressed(control.confirm)||buttonPressed(control.grapple)||(instance_exists(oGrapple)&&oGrapple.state==2))&&(place_meeting(x,y-2,ply)||place_meeting(x,y+5,ply))
 	{
+		buttonFreeze(control.grapple);
 		startXS=ply.xscale;
 		startZip();
 	}
