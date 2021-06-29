@@ -1,6 +1,6 @@
 /// @description Animation
 //special overrides
-if state==moveState.standing
+if state==moveState.standing&&!global.menuOpen
 {
 	if buttonHold(control.up)
 	{

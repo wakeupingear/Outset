@@ -16,6 +16,7 @@ botRight=[lengthdir_x(point_distance(192,108,384,216),point_direction(192,108,38
 lengthdir_y(point_distance(192,108,384,216),point_direction(192,108,384,216))];
 blurFunc=function(){
 	draw_sprite(sprite_index,image_index,192,108);
+	for (var i=0;i<instance_number(oTitleFile);i++) with instance_find(oTitleFile,i) draw();
 }
 
 numOfFiles=0;

@@ -38,3 +38,6 @@ else
 
 scanTime=(scanTime+1) % 255;
 global.scanColor=make_color_hsv(scanTime,255,255);
+
+//discord
+np_update();

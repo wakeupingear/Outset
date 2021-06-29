@@ -5,6 +5,8 @@ function scrVariables(){
 	global.lang="english"; //language
 	global.langScript=-1; //empty to load the script into
 	global.buttonText="";
+	global.discordText=-1;
+	global.discordActive=false;
 	if !isHtml&&steam_initialised() global.lang=steam_current_game_language(); //get the user's default language if possible
 	global.lastFile=0;
 	global.musicVol=0.5*(!isDev&&!isTest);
@@ -307,7 +309,7 @@ function scrVariables(){
 	}
 	global.characterNames=[];
 	global.music=-1;
-	global.regionMusic=[mus_notdon,-1,-1,-1,-1,-1,-1,-1];
+	global.regionMusic=[-1,mus_notdon,-1,-1,-1,-1,-1,-1,-1];
 	global.itemData=ds_map_create();
 	ds_map_add(global.itemData,"iGrapple",{
 		index: 0,
@@ -353,7 +355,8 @@ function scrVariables(){
 		var _name=room_get_name(i);
 		var _ln=string_lower(_name);
 		var _reg=worldRegion.notdon;
-		if string_pos("wastes",_ln)>0||string_pos("titan",_ln)>0 _reg=worldRegion.west;
+		if i==rTitle _reg=worldRegion.title;
+		else if string_pos("wastes",_ln)>0||string_pos("titan",_ln)>0 _reg=worldRegion.west;
 		else if string_pos("air",_ln)>0 _reg=worldRegion.sky;
 		else if string_pos("breadnought",_ln)>0 _reg=worldRegion.breadnought;
 		else if string_pos("deep",_ln)>0 _reg=worldRegion.deeptown;

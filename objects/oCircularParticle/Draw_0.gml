@@ -5,4 +5,3 @@
 draw_set_alpha(image_alpha);
 draw_circle_color(x,y,radius,image_blend,image_blend,false);
 draw_set_alpha(1);
-show_debug_message(radiusSpd)

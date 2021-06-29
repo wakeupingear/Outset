@@ -130,3 +130,6 @@ switch room //skybox
 		break;
 	default: break;
 }
+
+//discord
+setDiscordStatus();

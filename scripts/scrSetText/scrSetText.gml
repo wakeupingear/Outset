@@ -41,4 +41,7 @@ function scrSetText(){
 	
 	//buttons
 	global.buttonText=textLoad("buttonText");
+	
+	//discord
+	global.discordText=textLoad("discord");
 }

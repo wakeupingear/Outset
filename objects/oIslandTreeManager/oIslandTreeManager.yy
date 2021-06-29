@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "sIslandTree4",
-    "path": "sprites/sIslandTree4/sIslandTree4.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "oIslandTree1",
-    "path": "objects/oIslandTree1/oIslandTree1.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -23,7 +17,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -31,7 +27,7 @@
     "path": "folders/Objects/island/aesthetic.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oIslandTree4",
+  "name": "oIslandTreeManager",
   "tags": [],
   "resourceType": "GMObject",
 }

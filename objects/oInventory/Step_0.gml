@@ -14,7 +14,10 @@ if (buttonPressed(control.confirm)||buttonPressed(control.select))&&fade>0.1
 			open=false;
 		}
 	}
-	else if buttonPressed(control.confirm)||!place_meeting(camX()+192,camY()+108,oMouse) open=false;
+	else if buttonPressed(control.select)||(buttonPressed(control.confirm)&&!place_meeting(camX()+192,camY()+108,oCursor))
+	{
+		open=false;
+	}
 }
 if mode==0 //slate
 {

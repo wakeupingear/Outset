@@ -33,10 +33,10 @@ function freezeNPC(){
 			reachedTarget: reachedTarget,
 			jumpCheck: jumpCheck,
 			
-			currentAnimation: currentAnimation,
-			animCount: animCount,
-			animDir: animDir,
-			animating: animating
+			currentAnimation: animation.currentAnimation,
+			animCount: animation.animCount,
+			animDir: animation.animDir,
+			animating: animation.animating
 		};
 		variable_struct_set(global.npcStates,_u,_struct);
 	}
@@ -79,10 +79,10 @@ function setFrozenNPC(){
 				reachedTarget=_struct.reachedTarget;
 				jumpCheck=_struct.jumpCheck;
 			
-				currentAnimation=_struct.currentAnimation;
-				animCount=_struct.animCount;
-				animDir=_struct.animDir;
-				animating=_struct.animating
+				animation.currentAnimation=_struct.currentAnimation;
+				animation.animCount=_struct.animCount;
+				animation.animDir=_struct.animDir;
+				animation.animating=_struct.animating
 			}
 		}
 	}

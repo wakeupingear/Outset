@@ -5,6 +5,7 @@ if fade<1 fade+=0.05;
 if (buttonPressed(control.select)||(mouse_check_button_pressed(mb_left)&&abs(mouse_x-192)>90))&&fade>0.1
 {
 	open=false;
+	instance_destroy(oCursor);
 }
 }
 else
@@ -12,7 +13,11 @@ else
 	if fade>0 fade-=0.05;
 	if anyButtonPressed()
 	{
-		if titleAlpha==1&&textAlpha==1 open=true;
+		if titleAlpha==1&&textAlpha==1 
+		{
+			open=true;
+			instance_create_depth(camX()+48,camY()+48,depth-1,oCursor);
+		}
 		else 
 		{
 			titleAlpha=1;

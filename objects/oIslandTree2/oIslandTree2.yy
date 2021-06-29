@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oIslandTree1",
+    "path": "objects/oIslandTree1/oIslandTree1.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

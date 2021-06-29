@@ -26,6 +26,12 @@ if (!isDev&&!isTest)//||true
 }
 //gml_pragma("PNGCrush");
 
+#macro STEAM_ID 1256900
+#macro DISCORD_APP_ID "859197742147436554"
+if (!np_initdiscord(DISCORD_APP_ID, true, STEAM_ID))
+{
+	show_debug_message("Failed to connect to Discord");
+}
 
 #macro c_nearBlack make_color_rgb(25,25,25)
 #macro c_nearWhite make_color_rgb(230,230,230)
@@ -42,6 +48,7 @@ if (!isDev&&!isTest)//||true
 #macro rightStickRight 307
 
 enum worldRegion {
+	title,
 	notdon,
 	west,
 	sky,

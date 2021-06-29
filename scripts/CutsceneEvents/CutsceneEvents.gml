@@ -246,7 +246,7 @@ function scr_island_1(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.island;
 	global.startRoom=rIsland;
-	global.timeOfDay=times.night;
+	global.timeOfDay=times.day;
 	
 	createCutsceneDelay({key:"island_xavierIntro",condition:"plyRight",args:[564],myRoom:"rIsland"});
 }
