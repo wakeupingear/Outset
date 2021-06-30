@@ -10,7 +10,7 @@ function npcMovementVars(){
 	coyoteMax=8; //coyote time
 	coyote=coyoteMax; //current coyote time
 	
-	if object_index!=ply&&object_index!=oPlayerSoul
+	if object_is_ancestor(object_index,npc)
 	{	
 		pathfinding=false; //whether pathfinding is active
 		pathfindingInterrupt=false; //pathfinding can be interrupted by cutscenes
@@ -84,7 +84,7 @@ function updateAnimation(index,animation){
 			break;
 		case animType.oneOff:
 		case animType.loop:
-			animation.animCount++
+			animation.animCount++;
 			if animation.animCount>animation[$ animation.currentAnimation].frameTime
 			{
 				var _dir=sign(animation[$ animation.currentAnimation].endFrame-animation[$ animation.currentAnimation].startFrame);

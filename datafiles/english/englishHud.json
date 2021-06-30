@@ -36,7 +36,8 @@
         "Scan",
         "Resonate",
         "Retract",
-        "Sit"
+        "Sit",
+        "Board"
     ],
     "buttonText":{
         "up":"Up",

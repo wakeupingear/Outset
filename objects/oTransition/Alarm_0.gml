@@ -3,7 +3,18 @@ if instance_exists(ply)
 {
 	if ladder ply.state=moveState.ladder;
 	ply.move=move;
-	if ymove!=0 impulse(0,18*move,ply);
+	var _vsp=0;
+	if sign(ymove)==-1
+	{
+		if ymove==-1 _vsp=-6;
+		else _vsp=ymove;
+	}
+	else if sign(ymove)==1
+	{
+		if ymove==1 _vsp=4;
+		else _vsp=ymove;
+	}
+	impulse(0,_vsp,ply);
 	if xscale!=0 ply.xscale=xscale;
 	if instance_exists(oPlayerCam) 
 	{

@@ -67,5 +67,7 @@ function setTerrain(){
 		}
 		
 		if instance_exists(enemWall) with enemWall ds_list_add(oTerrain.terrain,_i);
+		
+		if instance_exists(oTerrain)&&ds_list_size(oTerrain.terrain)==0 instance_destroy(oTerrain);
 	}
 }

@@ -51,7 +51,7 @@ enum worldRegion {
 	title,
 	notdon,
 	west,
-	sky,
+	air,
 	breadnought,
 	deeptown,
 	east,

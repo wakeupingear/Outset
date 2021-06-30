@@ -357,7 +357,7 @@ function scrVariables(){
 		var _reg=worldRegion.notdon;
 		if i==rTitle _reg=worldRegion.title;
 		else if string_pos("wastes",_ln)>0||string_pos("titan",_ln)>0 _reg=worldRegion.west;
-		else if string_pos("air",_ln)>0 _reg=worldRegion.sky;
+		else if string_pos("air",_ln)>0 _reg=worldRegion.air;
 		else if string_pos("breadnought",_ln)>0 _reg=worldRegion.breadnought;
 		else if string_pos("deep",_ln)>0 _reg=worldRegion.deeptown;
 		else if string_pos("isla",_ln)>0 _reg=worldRegion.east;
@@ -512,7 +512,7 @@ function scrVariables(){
 		//scr_pro_3();
 		scr_c1_5();
 		//scr_island_1();
-		global.startRoom=rIsland;
+		global.startRoom=rAir;
 	}
 	
 	

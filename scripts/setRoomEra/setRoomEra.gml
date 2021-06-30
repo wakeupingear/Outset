@@ -47,4 +47,12 @@ function setRoomEra(){
 	}
 	ds_list_destroy(_eras);
 	}
+	
+	switch room
+	{
+		case rAir:
+			if instance_exists(oAirFloat) instance_destroy(oAirFloat);
+			instance_create_depth(0,0,depth,oAirFloat);
+		default: break;
+	}
 }

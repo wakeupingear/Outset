@@ -2,7 +2,7 @@
 if tileWidth==-1
 {
 	tileWidth=sprite_width;
-	tileHeight=sprite_width;
+	tileHeight=sprite_height;
 }
 
 image_index=1;

@@ -73,7 +73,7 @@ function string_set(str,newstr,pos){
 	return str;
 }
 function string_contains(str,substr){
-	return string_pos(substr,str)>-1;
+	return string_pos(substr,str)>0;
 }
 
 //debug

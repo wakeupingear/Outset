@@ -8,7 +8,7 @@ setCollision();
 
 eject=function(die){
 	persistent=false;
-	if buttonPressed(control.jump) ply.state=moveState.falling;
+	if buttonPressed(control.jump) ply.state=moveState.jumping;
 	else ply.state=moveState.falling;
 	ply.visible=true;
 	ply.vsp=round((y-yprevious)*1.5);

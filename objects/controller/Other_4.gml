@@ -119,14 +119,22 @@ switch room //room specific elements
 			xLerp=0.65;
 			yLerp=0.65;
 		}
+		break;
+	case rAir:
+		instance_create_layer(0,0,"bg2",oAirClouds);
+		break;
 	default: break;
 }
 switch room //skybox
 {
 	case rNotdon:
 		instance_create_layer(0,0,"bg",oSkyNotdon);
+		break;
 	case rIsland:
 		instance_create_layer(0,0,"bg",oSkyIsland);
+		break;
+	case rAir:
+		instance_create_layer(0,0,"bg",oSkyAir);
 		break;
 	default: break;
 }

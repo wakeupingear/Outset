@@ -16,6 +16,7 @@ if mode==0&&!global.menuOpen&&!global.transitioning
 			else
 			{
 				ply.move=move;
+				if object_index==oRoomswitchZone setTargets();
 				roomChange(target_x,target_y,targetroom,transition,move,ymove,xscale);
 			}
 		}
@@ -23,6 +24,7 @@ if mode==0&&!global.menuOpen&&!global.transitioning
 	else if !door&&place_meeting(x,y,ply)
 	{
 		ply.move=move;
+		if object_index==oRoomswitchZone setTargets();
 		roomChange(target_x,target_y,targetroom,transition,move,ymove,xscale);
 	}
 }

@@ -2,7 +2,7 @@
 if tileWidth==-1
 {
 	tileWidth=sprite_width;
-	tileHeight=sprite_width;
+	tileHeight=sprite_height;
 }
 for (var i=0;i<1+(tileX)*ceil(room_width/tileWidth);i++)
 {
