@@ -8,6 +8,7 @@ if riding==0
 			ply.visible=false;
 			riding=1;
 			image_index=1;
+			image_xscale=ply.xscale;
 		}
 	}
 	else touch=place_meeting(x,y,ply)||place_meeting(x,y-16,ply);
@@ -16,7 +17,7 @@ else if riding==1
 {
 	ply.x=x;
 	ply.y=y;
-	var _dir=buttonPressed(control.left)+buttonPressed(control.right);
+	var _dir=buttonPressed(control.right)-buttonPressed(control.left);
 	if _dir!=0
 	{
 		image_xscale=_dir;
@@ -41,6 +42,7 @@ else if riding>=2
 	repeat spd*(global.alive)
 	{
 		x+=image_xscale;
+		checkCollision();
 		if groundCollision(x,y)
 		{
 			wallclimb=true;
@@ -52,7 +54,19 @@ else if riding>=2
 				y--;
 			}
 		}
-		else if !groundCollision(x,y+1) y++;
+	}
+	if !wallclimb
+	{
+		if !groundCollision(x,y+1)
+		{
+			if vsp<vspMax vsp+=global.grav*2;
+			repeat abs(round(vsp))
+			{
+				y++;
+				if groundCollision(x,y+1) break;
+			}
+		}
+		else vsp=0;
 	}
 	
 	if riding==2
@@ -65,16 +79,15 @@ else if riding>=2
 		}
 		else if groundCollision(x,y)
 		{
-			var _xMove=0;
 			var _yMove=0;
 			if wallclimb _yMove=1;
-			else _xMove=-image_xscale;
+			eject(true);
+			ply.x=xprevious;
 			with ply while groundCollision(x,y)
 			{
-				x+=_xMove;
 				y+=_yMove;
+				x-=image_xscale
 			}
-			eject(true);
 		}
 		else
 		{

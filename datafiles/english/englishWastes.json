@@ -1,4 +1,8 @@
 {
+    "wastes_borderDoor":[
+        "A chonky metal door. Probably could withstand a nuclear blast.",
+        "On the other hand, maybe ramming it with something could open it?",
+    ],
     "wastes_hotel_rocketPickup":[
         "$if1","hasItem",["iRocketBook"],
         "#false1",

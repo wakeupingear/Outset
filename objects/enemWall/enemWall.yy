@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "npcs",
-    "path": "folders/Objects/npcs.yy",
+    "name": "enem",
+    "path": "folders/Objects/enem.yy",
   },
   "resourceVersion": "1.0",
   "name": "enemWall",

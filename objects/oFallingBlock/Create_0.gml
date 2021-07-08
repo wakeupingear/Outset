@@ -2,6 +2,5 @@
 image_speed=0;
 touch=false;
 yRemoved=0;
-spd=2;
+spd=5;
 respwanTime=60;
-mode=0;

@@ -12,6 +12,13 @@ else if state==moveState.floating
 else if !global.menuOpen move=-buttonHold(control.left)+buttonHold(control.right);
 else move=0;
 
+//xscale
+if !global.transitioning&&!global.menuOpen
+{
+	if buttonHold(control.right) xscale=1;
+	else if buttonHold(control.left) xscale=-1;
+}
+
 if !global.transitioning&&!global.menuOpen&&(state<moveState.jumping||(state==moveState.falling&&coyote>0))&&buttonPressed(control.jump) jump=1;
 else if !global.transitioning&&!global.menuOpen&&jump>0&&state<moveState.falling&&buttonHold(control.jump)&&jump<jumpHoldTime jump++;
 else jump=0;
@@ -121,7 +128,8 @@ if object_index==ply
 	else if place_meeting(x,y,enem)
 	{
 		var _e=instance_place(x,y,enem);
-		if (instance_exists(oGrapple)&&oGrapple.state>1)||abs(hsp)>2
+		if !_e.enemActive x=x;
+		else if (instance_exists(oGrapple)&&oGrapple.state>1)||(goingFast&&alarm[0]<5)
 		{
 			if global.alive
 			{
@@ -141,7 +149,12 @@ if object_index==ply
 		{
 			if _e.image_blend!=c_red&&_e.damage>0 with _e
 			{
-				hurtPlayer(damage,hsp,vsp);
+				switch (object_index)
+				{
+					default:
+						hurtPlayer(damage,hsp,vsp);
+						break;
+				}
 				switch (object_index)
 				{
 					case oMissile:
@@ -152,6 +165,37 @@ if object_index==ply
 			}
 		}
 	}
+	
+	if place_meeting(x,y,oSwitch)
+	{
+		var _s=instance_place(x,y,oSwitch);
+		if state<=moveState.running
+		{
+			global.interactText=5;
+			if (buttonPressed(control.up)||buttonPressed(control.confirm))
+			{
+				with _s event_user(0);
+			}
+		}
+		if !_s.touch&&goingFast 
+		{
+			with _s event_user(0);
+			hsp=-hsp;
+			vsp=-vsp;
+			resetGrapple();
+		}
+	}
+}
+
+if collision_point(x,y,oLava,true,true)
+{
+	var _l=instance_place(x,y,oLava);
+	if global.alive
+	{
+		if image_blend==c_white hurtPlayer(1,0,0);
+		impulse(_l.hsp,_l.vsp,id);
+	}
+	else impulse(_l.deathHsp,_l.deathVsp,id);
 }
 
 //lock to pathfinding
@@ -188,3 +232,21 @@ else breath=global.maxBreath;
 //test jump height - 44.69 (nice)
 //if y<jumpStart&&(jumpStart-y)>jumpMax jumpMax=(jumpStart-y);
 //show_debug_message(jumpMax)
+
+//going fast
+if abs(hsp)>hspMax*1.5 goingFast=true;
+else if instance_exists(oGrapple)&&(oGrapple.state>1) goingFast=true;
+else if justLaunched
+{
+	goingFast=true;
+	if abs(hsp)<=hspMax*1.5&&abs(vsp)<1 justLaunched=false;
+}
+else goingFast=false;
+if goingFast
+{
+	fastIntensity=1;
+}
+else
+{
+	fastIntensity=0;
+}

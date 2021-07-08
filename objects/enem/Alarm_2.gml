@@ -1,5 +1,5 @@
 /// @description Soul flash
-circularParticle(x,y,depth+1,{
+if enemActive circularParticle(x,y,depth+1,{
 	alpha:1.25,
 	fade:0.05,
 	radiusSpd:2,

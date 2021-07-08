@@ -125,8 +125,17 @@ switch room //room specific elements
 		break;
 	default: break;
 }
-switch room //skybox
+switch room //skybox/specific configs
 {
+	case rWastesBorder:
+		var _c=instance_create_depth(0,200,layer_get_depth(layer_get_id("bg"))-5,oWastesClouds);
+		instance_create_layer(0,0,"bg2",oOvercast);
+		var _o=instance_create_layer(0,0,"bg",oOvercast);
+		_o.image_index=1;
+		instance_create_depth(0,0,depth,oWastesBorderBGFade);
+		instance_create_layer(0,0,"bg",oSkyWastes);
+		instance_create_layer(0,0,"bg",oSkyNotdon);
+		break;
 	case rNotdon:
 		instance_create_layer(0,0,"bg",oSkyNotdon);
 		break;
@@ -134,6 +143,11 @@ switch room //skybox
 		instance_create_layer(0,0,"bg",oSkyIsland);
 		break;
 	case rAir:
+		instance_create_layer(0,0,"bg2",oOvercast);
+		var _o=instance_create_layer(0,0,"bg",oOvercast);
+		_o.image_index=1;
+		oOvercast.tileX=true;
+		oOvercast.tileY=true;
 		instance_create_layer(0,0,"bg",oSkyAir);
 		break;
 	default: break;

@@ -385,6 +385,7 @@ function scrVariables(){
 		addRoomCamera("rNotdon",1254,530,1782,660,"x",598); //launch level 1
 		addRoomCamera("rNotdon",1254,660,1782,842,"x",748); //launch level 2
 		addRoomCamera("rNotdon",2822,756,3168,970,2995,888,"notdonEraPresent"); //stage
+	global.rooms.rWastesBorder.inside=false;
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
@@ -506,13 +507,14 @@ function scrVariables(){
 		global.devTeleport=true;
 		global.devSkips=true;
 		addItem("iGrapple");
+		addItem("iGrappleArc");
 		addItem("iFormula");
 		addItem("iLavaSwitch");
 		global.notdonEra=notdonEras.present;
 		//scr_pro_3();
-		scr_c1_5();
+		scr_c1_3();
 		//scr_island_1();
-		global.startRoom=rAir;
+		global.startRoom=rWastesBorder;
 	}
 	
 	
@@ -528,4 +530,7 @@ function scrVariables(){
 	
 	ds_map_add(global.physCollPoints,"sJoe",[[-16,16],[32,32]]);
 	ds_map_add(global.physCollPoints,"sBotBuster",[[-7,7],[8,8]]);
+	ds_map_add(global.physCollPoints,"sGreemer",[[-10,6,0],[2,2,-12]]);
+	
+	ds_map_add(global.physCollPoints,"sWastesCarWheel",[[-7,0,7],[0,7,0]]);
 }

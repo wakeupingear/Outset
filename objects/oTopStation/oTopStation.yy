@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCheckpoint",
-    "path": "sprites/sCheckpoint/sCheckpoint.yy",
+    "name": "sTopStation",
+    "path": "sprites/sTopStation/sTopStation.yy",
   },
   "solid": false,
   "visible": true,

@@ -61,7 +61,11 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 	x=ply.x-(ply.xscale==1);
 	y=ply.y+grapplePlyYoff;
 	var _onGround=(ply.state<=moveState.running||ply.state==moveState.zipline);
-	if _onGround||upgrades[4]||(buttonHold(control.down)&&buttonPressed(control.grapple)&&upgrades[grappleState.down])
+	if buttonPressed(control.grapple)&&(buttonHold(control.up)||buttonHold(control.down))&&!_onGround&&(place_meeting(x,y,grappleHit)||place_meeting(x,y+ply.vsp*2,grappleHit))
+	{
+		ply.vsp=-5;
+	}
+	else if _onGround||upgrades[4]||(buttonHold(control.down)&&buttonPressed(control.grapple)&&upgrades[grappleState.down])
 	{
 		if buttonPressed(control.swing)
 		{
@@ -120,8 +124,8 @@ else if state==1 //move in direction
 	if grappleMode==grappleState.arc //arc
 	{
 		ds_list_add(points,instance_create_depth(x,y,ply.depth+1,oGrapplePoint));
-		y+=(grappleTime-23)*0.3;
-		var _x=xDir/1.5*(grappleTime>9);
+		y+=(grappleTime-27)*0.3;
+		var _x=xDir/1.5*(grappleTime>16);
 		moveHitPlace(x+_x,y);
 		if _x==0||sign(yprevious-y)>-1&&!groundCollision(x,y)&&groundCollision(x+_x,y) x=x;
 		else x+=_x
@@ -138,7 +142,7 @@ else if state==1 //move in direction
 			state=2;
 			grappleTime=0;
 		}
-		else if grappleTime>90||_hit==0 resetGrapple();
+		else if grappleTime>50||_hit==0 resetGrapple();
 		resetHitPlace();
 	}
 	else
@@ -204,7 +208,7 @@ else if state==2 //pull player
 	{
 		if grappleTime>10
 		{
-			ply.vsp=-7;
+			ply.vsp=-7.8;
 			resetGrapple();
 		}
 	}
@@ -234,6 +238,16 @@ else if state<0 //reset
 		ds_list_clear(points);
 		if instance_exists(oGrapplePoint) instance_destroy(oGrapplePoint);
 		state=0;
+		
+		for (var i=0;i<ds_list_size(dragObj);i++)
+		{
+			if instance_exists(dragObj[|i])
+			{
+				dragObj[|i].x=ply.x;
+				dragObj[|i].y=ply.y;
+			}
+		}
+		ds_list_clear(dragObj);
 		
 		if place_meeting(x,y,oDroppedItem)
 		{

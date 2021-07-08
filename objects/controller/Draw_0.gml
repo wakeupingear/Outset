@@ -1,6 +1,7 @@
 /// @description Hud + Pause menu
 
-if global.lightAlpha>0
+if instance_exists(oDiscoballManager) with oDiscoballManager draw();
+else if global.lightAlpha>0
 {
 	if !surface_exists(global.lightSurf) global.lightSurf=surface_create(386,218);
 	surface_set_target(global.lightSurf);

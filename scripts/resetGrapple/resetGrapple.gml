@@ -28,6 +28,7 @@ function resetGrapple(){
 			}
 			ds_list_clear(dragObj);
 			}
+			ply.justLaunched=true;
 		}
 	}
 }

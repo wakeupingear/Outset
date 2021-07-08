@@ -27,6 +27,16 @@ function npcMovementVars(){
 		
 		blockPlayer=false;
 		blockWall=-1;
+		
+		if object_is_ancestor(object_index,enem)
+		{
+			xscale=1; //scale vars are set in positionNPC() for npcs
+			yscale=1;
+			if object_is_ancestor(object_index,enem)
+			{
+				enemActive=true;
+			}
+		}
 	}
 	else
 	{
@@ -42,8 +52,8 @@ function physicsVars(){
 	vsp=0; //vertical speed
 	vspMax=8; //max vertical speed
 	collType=npcHit; //type of collision to interact with
-	collPointX=[0] //collision x coordinate - default is a single point right below the player
-	collPointY=[8] //collision y
+	collPointX=[0]; //collision x coordinate - default is a single point right below the player
+	collPointY=[8]; //collision y
 	if !is_undefined(global.physCollPoints[?sprite_get_name(sprite_index)]) //import the sprite's coordinates if it exists
 	{
 		collPointX=global.physCollPoints[?sprite_get_name(sprite_index)][0];

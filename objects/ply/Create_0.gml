@@ -11,6 +11,10 @@ npcMovementVars();
 npcAnimVars();
 collType=hitobj;
 
+goingFast=false;
+fastIntensity=0;
+justLaunched=false;
+
 x=global.plyX;
 y=global.plyY;
 

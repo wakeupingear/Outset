@@ -19,10 +19,15 @@ if isHtml
 	width = base_width;
 	height = base_height;
 }
+
 if (!isDev&&!isTest)//||true
 {
 	randomize();
 	window_set_cursor(cr_none);
+}
+else if isDev||isTest
+{
+	if !instance_exists(oDebugOverlay) event_perform(ev_keypress,vk_f3);
 }
 //gml_pragma("PNGCrush");
 

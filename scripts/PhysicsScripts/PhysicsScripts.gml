@@ -53,6 +53,7 @@ function physics(){
 	repeat abs(round(hsp))
 	{
 		x+=sign(hsp);
+		if object_index==ply&&goingFast destroyBreakables();
 		if groundCollision(x,y) //horizontally moving into collision
 		{
 			if !groundCollision(x,y-maxYChange)&&groundCollision(x-sign(hsp),y+1) //moving up slope
@@ -90,6 +91,7 @@ function physics(){
 	repeat abs(round(vsp))
 	{
 		y+=sign(vsp);
+		if object_index==ply&&goingFast&&abs(vsp)>=1 destroyBreakables();
 		if groundCollision(x,y)&&state!=moveState.floating
 		{
 			if vsp<0&&(!groundCollision(x+xscale*6,y)||!groundCollision(x-xscale*6,y)) //corner correction
@@ -136,7 +138,7 @@ function setStateAnimation(forceChange){
 	if lastState!=state||forceChange
 	{
 		lastState=state;
-		setAnimation(stateToAnim[state],animation);
+		if array_length(stateToAnim)>state setAnimation(stateToAnim[state],animation);
 	}
 }
 
@@ -337,21 +339,21 @@ function simplePhysics(){
 	if vsp<vspMax&&state==moveState.falling vsp+=global.grav;
 	
 	//horizontal movement
-	repeat abs(hsp)*5 //move every 0.2
+	repeat abs(hsp) //move every 0.2
 	{
-		x+=0.2*sign(hsp);
+		x+=sign(hsp);
 		if groundCollision(x,y)
 		{
 			if !groundCollision(x,y-maxYChange)&&groundCollision(x-sign(hsp),y+1)
 			{
 				y-=maxYChange;
-				while !groundCollision(x,y+1) y+=0.2
+				while !groundCollision(x,y+1) y++
 				state=moveState.running
 			}
 			else 
 			{
 				if state=moveState.standing
-				x-=0.2*sign(hsp);
+				x-=sign(hsp);
 				x=round(x)
 				while groundCollision(x,y) x-=sign(hsp);
 				hsp=0;
@@ -361,12 +363,12 @@ function simplePhysics(){
 	}
 	
 	//vertical movement
-	repeat abs(vsp)*5 //move every 0.2
+	repeat abs(vsp) //move every 0.2
 	{
-		y+=0.2*sign(vsp);
+		y+=sign(vsp);
 		if groundCollision(x,y)
 		{
-			while groundCollision(x,y) y-=sign(vsp)*0.2;
+			while groundCollision(x,y) y-=sign(vsp);
 			vsp=0;
 			if groundCollision(x,y+1) //land
 			{

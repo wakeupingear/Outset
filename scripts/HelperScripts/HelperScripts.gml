@@ -92,3 +92,56 @@ function roundToZero(num){
 	num|=0;
 	return num;
 }
+
+//text
+function draw_text_outline(x,y,text,outlineThickness,outlineQuality){
+	draw_text_outline_transformed_color(x,y,text,c_nearWhite,c_nearWhite,1,c_nearBlack,c_nearBlack,1,outlineThickness,outlineQuality,1,1,0);
+}
+
+function draw_text_outline_transformed_color(x, y, text, textColor1, textColor2, textAlpha, outlineColor1, outlineColor2, outlineAlpha, outlineThickness, outlineQuality, xscale, yscale, angle){
+	for (var i = 0; i < 360; i += 360 / outlineQuality){
+    draw_text_transformed_color(x + lengthdir_x(outlineThickness, i), y + lengthdir_y(outlineThickness, i), string(text), xscale, yscale, angle, outlineColor1, outlineColor1, outlineColor2, outlineColor2, textAlpha);
+}
+draw_text_transformed_color(x, y, string(text), xscale, yscale, angle, textColor1, textColor1, textColor2, textColor2, textAlpha);
+}
+
+//collision
+function createCollisionMask(){
+	var _hit=instance_create_depth(x,y,depth,hitobj);
+	_hit.sprite_index=sprite_index;
+	_hit.image_index=image_index;
+	_hit.image_angle=image_angle;
+	_hit.image_xscale=image_xscale;
+	_hit.image_yscale=image_yscale;
+	return _hit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

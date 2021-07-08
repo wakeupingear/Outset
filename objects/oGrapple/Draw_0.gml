@@ -11,7 +11,7 @@ if state!=0
 		{
 			pixelLine(points[|i-1].x,points[|i-1].y,points[|i].x,points[|i].y);
 		}
-		//pixelLine(points[|_size-1].x,points[|_size-1].y,ply.x,ply.y);
+		pixelLine(points[|_size-1].x,points[|_size-1].y,x,y);
 	}
 }
 

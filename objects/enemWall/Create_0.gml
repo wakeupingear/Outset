@@ -1,5 +1,7 @@
 event_inherited();
 
+npcMovementVars()
+
 uid="wall"+string(x)+string(y);
 if hasData(uid) instance_destroy(id,false);
 else
