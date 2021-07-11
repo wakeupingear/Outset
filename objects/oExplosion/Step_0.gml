@@ -4,3 +4,4 @@ else
 	image_speed=0;
 	pauseAlarms(0);
 }
+show_debug_message(image_index)

@@ -1,6 +1,7 @@
 event_inherited();
 
 damage=1;
+attacking=true;
 
 animation.standing={type: animType.pingPong,startFrame: 0,endFrame:1,frameTime:12};
 

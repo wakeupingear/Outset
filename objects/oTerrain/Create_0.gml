@@ -2,7 +2,13 @@ terrain=ds_list_create();
 terrainSprites=[];
 terrainColor=ds_list_create();
 surf=-1;
+surf2=-1;
 render=false;
+
+deathScale=!global.alive;
+deathAng=0;
+deathDistMax=370;
+deathDist=(!global.alive)*deathDistMax;
 
 roomType=0;
 colorData=[];

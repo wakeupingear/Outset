@@ -35,19 +35,25 @@ if !global.notPause//&&global.alive
 }
 else if !global.transitioning&&!global.menuOpen&&global.alive&&instance_exists(ply)&&instance_find(ply,0).object_index==ply
 {
+	if instance_exists(ply)&&ply.x<camX()+80&&ply.y<camY()+80
+	{
+		if hudFade>0.5 hudFade-=0.1;
+	}
+	else if hudFade<1 hudFade+=0.1;
 	if image_alpha<1 image_alpha+=0.1;
 }
 else if image_alpha>0 image_alpha-=0.1;
 
 if instance_exists(ply)
 {
-	draw_sprite_ext(sHudHealth,0,getHudX()+camX(),24+camY(),1,1,0,global.hudColorList[global.hudColor],image_alpha*0.8);
+	draw_set_alpha(hudFade);
+	draw_sprite_ext(sHudHealth,0,getHudX()+camX(),24+camY(),1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
 	
 	if ds_list_size(global.inventory)>0
 	{
 		var _x=getHudX()+camX()-12;
 		var _y=52+camY();
-		draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,global.hudColorList[global.hudColor],image_alpha*0.8);
+		draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
 		if buttonHold(control.item)
 		{
 			if ply.itemFillMax>0
@@ -75,6 +81,7 @@ if instance_exists(ply)
 		}
 		draw_sprite(sItems,_ind,getHudX()+camX()-12,52+camY());
 	}
+	draw_set_alpha(1);
 }
 
 

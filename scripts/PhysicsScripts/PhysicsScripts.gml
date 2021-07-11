@@ -1,6 +1,6 @@
 function physics(){
 	//horizontal velocity
-	if move!=0 xscale=move;
+	if move!=0&&xscaleFlip xscale=move;
 	if move!=0&&((move==-1&&hsp>-hspMax)||(move==1&&hsp<hspMax))&&!groundCollision(x+move,y-maxYChange)&&canMove
 	{
 		if state==moveState.standing&&groundCollision(x,y+1) state=moveState.running;

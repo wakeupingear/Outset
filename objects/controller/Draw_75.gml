@@ -2,7 +2,7 @@
 if instance_exists(ply)&&instance_find(ply,0).object_index==ply //check that it's actually the player
 {
 	surface_set_target(global.guiSurf);
-	draw_text((getHudX()-16)/384*1920*global.guiScale,(17)/216*1080*global.guiScale,string(max(global.plyHealth,0)));
+	draw_text_color((getHudX()-16)/384*1920*global.guiScale,(17)/216*1080*global.guiScale,string(max(global.plyHealth,0)),-1,-1,-1,-1,hudFade);
 	surface_reset_target();
 }
 

@@ -187,6 +187,7 @@ image_alpha=0;
 getHudX=function(){
 	return (image_alpha)*64*(!global.hudSide-global.hudSide)-24;//+camX()
 }
+hudFade=1;
 scanTime=0;
 itemIndex=0;
 itemIndexTime=0;

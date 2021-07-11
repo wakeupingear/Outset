@@ -145,7 +145,7 @@ if object_index==ply
 			}
 			resetGrapple();
 		}
-		else
+		else if _e.attacking
 		{
 			if _e.image_blend!=c_red&&_e.damage>0 with _e
 			{

@@ -46,6 +46,7 @@ function npcMovementVars(){
 }
 
 function physicsVars(){
+	xscaleFlip=true; //whether it automatically flips with move
 	hsp=0; //horizontal speed
 	hspMax=1.2; //max horizontal speed
 	hspAcc=0.6; //perframe horizontal acceleration

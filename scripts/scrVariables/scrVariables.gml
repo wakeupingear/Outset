@@ -514,13 +514,13 @@ function scrVariables(){
 		//scr_pro_3();
 		scr_c1_3();
 		//scr_island_1();
-		global.startRoom=rWastesBorder;
+		global.startRoom=rNotdon;
 	}
 	
 	
 	//npc sprite mask data
 	global.physCollPoints=ds_map_create();
-	ds_map_add(global.physCollPoints,"sPly",[[-3,2,-3,2,-3,2,-3,2],[8,8,4,4,-1,-1,6,6]]);
+	ds_map_add(global.physCollPoints,"sPly",[[-3,2,-3,2,-3,2,-3,2],[8,8,4,4,0,0,6,6]]);
 	ds_map_add(global.physCollPoints,"sPlySprite",global.physCollPoints[? "sPly"]);
 	ds_map_add(global.physCollPoints,"sTestPersonBig",[[-8,7,-1],[11,11,-8]]);
 	ds_map_add(global.physCollPoints,"sTestPersonHarold",[[-8,7,-1],[11,11,-8]]);
@@ -531,6 +531,7 @@ function scrVariables(){
 	ds_map_add(global.physCollPoints,"sJoe",[[-16,16],[32,32]]);
 	ds_map_add(global.physCollPoints,"sBotBuster",[[-7,7],[8,8]]);
 	ds_map_add(global.physCollPoints,"sGreemer",[[-10,6,0],[2,2,-12]]);
+	ds_map_add(global.physCollPoints,"sVRRobot",[[0],[22]]);
 	
 	ds_map_add(global.physCollPoints,"sWastesCarWheel",[[-7,0,7],[0,7,0]]);
 }

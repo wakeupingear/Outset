@@ -100,6 +100,6 @@ else if riding>=2
 	}
 	else
 	{
-		if offscreen(x,y)||groundCollision(x,y) instance_destroy(id,false);
+		if offscreen(x,y)||groundCollision(x,y) instance_destroy(id,!offscreen(x,y));
 	}
 }
