@@ -58,9 +58,10 @@ drawInteract = function(){
 	var _yPos=toGuiY(y-8)-string_height(global.interactTextLabels[interactTextLast]);
 	surface_set_target(global.guiSurf);
 	draw_set_color(c_white);
-	draw_set_alpha(interactTextAlpha);
-	draw_text(_xPos,_yPos,global.interactTextLabels[interactTextLast]);
-	draw_set_alpha(1);
+	draw_text_outline_transformed_color(_xPos,_yPos,global.interactTextLabels[interactTextLast],c_nearWhite,c_nearWhite,interactTextAlpha,c_nearBlack,c_nearBlack,interactTextAlpha,6*global.guiScale,12,1,1,0);
+	//draw_set_alpha(interactTextAlpha);
+	//draw_text(_xPos,_yPos,global.interactTextLabels[interactTextLast]);
+	//draw_set_alpha(1);
 	draw_set_color(c_white);
 	surface_reset_target();
 	setFont(fontSizes.medium);

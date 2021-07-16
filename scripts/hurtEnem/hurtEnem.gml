@@ -11,6 +11,9 @@ function hurtEnem(_id,_damage){
 		{
 			switch object_index
 			{
+				case oExplosiveBarrel:
+					move=ply.xscale;
+					break;
 				default:
 					if !_isWall
 					{

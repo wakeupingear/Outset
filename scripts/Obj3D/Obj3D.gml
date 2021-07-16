@@ -8,7 +8,10 @@ function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,small
 	for (var i=0;i<array_length(extraSprites);i++) //insert/push extra slices
 	{
 		var _s=extraSprites[i];
-		if _s[1]<1 slices[round(num*_s[1])]=_s[0];
+		if _s[1]<1 
+		{
+			slices[round(num*_s[1])]=_s[0];
+		}
 		else array_push(slices,_s[0]);
 	}
 	for (var i=0;i<num;i++) //set index for each sprite
@@ -19,14 +22,14 @@ function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,small
 	}
 	dir=drawDir; //1: far to near; -1: near to far
 	render=function(x1,y1,x2,y2){
-		for (var i=0;i>-1&&i<array_length(slices);i+=dir)
+		for (var i=(dir==-1)*array_length(slices);i>-1&&i<array_length(slices);i+=dir)
 		{
 			var p=i/num;
 			var _s=lerp(scale,1,p);
 			var _i=i;
 			var _c=slices[i][2];
 			if update slices[i]=updateFunction(_i,num);
-			draw_sprite_ext(sReactorTunnel,slices[i][1],lerp(x1,x2,p),lerp(y1,y2,p),_s,_s,slices[i][3],_c,slices[i][4]);
+			draw_sprite_ext(slices[i][0],slices[i][1],lerp(x1,x2,p),lerp(y1,y2,p),_s,_s,slices[i][3],_c,slices[i][4]);
 		}
 	}
 }

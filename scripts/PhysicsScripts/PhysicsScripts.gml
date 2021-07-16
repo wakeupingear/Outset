@@ -132,6 +132,16 @@ function physics(){
 	
 	//reset running against a wall
 	if state==moveState.running&&hsp==0 state=moveState.standing;
+	
+	//check special collisions
+	if groundCollision(x,y,oGravityField)
+	{
+		var _f=instance_place(x,y,oGravityField);
+		if _f.pause==-1
+		{
+			impulse(_f.xDir,_f.yDir,id);
+		}
+	}
 }
 
 function setStateAnimation(forceChange){
@@ -154,9 +164,10 @@ function push(xDir,yDir){
 	yprevious=y;
 }
 
-function groundCollision(_x,_y){
+function groundCollision(_x,_y,_coll){
+	if is_undefined(_coll) _coll=collType;
 	if state==moveState.floating return false;
-	for (var i=0;i<array_length(collPointX);i++) if collision_point(_x+collPointX[i],_y+collPointY[i],collType,true,true) return true;
+	for (var i=0;i<array_length(collPointX);i++) if collision_point(_x+collPointX[i],_y+collPointY[i],_coll,true,true) return true;
 	return false;
 }
 

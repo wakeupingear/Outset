@@ -2,6 +2,7 @@ if !instance_exists(oWaterController) instance_create_depth(0,0,layer_get_depth(
 
 inRange=false;
 touch=false;
+reflects=false;
 
 coll=[];
 repeat 4 array_push(coll,instance_create_depth(x,y,depth,oWaterColl));

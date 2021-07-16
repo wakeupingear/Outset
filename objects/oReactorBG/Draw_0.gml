@@ -8,7 +8,7 @@ if instance_exists(oReactorTunnel)
 	if tunnel==-1 
 	{
 		tunnelFunc=function(_i,num){ return 1+((round(_i)%(num/(subNum)))<=num*subScale);}
-		tunnel=new Obj3D(sprite_index,1,tunnelFunc,false,num,xLerp/2.5,-1,0,1,true,1,[
+		tunnel=new Obj3D(sReactorTunnel,1,tunnelFunc,false,num,xLerp/2.5,-1,0,1,true,1,[
 			[[sReactorTunnelPylon,0,-1,0,1],0.2],
 			[[sReactorTunnelPylon,0,-1,0,1],0.45],
 			[[sReactorTunnelPylon,0,-1,0,1],0.7],

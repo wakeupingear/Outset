@@ -128,15 +128,30 @@ if object_index==ply
 	else if place_meeting(x,y,enem)
 	{
 		var _e=instance_place(x,y,enem);
-		if !_e.enemActive x=x;
+		if !_e.enemActive switch (_e.object_index)
+		{
+			default: break;
+		}
 		else if (instance_exists(oGrapple)&&oGrapple.state>1)||(goingFast&&alarm[0]<5)
 		{
 			if global.alive
 			{
 				shake(1,1,10);
-				_e.hsp+=hsp;
-				_e.vsp+=vsp;
-				hurtEnem(_e,1);
+				switch (_e.object_index)
+				{
+					case oExplosiveBarrel:
+						//_e.hsp=sign(hsp)*min(_e.hspMax,hsp);
+						_e.move=sign(hsp);
+						_e.hsp=_e.move*_e.hspMax;
+						_e.moving=true;
+						_e.vsp+=vsp;
+						break;
+					default:
+						_e.hsp+=hsp;
+						_e.vsp+=vsp;
+						hurtEnem(_e,1);
+						break;
+				}
 			}
 			if !object_is_ancestor(_e.object_index,enemWall)
 			{

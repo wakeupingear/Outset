@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "offscreen",
+  "name": "Boundries",
   "tags": [],
   "resourceType": "GMScript",
 }

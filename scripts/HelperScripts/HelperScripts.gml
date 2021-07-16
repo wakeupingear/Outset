@@ -116,9 +116,15 @@ function createCollisionMask(){
 	return _hit;
 }
 
+//alarms
+function pauseAlarms(upToIncluding){
+	for (var i=0;i<=upToIncluding;i++) if alarm[i]>0 alarm[i]++;
+}
 
-
-
+function alarmsActive(start,endInc){
+	for (var i=start;i<=endInc;i++) if alarm[i]>-1 return true;
+	return false;
+}
 
 
 

@@ -26,4 +26,8 @@ if instance_exists(ply)&&ply.breathAlpha>0
 	shader_reset();
 }
 
-with oWater if inRange draw_self();
+with oWater// if inRange 
+{
+	draw_self();
+	if reflects draw_sprite_ext(sprite_index,0,x,y,image_xscale,min(-round((y-camY()-64)/3),0),0,-1,0.5)
+}

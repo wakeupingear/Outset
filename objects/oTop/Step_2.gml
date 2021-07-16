@@ -97,6 +97,16 @@ else if riding>=2
 				eject(false);
 			}
 		}
+		
+		if place_meeting(x,y,enem)
+		{
+			var _e=instance_place(x,y,enem);
+			if _e.image_blend!=c_red
+			{
+				shake(1,1,10);
+				hurtEnem(_e,1);
+			}
+		}
 	}
 	else
 	{

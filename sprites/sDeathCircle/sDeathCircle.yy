@@ -25,8 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"5dd8d2f3-3928-4995-8d08-2338534fc9aa","path":"sprites/sDeathCircle/sDeathCircle.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5dd8d2f3-3928-4995-8d08-2338534fc9aa","path":"sprites/sDeathCircle/sDeathCircle.yy",},"LayerId":{"name":"814860c0-c97d-43c4-85a0-f61652688e15","path":"sprites/sDeathCircle/sDeathCircle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"5dd8d2f3-3928-4995-8d08-2338534fc9aa","path":"sprites/sDeathCircle/sDeathCircle.yy",},"LayerId":{"name":"f46a4805-10f0-4b04-9c82-70cdc231bd9d","path":"sprites/sDeathCircle/sDeathCircle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"5dd8d2f3-3928-4995-8d08-2338534fc9aa","path":"sprites/sDeathCircle/sDeathCircle.yy",},"LayerId":{"name":"814860c0-c97d-43c4-85a0-f61652688e15","path":"sprites/sDeathCircle/sDeathCircle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sDeathCircle","path":"sprites/sDeathCircle/sDeathCircle.yy",},"resourceVersion":"1.0","name":"5dd8d2f3-3928-4995-8d08-2338534fc9aa","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

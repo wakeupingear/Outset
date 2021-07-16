@@ -514,7 +514,7 @@ function scrVariables(){
 		//scr_pro_3();
 		scr_c1_3();
 		//scr_island_1();
-		global.startRoom=rNotdon;
+		global.startRoom=rIsland;
 	}
 	
 	

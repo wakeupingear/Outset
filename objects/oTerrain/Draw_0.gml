@@ -76,6 +76,7 @@ switch (roomType)
 {
 	case worldRegion.east:
 		_outlineAlpha=0.3;
+	case worldRegion.deeptown:
 	case worldRegion.notdon:
 		shader_set(shd_outlineTerrain);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);
