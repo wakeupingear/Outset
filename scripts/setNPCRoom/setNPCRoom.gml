@@ -22,5 +22,6 @@ function setNPCRoom(npcName,roomName,key){
 	if instance_exists(_obj)&&variable_struct_exists(_struct,"pathFrom")&&variable_struct_exists(_struct.pathFrom,_rm)&&variable_struct_exists(_struct.pathFrom[$ _rm],_lastKey)
 	{
 		if variable_struct_exists(_struct.pathFrom[$ _rm][$ _lastKey],"text") _obj.text=textLoad(_struct.pathFrom[$ _rm][$ _lastKey].text);
+		else _obj.text=[];
 	}
 }

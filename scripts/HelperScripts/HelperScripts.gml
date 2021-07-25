@@ -29,15 +29,19 @@ function destroyArray(arr,flag){
 		if instance_exists(arr[i]) instance_destroy(arr[i],flag);
 	}
 }
-
+function destroyRadius(xPos,yPos,obj,radius,flag){
+	with obj if within(xPos,yPos,radius) instance_destroy(id,flag);
+}
 function isObj(_id,obj){
 	return _id.object_index==obj||object_is_ancestor(_id.object_index,obj);
 }
-
 function isInRange(_x,_y){
 	_x-=sprite_get_xoffset(sprite_index);
 	_y-=sprite_get_yoffset(sprite_index);
 	return !((_x+sprite_width<camX()||_x>camX()+384)||(_y+sprite_height<camY()||_y>camY()+216));
+}
+function within(xPos,yPos,radius){
+	return point_distance(x,y,xPos,yPos)<=radius
 }
 
 //string
@@ -95,6 +99,8 @@ function roundToZero(num){
 
 //text
 function draw_text_outline(x,y,text,outlineThickness,outlineQuality){
+	if is_undefined(outlineThickness) outlineThickness=8;
+	if is_undefined(outlineQuality) outlineQuality=10;
 	draw_text_outline_transformed_color(x,y,text,c_nearWhite,c_nearWhite,1,c_nearBlack,c_nearBlack,1,outlineThickness,outlineQuality,1,1,0);
 }
 
@@ -126,9 +132,10 @@ function alarmsActive(start,endInc){
 	return false;
 }
 
-
-
-
+//shaders
+function setTextureBlendmode(){ //just for reference
+	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
+}
 
 
 

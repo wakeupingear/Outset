@@ -5,13 +5,13 @@ function drawBlur(surface,alpha,xPos,yPos,topLeft,botRight,drawFunc){
 	surface_set_target(surface);
 	draw_clear_alpha(c_black,0);
 	
+	if drawFunc!=-1 drawFunc();
+	
 	shader_set(shd_blur);
-	gpu_set_blendmode_ext(bm_one,bm_inv_src_alpha);
+	gpu_set_blendmode_ext(bm_inv_dest_alpha,bm_dest_alpha);
 	draw_surface(application_surface,0,0);
 	shader_reset();
 	gpu_set_blendmode(bm_normal);
-	
-	if drawFunc!=-1 drawFunc();
 	
 	surface_reset_target();
 	shader_set(shd_cutout);

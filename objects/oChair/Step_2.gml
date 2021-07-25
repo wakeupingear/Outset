@@ -39,6 +39,11 @@ if !global.menuOpen
 			_exit=true;
 			ply.state=moveState.standing;
 		}
+		else if oGrapple.state>1
+		{
+			_exit=true;
+			ply.state=moveState.pulling;
+		}
 	
 		if _exit
 		{

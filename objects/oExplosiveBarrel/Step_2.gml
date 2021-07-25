@@ -10,5 +10,5 @@ if global.alive
 			alarm[3]=1;
 		}
 	}
-	image_angle+=hsp;
+	image_angle-=hsp*4;
 }

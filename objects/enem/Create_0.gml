@@ -1,5 +1,6 @@
 event_inherited();
 
+xscale=image_xscale;
 damage=1;
 attacking=true;
 

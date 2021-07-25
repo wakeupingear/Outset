@@ -63,7 +63,9 @@ function addDroppedItem(xPos,yPos,roomID,itemName){
 	{
 		var _i=instance_create_depth(xPos,yPos,layer_get_depth(layer_get_id("people"))-1,oDroppedItem);
 		_i.item=itemName;
+		return _i;
 	}
+	return -1;
 }
 
 function createDroppedItems(){

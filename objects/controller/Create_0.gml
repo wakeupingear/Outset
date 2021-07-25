@@ -10,6 +10,7 @@ audio_group_load(audiogroup_sounds);
 audio_group_load(audiogroup_music);
 
 #macro isDev (os_get_config()=="Dev")
+#macro isNewFile (os_get_config()=="NewFile")
 #macro isTest (os_get_config()=="Testing")
 #macro isHtml (os_browser!=browser_not_a_browser)
 if isHtml
@@ -61,7 +62,8 @@ enum worldRegion {
 	deeptown,
 	east,
 	core,
-	vr
+	vr,
+	testing
 }
 enum times{
 	day,
@@ -143,6 +145,7 @@ enum transitions {
 	whiteToWhite=2,
 	blackSudden=3,
 	whiteSudden=4,
+	instant=5,
 }
 
 enum fontSizes {
@@ -248,9 +251,14 @@ loadMenu=function(menuKey){
 		removeMenuButtons();
 		var _struct=pauseMenuButtons[$ menuKey];
 		var _labels=textLoad("pauseLabels");
+		var _first=-1;
+		var _previous=-1;
 		for (var i=0;i<array_length(_struct);i++)
 		{
 			var _b=instance_create_depth(192,200-(array_length(_struct)-i)*24,depth,oPauseButton);
+			if i==0 _first=_b;
+			else _previous.next=_b;
+			_b.previous=_previous;
 			_b.pos=0;
 			_b.struct=pauseMenuButtons[$ _struct[i]];
 			_b.key=_struct[i];
@@ -258,7 +266,10 @@ loadMenu=function(menuKey){
 			if is_array(pauseMenuButtons[$ _struct[i]]) _b.type="menu";
 			else if variable_struct_exists(pauseMenuButtons[$ _struct[i]],"labels") _b.text=pauseMenuButtons[$ _struct[i]].labels;
 			with _b event_user(0);
+			_previous=_b;
 		}
+		_first.previous=_previous;
+		_previous.next=_first;
 	}
 }
 removeMenuButtons=function(){
@@ -320,8 +331,11 @@ persistentEventsSet=function(key){
 
 if !isDev 
 {
-	load(global.lastFile);
-	if isTest room_goto(global.nextRoom);
+	if isTest 
+	{
+		load(global.lastFile);
+		room_goto(global.nextRoom);
+	}
 	else room_goto(rTitle);
 }
 else

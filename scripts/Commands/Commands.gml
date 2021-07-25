@@ -148,12 +148,15 @@ function commandProcess(command){
 						case "zoom":
 							global.zoomTo=_val[0];
 							global.zoomStep=_val[1];
+							if !instance_exists(oCamera) createCamera();
 							oCamera.alarm[0]=1;
 							break;
 						case "camSpd":
+							if !instance_exists(oCamera) createCamera();
 							oCamera.camSpd=_val;
 							break;
 						case "camFollow":
+							if !instance_exists(oCamera) createCamera();
 							oCamera.followMode=1;
 							oCamera.followObj=getObject(_val);
 							break;
@@ -161,6 +164,7 @@ function commandProcess(command){
 						case "camSet":
 							thisCameraChanged=true;
 							global.menuOpen=true;
+							if !instance_exists(oCamera) createCamera();
 							oCamera.followMode=0;
 							if _val[0]!="x"
 							{
@@ -181,6 +185,7 @@ function commandProcess(command){
 						case "camReset":
 							thisCameraChanged=false;
 							global.menuOpen=false;
+							if !instance_exists(oCamera) createCamera();
 							with oCamera
 							{
 								camSpd=originalSpd;
@@ -199,25 +204,30 @@ function commandProcess(command){
 							diag--; //since no arguments needed
 							break;
 						case "follow":
+							if !instance_exists(oCamera) createCamera();
 							oCamera.followMode=1;
 							oCamera.followObj=getObject(_val);
 							break;
 						case "path":
+							if !instance_exists(oCamera) createCamera();
 							oCamera.followMode=2;
 							oCamera.followObj=_val;
 							oCamera.followPathProgress=0;
 							break;
 						case "shake":
+							if !instance_exists(oCamera) createCamera();
 							oCamera.shakeX=_val[0];
 							oCamera.shakeY=_val[1];
 							oCamera.shakeTime=_val[2];
 							break;
 						case "shakeToggle":
+							if !instance_exists(oCamera) createCamera();
 							oCamera.shakeX=_val[0];
 							oCamera.shakeY=_val[1];
 							oCamera.shakeToggle=(oCamera.shakeX!=0||oCamera.shakeY!=0);
 							break;
 						case "reset":
+							if !instance_exists(oCamera) createCamera();
 							with oCamera
 							{
 								camSpd=originalSpd;
@@ -403,7 +413,7 @@ function commandProcess(command){
 							}
 							break;
 						case "roomChange":
-							roomChange(_val[0],_val[1],asset_get_index(_val[2]),_val[3],_val[4],_val[5],_val[6]);
+							roomChange(tCoord(_val[0]),tCoord(_val[1]),asset_get_index(_val[2]),_val[3],_val[4],_val[5],_val[6]);
 							break;
 						//data
 						case "addItem":
@@ -516,10 +526,12 @@ function commandProcess(command){
 							var _p=instance_create_depth(_obj.x,_obj.y,_obj.depth+1,oParachute);
 							_p.target=_obj;
 							eventAddObject(oParachute,room,_obj.object_index,0,"people",[]);
+							diag--;
 							break;
 						case "parachuteRemove":
 							if instance_exists(oParachute) with oParachute if target==_obj target=-1;
 							eventRemove(oParachute,room,_obj.object_index,0,"people",[]);
+							diag--;
 							break;
 						default:
 							variable_instance_set(_obj,_name,_val);
@@ -742,10 +754,13 @@ function getNpc(objName)
 }
 
 function tCoord(coord){
+	
 	if is_string(coord)
 	{
 		if string_pos(coord,"dieX")>0 return global.dieX;
 		if string_pos(coord,"dieY")>0 return global.dieY;
+		if string_pos(coord,"plyX")>0 return global.plyX;
+		if string_pos(coord,"plyY")>0 return global.plyY;
 	}
 	return coord;
 }
@@ -756,6 +771,9 @@ function setObjFromStruct(obj,struct){
 	{
 		switch (_names[i])
 		{
+			case "speed":
+				obj.image_speed=struct.speed;
+				break;
 			case "index":
 				obj.image_index=struct.index;
 				break;

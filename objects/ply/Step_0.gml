@@ -39,7 +39,6 @@ else if visible&&!global.menuOpen&&!global.transitioning&&global.alive&&ds_list_
 		else global.itemSlot+=2;
 		setItemFill();
 	}
-	
 	if global.inputs[control.item]>=itemFillMax
 	{
 		if buttonHold(control.item) //Hold to charge
@@ -75,7 +74,7 @@ else if visible&&!global.menuOpen&&!global.transitioning&&global.alive&&ds_list_
 					}
 					break;
 			}
-			buttonFreeze(control.item);
+			if itemFillMax>-1 buttonFreeze(control.item);
 		}
 		else if buttonReleased(control.item)
 		{
@@ -85,9 +84,12 @@ else if visible&&!global.menuOpen&&!global.transitioning&&global.alive&&ds_list_
 					switch (string_letters(global.inventory[|global.itemSlot]))
 					{
 						case "iWrench":
+							shake(1,1,10);
 							var _ang=(buttonHold(control.down))? 270 : 90-xscale*90*(!buttonHold(control.up));
-							var _p=projectile(x,y,depth+1,{sprite: sItems,type:1,spd:4,dir: _ang,destroyInd: 1,data: {item: global.inventory[|global.itemSlot]},destroyOnCleanup: true});
-							_p.type=1;
+							projectile(x,y,depth+1,{
+								sprite: sItems,type:1,index:3,spd:4,dir: _ang,speed:0,angSpd:-10*xscale,
+								destroyInd: 1,data: {item: global.inventory[|global.itemSlot]},destroyOnCleanup: true
+							});
 							removeItem(global.inventory[|global.itemSlot]);
 							break;
 						default: break;

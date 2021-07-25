@@ -12,7 +12,7 @@ function scr_pro_2(){
 	setRoomLighting(room_get_name(room));
 	
 	//destroy all old objects
-	destroyArray([oMissile],false);
+	destroyArray([oMissile],false); 
 	destroyArray([oVShip,oVBarrier,oExplosion,npc,oTextbox]);
 	
 	var _str={key:"pro_electroTest",condition:"plyRight",args:[2082],myRoom: "rNotdon"};
@@ -58,9 +58,10 @@ function scr_pro_3(){
 	destroyArray([oMissile],false);
 	destroyArray([oVShip,oVBarrier,oExplosion,npc,oTextbox]);
 	
-	createCutsceneDelay({key:"pro_reactorSetV",delay:100,args:[],myRoom: "rNotdon"});
+	//dev - ignore
+	//createCutsceneDelay({key:"pro_reactorSetV",delay:100,args:[],myRoom: "rNotdon"});
 	
-	//createCutsceneDelay({key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"],myRoom: "rNotdon"});
+	createCutsceneDelay({key:"pro_switchSmittenLocation",force: true,condition:"hasItem",args:["iPhoneNote3"],myRoom: "rNotdon"});
 	
 	//position characters
 	setNPCRoom("citra","rNotdon","pro_reactor");
@@ -72,13 +73,11 @@ function scr_pro_3(){
 	setNPCRoom("matt","rNotdon","pro_electro");
 	
 	setNPCRoom("smitten","rNotdon","pro_reactor");
-	DEBUG_moveNPC("smitten",rNotdon,"pro_launch",60);
+	//DEBUG_moveNPC("smitten",rNotdon,"pro_launch",60);
 	
 	addDroppedItem(3191,856,rNotdon,"iPhoneNote1");
 	addDroppedItem(2361,772,rNotdon,"iPhoneNote2");
 	addDroppedItem(1808,676,rNotdon,"iPhoneNote3");
-	
-	addItem("iSolitaire");
 	
 	with controller
 	{
@@ -94,7 +93,7 @@ function scr_pro_3(){
 function scr_pro_4(){	
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.prologue;
-	global.startX=2236;
+	global.startX=3236;
 	global.startY=1311;
 	global.plyX=global.startX;
 	global.plyY=global.startY;
@@ -144,6 +143,11 @@ function scr_c1_1(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
 	global.startRoom=rNotdon;
+	global.timeOfDay=times.day;
+	global.startX=2454;
+	global.startY=695;
+	
+	setNPCRoom("citra","rNotdon","c1_line");
 	
 	destroyArray([oSouldropRainController],true);
 	addData("reacSt");
@@ -157,7 +161,7 @@ function scr_c1_2(){
 	global.currentChapter=chapters.c1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
-	global.startX=2528;
+	global.startX=2454;
 	global.startY=695;
 	
 	destroyArray([oSouldropRainController],true);
@@ -171,7 +175,6 @@ function scr_c1_2(){
 	
 	addData("reacSt");
 	addItem("iSlate");
-	if room==rNotdon roomChange(global.startX,global.startY,global.startRoom,0,0,0,1);
 	save(global.lastFile);
 }
 

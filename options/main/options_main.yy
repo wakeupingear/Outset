@@ -4,6 +4,7 @@
     "Testing": {"option_lastchanged":"10 May 2021 21:23:27","option_steam_app_id":"1256900",},
   },
   "option_gameguid": "3eae0248-2d2c-4622-a8d2-3ba47d16883e",
+  "option_gameid": "0",
   "option_game_speed": 60,
   "option_mips_for_3d_textures": false,
   "option_draw_colour": 4294967295,

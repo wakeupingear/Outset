@@ -13,7 +13,11 @@ fade=0;
 startOffscreen=true;
 alwaysMove=false;
 
+hurtsPlayer=false;
+collideParent=false;
+
 collidable=true;
+collType=hitobj;
 state=moveState.standing;
 collPointX=[0];
 collPointY=[1];

@@ -51,6 +51,7 @@ function physicsVars(){
 	hspMax=1.2; //max horizontal speed
 	hspAcc=0.6; //perframe horizontal acceleration
 	vsp=0; //vertical speed
+	gravMultiplier=1;
 	vspMax=8; //max vertical speed
 	collType=npcHit; //type of collision to interact with
 	collPointX=[0]; //collision x coordinate - default is a single point right below the player

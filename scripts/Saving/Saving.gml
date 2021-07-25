@@ -33,7 +33,10 @@ function save(_num){
 }
 
 function load(_num){
-	if !file_exists("file"+string(_num)+".ini")||isDev||isTest save(_num);
+	if !file_exists("file"+string(_num)+".ini")||isDev||isTest
+	{
+		save(_num);
+	}
 	ini_open("file"+string(_num)+".ini");
 	global.maxHealth=ini_read_real("Player","health",6);
 	global.souldrop=ini_read_real("Player","souldrop",0);
@@ -92,7 +95,7 @@ function savePrefs(){
 }
 
 function loadPrefs(){
-	if !file_exists("prefs.ini")||isDev||isTest savePrefs();
+	if !file_exists("prefs.ini")||isDev||isTest||isNewFile savePrefs();
 	ini_open("prefs.ini");
 	global.lang=ini_read_string("Data","lang","english");
 	global.lastFile=ini_read_real("Data","lastFile",0);

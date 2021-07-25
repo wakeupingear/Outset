@@ -1,4 +1,8 @@
-image_speed=0;
+event_inherited();
+
+alarm[1]=-1; //stop soul
+canDropSoul=false;
+soulNum=0;
 
 xDir=1;
 yDir=0;

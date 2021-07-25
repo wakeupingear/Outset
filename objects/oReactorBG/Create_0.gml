@@ -1,4 +1,6 @@
 event_inherited();
+if global.notdonEra<notdonEras.present instance_destroy();
+
 xLerp=0.65;
 yLerp=0.65;
 

@@ -44,8 +44,8 @@ function physics(){
 	}
 	
 	//gravity
-	vsp+=global.grav;
-	vsp=min(vsp,vspMax);
+	vsp+=global.grav*gravMultiplier;
+	vsp=clamp(vsp,-vspMax,vspMax);
 	//if vsp<vspMax&&state>moveState.running vsp+=global.grav;
 	
 	//horizontal movement

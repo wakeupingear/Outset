@@ -2,7 +2,7 @@ function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,small
 	num=sliceNum;
 	scale=smallScale;
 	shade=isShaded;
-	slices=array_create(num,[defaultSprite,defaultIndex,color,angle,alpha]); //create array of slices
+	slices=array_create(num,[[defaultSprite,defaultIndex,color,angle,alpha]]); //create array of slices
 	updateFunction=updateFunc;
 	update=alwaysUpdate;
 	for (var i=0;i<array_length(extraSprites);i++) //insert/push extra slices
@@ -10,15 +10,18 @@ function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,small
 		var _s=extraSprites[i];
 		if _s[1]<1 
 		{
-			slices[round(num*_s[1])]=_s[0];
+			slices[round(num*_s[1])]=array_combine(slices[round(num*_s[1])],[_s[0]]);
 		}
-		else array_push(slices,_s[0]);
+		else array_push(slices,[_s[0]]);
 	}
 	for (var i=0;i<num;i++) //set index for each sprite
 	{
 		var p=i/num;
-		if shade slices[i][2]=merge_color(c_white,c_black,(1-p)*0.5);
-		if updateFunction!=-1 slices[i][1]=updateFunction(i,num);
+		for (var j=0;j<array_length(slices[i]);j++)
+		{
+			if shade slices[i][j][2]=merge_color(c_white,c_black,(1-p)*0.5);
+			if updateFunction!=-1 slices[i][j]=updateFunction(i,num,slices[i][j]);
+		}
 	}
 	dir=drawDir; //1: far to near; -1: near to far
 	render=function(x1,y1,x2,y2){
@@ -27,9 +30,12 @@ function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,small
 			var p=i/num;
 			var _s=lerp(scale,1,p);
 			var _i=i;
-			var _c=slices[i][2];
-			if update slices[i]=updateFunction(_i,num);
-			draw_sprite_ext(slices[i][0],slices[i][1],lerp(x1,x2,p),lerp(y1,y2,p),_s,_s,slices[i][3],_c,slices[i][4]);
+			for (var j=0;j<array_length(slices[i]);j++)
+			{
+				var _c=slices[i][j][2];
+				if update slices[i][j]=updateFunction(_i,num,slices[i][j]);
+				draw_sprite_ext(slices[i][j][0],slices[i][j][1],lerp(x1,x2,p),lerp(y1,y2,p),_s,_s,slices[i][j][3],_c,slices[i][j][4]);
+			}
 		}
 	}
 }

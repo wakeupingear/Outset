@@ -8,7 +8,8 @@
         "Exploring DEEPTOWN",
         "Exploring ISLA NOMA DOMA",
         "Exploring...",
-        "Exploring ???"
+        "Exploring ???",
+        "Testing MECHANICS"
     ],
     "names": [
         "???",
@@ -45,7 +46,9 @@
         "down":"Down",
         "left":"Left",
         "right":"Right",
-        "tab":"Tab"
+        "tab":"Tab",
+        "shift":"Shift",
+        "ctrl":"Ctrl"
     },
     "itemText": {
         "iGrapple": [
@@ -169,7 +172,9 @@
         "gameplay": "Gameplay",
         "visuals": "Visuals"
     },
-    "titleText":["Press Any Key"],
+    "titleText":[
+        "Press Any Key"
+    ],
     "regions": [
         "Notdon",
         "Titan Rock",

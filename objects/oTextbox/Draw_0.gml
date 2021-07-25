@@ -1,5 +1,4 @@
 //draw_self()
-//show_debug_message(string_copy(sentence,1,textInd))
 
 x=camX()+(1-image_alpha)*64*(!global.hudSide-global.hudSide);
 y=camY()+132*(!top);

@@ -1,4 +1,5 @@
 /// @description Animation
+showHud=(!instance_exists(oTextbox)&&!global.transitioning);
 
 if open{
 if fade<1 fade+=0.05;
@@ -11,7 +12,7 @@ if (buttonPressed(control.select)||(mouse_check_button_pressed(mb_left)&&abs(mou
 else
 {
 	if fade>0 fade-=0.05;
-	if anyButtonPressed()
+	if anyButtonPressed()&&showHud
 	{
 		if titleAlpha==1&&textAlpha==1 
 		{

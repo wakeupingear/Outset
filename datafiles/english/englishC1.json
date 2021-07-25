@@ -1,4 +1,16 @@
 {
+    "c1_lineCitraAuto":[
+        "?citra","Alright kids, let us do one more roll call!",
+        "Actually... perhaps we have had enough roll calls for a lifetime.",
+        "Listen carefully: when I signal, walk INTO THE TUNNEL, DOWN THE LIFT, and JUMP ONTO THE PAD.",
+        "I will go warm up the crowd!",
+        "$citra.setRoom",["rNotdon","c1_stage"],
+        60,
+        "$camSet",[2454,496],
+        60,
+        "$script","scr_c1_2",
+        "$camReset"
+    ],
     "c1_graduationTrip":[
         "$createLayer",[0,0,"people","oPlayerMove"],
         "$lastObj.moveCommand","c1_graduationTrip",
@@ -56,7 +68,6 @@
                                 "...Oh right, you're supposed to stay with the OTHERS!"
     ],
     "c1_shoe":[
-        "end",
         "$popup",{"sprite":"sShoe","mouse":[260,108],"forceOpen":true,"objs":[{
             "obj":"oShoelaces",
             "xPos":0,
@@ -143,6 +154,11 @@
         360,
         "$destroyPlace",[194,380,"hitobj"],
         "$camReset"
+    ],
+
+    "c1_grappleTutorial":[
+        "$create",[0,0,0,"oButtonPrompt"],
+        "$lastObj.button",7
     ],
 
     "c1_backpackRackBefore":[

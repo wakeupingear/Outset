@@ -55,6 +55,7 @@ if !render||!surface_exists(surf)
 			//draw_sprite_repeated(0,0,sIslandGroundTexture,0,1,1,0,c_white,0.3,0,0);
 			gpu_set_blendmode(bm_normal);
 			break;
+		case worldRegion.testing:
 		case worldRegion.vr:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
 			draw_sprite_repeated(0,0,sMykoBrickGreyTile,0,1,1,0,c_white,1,0,0);
@@ -83,6 +84,7 @@ switch (roomType)
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_pixel"),texture_get_texel_width(surface_get_texture(surf)),texture_get_texel_height(surface_get_texture(surf)));
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[roomType].outlineCol[0]*_col[0],colorData[roomType].outlineCol[1]*_col[1],colorData[roomType].outlineCol[2]*_col[2]);
 		break;
+	case worldRegion.testing:
 	case worldRegion.vr:
 		shader_set(shd_outlineTerrain);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);
@@ -109,7 +111,7 @@ if global.alive
 	if deathScale>0 deathScale-=0.04;
 	if deathDist>0 deathDist=max(deathDist-7,0);
 }
-else
+else if instance_exists(ply)
 {
 	if deathScale<1 deathScale+=0.02;
 	if deathDist<deathDistMax deathDist+=3;
@@ -117,19 +119,22 @@ else
 if deathScale>0||deathDist>0
 {
 	var _deathCol=merge_color(c_white,global.scanColor,0.5);
+	var _deathCol2=merge_color(_deathCol,c_black,0.3);
 	deathAng=(deathAng-2*ply.xscale)%360;
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
 	draw_sprite_ext(sDeathCircle,0,ply.x-camX(),ply.y-camY(),deathScale,deathScale,deathAng,_deathCol,1);
+	draw_sprite_ext(sDeathCircle,0,ply.x-camX(),ply.y-camY(),min(deathScale,0.5),min(deathScale,0.5),deathAng,_deathCol2,1);
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
 	
 	var _deathColRGB=[color_get_red(_deathCol)/255,color_get_green(_deathCol)/255,color_get_blue(_deathCol)/255];
+	var _deathCol2RGB=[color_get_red(_deathCol2)/255,color_get_green(_deathCol2)/255,color_get_blue(_deathCol2)/255];
 	shader_set(shd_outlineTerrainDeath);
 	var _w=1/surface_get_width(surf2);
 	var _h=1/surface_get_height(surf2);
 	
 	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_pixel"),_w,_h);
-	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_color"),_deathColRGB[0],_deathColRGB[1],_deathColRGB[2]);
+	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_color"),_deathCol2RGB[0],_deathCol2RGB[1],_deathCol2RGB[2]);
 	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_origin"),(ply.x-camX())*_w,(ply.y-camY())*_h);
 	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_dist"),deathDist*_w,deathDist*_h);
 }

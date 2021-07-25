@@ -45,6 +45,11 @@ else
 			break;
 		}
 	}
+	with ply
+	{
+		oPlayerCam.x=x+(x-xprevious)*23;
+		oPlayerCam.y=y+(y-yprevious)*23;
+	}
 	if buttonPressed(control.jump)||(instance_exists(oGrapple)&&oGrapple.state==2)
 	{
 		moving=false;

@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oPhysicsObj",
-    "path": "objects/oPhysicsObj/oPhysicsObj.yy",
+    "name": "grappleHit",
+    "path": "objects/grappleHit/grappleHit.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

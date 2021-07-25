@@ -13,24 +13,7 @@ if instance_exists(oMusicChange) instance_destroy(oMusicChange);
 instance_create_depth(x,y,0,oMusicChange);
 
 //setup camera
-if (room_width==384&&room_height==216)||!instance_exists(ply)
-{
-	instance_create_depth(192,108,-10001,oCamera);
-}
-else
-{
-	var _pc=instance_create_depth(global.plyX,global.plyY,-10000,oPlayerCam);
-	var _c=instance_create_depth(global.plyX,global.plyY,-10001,oCamera);
-	//check oTransition for other stuff
-	if !instance_exists(oTransition) with _c
-	{
-		followObj=_pc;
-		followMode=1;
-		setFollowTo(true);
-		x=xTo;
-		y=yTo;
-	}
-}
+if !instance_exists(oCamera) createCamera();
 
 //set era-specific stuff
 setRoomEra();
@@ -92,6 +75,7 @@ alarm[2]=3;
 //background
 switch room //room specific elements
 {
+	case rDevRoom:
 	case rNotdon:
 		instance_create_layer(2175,600,"bg2",oReactorBG);
 		var _m=instance_create_layer(588,678,"bg2",oNotdonMountains);
@@ -136,6 +120,7 @@ switch room //skybox/specific configs
 		instance_create_layer(0,0,"bg",oSkyWastes);
 		instance_create_layer(0,0,"bg",oSkyNotdon);
 		break;
+	case rDevRoom:
 	case rNotdon:
 		instance_create_layer(0,0,"bg",oSkyNotdon);
 		break;

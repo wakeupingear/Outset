@@ -1,6 +1,16 @@
 {
+    "pro_coreLoad":[
+        60,
+        "$createLayer",[192,796,"player","oLightningBolt"],
+        "$createLayer",[320,796,"player","oLightningBolt"],
+        "$createLayer",[64,796,"player","oLightningBolt"],
+        30,
+        "$roomChange",["plyX","plyY","rCoreIntro",5,0,0,-1]
+    ],
     "pro_coreTitle":[
-        "$goto","dev",
+        3,
+        "$shake",[4,4,30],
+        "$goto","defv",
         60,
         "$camSet",["x","oEarthGround"],
         180,
@@ -9,10 +19,12 @@
         "$camSet",[824,734],
         60,
         "$createLayer",[824,734,"player","oPlayerSoul"],
+        "$shake",[2,2,20],
         "$camReset",
         "end",
 
-        "$zoom",0.1,-0.02,"#dev",
+        "#defv",
+        "$zoom",[0.06,-0.02],
         "$persistence",true,
         30,
         "$global.notdonEra",1,
@@ -31,7 +43,7 @@
         "And we have these THREE to pick up the pieces once the earth settles.",
         "Strike that, TWO, not THREE. This last one is unstable. Prone to errors.",
         "?babishOrange","We only have one shot.",
-        30,"$zoom",[0.1,-0.02],
+        30,"$zoom",[0.06,-0.02],
         30,
         "$global.notdonEra",1,
         "$persistence",true,
@@ -48,8 +60,8 @@
         "$nora.setRoom",["rNotdon","pro_lb2"],
         "$smitten.setRoom",["rNotdon","pro_lb2"],
         "$eugene.setRoom",["rNotdon","pro_lb2"],"$goto","dev",
-        70,"$zoom",[1,0.01],
-        60,
+        70,"$zoom",[1,0.02],
+        70,
         "?citra","The temperature is a brisk 291 K, just right for some outdoor time!",
         "Let's get a roll call, then you all can stay and play!",
         "#dev",
@@ -140,7 +152,7 @@
 
     "pro_lb3EugeneAuto":[
         "$eugene.parachuteAdd",
-        "$camSet",1150,360,
+        "$camSet",[1150,360],
         "$eugene.setRoom",["rNotdon","pro_lb4"],
         30,
         "?charlie","You stole a parachute?",
@@ -158,8 +170,8 @@
         "$charlie.setRoom",["rNotdon","pro_lb4"],
         120,
         "$eugene.snapNPC",
+        "$charlie.facePlayer",true,
         "$charlie.parachuteAdd",
-        "$charlie.facePlayer",
         30,
         "Ooh, we should do a tandem jump!",
         "Really get the adrenaline pumping!",
@@ -223,7 +235,7 @@
     "pro_respawn":[
         "$cutsceneCondition",{"key":"pro_bounceTransition","myRoom":"rNotdon","condition":"plyRightAbove","args":[1562,356]},
         "You're not sure what happened, but you're alive.",
-        "if1","oVShip.exists",
+        "$if1","oVShip.exists",
             "#true1",
                 "?citra","There's no time to mourn, head east and get on that BOUNCE PAD!",
                 120,
@@ -265,7 +277,7 @@
         "$camSpd",0.02,
         "$camSet",[1294,222],
         60,
-        "if1","hasDatarespInt",
+        "if1","hasData",["respInt"],
             "#true1",
                 "$cutsceneDelay",{"key":"pro_missileDestroyShoot","delay":300,"myRoom":"rNotdon"},
                 "$cutsceneDelay",{"key":"pro_missileDestroy","delay":489,"myRoom":"rNotdon"},
@@ -431,8 +443,6 @@
             }]}
     ],
 
-    "pro_wrenchDummy":["The dummy has fallen victim to a gruesome display of percussive maintenance."],
-
     "pro_haroldWrench":[
         "$createLayer",[2398,662,"behind","oWrenchCountdown"]
     ],
@@ -536,10 +546,7 @@
 
     "pro_slateScanner":[
         60,
-        "$script","activateScanObjs",
-        "$create",[0,0,0,"oButtonPrompt"],
-        "$lastObj.button",1,
-        "$lastObj.holdTime",30
+        "$script","activateScanObjs"
     ],
 
     "pro_souldropLevel":[

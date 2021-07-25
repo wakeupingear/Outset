@@ -28,6 +28,7 @@ if global.roomTime>1
 		hoverPos=new Vec2(2167,340);
 		leftBar= new Vec2(2004,595);
 		rightBar= new Vec2(2004,595);
+		guns=[1,1];
 	}
 	else if global.notdonEra==notdonEras.pro3
 	{

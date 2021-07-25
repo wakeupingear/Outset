@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sTestPersonBig",
-    "path": "sprites/sTestPersonBig/sTestPersonBig.yy",
+    "name": "sSlate",
+    "path": "sprites/sSlate/sSlate.yy",
   },
   "solid": false,
   "visible": true,

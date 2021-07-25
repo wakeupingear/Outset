@@ -1,6 +1,11 @@
 /// @description Transition
 switch (transition)
 {
+	case transitions.instant:
+		room_goto(global.nextRoom);
+		global.roomTime=0;
+		instance_destroy();
+		break;
 	case transitions.blackToBlack:
 	case transitions.blackToWhite:
 	case transitions.whiteToWhite:
@@ -20,6 +25,7 @@ switch (transition)
 				}
 				if global.nextRoom!=startRoom room_goto(global.nextRoom);
 				else room_restart();
+				global.roomTime=0;
 				image_alpha=1.05;
 				if transition==transitions.blackSudden||transition==transitions.whiteSudden
 				{

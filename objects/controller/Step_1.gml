@@ -2,7 +2,7 @@
 
 //process inputs
 array_copy(global.lastInputs,0,global.inputs,0,array_length(global.inputs));
-for (var i=0;i<global.numOfInputs;i++)
+if !instance_exists(oDebugCommandLine)&&window_has_focus() for (var i=0;i<global.numOfInputs;i++)
 {
 	var _isPressed=false;
 	
@@ -75,6 +75,12 @@ if isDev||isTest
 			}
 		}
 		else ply.state=moveState.floating;
+	}
+	
+	if keyboard_check_pressed(191)
+	{
+		if instance_exists(oDebugCommandLine) instance_destroy(oDebugCommandLine);
+		else instance_create_depth(0,0,depth-1000,oDebugCommandLine);
 	}
 }
 

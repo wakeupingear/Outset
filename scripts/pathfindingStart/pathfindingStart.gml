@@ -31,9 +31,17 @@ function pathfindingStart(obj,path){
 	}
 	else if string_pos("simple",path)==1
 	{
-		moveCommand=pathLoad((path=="simple") ? "simple": "simpleAlwaysJump");
-		var _pos=array_pos(moveCommand,"xy")
-		if string_pos("simple{",path)==1
+		if string_pos("simpleT",path)>0 
+		{
+			moveCommand=pathLoad("simpleT");
+			var _pos=array_pos(moveCommand,"xyt");
+		}
+		else 
+		{
+			moveCommand=pathLoad((path=="simple") ? "simple": "simpleAlwaysJump");
+			var _pos=array_pos(moveCommand,"xy");
+		}
+		if string_pos("simple{",path)==1||string_pos("simpleT{",path)==1
 		{
 			moveCommand[_pos+1]=scr_getPathfindCoord(path,0);
 			moveCommand[_pos+2]=scr_getPathfindCoord(path,1);

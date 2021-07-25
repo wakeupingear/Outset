@@ -8,9 +8,11 @@ if mouseXPrevious!=mouse_x||mouseYPrevious!=mouse_y
 {
 	x=mouse_x;
 	y=mouse_y;
+	justMoved=true;
 }
 else
 {
+	justMoved=false;
 	if buttonHold(control.left) x-=2;
 	if buttonHold(control.right) x+=2;
 	if buttonHold(control.up) y-=2;

@@ -9,9 +9,9 @@ function guiY(){
 }
 
 function toGuiX(xPos){
-	return (xPos-camX())*guiX()
+	return (xPos-camX())*guiX();
 }
 
 function toGuiY(yPos){
-	return (yPos-camY())*guiY()
+	return (yPos-camY())*guiY();
 }
