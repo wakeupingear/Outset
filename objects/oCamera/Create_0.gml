@@ -12,7 +12,10 @@ view_camera[0]=global.cam;
 
 followMode=0; //0= don't track, 1=object, 2=path
 followObj=-1;
-followPathProgress=0;
+followPath=-1;
+pathSpd=2;
+pathEnd=path_action_stop;
+pathAbsolute=false;
 
 if global.zoomTo!=global.zoomLevel alarm[0]=1;
 
@@ -21,7 +24,7 @@ soulPositions=global.rooms[$ room_get_name(room)].soulCamera;
 
 camSpd=0.1;
 originalSpd=camSpd;
-maxChange=8;
+maxChange=9;
 xTo=x;
 yTo=y;
 

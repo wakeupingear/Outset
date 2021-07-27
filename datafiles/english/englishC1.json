@@ -12,8 +12,7 @@
         "$camReset"
     ],
     "c1_graduationTrip":[
-        "$createLayer",[0,0,"people","oPlayerMove"],
-        "$lastObj.moveCommand","c1_graduationTrip",
+        "$movePlayer","c1_graduationTrip",
         "$cutsceneDelay",{"key":"c1_graduationInterrupt","delay":60}
     ],
     "c1_graduationInterrupt":[
@@ -224,18 +223,22 @@
         "?citra","...Oh, it is over?",
         "Then let us go immediately!",
         "$oPlatform.moving",true,
+        "$camSet",["camX","camY"],
         "$citra.setRoom",["rNotdon","c1_bay"],
         "$eugene.setRoom",["rNotdon","c1_bay"],
         "$nora.setRoom",["rNotdon","c1_bay"],
         "$smitten.setRoom",["rNotdon","c1_bay"],
         "$charlie.setRoom",["rNotdon","c1_bay"],
-        120,
-        "$ply.alpha",0,
+        "$movePlayer","c1_enterMissionControlPly",
+        90,
+        "$ply.x",1837,
+        "$ply.y",711,
+        30,
         "$setTime",1,
         120,
         "$script","scr_c1_5",
-        "$ply.alpha",1,
-        120
+        120,
+        "$camReset"
     ],
     "c1_jack":["So you wake up in a gear..."],
 
@@ -244,5 +247,28 @@
         "MATT has assured us that it will be fixed soon, so sit quietly and wait.",
         "$citra.setIdleText"
     ],
-    "c1_bayCitraIdle":[["No need to be the hero!"],["It will be alright."]]
+    "c1_bayCitraIdle":[["No need to be the hero!"],["It will be alright."]],
+
+    "c1_notdonScannedCOPILOT":[
+        "You've scanned the area, {name}.",
+        "There's a few people in the area, but they're all dead.",
+        "There's no one left to save.",
+        "We're all dead."
+    ],
+    "c1_notdonScannedWest":[
+        "$camFollow","trackObj",
+        300,
+        "$cutscene","c1_notdonPowerOn"
+    ],
+    "c1_notdonScannedEast":[
+        "$camFollow","trackObj",
+        120,
+        "$cutscene","c1_notdonPowerOn"
+    ],
+    "c1_notdonPowerOn":[
+        "$path",["pNotdonPowerOn",3,0,true],
+        500,
+        "$script","scr_c1_6",
+        "$camReset"
+    ]
 }

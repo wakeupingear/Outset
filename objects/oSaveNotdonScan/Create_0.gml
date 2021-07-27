@@ -2,7 +2,6 @@ image_speed=0
 hit=instance_create_depth(x,y,depth,oSave);
 
 scanVars();
-//isScanned=isTest;
 alreadyActive=isScanned;
 
 scanFunc=function(){

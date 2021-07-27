@@ -7,7 +7,7 @@ else if mode<0
 {
 	if mode==-1
 	{
-		//if instance_number(oTextbox)==1 global.menuOpen=false;
+		if textboxTime>2 global.menuOpen=false;
 		mode=-2;
 	}
 	image_alpha-=0.1;

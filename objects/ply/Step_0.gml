@@ -224,6 +224,7 @@ if instance_exists(oPlayerMove)
 	yscale=oPlayerMove.yscale;
 	hsp=oPlayerMove.hsp;
 	vsp=oPlayerMove.vsp;
+	image_index=oPlayerMove.image_index;
 }
 
 //collect souldrop

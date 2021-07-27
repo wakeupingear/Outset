@@ -148,6 +148,10 @@ function scr_c1_1(){
 	global.startY=695;
 	
 	setNPCRoom("citra","rNotdon","c1_line");
+	setNPCRoom("eugene","rNotdon","c1_line");
+	setNPCRoom("charlie","rNotdon","c1_line");
+	setNPCRoom("nora","rNotdon","c1_line");
+	setNPCRoom("smitten","rNotdon","c1_line");
 	
 	destroyArray([oSouldropRainController],true);
 	addData("reacSt");
@@ -223,7 +227,7 @@ function scr_c1_4(){
 	setNPCRoom("nora","rNotdon","c1_video");
 	setNPCRoom("eugene","rNotdon","c1_video");
 	
-	//createCutsceneDelay({key:"c1_smittenBackpack",condition:"plyLeft",args:[2325],myRoom:"rNotdon"});
+	createCutsceneDelay({key:"c1_smittenBackpack",condition:"plyLeft",args:[2325],myRoom:"rNotdon"});
 	createCutsceneDelay({key:"c1_groupForgetName",condition:"plyLeft",args:[1964],myRoom:"rNotdon"});
 }
 
@@ -232,11 +236,33 @@ function scr_c1_5(){
 	global.currentChapter=chapters.c1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
+	global.plyX=1837;
+	global.plyY=711;
 	addData("notdonPowerless");
 	setRoomLighting(room_get_name(room));
 	setDungeonProgress(dungeons.vr,2);
+	var _jet1=instance_create_layer(1627,613,"behind",oNotdonJet);
+	var _jet2=instance_create_layer(1376,613,"behind",oNotdonJet);
+	_jet2.state=1;
+	var _jet3=instance_create_layer(1627,709,"behind",oNotdonJet);
+	_jet3.state=2;
 	
-	instance_create_depth(1474,357,depth,oNotdonPowerLadder);
+	instance_create_depth(1474,357,layer_get_depth(layer_get_name("hitPresent")),oNotdonPowerLadder);
+	
+	setNPCRoom("smitten","rNotdon","c1_bay");
+	setNPCRoom("citra","rNotdon","c1_bay");
+	setNPCRoom("eugene","rNotdon","c1_bay");
+	setNPCRoom("nora","rNotdon","c1_bay");
+	setNPCRoom("smitten","rNotdon","c1_bay");
+}
+
+function scr_c1_6(){
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.c1;
+	global.startRoom=rNotdon;
+	global.timeOfDay=times.day;
+	
+	with oNotdonJet if state==0 instance_destroy();
 	
 	setNPCRoom("smitten","rNotdon","c1_bay");
 	setNPCRoom("citra","rNotdon","c1_bay");

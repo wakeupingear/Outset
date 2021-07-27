@@ -1,10 +1,10 @@
 event_inherited();
-if global.notdonEra<notdonEras.present instance_destroy();
 
-xLerp=0.65;
-yLerp=0.65;
+xLerp=0.55;
+yLerp=0.55;
 
 setBGPosition(xstart,ystart);
+if global.notdonEra<notdonEras.present visible=false;
 
 //tunnel
 num=160;

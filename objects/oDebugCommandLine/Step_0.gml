@@ -21,6 +21,14 @@ if keyboard_check_pressed(vk_enter)
 		}
 		else switch _lower
 		{
+			case "end":
+				if !instance_exists(oTextbox) ds_list_add(commands,"No textbox currently exists");
+				else
+				{
+					instance_destroy(oTextbox);
+					instance_destroy();
+				}
+				break;
 			case "restart":
 			{
 				game_restart();

@@ -72,9 +72,8 @@ function listString(list)
 	return _str+"}";
 }
 function string_set(str,newstr,pos){
-	string_delete(str,pos,1);
-	string_insert(newstr,str,pos);
-	return str;
+	str=string_delete(str,pos,1);
+	return string_insert(newstr,str,pos);
 }
 function string_contains(str,substr){
 	return string_pos(substr,str)>0;

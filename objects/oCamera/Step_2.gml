@@ -1,9 +1,13 @@
-if followMode==1
+if followMode==1 //obj
 {
 	if setFollowTo(false)
 	{
 		findCameraPosition(false);
 	}
+}
+else if followMode==2 //path
+{
+	if path_index==-1 path_start(followPath,pathSpd,pathEnd,pathAbsolute);
 }
 
 if x!=xTo||y!=yTo
@@ -29,3 +33,14 @@ else
 var _vm=matrix_build_lookat(x,y,-10,x,y,0,0,1,0);
 camera_set_view_mat(global.cam,_vm);
 for (var i=0;i<instance_number(oBackground);i++) with instance_find(oBackground,i) event_user(0);
+
+//dev
+if isTest||isDev
+{
+	if keyboard_check(vk_control){
+		var _dir=mouse_wheel_down()-mouse_wheel_up();
+		show_debug_message(global.zoomLevel)
+		//global.zoomLevel+=_dir;
+		camera_set_view_size(global.cam,384,216);
+	}
+}

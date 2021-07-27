@@ -1,5 +1,5 @@
 function conversation(textData){
-	
+	var _alreadyOpen=global.menuOpen;
 	global.menuOpen=true;
 	if instance_exists(oTextbox)&&oTextbox.mode>-1 var _t=instance_find(oTextbox,0);
 	else var _t=instance_create_depth(120,150,-1005,oTextbox);
@@ -28,12 +28,12 @@ function conversation(textData){
 		catch(_exception) show_debug_message("Error: npcKey not defined for object "+object_get_name(object_index));
 	
 		with _t event_perform(ev_step,ev_step_begin);
-		if _t.mode<0 global.menuOpen=false;
+		if !_alreadyOpen&&_t.mode<0 global.menuOpen=false;
 	}
 }
 
 function conversationForced(textData){
-	
+	var _alreadyOpen=global.menuOpen;
 	global.menuOpen=true;
 	var _t=instance_create_depth(120,150,-1005,oTextbox);
 	if is_string(textData) textData=textLoad(textData);
@@ -46,6 +46,6 @@ function conversationForced(textData){
 	catch(_exception) show_debug_message("Error: npcKey not defined for object "+object_get_name(object_index));
 	
 	with _t event_perform(ev_step,ev_step_begin);
-	if _t.mode<0 global.menuOpen=false;
+	if !_alreadyOpen&&_t.mode<0 global.menuOpen=false;
 }
 

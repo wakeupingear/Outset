@@ -1,5 +1,5 @@
 /// @description Interact
-if alreadyActive&&!instance_exists(oSouldropRainController)
+if isScanned&&!instance_exists(oSouldropRainController)
 {
 	if place_meeting(x,y,ply)
 	{

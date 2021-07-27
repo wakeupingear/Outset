@@ -104,6 +104,9 @@
         60,
         "xyt","endX","endY",2
     ],
+    "c1_enterMissionControlPly":[
+        "xy",1856,452,4
+    ],
 
     "c1_jumpingSwitch":[
         "#start",

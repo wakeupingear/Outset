@@ -169,12 +169,12 @@ function commandProcess(command){
 							if _val[0]!="x"
 							{
 								if is_string(_val[0])&&instance_exists(getObject(_val[0])) oCamera.xTo=getObject(_val[0]).x;
-								else oCamera.xTo=_val[0];
+								else oCamera.xTo=tCoord(_val[0]);
 							}
 							if _val[1]!="y"
 							{
 								if is_string(_val[1])&&instance_exists(getObject(_val[1])) oCamera.yTo=getObject(_val[1]).y;
-								else oCamera.yTo=_val[1];
+								else oCamera.yTo=tCoord(_val[1]);
 							}
 							if _name=="camSetInstant"
 							{
@@ -189,6 +189,7 @@ function commandProcess(command){
 							with oCamera
 							{
 								camSpd=originalSpd;
+								if followMode==2 path_end();
 								if instance_exists(oPlayerCam)
 								{
 									followMode=1;
@@ -211,8 +212,14 @@ function commandProcess(command){
 						case "path":
 							if !instance_exists(oCamera) createCamera();
 							oCamera.followMode=2;
-							oCamera.followObj=_val;
-							oCamera.followPathProgress=0;
+							if is_string(_val) oCamera.followPath=asset_get_index(_val);
+							else
+							{
+								oCamera.followPath=asset_get_index(_val[0]);
+								oCamera.pathSpd=_val[1];
+								oCamera.pathEnd=_val[2];
+								oCamera.pathAbsolute=_val[3];
+							}
 							break;
 						case "shake":
 							if !instance_exists(oCamera) createCamera();
@@ -299,9 +306,17 @@ function commandProcess(command){
 							break;
 						case "x":
 							_obj.x=_val;
+							if _obj.object_index==ply&&instance_exists(oPlayerMove)
+							{
+								instance_destroy(oPlayerMove);
+							}
 							break;
 						case "y":
 							_obj.y=_val;
+							if _obj.object_index==ply&&instance_exists(oPlayerMove)
+							{
+								instance_destroy(oPlayerMove);
+							}
 							break;
 						case "xscale":
 							if !is_array(_val) _obj.image_xscale=_val;
@@ -396,6 +411,10 @@ function commandProcess(command){
 						case "xy":
 							_obj.x=_val[0];
 							_obj.y=_val[1];
+							break;
+						case "movePlayer":
+							lastObj=instance_create_layer(0,0,"people",oPlayerMove);
+							lastObj.moveCommand=_val;
 							break;
 						//room
 						case "setTime":
@@ -757,10 +776,12 @@ function tCoord(coord){
 	
 	if is_string(coord)
 	{
-		if string_pos(coord,"dieX")>0 return global.dieX;
-		if string_pos(coord,"dieY")>0 return global.dieY;
-		if string_pos(coord,"plyX")>0 return global.plyX;
-		if string_pos(coord,"plyY")>0 return global.plyY;
+		if coord=="dieX" return global.dieX;
+		if coord=="dieY" return global.dieY;
+		if coord=="plyX" return global.plyX;
+		if coord=="plyY" return global.plyY;
+		if coord=="camX" return oCamera.x;
+		if coord=="camY" return oCamera.y;
 	}
 	return coord;
 }

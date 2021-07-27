@@ -1,1 +1,2 @@
-/// @description No animation
+/// @description Animation only 
+npcAnimation();

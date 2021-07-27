@@ -77,7 +77,7 @@ switch room //room specific elements
 {
 	case rDevRoom:
 	case rNotdon:
-		instance_create_layer(2175,600,"bg2",oReactorBG);
+		//instance_create_layer(2175,600,"bg2",oReactorBG);
 		var _m=instance_create_layer(588,678,"bg2",oNotdonMountains);
 		_m.image_xscale=-1;
 		_m.tileX=3;

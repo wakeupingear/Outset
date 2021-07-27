@@ -28,4 +28,4 @@ if state==moveState.standing&&!global.menuOpen
 	}
 }
 
-npcAnimation();
+if !instance_exists(oPlayerMove) npcAnimation();

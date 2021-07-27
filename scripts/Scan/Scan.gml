@@ -25,7 +25,49 @@ function scanDraw(){
 			{
 				isScanned=true;
 				ds_list_add(global.scanList,id);
-				save(global.lastFile);
+				var _region=global.rooms[$ room_get_name(room)].region;
+				switch object_index
+				{
+					default:
+						ds_map_replace(global.scanProgress,_region,global.scanProgress[? _region]+1);
+						break;
+				}
+				
+				var _ang;
+				switch room
+				{
+					case rNotdon:
+						_ang=point_direction(x,y,oNotdonRadar.x,oNotdonRadar.y);
+						break;
+					default:
+						switch _region
+						{
+							case dungeons.vr:
+							case worldRegion.east:
+								_ang=point_direction(x,y,-200,-150);
+								break;
+							default:
+								_ang=0;
+								break;
+						}
+						break;
+				}
+				var _p=particle(x,y,controller.depth+1,sRadioWave,0,{
+					dir:_ang,
+					speed:1,
+					spd:3,
+					angle:_ang,
+					yscale:0,
+					yscaleSpd:0.075,
+					yscaleMax:1
+				});
+				if global.currentChapter==chapters.c1&&_region==worldRegion.notdon&&global.scanProgress[? _region]==1
+				{
+					_p.spd=5;
+					if object_index==oMykoObservatoryPanel with _p conversation("c1_notdonScannedWest");
+					else with _p conversation("c1_notdonScannedEast");
+				}
+				else save(global.lastFile);
 				global.scanObj=-1;
 				if scanFunc!=-1 scanFunc();
 			}

@@ -1,4 +1,5 @@
 /// @description Text
+textboxTime = min(textboxTime+1,200);
 if !wait&&global.notPause{
 var _touchingPly=false;
 if trackObj!=-1&&instance_exists(trackObj)&&!object_is_ancestor(trackObj.object_index,ply) with trackObj _touchingPly=place_meeting(x,y,ply);	

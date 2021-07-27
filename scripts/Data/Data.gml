@@ -20,5 +20,5 @@ function getDungeonProgress(dungeon){
 }
 
 function setDungeonProgress(dungeon,progress){
-	string_set(global.dungeonProgress,progress,dungeon+1);
+	global.dungeonProgress=string_set(global.dungeonProgress,progress,dungeon+1);
 }

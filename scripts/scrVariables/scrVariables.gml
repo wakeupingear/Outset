@@ -91,7 +91,8 @@ function scrVariables(){
 	global.souldropCollect=ds_list_create(); //format: unique coin id
 	
 	global.scanList=ds_list_create(); //format: id
-	
+	global.scanProgress=ds_map_create(); //formate: region -> count
+	for (var i=0;i<10;i++) global.scanProgress[? i]=0;
 	
 	//not saved files
 	addLocation = function(_npc,_room,_key,_x,_y,_xs,_ys,_path){
@@ -238,7 +239,7 @@ function scrVariables(){
 		addLocationPathFrom("smitten","c1_line","rNotdon","c1_stage","rNotdon","simpleT","");
 	addLocation("smitten","rNotdon","c1_bay",1604,644,-1,1,""); //launch bay
 		addLocationPathFrom("smitten","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
-	addLocation("smitten","rNotdon","c1_backpack",2292,628,-1,1,""); //backpack
+	addLocation("smitten","rNotdon","c1_backpack",2237,628,-1,1,""); //backpack
 	addLocation("smitten","rNotdon","c1_video",1829,452,1,1,""); //video
 		addLocationPathFrom("smitten","c1_backpack","rNotdon","c1_video","rNotdon","simpleAlwaysJump","");
 		addLocationPathFrom("smitten","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
@@ -401,6 +402,7 @@ function scrVariables(){
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
+	addBothCamera("rNotdonArchives",0,0,384,210,192,108); //citra office
 	
 	global.rooms.rIsland.inside=false;
 	}
@@ -521,14 +523,15 @@ function scrVariables(){
 		global.devSkips=true;
 		addItem("iGrapple");
 		addItem("iGrappleArc");
+		addItem("iSlate");
 		//addItem("iWrench1");
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
 		global.notdonEra=notdonEras.present;
-		//scr_pro_4();
-		scr_c1_1();
+		//scr_pro_3();
+		scr_c1_5();
 		//scr_island_1();
-		global.startRoom=rNotdonArchives;
+		global.startRoom=rNotdon;
 	}
 	
 	//npc sprite mask data

@@ -5,6 +5,7 @@ mask_index=sPly;
 text=[];
 mode=0;
 diag=0;
+textboxTime=0; //track duration
 
 padding=5; //border padding
 textX=54; //text starting x

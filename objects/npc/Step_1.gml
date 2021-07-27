@@ -66,7 +66,7 @@ else
 
 if pathfinding&&!pathfindingInterrupt //get over obstacles
 {
-	if move!=0&&hsp==0&&vsp==0
+	if move!=0&&hsp==0&&abs(vsp)<2
 	{
 		stuckTime++;
 		if stuckTime>30
