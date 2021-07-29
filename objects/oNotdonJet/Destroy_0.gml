@@ -1,5 +1,4 @@
 /// @description Remove event
-var _args=[flying,state];
-eventRemove(object_index,startroom,xstart,ystart,layer_get_name(layer),_args);
+eventRemove(object_index,startroom,x,y,layer,args);
 
-instance_destroy(hit);
+for (var i=0;i<array_length(followObjs);i++) instance_destroy(followObjs[i]);

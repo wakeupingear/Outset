@@ -256,8 +256,10 @@
         "We're all dead."
     ],
     "c1_notdonScannedWest":[
+        "$goto","dev",
         "$camFollow","trackObj",
         300,
+        "#dev",
         "$cutscene","c1_notdonPowerOn"
     ],
     "c1_notdonScannedEast":[
@@ -266,9 +268,29 @@
         "$cutscene","c1_notdonPowerOn"
     ],
     "c1_notdonPowerOn":[
+        "$goto","dev",
         "$path",["pNotdonPowerOn",3,0,true],
         500,
+        "#dev",
         "$script","scr_c1_6",
         "$camReset"
+    ],
+    "c1_5":[
+        "$script","scr_c1_5",
+        "$roomChange",["plyX","plyY","rNotdon",5,0,0,1]
+    ],
+    
+    "c1_jetBoarded":[
+        "Hey, hey you, yeah, do you ENJOY screwing everything up for the rest of us?",
+        "Smitten! That is quite enough. The time has come to vote.",
+        "Everyone remember {20}CRAIG'S VIDEO PRESENTATION about the three areas that you can deploy to?",
+        60,
+        "$popup",{"sprite":"sSlate","index":0,"mouse":[260,108],"forceOpen":true},
+        "Ok, now vote!",
+        "ISLA NOMA DOMA",
+        "TITAN ROCK",
+        "THE AIR",
+        "...pass?",
+        "And you?"
     ]
 }

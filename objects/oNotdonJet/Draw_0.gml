@@ -17,5 +17,5 @@ if state==0
 		if seethroughAlpha>0 seethroughAlpha-=0.05;
 	}
 	else if seethroughAlpha<1 seethroughAlpha+=0.05;
-	draw_sprite_ext(sprite_index,3,x,y,image_xscale,image_yscale,image_angle,image_blend,seethroughAlpha);
+	seethrough.image_alpha=seethroughAlpha;
 }

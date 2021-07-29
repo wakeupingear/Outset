@@ -23,3 +23,11 @@ if _state!=false
 	}
 	if text!=-1&&check==9 check=1;
 }
+
+eject=function(){
+	if !global.menuOpen oCamera.followObj=oPlayerCam;
+	ply.visible=true;
+	sitting=false;
+	image_index=0;
+	with ply while groundCollision(x,y) y--;
+}

@@ -3,7 +3,7 @@ if !global.menuOpen
 {
 	if !sitting
 	{
-		if distance_to_object(ply)<=abs(sprite_width)&&(image_index==0||text!=-1)&&place_meeting(x,y,ply)
+		if distance_to_object(ply)<=abs(sprite_width)&&ply.visible&&(image_index==0||text!=-1)&&place_meeting(x,y,ply)
 		{
 			global.interactText=check;
 			if ply.state<=moveState.running&&(buttonPressed(control.confirm)||buttonPressed(control.up))
@@ -47,11 +47,7 @@ if !global.menuOpen
 	
 		if _exit
 		{
-			oCamera.followObj=oPlayerCam;
-			ply.visible=true;
-			sitting=false;
-			image_index=0;
-			with ply while groundCollision(x,y) y--;
+			eject();
 		}
 	}
 }

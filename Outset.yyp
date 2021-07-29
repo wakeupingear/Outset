@@ -416,7 +416,7 @@
     {"id":{"name":"rumbleStart","path":"scripts/rumbleStart/rumbleStart.yy",},"order":28,},
     {"id":{"name":"enemTurretSmall","path":"objects/enemTurretSmall/enemTurretSmall.yy",},"order":9,},
     {"id":{"name":"oSpike","path":"objects/oSpike/oSpike.yy",},"order":0,},
-    {"id":{"name":"setNPCRoom","path":"scripts/setNPCRoom/setNPCRoom.yy",},"order":34,},
+    {"id":{"name":"NPCRooms","path":"scripts/NPCRooms/NPCRooms.yy",},"order":34,},
     {"id":{"name":"oArchivesWrenchesSelect","path":"objects/oArchivesWrenchesSelect/oArchivesWrenchesSelect.yy",},"order":1,},
     {"id":{"name":"sCursor","path":"sprites/sCursor/sCursor.yy",},"order":2,},
     {"id":{"name":"oFallingBlock","path":"objects/oFallingBlock/oFallingBlock.yy",},"order":0,},

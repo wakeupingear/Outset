@@ -306,9 +306,10 @@ function scrVariables(){
 	addLocation("xavier","rIsland","island_arrival",609,530,0,1,"");
 	#endregion
 	
-	var _cL=variable_struct_get_names(global.characters) //add arbitray yscale and check to each character
+	var _cL=variable_struct_get_names(global.characters) //add arbitray yscale, check, and nothing location to each character
 	for (var i=0;i<array_length(_cL);i++)
 	{
+		addLocation(_cL[i],"rDevRoom","nothing",384,0,1,1,"");
 		var _rm=room_get_name(global.characterLocations[? _cL[i]][2]);
 		if global.characterLocations[? _cL[i]][4]!=""
 		{
@@ -530,6 +531,11 @@ function scrVariables(){
 		global.notdonEra=notdonEras.present;
 		//scr_pro_3();
 		scr_c1_5();
+		/*createCutsceneDelay({
+			key:"c1_5",
+			myRoom:"rNotdon",
+			delay:4
+		});*/
 		//scr_island_1();
 		global.startRoom=rNotdon;
 	}

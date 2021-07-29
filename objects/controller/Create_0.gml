@@ -282,6 +282,9 @@ persistentEventsSet=function(key){
 	var _arr=global.persistentEvents[? key];
 	for (var i=0;i<array_length(_arr);i+=5)
 	{
+		var _layer=_arr[i+3];
+		if _layer=="any" layer=-1;
+		else _layer=layer_get_id(_layer);
 		switch (_arr[i])
 		{
 			case oParachute:
@@ -290,7 +293,7 @@ persistentEventsSet=function(key){
 				_p.target=_obj
 				break;
 			case oVBarrier:
-				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_arr[i+3],_arr[i]);
+				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,_arr[i]);
 				_d.image_xscale=_arr[i+4][0];
 				break;
 			case oCutsceneDelay:
@@ -299,7 +302,7 @@ persistentEventsSet=function(key){
 				else for (var k=0;k<instance_number(_arr[i]);k++) 
 				{
 					var _obj=instance_find(_arr[i],k);
-					if _obj.key==_arr[i+1]&&_obj.delay==_arr[i+2]&&array_equals(_obj.args,_arr[i+4])
+					if _obj.key==_arr[i+1]&&_ofbj.delay==_arr[i+2]&&array_equals(_obj.args,_arr[i+4])
 					{
 						_exists=true;
 						break;
@@ -320,8 +323,8 @@ persistentEventsSet=function(key){
 				}
 				break;
 			default:
-				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_arr[i+3],_arr[i]);
-				_d.depth--;
+				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,_arr[i]);
+				//_d.depth--; //screws up layering, causing crashes
 				_d.args=_arr[i+4];
 				break;
 		}

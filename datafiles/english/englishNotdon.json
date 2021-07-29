@@ -57,5 +57,13 @@
 
     "chairTest":[
         "Hello there."
+    ],
+
+    "notdon_jetEmpty":[
+        "The cockpit is vacated. Unfortunately, it is also locked.",
+        "But sooner or later, they'll slip up and forget to lock it..."
+    ],
+    "notdon_jetWaiting":[
+        "Hup Hup Hup, let's go, let's go!"
     ]
 }

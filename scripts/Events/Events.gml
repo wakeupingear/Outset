@@ -2,6 +2,7 @@
 
 function eventExists(object,objRoom,xStart,yStart,objLayer,args){
 	if !is_string(objRoom) objRoom=room_get_name(objRoom);
+	if !is_string(objLayer) objLayer=layer_get_name(objLayer);
 	if !ds_map_exists(global.persistentEvents,objRoom)||global.persistentEvents[? objRoom]==[] return false;
 	var _arr=global.persistentEvents[? objRoom];
 	for (var i=0;i<array_length(_arr);i+=5)
@@ -22,6 +23,7 @@ function eventExistsDefault(xStart,yStart){
 
 function eventRemove(object,objRoom,xStart,yStart,objLayer,args){
 	if !is_string(objRoom) objRoom=room_get_name(objRoom);
+	if !is_string(objLayer) objLayer=layer_get_name(objLayer);
 	if ds_map_exists(global.persistentEvents,objRoom)&&global.persistentEvents[? objRoom]!=[]{
 	var _arr=global.persistentEvents[? objRoom];
 	for (var i=0;i<array_length(_arr);i+=5)
@@ -44,6 +46,7 @@ function eventRemoveDefault(xStart,yStart){
 }
 
 function eventAddObject(object,objRoom,xStart,yStart,objLayer,args){
+	if !is_string(objLayer) objLayer=layer_get_name(layer);
 	if !is_string(objRoom) objRoom=room_get_name(objRoom);
 	if !ds_map_exists(global.persistentEvents,objRoom) ds_map_add(global.persistentEvents,objRoom,[]);
 	array_push(global.persistentEvents[? objRoom],object,xStart,yStart,objLayer,args);

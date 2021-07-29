@@ -246,6 +246,12 @@ function scr_c1_5(){
 	_jet2.state=1;
 	var _jet3=instance_create_layer(1627,709,"behind",oNotdonJet);
 	_jet3.state=2;
+	oNotdonJet.image_xscale=1;
+	with oNotdonJet 
+	{
+		setState();
+		if room==rStartup event_perform(ev_alarm,0);
+	}
 	
 	instance_create_depth(1474,357,layer_get_depth(layer_get_name("hitPresent")),oNotdonPowerLadder);
 	
@@ -262,13 +268,30 @@ function scr_c1_6(){
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
 	
-	with oNotdonJet if state==0 instance_destroy();
+	var _jet=-1;
+	with oNotdonJet if state==0 _jet=id;
+	if _jet==-1 var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
+	with _jet
+	{
+		image_xscale=-1;
+		flying=true;
+		seethroughOverride=-1;
+		cockpitCheck.key="notdon_jetWaiting";
+		//chairData[0]
+		plyRiding=true;
+		sitMode="c1_jetBoarded";
+	}
 	
-	setNPCRoom("smitten","rNotdon","c1_bay");
-	setNPCRoom("citra","rNotdon","c1_bay");
-	setNPCRoom("eugene","rNotdon","c1_bay");
-	setNPCRoom("nora","rNotdon","c1_bay");
-	setNPCRoom("smitten","rNotdon","c1_bay");
+	if ply.x<1444
+	{
+		with _jet switchRoom(461,1262,rNotdon,true,false);
+	}
+	
+	hideNPC("smitten");
+	hideNPC("citra");
+	hideNPC("eugene");
+	hideNPC("nora");
+	hideNPC("smitten");
 }
 
 function scr_island_1(){
