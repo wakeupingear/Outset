@@ -14,6 +14,8 @@ leftShift=0; //text offset on the left side
 rightShift=0; //right text offset
 
 wait=false; //whether the wait timer (alarm[0]) is active
+whileCondition="";
+whileArgs=[];
 skip=false; //whether the text automatically skips
 saved=false;
 

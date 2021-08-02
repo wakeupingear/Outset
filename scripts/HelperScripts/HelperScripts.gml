@@ -1,9 +1,27 @@
 //array
-function array_combine(arr1,arr2){
+function array_combine(arr1,arr2,pos){
 	var _len1=array_length(arr1);
 	var _len2=array_length(arr2);
-	for (var i=_len1;i<_len1+_len2;i++) arr1[i]=arr2[i-_len1];
-	return arr1;
+	if is_undefined(pos) pos=_len1;
+	var newArr=array_create(_len1+_len2,);
+	var pos1=0;
+	for (var i=0;i<_len1+_len2;i++)
+	{
+		if i==pos 
+		{
+			while i-pos<_len2
+			{
+				newArr[i]=arr2[i-pos];
+				i++;
+			}
+			i--;
+		}
+		else {
+			newArr[i]=arr1[pos1];
+			pos1++;
+		}
+	}
+	return newArr;
 }
 
 function array_pos(array,val){

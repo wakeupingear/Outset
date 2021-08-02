@@ -268,10 +268,10 @@
         "$cutscene","c1_notdonPowerOn"
     ],
     "c1_notdonPowerOn":[
-        "$goto","dev",
+        "$goto","dev2",
         "$path",["pNotdonPowerOn",3,0,true],
         500,
-        "#dev",
+        "#dev2",
         "$script","scr_c1_6",
         "$camReset"
     ],
@@ -281,16 +281,67 @@
     ],
     
     "c1_jetBoarded":[
+        "$goto","dev",
         "Hey, hey you, yeah, do you ENJOY screwing everything up for the rest of us?",
         "Smitten! That is quite enough. The time has come to vote.",
         "Everyone remember {20}CRAIG'S VIDEO PRESENTATION about the three areas that you can deploy to?",
         60,
-        "$popup",{"sprite":"sSlate","index":0,"mouse":[260,108],"forceOpen":true},
+        "$popup",{"sprite":"empty","index":0,"forceOpen":true,"objs":[{"obj":"oNotdonSlateChoice"}]},
         "Ok, now vote!",
         "ISLA NOMA DOMA",
         "TITAN ROCK",
         "THE AIR",
         "...pass?",
-        "And you?"
+        "And you?",
+        "#dev",
+        "$popup",{"sprite":"empty","index":0,"forceOpen":true,"mouse":[120,108],"objs":[{"obj":"oNotdonSlateChoice"}]}
+    ],
+
+    "c1_ditch":[
+        "I ain't waiting! 30 SECONDS TO DECIDE, starting now.",
+        "$cutsceneDelay",{"delay":360,"key":"c1_outtaHere","myRoom":"rNotdon"}
+    ],
+
+    "c1_toAir":[
+        "$global.currentChapter",2,
+        "$cutscene","c1_ditch",
+    ],
+    "c1_toIsland":[
+        "$global.currentChapter",3,
+        "BIG BIG CHUNGUS",
+        "$cutscene","c1_ditch",
+        "Time to decide."
+    ],
+    "c1_toWastes":[
+        "$global.currentChapter",4,
+        "$cutscene","c1_ditch",
+    ],
+
+    "c1_outtaHere":[
+        "$if0","plyInJetTakeoff",
+        "#true0",
+            "$addData","ditch1",
+            "$goto","false0",
+        "#false0",
+        "$if1", "isChapter",[2],
+        "#true1",
+            "$script","scr_island_1",
+            "$goto","next",
+        "#false1",
+            "$if2","isChapter",[3],
+                "$script","scr_island_1",
+                "$goto","next",
+            "#true2",
+            "#false2",
+                "$script","scr_island_1",
+        "#next",
+        "$if3","plyInJetTakeoff",
+        "#true3",
+            "$until","plyOffscreen",
+            "$roomChange",[222,580,"rIsland",0,0,0,1],
+            "end",
+        "#false3",
+            "...So what now?",
+            "end",
     ]
 }

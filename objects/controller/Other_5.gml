@@ -1,4 +1,4 @@
 /// @description Reset data structures
-ds_list_clear(global.blurObj);
-ds_list_clear(global.reflectObj);
-ds_list_clear(global.scanObjs);
+if !is_undefined(global.blurObj) ds_list_clear(global.blurObj);
+if !is_undefined(global.reflectObj) ds_list_clear(global.reflectObj);
+if !is_undefined(global.scanObjs) ds_list_clear(global.scanObjs);

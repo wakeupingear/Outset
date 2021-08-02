@@ -17,9 +17,6 @@
 		}
 		else mode=-1;
 		
-		if below!=-1 createPopupCursor(below);
-		else if mode==-1&&instance_exists(oCursor) instance_destroy(oCursor);
-		
 		if mode<0
 		{
 			switch sprite_index
@@ -38,5 +35,15 @@
 				default: break;
 			}
 		}
+	}
+}
+
+if mode<0
+{
+	if mouse!=-1
+	{
+		if below!=-1 createPopupCursor(below);
+		else if mode==-1&&instance_exists(oCursor) instance_destroy(oCursor);
+		mouse=-1;
 	}
 }

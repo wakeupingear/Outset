@@ -104,13 +104,16 @@ else if visible&&!global.menuOpen&&!global.transitioning&&global.alive&&ds_list_
 with oGrapple if active step();
 
 //movement
+var _startHsp=hsp;
+var _startVsp=vsp;
 if state==moveState.ladder||state==moveState.ladderMove ladderPhysics();
 else 
 {
 	if !instance_exists(oGrapple)||(oGrapple.state<2||oGrapple.grappleMode==grappleState.arc) physics();
 	else grapplePhysics();
-	if (buttonPressed(control.up)||buttonPressed(control.down))&&place_meeting(x,y,oLadder)
+	if !global.menuOpen&&!global.transitioning&&(buttonPressed(control.up)||buttonPressed(control.down)||buttonPressed(control.confirm))&&place_meeting(x,y,oLadder)
 	{
+		shake(1,1,10);
 		resetGrapple();
 		state=moveState.ladder;
 		hsp=0;
@@ -241,7 +244,7 @@ if instance_exists(oPlayerCam)
 }
 
 //water
-if global.inWater&&global.alive
+if global.inWater&&global.alive//&&!global.notPause
 {
 	breath-=1/24 //ba da ba ba dum ba bum
 	if breath<=-1 killPlayer();
@@ -268,3 +271,5 @@ else
 {
 	fastIntensity=0;
 }
+
+if hsp==0&&abs(_startHsp)>hspMax*1.5&&state==moveState.ladder shake(1,1,10);

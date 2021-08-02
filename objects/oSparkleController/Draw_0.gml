@@ -7,6 +7,7 @@ for (var i=0;i<array_length(objList);i++) with objList[i] shimmerDraw();
 gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
 draw_surface(application_surface,0,0);
 gpu_set_blendmode(bm_normal);
+for (var i=0;i<array_length(objPostList);i++) with objPostList[i] shimmerPostDraw();
 surface_reset_target();
 
 gpu_set_blendmode(bm_add);

@@ -8,17 +8,25 @@ seethrough.xOff=seethrough.x-x;
 seethrough.yOff=seethrough.y-y;
 landingYscale=1;
 
+moveCommand=-1;
+pfInd=0;
+pfWait=0;
+
 hit=instance_create_depth(x,y,depth,hitobj);
 hit.sprite_index=sNotdonJetColl;
 hit.xOff=0;
 hit.yOff=0;
+
+finGrapple=instance_create_depth(x-23,y-33,depth,grappleHit);
+finGrapple.image_xscale=-18;
+finGrapple.image_yscale=10;
 
 cockpitCheck=instance_create_depth(x+50,y-25,depth-3,oInteractable);
 cockpitCheck.key="notdon_jetEmpty";
 cockpitCheck.image_xscale=20;
 cockpitCheck.image_yscale=20;
 
-followObjs=[seethrough,hit,cockpitCheck];
+followObjs=[seethrough,hit,cockpitCheck,finGrapple];
 
 chairs=array_create(6);
 for (var i=0;i<array_length(chairs);i++)
@@ -34,6 +42,8 @@ lastXTo=x;
 lastYTo=y
 xTo=x;
 yTo=y;
+spawnX=x;
+spawnY=y;
 maxSpd=3;
 spd=0;
 acc=0.1;
@@ -42,13 +52,19 @@ state=0 //0=normal
 startroom=room;
 if startroom==rStartup startroom=rNotdon;
 
-setState=function(){args=[flying,state,chairData,seethroughOverride,cockpitCheck.key,image_xscale,sitMode];}; //it's like a react state! hahahaha why has god abandoned us
+plyRiding=false;
+plyXOff=-100;
+plyYOff=-100;
+
+setState=function(){args=[flying,state,chairData,seethroughOverride,cockpitCheck.key,image_xscale,sitMode,plyRiding];}; //it's like a react state! hahahaha why has god abandoned us
 setState();
 
 switchRoom=function(xPos,yPos,newRoom,snap,destroy){
-	eventRemove(object_index,startroom,x,y,layer,args);
+	eventRemove(object_index,startroom,spawnX,spawnY,layer,args);
 	setState();
 	eventAddObject(object_index,newRoom,xPos,yPos,layer,args);
+	spawnX=xPos;
+	spawnY=yPos;
 	if destroy 
 	{
 		args=[]; //we want the destroy event to fire but don't want to remove the new event
@@ -58,6 +74,8 @@ switchRoom=function(xPos,yPos,newRoom,snap,destroy){
 	{
 		x=xPos;
 		y=yPos;
+		xTo=x;
+		yTo=y;
 	}
 }
 

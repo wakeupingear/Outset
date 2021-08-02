@@ -6,6 +6,7 @@ seethroughOverride=args[3];
 cockpitCheck.key=args[4];
 image_xscale=args[5];
 sitMode=args[6];
+pullPlayer=args[7];
 with cockpitCheck event_perform(ev_alarm,0);
 
 landingYscale=!flying;

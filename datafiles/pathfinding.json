@@ -113,5 +113,32 @@
         "jump",
         180,
         "goto","start"
-    ]
+    ],
+
+    "c1_toWastesLeft":[
+        "xyTo",461,786,
+        "xyTo",-160,330
+    ],
+    "c1_toWastesRight":[
+        
+    ],
+
+    "c1_toAirLeft":[
+        "xyTo",461,-300,
+    ],
+    "c1_toAirRight":[
+        
+    ],
+
+    "c1_toIslandLeft":[
+        "xyTo",461,564,
+        "xyTo",1162,184,
+        "xyTo",3447,748,
+        "xyTo",3785,1229,
+        "xyTo",4288,1289
+    ],
+    "c1_toIslandRight":[
+
+    ],
+
 }

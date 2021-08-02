@@ -3,7 +3,13 @@ if global.alive
 {
 	if flying&&landingYscale==0
 	{
-		if true&&isTest&&keyboard_check(ord("M"))
+		if is_string(moveCommand)
+		{
+			moveCommand=pathLoad(moveCommand);
+			event_perform(ev_alarm,1);
+		}
+		
+		if false&&isTest&&keyboard_check(ord("M"))
 		{
 			xTo=oMouse.x;
 			yTo=oMouse.y;
@@ -16,6 +22,7 @@ if global.alive
 			{
 				lastXTo=xTo;
 				lastYTo=yTo;
+				if is_array(moveCommand) event_perform(ev_alarm,1);
 			}
 		}
 		else
@@ -28,6 +35,21 @@ if global.alive
 		}
 		x+=lengthdir_x(floor(spd),direction);
 		y+=lengthdir_y(floor(spd),direction);
+		
+		if plyRiding
+		{
+			if plyXOff==-100
+			{
+				plyXOff=ply.x-x;
+				plyYOff=ply.y-y;
+			}
+			ply.x=x+plyXOff;
+			ply.y=y+plyYOff;
+		}
+		else
+		{
+			plyXOff=-100;
+		}
 	}
 	
 	if sitMode!=""

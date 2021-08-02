@@ -142,6 +142,7 @@ function scr_pro_4(){
 function scr_c1_1(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
+	global.completedChapters=1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
 	global.startX=2454;
@@ -163,6 +164,7 @@ function scr_c1_1(){
 function scr_c1_2(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
+	global.completedChapters=1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
 	global.startX=2454;
@@ -185,6 +187,7 @@ function scr_c1_2(){
 function scr_c1_3(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
+	global.completedChapters=1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
 	if npcGetRoom("charlie")=="rNotdon.c1_stage" setNPCRoom("charlie","rNotdonAmphitheater","c1_underStage");
@@ -216,6 +219,7 @@ function scr_c1_3(){
 function scr_c1_4(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
+	global.completedChapters=1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
 	setDungeonProgress(dungeons.vr,2);
@@ -234,6 +238,7 @@ function scr_c1_4(){
 function scr_c1_5(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
+	global.completedChapters=1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
 	global.plyX=1837;
@@ -265,6 +270,7 @@ function scr_c1_5(){
 function scr_c1_6(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
+	global.completedChapters=1;
 	global.startRoom=rNotdon;
 	global.timeOfDay=times.day;
 	
@@ -278,13 +284,17 @@ function scr_c1_6(){
 		seethroughOverride=-1;
 		cockpitCheck.key="notdon_jetWaiting";
 		//chairData[0]
-		plyRiding=true;
 		sitMode="c1_jetBoarded";
 	}
 	
 	if ply.x<1444
 	{
-		with _jet switchRoom(461,1262,rNotdon,true,false);
+		with _jet 
+		{
+			switchRoom(461,1262,rNotdon,true,false);
+			y-=400;
+			lastYTo=y;
+		}
 	}
 	
 	hideNPC("smitten");
@@ -299,6 +309,30 @@ function scr_island_1(){
 	global.currentChapter=chapters.island;
 	global.startRoom=rIsland;
 	global.timeOfDay=times.day;
+	global.startX=430;
+	global.startY=611;
+	
+	var _jet=-1;
+	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
+	else with oNotdonJet if state==0&&flying _jet=id;
+	with _jet 
+	{
+		image_xscale=1;
+		flying=false;
+		seethroughOverride=0;
+		plyRiding=false
+		cockpitCheck.key="notdon_jetEmpty";
+		sitMode="";
+		switchRoom(222,580,rIsland,false,false);
+		if room=rNotdon
+		{
+			plyRiding=hasData("ditch1");
+			image_xscale=-1;
+			flying=true;
+			maxSpd=5;
+			if x<1245 moveCommand="c1_toWastesLeft";
+		}
+	}
 	
 	createCutsceneDelay({key:"island_xavierIntro",condition:"plyRight",args:[564],myRoom:"rIsland"});
 }

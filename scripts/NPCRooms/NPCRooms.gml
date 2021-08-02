@@ -15,6 +15,10 @@ function setNPCRoom(npcName,roomName,key){
 	{
 		pathfindingStart(_obj,_struct.path);
 	}
+	else if key=="nothing"
+	{
+		instance_destroy(_obj);
+	}
 	if instance_exists(_obj) 
 	{
 		with _obj event_user(0);

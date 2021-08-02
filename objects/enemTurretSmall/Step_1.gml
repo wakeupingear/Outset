@@ -8,26 +8,28 @@ if instance_exists(ply)
 	var _calcAng=abs(gunAngle+90-90*xscale-_ang);
 	seesPlayer=((distance_to_object(ply)<160)&&(_calcAng<18||_calcAng>342));
 }
-
-if mode==0
+if global.alive
 {
-	if seesPlayer 
+	if mode==0
 	{
-		mode=1.7;
-		alarm[3]=70;
+		if seesPlayer 
+		{
+			mode=1.7;
+			alarm[3]=70;
+		}
 	}
-}
-else if mode==1.7
-{
-	if seesPlayer
+	else if mode==1.7
 	{
-		gunAngle=_ang;
+		if seesPlayer
+		{
+			gunAngle=_ang;
+		}
 	}
+	else if mode==2
+	{
+		mode=2.7;
+		alarm[4]=1;
+	}
+	while gunAngle<0 gunAngle+=360;
+	while gunAngle>=360 gunAngle-=360;
 }
-else if mode==2
-{
-	mode=2.7;
-	alarm[4]=1;
-}
-while gunAngle<0 gunAngle+=360;
-while gunAngle>=360 gunAngle-=360;

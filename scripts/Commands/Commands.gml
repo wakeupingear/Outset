@@ -106,6 +106,17 @@ function commandProcess(command){
 					}
 					else switch _name
 					{
+						case "until":
+							whileCondition=_val;
+							if diag<array_length(command)&&is_array(command[diag])
+							{
+								whileArgs=command[diag];
+								diag++;
+							}
+							alarm[3]=1;
+							wait=true;
+							alarm[0]=100;
+							return "";
 						case "persistence":
 							persistent=_val;
 							break;
@@ -490,9 +501,9 @@ function commandProcess(command){
 						//cutscene
 						case "cutscene":
 							cancelCutsceneDelay(_val);
-							text=textLoad(_val);
-							diag=0;
-							command=text;
+							if diag<array_length(command) show_debug_message(command[diag])
+							command=array_combine(command,textLoad(_val),diag);
+							text=command;
 							break;
 						case "cutsceneCondition":
 						case "cutsceneDelay":
@@ -604,6 +615,11 @@ function pathfindCommandProcess(command){
 		}
 		else switch (command[pfInd])
 		{
+			case "xyTo":
+				xTo=command[pfInd+1];
+				yTo=command[pfInd+2];
+				pfInd+=4;
+				break;
 			case "xyjt":
 			case "xyj":
 				jumpCheck=true;

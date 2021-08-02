@@ -1,4 +1,5 @@
 /// @description Typing
+if alarm[0]>-1 keyboard_string="Stop";
 if keyboard_check_pressed(vk_enter)
 {
 	if string_letters(keyboard_string)!=""
@@ -21,6 +22,13 @@ if keyboard_check_pressed(vk_enter)
 		}
 		else switch _lower
 		{
+			case "timer":
+				ds_list_add(commands,0);
+				alarm[0]=1;
+				break;
+			case "stop":
+				alarm[0]=-1;
+				break;
 			case "end":
 				if !instance_exists(oTextbox) ds_list_add(commands,"No textbox currently exists");
 				else
