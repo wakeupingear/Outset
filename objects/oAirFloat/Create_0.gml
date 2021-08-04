@@ -9,3 +9,11 @@ for (var i=0;i<array_length(_a);i++)
 }
 amp=1;
 vars=new oscillateVars(4,amp);
+
+objList=[ply,oAirShip,oGrapple,
+	oNotdonJet
+];
+
+moveObj=function(obj,change){
+	obj.y+=change;
+}

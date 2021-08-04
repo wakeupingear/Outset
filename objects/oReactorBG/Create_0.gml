@@ -4,7 +4,7 @@ xLerp=0.55;
 yLerp=0.55;
 
 setBGPosition(xstart,ystart);
-if global.notdonEra<notdonEras.present visible=false;
+if global.notdonEra<notdonEras.present yOff+=600//visible=false;
 
 //tunnel
 num=160;

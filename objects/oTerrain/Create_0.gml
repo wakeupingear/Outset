@@ -26,7 +26,7 @@ addColorData=function(region,color,outlineCol){
 }
 
 addColorData(worldRegion.notdon,"333333","4C4C4C");
-addColorData(worldRegion.west,"363636","4C4C4C");
+addColorData(worldRegion.west,"4C4C4C","666666");
 addColorData(worldRegion.air,"363636","4C4C4C");
 addColorData(worldRegion.deeptown,"282A66","1E1F4C");
 addColorData(worldRegion.east,"A0410D","000000");

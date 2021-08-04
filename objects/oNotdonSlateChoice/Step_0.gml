@@ -17,9 +17,9 @@ else if oPopup.mode>-1
 		global.completedChapters++;
 		global.currentChapter=2+hover;
 		oPopup.mode=-1;
-		var _key="c1_toAir";
-		if global.currentChapter==chapters.island _key="c1_toIsland";
-		else if global.currentChapter==chapters.wastes _key="c1_toWastes";
+		var _key="c1_airChoice";
+		if global.currentChapter==chapters.island _key="c1_islandChoice";
+		else if global.currentChapter==chapters.wastes _key="c1_wastesChoice";
 		with oTextbox text=array_combine(text,textLoad(_key));
 	}
 }

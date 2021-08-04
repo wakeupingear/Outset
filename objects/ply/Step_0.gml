@@ -65,7 +65,7 @@ else if visible&&!global.menuOpen&&!global.transitioning&&global.alive&&ds_list_
 							removeItem(global.inventory[|global.itemSlot]);
 							break;
 						case "iLavaSwitch":
-							scr_toggleLava();
+							scrToggleLava();
 							break;
 						case "iFormula":
 							killPlayer();

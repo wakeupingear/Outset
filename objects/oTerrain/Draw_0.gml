@@ -45,6 +45,11 @@ if !render||!surface_exists(surf)
 			draw_sprite_repeated(0,0,sNotdonTerrainTexture,0,1,1,0,c_white,1,0,0);
 			gpu_set_blendmode(bm_normal);
 			break;
+		case worldRegion.west:
+			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
+			draw_sprite_repeated_offset(0,0,sWastesRocks,0,1,1,0,c_white,1,0,0,0,60);
+			gpu_set_blendmode(bm_normal);
+			break;
 		case worldRegion.east:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
 			for (var i=0;i<instance_number(oTerrainGradient);i++)
@@ -75,11 +80,21 @@ var _col=[color_get_red(image_blend)/255,color_get_green(image_blend)/255,color_
 var _outlineAlpha=1;
 switch (roomType)
 {
+	case worldRegion.west:
+		shader_set(shd_outlineTerrain);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_pixel"),texture_get_texel_width(surface_get_texture(surf)),texture_get_texel_height(surface_get_texture(surf)));
+		switch room
+		{
+			default:
+				shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[roomType].outlineCol[0]*_col[0],colorData[roomType].outlineCol[1]*_col[1],colorData[roomType].outlineCol[2]*_col[2]);
+				break;
+		}
+		break;
 	case worldRegion.east:
 		_outlineAlpha=0.3;
 	case worldRegion.deeptown:
 	case worldRegion.notdon:
-		shader_set(shd_outlineTerrain);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_pixel"),texture_get_texel_width(surface_get_texture(surf)),texture_get_texel_height(surface_get_texture(surf)));
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[roomType].outlineCol[0]*_col[0],colorData[roomType].outlineCol[1]*_col[1],colorData[roomType].outlineCol[2]*_col[2]);

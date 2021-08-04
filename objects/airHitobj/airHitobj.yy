@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "air",
-    "path": "folders/Objects/air.yy",
+    "name": "collision",
+    "path": "folders/Objects/collision.yy",
   },
   "resourceVersion": "1.0",
   "name": "airHitobj",

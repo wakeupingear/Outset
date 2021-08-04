@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sSus",
-    "path": "sprites/sSus/sSus.yy",
+    "name": "sVShip",
+    "path": "sprites/sVShip/sVShip.yy",
   },
   "solid": false,
   "visible": true,

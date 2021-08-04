@@ -1,4 +1,6 @@
 	//cutscene specific scripts go here
+	
+#region Prologue
 function scr_pro_2(){
 	addData("respInt");
 	global.notdonEra=notdonEras.pro2;
@@ -138,7 +140,9 @@ function scr_pro_4(){
 	}
 	save(global.lastFile);
 }
+#endregion
 
+#region Chapter 1
 function scr_c1_1(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.c1;
@@ -303,7 +307,88 @@ function scr_c1_6(){
 	hideNPC("nora");
 	hideNPC("smitten");
 }
+#endregion
 
+#region Wastes
+function scr_wastes_1(){
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.wastes;
+	global.startRoom=rAir;
+	global.timeOfDay=times.day;
+	global.startX=2122;
+	global.startY=1442;
+	
+	var _jet=-1;
+	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
+	else with oNotdonJet if state==0&&flying _jet=id;
+	with _jet 
+	{
+		image_xscale=1;
+		flying=false;
+		seethroughOverride=0;
+		plyRiding=false
+		cockpitCheck.key="notdon_jetEmpty";
+		sitMode="";
+		switchRoom(1953,1431,rAir,false,false);
+		if room=rNotdon
+		{
+			plyRiding=hasData("ditch1");
+			image_xscale=-1;
+			flying=true;
+			maxSpd=5;
+			if x<1245 moveCommand="c1_toWastesLeft";
+			else moveCommand="c1_toWastesRight";
+		}
+	}
+}
+#endregion
+
+#region Air
+function scr_air_1(){
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.air;
+	global.startRoom=rAir;
+	global.timeOfDay=times.day;
+	global.startX=2122;
+	global.startY=1442;
+	
+	var _jet=-1;
+	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
+	else with oNotdonJet if state==0&&flying _jet=id;
+	with _jet 
+	{
+		image_xscale=1;
+		flying=false;
+		seethroughOverride=0;
+		plyRiding=false
+		cockpitCheck.key="notdon_jetEmpty";
+		sitMode="";
+		switchRoom(1953,1431,rAir,false,false);
+		if room=rNotdon
+		{
+			plyRiding=hasData("ditch1");
+			image_xscale=-1;
+			flying=true;
+			maxSpd=5;
+			if x<1245 moveCommand="c1_toAirLeft";
+			else moveCommand="c1_toAirRight";
+		}
+	}
+}
+#endregion
+
+#region Deep
+function scr_deep_1(){
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.island;
+	global.startRoom=rIsland;
+	global.timeOfDay=times.day;
+	global.startX=430;
+	global.startY=611;
+}
+#endregion
+
+#region Island
 function scr_island_1(){
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.island;
@@ -330,9 +415,10 @@ function scr_island_1(){
 			image_xscale=-1;
 			flying=true;
 			maxSpd=5;
-			if x<1245 moveCommand="c1_toWastesLeft";
+			if x<1245 moveCommand="c1_toIslandRight";
+			else moveCommand="c1_toIslandLeft";
 		}
 	}
-	
 	createCutsceneDelay({key:"island_xavierIntro",condition:"plyRight",args:[564],myRoom:"rIsland"});
 }
+#endregion

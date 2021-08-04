@@ -8,7 +8,7 @@ if !touch&&place_meeting(x,y,ply)
 		global.plyY=y;
 		global.nextRoom=room;
 		global.startXscale=xscale;
-		if global.plyHealth<global.maxHealth global.plyHealth++;
+		global.plyHealth=global.maxHealth;
 	}
 	else
 	{

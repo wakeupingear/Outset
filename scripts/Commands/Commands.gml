@@ -796,6 +796,8 @@ function tCoord(coord){
 		if coord=="dieY" return global.dieY;
 		if coord=="plyX" return global.plyX;
 		if coord=="plyY" return global.plyY;
+		if coord=="startX" return global.startX;
+		if coord=="startY" return global.startY;
 		if coord=="camX" return oCamera.x;
 		if coord=="camY" return oCamera.y;
 	}

@@ -4,6 +4,7 @@ behind.sprite_index=sprite_index
 behind.image_index=image_index
 behind.image_xscale=image_xscale;
 behind.image_yscale=image_yscale;
+behind.image_angle=image_angle;
 
 sprite_index=frontSpr;
 image_index=frontInd;

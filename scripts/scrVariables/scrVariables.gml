@@ -529,7 +529,7 @@ function scrVariables(){
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
 		global.notdonEra=notdonEras.present;
-		//scr_pro_3();
+		//scr_pro_2();
 		scr_c1_5();
 		/*createCutsceneDelay({
 			key:"c1_5",
@@ -537,7 +537,7 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rNotdon;
+		global.startRoom=rWastes;
 	}
 	
 	//npc sprite mask data

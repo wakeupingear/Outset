@@ -1,15 +1,15 @@
-/// @description 
+/// @description Move
 if origXOff==-1
 {
-	origXOff=xOff-sprite_width;
-	origYOff=yOff-sprite_height;
+	origXOff=xOff-width;
+	origYOff=yOff-height;
 }
 
 if global.alive
 {
 	if image_angle==0
 	{
-		lerpProgX=((lerpProgX+spd)%sprite_width);
+		lerpProgX=((lerpProgX+0.4/xLerp)%width);
 		xOff=origXOff+lerpProgX;
 	}
 }

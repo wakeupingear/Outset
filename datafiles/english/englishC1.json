@@ -72,7 +72,9 @@
             "xPos":0,
             "yPos":0
         }]
-    }],
+        },
+        "end"
+    ],
     "c1_vStart":[
         "$createLayer",[1582,700,"bg2","oVShip"],
         "$lastObj.addVarQueue",["lightningQueue","rightBarrier"],
@@ -302,17 +304,17 @@
         "$cutsceneDelay",{"delay":360,"key":"c1_outtaHere","myRoom":"rNotdon"}
     ],
 
-    "c1_toAir":[
+    "c1_airChoice":[
         "$global.currentChapter",2,
         "$cutscene","c1_ditch",
     ],
-    "c1_toIsland":[
+    "c1_islandChoice":[
         "$global.currentChapter",3,
         "BIG BIG CHUNGUS",
         "$cutscene","c1_ditch",
         "Time to decide."
     ],
-    "c1_toWastes":[
+    "c1_wastesChoice":[
         "$global.currentChapter",4,
         "$cutscene","c1_ditch",
     ],
@@ -325,16 +327,41 @@
         "#false0",
         "$if1", "isChapter",[2],
         "#true1",
-            "$script","scr_island_1",
-            "$goto","next",
+            "$script","scr_air_1",
+            "$cutscene","toAir",
         "#false1",
             "$if2","isChapter",[3],
                 "$script","scr_island_1",
-                "$goto","next",
+                "$cutscene","toIsland",
             "#true2",
             "#false2",
-                "$script","scr_island_1",
-        "#next",
+                "$script","scr_wastes_1",
+                "$cutscene","toWastes"
+    ],
+
+    "toWastes":[
+        "$if3","plyInJetTakeoff",
+        "#true3",
+            "$until","plyOffscreen",
+            "$roomChange",["startX","startY","rIsland",0,0,0,1],
+            "end",
+        "#false3",
+            "...So what now?",
+            "end",
+    ],
+
+    "toAir":[
+        "$if3","plyInJetTakeoff",
+        "#true3",
+            "$until","plyOffscreen",
+            "$roomChange",["startX","startY","rAir",0,0,0,1],
+            "end",
+        "#false3",
+            "...So what now?",
+            "end",
+    ],
+
+    "to":[
         "$if3","plyInJetTakeoff",
         "#true3",
             "$until","plyOffscreen",

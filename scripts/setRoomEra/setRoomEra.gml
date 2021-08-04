@@ -2,14 +2,11 @@ function setRoomEra(){
 	if variable_struct_exists(global.rooms,room_get_name(room)){
 	var _eras=ds_list_create();
 	var _r=global.rooms[$ room_get_name(room)].region;
-	var _pos=-1;
+	var _pos=global.notdonEra
+	ds_list_add(_eras,"mykoEra","pro1","pro2","pro3","present","future"); //all era layer phrases
+	//default layers apply to most areas that don't have separate era variables
 	switch (_r)
 	{
-		case worldRegion.notdon:
-			ds_list_add(_eras,"mykoEra","pro1","pro2","pro3",
-			"present","future"); //all era layer phrases
-			_pos=global.notdonEra;
-			break;
 		default:
 			switch (room)
 			{
@@ -48,11 +45,20 @@ function setRoomEra(){
 	ds_list_destroy(_eras);
 	}
 	
-	switch room
+	switch _r
 	{
-		case rAir:
-			if instance_exists(oAirFloat) instance_destroy(oAirFloat);
-			instance_create_depth(0,0,depth,oAirFloat);
-		default: break;
+		case worldRegion.west:
+			if instance_exists(oWastesBuilding) instance_destroy(oWastesBuilding);
+			scrCreateWastesBuildings();
+			break;
+		default:
+			switch room
+			{
+				case rAir:
+					if instance_exists(oAirFloat) instance_destroy(oAirFloat);
+					instance_create_depth(0,0,depth,oAirFloat);
+				default: break;
+			}
+			break;
 	}
 }

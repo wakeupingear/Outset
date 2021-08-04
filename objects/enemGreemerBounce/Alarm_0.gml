@@ -1,3 +1,3 @@
 /// @description Reset
-ind=0;
+alarm[1]=17;
 if instance_exists(parent) parent.attacking=true;

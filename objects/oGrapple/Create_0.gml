@@ -187,6 +187,7 @@ else if state==1 //move in direction
 				ply.state=moveState.falling;
 			}
 			resetGrapple();
+			ply.justLaunched=false;
 		}
 		resetHitPlace();
 	}

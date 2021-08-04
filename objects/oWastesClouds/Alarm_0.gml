@@ -1,5 +1,6 @@
 /// @description Create bottom background
 setBGPosition(x,y);
+image_blend=merge_color(make_color_rgb(39,196,75),c_black,(xLerp-0.4)*1.5);
 var _num=ceil((room_height-yLerp*camY())/sprite_height);
 for (var i=0;i<_num;i++)
 {
@@ -10,8 +11,10 @@ for (var i=0;i<_num;i++)
 	_b.alarm[0]=-1;
 	_b.xLerp=xLerp;
 	_b.yLerp=yLerp;
-	with _b setBGPosition(x,y+(i+1)*sprite_height/xLerp);
+	_b.xscale=xscale;
+	with _b setBGPosition(x,y);
 	_b.xOff=xOff;
+	_b.yOff+=(i+1)*sprite_height;
 	array_push(bottomClouds,_b);
 }
 origXLerp=-1;

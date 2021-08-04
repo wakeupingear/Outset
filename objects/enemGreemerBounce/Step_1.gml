@@ -5,7 +5,8 @@ if alarm[0]==-1&&distance_to_object(ply)<24
 	if ply.image_blend!=c_red&&place_meeting(x,y,ply)
 	{
 		ind=1;
-		alarm[0]=30;
+		alarm[0]=7;
+		alarm[1]=-1;
 		if instance_exists(parent) parent.attacking=false;
 		if image_index==0
 		{
