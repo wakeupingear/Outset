@@ -80,11 +80,11 @@ function Animation() constructor{
 	animating= true; //whether a non-default animation is set
 	standing= {type: animType.singleFrame,startFrame: 0};
 }
-function setAnimation(currentAnimation,animation){
+function setAnimation(newAnimation,animation){
 	animation.animating=true;
-	animation.currentAnimation=currentAnimation;
+	animation.currentAnimation=newAnimation;
 	animation.animCount=0;
-	return animation[$ currentAnimation].startFrame;
+	return animation[$ newAnimation].startFrame;
 }
 function updateAnimation(index,animation){
 	if animation.animating {

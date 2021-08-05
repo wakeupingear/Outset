@@ -37,7 +37,7 @@ for (var i=0;i<instance_number(oBackground);i++) with instance_find(oBackground,
 //dev
 if isTest||isDev
 {
-	if keyboard_check(vk_control){
+	if false&&keyboard_check(vk_control){
 		var _dir=mouse_wheel_down()-mouse_wheel_up();
 		show_debug_message(global.zoomLevel)
 		//global.zoomLevel+=_dir;
