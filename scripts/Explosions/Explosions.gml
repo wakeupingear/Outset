@@ -1,5 +1,3 @@
-
-
 function explosionRange(num,xMin,yMin,xMax,yMax,delay){
 	for (var i=0;i<num;i++)
 	{
@@ -11,6 +9,8 @@ function explosionRange(num,xMin,yMin,xMax,yMax,delay){
 			_ex.alarm[0]=i*delay;
 		}
 	}
+	
+	if !global.alive with oExplosion if image_index==0 image_index=irandom_range(2,4);
 }
 
 function explosionCircle(num,_x,_y,radius,delay){
@@ -26,4 +26,6 @@ function explosionCircle(num,_x,_y,radius,delay){
 			_ex.alarm[0]=i*delay;
 		}
 	}
+	
+	if !global.alive with oExplosion if image_index==0 image_index=irandom_range(2,4);
 }

@@ -1,8 +1,8 @@
 /// @description Position
 if tileWidth==-1
 {
-	tileWidth=sprite_width;
-	tileHeight=sprite_height;
+	tileWidth=abs(sprite_width);
+	tileHeight=abs(sprite_height);
 }
 
 x=camX()*xLerp+xOff;

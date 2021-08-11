@@ -5,7 +5,7 @@ if keyboard_check_pressed(vk_enter)
 	if string_letters(keyboard_string)!=""
 	{
 		ds_list_add(commands,keyboard_string);
-		var _lower=string_lower(keyboard_string);
+		var _lower=string_replace_all(string_lower(keyboard_string)," ","");
 		if string_pos("tp",_lower)==1
 		{
 			var _coords=explodeString(" ",_lower);
@@ -20,8 +20,30 @@ if keyboard_check_pressed(vk_enter)
 				catch (e) show_debug_message("ERROR: invalid coords");
 			}
 		}
+		else if string_pos("echo",_lower)==1
+		{
+			keyboard_string=string_copy(keyboard_string,6,string_length(keyboard_string)-5);
+			ds_list_add(commands,keyboard_string);
+		}
 		else switch _lower
 		{
+			case "killplayer":
+			case "kill":
+				killPlayer();
+				instance_destroy();
+				break;
+			case "killall":
+				ds_list_add(commands,"Killed "+string(instance_number(enem))+" Enemies");
+				with enem hurtEnem(id,global.maxDamage);
+				break;
+			case "save":
+				save();
+				break;
+			case "filesize":
+				var _f=file_bin_open("file"+string(global.lastFile)+".ini", 0);
+				ds_list_add(commands,"File "+string(global.lastFile)+":  "+string(file_bin_size(_f)/1000)+"KB");
+				file_bin_close(_f);
+				break;
 			case "timer":
 				ds_list_add(commands,0);
 				alarm[0]=1;

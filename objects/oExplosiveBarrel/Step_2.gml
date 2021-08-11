@@ -7,6 +7,7 @@ if global.alive
 		{
 			shake(1,1,10);
 			moving=false;
+			move=0;
 			alarm[3]=1;
 		}
 	}

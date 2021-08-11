@@ -51,14 +51,21 @@ function setRoomEra(){
 			if instance_exists(oWastesBuilding) instance_destroy(oWastesBuilding);
 			scrCreateWastesBuildings();
 			break;
-		default:
-			switch room
+		default: break;
+	}
+	switch room
+	{
+		case rWastesHilltop:
+			if hasData("wBRack") with oWastesCrate 
 			{
-				case rAir:
-					if instance_exists(oAirFloat) instance_destroy(oAirFloat);
-					instance_create_depth(0,0,depth,oAirFloat);
-				default: break;
+				destroyObjs();
+				instance_destroy(id,false);
 			}
+			else with oWastesCrate state=moveState.floating;
 			break;
+		case rAir:
+			if instance_exists(oAirFloat) instance_destroy(oAirFloat);
+			instance_create_depth(0,0,layer_get_depth(layer_get_name("bg")),oAirFloat);
+		default: break;
 	}
 }

@@ -120,12 +120,17 @@ switch room //skybox/specific configs
 		instance_create_layer(0,0,"bg",oSkyWastes);
 		instance_create_layer(0,0,"bg",oSkyNotdon);
 		break;
+	case rWastesHilltop:
 	case rWastes:
 		instance_create_layer(0,800,"bg2",oWastesClouds);
 		var _c=instance_create_layer(0,600,"bg2",oWastesClouds);
-		_c.xLerp=0.7;
-		_c.yLerp=0.7;
-		_c.xscale=-1;
+		with _c
+		{
+			xLerp=0.7;
+			yLerp=0.7;
+			image_xscale=-0.6;
+			image_yscale=0.6;
+		}
 		break;
 	case rDevRoom:
 	case rNotdon:

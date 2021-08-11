@@ -11,10 +11,19 @@ for (var i=0;i<_num;i++)
 	_b.alarm[0]=-1;
 	_b.xLerp=xLerp;
 	_b.yLerp=yLerp;
-	_b.xscale=xscale;
-	with _b setBGPosition(x,y);
+	_b.image_xscale=image_xscale;
+	_b.image_yscale=image_yscale;
+	with _b 
+	{
+		width=abs(sprite_width);
+		height=abs(sprite_height);
+		setBGPosition(x,y);
+	}
 	_b.xOff=xOff;
 	_b.yOff+=(i+1)*sprite_height;
 	array_push(bottomClouds,_b);
 }
 origXLerp=-1;
+
+width=abs(sprite_width);
+height=abs(sprite_height);

@@ -347,10 +347,11 @@ function simplePhysics(){
 		}
 		else veltime++;
 	}
+	if state==moveState.standing&&!groundCollision(x,y+1) state=moveState.falling;
 	if vsp<vspMax&&state==moveState.falling vsp+=global.grav;
 	
 	//horizontal movement
-	repeat abs(hsp) //move every 0.2
+	repeat abs(round(hsp)) //move every 0.2
 	{
 		x+=sign(hsp);
 		if groundCollision(x,y)
@@ -374,7 +375,7 @@ function simplePhysics(){
 	}
 	
 	//vertical movement
-	repeat abs(vsp) //move every 0.2
+	repeat abs(round(vsp))
 	{
 		y+=sign(vsp);
 		if groundCollision(x,y)
@@ -383,7 +384,6 @@ function simplePhysics(){
 			vsp=0;
 			if groundCollision(x,y+1) //land
 			{
-				y=floor(y);
 				state=moveState.standing;
 			}
 			break;

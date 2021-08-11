@@ -26,6 +26,7 @@ if global.alive
 	else if abs(mode)==1&&ply.image_alpha==0
 	{
 		ply.y+=spd*mode;
+		ply.x=x;
 		x-=300;
 		var _id=id;
 		with ply if place_meeting(x,y,oElevator)

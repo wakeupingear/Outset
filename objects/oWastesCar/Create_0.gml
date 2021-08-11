@@ -1,5 +1,6 @@
 /// @description 
 image_speed=0;
+if !hasData("wCar") addData("wCar");
 
 npcMovementVars();
 collPointX=[];

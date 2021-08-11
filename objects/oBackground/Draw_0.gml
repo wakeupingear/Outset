@@ -1,8 +1,8 @@
 /// @description Draw
 if tileWidth==-1
 {
-	tileWidth=sprite_get_width(sprite_index);
-	tileHeight=sprite_get_height(sprite_index);
+	tileWidth=abs(sprite_width);
+	tileHeight=abs(sprite_height);
 }
 for (var i=0;i<1+(tileX)*(1+ceil(room_width/tileWidth));i++) //add 1 when tiling for -xscale
 {

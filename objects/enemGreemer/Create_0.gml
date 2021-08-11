@@ -1,6 +1,5 @@
 event_inherited();
 image_speed=0;
-image_index=18;
 
 enemActive=false;
 hspMax*=3;
@@ -38,4 +37,4 @@ bounceData[10]=[0,-2,2];
 animation.sliding={type: animType.singleFrame, startFrame:11};
 bounceData[11]=[-1,-2,2];
 
-setAnimation("hiding",animation);
+image_index=setAnimation("hiding",animation);

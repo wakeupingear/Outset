@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sWastesCarWheel",
-    "path": "sprites/sWastesCarWheel/sWastesCarWheel.yy",
+    "name": "sExplosiveBarrel",
+    "path": "sprites/sExplosiveBarrel/sExplosiveBarrel.yy",
   },
   "solid": false,
   "visible": true,
@@ -31,6 +31,7 @@
     {"isDnD":false,"eventNum":3,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":4,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":1,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

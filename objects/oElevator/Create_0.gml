@@ -21,6 +21,9 @@ enter=function(dir){
 	}
 	alarm[0]=1;
 	ply.state=moveState.floating;
+	ply.hsp=0;
+	ply.vsp=0;
+	ply.x=x;
 }
 
 eject=function(){

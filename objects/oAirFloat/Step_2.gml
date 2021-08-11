@@ -19,6 +19,8 @@ if global.alive
 		//while groundCollision(x,y) y+=sign(_change);
 	}
 	
+	with oHotel floatMove();
+	
 	for (var i=0;i<array_length(objList);i++)
 	{
 		if !instance_exists(objList[i]) continue;

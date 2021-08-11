@@ -58,6 +58,18 @@ if global.alive&&!global.menuOpen&&!global.transitioning&&global.notPause&&butto
 	instance_create_depth(ply.x,ply.y,-10001,oInventory);
 }
 
+//set particle systems
+for (var i=0;i<ds_list_size(global.particleSystems);i++)
+{
+	if !part_system_exists(global.particleSystems[|i])
+	{
+		ds_list_delete(global.particleSystems,i);
+		i--;
+		continue;
+	}
+	part_system_automatic_update(global.particleSystems[|i],global.alive);
+}
+
 //dev commands
 if isDev||isTest
 {
@@ -78,7 +90,7 @@ if isDev||isTest
 		else ply.state=moveState.floating;
 	}
 	
-	if keyboard_check_pressed(191)
+	if keyboard_check_pressed(191)||keyboard_check_pressed(192)
 	{
 		if instance_exists(oDebugCommandLine) instance_destroy(oDebugCommandLine);
 		else instance_create_depth(0,0,depth-1000,oDebugCommandLine);

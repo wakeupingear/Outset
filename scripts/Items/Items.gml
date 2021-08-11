@@ -35,6 +35,7 @@ function addItem(item){
 }
 
 function removeItem(item){
+	if !hasItem(item) exit;
 	var _rep=1;
 	if is_array(item)
 	{

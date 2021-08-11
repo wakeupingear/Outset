@@ -11,3 +11,6 @@ switch (destroyInd)
 		break;
 	default: break;
 }
+
+//specific interactions
+if place_meeting(x,y,oWastesCrate) with instance_place(x,y,oWastesCrate) damageCrate();

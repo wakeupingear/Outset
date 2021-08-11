@@ -1,4 +1,5 @@
 function scrToggleLava(){
+	with enemGreemer if isInRange(x,y) canRise=true;
 	if hasData("islandFlood") removeData("islandFlood");
 	else addData("islandFlood");
 	if room==rIsland

@@ -60,6 +60,7 @@ function scrVariables(){
 	global.timeOfDay=times.day;
 	
 	global.data =ds_map_create(); //dump misc values here
+	addDataPair("hotel",rWastesHilltop);
 	global.playerItems=ds_list_create(); //format: "iNameOfItem", number of items
 	global.inventory=ds_list_create();
 	global.itemSlot=0;
@@ -350,15 +351,24 @@ function scrVariables(){
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
 		if is_undefined(condition) condition=-1;
 		array_push(global.rooms[$ roomName].camera,[left,top,right,bottom,xPos,yPos,condition]);
+		if instance_exists(oCamera) with oCamera positions=global.rooms[$ room_get_name(room)].camera;
 	}
 	addSoulCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
 		if is_undefined(condition) condition=-1;
 		array_push(global.rooms[$ roomName].soulCamera,[left,top,right,bottom,xPos,yPos,condition]);
+		if instance_exists(oCamera) with oCamera soulPositions=global.rooms[$ room_get_name(room)].camera;
 	}
 	addBothCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
 		if is_undefined(condition) condition=-1;
 		array_push(global.rooms[$ roomName].camera,[left,top,right,bottom,xPos,yPos,condition]);
 		array_push(global.rooms[$ roomName].soulCamera,[left,top,right,bottom,xPos,yPos,condition]);
+	}
+	removeCamera=function(roomName,xPos,yPos){
+		for (var i=0;i+5<array_length(global.rooms[$ roomName].camera);i+=6){
+			if global.rooms[$ roomName].camera[4]==xPos&&global.rooms[$ roomName].camera[5]==yPos {
+				break;
+			}
+		}
 	}
 	if file_exists("rooms.json") global.rooms=loadStringJson("rooms"); //precalculate the room data
 	else {
@@ -405,6 +415,8 @@ function scrVariables(){
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
 	addBothCamera("rNotdonArchives",0,0,384,210,192,108); //citra office
 	
+	addRoomCamera("rWastesHilltop",934,732,1070,1300,996,743); //Garage
+	
 	global.rooms.rIsland.inside=false;
 	}
 	
@@ -425,6 +437,8 @@ function scrVariables(){
 	oPowerPlantTemp,
 	oSouldropRain,oSouldropRainController,oSouldropCoin
 	];
+	
+	global.particleSystems=ds_list_create();
 	
 	global.coinColorPoint=4280556782;
 	
@@ -559,4 +573,6 @@ function scrVariables(){
 	ds_map_add(global.physCollPoints,"sAAGun",[[0],[7]]);
 	
 	ds_map_add(global.physCollPoints,"sWastesCarWheel",[[-7,0,7],[0,7,0]]);
+	ds_map_add(global.physCollPoints,"sWastesCrate",[[-12,12],[15,15]]);
+	ds_map_add(global.physCollPoints,"sWastesCrateBig",[[-29,29],[31,31]]);
 }

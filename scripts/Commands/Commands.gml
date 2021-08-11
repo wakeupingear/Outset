@@ -474,7 +474,6 @@ function commandProcess(command){
 						case "removeItem":
 							if is_array(_val) var _item=_val[0];
 							else var _item=_val;
-							diag+=2;
 							removeItem(_item);
 							saved=true;
 							break;
@@ -487,8 +486,7 @@ function commandProcess(command){
 							saved=true;
 							break;
 						case "removeData":
-							removeData();
-							diag+=2;
+							removeData(_val);
 							break;
 							saved=true;
 						case "script":
@@ -501,7 +499,6 @@ function commandProcess(command){
 						//cutscene
 						case "cutscene":
 							cancelCutsceneDelay(_val);
-							if diag<array_length(command) show_debug_message(command[diag])
 							command=array_combine(command,textLoad(_val),diag);
 							text=command;
 							break;
@@ -543,11 +540,11 @@ function commandProcess(command){
 							break;
 						//mechanics
 						case "particle":
-							lastObj=instance_create_depth(_val[0],_val[1],layer_get_depth(layer_get_id(_val[2])),oParticle);
+							lastObj=instance_create_depth(tCoord(_val[0]),tCoord(_val[1]),layer_get_depth(layer_get_id(_val[2])),oParticle);
 							setObjFromStruct(lastObj,_val[3]);
 							break;
 						case "projectile":
-							lastObj=projectile(_val[0],_val[1],_val[2],_val[3]);
+							lastObj=projectile(tCoord(_val[0]),tCoord(_val[1]),_val[2],_val[3]);
 							break;
 						case "rumble":
 							rumbleStart(_val);
@@ -794,8 +791,8 @@ function tCoord(coord){
 	{
 		if coord=="dieX" return global.dieX;
 		if coord=="dieY" return global.dieY;
-		if coord=="plyX" return global.plyX;
-		if coord=="plyY" return global.plyY;
+		if coord=="plyX" return (instance_exists(ply) ? ply.x: global.plyX);
+		if coord=="plyY" return (instance_exists(ply) ? ply.y: global.plyY);
 		if coord=="startX" return global.startX;
 		if coord=="startY" return global.startY;
 		if coord=="camX" return oCamera.x;
@@ -804,12 +801,25 @@ function tCoord(coord){
 	return coord;
 }
 
+function createObjFromStruct(struct){
+	if variable_struct_exists(struct,"object") var obj=instance_create_depth(x,y,depth,struct.object);
+	else var obj=instance_create_depth(x,y,depth,struct.obj);
+	setObjFromStruct(obj,struct);
+	return obj;
+}
+
 function setObjFromStruct(obj,struct){
 	var _names=variable_struct_get_names(struct);
 	for (var i=0;i<array_length(_names);i++)
 	{
 		switch (_names[i])
 		{
+			case "x":
+				obj.x=struct.x;
+				break;
+			case "y":
+				obj.y=struct.y;
+				break;
 			case "speed":
 				obj.image_speed=struct.speed;
 				break;
