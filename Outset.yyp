@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"sWastesTerrainEdge","path":"sprites/sWastesTerrainEdge/sWastesTerrainEdge.yy",},"order":1,},
     {"id":{"name":"oWastesBorderDoor","path":"objects/oWastesBorderDoor/oWastesBorderDoor.yy",},"order":2,},
+    {"id":{"name":"twerp","path":"scripts/twerp/twerp.yy",},"order":29,},
     {"id":{"name":"sNotdonCrane","path":"sprites/sNotdonCrane/sNotdonCrane.yy",},"order":0,},
     {"id":{"name":"sWastesTerrain45","path":"sprites/sWastesTerrain45/sWastesTerrain45.yy",},"order":3,},
     {"id":{"name":"sItemLadder","path":"sprites/sItemLadder/sItemLadder.yy",},"order":4,},

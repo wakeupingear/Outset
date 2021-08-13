@@ -3,6 +3,7 @@
         "$oWastesBulletController.destroy",
         60,
         "$removeItem","iGrapple",
+        "$oGrapple.destroy",
         "$particle",["plyX","plyY","above",{
             "sprite":"sGrapple",
             "vsp":-4,
@@ -15,9 +16,13 @@
         120,
         "Damn that caribeener!",
         "$oNotFloor.destroy",
-        500,
+        "end",
         "end",
         "${NAME} is a total caribeener!",
+    ],
+
+    "wastes_bulletSurvive":[
+        "$oParachute.destroy"
     ],
 
     "wastes_borderDoor":[

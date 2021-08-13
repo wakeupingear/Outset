@@ -506,6 +506,7 @@ function scrVariables(){
 	[vk_insert,vk_f4], //fullscreen
 	[ord("T")] //debug
 	];
+	
 	global.numOfInputs=array_length(global.keyboardInputs);
 	global.inputs=array_create(global.numOfInputs); //filled in inputForPlayer1
 	global.lastInputs=array_create(global.numOfInputs); //filled in inputForPlayer1

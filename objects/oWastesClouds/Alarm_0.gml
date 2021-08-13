@@ -1,7 +1,13 @@
 /// @description Create bottom background
-setBGPosition(x,y);
+if room_height==216&&room_width==384
+{
+	yOff=y;
+	xOff=x;
+}
+else setBGPosition(x,y);
+
 image_blend=merge_color(make_color_rgb(39,196,75),c_black,(xLerp-0.4)*1.5);
-var _num=ceil((room_height-yLerp*camY())/sprite_height);
+/*var _num=ceil((room_height-yLerp*camY())/sprite_height);
 for (var i=0;i<_num;i++)
 {
 	var _b=instance_create_depth(x,y,depth,oWastesClouds);
@@ -22,8 +28,7 @@ for (var i=0;i<_num;i++)
 	_b.xOff=xOff;
 	_b.yOff+=(i+1)*sprite_height;
 	array_push(bottomClouds,_b);
-}
-origXLerp=-1;
+}*/
 
 width=abs(sprite_width);
 height=abs(sprite_height);

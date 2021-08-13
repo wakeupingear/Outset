@@ -18,7 +18,7 @@ justLaunched=false;
 x=global.plyX;
 y=global.plyY;
 
-if !instance_exists(oGrapple) instance_create_depth(x,y,depth-1,oGrapple);
+if !instance_exists(oGrapple)&&hasItem("iGrapple") instance_create_depth(x,y,depth-1,oGrapple);
 
 interactTextLast=-1;
 interactTextAlpha=0;

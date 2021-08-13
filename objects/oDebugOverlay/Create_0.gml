@@ -7,3 +7,4 @@ if os_type==os_windows&&false
 {
 	memDLL=external_define("CleanMem.dll","halo_shg_get_mem",dll_cdecl,ty_real,0);
 }
+show_debug_overlay(true);

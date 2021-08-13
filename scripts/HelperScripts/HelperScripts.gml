@@ -101,6 +101,22 @@ function string_contains(str,substr){
 function printCoords(_x,_y){
 	show_debug_message("X: "+string(_x)+"; Y: "+string(_y));
 }
+function printList(list){
+	str="[";
+	if is_array(list) var _l=array_length(list);
+	else var _l=ds_list_size(list);
+	for (var i=0;i<_l;i++)
+	{
+		if is_array(list) var _val=list[i];
+		else var _val=list[|i];
+		if is_real(_val) str+=string(_val);
+		else if is_array(_val) str=printList(_val);
+		else str+=_val;
+		if (i<_l-1) str+=", ";
+	}
+	str+="]";
+	return str;
+}
 
 //controller
 function gp_anykey(slot){

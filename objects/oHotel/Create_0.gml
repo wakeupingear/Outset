@@ -9,7 +9,6 @@ array_push(hit,
 
 hit[0].image_xscale=204;
 hit[0].image_yscale=5;
-hit[0].visible=true;
 hit[1].sprite_index=sHotelLobbyColl;
 
 seethrough=[];
@@ -52,6 +51,14 @@ for (var i=0;i<=_floorCount;i++)
 	}
 	else
 	{
+		var _wl=instance_create_depth(x-29,_y-20,depth,hitobj);
+		_wl.image_xscale=4;
+		_wl.image_yscale=20;
+		var _rl=instance_create_depth(x+25,_y-20,depth,hitobj);
+		_rl.image_xscale=4;
+		_rl.image_yscale=20;
+		array_push(hit,_wl,_rl);
+		
 		var _m=instance_create_depth(x,_y,depth,oSeethrough);
 		_m.sprite_index=sHotelFloorMid;
 		var _r=instance_create_depth(x,_y,depth,oSeethrough);

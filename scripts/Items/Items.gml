@@ -56,6 +56,7 @@ function removeItem(item){
 		}
 	}
 	else global.playerItems[|_pos+1]-=_rep;
+	
 }
 
 function addDroppedItem(xPos,yPos,roomID,itemName){

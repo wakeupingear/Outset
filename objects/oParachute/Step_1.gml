@@ -10,6 +10,16 @@ if target!=previousTarget
 	}
 }
 
+if alarm[2]==-1&&place_meeting(x,y,oExplosion)
+{
+	alarm[2]=30;
+	myHealth--;
+}
+if myHealth<1
+{
+	instance_destroy();
+}
+
 if target!=-1
 {
 	if !instance_exists(target) instance_destroy();

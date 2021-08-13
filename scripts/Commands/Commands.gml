@@ -415,6 +415,7 @@ function commandProcess(command){
 							return "hold";
 						case "destroy":
 							instance_destroy(_obj);
+							diag--;
 							break;
 						case "destroyPlace":
 							if place_meeting(_val[0],_val[1],asset_get_index(_val[2])) instance_destroy(instance_place(_val[0],_val[1],asset_get_index(_val[2])));

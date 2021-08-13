@@ -131,6 +131,7 @@ switch room //skybox/specific configs
 			image_xscale=-0.6;
 			image_yscale=0.6;
 		}
+		instance_create_layer(0,0,"bg",oSkyWastes);
 		break;
 	case rDevRoom:
 	case rNotdon:
