@@ -1,4 +1,4 @@
-with controller removeCamera(room_get_name(room),x,"y");
+controller.removeCamera(room_get_name(room),x,"y");
 if hasData("hotel")!=room instance_destroy(id,false);
 else {
 hit=[];

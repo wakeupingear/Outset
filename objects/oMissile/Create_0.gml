@@ -4,7 +4,7 @@ alarm[1]=-1; //stop soul
 canDropSoul=false;
 soulNum=0;
 
-startOffscreen=false;
+startOffscreen=offscreen(x,y,0);
 
 xDir=0;
 yDir=0;

@@ -2,9 +2,8 @@
 if global.alive{
 x+=round(lengthdir_x(spd,image_angle));
 y+=round(lengthdir_y(spd,image_angle));
-if true x=x;
-else if startOffscreen startOffscreen=offscreen(x,y);
-else if offscreen(x,y) instance_destroy();
+if startOffscreen startOffscreen=offscreen(x,y,0);
+else if offscreen(x,y,0) instance_destroy();
 else
 {
 	if hitTerrain==1||!instance_exists(ply)

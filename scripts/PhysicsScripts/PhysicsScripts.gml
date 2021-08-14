@@ -94,9 +94,9 @@ function physics(){
 		if object_index==ply&&goingFast&&abs(vsp)>=1 destroyBreakables();
 		if groundCollision(x,y)&&state!=moveState.floating
 		{
-			if vsp<0&&(!groundCollision(x+xscale*6,y)||!groundCollision(x-xscale*6,y)) //corner correction
+			if vsp<0&&(!groundCollision(x+xscale*maxXChange,y)||!groundCollision(x-xscale*maxXChange,y)) //corner correction
 			{
-				if !groundCollision(x+xscale*6,y) while groundCollision(x,y) x+=xscale;
+				if !groundCollision(x+xscale*maxXChange,y) while groundCollision(x,y) x+=xscale;
 				else while groundCollision(x,y) x-=xscale;
 				continue;
 			}

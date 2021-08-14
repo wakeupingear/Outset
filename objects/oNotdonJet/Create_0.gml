@@ -12,6 +12,8 @@ moveCommand=-1;
 pfInd=0;
 pfWait=0;
 
+saveEvent=true; //whether this should be an event object
+
 hit=instance_create_depth(x,y,depth,hitobj);
 hit.sprite_index=sNotdonJetColl;
 hit.xOff=0;
@@ -32,7 +34,7 @@ chairs=array_create(6);
 for (var i=0;i<array_length(chairs);i++)
 {
 	var _c=instance_create_layer(x+10-i*10,y-4,"people",oChairNotdon);
-	chairs[i]=[_c];
+	chairs[i]=[_c]; //idk why I made this a 1 length array but it's fineeeeeee
 	array_push(followObjs,_c);
 }
 chairData=array_create(array_length(chairs),[0,-1]);
@@ -60,9 +62,9 @@ setState=function(){args=[flying,state,chairData,seethroughOverride,cockpitCheck
 setState();
 
 switchRoom=function(xPos,yPos,newRoom,snap,destroy){
-	eventRemove(object_index,startroom,spawnX,spawnY,layer,args);
+	if saveEvent eventRemove(object_index,startroom,spawnX,spawnY,layer,args);
 	setState();
-	eventAddObject(object_index,newRoom,xPos,yPos,layer,args);
+	if saveEvent eventAddObject(object_index,newRoom,xPos,yPos,layer,args);
 	spawnX=xPos;
 	spawnY=yPos;
 	if destroy 

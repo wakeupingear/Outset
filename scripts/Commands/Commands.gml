@@ -102,7 +102,7 @@ function commandProcess(command){
 					if string_pos("alarm",_name)>0
 					{
 						var _num=int64(string_digits(_name));
-						with _obj alarm[_num]=_val;
+						with _obj.object_index alarm[_num]=_val;
 					}
 					else switch _name
 					{
@@ -413,12 +413,17 @@ function commandProcess(command){
 						case "popup":
 							lastObj=createPopup(_val);
 							return "hold";
+						case "getPlace":
+							lastObj=instance_place(_val[0],_val[1],asset_get_index(_val[2]));
+							if lastObj==-1 show_debug_message("ERROR: instance not found from 'getPlace'");
+							break;
 						case "destroy":
 							instance_destroy(_obj);
 							diag--;
 							break;
 						case "destroyPlace":
-							if place_meeting(_val[0],_val[1],asset_get_index(_val[2])) instance_destroy(instance_place(_val[0],_val[1],asset_get_index(_val[2])));
+						printCoords(tCoord(_val[0]),tCoord(_val[1]));
+							if place_meeting(tCoord(_val[0]),tCoord(_val[1]),asset_get_index(_val[2])) instance_destroy(instance_place(tCoord(_val[0]),tCoord(_val[1]),asset_get_index(_val[2])));
 							break;
 						case "xy":
 							_obj.x=_val[0];
@@ -798,6 +803,8 @@ function tCoord(coord){
 		if coord=="startY" return global.startY;
 		if coord=="camX" return oCamera.x;
 		if coord=="camY" return oCamera.y;
+		if coord=="trackObjX" return trackObj.x;
+		if coord=="trackObjY" return trackObj.y;
 	}
 	return coord;
 }

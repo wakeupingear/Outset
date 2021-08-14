@@ -51,6 +51,11 @@ if mode>-1&&mode<2
 				try var _num=real(string_digits(string_copy(sentence,i,_pos-i)));
 				charWaitList[i]=_num;
 				sentence=string_delete(sentence,i,2+string_length(string(_num)));
+				if i>=string_length(sentence) 
+				{
+					sentence+=" ";
+					charWaitList[i-1]=_num;
+				}
 			}
 			
 		}

@@ -49,7 +49,7 @@ if isHtml
     }
 }
 
-//if buttonPressed(control.fullscreen) window_set_fullscreen(!window_get_fullscreen());
+if buttonPressed(control.fullscreen) window_set_fullscreen(!window_get_fullscreen());
 
 //open inventory
 if global.alive&&!global.menuOpen&&!global.transitioning&&global.notPause&&buttonPressed(control.select)

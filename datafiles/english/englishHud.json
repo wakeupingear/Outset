@@ -40,7 +40,9 @@
         "Retract",
         "Sit",
         "Board",
-        "Ride or Die"
+        "Ride or Die",
+        "Listen",
+        "Re-Ambush"
     ],
     "buttonText":{
         "up":"Up",

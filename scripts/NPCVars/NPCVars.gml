@@ -70,7 +70,8 @@ function physicsVars(){
 	accTime=4; //acceleration threshold - compare veltime against this
 	decTime=2; //deceleration threshold
 	
-	maxYChange=3; //the highest slope that the object can go up
+	maxXChange=4; //the highest slope that the object can slide across (jump)
+	maxYChange=3; //the highest slope that the object can go up (grapple)
 }
 
 function Animation() constructor{ 

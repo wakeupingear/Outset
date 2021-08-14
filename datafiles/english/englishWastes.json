@@ -1,4 +1,30 @@
 {
+    "wastes_intro":[
+        "$oNotdonJet.xTo",192,
+        "$oNotdonJet.yTo",132,
+        "$goto","dev",
+        60,
+        "?chet","Yessirie, you can just smell that there air!",
+        30,
+        "$shakeToggle",[2,2],
+        30,
+        "PHEWEE, THAT'S FREEDOM!",
+        30,
+        "$shakeToggle",[0,0],
+        30,
+        "#dev",
+        "$oWastesBorderBGFade.alarm[0]",1,
+        "$getPlace",[412,257,"oMissile"],
+        "$lastObj.spd",3,
+        "skip","JOESEPH MOTHER{30}",
+        100,
+        "GREAT JIMMMY JENKINS! MAURICE, EVASIVE MANUEVERS!",
+        "That wasn't even a lil' bit evasive!",
+        "Ohhhhhh. I heard SPECTACULAR MANUEVERS.",
+        "EVASIVE AND SPECTACULAR SOUND NOTHING ALIKE, YA TWERP!",
+        "$oNotdonJet.seethroughOverride",-1,
+    ],
+
     "wastes_bulletFail":[
         "$oWastesBulletController.destroy",
         60,
@@ -15,8 +41,8 @@
         "$lastObj.angSpd",3,
         120,
         "Damn that caribeener!",
+        "$script","scr_wastes_2",
         "$oNotFloor.destroy",
-        "end",
         "end",
         "${NAME} is a total caribeener!",
     ],
@@ -46,5 +72,13 @@
     "wastes_car_garage":[
         "A large, bony structure lies beyond the tarp. Something oily is dripping off of it...",
         "...It's oil."
+    ],
+
+    "wastes_general_intro":[
+        "$addData","wGen1Start",
+        "$oWastesCatwalk.alarm[0]",1,
+        60,
+        "$destroyPlace",["trackObjX","trackObjY","hitobj"],
+        "$trackObj.destroy",
     ]
 }

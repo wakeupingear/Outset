@@ -533,12 +533,13 @@ function scrVariables(){
 	else if isTest
 	{
 		global.startRoom=rCoreIntro;
-		addData("reacSt")
+		addData("reacSt");
 		addData("respInt");
 		global.devTeleport=true;
 		global.devSkips=true;
 		addItem("iGrapple");
 		addItem("iGrappleArc");
+		addItem("iGrappleDown");
 		addItem("iSlate");
 		//addItem("iWrench1");
 		//addItem("iFormula");

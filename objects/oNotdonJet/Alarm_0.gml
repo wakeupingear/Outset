@@ -17,7 +17,7 @@ for (var i=0;i<array_length(chairData);i++)
 	chairs[i][0].text=chairData[i][1];
 }
 
-if !eventExists(object_index,startroom,x,y,layer,args) eventAddObject(object_index,startroom,x,y,layer,args);
+if saveEvent&&!eventExists(object_index,startroom,x,y,layer,args) eventAddObject(object_index,startroom,x,y,layer,args);
 
 for (var i=0;i<array_length(followObjs);i++)
 {

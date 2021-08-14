@@ -14,12 +14,7 @@ if !global.menuOpen
 				}
 				else
 				{
-					ply.state=moveState.floating;
-					ply.visible=false;
-					ply.xscale=image_xscale;
-					image_index=1;
-					sitting=true;
-					oCamera.followObj=id;
+					sit();
 				}
 			}
 		}

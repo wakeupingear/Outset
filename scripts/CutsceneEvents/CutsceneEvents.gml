@@ -310,7 +310,7 @@ function scr_c1_6(){
 #endregion
 
 #region Wastes
-function scr_wastes_1(){
+function scr_wastes_1(){ //leaving
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.wastes;
 	global.startRoom=rAir;
@@ -340,6 +340,15 @@ function scr_wastes_1(){
 			else moveCommand="c1_toWastesRight";
 		}
 	}
+}
+
+function scr_wastes_2(){ //crash land
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.wastes;
+	global.startRoom=rWastes;
+	global.timeOfDay=times.day;
+	global.startX=1949;
+	global.startY=919;
 }
 #endregion
 

@@ -24,6 +24,28 @@ if _state!=false
 	if text!=-1&&check==9 check=1;
 }
 
+sit=function(){
+	ply.state=moveState.floating;
+	ply.visible=false;
+	ply.xscale=image_xscale;
+	ply.x=x;
+	ply.y=y;
+	image_index=1;
+	if object_index=oChairNotdon&&place_meeting(x,y,oNotdonJet) //set chairdata
+	{
+		var _j=instance_place(x,y,oNotdonJet);
+		for (var i=0;i<array_length(_j.chairs);i++){
+			if id==_j.chairs[i][0]
+			{
+				_j.chairData[i][0]=image_index;
+				break;
+			}
+		}
+	}
+	sitting=true;
+	if instance_exists(oCamera) oCamera.followObj=id;
+}
+
 eject=function(){
 	if !global.menuOpen oCamera.followObj=oPlayerCam;
 	ply.visible=true;

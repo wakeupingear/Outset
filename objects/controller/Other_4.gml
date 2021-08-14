@@ -111,14 +111,27 @@ switch room //room specific elements
 }
 switch room //skybox/specific configs
 {
+	case rWastesIntro:
 	case rWastesBorder:
 		var _c=instance_create_depth(0,200,layer_get_depth(layer_get_id("bg"))-5,oWastesClouds);
+		var _c2=instance_create_depth(0,100,layer_get_depth(layer_get_id("bg"))-5,oWastesClouds);
+		with _c2
+		{
+			xLerp=0.7;
+			yLerp=0.7;
+			image_xscale=-0.6;
+			image_yscale=0.6;
+		}
+		if room==rWastesIntro oWastesClouds.y-=20;
 		instance_create_layer(0,0,"bg2",oOvercast);
 		var _o=instance_create_layer(0,0,"bg",oOvercast);
 		_o.image_index=1;
 		instance_create_depth(0,0,depth,oWastesBorderBGFade);
 		instance_create_layer(0,0,"bg",oSkyWastes);
 		instance_create_layer(0,0,"bg",oSkyNotdon);
+		break;
+	case rWastesBullet:
+		instance_create_layer(0,0,"bg",oSkyWastes);
 		break;
 	case rWastesHilltop:
 	case rWastes:
@@ -152,4 +165,4 @@ switch room //skybox/specific configs
 }
 
 //discord
-setDiscordStatus();
+if !isHtml&&os_type!=os_linux setDiscordStatus();

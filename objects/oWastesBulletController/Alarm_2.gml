@@ -1,4 +1,5 @@
 /// @description Survive
+scr_wastes_2();
 instance_destroy(oNotFloor);
 oRoomswitch.target_y=600;
 oParachute.myHealth=3;
