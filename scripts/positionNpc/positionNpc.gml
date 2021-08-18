@@ -30,5 +30,7 @@ function positionNpc(moveToLocation){ //0= don't, 1=do, 2=pathfind
 		xscale=1;
 	}
 	yscale=global.characters[$ npcKey].locations[$ _rm][$ global.characterLocations[? npcKey][4]].ys;
+	npcSpecialVars();
+	setObjFromStruct(id,global.characters[$ npcKey].locations[$ _rm][$ global.characterLocations[? npcKey][4]].varStruct);
 	return true;
 }

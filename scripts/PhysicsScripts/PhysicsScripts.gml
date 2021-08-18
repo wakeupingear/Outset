@@ -164,9 +164,10 @@ function push(xDir,yDir){
 	yprevious=y;
 }
 
-function groundCollision(_x,_y,_coll){
+function groundCollision(_x,_y,_coll,float){
 	if is_undefined(_coll) _coll=collType;
-	if state==moveState.floating return false;
+	if is_undefined(float) float=true;
+	if state==moveState.floating&&float return false;
 	for (var i=0;i<array_length(collPointX);i++) if collision_point(_x+collPointX[i],_y+collPointY[i],_coll,true,true) return true;
 	return false;
 }

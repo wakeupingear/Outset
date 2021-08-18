@@ -1,3 +1,10 @@
+function npcSpecialVars(){
+	blockWall=-1;
+	blockPlayer=false;
+	takeDamage=false;
+	damageCutscene="";
+}
+
 function npcMovementVars(){
 	physicsVars();
 	jumpSpd=2; //initial jump speed
@@ -25,8 +32,7 @@ function npcMovementVars(){
 		jumpCheck=false; //whether the object should check for holes to jump over
 		teleportOffscreen=false; //teleport to position when offscreen
 		
-		blockPlayer=false;
-		blockWall=-1;
+		npcSpecialVars();
 		
 		if object_is_ancestor(object_index,enem)
 		{

@@ -1,4 +1,5 @@
 function setNPCRoom(npcName,roomName,key){
+	if !is_string(roomName) roomName=room_get_name(roomName);
 	var _lastKey=global.characterLocations[? npcName][4];
 	var _struct=global.characters[$ npcName].locations[$ roomName][$ key];
 	global.characterLocations[? npcName][0]=_struct.startX;
@@ -27,6 +28,12 @@ function setNPCRoom(npcName,roomName,key){
 	{
 		if variable_struct_exists(_struct.pathFrom[$ _rm][$ _lastKey],"text") _obj.text=textLoad(_struct.pathFrom[$ _rm][$ _lastKey].text);
 		else _obj.text=[];
+	}
+	
+	if instance_exists(_obj) with _obj
+	{
+		npcSpecialVars();
+		setObjFromStruct(id,global.characters[$ npcName].locations[$ roomName][$ global.characterLocations[? npcName][4]].varStruct);
 	}
 }
 

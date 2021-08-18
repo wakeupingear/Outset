@@ -57,8 +57,9 @@ if startroom==rStartup startroom=rNotdon;
 plyRiding=false;
 plyXOff=-100;
 plyYOff=-100;
+startAng=image_angle;
 
-setState=function(){args=[flying,state,chairData,seethroughOverride,cockpitCheck.key,image_xscale,sitMode,plyRiding];}; //it's like a react state! hahahaha why has god abandoned us
+setState=function(){args=[flying,state,chairData,seethroughOverride,cockpitCheck.key,image_xscale,sitMode,plyRiding,startAng];}; //it's like a react state! hahahaha why has god abandoned us
 setState();
 
 switchRoom=function(xPos,yPos,newRoom,snap,destroy){

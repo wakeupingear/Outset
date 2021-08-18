@@ -78,8 +78,9 @@ if alarm[0]==-1 for (var i=0;i<array_length(followObjs);i++)
 		i--;
 		continue;
 	}
-	_in.x=x+_in.xOff*image_xscale;
-	_in.y=y+_in.yOff*image_yscale;
+	_in.x=x+lengthdir_x(_in.xOff,image_angle)*image_xscale+lengthdir_x(_in.yOff,image_angle+90)*image_yscale;
+	_in.y=y+lengthdir_y(_in.xOff,image_angle)*image_xscale+lengthdir_y(_in.yOff,image_angle+270)*image_yscale;
 	_in.image_xscale=_in.xscaleSign*image_xscale;
 	_in.image_yscale=_in.yscaleSign*image_yscale;
+	_in.image_angle=image_angle;
 }

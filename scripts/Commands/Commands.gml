@@ -73,6 +73,7 @@ function commandProcess(command){
 			}
 			
 			var _obj=string_copy(_data,1,string_pos(".",_data)-1);
+			var _originalObj=_obj;
 			var _name=string_replace(_data,_obj+".","");
 			if _obj==_name _obj="";
 			if _obj=="global"
@@ -438,6 +439,10 @@ function commandProcess(command){
 							saved=true;
 							global.timeOfDay=_val;
 							setRoomLighting(room_get_name(room));
+							break;
+						case "hideNPC":
+							hideNPC(_originalObj); //re-copy
+							diag--;
 							break;
 						case "setRoomTeleport":
 						case "setRoom":

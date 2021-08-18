@@ -3,10 +3,10 @@ image_speed=0;
 npcKey="";
 location="";
 text=[];
-if !positionNpc(1) instance_destroy();
-else {
 npcMovementVars();
 npcAnimVars();
+if !positionNpc(1) instance_destroy();
+else {
 if object_is_ancestor(object_index,enem) 
 {
 	npcHealthVars();

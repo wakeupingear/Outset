@@ -80,5 +80,36 @@
         60,
         "$destroyPlace",["trackObjX","trackObjY","hitobj"],
         "$trackObj.destroy",
+        "$cutscene","wastes_car_warehouse"
+    ],
+
+    "wastes_car_warehouse":[
+        "$createLayer",[881,328,"behind","oWastesCar"],
+        "$lastObj.move",-1,
+        "$script","scr_wastes_3"
+    ],
+
+    "wastes_chet_pulledOut":[
+        "$chet.setRoom",["rWastesCrater","wastes_pulledOut"],
+        "?chet",
+        "WHA!"
+    ],
+
+    "wastes_pulledOutChet":[
+        "$question1","Found those parts yet?",
+        "#yes1",
+            "No you haven't!","end",
+        "#no1",
+            "$question2","Well... want me to come with you?",
+            "#yes2",
+                "PREPARE YOUR SPINAL CORD!",
+                "$createLayer",[0,0,"player","oCarryObj"],
+                "$lastObj.sprite","sChet",
+                "$chet.hideNPC",
+                "end",
+            "#no2",
+                "Look, are you sure that you can do this yourself, little dude?",
+                "It's a scary world ya hear, really turning this PARENTAL STAND-IN's hair grey!",
+                "And I've been such a good guardian! Be careful, small one."
     ]
 }

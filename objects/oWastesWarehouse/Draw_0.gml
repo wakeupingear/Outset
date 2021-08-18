@@ -1,8 +1,6 @@
 /// @description Draw shadow
 draw_sprite_ext(sprite_index,image_index+2,x,y,image_xscale,image_yscale,image_angle,-1,0.2);
-visible=false; //stop default draw
-event_inherited();
-visible=true;
+seethroughFade();
 if image_alpha<0.5 
 {
 	if !touch

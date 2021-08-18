@@ -39,7 +39,6 @@ if isTest||isDev
 {
 	if false&&keyboard_check(vk_control){
 		var _dir=mouse_wheel_down()-mouse_wheel_up();
-		show_debug_message(global.zoomLevel)
 		//global.zoomLevel+=_dir;
 		camera_set_view_size(global.cam,384,216);
 	}

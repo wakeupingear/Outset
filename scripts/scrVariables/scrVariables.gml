@@ -96,7 +96,8 @@ function scrVariables(){
 	for (var i=0;i<10;i++) global.scanProgress[? i]=0;
 	
 	//not saved files
-	addLocation = function(_npc,_room,_key,_x,_y,_xs,_ys,_path){
+	addLocation = function(_npc,_room,_key,_x,_y,_xs,_ys,_path,_varStruct){
+		if is_undefined(_varStruct) _varStruct={};
 		if !variable_struct_exists(global.characters[$ _npc],"locations")  variable_struct_set(global.characters[$ _npc],"locations",{});
 		if !variable_struct_exists(global.characters[$ _npc].locations,_room)  variable_struct_set(global.characters[$ _npc].locations,_room,{});
 		global.characters[$ _npc].locations[$ _room][$ _key]={};
@@ -104,6 +105,7 @@ function scrVariables(){
 		global.characters[$ _npc].locations[$ _room][$ _key].startY=_y;
 		global.characters[$ _npc].locations[$ _room][$ _key].xs=_xs;
 		global.characters[$ _npc].locations[$ _room][$ _key].ys=_ys;
+		global.characters[$ _npc].locations[$ _room][$ _key].varStruct=_varStruct;
 		if _path!="" global.characters[$ _npc].locations[$ _room][$ _key].path=_path;
 	}
 	addLocationPathFrom = function(_npc,_from,_fromRoom,_to,_toRoom,_path,_text){
@@ -283,6 +285,9 @@ function scrVariables(){
 	#region Chet
 	global.characters.chet={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("chet","rNotdon","pro_search1",2137,628,1,1,""); //starting search
+	
+	addLocation("chet","rWastesCrater","wastes_buried",348,388,1,1,"",{takeDamage: true, damageCutscene:"wastes_chet_pulledOut"}); //buried under jet
+	addLocation("chet","rWastesCrater","wastes_pulledOut",348,388,0,1,""); //pulled out of ground
 	#endregion
 	
 	#region Alex
@@ -546,14 +551,16 @@ function scrVariables(){
 		//addItem("iLavaSwitch");
 		global.notdonEra=notdonEras.present;
 		//scr_pro_2();
-		scr_c1_5();
+		//scr_c1_5();
+		scr_wastes_1();
+		scr_wastes_2();
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastes;
+		global.startRoom=rWastesCrater;
 	}
 	
 	//npc sprite mask data

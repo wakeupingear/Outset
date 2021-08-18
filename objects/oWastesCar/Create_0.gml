@@ -2,6 +2,8 @@
 image_speed=0;
 if !hasData("wCar") addData("wCar");
 
+if room==rWastesCrater&&layer_get_name(layer)!="behind" layer=layer_get_id("behind");
+
 npcMovementVars();
 collPointX=[];
 collPointY=[];

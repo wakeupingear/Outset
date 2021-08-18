@@ -283,7 +283,7 @@ persistentEventsSet=function(key){
 	for (var i=0;i<array_length(_arr);i+=5)
 	{
 		var _layer=_arr[i+3];
-		if _layer=="any" layer=-1;
+		if _layer=="any" _layer=-1;
 		else _layer=layer_get_id(_layer);
 		switch (_arr[i])
 		{

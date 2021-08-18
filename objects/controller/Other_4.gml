@@ -133,9 +133,23 @@ switch room //skybox/specific configs
 	case rWastesBullet:
 		instance_create_layer(0,0,"bg",oSkyWastes);
 		break;
+	case rWastesCrater:
 	case rWastesHilltop:
 	case rWastes:
 		instance_create_layer(0,800,"bg2",oWastesClouds);
+		var _hill=instance_create_layer(0,910,"bg2",oWastesHillBG);
+		with _hill setBGPosition(x,y);
+		var _xs=1;
+		var _x=0;
+		for (var i=0;_x<room_width;i++)
+		{
+			var _t=instance_create_layer(_x,960+irandom_range(-30,90),"bg2",oWastesTreeBG);
+			_t.image_index=i%3;
+			_t.image_xscale=_xs;
+			with _t setBGPosition(x,y);
+			if i%3==2 _xs*=-1;
+			_x+=sprite_get_width(sWastesTreeBG)+40+irandom(60);
+		}
 		var _c=instance_create_layer(0,600,"bg2",oWastesClouds);
 		with _c
 		{
@@ -143,6 +157,26 @@ switch room //skybox/specific configs
 			yLerp=0.7;
 			image_xscale=-0.6;
 			image_yscale=0.6;
+		}
+		
+		var _hill2=instance_create_layer(0,770,"bg",oWastesHillBG);
+		_hill2.xLerp=0.75;
+		_hill2.yLerp=_hill2.xLerp;
+		_hill2.image_blend=c_black;
+		with _hill2 setBGPosition(x,y);
+		var _xs=0.5;
+		var _x=0;
+		for (var i=0;_x<room_width;i++)
+		{
+			var _t=instance_create_layer(_x,820+irandom_range(-30,50),"bg",oWastesTreeBG);
+			_t.image_index=i%3;
+			_t.image_xscale=_xs;
+			_t.image_yscale=0.5;
+			_t.xLerp=0.75;
+			_t.yLerp=_t.xLerp;
+			with _t setBGPosition(x,y);
+			if i%3==2 _xs*=-1;
+			_x+=sprite_get_width(sWastesTreeBG)+40+irandom(60);
 		}
 		instance_create_layer(0,0,"bg",oSkyWastes);
 		break;

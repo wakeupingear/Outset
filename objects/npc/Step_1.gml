@@ -38,7 +38,6 @@ if jump>0
 	jump++;
 	if jump>=jumpHoldTime jump=0;
 }
-
 if blockPlayer
 {
 	if instance_exists(ply) y=ply.y;

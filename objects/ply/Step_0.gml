@@ -185,6 +185,23 @@ if object_index==ply
 			}
 		}
 	}
+	else if place_meeting(x,y,npc)
+	{
+		var _n=instance_place(x,y,npc);
+		if _n.takeDamage&&((instance_exists(oGrapple)&&oGrapple.state>1)||(goingFast&&alarm[0]<5))&&_n.image_blend!=c_red
+		{
+			hsp=-hsp;
+			vsp=-vsp;
+			shake(1,1,10);
+			resetGrapple();
+			with _n
+			{
+				image_blend=c_red;
+				alarm[0]=30;
+				if damageCutscene!="" conversation(damageCutscene);
+			}
+		}
+	}
 	
 	if place_meeting(x,y,oSwitch)
 	{

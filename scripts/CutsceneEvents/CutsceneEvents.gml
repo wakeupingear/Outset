@@ -38,7 +38,7 @@ function scr_pro_2(){
 	//rNotdon specific stuff
 	if instance_exists(oBounceAngle) with oBounceAngle if x>1480&&x<1600
 	{
-		y=413
+		y=413;
 		st=0;
 	}
 	
@@ -323,13 +323,14 @@ function scr_wastes_1(){ //leaving
 	else with oNotdonJet if state==0&&flying _jet=id;
 	with _jet 
 	{
-		image_xscale=1;
+		image_xscale=-1;
 		flying=false;
 		seethroughOverride=0;
 		plyRiding=false
 		cockpitCheck.key="notdon_jetEmpty";
 		sitMode="";
-		switchRoom(1953,1431,rAir,false,false);
+		startAng=13;
+		switchRoom(226,363,rWastesCrater,false,false);
 		if room=rNotdon
 		{
 			plyRiding=hasData("ditch1");
@@ -349,6 +350,24 @@ function scr_wastes_2(){ //crash land
 	global.timeOfDay=times.day;
 	global.startX=1949;
 	global.startY=919;
+	
+	setNPCRoom("chet",rWastesCrater,"wastes_buried");
+}
+
+function scr_wastes_3(){ //defeat general
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.wastes;
+	global.startRoom=rWastes;
+	global.timeOfDay=times.day;
+	global.startX=1949;
+	global.startY=919;
+	
+	addDataPair("wWare",4);
+	if instance_exists(oWastesWarehouse) with oWastesWarehouse event_perform(ev_alarm,1);
+	var _h=instance_create_layer(-2,-238,"behind",oTerrainEvent);
+	_h.sprite_index=sWastesCraterTerrain;
+	_h.image_index=1;
+	_h.startroom=rWastesCrater;
 }
 #endregion
 
@@ -360,6 +379,8 @@ function scr_air_1(){
 	global.timeOfDay=times.day;
 	global.startX=2122;
 	global.startY=1442;
+	
+	
 	
 	var _jet=-1;
 	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
