@@ -6,6 +6,7 @@ function resetGrapple(){
 		if oGrapple.state>0 
 		{
 			with oGrapple{
+			//if yDir==1 buttonFreeze(control.down); //can't just keep holding down between grapples
 			grappleTime=0;
 			xDir=0;
 			yDir=0;

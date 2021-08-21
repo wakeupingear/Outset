@@ -3,7 +3,7 @@
 if instance_exists(oDiscoballManager) with oDiscoballManager draw();
 else if global.lightAlpha>0
 {
-	if !surface_exists(global.lightSurf) global.lightSurf=surface_create(386,218);
+	if !surface_exists(global.lightSurf) global.lightSurf=scr_surface_create(386,218);
 	surface_set_target(global.lightSurf);
 	draw_clear_alpha(c_black,global.lightAlpha);
 	gpu_set_blendmode(bm_subtract);

@@ -421,6 +421,7 @@ function scrVariables(){
 	addBothCamera("rNotdonArchives",0,0,384,210,192,108); //citra office
 	
 	addRoomCamera("rWastesHilltop",934,732,1070,1300,996,743); //Garage
+	addRoomCamera("rWastesFactoryOutside",0,0,500,250,320,160); //factory crane
 	
 	global.rooms.rIsland.inside=false;
 	}
@@ -560,7 +561,7 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesCrater;
+		global.startRoom=rWastesFactoryOutside;
 	}
 	
 	//npc sprite mask data

@@ -45,7 +45,7 @@ function physics(){
 	
 	//gravity
 	vsp+=global.grav*gravMultiplier;
-	vsp=clamp(vsp,-vspMax,vspMax);
+	vsp=clamp(vsp,-vspMax*2,vspMax);
 	//if vsp<vspMax&&state>moveState.running vsp+=global.grav;
 	
 	//horizontal movement
@@ -319,6 +319,11 @@ function grapplePhysics(){
 			jump=1;
 			jumpAdd+=global.grav*2;
 			hsp=(buttonHold(control.right)-buttonHold(control.left))*hspMax*1.5;
+			if hsp!=0
+			{
+				goingFast=true;
+				justLaunched=true;
+			}
 		}
 	}
 	

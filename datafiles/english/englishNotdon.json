@@ -61,8 +61,10 @@
 
     "notdon_jetEmpty":[
         "The cockpit is vacated. Unfortunately, it is also locked.",
-        "But sooner or later, they'll slip up and forget to lock it..."
+        "But sooner or later, they'll slip up and forget to lock it...",
+        "$trackObj.setText","notdon_jetEmpty2"
     ],
+    "notdon_jetEmpty2":["Sooner or later..."],
     "notdon_jetWaiting":[
         "Hup Hup Hup, let's go, let's go!"
     ]

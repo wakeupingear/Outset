@@ -188,7 +188,7 @@ instance_create_depth(0,0,depth-1,oMouse);
 //hud alpha
 image_alpha=0;
 getHudX=function(){
-	return (image_alpha)*64*(!global.hudSide-global.hudSide)-24;//+camX()
+	return twerp(TwerpType.in_sine,0,64*(!global.hudSide-global.hudSide)-24,image_alpha);//+camX()
 }
 hudFade=1;
 scanTime=0;

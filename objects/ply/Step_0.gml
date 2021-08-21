@@ -3,7 +3,7 @@ if global.transitioning move=move;
 else if state==moveState.floating
 {
 	move=0;
-	if (isDev||isTest)&&(!instance_exists(oGrapple)||oGrapple.state<2)//&&false
+	if (isDev||isTest)&&(!instance_exists(oGrapple)||oGrapple.state<1)//&&false
 	{
 		x=round(x+4*(-buttonHold(control.left)+buttonHold(control.right)));
 		y=round(y+4*(-buttonHold(control.up)+buttonHold(control.down)));
@@ -272,7 +272,7 @@ else breath=global.maxBreath;
 //show_debug_message(jumpMax)
 
 //going fast
-if abs(hsp)>hspMax*1.5 goingFast=true;
+if abs(hsp)>=hspMax*1.5 goingFast=true;
 else if instance_exists(oGrapple)&&(oGrapple.state>1) goingFast=true;
 else if justLaunched
 {

@@ -1,7 +1,7 @@
 
 
 function drawBlur(surface,alpha,xPos,yPos,topLeft,botRight,drawFunc){
-	if !surface_exists(surface) surface=surface_create(384,216);
+	if !surface_exists(surface) surface=scr_surface_create(384,216);
 	surface_set_target(surface);
 	draw_clear_alpha(c_black,0);
 	

@@ -1,6 +1,6 @@
 /// @description Draw clouds
-if !surface_exists(surf) surf=surface_create(384,216);
-if !surface_exists(surf2) surf2=surface_create(384,216);
+if !surface_exists(surf) surf=scr_surface_create(384,216);
+if !surface_exists(surf2) surf2=scr_surface_create(384,216);
 
 surface_set_target(surf);
 draw_clear_alpha(c_black,0);

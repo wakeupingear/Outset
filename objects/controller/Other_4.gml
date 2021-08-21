@@ -133,6 +133,7 @@ switch room //skybox/specific configs
 	case rWastesBullet:
 		instance_create_layer(0,0,"bg",oSkyWastes);
 		break;
+	case rWastesFactoryOutside:
 	case rWastesCrater:
 	case rWastesHilltop:
 	case rWastes:
