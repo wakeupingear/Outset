@@ -11,6 +11,7 @@ function resetGrapple(){
 			xDir=0;
 			yDir=0;
 			if !place_meeting(x,y,ply)&&grappleMode!=grappleState.arc
+			
 			{
 				var _d=ceil(distance_to_object(ply)/2)*2;
 				for (var i=2;i<_d;i+=2) ds_list_add(points,instance_create_depth(lerp(ply.x,x,i/_d),lerp(ply.y+grapplePlyYoff,y,i/_d),ply.depth+1,oGrapplePoint));

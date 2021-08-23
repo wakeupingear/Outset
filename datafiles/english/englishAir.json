@@ -8,5 +8,23 @@
                 "trackObj":"$oTextbox.trackObj"
             }]
         }
+    ],
+    "air_donutBoxAnswer":[
+        "$popup",
+        {
+            "sprite":"sDonutBoxPopup","mouse":[260,108],
+            "objs":[
+                {
+                    "obj":"oDonutBoxPopup",
+                    "trackObj":"$oTextbox.trackObj",
+                },
+                {
+                    "obj":"oDonutNote"
+                }
+            ]
+        }
+    ],
+    "air_donutBoxNote":[
+        "$addItem",["iPhoneNote1"]
     ]
 }

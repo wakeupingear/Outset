@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "sDonutBox",
-    "path": "sprites/sDonutBox/sDonutBox.yy",
+    "name": "sNotdonPodium",
+    "path": "sprites/sNotdonPodium/sNotdonPodium.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "oInteractable",
-    "path": "objects/oInteractable/oInteractable.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -26,6 +23,8 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -34,7 +33,7 @@
     "path": "folders/Objects/air/interactions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oDonutBox",
+  "name": "oDonutNote",
   "tags": [],
   "resourceType": "GMObject",
 }

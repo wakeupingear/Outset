@@ -457,6 +457,7 @@
     {"id":{"name":"option","path":"scripts/option/option.yy",},"order":22,},
     {"id":{"name":"Lines","path":"scripts/Lines/Lines.yy",},"order":30,},
     {"id":{"name":"rumbleStart","path":"scripts/rumbleStart/rumbleStart.yy",},"order":28,},
+    {"id":{"name":"oDonutNote","path":"objects/oDonutNote/oDonutNote.yy",},"order":2,},
     {"id":{"name":"enemTurretSmall","path":"objects/enemTurretSmall/enemTurretSmall.yy",},"order":9,},
     {"id":{"name":"oSpike","path":"objects/oSpike/oSpike.yy",},"order":0,},
     {"id":{"name":"NPCRooms","path":"scripts/NPCRooms/NPCRooms.yy",},"order":34,},
