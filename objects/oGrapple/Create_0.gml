@@ -124,11 +124,11 @@ else if state==1 //move in direction
 	if grappleMode==grappleState.arc //arc
 	{
 		ds_list_add(points,instance_create_depth(x,y,ply.depth+1,oGrapplePoint));
-		y+=(grappleTime-27)*0.3;
-		var _x=xDir/1.5*(grappleTime>16);
+		y+=(grappleTime-24)*0.3;
+		var _x=xDir*(grappleTime>11);
 		moveHitPlace(x+_x,y);
 		if _x==0||sign(yprevious-y)>-1&&!groundCollision(x,y)&&groundCollision(x+_x,y) x=x;
-		else x+=_x
+		else x+=_x;
 		var _hit=1;
 		if place_meeting(x,y,oSpike) _hit=0;
 		else if groundCollision(x,y)&&(groundCollision(x-1,y)&&groundCollision(x+1,y))
@@ -142,7 +142,7 @@ else if state==1 //move in direction
 			state=2;
 			grappleTime=0;
 		}
-		else if grappleTime>50||_hit==0 resetGrapple();
+		else if grappleTime>46||_hit==0 resetGrapple();
 		resetHitPlace();
 	}
 	else

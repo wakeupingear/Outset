@@ -9,7 +9,7 @@ var _b=id;
 var _rad=finalRad;
 destroyRadius(x,y,oBreakable,finalRad,true);
 with enem if within(_b.x,_b.y,_b.finalRad) hurtEnem(id,1); //local variable scope hell :)
-with oWastesCrate if within(_b.x,_b.y,_b.finalRad) 
+with oWastesCrate if within(_b.x,_b.y,_b.finalRad+16) 
 {
 	mode=1;
 	damageCrate();

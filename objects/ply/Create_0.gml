@@ -39,6 +39,13 @@ setItemFill=function(){
 					case "iFormula":
 						itemFillMax=60;
 						break;
+					case "iBeacon":
+						itemFillMax=120-100*(isTest||isDev);
+						break;
+					case "iJet":
+					case "iRing":
+						itemFillMax=0;
+						break;
 					default:
 						itemFillMax=15;
 						break;

@@ -1,4 +1,4 @@
-if !surface_exists(surf) surf=scr_surface_create(384,216);
+if !surface_exists(surf) surf=surface_create(384,216);
 if global.alive time=(time+0.005) mod 1;
 
 surface_set_target(surf);

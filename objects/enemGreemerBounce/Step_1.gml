@@ -1,10 +1,10 @@
 /// @description Bounce player
-if alarm[0]==-1&&place_meeting(x,y,oPhysicsObj)
+if alarm[0]==-1
 {
-	var _p=instance_place(x,y,oPhysicsObj);
 	if image_index==2 mask_index=sGreemerBounce2
-	if _p.image_blend!=c_red&&place_meeting(x,y,_p)
+	if ply.image_blend!=c_red&&place_meeting(x,y,oPhysicsObj)
 	{
+		var _p=instance_place(x,y,oPhysicsObj);
 		if _p.object_index==oWastesCarWheel _p=oWastesCarWheel;
 		ind=1;
 		alarm[0]=7;
@@ -16,7 +16,7 @@ if alarm[0]==-1&&place_meeting(x,y,oPhysicsObj)
 		}
 		else
 		{
-			impulse(0,-7-(_p==oWastesCarWheel)*4,_p);
+			impulse(0,-7,_p);
 		}
 	}
 	mask_index=sGreemerBounce;

@@ -39,8 +39,11 @@ if global.alive&&mode>-1
 		{
 			mode=4.8;
 			alarm[0]=60;
-			addData("wBRack");
-			if !global.menuOpen save();
 		}
+	}
+	else if mode==5
+	{
+		conversation("wastes_boxesDestroy");
+		mode=-1;
 	}
 }

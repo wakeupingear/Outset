@@ -1,6 +1,6 @@
 if !render||!surface_exists(surf)
 {
-	if !surface_exists(surf) surf=scr_surface_create(room_width,room_height);
+	if !surface_exists(surf) surf=surface_create(room_width,room_height);
 	surface_set_target(surf);
 	draw_clear_alpha(c_black,0);
 	if os_type!=os_linux
@@ -24,8 +24,7 @@ if !render||!surface_exists(surf)
 			i--;
 			continue;
 		}
-		with _obj draw_self();
-		//draw_sprite_ext(_obj.sprite_index,_obj.image_index,_obj.x,_obj.y,_obj.image_xscale,_obj.image_yscale,_obj.image_angle,_obj.image_blend,_obj.image_alpha);
+		draw_sprite_ext(_obj.sprite_index,_obj.image_index,_obj.x,_obj.y,_obj.image_xscale,_obj.image_yscale,_obj.image_angle,_obj.image_blend,_obj.image_alpha);
 	}
 	if instance_exists(oTerrainHitobj) with oTerrainHitobj draw_self();
 	if shader_current()!=-1 shader_reset();
@@ -81,8 +80,8 @@ var _height=min(218,room_height);
 var _posX=max(floor(camX()),0);
 var _posY=max(floor(camY()),0);
 var _col=[color_get_red(image_blend)/255,color_get_green(image_blend)/255,color_get_blue(image_blend)/255];
-var _outlineAlpha=1; 
-if os_type!=os_linux switch (roomType)
+var _outlineAlpha=1;
+switch (roomType)
 {
 	case worldRegion.west:
 		shader_set(shd_outlineTerrain);
@@ -116,7 +115,7 @@ if os_type!=os_linux switch (roomType)
 	default: break;
 }
 
-if !surface_exists(surf2) surf2=scr_surface_create(386,218);
+if !surface_exists(surf2) surf2=surface_create(386,218);
 surface_set_target(surf2);
 draw_clear_alpha(c_black,0);
 draw_surface_part_ext(surf,

@@ -443,7 +443,6 @@ function commandProcess(command){
 						case "hideNPC":
 							hideNPC(_originalObj); //re-copy
 							diag--;
-							saved=true;
 							break;
 						case "setRoomTeleport":
 						case "setRoom":
@@ -863,22 +862,7 @@ function setObjFromStruct(obj,struct){
 				obj.image_yscale=struct.yscale;
 				break;
 			default:
-				var _val=struct[$ _names[i]];
-				if is_string(_val)&&string_char_at(_val,1)=="$"
-				{
-					var _v=substring(_val,2);
-					var _obj=string_copy(_v,1,string_pos(".",_v)-1);
-					var _name=string_replace(_v,_obj+".","");
-					var _objID=getObject(_obj);
-					switch _v
-					{
-						default: 
-							_val=variable_instance_get(_objID,_name);
-							break;
-					}
-					
-				}
-				variable_instance_set(obj,_names[i],_val);
+				variable_instance_set(obj,_names[i],struct[$ _names[i]]);
 				break;
 		}
 	}

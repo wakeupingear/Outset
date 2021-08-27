@@ -21,7 +21,7 @@ alarm[0]=1;
 damageAdjacentCrate=function(xOff,yOff,list){
 	instance_place_list(x+xOff,y+yOff,oWastesCrate,list,false);
 	var _m=(object_index==oWastesCrateBig)*2;
-	for (var i=0;i<ds_list_size(list);i++) if list[|i]!=id with list[|i]
+	for (var i=0;i<ds_list_size(list);i++) if list[|i]!=id with list[|i] if object_index!=oWastesCrateBig
 	{
 		mode=_m;
 		alarm[2]=30;
@@ -39,12 +39,13 @@ damageCrate=function(){
 	if mode==1
 	{
 		shake(2,2,10);
+		if array_length(contents)>0&&object_index==oWastesCrateBig image_index=2;
 		image_index+=variations;
 		var _list=ds_list_create();
 		damageAdjacentCrate(-1,0,_list);
 		damageAdjacentCrate(1,0,_list);
 		ds_list_destroy(_list);
-		alarm[1]=delay;
+		//alarm[1]=delay;
 		setHitHeight();
 		for (var i=0;i<array_length(contents);i++) 
 		{
@@ -69,6 +70,10 @@ damageCrate=function(){
 	}
 	else
 	{
+		if place_meeting(x,y,oExplosiveBarrel) with instance_place(x,y,oExplosiveBarrel){
+			hspMax=0;
+			instance_destroy();
+		}
 		var _list=ds_list_create();
 		damageAdjacentCrate(-1,0,_list);
 		damageAdjacentCrate(1,0,_list);

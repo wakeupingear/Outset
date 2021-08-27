@@ -70,6 +70,12 @@ else if visible&&!global.menuOpen&&!global.transitioning&&global.alive&&ds_list_
 						case "iFormula":
 							killPlayer();
 							break;
+						case "iBeacon":
+							var _b=instance_create_layer(x,y,"mykoSpawn",oItemBeacon); //inside buildings
+							_b.image_xscale=xscale;
+							with _b setState();
+							removeItem("iBeacon");
+							break;
 						default: break;
 					}
 					break;
@@ -272,7 +278,7 @@ else breath=global.maxBreath;
 //show_debug_message(jumpMax)
 
 //going fast
-if abs(hsp)>=hspMax*1.5 goingFast=true;
+if abs(hsp)>hspMax*1.5 goingFast=true;
 else if instance_exists(oGrapple)&&(oGrapple.state>1) goingFast=true;
 else if justLaunched
 {

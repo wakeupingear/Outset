@@ -173,6 +173,7 @@ switch room //skybox/specific configs
 			_t.image_index=i%3;
 			_t.image_xscale=_xs;
 			_t.image_yscale=0.5;
+			_t.image_blend=merge_color(c_white,c_black,0.6);
 			_t.xLerp=0.75;
 			_t.yLerp=_t.xLerp;
 			with _t setBGPosition(x,y);

@@ -1,5 +1,5 @@
 /// @description Create souldrop
-var _surf=scr_surface_create(sprite_width,sprite_height);
+var _surf=surface_create(sprite_width,sprite_height);
 surface_set_target(_surf);
 draw_sprite(sprite_index,image_index,0,0);
 surface_reset_target();

@@ -1,4 +1,14 @@
 /// @description Set animation specific stuff
+switch room
+{
+	case rWastesBorder:	
+		if ply.x>room_width image_blend=regionColor[worldRegion.notdon];
+		else image_blend=regionColor[worldRegion.west];
+		break;
+	default: 
+		image_blend=regionColor[global.rooms[$ room_get_name(room)].region];
+		break;
+}
 switch (transition)
 {
 	case transitions.blackToBlack:

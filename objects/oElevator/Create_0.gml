@@ -1,6 +1,5 @@
 image_speed=0;
 animation=new Animation();
-animation.standing=-1;
 animation.opening={type: animType.oneOff,startFrame:0,endFrame:7,frameTime:1};
 animation.closing={type: animType.oneOff,startFrame:7,endFrame:0,frameTime:1};
 

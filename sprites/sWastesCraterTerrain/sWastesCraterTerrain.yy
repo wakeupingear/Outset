@@ -9,7 +9,7 @@
   "swfPrecision": 2.525,
   "bbox_left": 0,
   "bbox_right": 1023,
-  "bbox_top": 49,
+  "bbox_top": 343,
   "bbox_bottom": 1023,
   "HTile": false,
   "VTile": false,
@@ -30,9 +30,9 @@
     {"compositeImage":{"FrameId":{"name":"f888235f-79e8-478e-bfb9-6e003436346a","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"f888235f-79e8-478e-bfb9-6e003436346a","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"LayerId":{"name":"ba70c5c3-ed29-4ec3-9e61-ed37dac02a53","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sWastesCraterTerrain","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","name":"f888235f-79e8-478e-bfb9-6e003436346a","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"16e2b3ad-ec0a-4b15-bd81-6ae8628f176c","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"16e2b3ad-ec0a-4b15-bd81-6ae8628f176c","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"LayerId":{"name":"ba70c5c3-ed29-4ec3-9e61-ed37dac02a53","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sWastesCraterTerrain","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","name":"16e2b3ad-ec0a-4b15-bd81-6ae8628f176c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"a4e9ae5b-2047-4860-9c98-5bc910058d25","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"a4e9ae5b-2047-4860-9c98-5bc910058d25","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"LayerId":{"name":"ba70c5c3-ed29-4ec3-9e61-ed37dac02a53","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sWastesCraterTerrain","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","name":"a4e9ae5b-2047-4860-9c98-5bc910058d25","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sWastesCraterTerrain","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},
@@ -49,7 +49,7 @@
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"eae45fc1-4a65-4eb9-80c4-3a884996e545","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"52b39236-03d9-4c96-87e5-f17b97b852e2","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"06d15b10-6ffe-494e-806a-1e91447b4627","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f888235f-79e8-478e-bfb9-6e003436346a","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"83e7b38d-b5ca-4d43-88c7-fad64b775f5f","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"16e2b3ad-ec0a-4b15-bd81-6ae8628f176c","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c3a62437-992f-4e4d-8743-9692d57205d5","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a4e9ae5b-2047-4860-9c98-5bc910058d25","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,

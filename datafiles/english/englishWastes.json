@@ -51,10 +51,23 @@
         "$oParachute.destroy"
     ],
 
+    "wastes_beaconOutside":[
+        "SIGNAL STRENGTH: PRETTY MEDIOCRE HONESTLY BUT WE CAN WORK WITH IT I GUESS"
+    ],
+    "wastes_beaconInside":[
+        "SIGNAL STRENGTH: OH GOD JEEZ NO THIS IS TERRIBLE WHY WOUD YOU PLANT IT UNDERGROUND?"
+    ],
+
     "wastes_borderDoor":[
         "A chonky metal door. Probably could withstand a nuclear blast.",
         "On the other hand, maybe ramming it with something could open it?",
     ],
+
+    "wastes_barrelRoll":[
+        "$createLayer",[98,764,"people","oExplosiveBarrel"],
+        "$lastObj.move",1
+    ],
+
     "wastes_hotel_rocketPickup":[
         "$if1","hasItem",["iRocketBook"],
         "#false1",
@@ -74,6 +87,28 @@
         "...It's oil."
     ],
 
+    "wastes_her_boxesDiscover":[
+        "$camSet",[641,974],
+        60,
+        "YESS, IN YOUR FACE! I knew you were a SPY!",
+        "How else would you know how to breach our defenses twice? Clearly you were trained well.",
+        "BUT NOT WELL ENOUGH!",
+        "HERE ARE OUR DEMANDS! You break us out of here, and no one will know that you're a SPY!",
+        "You wouldn't want everyone to know, would you, SPY?",
+        "$addData","wResistEscape",
+        "$trackObj.key","wastes_her_boxes",
+        "$camReset"
+    ],
+    "wastes_her_boxes":[
+        ["CHOP CHOP!{60} The boxes, of course."],5,
+        ["GOPHER! Where's my late?","...GOPHER?"],
+    ],
+    "wastes_boxesDestroy":[
+        "$addData","wBRack",
+        "$oWastesHerBoxes.destroy",
+        "HELL YEAH BROTHER!"
+    ],
+
     "wastes_general_intro":[
         "$addData","wGen1Start",
         "$oWastesCatwalk.alarm[0]",1,
@@ -82,9 +117,8 @@
         "$trackObj.destroy",
         "$cutscene","wastes_car_warehouse"
     ],
-
     "wastes_car_warehouse":[
-        "$createLayer",[881,328,"behind","oWastesCar"],
+        "$createLayer",[881,328,"mykoSpawn","oWastesCar"],
         "$lastObj.move",-1,
         "$script","scr_wastes_3"
     ],
@@ -94,7 +128,6 @@
         "?chet",
         "WHA!"
     ],
-
     "wastes_pulledOutChet":[
         "$question1","Found those parts yet?",
         "#yes1",
@@ -111,5 +144,37 @@
                 "Look, are you sure that you can do this yourself, little dude?",
                 "It's a scary world ya hear, really turning this PARENTAL STAND-IN's hair grey!",
                 "And I've been such a good guardian! Be careful, small one."
+    ],
+
+    "wastes_jet1":[
+        "$addItem",["iJet1"],
+        "$addData","wastes_jet1",
+        "$trackObj.destroy"
+    ],
+    "wastes_jet2":[
+        "$addItem",["iJet2"],
+        "$addData","wastes_jet2",
+        "$trackObj.destroy"
+    ],
+    "wastes_jet3":[
+        "$addItem",["iJet3"],
+        "$addData","wastes_jet3",
+        "$trackObj.destroy"
+    ],
+
+    "wastes_ring1":[
+        "$addItem",["iRing1"],
+        "$addData","wastes_ring1",
+        "$trackObj.destroy"
+    ],
+    "wastes_ring2":[
+        "$addItem",["iRing2"],
+        "$addData","wastes_ring2",
+        "$trackObj.destroy"
+    ],
+    "wastes_ring3":[
+        "$addItem",["iRing3"],
+        "$addData","wastes_ring3",
+        "$trackObj.destroy"
     ]
 }

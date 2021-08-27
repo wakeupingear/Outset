@@ -4,6 +4,8 @@ window_set_position(display_get_width()/4,display_get_height()/4);
 window_set_size(1280,720);
 draw_set_color(c_white);
 application_surface_draw_enable(false);
+postProcessSurf=-1;
+
 
 math_set_epsilon(0.0001);
 audio_group_load(audiogroup_sounds);
@@ -188,7 +190,7 @@ instance_create_depth(0,0,depth-1,oMouse);
 //hud alpha
 image_alpha=0;
 getHudX=function(){
-	return twerp(TwerpType.in_sine,0,64*(!global.hudSide-global.hudSide)-24,image_alpha);//+camX()
+	return (image_alpha)*64*(!global.hudSide-global.hudSide)-24;//+camX()
 }
 hudFade=1;
 scanTime=0;
@@ -296,6 +298,17 @@ persistentEventsSet=function(key){
 				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,_arr[i]);
 				_d.image_xscale=_arr[i+4][0];
 				break;
+			case oDiagTrigger:
+				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,_arr[i]);
+				_d.args=_arr[i+4];
+				_d.key=_arr[i+4][0];
+				_d.onlyAlive=_arr[i+4][1];
+				_d.persist=_arr[i+4][2];
+				_d.delay=_arr[i+4][3];
+				_d.image_xscale=_arr[i+4][4];
+				_d.image_yscale=_arr[i+4][5];
+				_d.isEventObj=true;
+				break;
 			case oCutsceneDelay:
 				var _exists=false;
 				/*if key!="any"&&room_get_name(room)!=key _exists=false;
@@ -349,5 +362,103 @@ else
 	global.plyY=71;
 	room_goto(global.nextRoom);
 	//event_perform(ev_room_start,0);
+}
+
+draw=function(edgeX,edgeY){
+if instance_exists(oDiscoballManager) with oDiscoballManager draw();
+else if global.lightAlpha>0
+{
+	if !surface_exists(global.lightSurf) global.lightSurf=surface_create(386,218);
+	surface_set_target(global.lightSurf);
+	draw_clear_alpha(c_black,global.lightAlpha);
+	gpu_set_blendmode(bm_subtract);
+	for (var i=0;i<array_length(global.lightObj);i++) if instance_exists(global.lightObj[i]) with global.lightObj[i]
+	{
+		if !variable_instance_exists(id,"drawLight")
+		{
+			if distance_to_point(edgeX+192,edgeY+108)-24<200 draw_circle(floor(x)-edgeX,floor(y)-edgeY,24,false);
+		}
+		else drawLight();
+	}
+	gpu_set_blendmode(bm_normal);
+	surface_reset_target();
+	draw_surface_ext(global.lightSurf,edgeX,edgeY,1,1,0,-1,1);
+}
+
+if !global.notPause//&&global.alive
+{
+	if pauseMenuCopied==-1
+	{
+		surfPosX=edgeX;
+		surfPosY=edgeY;
+		pauseMenuCopied=sprite_create_from_surface(application_surface,0,0,384,216,false,false,0,0);
+		instance_deactivate_all(true);
+		loadMenu(pauseMenuCurrent);
+	}
+	draw_clear_alpha(c_black,1);
+	draw_sprite(pauseMenuCopied,0,surfPosX,surfPosY);
+}
+else if !global.transitioning&&!global.menuOpen&&global.alive&&instance_exists(ply)&&instance_find(ply,0).object_index==ply
+{
+	if instance_exists(ply)&&ply.x<edgeX+80&&ply.y<edgeY+80
+	{
+		if hudFade>0.5 hudFade-=0.1;
+	}
+	else if hudFade<1 hudFade+=0.1;
+	if image_alpha<1 image_alpha+=0.1;
+}
+else if image_alpha>0 image_alpha-=0.1;
+
+if instance_exists(ply)
+{
+	draw_set_alpha(hudFade);
+	draw_sprite_ext(sHudHealth,0,getHudX()+edgeX,24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
+	
+	if ds_list_size(global.inventory)>0
+	{
+		var _x=getHudX()+edgeX-12;
+		var _y=52+edgeY;
+		draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
+		if buttonHold(control.item)
+		{
+			if ply.itemFillMax>0
+			{
+				draw_sprite_part(sHudItem,0,0,0,ceil(global.inputs[control.item]/ply.itemFillMax*24),24,_x-12,_y-12);
+			}
+			else if ply.itemFillMax==-1 //red
+			{
+				draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,c_red,1);
+			}
+		}
+		var _ind=global.itemData[? global.inventory[|global.itemSlot]].index;
+		switch global.inventory[|global.itemSlot]
+		{
+			case "iFormula":
+				itemIndexTime++;
+				if itemIndexTime>15
+				{
+					itemIndexTime=0;
+					itemIndex=!itemIndex
+				}
+				_ind+=itemIndex;
+				break;
+			default: break;
+		}
+		draw_sprite(sItems,_ind,getHudX()+edgeX-12,52+edgeY);
+	}
+	draw_set_alpha(1);
+}
+
+
+if pauseAlpha>0
+{
+	var _x=max(edgeX,surfPosX);
+	var _y=max(edgeY,surfPosY);
+	draw_set_alpha(pauseAlpha);
+	draw_set_color(c_black);
+	draw_rectangle(_x,_y,_x+384,_y+216,false);
+	draw_set_color(c_white);
+	draw_set_alpha(1);
+}
 }
 }

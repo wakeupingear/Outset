@@ -1,5 +1,5 @@
 /// @description Interact
-if global.alive&&!holdingTop
+if global.alive&&!holdingTop&&isScanned
 {
 	if distance_to_object(ply)<40
 	{

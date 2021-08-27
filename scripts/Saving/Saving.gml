@@ -92,6 +92,7 @@ function savePrefs(){
 	
 	ini_write_real("Settings","gui",global.guiScale);
 	ini_write_real("Settings","guiSide",global.hudSide);
+	ini_write_real("Settings","shakeFactor",global.shakeFactor);
 	ini_write_string("Settings","accessibility",ds_list_write(global.accessibility));
 	ini_close();
 }
@@ -107,6 +108,7 @@ function loadPrefs(){
 	
 	global.guiScale=ini_read_real("Settings","gui",1);
 	global.hudSide=ini_read_real("Settings","guiSide",0);
+	global.shakeFactor=ini_read_real("Settings","shakeFactor",0);
 	ds_list_read(global.accessibility,ini_read_string("Settings","accessibility",""));
 	ini_close();
 	

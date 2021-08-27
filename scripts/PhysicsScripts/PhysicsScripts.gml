@@ -45,7 +45,7 @@ function physics(){
 	
 	//gravity
 	vsp+=global.grav*gravMultiplier;
-	vsp=clamp(vsp,-vspMax*2,vspMax);
+	vsp=clamp(vsp,-vspMax,vspMax);
 	//if vsp<vspMax&&state>moveState.running vsp+=global.grav;
 	
 	//horizontal movement
@@ -213,7 +213,8 @@ function grapplePhysics(){
 		else //up
 		{
 			vsp=oGrapple.yDir*max(abs(vsp),4.6);
-			repeat abs(vsp)
+			if buttonPressed(control.jump) resetGrapple();
+			else repeat abs(vsp)
 			{
 				y+=sign(vsp);
 				destroyBreakables();
@@ -319,11 +320,6 @@ function grapplePhysics(){
 			jump=1;
 			jumpAdd+=global.grav*2;
 			hsp=(buttonHold(control.right)-buttonHold(control.left))*hspMax*1.5;
-			if hsp!=0
-			{
-				goingFast=true;
-				justLaunched=true;
-			}
 		}
 	}
 	

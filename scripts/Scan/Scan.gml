@@ -21,7 +21,7 @@ function scanDraw(){
 		}
 		if global.scanObj==id
 		{
-			if global.inputs[control.up]>=holdTime
+			if buttonHold(control.confirm)>=holdTime||buttonHold(control.up)>=holdTime
 			{
 				isScanned=true;
 				ds_list_add(global.scanList,id);

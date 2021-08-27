@@ -1,5 +1,3 @@
-x-=camX();
-y-=camY();
 //format the string for the first frame
 if !sentenceFormatted
 {

@@ -1,11 +1,8 @@
-function impulse(hsp,vsp,obj){
-	if hsp!="hsp"&&hsp!=0 
+function impulse(newHsp,newVsp,obj){
+	if newHsp!="hsp"&&newHsp!=0 with obj
 	{
-		with obj //needs to affect all objects if it's an object_index
-		{
-			id.hsp=hsp;
-			xscale=sign(hsp);
-		}
+		hsp=newHsp;
+		xscale=sign(newHsp);
 	}
-	if vsp!="vsp"&&vsp!=0 with obj id.vsp=vsp;
+	if newVsp!="vsp"&&newVsp!=0 with obj vsp=newVsp;
 }

@@ -3,7 +3,7 @@ if text!=""&&stackType!=1
 {
 	if !surface_exists(textSurf) 
 	{
-		textSurf=scr_surface_create(ceil(guiX()*sprite_get_width(sprite_index)),ceil(guiY()*sprite_get_height(sprite_index)));
+		textSurf=surface_create(ceil(guiX()*sprite_get_width(sprite_index)),ceil(guiY()*sprite_get_height(sprite_index)));
 		surface_set_target(textSurf);
 		var _fontOrig=draw_get_font();
 		for (var i=0;i<array_length(text);i++)

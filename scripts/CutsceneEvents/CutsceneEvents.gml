@@ -318,6 +318,8 @@ function scr_wastes_1(){ //leaving
 	global.startX=2122;
 	global.startY=1442;
 	
+	eventAddObject(oDiagTrigger,rWastes,400,939,"player",["wastes_barrelRoll",true,false,1,-100,-150]);
+	
 	var _jet=-1;
 	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
 	else with oNotdonJet if state==0&&flying _jet=id;

@@ -61,9 +61,6 @@ function isInRange(_x,_y){
 function within(xPos,yPos,radius){
 	return point_distance(x,y,xPos,yPos)<=radius
 }
-function isInstance(_id) {
-	return (_id>10000);
-}
 
 //string
 function explodeString(del,str)
@@ -98,10 +95,6 @@ function string_set(str,newstr,pos){
 }
 function string_contains(str,substr){
 	return string_pos(substr,str)>0;
-}
-function substring(str,startPos,endPos){ //I hate starting string positions at 1 :(
-	if is_undefined(endPos) endPos=string_length(str)+1;
-	return string_copy(str,startPos,endPos-startPos)
 }
 
 //debug

@@ -42,7 +42,8 @@
         "Board",
         "Ride or Die",
         "Listen",
-        "Re-Ambush"
+        "Re-Ambush",
+        "Excavate"
     ],
     "buttonText":{
         "up":"Up",
@@ -150,7 +151,10 @@
             ]
         ],
         "iLavaSwitch":["Toggle?","","Acquired{30} A TOGGLE?"],
-        "iFormula":["Liquid","","Acquired A VIAL OF LIQUID!"]
+        "iFormula":["Liquid","","Acquired A VIAL OF LIQUID!"],
+        "iBeacon":["Genuine Notdon Beacon","","Acquired A BEACON!"],
+        "iJet": ["Jet Part","Mutilated machinery... how gory!","Acquired a JET PART!"],
+        "iRing": ["Ring","A tastefully tacky RING.","Acquired a RING!"]
     },
     "solitaire_win":[
         "You feel a sense of pride and accomplishment."

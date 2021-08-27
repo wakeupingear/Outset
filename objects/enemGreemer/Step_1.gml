@@ -5,7 +5,7 @@ if global.alive
 	if mode==0
 	{
 		if enemActive&&alarm[4]==-1 alarm[4]=xscaleTime;
-		if canRise&&distance_to_object(ply)<triggerDist&&(!instance_exists(oWastesCar)||(!oWastesCar.riding))
+		if canRise&&distance_to_object(ply)<triggerDist
 		{
 			if !enemActive
 			{

@@ -14,8 +14,9 @@ function scrVariables(){
 	global.guiScale=clamp(round(3*display_get_height()/1080),3,6)/3;
 	global.hudSide=0;
 	global.hudAlpha=0.8;
+	global.shakeFactor=1.5;
 	global.accessibility=ds_list_create();
-	ds_list_add(global.accessibility,"shake","interactPrompt");
+	ds_list_add(global.accessibility,"interactPrompt");
 	
 	global.notPause=true; //pause menu
 	global.transitioning=false; //moving between rooms
@@ -351,6 +352,13 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iSolitaire",{index: 6, viewable: true});
 	ds_map_add(global.itemData,"iLavaSwitch",{index: 8, viewable: true});
 	ds_map_add(global.itemData,"iFormula",{index: 9, viewable: true});
+	ds_map_add(global.itemData,"iBeacon",{index: 11, viewable: true});
+	ds_map_add(global.itemData,"iRing1",{index: 12, viewable: true});
+	ds_map_add(global.itemData,"iRing2",{index: 13, viewable: true});
+	ds_map_add(global.itemData,"iRing3",{index: 14, viewable: true});
+	ds_map_add(global.itemData,"iJet1",{index: 15, viewable: true});
+	ds_map_add(global.itemData,"iJet2",{index: 16, viewable: true});
+	ds_map_add(global.itemData,"iJet2",{index: 17, viewable: true});
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -414,7 +422,11 @@ function scrVariables(){
 		addRoomCamera("rNotdon",1254,530,1782,660,"x",598); //launch level 1
 		addRoomCamera("rNotdon",1254,660,1782,842,"x",748); //launch level 2
 		addRoomCamera("rNotdon",2822,756,3168,970,2995,888,"notdonEraPresent"); //stage
+	global.rooms.rWastes.inside=false;
 	global.rooms.rWastesBorder.inside=false;
+	global.rooms.rWastesCrater.inside=false;
+	global.rooms.rWastesHilltop.inside=false;
+	global.rooms.rWastesFactoryOutside.inside=false;
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
@@ -547,21 +559,22 @@ function scrVariables(){
 		addItem("iGrappleArc");
 		addItem("iGrappleDown");
 		addItem("iSlate");
+		//addItem("iBeacon");
 		//addItem("iWrench1");
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
 		global.notdonEra=notdonEras.present;
 		//scr_pro_2();
-		//scr_c1_5();
 		scr_wastes_1();
 		scr_wastes_2();
+		//scr_c1_5();
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesFactoryOutside;
+		global.startRoom=rWastesHilltop;
 	}
 	
 	//npc sprite mask data

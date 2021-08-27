@@ -1,4 +1,4 @@
 npcMovementVars();
-
-vspMax=4;
+ 
+vspMax=7;
 state=moveState.falling;
