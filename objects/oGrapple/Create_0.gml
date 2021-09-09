@@ -109,6 +109,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 		
 		if state==1
 		{
+			rumbleStart(rumbleType.lightPulse);
 			hitPlaceMoved=false;
 			if place_meeting(x,y,oLadder) hitPlace=oLadder
 			else if place_meeting(x,y,grappleHit) hitPlace=instance_place(x,y,grappleHit);
@@ -191,9 +192,13 @@ else if state==1 //move in direction
 		}
 		resetHitPlace();
 	}
-	if state>1&&instance_exists(followObj)&&object_is_ancestor(followObj.object_index,npc)&&!object_is_ancestor(followObj.object_index,enem)
+	if state>1
 	{
-		with followObj event_user(1);
+		rumbleStart(rumbleType.lightPulse);
+		if instance_exists(followObj)&&object_is_ancestor(followObj.object_index,npc)&&!object_is_ancestor(followObj.object_index,enem)
+		{
+			with followObj event_user(1);
+		}
 	}
 }
 else if state==2 //pull player

@@ -19,7 +19,9 @@ else
 	else if guns[fireSide]==3
 	{
 		var _xs=((fireSide==1)-(fireSide==0));
-		var _g=instance_create_layer(oCamera.x+240*_xs,ply.y+irandom_range(-32,32),"people",oMissile);
+		var _sy=camX()+108;
+		if instance_exists(ply) _sy=ply.y;
+		var _g=instance_create_layer(oCamera.x+240*_xs,_sy+irandom_range(-32,32),"people",oMissile);
 		_g.scope=true;
 		_g.xDir=-_xs;
 		_g.hitTerrain=false;

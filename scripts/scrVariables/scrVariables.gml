@@ -66,22 +66,6 @@ function scrVariables(){
 	global.inventory=ds_list_create();
 	global.itemSlot=0;
 	global.characterLocations=ds_map_create(); //format: x,y,room,name index
-	ds_map_add(global.characterLocations,"test",[304,20,rTest1,0,"t1"]);
-	ds_map_add(global.characterLocations,"harold",[34,132,rTest1,2,"t1"]);
-	ds_map_add(global.characterLocations,"craig",[34,132,rTest1,2,"t1"]);
-	ds_map_add(global.characterLocations,"citra",[0,0,rNotdon,4,"pro_lb1"]);
-	ds_map_add(global.characterLocations,"eugene",[0,0,rNotdon,5,"pro_lb1"]);
-	ds_map_add(global.characterLocations,"nora",[0,0,rNotdon,6,"pro_lb1"]);
-	ds_map_add(global.characterLocations,"smitten",[0,0,rNotdon,7,"pro_lb1"]);
-	ds_map_add(global.characterLocations,"charlie",[0,0,rNotdon,8,"pro_lb1"]);
-	ds_map_add(global.characterLocations,"matt",[0,0,-1,9,""]);
-	ds_map_add(global.characterLocations,"chet",[0,0,-1,10,""]);
-	ds_map_add(global.characterLocations,"alex",[0,0,rNotdonAmphitheater,10,"c1_treadmill"]);
-	
-	ds_map_add(global.characterLocations,"xavier",[0,0,rIsland,11,"island_arrival"]);
-
-	ds_map_add(global.characterLocations,"babishOrange",[477,926,rCoreIntro,3,"pro_core"]);
-	ds_map_add(global.characterLocations,"craigKrisper",[444,926,rCoreIntro,3,"pro_core"]);
 
 	global.itemText={};
 	global.droppedItems=ds_list_create(); //format: "iNameOfItem", x, y, room
@@ -99,6 +83,7 @@ function scrVariables(){
 	//not saved files
 	addLocation = function(_npc,_room,_key,_x,_y,_xs,_ys,_path,_varStruct){
 		if is_undefined(_varStruct) _varStruct={};
+		if !is_string(_room) _room=room_get_name(_room);
 		if !variable_struct_exists(global.characters[$ _npc],"locations")  variable_struct_set(global.characters[$ _npc],"locations",{});
 		if !variable_struct_exists(global.characters[$ _npc].locations,_room)  variable_struct_set(global.characters[$ _npc].locations,_room,{});
 		global.characters[$ _npc].locations[$ _room][$ _key]={};
@@ -107,10 +92,12 @@ function scrVariables(){
 		global.characters[$ _npc].locations[$ _room][$ _key].xs=_xs;
 		global.characters[$ _npc].locations[$ _room][$ _key].ys=_ys;
 		global.characters[$ _npc].locations[$ _room][$ _key].varStruct=_varStruct;
-		if _path!="" global.characters[$ _npc].locations[$ _room][$ _key].path=_path;
+		if !is_undefined(_path)&&_path!="" global.characters[$ _npc].locations[$ _room][$ _key].path=_path;
 	}
 	addLocationPathFrom = function(_npc,_from,_fromRoom,_to,_toRoom,_path,_text){
 		if is_undefined(_text) _text="";
+		if !is_string(_fromRoom) _fromRoom=room_get_name(_fromRoom);
+		if !is_string(_toRoom) _toRoom=room_get_name(_toRoom);
 		if !variable_struct_exists(global.characters[$ _npc].locations[$ _toRoom][$ _to],"pathFrom") variable_struct_set(global.characters[$ _npc].locations[$ _toRoom][$ _to],"pathFrom",{});
 		if !variable_struct_exists(global.characters[$ _npc].locations[$ _toRoom][$ _to].pathFrom,_fromRoom) variable_struct_set(global.characters[$ _npc].locations[$ _toRoom][$ _to].pathFrom,_fromRoom,{});
 		global.characters[$ _npc].locations[$ _toRoom][$ _to].pathFrom[$ _fromRoom][$ _from]={};
@@ -127,7 +114,7 @@ function scrVariables(){
 	}
 	addLocation("test","rTest1","t1",304,20,-1,1,"");
 	addLocation("test","rTest1","t2",305,133,1,1,"test_rTest1_groundCycle");
-		addLocationPathFrom("test","t1","rTest1","t2","rTest1","test_rTest1_fromBlockToGround","testTextWalk");
+		addLocationPathFrom("test","t1",rTest1,"t2","rTest1","test_rTest1_fromBlockToGround","testTextWalk");
 	#endregion
 	
 	#region Harold
@@ -210,7 +197,7 @@ function scrVariables(){
 	addLocation("nora","rNotdon","pro_electro",2214,628,-1,1,""); //watching the power demo
 	addLocation("nora","rNotdon","pro_reactorLeft",2244,628,1,1,""); //left of reactor
 	addLocation("nora","rNotdon","pro_reactor",2691,772,1,1,""); //under reactor
-		addLocationPathFrom("nora","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleAlwaysJump","");
+		addLocationPathFrom("nora","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleJ","");
 		
 	addLocation("nora","rNotdon","c1_line",2494,692,-1,1,""); //line
 	addLocation("nora","rNotdon","c1_stage",3063,908,-1,1,""); //stage
@@ -232,7 +219,7 @@ function scrVariables(){
 	addLocation("smitten","rNotdon","pro_electro",2194,628,-1,1,""); //watching the power demo
 	addLocation("smitten","rNotdon","pro_reactorLeft",2269,628,1,1,""); //left of reactor
 	addLocation("smitten","rNotdon","pro_reactor",2715,772,1,1,""); //under reactor
-		addLocationPathFrom("smitten","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleAlwaysJump","");
+		addLocationPathFrom("smitten","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleJ","");
 	addLocation("smitten","rNotdon","pro_launch",1808,676,-1,1,""); //inside launch control
 		addLocationPathFrom("smitten","pro_reactor","rNotdon","pro_launch","rNotdon","pro_smitten_launchWalk","");
 	addLocation("smitten","rNotdon","pro_launchWindow",1808,644,-1,1,""); //at launch window
@@ -243,9 +230,9 @@ function scrVariables(){
 		addLocationPathFrom("smitten","c1_line","rNotdon","c1_stage","rNotdon","simpleT","");
 	addLocation("smitten","rNotdon","c1_bay",1604,644,-1,1,""); //launch bay
 		addLocationPathFrom("smitten","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
-	addLocation("smitten","rNotdon","c1_backpack",2237,628,-1,1,""); //backpack
+	addLocation("smitten","rNotdon","c1_backpack",2237,628,-1,1,"",{takeDamage: true, damageCutscene:"wastes_chet_pulledOut"}); //backpack
 	addLocation("smitten","rNotdon","c1_video",1829,452,1,1,""); //video
-		addLocationPathFrom("smitten","c1_backpack","rNotdon","c1_video","rNotdon","simpleAlwaysJump","");
+		addLocationPathFrom("smitten","c1_backpack","rNotdon","c1_video","rNotdon","simpleJ","");
 		addLocationPathFrom("smitten","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
 	#endregion
 	
@@ -263,10 +250,10 @@ function scrVariables(){
 	addLocation("charlie","rNotdon","pro_electro",2296,650,-1,1,""); //watching the power demo
 	addLocation("charlie","rNotdon","pro_electroPanic",2296,650,-1,1,"simpleBackAndForth{2280,705,2312,650}"); //panic
 	addLocation("charlie","rNotdon","pro_electroTouch",2515,725,1,1,""); //touching the reactor
-		addLocationPathFrom("charlie","pro_electroPanic","rNotdon","pro_electroTouch","rNotdon","simpleAlwaysJump","");
+		addLocationPathFrom("charlie","pro_electroPanic","rNotdon","pro_electroTouch","rNotdon","simpleJ","");
 	addLocation("charlie","rNotdon","pro_reactorLeft",2160,628,1,1,""); //left of reactor
 	addLocation("charlie","rNotdon","pro_reactor",2601,740,1,1,""); //close to reactor
-		addLocationPathFrom("charlie","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleAlwaysJump","");
+		addLocationPathFrom("charlie","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleJ","");
 		
 	addLocation("charlie","rNotdon","c1_line",2472,692,1,1,""); //line
 	addLocation("charlie","rNotdonAmphitheater","c1_underStage",258,260,1,1,""); //under stage
@@ -296,6 +283,38 @@ function scrVariables(){
 	addLocation("alex","rNotdonAmphitheater","c1_treadmill",196,256,1,1,"c1_treadmill"); //treadmill
 	#endregion 
 	
+	#region Her
+	global.characters.her={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.harold
+	};
+	addLocation("her",rWastesHilltop,"boxEnter",817,1033,-1,1);
+	addLocation("her",rWastesHilltop,"boxWaiting",638,982,0,1);
+		addLocationPathFrom("her","boxEnter",rWastesHilltop,"boxWaiting",rWastesHilltop,"wastes_herBoxes");
+	addLocation("her",rWastesCrater,"treeStuck",662,385,-1,1);
+		addLocationPathFrom("her","boxWaiting",rWastesHilltop,"treeStuck",rWastesCrater,"simpleJT{-100,1000}");
+	#endregion
+	
+	#region Gopher
+	#endregion
+	
+	#region General
+	global.characters.general={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.harold
+	};
+	addLocation("general",rWastesCrater,"preFight",632,385,-1,1);
+	#endregion
+	
+	#region Mineral
+	#endregion
+	
+	#region Ring lady
+	#endregion
+	
+	#region Xavier
+	global.characters.xavier={portrait: [portHarold],diagColor: c_nearWhite,font: fontSizes.myko,
+		portIndList:["smile","neutral","sideNeutral","shifty","angry","sad","surprised"]
+	};
+	addLocation("xavier","rIsland","arrival",609,530,0,1,"");
+	#endregion
+	
 	#region Babish Orange
 	global.characters.babishOrange={portrait:[empty],diagColor: c_nearWhite, font: fontSizes.myko};
 	addLocation("babishOrange","rCoreIntro","pro_core",477,926,1,1,""); //core start
@@ -306,26 +325,34 @@ function scrVariables(){
 	addLocation("craigKrisper","rCoreIntro","pro_core",444,926,1,1,""); //core start
 	#endregion
 	
-	#region Xavier
-	global.characters.xavier={portrait: [portHarold],diagColor: c_nearWhite,font: fontSizes.myko,
-		portIndList:["smile","neutral","sideNeutral","shifty","angry","sad","surprised"]
-	};
-	addLocation("xavier","rIsland","island_arrival",609,530,0,1,"");
-	#endregion
-	
 	var _cL=variable_struct_get_names(global.characters) //add arbitray yscale, check, and nothing location to each character
 	for (var i=0;i<array_length(_cL);i++)
 	{
+		ds_map_add(global.characterLocations,_cL[i],[0,0,-1,0,""]);
 		addLocation(_cL[i],"rDevRoom","nothing",384,0,1,1,"");
-		var _rm=room_get_name(global.characterLocations[? _cL[i]][2]);
+		/*var _rm=room_get_name(global.characterLocations[? _cL[i]][2]);
 		if global.characterLocations[? _cL[i]][4]!=""
 		{
 			global.characterLocations[? _cL[i]][0]=global.characters[$ _cL[i]].locations[$ _rm][$ global.characterLocations[? _cL[i]][4]].startX;
 			global.characterLocations[? _cL[i]][1]=global.characters[$ _cL[i]].locations[$ _rm][$ global.characterLocations[? _cL[i]][4]].startY;
-		}
+		}*/
 		global.characters[$ _cL[i]].ys=1;
 		global.characters[$ _cL[i]].ch=1;
 	}
+	
+	setNPCRoom("harold",rTest1,"t1");
+	setNPCRoom("craig",rTest1,"t1");
+	setNPCRoom("citra",rNotdon,"pro_lb1");
+	setNPCRoom("eugene",rNotdon,"pro_lb1");
+	setNPCRoom("nora",rNotdon,"pro_lb1");
+	setNPCRoom("smitten",rNotdon,"pro_lb1");
+	setNPCRoom("charlie",rNotdon,"pro_lb1");
+	setNPCRoom("alex",rNotdonAmphitheater,"c1_treadmill");
+	setNPCRoom("general",rWastesCrater,"preFight");
+	setNPCRoom("xavier",rIsland,"arrival");
+	setNPCRoom("babishOrange",rCoreIntro,"pro_core");
+	setNPCRoom("craigKrisper",rCoreIntro,"pro_core");
+	
 	global.characterNames=[];
 	global.music=-1;
 	global.regionMusic=[-1,mus_notdon,-1,-1,-1,-1,-1,-1,-1,-1];
@@ -559,6 +586,7 @@ function scrVariables(){
 		addItem("iGrappleArc");
 		addItem("iGrappleDown");
 		addItem("iSlate");
+		addItem("iSolitaire")
 		//addItem("iBeacon");
 		//addItem("iWrench1");
 		//addItem("iFormula");
@@ -574,28 +602,30 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesHilltop;
+		global.startRoom=rWastesCrater;
 	}
 	
 	//npc sprite mask data
 	global.physCollPoints=ds_map_create();
-	ds_map_add(global.physCollPoints,"sPly",[[-3,2,-3,2,-3,2,-3,2],[8,8,4,4,0,0,6,6]]);
-	ds_map_add(global.physCollPoints,"sPlySprite",global.physCollPoints[? "sPly"]);
-	ds_map_add(global.physCollPoints,"sTestPersonBig",[[-8,7,-1],[11,11,-8]]);
-	ds_map_add(global.physCollPoints,"sTestPersonHarold",[[-8,7,-1],[11,11,-8]]);
-	ds_map_add(global.physCollPoints,"sGrapple",[[-3,3,-3,3,0],[-3,3,-3,3,0]]);
-	ds_map_add(global.physCollPoints,"sPlaceholderBounce",[[-12,12],[4,4]]);
-	ds_map_add(global.physCollPoints,"sPlaceholderBounceAngle",[[-12,12],[11,11]]);
+	ds_map_add(global.physCollPoints,sPly,[[-3,2,-3,2,-3,2,-3,2],[8,8,4,4,0,0,6,6]]);
+	ds_map_add(global.physCollPoints,sPlySprite,global.physCollPoints[? sPly]);
+	ds_map_add(global.physCollPoints,sTestPersonBig,[[-8,7,2],[11,11,-8]]);
+	ds_map_add(global.physCollPoints,sTestPersonHarold,[[-8,7,-1],[11,11,-8]]);
+	ds_map_add(global.physCollPoints,sGrapple,[[-3,3,-3,3,0],[-3,3,-3,3,0]]);
+	ds_map_add(global.physCollPoints,sPlaceholderBounce,[[-12,12],[4,4]]);
+	ds_map_add(global.physCollPoints,sPlaceholderBounceAngle,[[-12,12],[11,11]]);
 	
-	ds_map_add(global.physCollPoints,"sJoe",[[-16,16],[32,32]]);
-	ds_map_add(global.physCollPoints,"sBotBuster",[[-7,7],[8,8]]);
-	ds_map_add(global.physCollPoints,"sGreemer",[[-10,6,0],[2,2,-12]]);
-	ds_map_add(global.physCollPoints,"sVRRobot",[[0],[22]]);
-	ds_map_add(global.physCollPoints,"sDragami",[[-14,8,-14,8],[2,2,-25,-25]]);
-	ds_map_add(global.physCollPoints,"sTurretSmall",[[0],[6]]);
-	ds_map_add(global.physCollPoints,"sAAGun",[[0],[7]]);
+	ds_map_add(global.physCollPoints,sJoe,[[-16,16],[32,32]]);
+	ds_map_add(global.physCollPoints,sBotBuster,[[-7,7],[8,8]]);
+	ds_map_add(global.physCollPoints,sGreemer,[[-10,6,0],[2,2,-12]]);
+	ds_map_add(global.physCollPoints,sVRRobot,[[0],[22]]);
+	ds_map_add(global.physCollPoints,sDragami,[[-14,8,-14,8],[2,2,-25,-25]]);
+	ds_map_add(global.physCollPoints,sTurretSmall,[[0],[6]]);
+	ds_map_add(global.physCollPoints,sAAGun,[[0],[7]]);
 	
-	ds_map_add(global.physCollPoints,"sWastesCarWheel",[[-7,0,7],[0,7,0]]);
-	ds_map_add(global.physCollPoints,"sWastesCrate",[[-12,12],[15,15]]);
-	ds_map_add(global.physCollPoints,"sWastesCrateBig",[[-29,29],[31,31]]);
+	ds_map_add(global.physCollPoints,sHer,global.physCollPoints[? sPly]);
+	
+	ds_map_add(global.physCollPoints,sWastesCarWheel,[[-7,0,7],[0,7,0]]);
+	ds_map_add(global.physCollPoints,sWastesCrate,[[-12,12],[15,15]]);
+	ds_map_add(global.physCollPoints,sWastesCrateBig,[[-29,29],[31,31]]);
 }

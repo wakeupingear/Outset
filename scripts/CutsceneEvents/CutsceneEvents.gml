@@ -331,8 +331,8 @@ function scr_wastes_1(){ //leaving
 		plyRiding=false
 		cockpitCheck.key="notdon_jetEmpty";
 		sitMode="";
-		startAng=13;
-		switchRoom(226,363,rWastesCrater,false,false);
+		startAng=17;
+		switchRoom(226,359,rWastesCrater,false,false);
 		if room=rNotdon
 		{
 			plyRiding=hasData("ditch1");

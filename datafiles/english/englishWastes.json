@@ -88,7 +88,11 @@
     ],
 
     "wastes_her_boxesDiscover":[
+        "Ha!",
         "$camSet",[641,974],
+        "$her.setRoom",["rWastesHilltop","boxEnter"],
+        "$her.createNPC",
+        "$her.setRoom",["rWastesHilltop","boxWaiting"],
         60,
         "YESS, IN YOUR FACE! I knew you were a SPY!",
         "How else would you know how to breach our defenses twice? Clearly you were trained well.",
@@ -106,6 +110,9 @@
     "wastes_boxesDestroy":[
         "$addData","wBRack",
         "$oWastesHerBoxes.destroy",
+        "$her.setRoom",["rWastesHilltop","boxWaiting"],
+        "$her.createNPC",
+        "$her.setRoom",["rWastesCrater","treeStuck"],
         "HELL YEAH BROTHER!"
     ],
 
@@ -144,6 +151,27 @@
                 "Look, are you sure that you can do this yourself, little dude?",
                 "It's a scary world ya hear, really turning this PARENTAL STAND-IN's hair grey!",
                 "And I've been such a good guardian! Be careful, small one."
+    ],
+
+    "wastes_crane":[
+        "A ticker-tape prints out a message:",
+        "$if1","hasData",["wCraneButton"],
+        "#false1",
+            "\"CRANE IS OFF\"",
+            "$question1","\"TURN ON?\"",
+            "#yes1","$addData","wCraneButton",
+            "#no1","end",
+        "#true1",
+            "$if2","hasData",["wCraneUnblock"],
+            "#false2",
+                "\"CRANE IS ON\"\n\"ARM IS BLOCKED\"",
+                "end",
+            "#true2",
+                "\"CRANE IS ON\"",
+    ],
+
+    "wastes_factory_poster":[
+        "$popup",{"sprite":"sFactoryPosterPopup"}
     ],
 
     "wastes_jet1":[

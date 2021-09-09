@@ -30,6 +30,8 @@ function conversation(textData){
 		with _t event_perform(ev_step,ev_step_begin);
 		if !_alreadyOpen&&_t.mode<0 global.menuOpen=false;
 	}
+	
+	if global.menuOpen rumbleStart(rumbleType.lightPulse);
 }
 
 function conversationForced(textData){
@@ -47,5 +49,7 @@ function conversationForced(textData){
 	
 	with _t event_perform(ev_step,ev_step_begin);
 	if !_alreadyOpen&&_t.mode<0 global.menuOpen=false;
+	
+	if global.menuOpen rumbleStart(rumbleType.lightPulse);
 }
 

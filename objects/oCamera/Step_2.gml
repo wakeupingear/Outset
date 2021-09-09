@@ -1,3 +1,9 @@
+maxChange=10;
+var _camSpdExtra=0;
+if instance_exists(ply)&&ply.state==moveState.floating
+{
+	_camSpdExtra=0.15;
+}
 if followMode==1 //obj
 {
 	if setFollowTo(false)
@@ -12,8 +18,12 @@ else if followMode==2 //path
 
 if x!=xTo||y!=yTo
 {
-	x+=median((xTo-x)*camSpd,-maxChange,maxChange);
-	y+=median((yTo-y)*camSpd,-maxChange,maxChange);
+	x+=median((xTo-x)*(camSpd+_camSpdExtra),-maxChange,maxChange);
+	var _xSign=sign(x-xprevious);
+	while place_meeting(x,y,oCameraHit) x=round(x)-_xSign;
+	y+=median((yTo-y)*(camSpd+_camSpdExtra),-maxChange,maxChange);
+	var _ySign=sign(y-yprevious);
+	while place_meeting(x,y,oCameraHit) y=round(y)-_ySign;
 }
 if abs(x-xTo)<1 x=xTo;
 if abs(y-yTo)<1 y=yTo;

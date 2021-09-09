@@ -7,6 +7,19 @@ with oWater if inRange
 {
 	draw_surface_part_ext(application_surface,max(x-camX(),0),max(y-camY(),0),image_xscale-max(camX()-x,0),image_yscale-max(camY()-y,0),max(x-camX(),0),max(y-camY(),0),1,1,-1,1);
 }
+
+//gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
+//if global.alive flickerTime+=0.01;
+//var _color=c_white;
+//	shader_set(shd_fog);
+//	shader_set_uniform_f(shader_get_uniform(shd_fog,"time"),flickerTime);
+//	shader_set_uniform_f(shader_get_uniform(shd_fog,"fog_color"),color_get_red(_color)/255,color_get_green(_color)/255,color_get_blue(_color)/255);
+//	shader_set_uniform_f(shader_get_uniform(shd_fog,"alpha"),1);
+//	shader_set_uniform_f(shader_get_uniform(shd_fog,"stepNum"),3);
+//	draw_sprite(sFogBigChunky,0,-camX(),-camY());
+//	//draw_sprite(sFogBigChunky,0,-camX()+2048,-camY());
+//gpu_set_blendmode(bm_normal);
+//shader_reset();
 surface_reset_target();
 
 shader_set(shd_water);

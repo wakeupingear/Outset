@@ -83,7 +83,7 @@ switch room //room specific elements
 		_m.tileX=3;
 		instance_create_layer(2119,744,"bg2",oNotdonMountains);
 		instance_create_layer(1011,211,"bg2",oNotdonMountains);
-		instance_create_layer(0,0,"bg2",oOvercast);
+		instance_create_layer(0,0,"bg",oOvercast);
 		var _o=instance_create_layer(0,0,"bg",oOvercast);
 		_o.image_index=1;
 		break;
@@ -137,6 +137,12 @@ switch room //skybox/specific configs
 	case rWastesCrater:
 	case rWastesHilltop:
 	case rWastes:
+		var _fog=instance_create_layer(0,0,"behindMyko",oFogBG);
+		_fog.xLerp=0;
+		_fog.yLerp=0;
+		_fog.preset=1;
+		_fog.image_yscale=0.2;
+		
 		instance_create_layer(0,800,"bg2",oWastesClouds);
 		var _hill=instance_create_layer(0,910,"bg2",oWastesHillBG);
 		with _hill setBGPosition(x,y);

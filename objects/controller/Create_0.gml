@@ -5,7 +5,17 @@ window_set_size(1280,720);
 draw_set_color(c_white);
 application_surface_draw_enable(false);
 postProcessSurf=-1;
+pp=true; //hehe pp
+ppCompare=false; // :===D hehe
+removePPPart=function(){
+	surface_reset_target();
+	var _w=192+(!ppCompare)*192;
+	var _h=216;
+	surface_copy_part(application_surface,0,0,postProcessSurf,0,0,_w,_h);
+	//draw_surface_part(postProcessSurf,0,0,_w,_h,0,0);
+}
 
+fogTime=0;
 
 math_set_epsilon(0.0001);
 audio_group_load(audiogroup_sounds);

@@ -399,8 +399,10 @@ function commandProcess(command){
 							}
 							break;
 						case "createNPC":
-							if asset_get_index(_val)==-1 _val="npc"+capitalizeFirstLetter(_val);
-							lastObj=instance_create_layer(0,0,"people",asset_get_index(_val));
+							diag--;
+							if asset_get_index(_obj)==-1 _val=asset_get_index("npc"+capitalizeFirstLetter(_obj));
+							if instance_exists(_obj) break;
+							lastObj=instance_create_layer(0,0,"people",_obj);
 							break;
 						case "create":
 							lastObj=instance_create_depth(tCoord(_val[0]),tCoord(_val[1]),_val[2],asset_get_index(_val[3]));

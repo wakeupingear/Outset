@@ -11,6 +11,28 @@ npcMovementVars();
 npcAnimVars();
 collType=hitobj;
 
+verticalHitTrigger=function(finalSpd){
+	if abs(finalSpd)<1 exit;
+	
+	if finalSpd>=vspMax
+	{
+		shake(1,1,15);
+		rumbleStart(rumbleType.heavyPulse);
+	}
+	else if finalSpd>=5.5
+	{
+		rumbleStart(rumbleType.lightPulse);
+	}
+	else if finalSpd>2.6
+	{
+		rumbleStart(rumbleType.lighterPulse);
+	}
+}
+
+cornerCorrectTrigger=function(){
+	rumbleStart(rumbleType.lighterPulse);
+}
+
 goingFast=false;
 fastIntensity=0;
 justLaunched=false;

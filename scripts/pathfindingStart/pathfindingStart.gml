@@ -31,17 +31,19 @@ function pathfindingStart(obj,path){
 	}
 	else if string_pos("simple",path)==1
 	{
-		if string_pos("simpleT",path)>0 
+		var _key=path;
+		var _coordStart=string_pos("{",path);
+		if _coordStart>0
 		{
-			moveCommand=pathLoad("simpleT");
-			var _pos=array_pos(moveCommand,"xyt");
+			_key=string_copy(path,0,string_length(path)-_coordStart-2);
 		}
-		else 
-		{
-			moveCommand=pathLoad((path=="simple") ? "simple": "simpleAlwaysJump");
-			var _pos=array_pos(moveCommand,"xy");
-		}
-		if string_pos("simple{",path)==1||string_pos("simpleT{",path)==1
+		moveCommand=pathLoad(_key);
+		var _pos=0;
+		/*for (var i=0;i<array_length(moveCommand);i++) if is_string(moveCommand[i]&&string_char_at(moveCommand[i],1)=="x"){
+			_pos=i;
+			break;
+		}*/
+		if _coordStart>0
 		{
 			moveCommand[_pos+1]=scr_getPathfindCoord(path,0);
 			moveCommand[_pos+2]=scr_getPathfindCoord(path,1);
@@ -59,7 +61,8 @@ function pathfindingStart(obj,path){
 }
 
 function scr_getPathfindCoord(path,num){
-	path=string_replace_all(string_replace(string_replace(string_replace(string_replace(path,"simpleTwo{",""),"simpleBackAndForth{",""),"simpleEnterRoom{",""),"simple{","")," ","");
+	var _end=string_pos("{",path);
+	path=string_copy(path,_end+1,string_length(path)-_end);
 	var _val="";
 	var _ind=1;
 	repeat num 

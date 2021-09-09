@@ -52,6 +52,9 @@ function npcMovementVars(){
 }
 
 function physicsVars(){
+	horizontalHitTrigger=function(finalSpd){}; 
+	verticalHitTrigger=function(finalSpd){};
+	cornerCorrectTrigger=function(){};
 	xscaleFlip=true; //whether it automatically flips with move
 	hsp=0; //horizontal speed
 	hspMax=1.2; //max horizontal speed
@@ -62,10 +65,10 @@ function physicsVars(){
 	collType=npcHit; //type of collision to interact with
 	collPointX=[0]; //collision x coordinate - default is a single point right below the player
 	collPointY=[8]; //collision y
-	if !is_undefined(global.physCollPoints[?sprite_get_name(sprite_index)]) //import the sprite's coordinates if it exists
+	if !is_undefined(global.physCollPoints[?sprite_index]) //import the sprite's coordinates if it exists
 	{
-		collPointX=global.physCollPoints[?sprite_get_name(sprite_index)][0];
-		collPointY=global.physCollPoints[?sprite_get_name(sprite_index)][1];
+		collPointX=global.physCollPoints[?sprite_index][0];
+		collPointY=global.physCollPoints[?sprite_index][1];
 	}
 	
 	state=moveState.falling; //physics state

@@ -64,6 +64,7 @@ function physics(){
 			}
 			else if !groundCollision(x,y+maxYChange)&&groundCollision(x-sign(hsp),y-1) //moving down slope
 			{
+				cornerCorrectTrigger();
 				y=round(y+maxYChange);
 				while !groundCollision(x,y-1) y--;
 				state=moveState.falling;
@@ -96,6 +97,7 @@ function physics(){
 		{
 			if vsp<0&&(!groundCollision(x+xscale*maxXChange,y)||!groundCollision(x-xscale*maxXChange,y)) //corner correction
 			{
+				cornerCorrectTrigger();
 				if !groundCollision(x+xscale*maxXChange,y) while groundCollision(x,y) x+=xscale;
 				else while groundCollision(x,y) x-=xscale;
 				continue;
@@ -115,6 +117,7 @@ function physics(){
 			if false&&vsp<0 vsp--; //I don't know what this was supposed to do but it was causing a crash so I set it to always false
 			else 
 			{
+				verticalHitTrigger(vsp);
 				vsp=0;
 				break;
 			}
@@ -383,6 +386,7 @@ function simplePhysics(){
 		if groundCollision(x,y)
 		{
 			while groundCollision(x,y) y-=sign(vsp);
+			verticalHitTrigger(vsp);
 			vsp=0;
 			if groundCollision(x,y+1) //land
 			{

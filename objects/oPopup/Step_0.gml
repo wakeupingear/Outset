@@ -1,7 +1,7 @@
 /// @description Input
  if mode==0 //wait for advancement
 {
-	if exiting||(!forceOpen&&stackType!=1&&(mouse_check_button_pressed(mb_left)||buttonPressed(control.confirm))&&(!instance_exists(oCursor)||!place_meeting(camX()+x,camY()+y,oMouse)))
+	if exiting||(!forceOpen&&stackType!=1&&(buttonPressed(control.grapple)||buttonPressed(control.confirm))&&(!instance_exists(oCursor)||!place_meeting(camX()+x,camY()+y,oMouse)))
 	{
 		if stackType==2 //Top of stack
 		{

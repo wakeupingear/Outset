@@ -295,4 +295,4 @@ else
 	fastIntensity=0;
 }
 
-if hsp==0&&abs(_startHsp)>hspMax*1.5&&state==moveState.ladder shake(1,1,10);
+if !global.transitioning&&hsp==0&&abs(_startHsp)>hspMax*1.5&&state!=moveState.ladder shake(1,1,10);

@@ -1,7 +1,10 @@
 /// @description Save
-if !touch&&place_meeting(x,y,ply)
+if alarm[0]==-1&&!touch&&place_meeting(x,y,ply)
 {
 	touch=true;
+	shake(1,1,10);
+	rumbleStart(rumbleType.heavyPulse);
+	alarm[0]=40;
 	if global.alive
 	{
 		global.plyX=x;

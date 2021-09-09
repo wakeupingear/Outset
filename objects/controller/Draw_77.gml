@@ -11,6 +11,14 @@ var _hView=camera_get_view_height(global.cam);
 var _wView=camera_get_view_width(global.cam);
 var _roomName=room_get_name(room);
 if !surface_exists(postProcessSurf) postProcessSurf=surface_create(384,216);
+if pp{
+var _px=camX()+192;
+var _py=camY()+192;
+if instance_exists(ply)
+{
+	_px=ply.x;
+	_py=ply.y;
+}
 if image_alpha!=1 //Death vinette
 {
 	surface_set_target(postProcessSurf);
@@ -19,39 +27,35 @@ if image_alpha!=1 //Death vinette
 	else _prog+=(1-image_alpha)*140;
 	shader_set(shd_tunnelVision);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_pixel"),_w,_h);
-	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_origin"),(lerp(192,ply.x-camX(),0.5))*_w,(lerp(108,ply.y-camY(),0.5))*_h);
+	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_origin"),(lerp(192,_px-camX(),0.5))*_w,(lerp(108,_py-camY(),0.5))*_h);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_dist"),_prog*_w,_prog*_h);
 	var _tunnelCol=merge_color(global.scanColor,c_white,0.5);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_tunnelColor"),color_get_red(_tunnelCol)/255,color_get_green(_tunnelCol)/255,color_get_blue(_tunnelCol)/255);
 	draw_surface(application_surface,0,0);
 	shader_reset();
-	surface_reset_target();
-	surface_copy(application_surface,0,0,postProcessSurf);
+	removePPPart();
 }
 
-if true//worldRegion==worldRegion.west
+if false&&global.rooms[$ _roomName].region==worldRegion.west
 {
 	surface_set_target(postProcessSurf);
-	shader_set(shd_fog);
-	shader_set_uniform_f(shader_get_uniform(shd_fog,"time"),current_time/20000);
-	var _a=image_alpha
-	if instance_exists(oTerrain) _a=(1-oTerrain.deathDist/oTerrain.deathDistMax);
-	shader_set_uniform_f(shader_get_uniform(shd_fog,"alpha"),min(_a+global.alive,1));
+	draw_clear_alpha(c_black,0);
 	var _color=c_white;
 	switch room
 	{
 		default:
-			switch global.rooms[$ _roomName]
+			switch global.rooms[$ _roomName].region
 			{
 				default: break;
 			}
 			break;
 	}
-	shader_set_uniform_f(shader_get_uniform(shd_fog,"fog_color"),color_get_red(_color)/255,color_get_green(_color)/255,color_get_blue(_color)/255);
-	draw_sprite_stretched(sFog,0,_xView,_yView,_wView,_hView);
-	shader_reset();
-	surface_reset_target();
-	surface_copy(application_surface,0,0,postProcessSurf);
+	var _a=image_alpha;
+	if instance_exists(oTerrain) _a=(1-oTerrain.deathDist/oTerrain.deathDistMax);
+	if global.alive fogTime+=0.001;
+	ppFog(sFogBigChunky,-camX(),-camY(),1,0.2,min(_a+global.alive,1.1),_color,18.0-((room_height-camY())/216)*2,fogTime,true);
+	removePPPart();
+}
 }
 
 //draw transition
@@ -59,8 +63,7 @@ if instance_exists(oTransition)
 {
 	surface_set_target(postProcessSurf);
 	with oTransition draw();
-	surface_reset_target();
-	surface_copy(application_surface,0,0,postProcessSurf);
+	removePPPart();
 }
 gpu_set_blendenable(true);
 

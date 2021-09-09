@@ -11,12 +11,25 @@
         "goto","start"
     ],
 
+
     "simple":[
         "xy","x","y",4
     ],
     "simpleT":[
         "xyt","x","y",4
     ],
+    "simpleJ":[
+        "xyj","x","y",4
+    ],
+    "simpleJT":[
+        "xyjt","x","y",4
+    ],
+    "simpleTJ":[
+        "xyjt","x","y",4
+    ],
+
+
+
     "simpleEnterRoom":[
         "xy","x","y",2,
         15,
@@ -35,10 +48,6 @@
     "enterFade":[
         "alpha",0,
         "alpha",1,0.05
-    ],
-    "simpleAlwaysJump":[
-        "jumpCheck",true,
-        "xy","x","y",4
     ],
 
     "pro_citra_archiveLeave":[
@@ -140,5 +149,11 @@
     "c1_toIslandRight":[
 
     ],
+
+    "wastes_herBoxes":[
+        "xy",760,1025,4,
+        "jump",
+        "xy",635,982,3
+    ]
 
 }

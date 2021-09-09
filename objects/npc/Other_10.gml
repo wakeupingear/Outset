@@ -12,4 +12,5 @@ if location!=_l&&global.characterLocations[? npcKey][2]==room
 		default: break;
 	}
 	location=_l;
+	positionNpc(false); //reset visual stuff
 }

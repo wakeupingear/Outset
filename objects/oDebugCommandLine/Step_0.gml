@@ -27,6 +27,15 @@ if keyboard_check_pressed(vk_enter)
 		}
 		else switch _lower
 		{
+			case "pp":
+				controller.pp=!controller.pp;
+				instance_destroy();
+				break;
+			case "compare":
+			case "ppcompare":
+				controller.ppCompare=!controller.ppCompare;
+				instance_destroy();
+				break;
 			case "killplayer":
 			case "kill":
 				killPlayer();

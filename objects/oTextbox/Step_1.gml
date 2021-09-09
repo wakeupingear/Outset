@@ -93,6 +93,7 @@ else if mode==2
 		}
 		if buttonPressed(control.confirm)
 		{
+			rumbleStart(rumbleType.lighterPulse);
 			if question
 			{
 				if !questionChoice

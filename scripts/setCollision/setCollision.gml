@@ -4,9 +4,9 @@ function setCollision(spr){
 	collType=npcHit;
 	collPointX=[];
 	collPointY=[];
-	if !is_undefined(global.physCollPoints[?sprite_get_name(spr)]) //import the sprite's coordinates if it exists
+	if !is_undefined(global.physCollPoints[? spr]) //import the sprite's coordinates if it exists
 	{
-		collPointX=global.physCollPoints[?sprite_get_name(spr)][0];
-		collPointY=global.physCollPoints[?sprite_get_name(spr)][1];
+		collPointX=global.physCollPoints[? spr][0];
+		collPointY=global.physCollPoints[? spr][1];
 	}
 }
