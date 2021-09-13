@@ -70,15 +70,15 @@
         "$camReset"
     ],
 
-    "pro_lb2CharlieIdle":[["WHEE!!"],["Up and down, up and down!"]],
-    "pro_lb2SmittenIdle":[["Ughhhhhhhh!"]],
-    "pro_lb2EugeneIdle":[["Quiet, I'm trying to think!"]],
-    "pro_lb2Nora":[
+    "charlie_pro_lb2_idle":[["WHEE!!"],["Up and down, up and down!"]],
+    "smitten_pro_lb2_idle":[["Ughhhhhhhh!"]],
+    "eugene_pro_lb2_idle":[["Quiet, I'm trying to think!"]],
+    "nora_pro_lb2":[
         "Look up!",
         "No, up at the clouds! Incredible...",
         "$nora.setIdleText"
     ],
-    "pro_lb2NoraIdle":[["...Like dragons..."]],
+    "nora_pro_lb2_idle":[["...Like dragons..."]],
     "pro_launchEugeneLeave":[
         "$goto","dev",
         "?eugene","Enough with this play, we should be doing something!",
@@ -129,10 +129,10 @@
                 "$camReset",
                 "end",
             "#false1",
-                "$idleText", "pro_arch3CitraIdle"
+                "$idleText", "citra_pro_arch3_idle"
     ],
 
-    "pro_arch2Citra":[
+    "citra_pro_arch2":[
         "Oh, can I help you, uh...",
         "Why is your face making that weird frown?",
         "Oh no.",
@@ -148,9 +148,9 @@
                 "$citra.setRoom",["rNotdonArchives","pro_arch3"]
     ],
 
-    "pro_arch3CitraIdle":[["I can't talk, please go back and play!"],["Please just give me a few minutes."]],
+    "citra_pro_arch3_idle":[["I can't talk, please go back and play!"],["Please just give me a few minutes."]],
 
-    "pro_lb3EugeneAuto":[
+    "eugene_pro_lb3_auto":[
         "$eugene.parachuteAdd",
         "$camSet",[1150,360],
         "$eugene.setRoom",["rNotdon","pro_lb4"],
@@ -158,11 +158,11 @@
         "?charlie","You stole a parachute?",
         "?eugene","No. I stole 5 parachutes, and we are going to use them.",
         "?smitten","Heh, nice.",
-        "$cutsceneCondition",{"key":"pro_lb3EugeneJump","myRoom":"rNotdon","condition":"plyLeft","args":[1180]},
+        "$cutsceneCondition",{"key":"pro_eugeneJump","myRoom":"rNotdon","condition":"plyLeft","args":[1180]},
         "$camReset"
     ],
 
-    "pro_lb3EugeneJump":[
+    "pro_eugeneJump":[
         "$eugene.setRoom",["rNotdon","pro_grotto"],
         "?eugene","GERONIMOOOOOOOOOOOO",
         "?nora","Oh dear...",
@@ -184,18 +184,18 @@
         "$charlie.setRoom",["rNotdon","pro_lb4"],
         120,
         "Alright, you go first, then we'll meet up midair and do flips or something!",
-        "$cutsceneCondition",{"key":"pro_lb3SmittenBlock","myRoom":"rNotdon","condition":"plyRight","args":[1236]},
+        "$cutsceneCondition",{"key":"pro_smittenBlock","myRoom":"rNotdon","condition":"plyRight","args":[1236]},
         "$cutsceneCondition",{"myRoom":"rNotdon","condition":"plyBelow","args":[496],"scr":"scr_pro_parachuteBreak"}
     ],
 
-    "pro_lb3SmittenBlock":[
+    "pro_smittenBlock":[
         "$smitten.setRoom",["rNotdon","pro_lb4"],
         "?smitten","Where do you think you're going?",
         "We're all in this together, and it's your turn to jump.",
         "$npcSmitten.blockPlayer",true
     ],
 
-    "pro_lbJumpEugeneAuto":[
+    "eugene_pro_lbJump_Auto":[
         10,
         "#eugene.parachuteAdd",
         "$camSet",[1150,420],"$goto","dev",

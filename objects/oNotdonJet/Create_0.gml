@@ -27,13 +27,14 @@ cockpitCheck=instance_create_depth(x+50,y-25,depth-3,oInteractable);
 cockpitCheck.key="notdon_jetEmpty";
 cockpitCheck.image_xscale=20;
 cockpitCheck.image_yscale=20;
+cockpitCheck.onlyAlive=true;
 
 followObjs=[seethrough,hit,cockpitCheck,finGrapple];
 
 chairs=array_create(6);
 for (var i=0;i<array_length(chairs);i++)
 {
-	var _c=instance_create_layer(x+10-i*10,y-4,"people",oChairNotdon);
+	var _c=instance_create_depth(x+10-i*10,y-4,layer_get_depth(layer_get_id("people"))+1,oChairNotdon);
 	chairs[i]=[_c]; //idk why I made this a 1 length array but it's fineeeeeee
 	array_push(followObjs,_c);
 }
@@ -62,10 +63,19 @@ startAng=image_angle;
 setState=function(){args=[flying,state,chairData,seethroughOverride,cockpitCheck.key,image_xscale,sitMode,plyRiding,startAng];}; //it's like a react state! hahahaha why has god abandoned us
 setState();
 
+setChairs=function(){
+	for (var i=0;i<array_length(chairData);i++)
+	{
+		chairs[i][0].image_index=chairData[i][0];
+		chairs[i][0].text=chairData[i][1];
+	}
+}
+
 switchRoom=function(xPos,yPos,newRoom,snap,destroy){
 	if saveEvent eventRemove(object_index,startroom,spawnX,spawnY,layer,args);
 	setState();
 	if saveEvent eventAddObject(object_index,newRoom,xPos,yPos,layer,args);
+	setChairs();
 	spawnX=xPos;
 	spawnY=yPos;
 	if destroy 

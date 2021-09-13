@@ -5,7 +5,8 @@ if facePlayer&&!pathfinding&&animation.currentAnimation!="attacked"&&instance_ex
 	if ply.x>x xscale=1;
 	else xscale=-1;
 }
-npcAnimation();
 
 if array_length(text)>0 diagInteract();
 }
+
+npcAnimation(); //alive is checked inside animation

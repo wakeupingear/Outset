@@ -5,7 +5,11 @@ if alarm[0]==-1
 	if place_meeting(x,y,oPhysicsObj)
 	{
 		var _p=instance_place(x,y,oPhysicsObj);
-		if _p.object_index==oWastesCarWheel _p=oWastesCarWheel;
+		if _p.object_index==oWastesCarWheel 
+		{
+			shake(1,1,10);
+			_p=oWastesCarWheel;
+		}
 		else if isPlayer(_p)
 		{
 			if ply.image_blend==c_red exit;

@@ -11,11 +11,11 @@
     const vec2 E_dir = vec2(0.33333,0.00000);
     void main() {
 		float tP=time;
-        float A = texture2D( gm_BaseTexture, (v_vTexcoord + A_dir * tP) * 1.000000000).r;
-        float B = texture2D( gm_BaseTexture, (v_vTexcoord + B_dir * tP) * 0.759835686).r;
-        float C = texture2D( gm_BaseTexture, (v_vTexcoord + C_dir * tP) * 0.577350269).r;
-        float D = texture2D( gm_BaseTexture, (v_vTexcoord + D_dir * tP) * 0.438691338).r;
-        float E = texture2D( gm_BaseTexture, (v_vTexcoord + E_dir * tP) * 0.333333333).r;
+        float A = texture2D( gm_BaseTexture, abs(v_vTexcoord + A_dir * tP) * 1.000000000).r;
+        float B = texture2D( gm_BaseTexture, abs(v_vTexcoord + B_dir * tP) * 0.759835686).r;
+        float C = texture2D( gm_BaseTexture, abs(v_vTexcoord + C_dir * tP) * 0.577350269).r;
+        float D = texture2D( gm_BaseTexture, abs(v_vTexcoord + D_dir * tP) * 0.438691338).r;
+        float E = texture2D( gm_BaseTexture, abs(v_vTexcoord + E_dir * tP) * 0.333333333).r;
  
         //changes how much each component affects the fog density.
         E = pow(max(0.0,E),1.000000000); //affects most

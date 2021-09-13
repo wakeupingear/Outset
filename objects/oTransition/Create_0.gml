@@ -12,7 +12,7 @@ plyMove=0;
 plySpd=0;
 
 regionColor=array_create(8);
-regionColor[worldRegion.notdon]=merge_color(c_green,c_blue,0.85);
+regionColor[worldRegion.notdon]=merge_color(c_blue,c_black,0.85);
 regionColor[worldRegion.west]=merge_color(c_green,c_black,0.75);
 regionColor[worldRegion.air]=merge_color(c_green,c_black,0.85);
 regionColor[worldRegion.deeptown]=merge_color(c_green,c_black,0.85);

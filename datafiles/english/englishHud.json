@@ -159,7 +159,8 @@
         "iFormula":["Liquid","","Acquired A VIAL OF LIQUID!"],
         "iBeacon":["Genuine Notdon Beacon","","Acquired A BEACON!"],
         "iJet": ["Jet Part","Mutilated machinery... how gory!","Acquired a JET PART!"],
-        "iRing": ["Ring","A tastefully tacky RING.","Acquired a RING!"]
+        "iRing": ["Ring","A tastefully tacky RING.","Acquired a RING!"],
+        "iCarPoster":["Car Wanted Poster","A plea for someone, anyone, to find and return the CAR.","Acquired a CAR WANTED POSTER!"],
     },
     "solitaire_win":[
         "You feel a sense of pride and accomplishment."

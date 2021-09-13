@@ -1,6 +1,8 @@
 /// @description 
 if !global.menuOpen
 {
+	if text!=-1 check=1;
+	else check=9;
 	if !sitting
 	{
 		if distance_to_object(ply)<=abs(sprite_width)&&ply.visible&&(image_index==0||text!=-1)&&place_meeting(x,y,ply)

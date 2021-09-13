@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sFogBigChunky",
-    "path": "sprites/sFogBigChunky/sFogBigChunky.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

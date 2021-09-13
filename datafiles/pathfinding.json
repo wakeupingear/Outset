@@ -11,6 +11,11 @@
         "goto","start"
     ],
 
+    "jumping":[
+        "#start",
+        "jump",70,
+        "goto","start"
+    ],
 
     "simple":[
         "xy","x","y",4

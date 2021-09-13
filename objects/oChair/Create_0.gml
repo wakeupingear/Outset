@@ -21,10 +21,10 @@ if _state!=false
 			break;
 		default: break;
 	}
-	if text!=-1&&check==9 check=1;
 }
 
 sit=function(){
+	rumbleStart(rumbleType.lightPulse);
 	ply.state=moveState.floating;
 	ply.visible=false;
 	ply.xscale=image_xscale;

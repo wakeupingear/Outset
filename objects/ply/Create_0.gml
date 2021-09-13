@@ -101,6 +101,7 @@ drawLight=function(){
 }
 
 //animation
+animation.onlyAlive=false;
 animation.ladder={type: animType.singleFrame,startFrame: 16};
 animation.ladderMove={frameTime:9, type: animType.loop,startFrame: 16,endFrame: 17};
 animation.zipline={type: animType.singleFrame,startFrame: 18};

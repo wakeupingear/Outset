@@ -87,6 +87,7 @@ setPortPositions=function(portArray){
 }
 
 setHeight=function(){
+	if !global.menuOpen exit;
 	characterFirstLetterUpper=string_upper(string_char_at(character,1))+string_copy(character,2,string_length(character)-1);
 	if character=="" top=(instance_exists(ply)&&ply.y>camY()+108);
 	else

@@ -53,7 +53,7 @@ if false&&global.rooms[$ _roomName].region==worldRegion.west
 	var _a=image_alpha;
 	if instance_exists(oTerrain) _a=(1-oTerrain.deathDist/oTerrain.deathDistMax);
 	if global.alive fogTime+=0.001;
-	ppFog(sFogBigChunky,-camX(),-camY(),1,0.2,min(_a+global.alive,1.1),_color,18.0-((room_height-camY())/216)*2,fogTime,true);
+	ppFog(sFogBigChunky,-camX(),-camY(),1.5,0.15,min(_a+global.alive,1.1),_color,18.0-((room_height-camY())/216),fogTime,true);
 	removePPPart();
 }
 }

@@ -9,7 +9,13 @@ function hurtEnem(_id,_damage){
 		var _isWall=object_index==enemWall||object_is_ancestor(object_index,enemWall);
 		if myHealth<=0
 		{
-			switch object_index
+			if isObj(id,boss)
+			{
+				attacking=false;
+				enemActive=false;
+				alarm[1]=dieDelay;
+			}
+			else switch object_index
 			{
 				case oExplosiveBarrel:
 					move=ply.xscale;

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sTestPersonBig",
-    "path": "sprites/sTestPersonBig/sTestPersonBig.yy",
+    "name": "spr_eugene_gameplay",
+    "path": "sprites/spr_eugene_gameplay/spr_eugene_gameplay.yy",
   },
   "solid": false,
   "visible": true,

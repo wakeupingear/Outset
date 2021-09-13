@@ -141,6 +141,8 @@ switch room //skybox/specific configs
 		_fog.xLerp=0;
 		_fog.yLerp=0;
 		_fog.preset=1;
+		_fog.image_xscale=1.5;
+		_fog.image_yscale=0.1;
 		_fog.image_yscale=0.2;
 		
 		instance_create_layer(0,800,"bg2",oWastesClouds);

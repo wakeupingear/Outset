@@ -317,14 +317,14 @@ function commandProcess(command){
 							impulse(_val[0],_val[1],_obj);
 							break;
 						case "x":
-							_obj.x=_val;
+							_obj.x=tCoord(_val);
 							if _obj.object_index==ply&&instance_exists(oPlayerMove)
 							{
 								instance_destroy(oPlayerMove);
 							}
 							break;
 						case "y":
-							_obj.y=_val;
+							_obj.y=tCoord(_val);
 							if _obj.object_index==ply&&instance_exists(oPlayerMove)
 							{
 								instance_destroy(oPlayerMove);
@@ -385,6 +385,7 @@ function commandProcess(command){
 								var _l=global.characterLocations[? npcKey][4];
 								var _n=capitalizeFirstLetter(npcKey);
 								if variable_struct_exists(global.langScript,_l+_n+"Idle") text=textLoad(_l+_n+"Idle");
+								else show_debug_message("Error: idle text does not exist");
 							}
 							break;
 						case "snapNPC":
@@ -445,6 +446,7 @@ function commandProcess(command){
 						case "hideNPC":
 							hideNPC(_originalObj); //re-copy
 							diag--;
+							saved=true;
 							break;
 						case "setRoomTeleport":
 						case "setRoom":

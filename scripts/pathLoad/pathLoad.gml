@@ -13,5 +13,6 @@ function pathLoad(_key) {
 		}
 		return _arr;
 	}
-	return ["Error - pathfinding conversation load failed!","end"];
+	show_debug_message("Error: no path found for key '"+_key+"'");
+	return []
 }

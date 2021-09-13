@@ -41,6 +41,15 @@ if keyboard_check_pressed(vk_enter)
 				killPlayer();
 				instance_destroy();
 				break;
+			case "respawn":
+				if global.alive
+				{
+					ds_list_add(commands,"Not dead yet");
+					break;
+				}
+				respawn(oPlayerSoul.x,oPlayerSoul.y);
+				instance_destroy();
+				break;
 			case "killall":
 				ds_list_add(commands,"Killed "+string(instance_number(enem))+" Enemies");
 				with enem hurtEnem(id,global.maxDamage);

@@ -7,7 +7,8 @@ if image_index==0
 		_o.x=x;
 		_o.y=y-6;
 		_o.vsp=min(bounceVsp,_o.vsp);
-		if object_is_ancestor(_o.object_index,npc)||object_is_ancestor(_o.object_index,ply)
+		if isObj(_o,ply) shake(1,1,10);
+		if isObj(_o,npc)||isObj(_o,ply)
 		{
 			_o.state=moveState.jumping;
 		}

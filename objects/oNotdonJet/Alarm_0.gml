@@ -13,11 +13,7 @@ with cockpitCheck event_perform(ev_alarm,0);
 
 landingYscale=!flying;
 hit.image_index=state;
-for (var i=0;i<array_length(chairData);i++)
-{
-	chairs[i][0].image_index=chairData[i][0];
-	chairs[i][0].text=chairData[i][1];
-}
+setChairs();
 
 if saveEvent&&!eventExists(object_index,startroom,x,y,layer,args) eventAddObject(object_index,startroom,x,y,layer,args);
 

@@ -424,6 +424,14 @@ if instance_exists(ply)
 	draw_set_alpha(hudFade);
 	draw_sprite_ext(sHudHealth,0,getHudX()+edgeX,24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
 	
+	var _bossFight=noone;
+	with boss if enemActive _bossFight=id;
+	if instance_exists(_bossFight)
+	{
+		draw_sprite_ext(sHudHealth,0,384-(getHudX()+edgeX),24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
+	}
+	draw_sprite_ext(sHudHealth,0,getHudX()+edgeX,24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
+	
 	if ds_list_size(global.inventory)>0
 	{
 		var _x=getHudX()+edgeX-12;

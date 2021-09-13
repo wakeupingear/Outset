@@ -200,7 +200,7 @@
         "...Loser!",
         "$smitten.xscale",1
     ],
-    "c1_backpackSmittenIdle":[["What are you looking at?"],["Delicious cookie, by the way."]],
+    "smitten_c1_backpack_idle":[["What are you looking at?"],["Delicious cookie, by the way."]],
 
     "c1_groupForgetName":[
         "$smitten.setRoom",["rNotdon","c1_video"],
@@ -244,12 +244,12 @@
     ],
     "c1_jack":["So you wake up in a gear..."],
 
-    "c1_bayCitra":[
+    "citra_c1_bay":[
         "Stay here, please! As we all saw, there was been another POWER OUTAGE yesterday.",
         "MATT has assured us that it will be fixed soon, so sit quietly and wait.",
         "$citra.setIdleText"
     ],
-    "c1_bayCitraIdle":[["No need to be the hero!"],["It will be alright."]],
+    "citra_c1_bay_idle":[["No need to be the hero!"],["It will be alright."]],
 
     "c1_notdonScannedCOPILOT":[
         "You've scanned the area, {name}.",
@@ -281,6 +281,10 @@
         "$script","scr_c1_5",
         "$roomChange",["plyX","plyY","rNotdon",5,0,0,1]
     ],
+
+    "c1_chetUnderChair":[
+        "Occupied!"
+    ],
     
     "c1_jetBoarded":[
         "$goto","dev",
@@ -306,6 +310,14 @@
 
     "c1_airChoice":[
         "$global.currentChapter",2,
+        "?eugene","This is the least democratic decision you chubs have made yet. I have business elsewhere.",
+        "$eugene.setRoom",["rNotdon","c1_video"],
+        "$eugene.createNPC",
+        "$npcEugene.x","trackObjX",
+        "$npcEugene.y","trackObjY",
+        20,
+        "$eugene.setRoom",["rWastesNotdon","wastesWait"],
+        "$cutsceneCondition",{"key":"wastes_eugeneStartled","myRoom":"rWastesNotdon","condition":"plyLeft","args":[862]},
         "$cutscene","c1_ditch",
     ],
     "c1_islandChoice":[

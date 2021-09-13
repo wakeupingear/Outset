@@ -1,4 +1,16 @@
 {
+    "wastes_eugeneStartled":[
+        "?eugene","Oh, so you aren't a sheep either? Come to explore the mechanical walk of life?"
+    ],
+    "eugene_wastesWait":[
+        "Ok, you drive.",
+        "Hmm. We don't seem to have a car.",
+        "Lock your knees!",
+        "$createLayer",[0,0,"player","oCarryObj"],
+        "$lastObj.sprite","sChet",
+        "$eugene.hideNPC"
+    ],
+
     "wastes_intro":[
         "$oNotdonJet.xTo",192,
         "$oNotdonJet.yTo",132,
@@ -204,5 +216,33 @@
         "$addItem",["iRing3"],
         "$addData","wastes_ring3",
         "$trackObj.destroy"
+    ],
+
+    "wastes_carPrinter":[
+        "$if1","hasData",["wCarSearch"],
+        "#false1",
+            "$question1","Summon the CAR back?",
+            "#yes1",
+                "$addData",["wCarSearch"],
+                "$addItem",["iCarPoster"],
+                "You recall that the CAR is a 1-ton machine with little to no autonomous capibilities, and therefore unable to come back at the push of a button.",
+                "{30}Stupid, stupid, stupid.",
+                "end",
+            "#no1",
+                "The printer stares at you, nonplussed.",
+                "$end",
+        "#true1",
+            "The poster printer is out of toner.",
+            "$trackObj.text","wastes_carPrinter2"
+    ],
+    "wastes_carPrinter2":[
+        "Upon further inspection, the poster printer is also out of ink.",
+        "It's also out of paper.",
+        "And the power cable has been chewed through.",
+        "And the printer is 20 years past its expiration date.",
+        "$trackObj.text","wastes_carPrinter3"
+    ],
+    "wastes_carPrinter3":[
+        "This printer has been through hell."
     ]
 }

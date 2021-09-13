@@ -88,6 +88,8 @@ function Animation() constructor{
 	animCount= 0; //progress in the animation
 	animDir= 1; //direction of frame progression
 	animating= true; //whether a non-default animation is set
+	onlyAlive= true; //whether animations run while dead
+	initialSet=false; //set the initial frame even when dead
 	standing= {type: animType.singleFrame,startFrame: 0};
 }
 function setAnimation(newAnimation,animation){
@@ -97,7 +99,8 @@ function setAnimation(newAnimation,animation){
 	return animation[$ newAnimation].startFrame;
 }
 function updateAnimation(index,animation){
-	if animation.animating {
+	if (!animation.onlyAlive||global.alive||!animation.initialSet)&&animation.animating {
+	animation.initialSet=true;
 	switch (animation[$ animation.currentAnimation].type)
 	{
 		case animType.singleFrame: 

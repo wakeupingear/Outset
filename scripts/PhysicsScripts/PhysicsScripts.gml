@@ -267,6 +267,7 @@ function grapplePhysics(){
 				resetGrapple();
 				state=moveState.standing;
 				shake(1,1,10);
+				rumbleStart(rumbleType.deepPulse);
 				break;
 			}
 		}

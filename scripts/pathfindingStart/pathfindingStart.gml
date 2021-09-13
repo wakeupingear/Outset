@@ -35,7 +35,9 @@ function pathfindingStart(obj,path){
 		var _coordStart=string_pos("{",path);
 		if _coordStart>0
 		{
-			_key=string_copy(path,0,string_length(path)-_coordStart-2);
+			show_debug_message(_coordStart)
+			_key=string_copy(path,0,_coordStart-1);
+			show_debug_message(_key)
 		}
 		moveCommand=pathLoad(_key);
 		var _pos=0;

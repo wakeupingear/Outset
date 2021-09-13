@@ -276,7 +276,10 @@ function scr_c1_6(){
 	global.currentChapter=chapters.c1;
 	global.completedChapters=1;
 	global.startRoom=rNotdon;
-	global.timeOfDay=times.day;
+	global.
+	
+	
+	timeOfDay=times.day;
 	
 	var _jet=-1;
 	with oNotdonJet if state==0 _jet=id;
@@ -287,7 +290,12 @@ function scr_c1_6(){
 		flying=true;
 		seethroughOverride=-1;
 		cockpitCheck.key="notdon_jetWaiting";
-		//chairData[0]
+		chairData[0][0]=2;
+		chairData[0][1]="c1_chetUnderChair";
+		chairData[1][0]=2;
+		chairData[2][0]=2;
+		chairData[3][0]=2;
+		chairData[5][0]=2;
 		sitMode="c1_jetBoarded";
 	}
 	

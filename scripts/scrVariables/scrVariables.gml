@@ -166,9 +166,9 @@ function scrVariables(){
 	addLocation("eugene","rNotdonArchives","pro_archEnter",172,324,-1,1,"enterFade"); //enter archives
 	addLocation("eugene","rNotdonArchives","pro_archGuard",231,324,-1,1,"simpleBackAndForth{256,324,213,324}"); //guard archive ladder
 	addLocation("eugene","rNotdonArchives","pro_arch1",96,324,-1,1,""); //examining bench in archives
-		addLocationPathFrom("eugene","pro_lb2","rNotdon","pro_arch1","rNotdonArchives","simpleEnterRoom{1300,404}","");
+		addLocationPathFrom("eugene","pro_lb2","rNotdon","pro_arch1","rNotdonArchives","simpleEnterRoom{1300,404}");
 	addLocation("eugene","rNotdon","pro_lb3",1063,403,-1,1,""); //waiting to jump
-		addLocationPathFrom("eugene","pro_arch1","rNotdonArchives","pro_lb3","rNotdon","pro_eugene_archiveLeave","");
+		addLocationPathFrom("eugene","pro_arch1","rNotdonArchives","pro_lb3","rNotdon","pro_eugene_archiveLeave");
 	addLocation("eugene","rNotdon","pro_lb4",1063,403,-1,1,""); //waiting to jump 2
 	addLocation("eugene","rNotdon","pro_lbJump",1063,403,-1,1,""); //jumping in front of citra
 		addLocationPathFrom("eugene","pro_arch1","rNotdonArchives","pro_lbJump","rNotdon","simpleEnterRoom{198,330}","");
@@ -186,6 +186,9 @@ function scrVariables(){
 		addLocationPathFrom("eugene","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
 	addLocation("eugene","rNotdon","c1_video",1772,463,-1,1,""); //video
 		addLocationPathFrom("eugene","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
+		
+	addLocation("eugene","rWastesNotdon","wastesWait",809,177,-1,1,"jumping"); //line
+		addLocationPathFrom("eugene","c1_video","rNotdon","wastesWait","rWastesNotdon","simpleT{0,0}");
 	#endregion
 	
 	#region Nora
@@ -386,6 +389,7 @@ function scrVariables(){
 	ds_map_add(global.itemData,"iJet1",{index: 15, viewable: true});
 	ds_map_add(global.itemData,"iJet2",{index: 16, viewable: true});
 	ds_map_add(global.itemData,"iJet2",{index: 17, viewable: true});
+	ds_map_add(global.itemData,"iCarPoster",{index: 18, viewable: true});
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -459,7 +463,7 @@ function scrVariables(){
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
 	addBothCamera("rNotdonArchives",0,0,384,210,192,108); //citra office
 	
-	addRoomCamera("rWastesHilltop",934,732,1070,1300,996,743); //Garage
+	addRoomCamera("rWastesHilltop",934,696,1070,1300,996,743); //Garage
 	addRoomCamera("rWastesFactoryOutside",0,0,500,250,320,160); //factory crane
 	
 	global.rooms.rIsland.inside=false;
@@ -595,21 +599,21 @@ function scrVariables(){
 		//scr_pro_2();
 		scr_wastes_1();
 		scr_wastes_2();
-		//scr_c1_5();
+		scr_c1_5();
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesCrater;
+		global.startRoom=rNotdon;
 	}
 	
 	//npc sprite mask data
 	global.physCollPoints=ds_map_create();
 	ds_map_add(global.physCollPoints,sPly,[[-3,2,-3,2,-3,2,-3,2],[8,8,4,4,0,0,6,6]]);
 	ds_map_add(global.physCollPoints,sPlySprite,global.physCollPoints[? sPly]);
-	ds_map_add(global.physCollPoints,sTestPersonBig,[[-8,7,2],[11,11,-8]]);
+	ds_map_add(global.physCollPoints,sTestPersonBig,[[-3,2,0],[8,8,-8]]);
 	ds_map_add(global.physCollPoints,sTestPersonHarold,[[-8,7,-1],[11,11,-8]]);
 	ds_map_add(global.physCollPoints,sGrapple,[[-3,3,-3,3,0],[-3,3,-3,3,0]]);
 	ds_map_add(global.physCollPoints,sPlaceholderBounce,[[-12,12],[4,4]]);

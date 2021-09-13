@@ -16,7 +16,7 @@ function ppFog(_spr,_xPos,_yPos,_fogXS,_fogYS,_a,_color,_stepNum,_time,_isSurfac
 		while _x<(camX())*(!_isSurface) _x+=_fogW;
 		for (var k=-1;_x+k*_fogW<camX()+384-(camX())*(_isSurface);k++)
 		{
-			draw_sprite_ext(_fogSpr,0,_x+k*_fogW,_y+i*_fogH,1,_fogYS,0,-1,1);
+			draw_sprite_ext(_fogSpr,0,_x+k*_fogW,_y+i*_fogH,_fogXS,_fogYS,0,-1,1);
 		}
 	}
 	shader_reset();
