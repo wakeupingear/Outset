@@ -1,4 +1,4 @@
-target_x=1799;
-target_y=734;
+target_x=757;
+target_y=424;
 xscale=-1;
-targetroom=rWastesHilltop;
+targetroom=rWastesResist;

@@ -1,0 +1,147 @@
+"cmd"  /c subst W: "C:\Users\willf\AppData\Roaming\GameMakerStudio2\Cache\GMS2CACHE"
+
+elapsed time 00:00:00.0300747s for command "cmd" /c subst W: "C:\Users\willf\AppData\Roaming\GameMakerStudio2\Cache\GMS2CACHE" started at 09/19/2021 03:07:27
+"cmd"  /c subst V: "C:\Users\willf\AppData\Local\GameMakerStudio2\GMS2TEMP"
+
+elapsed time 00:00:00.0274953s for command "cmd" /c subst V: "C:\Users\willf\AppData\Local\GameMakerStudio2\GMS2TEMP" started at 09/19/2021 03:07:27
+"cmd"  /c subst U: "C:\ProgramData\GameMakerStudio2\Cache\runtimes\runtime-2.3.4.442"
+
+elapsed time 00:00:00.0274545s for command "cmd" /c subst U: "C:\ProgramData\GameMakerStudio2\Cache\runtimes\runtime-2.3.4.442" started at 09/19/2021 03:07:27
+"C:\ProgramData/GameMakerStudio2/Cache/runtimes\runtime-2.3.4.442/bin/Igor.exe"  -j=8 -options="C:\Users\willf\AppData\Local\GameMakerStudio2\GMS2TEMP\build.bff" -v -- Windows Run
+
+Loaded Macros from C:\Users\willf\AppData\Roaming\GameMakerStudio2\Cache\GMS2CACHE\Outset_F18989A2\macros.json
+Options: U:/bin\platform_setting_defaults.json
+Options: C:\Users\willf\AppData\Roaming/GameMakerStudio2\willf668_1455797\local_settings.json
+Options: C:\Users\willf\AppData\Roaming\GameMakerStudio2\Cache\GMS2CACHE\Outset_F18989A2\targetoptions.json
+Setting up the Asset compiler
+U://bin/GMAssetCompiler.exe  /c /mv=1 /zpex /iv=0 /rv=0 /bv=0 /j=8  /gn="Outset" /td="V:/" /cd="W:/Outset_F18989A2" /zpuf="C:\Users\willf\AppData\Roaming/GameMakerStudio2\willf668_1455797" /m=windows /tgt=64 /nodnd /cfg="Default" /o="V:/Outset_DFA0846_VM" /sh=True /optionsini="V:/Outset_DFA0846_VM\options.ini"  /cvm /baseproject="U:/BaseProject\BaseProject.yyp" "C:\Users\willf\Desktop\Outset Data\Builds\Outset\Outset.yyp" /preprocess="W:/Outset_F18989A2"
+Found Project Format 2
+ProjectFileWatcher:StartWatching:C:\Users\willf\Desktop\Outset Data\Builds\Outset
+Started: 9/19/2021 3:07:28 AM
+Finished: 9/19/2021 3:07:30 AM
+Diff: 00:00:02.1292955
+Loaded Project: Outset
+Not setting Steam AppId as Steam is not enabled in platform options
+finished.
+Release build
+Options: W:/Outset_F18989A2\ExtensionOptions.json
+OptionsIni
+Options: W:/Outset_F18989A2\PlatformOptions.json
+[Compile] Run asset compiler
+U://bin/GMAssetCompiler.exe  /c /mv=1 /zpex /iv=0 /rv=0 /bv=0 /j=8  /gn="Outset" /td="V:/" /cd="W:/Outset_F18989A2" /zpuf="C:\Users\willf\AppData\Roaming/GameMakerStudio2\willf668_1455797" /m=windows /tgt=64 /nodnd /cfg="Default" /o="V:/Outset_DFA0846_VM" /sh=True /optionsini="V:/Outset_DFA0846_VM\options.ini"  /cvm /baseproject="U:/BaseProject\BaseProject.yyp" "C:\Users\willf\Desktop\Outset Data\Builds\Outset\Outset.yyp" /bt=run /rt=vm /64bitgame=false
+Compile Constants...finished.
+Remove DnD...finished.
+Compile Scripts...finished.
+Compile Rooms...finished.
+Compile Objects...finished.
+Compile Timelines...finished.
+Compile Triggers...finished.
+Compile Extensions...finished.
+Global scripts...finished.
+finished.
+collapsing enums.
+Final Compile...finished.
+Looking for built-in particle images in C:\ProgramData\GameMakerStudio2\Cache\runtimes\runtime-2.3.4.442\bin\ParticleImages
+Saving IFF file... V:/Outset_DFA0846_VM\Outset.win
+Writing Chunk... GEN8
+option_game_speed=60
+Writing Chunk... OPTN
+Writing Chunk... LANG
+Writing Chunk... EXTN
+Writing Chunk... SOND
+Writing Chunk... AGRP
+Writing Chunk... SPRT
+Writing Chunk... BGND
+Writing Chunk... PATH
+Writing Chunk... SCPT
+Writing Chunk... GLOB
+Writing Chunk... SHDR
+Writing Chunk... FONT
+Writing Chunk... TMLN
+Writing Chunk... OBJT
+Writing Chunk... ACRV
+Writing Chunk... SEQN
+Writing Chunk... TAGS
+Writing Chunk... ROOM
+Writing Chunk... DAFL
+Writing Chunk... EMBI
+Writing Chunk... TPAGE
+Texture Group - __YY__0sFogBig_YYG_AUTO_GEN_TEX_GROUP_NAME_0
+Texture Group - __YY__1sFogBigChunky_YYG_AUTO_GEN_TEX_GROUP_NAME_0
+Texture Group - __YY__2sFog_YYG_AUTO_GEN_TEX_GROUP_NAME_0
+Texture Group - __YY__3sTerrainNotdon_YYG_AUTO_GEN_TEX_GROUP_NAME_0
+Texture Group - __YY__3sTerrainNotdon_YYG_AUTO_GEN_TEX_GROUP_NAME_1
+Texture Group - __YY__3sTerrainNotdon_YYG_AUTO_GEN_TEX_GROUP_NAME_2
+Texture Group - __YY__3sTerrainNotdon_YYG_AUTO_GEN_TEX_GROUP_NAME_3
+Texture Group - __YY__3sTerrainNotdon_YYG_AUTO_GEN_TEX_GROUP_NAME_4
+Texture Group - __YY__3sTerrainNotdon_YYG_AUTO_GEN_TEX_GROUP_NAME_5
+Texture Group - __YY__3sTerrainNotdon_YYG_AUTO_GEN_TEX_GROUP_NAME_6
+Texture Group - Default
+Writing Chunk... TGIN
+Writing Chunk... CODE
+Writing Chunk... VARI
+Writing Chunk... FUNC
+Writing Chunk... STRG
+Writing Chunk... TXTR
+0 Compressing texture... writing texture texture_0.png... 
+1 Compressing texture... writing texture texture_1.png... 
+2 Compressing texture... writing texture texture_2.png... 
+3 Compressing texture... writing texture texture_3.png... 
+4 Compressing texture... writing texture texture_4.png... 
+5 Compressing texture... writing texture texture_5.png... 
+6 Compressing texture... writing texture texture_6.png... 
+7 Compressing texture... writing texture texture_7.png... 
+8 Compressing texture... writing texture texture_8.png... 
+9 Compressing texture... writing texture texture_9.png... 
+10 Compressing texture... writing texture texture_10.png... 
+11 Compressing texture... writing texture texture_11.png... 
+12 Compressing texture... writing texture texture_12.png... 
+13 Compressing texture... writing texture texture_13.png... 
+14 Compressing texture... writing texture texture_14.png... 
+15 Compressing texture... writing texture texture_15.png... 
+16 Compressing texture... writing texture texture_16.png... 
+17 Compressing texture... writing texture texture_17.png... 
+18 Compressing texture... writing texture texture_18.png... 
+19 Compressing texture... writing texture texture_19.png... 
+Writing Chunk... AUDO
+Writing Chunk... SCPT
+Writing Chunk... DBGI
+Writing Chunk... INST
+Writing Chunk... LOCL
+Writing Chunk... DFNC
+Writing Chunk... STRG
+Stats : GMA : Elapsed=5520.0841
+Stats : GMA : sp=283,au=1,bk=3,pt=2,sc=587,sh=17,fo=5,tl=0,ob=245,ro=41,da=11,ex=1,ma=1725,fm=0x7040B3BD6DFE2EB4
+DoSteam
+Igor complete.
+[Run] Run game
+Options: W:/Outset_F18989A2\MainOptions.json
+U://windows/Runner.exe  -game "V:/Outset_DFA0846_VM\Outset.win"
+Setting scheduler resolution to 1
+Attempting to set gamepadcount to 12
+DirectX11: Using hardware device
+Collision Event time(microsecs)=73
+Total memory used = 46663526(0x02c80766) bytes
+**********************************.
+Entering main loop.
+**********************************.
+Resizing swap chain...
+Attempting to set gamepadcount to 0
+Not shutting down steam as it is not initialised
+Script_Free called
+Unsetting previous scheduler resolution of 1
+
+
+U://windows/Runner.exe DONE (0)
+Igor complete.
+elapsed time 00:00:10.4557115s for command "C:\ProgramData/GameMakerStudio2/Cache/runtimes\runtime-2.3.4.442/bin/Igor.exe" -j=8 -options="C:\Users\willf\AppData\Local\GameMakerStudio2\GMS2TEMP\build.bff" -v -- Windows Run started at 09/19/2021 03:07:27
+"cmd"  /c subst W: /d
+
+elapsed time 00:00:00.0307740s for command "cmd" /c subst W: /d started at 09/19/2021 03:07:38
+"cmd"  /c subst V: /d
+
+elapsed time 00:00:00.0307537s for command "cmd" /c subst V: /d started at 09/19/2021 03:07:38
+"cmd"  /c subst U: /d
+
+elapsed time 00:00:00.0273814s for command "cmd" /c subst U: /d started at 09/19/2021 03:07:38
+SUCCESS: Run Program Complete

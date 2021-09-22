@@ -1,10 +1,8 @@
 /// @description Draw + tunnel
 
 // Inherit the parent event
-for (var i=0;i<3;i++)
-{
-	draw_sprite(sprite_index,(i>0),x,y+sprite_height*i);
-}
+draw_sprite(sprite_index,0,x,y);
+draw_sprite_ext(sprite_index,1,x,y+sprite_height*1.5,1,2,0,-1,1);
 
 if instance_exists(oReactorTunnel)
 {

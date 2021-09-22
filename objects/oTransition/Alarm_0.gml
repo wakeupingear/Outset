@@ -24,14 +24,27 @@ if instance_exists(ply)
 			oPlayerCam.horiAmp=oPlayerCam.horiAmpMax*ply.xscale;
 			setPos(ply.x,ply.y);
 		}
-		with oCamera if xTo==x&&yTo==y //make sure that it isn't set to a specific point
+		with oCamera 
 		{
-			followObj=instance_nearest(x,y,oPlayerCam);
-			followMode=1;
-			setFollowTo(true);
-			x=xTo;
-			y=yTo;
-			findCameraPosition(true);
+			if xTo==x&&yTo==y //make sure that it isn't set to a specific point
+			{
+				followObj=instance_nearest(x,y,oPlayerCam);
+				followMode=1;
+				setFollowTo(true);
+				x=xTo;
+				y=yTo;
+				findCameraPosition(true);
+			}
+			
+			if place_meeting(x,y,oCameraHit)
+			{
+				var _p=instance_place(x,y,oCameraHit);
+				x=_p.camXPos;
+				y=_p.camYPos;
+				xTo=x;
+				yTo=y;
+				show_message(x)
+			}
 		}
 	}
 }

@@ -13,4 +13,4 @@ switch (destroyInd)
 }
 
 //specific interactions
-if place_meeting(x,y,oWastesCrate) with instance_place(x,y,oWastesCrate) damageCrate();
+destroyBreakables(oBreakable,oWastesCrate);

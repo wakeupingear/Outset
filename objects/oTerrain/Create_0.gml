@@ -4,6 +4,8 @@ terrainColor=ds_list_create();
 surf=-1;
 surf2=-1;
 render=false;
+texRender=false;
+texInd=0;
 
 deathScale=!global.alive;
 deathAng=0;

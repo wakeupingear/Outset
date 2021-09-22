@@ -14,7 +14,8 @@ function addItem(item){
 			var _itemText=textLoad("itemText");
 			if variable_struct_exists(_itemText,_item) _itemText=_itemText[$ _item];
 			else _itemText=_itemText[$ string_letters(_item)];
-			if object_index==oTextbox 
+			
+			if object_index==oTextbox with oTextbox
 			{
 				if is_array(_itemText[2]) text=array_combine(text,_itemText[2]);
 				else array_insert(text,diag,_itemText[2]);

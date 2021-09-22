@@ -1,4 +1,6 @@
 /// @description Touch objects
+if global.alive{
+simplePhysics();
 if image_index==0
 {
 	if roomHasPower()&&place_meeting(x,y,oPhysicsObj)
@@ -37,4 +39,5 @@ for (var i=0;i<ds_list_size(movingObj);i++)
 		ds_list_delete(movingObj,i);
 		i--;
 	}
+}
 }

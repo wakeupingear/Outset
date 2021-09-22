@@ -99,7 +99,7 @@
         "$eugene.setRoom",["rNotdonArchives","pro_archGuard"]
     ],
 
-    "pro_arch1Eugene":[
+    "eugene_pro_arch1":[
         "$goto","dev",
         "The red strap connects to the{15} carabeener,",
         "The carabeener connects to the{15} pressurized chute...",
@@ -113,7 +113,7 @@
         "$charlie.setRoom",["rNotdon","pro_lb3"]
     ],
 
-    "pro_arch1Citra":[
+    "citra_pro_arch1":[
         "$if1","eugene.exists",
             "#true1",
                 "Oh, can I help you, uh...",

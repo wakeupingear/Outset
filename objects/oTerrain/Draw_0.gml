@@ -29,6 +29,14 @@ if !render||!surface_exists(surf)
 	if instance_exists(oTerrainHitobj) with oTerrainHitobj draw_self();
 	if shader_current()!=-1 shader_reset();
 	
+	surface_reset_target();
+	render=true;
+	texRender=false;
+}
+
+if !texRender
+{
+	surface_set_target(surf);
 	for (var i=0;i<ds_list_size(terrainColor);i++)
 	{
 		var _obj=terrainColor[|i];
@@ -45,8 +53,10 @@ if !render||!surface_exists(surf)
 	{
 		case worldRegion.notdon:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
-			draw_sprite_repeated(0,0,sNotdonTerrainTexture,0,1,1,0,c_white,1,0,0);
+			draw_sprite_repeated(0,0,sNotdonTerrainTexture,texInd,1,1,0,c_white,1,0,0);
 			gpu_set_blendmode(bm_normal);
+			if global.alive texInd=!texInd;
+			alarm[0]=30;
 			break;
 		case worldRegion.west:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
@@ -66,13 +76,13 @@ if !render||!surface_exists(surf)
 		case worldRegion.testing:
 		case worldRegion.vr:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
-			draw_sprite_repeated(0,0,sMykoBrickGreyTile,0,1,1,0,c_white,1,0,0);
+			draw_sprite_repeated_fullroom(0,0,sMykoBrickGreyTile,0,1,1,0,c_white,1,0,0);
 			gpu_set_blendmode(bm_normal);
 			break;
 		default: break;
 	}
 	surface_reset_target();
-	render=true;
+	texRender=true;
 }
 
 var _width=min(386,room_width);
@@ -161,3 +171,5 @@ else surface_reset_target();
 
 draw_surface(surf2,_posX,_posY);
 if shader_current()!=-1 shader_reset();
+
+//if !global.alive pauseAlarms(0);

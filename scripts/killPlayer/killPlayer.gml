@@ -32,10 +32,12 @@ function killPlayer(saveText){
 			global.soulButtons=[];
 			if instance_exists(oSouldropCoin) instance_deactivate_object(oSouldropCoin);
 			if instance_exists(oInventory) oInventory.open=false;
-			if instance_exists(oPopup) oPopup.mode=-14;
+			if instance_exists(oPopup) oPopup.exiting=true;
+			global.menuOpen=false;
 			eventRemove(oParachute,room,ply,0,"people",[]);
 			if !hasData("respInt")&&!isDev //tutorial
 			{
+				shake(3,3,25);
 				conversation(textLoad("pro_die"));
 			} 
 			else

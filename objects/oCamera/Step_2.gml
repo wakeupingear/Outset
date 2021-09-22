@@ -18,11 +18,13 @@ else if followMode==2 //path
 
 if x!=xTo||y!=yTo
 {
-	x+=median((xTo-x)*(camSpd+_camSpdExtra),-maxChange,maxChange);
-	var _xSign=sign(x-xprevious);
+	var _xChange=median((xTo-x)*(camSpd+_camSpdExtra),-maxChange,maxChange);
+	x+=_xChange;
+	var _xSign=sign(_xChange);
 	while place_meeting(x,y,oCameraHit) x=round(x)-_xSign;
-	y+=median((yTo-y)*(camSpd+_camSpdExtra),-maxChange,maxChange);
-	var _ySign=sign(y-yprevious);
+	var _yChange=median((yTo-y)*(camSpd+_camSpdExtra),-maxChange,maxChange);
+	y+=_yChange;
+	var _ySign=sign(_yChange);
 	while place_meeting(x,y,oCameraHit) y=round(y)-_ySign;
 }
 if abs(x-xTo)<1 x=xTo;

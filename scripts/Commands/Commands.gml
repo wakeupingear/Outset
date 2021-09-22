@@ -464,6 +464,7 @@ function commandProcess(command){
 						case "addItem":
 							addItem(_val);
 							saved=true;
+							command=text;
 							break;
 						case "removeDroppedItem":
 							_val[3]=asset_get_index(_val[3]);

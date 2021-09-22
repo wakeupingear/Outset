@@ -1,6 +1,6 @@
 function scanVars(){
 	isAdded=false;
-	isScanned=(ds_list_find_index(global.scanList,id)>-1||!hasItem("iSlate"));
+	isScanned=(ds_list_find_index(global.scanList,object_index)>-1||!hasItem("iSlate"));
 	holdTime=30;
 	ds_list_add(global.scanObjs,id);
 	drawScanEffect=function(){
@@ -24,7 +24,7 @@ function scanDraw(){
 			if global.inputs[control.confirm]>=holdTime||global.inputs[control.up]>=holdTime
 			{
 				isScanned=true;
-				ds_list_add(global.scanList,id);
+				ds_list_add(global.scanList,object_index);
 				var _region=global.rooms[$ room_get_name(room)].region;
 				switch object_index
 				{
@@ -70,10 +70,11 @@ function scanDraw(){
 				else save(global.lastFile);
 				global.scanObj=-1;
 				if scanFunc!=-1 scanFunc();
+				with object_index isScanned=true;
 			}
-			else if buttonHold(control.up)<=0 global.scanObj=-1;
+			else if buttonHold(control.up)<=0&&buttonHold(control.confirm)<=0 global.scanObj=-1;
 		}
-		else if global.scanObj==-1&&buttonPressed(control.up)&&_touch global.scanObj=id;
+		else if global.scanObj==-1&&(buttonPressed(control.up)||buttonHold(control.confirm))&&_touch global.scanObj=id;
 		drawScanEffect();
 		if _touch global.interactText=6;
 	}

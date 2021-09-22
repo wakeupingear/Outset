@@ -36,6 +36,10 @@ if keyboard_check_pressed(vk_enter)
 				controller.ppCompare=!controller.ppCompare;
 				instance_destroy();
 				break;
+			case "testing":
+				controller.alarm[3]=-1;
+				instance_destroy();
+				break;
 			case "killplayer":
 			case "kill":
 				killPlayer();
@@ -161,3 +165,5 @@ if keyboard_check_pressed(vk_enter)
 }
 
 if keyboard_check_pressed(vk_escape) instance_destroy();
+
+with controller if alarm[3]>-1 alarm[3]++;

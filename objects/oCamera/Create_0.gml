@@ -1,5 +1,6 @@
 camera_destroy(global.cam);
 global.cam=camera_create();
+
 x=global.plyX;
 y=global.plyY;
 var _vm= matrix_build_lookat(x,y,-10,x,y,0,0,1,0);
@@ -9,7 +10,6 @@ camera_set_view_mat(global.cam,_vm);
 camera_set_proj_mat(global.cam,_pm);
 
 view_camera[0]=global.cam;
-
 followMode=0; //0= don't track, 1=object, 2=path
 followObj=-1;
 followPath=-1;

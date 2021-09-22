@@ -14,6 +14,9 @@ removePPPart=function(){
 	surface_copy_part(application_surface,0,0,postProcessSurf,0,0,_w,_h);
 	//draw_surface_part(postProcessSurf,0,0,_w,_h,0,0);
 }
+distSurf=-1;
+distortion_stage = shader_get_sampler_index(shd_distort, "distortion_texture_page");
+deathGlowProg=0;
 
 fogTime=0;
 
@@ -41,6 +44,7 @@ if (!isDev&&!isTest)//||true
 else if isDev||isTest
 {
 	if !instance_exists(oDebugOverlay) event_perform(ev_keypress,vk_f3);
+	if isTest alarm[3]=20*60;
 }
 //gml_pragma("PNGCrush");
 
@@ -55,6 +59,7 @@ if (!np_initdiscord(DISCORD_APP_ID, true, STEAM_ID))
 #macro c_nearWhite make_color_rgb(230,230,230)
 #macro c_darkBlue make_color_rgb(0,0,25)
 #macro c_soulBlue make_color_rgb(58,61,146)
+#macro COLOUR_FOR_NO_MOVE make_colour_rgb(127,127,255)
 //#macro c_coinColorPoint [4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782,4280556782]
 #macro leftStickUp 300
 #macro leftStickDown 301

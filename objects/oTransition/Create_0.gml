@@ -11,12 +11,14 @@ xscale=1;
 plyMove=0;
 plySpd=0;
 
-regionColor=array_create(8);
+regionColor=array_create(9);
 regionColor[worldRegion.notdon]=merge_color(c_blue,c_black,0.85);
 regionColor[worldRegion.west]=merge_color(c_green,c_black,0.75);
 regionColor[worldRegion.air]=merge_color(c_green,c_black,0.85);
 regionColor[worldRegion.deeptown]=merge_color(c_green,c_black,0.85);
 regionColor[worldRegion.east]=merge_color(c_green,c_black,0.85);
+
+whiteCol=merge_color(c_nearWhite,c_black,0.2);
 
 draw=function(){
 var _camX=0;//camX(); //drawing to surface not application_surface
@@ -37,7 +39,7 @@ switch (transition)
 			draw_set_alpha(image_alpha);
 			draw_set_color(c_black);
 			draw_rectangle(_camX,_camY,_camX+384,_camY+216,false);
-			draw_set_color(c_nearWhite);
+			draw_set_color(whiteCol);
 			draw_set_alpha(image_alpha*image_alpha);
 			draw_rectangle(_camX,_camY,_camX+384,_camY+216,false);
 			draw_set_color(c_white);
@@ -46,7 +48,7 @@ switch (transition)
 		else
 		{
 			draw_set_alpha(image_alpha);
-			draw_set_color(c_nearWhite);
+			draw_set_color(whiteCol);
 			draw_rectangle(_camX,_camY,_camX+384,_camY+216,false);
 			draw_set_alpha(1);
 			draw_set_color(c_white);
@@ -55,7 +57,7 @@ switch (transition)
 	case transitions.whiteSudden:
 	case transitions.whiteToWhite:
 		draw_set_alpha(image_alpha);
-		draw_set_color(c_nearWhite);
+		draw_set_color(whiteCol);
 		draw_rectangle(_camX,_camY,_camX+384,_camY+216,false);
 		draw_set_alpha(1);
 		draw_set_color(c_white);

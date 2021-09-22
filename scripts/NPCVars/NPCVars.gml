@@ -157,6 +157,9 @@ function npcAnimVars(){
 	};
 	
 	stateToAnim=array_create(20,"standing"); //array mapping state to animation name
+	
+	stateToAnim[moveState.running]="walking";
+	stateToAnim[moveState.jumping]="jumping";
 }
 
 function npcAnimation(){

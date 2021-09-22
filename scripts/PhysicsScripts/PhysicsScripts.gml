@@ -53,7 +53,7 @@ function physics(){
 	repeat abs(round(hsp))
 	{
 		x+=sign(hsp);
-		if object_index==ply&&goingFast destroyBreakables();
+		if object_index==ply&&goingFast destroyBreakables(oBreakableGlass);
 		if groundCollision(x,y) //horizontally moving into collision
 		{
 			if !groundCollision(x,y-maxYChange)&&groundCollision(x-sign(hsp),y+1) //moving up slope
@@ -92,7 +92,7 @@ function physics(){
 	repeat abs(round(vsp))
 	{
 		y+=sign(vsp);
-		if object_index==ply&&goingFast&&abs(vsp)>=1 destroyBreakables();
+		if object_index==ply&&goingFast&&abs(vsp)>=1 destroyBreakables(oBreakableGlass);
 		if groundCollision(x,y)&&state!=moveState.floating
 		{
 			if vsp<0&&(!groundCollision(x+xscale*maxXChange,y)||!groundCollision(x-xscale*maxXChange,y)) //corner correction
@@ -185,7 +185,7 @@ function grapplePhysics(){
 			repeat abs(hsp)
 			{
 				x+=sign(hsp);
-				destroyBreakables();
+				destroyBreakables(oBreakableGlass);
 				if groundCollision(x,y)
 				{
 					if !groundCollision(x,y-maxYChange-1)
@@ -220,7 +220,7 @@ function grapplePhysics(){
 			else repeat abs(vsp)
 			{
 				y+=sign(vsp);
-				destroyBreakables();
+				destroyBreakables(oBreakableGlass);
 				if groundCollision(x,y)
 				{
 					if !groundCollision(x-maxYChange-1,y)
@@ -259,7 +259,7 @@ function grapplePhysics(){
 		repeat vsp
 		{
 			y+=sign(vsp);
-			destroyBreakables();
+			destroyBreakables(oBreakableGlass);
 			
 			if groundCollision(x,y)
 			{

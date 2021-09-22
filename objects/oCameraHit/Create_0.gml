@@ -1,0 +1,2 @@
+camXPos=x;
+camYPos=y;
