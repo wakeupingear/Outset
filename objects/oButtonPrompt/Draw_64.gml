@@ -14,6 +14,6 @@ if !global.controllerConnected
 	}
 	
 	surface_set_target(global.guiSurf);
-	draw_text_outline(toGuiX(x)-strLen,toGuiY(y),str);
+	draw_text_outline_transformed_color(toGuiX(x)-strLen,toGuiY(y),str,c_nearWhite,c_nearWhite,image_alpha,c_nearBlack,c_nearBlack,image_alpha,6*global.guiScale,12,1,1,0);
 	surface_reset_target();
 }

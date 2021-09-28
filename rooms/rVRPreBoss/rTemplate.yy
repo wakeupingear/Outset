@@ -75,7 +75,7 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_208D6E66","path":"rooms/rTemplate42/rTemplate42.yy",},
+    {"name":"inst_208D6E66","path":"rooms/rTemplate/rTemplate.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -103,7 +103,7 @@
     "path": "folders/Rooms.yy",
   },
   "resourceVersion": "1.0",
-  "name": "rTemplate42",
+  "name": "rTemplate",
   "tags": [],
   "resourceType": "GMRoom",
 }

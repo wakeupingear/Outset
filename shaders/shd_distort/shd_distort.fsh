@@ -6,8 +6,8 @@ uniform sampler2D distortion_texture_page; // the name of the surface in the sha
 void main()
 {
     // find the offset colour for this location (this is where the magic happens) 
-    vec2 distort_amount = vec2( (v_vColour * texture2D( distortion_texture_page, v_vTexcoord)).xy);
-
+    vec4 distort_data = vec4( (v_vColour * texture2D( distortion_texture_page, v_vTexcoord)).xyzw);
+	vec2 distort_amount=vec2(distort_data.xy);
 	
     // FOR NORMAL MAPS:  (	either directX or OpenGL flip the green channel, 
     //			while you dont need to worry about it in GM more 
@@ -20,6 +20,6 @@ void main()
     distort_amount /= 7.0;
 
 
-    gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord+distort_amount);
+    gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord+distort_amount*distort_data.a);
 
 }

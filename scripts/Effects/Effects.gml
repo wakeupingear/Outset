@@ -1,5 +1,7 @@
 function particle(x,y,depth,sprite,ind,struct){
-	var _p=instance_create_depth(x,y,depth,oParticle);
+	var _objInd=oParticle;
+	if variable_struct_exists(struct,"distort") _objInd=oParticleDistort;
+	var _p=instance_create_depth(x,y,depth,_objInd);
 	_p.sprite_index=sprite;
 	_p.image_index=ind;
 	setObjFromStruct(_p,struct);

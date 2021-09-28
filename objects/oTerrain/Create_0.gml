@@ -13,7 +13,7 @@ deathDistMax=370;
 deathDist=(!global.alive)*deathDistMax;
 
 roomType=0;
-colorData=[];
+colorData=array_create(30);
 terrainBlend=[0,0,0];
 addColorData=function(region,color,outlineCol){
 	if is_string(color) color=hex(color);
@@ -39,3 +39,8 @@ addColorData(worldRegion.testing,"333333","4C4C4C");
 roomRegion=worldRegion.notdon;
 var _n=room_get_name(room);
 if variable_struct_exists(global.rooms,_n) roomRegion=global.rooms[$ room_get_name(room)].region;
+
+//region specific variables
+vrAlpha=hasItem("iGrapple")*0.975;
+vrBlendInd=20;
+addColorData(vrBlendInd,"FFFFFF","FFFFFF");

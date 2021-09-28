@@ -1,5 +1,5 @@
 image_speed=0;
-image_alpha=0;
+image_alpha=0.1;
 mask_index=sPly;
 
 text=[];
@@ -124,7 +124,7 @@ leftShift=0;
 rightShift=0;
 
 //bars
-if instance_exists(oPopup)||mode<0
+if instance_exists(oPopup)||instance_exists(oVRBluescreen)||mode<0
 {
 	if barAlpha>0 barAlpha-=0.1;
 }

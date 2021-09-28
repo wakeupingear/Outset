@@ -52,6 +52,16 @@ points=ds_list_create();
 pullObj=ds_list_create();
 pullObjList=[oDroppedItem];
 
+grappleFireEffect=function(){
+	//particle(ply.x,ply.y,depth+1,sNormalRipple,0,{distort: true,xscale:0.1,yscale:0.1,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.15,followObj: ply});
+	rumbleStart(rumbleType.lightPulse);
+	hitPlaceMoved=false;
+	if place_meeting(x,y,oLadder) hitPlace=oLadder
+	else if place_meeting(x,y,grappleHit) hitPlace=instance_place(x,y,grappleHit);
+	else if place_meeting(x,y,npc)&&!place_meeting(x,y,enem) hitPlace=instance_place(x,y,npc);
+	else hitPlace=-1;
+}
+
 //step event is run by the player as a function to control the exact timing
 step=function(){ 
 if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
@@ -64,6 +74,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 	if buttonPressed(control.grapple)&&(buttonHold(control.up)||buttonHold(control.down))&&!_onGround&&(place_meeting(x,y,grappleHit)||place_meeting(x,y+ply.vsp*2,grappleHit))
 	{
 		ply.vsp=-5;
+		grappleFireEffect();
 	}
 	else if _onGround||upgrades[4]||(buttonHold(control.down)&&buttonPressed(control.grapple)&&upgrades[grappleState.down])
 	{
@@ -109,12 +120,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 		
 		if state==1
 		{
-			rumbleStart(rumbleType.lightPulse);
-			hitPlaceMoved=false;
-			if place_meeting(x,y,oLadder) hitPlace=oLadder
-			else if place_meeting(x,y,grappleHit) hitPlace=instance_place(x,y,grappleHit);
-			else if place_meeting(x,y,npc)&&!place_meeting(x,y,enem) hitPlace=instance_place(x,y,npc);
-			else hitPlace=-1;
+			grappleFireEffect();
 		}
 	}
 }
@@ -194,6 +200,7 @@ else if state==1 //move in direction
 	}
 	if state>1
 	{
+		particle(x,y,depth+1,sNormalRipple,0,{distort: true,xscale:0.1,yscale:0.1,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.15,followObj: id});
 		rumbleStart(rumbleType.lightPulse);
 		if instance_exists(followObj)&&object_is_ancestor(followObj.object_index,npc)&&!object_is_ancestor(followObj.object_index,enem)
 		{

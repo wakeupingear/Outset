@@ -20,11 +20,24 @@ if instance_exists(ply)
 	_py=ply.y;
 }
 
-if true //Distortion
+if ds_list_size(global.distortObj)>0 //Distortion
 {
 	if !surface_exists(distSurf) distSurf=surface_create(384,216)
 	surface_set_target(distSurf);
-	draw_clear_alpha(COLOUR_FOR_NO_MOVE,1);
+	draw_clear_alpha(COLOUR_FOR_NO_MOVE,0);
+	for (var i=0;i<ds_list_size(global.distortObj);i++)
+	{
+		if !instance_exists(global.distortObj[|i])
+		{
+			ds_list_delete(global.distortObj,i);
+			i--;
+			continue;
+		}
+		with global.distortObj[|i] draw_sprite_ext(sprite_index,image_index,x-camX(),y-camY(),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+	}
+	//gpu_set_blendmode(bm_subtract);
+	//with ply draw_sprite(sprite_index,image_index,x-camX(),y-camY());
+	//gpu_set_blendmode(bm_normal);
 	//if instance_exists(ply) draw_sprite(sNormalRipple,0,ply.x-camX(),ply.y-camY());
 	surface_reset_target();
 
@@ -34,9 +47,11 @@ if true //Distortion
 	surface_set_target(postProcessSurf);
 	draw_surface(application_surface,0,0);
 	shader_reset();
+	//draw_surface(distSurf,0,0)
 	removePPPart();
+	//with ply draw_sprite(sprite_index,image_index,x-camX(),y-camY());
 }
-else surface_free(_surf);
+else surface_free(distSurf);
 
 if !global.alive&&instance_exists(ply)&&abs(ply.x-(camX()+192))<300&&abs(ply.y-(camY()+108))<200
 {

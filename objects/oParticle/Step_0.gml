@@ -20,4 +20,9 @@ if alwaysMove||global.alive
 	{
 		if instance_exists(oTerrain) oTerrain.render=false;
 	}
+	if instance_exists(followObj)
+	{
+		x=followObj.x;
+		y=followObj.y;
+	}
 }

@@ -92,6 +92,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oSpike","path":"objects/oSpike/oSpike.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3221.0,"y":1309.0,"resourceVersion":"1.0","name":"inst_5A429C27","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oSpike","path":"objects/oSpike/oSpike.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3221.0,"y":1321.0,"resourceVersion":"1.0","name":"inst_6C0DE86B","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oSwitch","path":"objects/oSwitch/oSwitch.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2131.0,"y":1608.0,"resourceVersion":"1.0","name":"inst_5E2FF00A","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oMagnifyingGlass","path":"objects/oMagnifyingGlass/oMagnifyingGlass.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1294.0,"y":409.0,"resourceVersion":"1.0","name":"inst_3CD12EE4","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":600,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"player","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oSpike","path":"objects/oSpike/oSpike.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1418.0,"y":433.0,"resourceVersion":"1.0","name":"inst_5ED5C9DD","tags":[],"resourceType":"GMRInstance",},
@@ -2271,6 +2272,7 @@
     {"name":"inst_1A0053A","path":"rooms/rNotdon/rNotdon.yy",},
     {"name":"inst_46372A87","path":"rooms/rNotdon/rNotdon.yy",},
     {"name":"inst_6A173FC","path":"rooms/rNotdon/rNotdon.yy",},
+    {"name":"inst_3CD12EE4","path":"rooms/rNotdon/rNotdon.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

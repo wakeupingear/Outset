@@ -170,8 +170,12 @@ function setTextureBlendmode(){ //just for reference
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
 }
 
-
-
+//list
+function ds_list_deleteValue(list,val){
+	var _ind=ds_list_find_index(list,val);
+	if _ind>-1 ds_list_delete(list,_ind);
+	return _ind;
+}
 
 
 

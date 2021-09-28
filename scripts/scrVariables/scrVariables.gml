@@ -76,6 +76,8 @@ function scrVariables(){
 	global.soulDoors=ds_map_create(); //format: "roomName": [dieX,dieY,endRoom,endX,endY]
 	global.souldropCollect=ds_list_create(); //format: unique coin id
 	
+	global.distortObj=ds_list_create();
+	
 	global.scanList=ds_list_create(); //format: id
 	global.scanProgress=ds_map_create(); //formate: region -> count
 	for (var i=0;i<10;i++) global.scanProgress[? i]=0;
@@ -490,6 +492,8 @@ function scrVariables(){
 	global.particleSystems=ds_list_create();
 	
 	global.coinColorPoint=4280556782;
+	var _cp=[54,135,rVR1,1];
+	addDataPair("vrcp",_cp);
 	
 	global.alphabet=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 
 	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
@@ -587,10 +591,10 @@ function scrVariables(){
 		global.devTeleport=true;
 		global.devSkips=true;
 		addItem("iGrapple");
-		addItem("iGrappleArc");
-		addItem("iGrappleDown");
-		addItem("iSlate");
-		addItem("iSolitaire")
+		//addItem("iGrappleArc");
+		//addItem("iGrappleDown");
+		//addItem("iSlate");
+		//addItem("iSolitaire")
 		//addItem("iBeacon");
 		//addItem("iWrench1");
 		//addItem("iFormula");
@@ -606,7 +610,7 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rNotdon;
+		global.startRoom=rVRUnfinished;
 	}
 	
 	//npc sprite mask data

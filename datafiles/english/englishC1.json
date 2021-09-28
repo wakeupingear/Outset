@@ -162,6 +162,75 @@
         "$lastObj.button",7
     ],
 
+    "c1_vrBossIntro":[
+        60,
+        "?harold","COMRADE! HELLLLLLLP!",
+        "$cutsceneDelay",{"key":"c1_vrBossAwake","myRoom":"rVRBoss","condition":"plyBelow","args":[150]},
+        "$addData","oVRBossIntro"
+    ],
+    "c1_vrBossAwake":[
+        "?harold","YOU'VE BLOWN THE OPERATION!",
+        "$oVRBoss.phase",0,
+        20,
+        "$particle",[156,160,"people",{"sprite":"sNormalRipple","xscale":0.05,"yscale":0.05,"distort":true,"alpha":3,"fade":0.07,"xscaleSpd":0.05,"yscaleSpd":0.05}],
+        "$oVRBoss.alarm[4]",1,
+        30,
+        "$ply.impulse",[-12,-6],
+        "$shake",[2,2,20],
+        "$addData","oVRBossIntroFinished",
+        50,
+        "$ply.impulse",[1.5,0],
+        25,
+        "$oVRBoss.enemActive",true
+    ],
+
+    "c1_vrBossDefeat":[
+        "?harold","...It's over?",
+        20,
+        "$oBlockCrack.cracking",true,
+        60,
+        "$oCage.yTo",-100,
+        "$oVRBoss.xTo",360,
+        "$oVRBoss.yTo",-100,
+        40,
+        "$oDoorGlow.y",0,
+        "$oDoorGlow.alpha",1,
+        40,
+        "OH GOD NO THE CLASSIC SECOND PHAAAAAAAASE!!!",
+        "$addData","oVRBoss",
+        "$oVRFireUnfinishedAll.ySpd",-1,
+        "$shake",[1,1,20000],
+    ],
+
+    "c1_vrChaseStart":[
+        "?harold","COMRADE, THIS IS THE PART WHERE YOU KEEP RUNNING!!!",
+        "$trackObj.key","lmao"
+    ],
+    "c1_vrCaught":[
+        "$shake",[2,2,30],
+        "$ply.impulse",[-1,"vsp"],
+        60,
+        "Caught!",
+        "$oVRUnfinishedFireAll.speed",0,
+        "$particle",[522,82,"above",{"sprite":"sVRXPError","speed":0}],
+        90,
+        "$createLayer",[400,114,"above","oVRXPError"],
+        "$createLayer",[448,-15,"above","oVRXPError"],
+        "$createLayer",[589,179,"above","oVRXPError"],
+        "$createLayer",[656,32,"above","oVRXPError"],
+        90,
+        "$create",[0,0,-100000,"oVRBluescreen"],
+        "$roomChange",[195,238,"rHarold",5,0,0,-1],
+    ],
+    "c1_vrHarold":[
+        180,
+        "?harold","CRAP!",
+        "You were just getting to the awesome part where I rescue you with a GUN!",
+        "$oVRBluescreen.alarm[0]",1,
+        60,
+        "Alright get outta here!"
+    ],
+
     "c1_backpackRackBefore":[
         "$if1","hasData",["notBackCheck"],
         "#false1",

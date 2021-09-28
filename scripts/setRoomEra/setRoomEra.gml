@@ -55,6 +55,13 @@ function setRoomEra(){
 	}
 	switch room
 	{
+		case rVRPreBoss:
+			if hasData("oVRBoss")
+			{
+				shake(1,1,20000);
+				oVRFireUnfinished.xSpd=1.5;
+			}
+			break;
 		case rWastesHilltop:
 			if hasData("wBRack") with oWastesCrate 
 			{

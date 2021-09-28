@@ -115,11 +115,22 @@ switch (roomType)
 		break;
 	case worldRegion.testing:
 	case worldRegion.vr:
+		if vrAlpha<1&&(!instance_exists(oTextbox)||oTextbox.image_alpha==0)&&hasItem("iGrapple") 
+		{
+			if !instance_exists(oVRGrappleBG)
+			{
+				var _b=instance_create_layer(0,0,"bg2",oVRGrappleBG);
+			}
+			vrAlpha+=0.025;
+		}
 		shader_set(shd_outlineTerrain);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_pixel"),texture_get_texel_width(surface_get_texture(surf)),texture_get_texel_height(surface_get_texture(surf)));
-		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),colorData[worldRegion.notdon].outlineCol[0]*_col[0],colorData[worldRegion.notdon].outlineCol[1]*_col[1],colorData[worldRegion.notdon].outlineCol[2]*_col[2]);
-		image_blend=merge_color(c_white,global.scanColor,0.1);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_color"),
+			lerp(colorData[worldRegion.notdon].outlineCol[0]*_col[0],colorData[vrBlendInd].outlineCol[0]*_col[0],vrAlpha),
+			lerp(colorData[worldRegion.notdon].outlineCol[1]*_col[1],colorData[vrBlendInd].outlineCol[1]*_col[1],vrAlpha),
+			lerp(colorData[worldRegion.notdon].outlineCol[2]*_col[2],colorData[vrBlendInd].outlineCol[2]*_col[2],vrAlpha));
+		image_blend=merge_color(c_white,global.scanColor,0.15*vrAlpha);
 		if instance_exists(oTileCrack) oTileCrack.image_blend=image_blend;
 		break;
 	default: break;

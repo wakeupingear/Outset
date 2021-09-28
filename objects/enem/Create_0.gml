@@ -3,10 +3,11 @@ event_inherited();
 xscale=image_xscale;
 damage=1;
 attacking=true;
+enemHitTrigger=-1;
 
 animation.standing={type: animType.pingPong,startFrame: 0,endFrame:1,frameTime:12};
 
-if !object_is_ancestor(object_index,enemWall)
+if !isObj(id,enemWall)&&!isObj(id,boss)
 {
 	canDropSoul=true;
 	soulNum=2;

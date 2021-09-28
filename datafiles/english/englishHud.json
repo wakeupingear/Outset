@@ -65,7 +65,8 @@
             "Your trusty hook. Unlike people, it always comes back.",
             [
                 "Acquired the GRAPPLING HOOK!",
-                "$script","scrToggleVRCracks"
+                120,
+                "$script","scrToggleVRCracks",
             ]
         ],
         "iGrappleSwing":["","",""],

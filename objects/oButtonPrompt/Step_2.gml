@@ -6,17 +6,26 @@ if instance_exists(ply)
 	y=ply.y-20;
 }
 
-if autoDestory&&global.inputs[button]>holdTime
+if mode==0
 {
-	switch button
+	if image_alpha<1 image_alpha+=0.1;
+	else if autoDestory&&global.inputs[button]>holdTime
 	{
-		case control.select:
-			if mode==0
-			{
-				oInventory.contentMode=1;
-			}
-			break;
-		default: break;
+		switch button
+		{
+			case control.select:
+				if mode==0
+				{
+					oInventory.contentMode=1;
+				}
+				break;
+			default: break;
+		}
+		mode=-1;
 	}
-	instance_destroy();
+}
+else if mode==-1
+{
+	image_alpha-=0.1;
+	if image_alpha<=0 instance_destroy();
 }

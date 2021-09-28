@@ -37,8 +37,17 @@ function physics(){
 		state=moveState.jumping;
 		if groundCollision(x,y)
 		{
-			while groundCollision(x,y) y++
-			vsp=0
+			while groundCollision(x,y) y++;
+			vsp=0;
+			if state==moveState.jumping
+			{
+				var _pNum=8;
+				for (var i=0;i<_pNum;i++)
+				{
+					var _scale=1+(i%3==1);
+					particle(x+irandom_range(-4,4),y-2,depth+1,sPlaceholderPixelW,0,{alpha:1,hsp:hsp,spd:2,fade:0.1,dir:90+(i-floor(_pNum/2))*12+irandom_range(-8,8),xscale: _scale,yscale: _scale});
+				}
+			}
 			state=moveState.falling;
 		}
 	}
@@ -122,7 +131,10 @@ function physics(){
 				break;
 			}
 		}
-		else if state==moveState.jumping&&vsp>0 state=moveState.falling;
+		else if state==moveState.jumping&&vsp>0 
+		{
+			state=moveState.falling;
+		}
 	}
 	//if groundCollision(x,y-1) show_message(vsp)
 	
@@ -136,12 +148,19 @@ function physics(){
 	//reset running against a wall
 	if state==moveState.running&&hsp==0 state=moveState.standing;
 	
+	//particles
+	if state==moveState.running
+	{
+		runTrail(4);
+	}
+	
 	//check special collisions
 	if groundCollision(x,y,oGravityField)
 	{
 		var _f=instance_place(x,y,oGravityField);
 		if _f.pause==-1
 		{
+			particle(x,y+sign(vsp)*4,depth+1,sNormalRipple,0,{distort: true,xscale:0.05,yscale:0.05,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.05});
 			impulse(_f.xDir,_f.yDir,id);
 		}
 	}
@@ -212,6 +231,8 @@ function grapplePhysics(){
 					}
 				}
 			}
+			
+			if groundCollision(x,y+1) runTrail(4);
 		}
 		else //up
 		{

@@ -34,4 +34,9 @@ if lastActive!=active
 	}
 }
 
+if !visible for (var i=0;i<array_length(parts);i++)
+{
+	if parts[i]!=-1&&instance_exists(parts[i]) parts[i].image_blend=image_blend;
+}
+//if instance_exists(oTerrain) image_blend=merge_color(c_white,global.scanColor,0.15*oTerrain.vrAlpha);
 //if mouse_check_button_pressed(mb_left) active=!active;

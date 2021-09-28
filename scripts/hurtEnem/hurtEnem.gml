@@ -1,5 +1,5 @@
 function hurtEnem(_id,_damage){
-	with _id
+	with _id if image_blend!=c_red
 	{
 		myHealth-=_damage;
 		setAnimation("attacked",animation);
@@ -13,7 +13,7 @@ function hurtEnem(_id,_damage){
 			{
 				attacking=false;
 				enemActive=false;
-				alarm[1]=dieDelay;
+				alarm[2]=dieDelay;
 			}
 			else switch object_index
 			{
@@ -50,5 +50,6 @@ function hurtEnem(_id,_damage){
 					break;
 			}
 		}
+		else if enemHitTrigger!=-1 enemHitTrigger();
 	}
 }

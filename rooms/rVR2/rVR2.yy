@@ -42,7 +42,9 @@
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"ply","path":"objects/ply/ply.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":493.0,"y":-12.0,"resourceVersion":"1.0","name":"inst_208D6E66","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":400,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"player","tags":[],"resourceType":"GMRInstanceLayer",},
-    {"instances":[],"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"people","tags":[],"resourceType":"GMRInstanceLayer",},
+    {"instances":[
+        {"properties":[],"isDnd":false,"objectId":{"name":"oDoorGlow","path":"objects/oDoorGlow/oDoorGlow.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":90.0,"scaleX":-1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":54.0,"y":216.0,"resourceVersion":"1.0","name":"inst_4B21BDF8","tags":[],"resourceType":"GMRInstance",},
+      ],"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"people","tags":[],"resourceType":"GMRInstanceLayer",},
     {"assets":[
         {"spriteId":{"name":"sVRTerrain","path":"sprites/sVRTerrain/sVRTerrain.yy",},"headPosition":1.0,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"animationSpeed":0.0,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"graphic_329FCEC3","tags":[],"resourceType":"GMRSpriteGraphic",},
       ],"visible":true,"depth":600,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"terrain","tags":[],"resourceType":"GMRAssetLayer",},
@@ -81,6 +83,7 @@
     {"name":"inst_208D6E66","path":"rooms/rVR2/rVR2.yy",},
     {"name":"inst_66C9C260","path":"rooms/rVR2/rVR2.yy",},
     {"name":"inst_5E464F8D","path":"rooms/rVR2/rVR2.yy",},
+    {"name":"inst_4B21BDF8","path":"rooms/rVR2/rVR2.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

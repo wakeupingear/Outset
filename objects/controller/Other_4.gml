@@ -194,6 +194,17 @@ switch room //skybox/specific configs
 	case rNotdon:
 		instance_create_layer(0,0,"bg",oSkyNotdon);
 		break;
+	case rVR1:
+	case rVR2:
+	case rVR3:
+	case rVR4:
+	case rVR5:
+	case rVR6:
+	case rVR7:
+	case rVR8:
+	case rVRPreBoss:
+	case rVRBoss:
+		instance_create_layer(0,0,"bg",oVRSkybox);
 	case rIsland:
 		instance_create_layer(0,0,"bg",oSkyIsland);
 		break;
@@ -207,6 +218,5 @@ switch room //skybox/specific configs
 		break;
 	default: break;
 }
-
 //discord
 if !isHtml&&os_type!=os_linux setDiscordStatus();

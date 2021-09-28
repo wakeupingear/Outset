@@ -33,13 +33,14 @@ function setTerrain(){
 			for (var k=0;k<array_length(_layers);k++)
 			{
 				var _currentTerrain=_t;
+				var _name=layer_get_name(_layers[k]);
 				var _assets=layer_get_all_elements(_layers[k]);
-				var _isEraTerrain=(string_pos("hit",string_lower(layer_get_name(_layers[k])))>0);
+				var _isEraTerrain=(string_pos("hit",string_lower(_name))>0);
+				var _isSprites=(_name=="terrainSprites");
 				if array_length(_assets)>0
 				{
 					var _objType=hitobj;
 					if _isEraTerrain _objType=oTerrainHitobj;
-					var _name=layer_get_name(_layers[k]);
 					var _nameNum=string_digits(_name)
 					if _nameNum!=""&&string_letters(_name)=="terrain"
 					{
@@ -58,9 +59,18 @@ function setTerrain(){
 						_i.image_xscale=layer_sprite_get_xscale(_assets[i]);
 						_i.image_yscale=layer_sprite_get_yscale(_assets[i]);
 						_i.image_angle=layer_sprite_get_angle(_assets[i]);
-						_i.visible=false;
 						layer_sprite_alpha(_assets[i],0);
-						ds_list_add(_currentTerrain.terrain,_i);
+						if _isSprites
+						{
+							_i.image_alpha=1;
+							_i.image_speed=1;
+							_i.visible=true;
+						}
+						else
+						{
+							_i.visible=false;
+							ds_list_add(_currentTerrain.terrain,_i);
+						}
 					}
 				}
 				if _isEraTerrain layer_set_visible(_layers[k],false);
