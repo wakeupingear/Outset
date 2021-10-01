@@ -32,11 +32,5 @@ if !instance_exists(oPlayerMove) npcAnimation();
 
 if goingFast
 {
-	var _pNum=4;
-	if global.roomTime%_pNum==0
-	{
-		var _blend=c_white;
-		//if global.roomTime%(_pNum*2)==0 _blend=c_orange;
-		particle(x,y,depth+1,sprite_index,image_index,{xscale: xscale, yscale: yscale,alpha:0.75,fade:0.07, blend: _blend});
-	}
+	ghostTrail(x,y,4,depth+1,sprite_index,image_index,{xscale:xscale,yscale:yscale,alwaysMove: true,fade: 0.07-(!global.alive)*0.05});
 }

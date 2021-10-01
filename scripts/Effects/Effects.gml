@@ -22,3 +22,11 @@ function circularParticle(x,y,depth,struct){
 	setObjFromStruct(_p,struct);
 	return _p;
 }
+
+function ghostTrail(x,y,frameOffset,depth,sprite,ind,struct){
+	if global.roomTime%frameOffset==0
+	{
+		var _p=particle(x,y,depth,sprite_index,image_index,{alpha:0.75,fade:0.07});
+		if !is_undefined(struct) setObjFromStruct(_p,struct);
+	}
+}

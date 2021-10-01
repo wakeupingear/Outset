@@ -6,7 +6,8 @@ function setTerrain(){
 		var _depth=10000;
 		for (var i=0;i<array_length(_layerNames);i++)
 		{
-			if layer_get_visible(_layerNames[i])&&string_pos("terrain",string_lower(layer_get_name(_layerNames[i])))>0
+			var _n=string_lower(layer_get_name(_layerNames[i]));
+			if _n=="terrain"||(layer_get_visible(_layerNames[i])&&string_pos("terrain",_n)>0)
 			{
 				array_push(_layers,_layerNames[i]);
 				if layer_get_depth(_layerNames[i])<_depth _depth=layer_get_depth(_layerNames[i]);
@@ -73,6 +74,7 @@ function setTerrain(){
 						}
 					}
 				}
+				_currentTerrain.visible=layer_get_visible(_layers[k]);
 				if _isEraTerrain layer_set_visible(_layers[k],false);
 			}
 		}

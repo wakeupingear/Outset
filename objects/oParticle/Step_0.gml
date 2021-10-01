@@ -25,4 +25,6 @@ if alwaysMove||global.alive
 		x=followObj.x;
 		y=followObj.y;
 	}
+	
+	if ghost ghostTrail(x,y,ghostFrameOffset,ghostDepth,sprite_index,image_index,{angle:image_angle,xscale:image_xscale,yscale:image_yscale});
 }

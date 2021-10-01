@@ -1,15 +1,15 @@
-function addItem(item){
-	if !is_array(item)
+function addItem(item,showFanfare){
+	if is_array(item) var _item=item[0];
+	else var _item=item;
+	if is_undefined(showFanfare)||!showFanfare
 	{
-		var _item=item;
 		processItem(_item);
 	}
 	else
 	{
-		var _item=item[0];
 		processItem(_item);
 		if instance_exists(oGrapple) with oGrapple event_user(0); //set upgrade variables
-		if array_length(item)>1 
+		//if array_length(item)>1 
 		{
 			var _itemText=textLoad("itemText");
 			if variable_struct_exists(_itemText,_item) _itemText=_itemText[$ _item];

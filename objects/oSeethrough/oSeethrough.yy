@@ -4,7 +4,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oBuilding",
+    "path": "objects/oBuilding/oBuilding.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

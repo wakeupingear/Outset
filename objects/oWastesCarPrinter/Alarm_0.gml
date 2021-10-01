@@ -1,6 +1,6 @@
 /// @description Check car
 
-if hasData("wCar")&&!instance_exists(oWastesCar)
+//if hasData("wCar")&&!instance_exists(oWastesCar)
 {
 	key="wastes_carPrinter"
 }

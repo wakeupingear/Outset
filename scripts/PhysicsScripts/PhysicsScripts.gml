@@ -33,7 +33,7 @@ function physics(){
 	{
 		coyote=0;
 		vsp=-(jumpSpd+jumpAdd-(power(jump,1.75)/jumpHoldTime)*global.grav);
-		y+=vsp
+		y+=vsp;
 		state=moveState.jumping;
 		if groundCollision(x,y)
 		{
@@ -41,11 +41,12 @@ function physics(){
 			vsp=0;
 			if state==moveState.jumping
 			{
-				var _pNum=8;
+				var _isPly=isObj(id,ply);
+				var _pNum=8*(isInRange(x,y));
 				for (var i=0;i<_pNum;i++)
 				{
 					var _scale=1+(i%3==1);
-					particle(x+irandom_range(-4,4),y-2,depth+1,sPlaceholderPixelW,0,{alpha:1,hsp:hsp,spd:2,fade:0.1,dir:90+(i-floor(_pNum/2))*12+irandom_range(-8,8),xscale: _scale,yscale: _scale});
+					particle(x+irandom_range(-4,4),y-2,depth+1,sPlaceholderPixelW,0,{alpha:1,hsp:hsp,spd:2,fade:0.1,dir:90+(i-floor(_pNum/2))*12+irandom_range(-8,8),xscale: _scale,yscale: _scale,alwaysMove: _isPly});
 				}
 			}
 			state=moveState.falling;
@@ -160,7 +161,7 @@ function physics(){
 		var _f=instance_place(x,y,oGravityField);
 		if _f.pause==-1
 		{
-			particle(x,y+sign(vsp)*4,depth+1,sNormalRipple,0,{distort: true,xscale:0.05,yscale:0.05,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.05});
+			particle(x,y+sign(vsp)*4,depth+1,sNormalRipple,0,{distort: true,xscale:0.05,yscale:0.05,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.05,alwaysMove: (isObj(id,ply))});
 			impulse(_f.xDir,_f.yDir,id);
 		}
 	}

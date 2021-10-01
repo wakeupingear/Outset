@@ -16,5 +16,8 @@ isHit=false; //should be textured as terrain
 alwaysMove=false; //move even when dead
 angSpd=0; //angular speed
 followObj=noone;
+ghost=false; //ghostParticle
+ghostFrameOffset=4;
+ghostDepth=depth+1;
 
 startOffscreen=true; //whether it starts offscreen

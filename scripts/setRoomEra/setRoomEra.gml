@@ -59,7 +59,7 @@ function setRoomEra(){
 			if hasData("oVRBoss")
 			{
 				shake(1,1,20000);
-				oVRFireUnfinished.xSpd=1.5;
+				oVRUnfinishedFire.xSpd=1.5;
 			}
 			break;
 		case rWastesHilltop:

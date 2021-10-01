@@ -370,7 +370,7 @@ function commandProcess(command){
 							_obj.text=[];
 							break;
 						case "speed":
-							_obj.image_speed=_val;
+							with _obj image_speed=_val;
 							break;
 						case "setText":
 							if is_array(_val) _obj.text=_val;
@@ -462,7 +462,7 @@ function commandProcess(command){
 							break;
 						//data
 						case "addItem":
-							addItem(_val);
+							addItem(_val,true);
 							saved=true;
 							command=text;
 							break;

@@ -198,7 +198,7 @@
         40,
         "OH GOD NO THE CLASSIC SECOND PHAAAAAAAASE!!!",
         "$addData","oVRBoss",
-        "$oVRFireUnfinishedAll.ySpd",-1,
+        "$oVRUnfinishedFireAll.ySpd",-1,
         "$shake",[1,1,20000],
     ],
 
@@ -212,7 +212,9 @@
         60,
         "Caught!",
         "$oVRUnfinishedFireAll.speed",0,
-        "$particle",[522,82,"above",{"sprite":"sVRXPError","speed":0}],
+        "$createLayer",[522,82,"above","oVRXPError"],
+        "$lastObj.index",0,
+        "$lastObj.alarm[1]",-1,
         90,
         "$createLayer",[400,114,"above","oVRXPError"],
         "$createLayer",[448,-15,"above","oVRXPError"],
@@ -229,6 +231,21 @@
         "$oVRBluescreen.alarm[0]",1,
         60,
         "Alright get outta here!"
+    ],
+
+    "harold_vrFire":[
+        "The VR SYSTEM is slightly overheating.",
+        "$trackObj.key","harold_vrFire2"
+    ],
+    "harold_vrFire2":[
+        "It occurs to you that this fire is spewing toxic plastic fumes.",
+        "...You notice a sign on the wall",
+        "CONTROLLED BURN - EVERYTHING IS FINE!!!",
+        "Ah, that's good to hear.",
+        "$trackObj.key","harold_vrFire3"
+    ],
+    "harold_vrFire3":[
+        "This is fine."
     ],
 
     "c1_backpackRackBefore":[

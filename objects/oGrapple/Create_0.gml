@@ -16,6 +16,7 @@ grappleDist=80; //max distance
 grappleTime=0; //time that the grapple has been moving/pulling
 grappleReach=3; //final reach distance
 grappleSpd=6; //initial movement speed
+grapplePlyXoff=3; //starting xoff from player (used when grappling up against a wall to compensate for xorigin)
 grapplePlyYoff=3; //starting yoff from player
 distIntoWall=6; //dist moved horizontal/vertical into the wall
 followObj=-1;
@@ -62,19 +63,29 @@ grappleFireEffect=function(){
 	else hitPlace=-1;
 }
 
+grappleCollideEffect=function(){
+	particle(x,y,depth+1,sNormalRipple,0,{distort: true,xscale:0.1,yscale:0.1,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.15,followObj: id, alwaysMove: true});
+	rumbleStart(rumbleType.lightPulse);
+	if instance_exists(followObj)&&object_is_ancestor(followObj.object_index,npc)&&!object_is_ancestor(followObj.object_index,enem)
+	{
+		with followObj event_user(1);
+	}
+}
+
 //step event is run by the player as a function to control the exact timing
 step=function(){ 
 if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 {
 	xDir=0;
 	yDir=0;
-	x=ply.x-(ply.xscale==1);
+	x=ply.x;
+	grapplePlyXoff=0;
 	y=ply.y+grapplePlyYoff;
 	var _onGround=(ply.state<=moveState.running||ply.state==moveState.zipline);
 	if buttonPressed(control.grapple)&&(buttonHold(control.up)||buttonHold(control.down))&&!_onGround&&(place_meeting(x,y,grappleHit)||place_meeting(x,y+ply.vsp*2,grappleHit))
 	{
 		ply.vsp=-5;
-		grappleFireEffect();
+		grappleCollideEffect();
 	}
 	else if _onGround||upgrades[4]||(buttonHold(control.down)&&buttonPressed(control.grapple)&&upgrades[grappleState.down])
 	{
@@ -113,8 +124,21 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 			{
 				state=1;
 				grappleMode=grappleState.pull;
-				if buttonHold(control.up) yDir=-1; //up
+				if buttonHold(control.up) 
+				{
+					if ply.xscale==1
+					{
+						grapplePlyXoff=-1;
+					}
+					else 
+					{
+						grapplePlyXoff=0;
+					}
+					x+=grapplePlyXoff;
+					yDir=-1; //up
+				}
 				else xDir=ply.xscale; //left/right
+				
 			}
 		}
 		
@@ -200,12 +224,7 @@ else if state==1 //move in direction
 	}
 	if state>1
 	{
-		particle(x,y,depth+1,sNormalRipple,0,{distort: true,xscale:0.1,yscale:0.1,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.15,followObj: id});
-		rumbleStart(rumbleType.lightPulse);
-		if instance_exists(followObj)&&object_is_ancestor(followObj.object_index,npc)&&!object_is_ancestor(followObj.object_index,enem)
-		{
-			with followObj event_user(1);
-		}
+		grappleCollideEffect();
 	}
 }
 else if state==2 //pull player

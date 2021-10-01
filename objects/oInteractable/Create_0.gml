@@ -5,4 +5,6 @@ isHit=false;
 onlyAlive=false;
 lastSentence=-1;
 hit=-1;
+isEventObj=false;
+args=[];
 alarm[0]=1;

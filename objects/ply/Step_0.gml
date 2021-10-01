@@ -67,6 +67,30 @@ else if visible&&!global.menuOpen&&!global.transitioning&&global.alive&&ds_list_
 						case "iLavaSwitch":
 							scrToggleLava();
 							break;
+						case "iCarPoster":
+							if global.rooms[$ room_get_name(room)].inside||place_meeting(x,y,oBuilding)
+							{
+								removeItem("iCarPoster");
+								var _args=[sItems,18,1,1,0,-1,1,0,"wastes_carPoster",0];
+								var _i=instance_create_layer(x,y-10,"people",oInteractable);
+								_i.args=_args;
+								with _i
+								{
+									visible=true;
+									sprite_index=args[0];
+									image_index=args[1];
+									image_xscale=args[2];
+									image_yscale=args[3];
+									image_angle=args[4];
+									image_blend=args[5];
+									image_alpha=args[6];
+									image_speed=args[7];
+									self.key=args[8];
+									check=args[9];
+								}
+								eventAddObject(oInteractable,room,_i.x,_i.y,"people",_args);
+							}
+							break;
 						case "iFormula":
 							killPlayer();
 							break;

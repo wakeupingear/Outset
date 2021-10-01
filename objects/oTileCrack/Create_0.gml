@@ -14,13 +14,15 @@ destFrames=[1,sprite_get_number(sprite_index)];
 createParticle=function(i,_spd,_dist){
 	_dist=min(_dist,440);
 	var _ang=(i)/(destFrames[1]-destFrames[0])*360+irandom_range(-22,22);
-			parts[i]=particle(xstart+lengthdir_x(_dist,_ang),ystart+lengthdir_y(_dist,_ang),i,sprite_index,i+1,{
-				fade: 0,
-				dir: _ang,
-				spd: _spd,
-				angSpd: 2*sign(_spd),
-			});
-			parts[i].image_xscale=image_xscale;
-			parts[i].image_yscale=image_yscale;
-			parts[i].image_angle=image_angle;
+	parts[i]=particle(xstart+lengthdir_x(_dist,_ang),ystart+lengthdir_y(_dist,_ang),depth+1,sprite_index,i+1,{
+		fade: 0,
+		dir: _ang,
+		spd: _spd,
+		angSpd: 2*sign(_spd),
+		xscale:image_xscale,
+		yscale:image_yscale,
+		angle:image_angle,
+		ghost: true,
+		ghostFrameOffset:6
+	});
 }

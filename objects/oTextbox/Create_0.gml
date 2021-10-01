@@ -124,7 +124,8 @@ leftShift=0;
 rightShift=0;
 
 //bars
-if instance_exists(oPopup)||instance_exists(oVRBluescreen)||mode<0
+if instance_exists(oVRBluescreen)||instance_exists(oVRXPError) barAlpha=0;
+else if instance_exists(oPopup)||mode<0
 {
 	if barAlpha>0 barAlpha-=0.1;
 }

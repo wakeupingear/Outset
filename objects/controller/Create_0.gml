@@ -350,6 +350,24 @@ persistentEventsSet=function(key){
 					//_d.persistent=(key=="any"); //to simplify this, the "any" event is run after every room so persistance is irrelevent
 				}
 				break;
+			case oInteractable:
+				var _i=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,oInteractable);
+				_i.args=_arr[i+4];
+				with _i
+				{
+					visible=true;
+					sprite_index=args[0];
+					image_index=args[1];
+					image_xscale=args[2];
+					image_yscale=args[3];
+					image_angle=args[4];
+					image_blend=args[5];
+					image_alpha=args[6];
+					image_speed=args[7];
+					self.key=args[8];
+					check=args[9];
+				}
+				break;
 			default:
 				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,_arr[i]);
 				//_d.depth--; //screws up layering, causing crashes

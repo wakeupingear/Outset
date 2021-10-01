@@ -45,7 +45,7 @@ deadReturn=function(){
 	instance_destroy(oCage);
 	instance_destroy(oBlockCrack,false);
 	oDoorGlow.y=0;
-	oVRFireUnfinished.ySpd=-1;
+	oVRUnfinishedFire.ySpd=-1;
 	shake(1,1,20000);
 	phase=2;
 	setBlocks();

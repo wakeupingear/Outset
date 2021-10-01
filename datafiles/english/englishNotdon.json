@@ -39,6 +39,15 @@
         "It's called a... catapult?"
     ],
 
+    "harold_serverDoor":[
+        "$if1","alive",
+        "#false1",
+            "$roomChange",[656,375,"rHaroldServer",0,0,0,-1],
+            "end",
+        "#true1",
+            "As you start to push the door open, an unseen force pushes back from the other side.",
+    ],
+
     "notdon_mykoObservatory":[
         "$popup",{"sprite":"sMykoObservatoryPhoto"},
         "$popup",{"sprite":"sMykoObservatoryPhoto","index":1},
