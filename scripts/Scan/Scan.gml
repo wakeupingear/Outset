@@ -59,7 +59,9 @@ function scanDraw(){
 					angle:_ang,
 					yscale:0,
 					yscaleSpd:0.075,
-					yscaleMax:1
+					yscaleMax:1,
+					ghost: true,
+					ghostFrameOffset: 10
 				});
 				if global.currentChapter==chapters.c1&&_region==worldRegion.notdon&&global.scanProgress[? _region]==1
 				{

@@ -5,28 +5,32 @@ if keyboard_check_pressed(vk_enter)
 	if string_letters(keyboard_string)!=""
 	{
 		ds_list_add(commands,keyboard_string);
-		var _lower=string_replace_all(string_lower(keyboard_string)," ","");
-		if string_pos("tp",_lower)==1
+		var _arr=explodeString(" ",keyboard_string);
+		var _lower=string_lower(_arr[0]);
+		switch _lower
 		{
-			var _coords=explodeString(" ",_lower);
-			if instance_exists(ply)
-			{
-				try
+			case "echo":
+				ds_list_add(commands,_arr[1]);
+				break;
+			case "fps":
+				game_set_speed(_arr[1],gamespeed_fps);
+				break;
+			case "tp":
+				if instance_exists(ply)
 				{
-					ply.x=real(_coords[1]);
-					ply.y=real(_coords[2]);
-					instance_destroy();
+					try
+					{
+						ply.x=real(_arr[1]);
+						ply.y=real(_arr[2]);
+						oCamera.x=ply.x;
+						oCamera.y=ply.y;
+						oCamera.xTo=oCamera.x;
+						oCamera.yTo=oCamera.y;
+						instance_destroy();
+					}
+					catch (e) show_debug_message("ERROR: invalid coords");
 				}
-				catch (e) show_debug_message("ERROR: invalid coords");
-			}
-		}
-		else if string_pos("echo",_lower)==1
-		{
-			keyboard_string=string_copy(keyboard_string,6,string_length(keyboard_string)-5);
-			ds_list_add(commands,keyboard_string);
-		}
-		else switch _lower
-		{
+				break;
 			case "pp":
 				controller.pp=!controller.pp;
 				instance_destroy();
@@ -44,6 +48,19 @@ if keyboard_check_pressed(vk_enter)
 			case "kill":
 				killPlayer();
 				instance_destroy();
+				break;
+			case "add":
+			case "item":
+			case "additem":
+				if !ds_map_exists(global.itemData,_arr[1])
+				{
+					ds_list_add(commands,"Item doesn't exist");
+				}
+				else
+				{
+					addItem(_arr[1],false);
+					instance_destroy();
+				}
 				break;
 			case "respawn":
 				if global.alive
@@ -82,31 +99,22 @@ if keyboard_check_pressed(vk_enter)
 				}
 				break;
 			case "restart":
-			{
 				game_restart();
 				break;
-			}
 			case "reload":
-			{
 				global.devTeleport=true;
 				room_restart();
 				instance_destroy();
 				break;
-			}
 			case "coord":
 			case "coords":
-			{
 				ds_list_add(commands,"X: "+string(ply.x)+"; Y: "+string(ply.y));
 				break;
-			}
 			case "quit":
 			case "exit": 
-			{
 				game_end();
 				break;
-			}
 			default:
-			{
 				if ds_map_exists(rooms,keyboard_string)
 				{
 					global.devTeleport=true;
@@ -158,7 +166,6 @@ if keyboard_check_pressed(vk_enter)
 					}
 				}
 				break;
-			}
 		}
 	}
 	keyboard_string="";

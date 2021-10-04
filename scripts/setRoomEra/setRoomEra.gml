@@ -4,6 +4,7 @@ function setRoomEra(){
 	var _r=global.rooms[$ room_get_name(room)].region;
 	var _pos=global.notdonEra
 	ds_list_add(_eras,"mykoEra","pro1","pro2","pro3","present","future"); //all era layer phrases
+	var _layers=layer_get_all();
 	//default layers apply to most areas that don't have separate era variables
 	switch (_r)
 	{
@@ -17,7 +18,7 @@ function setRoomEra(){
 	
 	if _pos>-1
 	{
-		var _layers=layer_get_all(); //set current era layer to active
+		//set current era layer to active
 		for (var i=0;i<array_length(_layers);i++)
 		{
 			if string_pos(_eras[|_pos],string_lower(layer_get_name(_layers[i])))>0||layer_get_name(_layers[i])=="mykoSpawn"
@@ -62,6 +63,13 @@ function setRoomEra(){
 				oVRUnfinishedFire.xSpd=1.5;
 			}
 			break;
+		case rVRUnfinished:
+			if hasData("vrChase") 
+			{
+				instance_create_layer(0,0,"people",oVRChaseBoss);
+				scrToggleVRCracks();
+			}
+			break;
 		case rWastesHilltop:
 			if hasData("wBRack") with oWastesCrate 
 			{
@@ -75,4 +83,22 @@ function setRoomEra(){
 			instance_create_depth(0,0,layer_get_depth(layer_get_name("bg")),oAirFloat);
 		default: break;
 	}
+	
+	_layers=layer_get_all();
+	//find animating tilesets
+	for (var i=0;i<array_length(_layers);i++)
+	{
+		if !layer_get_visible(_layers[i])||string_pos("Tile",layer_get_name(_layers[i]))==0 continue;
+		var _tileID=layer_tilemap_get_id(_layers[i]);
+		var _tileSet=tilemap_get_tileset(_tileID);
+		for (var k=0;k<array_length(validAnimatingTiles);k++)
+		{
+			if _tileSet==validAnimatingTiles[k][0]
+			{
+				ds_list_add(animatedTiles,[_layers[i],k]);
+				break;
+			}
+		}
+	}
+	setTileAnimations(global.alive);
 }

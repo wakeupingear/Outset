@@ -29,8 +29,7 @@ function addItem(item,showFanfare){
 			return _itemText[2];
 		}
 	}
-	
-	
+	if _item=="iGrapple"&&!instance_exists(oGrapple)&&instance_exists(ply) instance_create_depth(ply.x,ply.y,depth-1,oGrapple);
 	if instance_exists(oGrapple) with oGrapple event_user(0); //set upgrade variables
 	if instance_exists(ply) with ply event_user(0);
 }

@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oSeethrough",
+    "path": "objects/oSeethrough/oSeethrough.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

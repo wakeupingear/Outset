@@ -42,4 +42,6 @@ function respawn(xPos,yPos){
 	_p.yscale=_ys;
 		
 	if hasData("reacSt") instance_activate_object(oSouldropCoin);
+	
+	with controller setTileAnimations(true);
 }

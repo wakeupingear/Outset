@@ -15,7 +15,7 @@ removePPPart=function(){
 	//draw_surface_part(postProcessSurf,0,0,_w,_h,0,0);
 }
 distSurf=-1;
-distortion_stage = shader_get_sampler_index(shd_distort, "distortion_texture_page");
+distortion_stage=shader_get_sampler_index(shd_distort, "distortion_texture_page");
 deathGlowProg=0;
 
 fogTime=0;
@@ -24,6 +24,7 @@ math_set_epsilon(0.0001);
 audio_group_load(audiogroup_sounds);
 audio_group_load(audiogroup_music);
 
+#macro isFinal (os_get_config()=="FinalBuild")
 #macro isDev (os_get_config()=="Dev")
 #macro isNewFile (os_get_config()=="NewFile")
 #macro isTest (os_get_config()=="Testing")
@@ -36,9 +37,17 @@ if isHtml
 	height = base_height;
 }
 
+if isFinal
+{
+	gml_pragma("PNGCrush");
+	gml_pragma("UnityBuild", "true");
+	randomize();
+}
+
+display_reset(0,false);
 if (!isDev&&!isTest)//||true
 {
-	randomize();
+	display_reset(0,true);
 	window_set_cursor(cr_none);
 }
 else if isDev||isTest
@@ -46,7 +55,6 @@ else if isDev||isTest
 	if !instance_exists(oDebugOverlay) event_perform(ev_keypress,vk_f3);
 	if isTest alarm[3]=20*60;
 }
-//gml_pragma("PNGCrush");
 
 #macro STEAM_ID 1256900
 #macro DISCORD_APP_ID "859197742147436554"
@@ -199,6 +207,7 @@ enum dungeons {
 }
 scrVariables();
 loadPrefs();
+save("TEMPLATE"); //template of default variable data - used when creating new save files
 setFont(fontSizes.medium);
 instance_create_depth(0,0,depth-1,oMouse);
 
@@ -211,6 +220,19 @@ hudFade=1;
 scanTime=0;
 itemIndex=0;
 itemIndexTime=0;
+
+//tileset management
+animatedTiles=ds_list_create();
+validAnimatingTiles=[
+	[tilNotdon, tilNotdonNoAnim]
+];
+setTileAnimations=function(on){
+	for (var i=0;i<ds_list_size(animatedTiles);i++)
+	{
+		var _tileID=layer_tilemap_get_id(animatedTiles[|i][0]);
+		tilemap_tileset(_tileID,validAnimatingTiles[animatedTiles[|i][1]][1-on]);
+	}
+}
 
 //pause variables
 surfPosX=0;
@@ -310,8 +332,15 @@ persistentEventsSet=function(key){
 				_p.target=_obj
 				break;
 			case oVBarrier:
-				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,_arr[i]);
-				_d.image_xscale=_arr[i+4][0];
+				if instance_exists(oVShip)
+				{
+					var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,_arr[i]);
+					_d.image_index+=4*(_arr[i+4][0]==-1);
+				}
+				else
+				{
+					eventRemove(oVBarrier,room,_arr[i+1],_arr[i+2],_layer,_arr[i+4]);
+				}
 				break;
 			case oDiagTrigger:
 				var _d=instance_create_layer(tCoord(_arr[i+1]),tCoord(_arr[i+2]),_layer,_arr[i]);

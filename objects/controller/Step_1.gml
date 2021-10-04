@@ -54,8 +54,15 @@ if buttonPressed(control.fullscreen) window_set_fullscreen(!window_get_fullscree
 //open inventory
 if global.alive&&!global.menuOpen&&!global.transitioning&&global.notPause&&buttonPressed(control.select)
 {
-	global.menuOpen=true;
-	instance_create_depth(ply.x,ply.y,-10001,oInventory);
+	if global.rooms[$ room_get_name(room)].region==worldRegion.vr
+	{
+		if !hasData("vrSlateLost") conversation("c1_vrSlate");
+	}
+	else
+	{
+		global.menuOpen=true;
+		instance_create_depth(ply.x,ply.y,-10001,oInventory);
+	}
 }
 
 //set particle systems

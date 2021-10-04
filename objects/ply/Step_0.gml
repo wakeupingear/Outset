@@ -294,7 +294,11 @@ if instance_exists(oPlayerCam)
 if global.inWater&&global.alive//&&!global.notPause
 {
 	breath-=1/24 //ba da ba ba dum ba bum
-	if breath<=-1 killPlayer();
+	if breath<=-1 
+	{
+		global.inWater=false;
+		killPlayer();
+	}
 }
 else breath=global.maxBreath;
 //test jump height - 44.69 (nice)

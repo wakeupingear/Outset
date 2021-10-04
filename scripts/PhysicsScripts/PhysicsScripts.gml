@@ -150,7 +150,7 @@ function physics(){
 	if state==moveState.running&&hsp==0 state=moveState.standing;
 	
 	//particles
-	if state==moveState.running
+	if state==moveState.running&&visible
 	{
 		runTrail(4);
 	}
@@ -158,8 +158,8 @@ function physics(){
 	//check special collisions
 	if groundCollision(x,y,oGravityField)
 	{
-		var _f=instance_place(x,y,oGravityField);
-		if _f.pause==-1
+		var _f=instance_place(x,y,oGravityField); //this is questionable
+		if instance_exists(_f)&&_f.pause==-1
 		{
 			particle(x,y+sign(vsp)*4,depth+1,sNormalRipple,0,{distort: true,xscale:0.05,yscale:0.05,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.05,alwaysMove: (isObj(id,ply))});
 			impulse(_f.xDir,_f.yDir,id);

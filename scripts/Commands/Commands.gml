@@ -126,6 +126,7 @@ function commandProcess(command){
 							break;
 						case "skip":
 							skip=true;
+							diag--;
 							break;
 						case "hurt":
 							if _obj.object_index==ply hurtPlayer(_val,0,0);
@@ -580,7 +581,10 @@ function commandProcess(command){
 							break;
 						default:
 							with _obj variable_instance_set(id,_name,_val);
-							if _name=="key" with _obj event_perform(ev_alarm,0);
+							if _name=="key" 
+							{
+								with _obj event_perform(ev_alarm,0);
+							}
 							break;
 					}
 			}

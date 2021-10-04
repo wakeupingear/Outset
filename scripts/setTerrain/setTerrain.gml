@@ -51,7 +51,7 @@ function setTerrain(){
 					}
 					for (var i=0;i<array_length(_assets);i++)
 					{
-						if sTerrainNoHit==layer_sprite_get_sprite(_assets[i]) var _i=instance_create_depth(layer_sprite_get_x(_assets[i]),layer_sprite_get_y(_assets[i]),layer_get_depth(_layers[k]),oPlaceholder);
+						if sTerrainNoHit==layer_sprite_get_sprite(_assets[i])||_name=="terrainNohit" var _i=instance_create_depth(layer_sprite_get_x(_assets[i]),layer_sprite_get_y(_assets[i]),layer_get_depth(_layers[k]),oPlaceholder);
 						else var _i=instance_create_depth(layer_sprite_get_x(_assets[i]),layer_sprite_get_y(_assets[i]),layer_get_depth(_layers[k]),_objType);
 						_i.sprite_index=layer_sprite_get_sprite(_assets[i]);
 						if array_pos(_currentTerrain.terrainSprites,_i.sprite_index)==-1 array_push(_currentTerrain.terrainSprites,_i.sprite_index);

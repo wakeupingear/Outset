@@ -43,7 +43,6 @@ if instance_exists(ply)
 				y=_p.camYPos;
 				xTo=x;
 				yTo=y;
-				show_message(x)
 			}
 		}
 	}

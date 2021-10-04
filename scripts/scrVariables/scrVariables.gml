@@ -368,30 +368,34 @@ function scrVariables(){
 		//itemName : loads in setText
 		//flavortext : loads in setText
 	});
-	ds_map_add(global.itemData,"iGrappleSwing",{index: 0, viewable: false});
-	ds_map_add(global.itemData,"iGrappleArc",{index: 0, viewable: false});
-	ds_map_add(global.itemData,"iGrappleDown",{index: 0, viewable: false});
-	ds_map_add(global.itemData,"iGrappleAir",{index: 0, viewable: false});
-	ds_map_add(global.itemData,"iSlate",{index: 2, viewable: false});
-	ds_map_add(global.itemData,"iBackpack",{index: 2, viewable: false});
-	ds_map_add(global.itemData,"iLadder",{index: 7, viewable: true});
-	ds_map_add(global.itemData,"iPlank",{index: 1, viewable: true});
-	ds_map_add(global.itemData,"iPhoneNote1",{index: 2, viewable: true});
-	ds_map_add(global.itemData,"iPhoneNote2",{index: 2, viewable: true});
-	ds_map_add(global.itemData,"iPhoneNote3",{index: 2, viewable: true});
-	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) ds_map_add(global.itemData,"iWrench"+string(i),{index: 3, viewable: true});
-	ds_map_add(global.itemData,"iRocketBook",{index: 5, viewable: true});
-	ds_map_add(global.itemData,"iSolitaire",{index: 6, viewable: true});
-	ds_map_add(global.itemData,"iLavaSwitch",{index: 8, viewable: true});
-	ds_map_add(global.itemData,"iFormula",{index: 9, viewable: true});
-	ds_map_add(global.itemData,"iBeacon",{index: 11, viewable: true});
-	ds_map_add(global.itemData,"iRing1",{index: 12, viewable: true});
-	ds_map_add(global.itemData,"iRing2",{index: 13, viewable: true});
-	ds_map_add(global.itemData,"iRing3",{index: 14, viewable: true});
-	ds_map_add(global.itemData,"iJet1",{index: 15, viewable: true});
-	ds_map_add(global.itemData,"iJet2",{index: 16, viewable: true});
-	ds_map_add(global.itemData,"iJet2",{index: 17, viewable: true});
-	ds_map_add(global.itemData,"iCarPoster",{index: 18, viewable: true});
+	setItemData=function(_name,_index,_viewable){
+		ds_map_add(global.itemData,_name,{index: _index, viewable: _viewable});
+	}
+	setItemData("iGrappleSwing",0,false);
+	setItemData("iGrappleArc",0,false);
+	setItemData("iGrappleDown",0,false);
+	setItemData("iGrappleAir",0,false);
+	setItemData("iSlate",2,false);
+	setItemData("iBackpack",2,false);
+	setItemData("iLadder",7,true);
+	setItemData("iPlank",1,true);
+	setItemData("iPhoneNote1",2,true);
+	setItemData("iPhoneNote2",2,true);
+	setItemData("iPhoneNote3",2,true);
+	for (var i=1;i<sprite_get_number(sArchivesWrenchesPopup);i++) setItemData("iWrench"+string(i),3,true);
+	setItemData("iRocketBook",5,true);
+	setItemData("iSolitaire",6,true);
+	setItemData("iLavaSwitch",8,true);
+	setItemData("iFormula",9,true);
+	setItemData("iBeacon",11,true);
+	setItemData("iRing1",12,true);
+	setItemData("iRing2",13,true);
+	setItemData("iRing3",14,true);
+	setItemData("iJet1",15,true);
+	setItemData("iJet2",16,true);
+	setItemData("iJet2",17,true);
+	setItemData("iCarPoster",18,true);
+	setItemData("iEgg",19,true);
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -593,7 +597,7 @@ function scrVariables(){
 		addItem("iGrapple");
 		//addItem("iGrappleArc");
 		//addItem("iGrappleDown");
-		//addItem("iSlate");
+		addItem("iSlate");
 		//addItem("iSolitaire")
 		//addItem("iBeacon");
 		//addItem("iWrench1");
@@ -601,8 +605,8 @@ function scrVariables(){
 		//addItem("iLavaSwitch");
 		global.notdonEra=notdonEras.present;
 		//scr_pro_2();
-		scr_wastes_1();
-		scr_wastes_2();
+		//scr_wastes_1();
+		//scr_wastes_2();
 		scr_c1_5();
 		/*createCutsceneDelay({
 			key:"c1_5",
@@ -610,7 +614,7 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesHilltop;
+		global.startRoom=rNotdon;
 	}
 	
 	//npc sprite mask data

@@ -12,6 +12,8 @@ if alarm[0]==-1
 		}
 		else if isPlayer(_p)
 		{
+			_p.goingFast=true;
+			_p.justLaunched=true;
 			if ply.image_blend==c_red exit;
 			shake(1,1,10);
 		}

@@ -162,6 +162,7 @@
         "iJet": ["Jet Part","Mutilated machinery... how gory!","Acquired a JET PART!"],
         "iRing": ["Ring","A tastefully tacky RING.","Acquired a RING!"],
         "iCarPoster":["Car Wanted Poster","A plea for someone, anyone, to find and return the CAR.","Acquired a CAR WANTED POSTER!"],
+        "iEgg":["Egg","Egg","Acquired an egg"]
     },
     "solitaire_win":[
         "You feel a sense of pride and accomplishment."

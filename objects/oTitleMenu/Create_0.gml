@@ -48,7 +48,7 @@ createFile=function(i,reload){
 	_t.name=fileData[$ string(numOfFiles)].name;
 	_t.location=fileData[$ string(numOfFiles)].location;
 	_t.maxHealth=fileData[$ string(numOfFiles)].maxHealth;
-	_t.playtime=global.playtime;
+	_t.playtime=toGameTime(global.playtime);
 	_t.file=i;
 	_t.selected=(i==0);
 	if reload load(global.lastFile);

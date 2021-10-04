@@ -29,7 +29,7 @@ if lightningFrame>3
 				_l.trigger=_b;
 				with _b
 				{
-					image_xscale=-1;
+					image_index=4;
 					image_alpha=0;
 					leftBar.image_alpha=0;
 					rightBar.image_alpha=0;

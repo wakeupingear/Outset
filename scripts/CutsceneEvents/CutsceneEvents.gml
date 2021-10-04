@@ -41,6 +41,7 @@ function scr_pro_2(){
 		y=413;
 		st=0;
 	}
+	if instance_exists(oSkyNotdon) oSkyNotdon.vShipTime=0;
 	
 	save(global.lastFile);
 }
@@ -207,7 +208,7 @@ function scr_c1_3(){
 	/*
 	"$citra.setRoom",["rNotdon","c1_bay"],
         "$nora.setRoom",["rNotdon","c1_bay"],
-        "$eugene.setRoom",["rNotdon","c1_bay"],
+        "$eugene.setRoom",["rNotdon","c1_baya"],
         "$smitten.setRoom",["rNotdon","c1_bay"],
         "$if1","charlie.getRoom",["rNotdon.c1_stage"],
             "#true1",
@@ -234,6 +235,8 @@ function scr_c1_4(){
 	setNPCRoom("charlie","rNotdon","c1_video");
 	setNPCRoom("nora","rNotdon","c1_video");
 	setNPCRoom("eugene","rNotdon","c1_video");
+	
+	eventRemove(oVShip,rNotdon,1582,408,"bg2",[]);
 	
 	createCutsceneDelay({key:"c1_smittenBackpack",condition:"plyLeft",args:[2325],myRoom:"rNotdon"});
 	createCutsceneDelay({key:"c1_groupForgetName",condition:"plyLeft",args:[1964],myRoom:"rNotdon"});
@@ -276,8 +279,6 @@ function scr_c1_6(){
 	global.currentChapter=chapters.c1;
 	global.completedChapters=1;
 	global.startRoom=rNotdon;
-	global.
-	
 	
 	timeOfDay=times.day;
 	
@@ -299,14 +300,12 @@ function scr_c1_6(){
 		sitMode="c1_jetBoarded";
 	}
 	
-	if ply.x<1444
+	if ply.x<1444 with _jet switchRoom(461,1262,rNotdon,true,false);
+	else with _jet switchRoom(3562,1277,rNotdon,true,false);
+	with _jet
 	{
-		with _jet 
-		{
-			switchRoom(461,1262,rNotdon,true,false);
-			y-=400;
-			lastYTo=y;
-		}
+		y-=400;
+		lastYTo=y;
 	}
 	
 	hideNPC("smitten");
@@ -336,7 +335,7 @@ function scr_wastes_1(){ //leaving
 		image_xscale=-1;
 		flying=false;
 		seethroughOverride=0;
-		plyRiding=false
+		plyRiding=false;
 		cockpitCheck.key="notdon_jetEmpty";
 		sitMode="";
 		startAng=17;

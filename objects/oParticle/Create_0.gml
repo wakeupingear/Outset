@@ -1,4 +1,4 @@
-image_speed=0
+image_speed=0;
 
 spd=0; //speed in direction
 xscaleSpd=0;
@@ -19,5 +19,6 @@ followObj=noone;
 ghost=false; //ghostParticle
 ghostFrameOffset=4;
 ghostDepth=depth+1;
+frameLoop=true;
 
 startOffscreen=true; //whether it starts offscreen

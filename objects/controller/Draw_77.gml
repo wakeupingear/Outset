@@ -52,7 +52,6 @@ if ds_list_size(global.distortObj)>0 //Distortion
 	//with ply draw_sprite(sprite_index,image_index,x-camX(),y-camY());
 }
 else surface_free(distSurf);
-
 if !global.alive&&instance_exists(ply)&&abs(ply.x-(camX()+192))<300&&abs(ply.y-(camY()+108))<200
 {
 	if deathGlowProg<1 deathGlowProg+=0.05;

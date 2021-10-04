@@ -1,4 +1,5 @@
 image_speed=0;
+alarm[0]=60;
 
 objects=ds_list_create();
 pause=-1;

@@ -10,7 +10,7 @@
     "pro_coreTitle":[
         3,
         "$shake",[4,4,30],
-        "$goto","defv",
+        "$goto","dev",
         60,
         "$camSet",["x","oEarthGround"],
         180,
@@ -23,7 +23,7 @@
         "$camReset",
         "end",
 
-        "#defv",
+        "#dev",
         "$zoom",[0.06,-0.02],
         "$persistence",true,
         30,
@@ -566,5 +566,5 @@
         "$camSet",["x",0],
         30,
         "$script","scr_c1_1"
-    ]
+    ],
 }

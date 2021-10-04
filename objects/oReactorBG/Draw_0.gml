@@ -1,8 +1,11 @@
 /// @description Draw + tunnel
 
 // Inherit the parent event
-draw_sprite(sprite_index,0,x,y);
-draw_sprite_ext(sprite_index,1,x,y+sprite_height*1.5,1,2,0,-1,1);
+//draw_sprite(sprite_index,0,x,y);
+if instance_exists(oSkyNotdon) image_alpha=round((1-oSkyNotdon.vShipTime)*4)/4;
+//TODO: earthquake
+draw_self();
+draw_sprite_ext(sprite_index,1,x,y+sprite_height*1.5,1,2,0,-1,image_alpha);
 
 if instance_exists(oReactorTunnel)
 {

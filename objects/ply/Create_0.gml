@@ -64,6 +64,7 @@ setItemFill=function(){
 					case "iBeacon":
 						itemFillMax=120-100*(isTest||isDev);
 						break;
+					case "iEgg":
 					case "iJet":
 					case "iRing":
 						itemFillMax=0;

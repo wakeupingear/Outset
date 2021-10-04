@@ -85,6 +85,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 	if buttonPressed(control.grapple)&&(buttonHold(control.up)||buttonHold(control.down))&&!_onGround&&(place_meeting(x,y,grappleHit)||place_meeting(x,y+ply.vsp*2,grappleHit))
 	{
 		ply.vsp=-5;
+		shake(1,1,10);
 		grappleCollideEffect();
 	}
 	else if _onGround||upgrades[4]||(buttonHold(control.down)&&buttonPressed(control.grapple)&&upgrades[grappleState.down])

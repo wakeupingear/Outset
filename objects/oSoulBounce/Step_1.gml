@@ -10,5 +10,11 @@ if active&&image_index==0
 		_o.jump=0;
 		image_index=1;
 		alarm[0]=resetTime;
+		if isPlayer(_o)
+		{
+			shake(1,1,10);
+			_o.goingFast=true;
+			_o.justLaunched=true;
+		}
 	}
 }

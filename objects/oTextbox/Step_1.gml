@@ -71,7 +71,7 @@ if mode>-1&&mode<2
 	{
 		if textInd<string_length(sentence)&&charWaitList[textInd]>0 charWaitList[textInd]--; //wait if this character has a pause
 		else textInd++;
-		if textInd>1&&(textInd>string_length(sentence)||buttonPressed(control.confirm))
+		if textInd>1&&(textInd>string_length(sentence)||(!skip&&buttonPressed(control.confirm)))
 		{
 			textInd=string_length(sentence);
 			if !skip mode=2;

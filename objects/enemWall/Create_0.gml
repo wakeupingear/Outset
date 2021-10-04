@@ -3,6 +3,7 @@ event_inherited();
 npcMovementVars()
 
 uid="wall"+string(x)+string(y);
+hit=noone;
 if hasData(uid) instance_destroy(id,false);
 else
 {

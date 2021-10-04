@@ -20,6 +20,9 @@ else
 	leg.sprite_index=sprite_index;
 	leg.animation.standing.startFrame=2;
 	leg.canDropSoul=false;
-	leg.hit.sprite_index=sprite_index;
-	leg.hit.image_index=1;
+	if leg.hit!=noone
+	{
+		leg.hit.sprite_index=sprite_index;
+		leg.hit.image_index=1;
+	}
 }

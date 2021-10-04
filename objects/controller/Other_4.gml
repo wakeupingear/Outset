@@ -43,7 +43,7 @@ global.inWater=false;
 if instance_exists(ply) with ply global.inWater=place_meeting(x,y,oWater);
 
 //DEBUG: player position
-if global.devTeleport
+if global.devTeleport&&!instance_exists(oTextbox)
 {
 	if instance_exists(ply)
 	{
@@ -194,6 +194,7 @@ switch room //skybox/specific configs
 	case rNotdon:
 		instance_create_layer(0,0,"bg",oSkyNotdon);
 		break;
+	case rHaroldVRStart:
 	case rVR1:
 	case rVR2:
 	case rVR3:
@@ -205,6 +206,10 @@ switch room //skybox/specific configs
 	case rVRPreBoss:
 	case rVRBoss:
 		instance_create_layer(0,0,"bg",oVRSkybox);
+		break;
+	case rVRUnfinished:
+		instance_create_layer(0,0,"bg",oSkyVR);
+		break;
 	case rIsland:
 		instance_create_layer(0,0,"bg",oSkyIsland);
 		break;

@@ -6,7 +6,7 @@ isHit=true;
 if global.currentChapter!=chapters.c1 instance_destroy();
 else
 {
-	if getDungeonProgress(dungeons.vr)<2&&false
+	if getDungeonProgress(dungeons.vr)<2
 	{
 		key="c1_backpackRackBefore";
 	}

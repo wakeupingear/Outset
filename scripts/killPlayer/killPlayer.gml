@@ -54,6 +54,8 @@ function killPlayer(saveText){
 				destroyArray([_pId,oGrapple,oGrapplePoint]);
 				instance_create_depth(x,y,depth-1,oGrapple);
 			}
+			
+			with controller setTileAnimations(false);
 		}
 	}
 }

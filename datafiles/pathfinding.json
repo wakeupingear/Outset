@@ -134,7 +134,10 @@
         "xyTo",-160,330
     ],
     "c1_toWastesRight":[
-        
+        "xyTo",3440,814,
+        "xyTo",2735,670,
+        "xyTo",2048,300,
+        "xyTo",-160,100
     ],
 
     "c1_toAirLeft":[

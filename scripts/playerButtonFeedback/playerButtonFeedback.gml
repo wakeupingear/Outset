@@ -1,5 +1,7 @@
 function playerButtonFeedback(obj){
-	if object_is_ancestor(obj.object_index,ply) shake(1,1,10);
-	if image_yscale==1 impulse("hsp",-3,obj);
-	else impulse("hsp",2,obj);
+	if isObj(obj,ply) shake(1,1,10);
+	if image_angle==180 impulse("hsp",3,obj);
+	else if image_angle==90 impulse(-2,-1,obj);
+	else if image_angle==270 impulse(2,-1,obj);
+	else impulse("hsp",-3,obj);
 }

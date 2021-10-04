@@ -1,5 +1,5 @@
 {
-    "c1_lineCitraAuto":[
+    "citra_c1_line_auto":[
         "?citra","Alright kids, let us do one more roll call!",
         "Actually... perhaps we have had enough roll calls for a lifetime.",
         "Listen carefully: when I signal, walk INTO THE TUNNEL, DOWN THE LIFT, and JUMP ONTO THE PAD.",
@@ -146,7 +146,7 @@
         "It will be thorough!",
         "#dev",
         "It will be borderline tedious!",
-        "It will be fuc",
+        "$skip","It will be fuc",
         "$shakeToggle",[1,1],
         60,
         "What IN GOD'S NAME COULD THAT BE?",
@@ -155,6 +155,15 @@
         360,
         "$destroyPlace",[194,380,"hitobj"],
         "$camReset"
+    ],
+
+    "c1_vrSlate":[
+        "You have somehow lost your SLATE...",
+        "CITRA warned you that this would happen.",
+        "But you recall that it... turned into a chicken and flew away.",
+        "No, that's a stupid lie. Everyone will see through that one.",
+        "You resolve to brainstorm new excuses as you go.",
+        "$addData","vrSlateLost"
     ],
 
     "c1_grappleTutorial":[
@@ -203,8 +212,19 @@
     ],
 
     "c1_vrChaseStart":[
-        "?harold","COMRADE, THIS IS THE PART WHERE YOU KEEP RUNNING!!!",
+        "?harold","COMRADE, THIS IS THE PART WHERE YOU KEEP RUNNING RIGHT!!!",
+        "$addData","vrChase",
+        "$script","scrToggleVRCracks",
+        "$oSkyVR.index",1,
+        "$createLayer",[-32,0,"people","oVRChaseBoss"],
         "$trackObj.key","lmao"
+    ],
+    "c1_haroldEgg":[
+        "A GAME BY HAROLD BOLIVAR",
+        "$if1","hasItem",["iEgg"],
+        "#false1",
+            "$addItem","iEgg",
+        "#true1"
     ],
     "c1_vrCaught":[
         "$shake",[2,2,30],
@@ -212,16 +232,18 @@
         60,
         "Caught!",
         "$oVRUnfinishedFireAll.speed",0,
+        "$createLayer",[0,0,"above","oGlitch"],
         "$createLayer",[522,82,"above","oVRXPError"],
         "$lastObj.index",0,
         "$lastObj.alarm[1]",-1,
         90,
-        "$createLayer",[400,114,"above","oVRXPError"],
-        "$createLayer",[448,-15,"above","oVRXPError"],
-        "$createLayer",[589,179,"above","oVRXPError"],
-        "$createLayer",[656,32,"above","oVRXPError"],
+        "$createLayer",[784,114,"above","oVRXPError"],
+        "$createLayer",[832,-15,"above","oVRXPError"],
+        "$createLayer",[973,179,"above","oVRXPError"],
+        "$createLayer",[1040,32,"above","oVRXPError"],
         90,
         "$create",[0,0,-100000,"oVRBluescreen"],
+        "$script","scr_c1_4",
         "$roomChange",[195,238,"rHarold",5,0,0,-1],
     ],
     "c1_vrHarold":[
@@ -351,8 +373,10 @@
         "$cutscene","c1_notdonPowerOn"
     ],
     "c1_notdonScannedEast":[
+        "$goto","dev",
         "$camFollow","trackObj",
         120,
+        "#dev",
         "$cutscene","c1_notdonPowerOn"
     ],
     "c1_notdonPowerOn":[
@@ -437,11 +461,18 @@
                 "$cutscene","toWastes"
     ],
 
+    "c1_abandonedNote":[
+        "'Fuel shortages have forced us to leave for the AIR without you.'",
+        "'EUGENE opted to stay behind.'",
+        "'SANDWICHES in the fridge.'",
+        "'-CHET + MAURICE'"
+    ],
+
     "toWastes":[
         "$if3","plyInJetTakeoff",
         "#true3",
             "$until","plyOffscreen",
-            "$roomChange",["startX","startY","rIsland",0,0,0,1],
+            "$roomChange",["startX","startY","rWastesIntro",0,0,0,1],
             "end",
         "#false3",
             "...So what now?",
