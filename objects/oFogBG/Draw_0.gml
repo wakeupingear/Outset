@@ -3,7 +3,7 @@ if preset==1 //wastes
 {
 	var _a=controller.image_alpha;
 	if instance_exists(oTerrain) _a=(1-oTerrain.deathDist/oTerrain.deathDistMax);
-	image_alpha=min(_a+global.alive,1.1);
+	if (room!=rWastesBorder) image_alpha=min(_a+global.alive,1.1);
 	stepNum=18.0-((room_height-camY())/216);
 }
 

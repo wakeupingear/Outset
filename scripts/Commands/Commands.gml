@@ -611,6 +611,7 @@ function commandProcess(command){
 			default: 
 				var _word=command[diag];
 				diag++;
+				if buttonHold(control.skipDialogue) continue;
 				if string_char_at(_word,1)=="#" break;
 				return _word;
 		}

@@ -161,8 +161,13 @@ function physics(){
 		var _f=instance_place(x,y,oGravityField); //this is questionable
 		if instance_exists(_f)&&_f.pause==-1
 		{
-			particle(x,y+sign(vsp)*4,depth+1,sNormalRipple,0,{distort: true,xscale:0.05,yscale:0.05,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.05,alwaysMove: (isObj(id,ply))});
-			impulse(_f.xDir,_f.yDir,id);
+			//if _f.alarm[0]=-1 _f.alarm[0]=30;
+			//if _f.alarm[0]%3==0
+			{
+				var _scale=0.05;
+				particle(x,y+sign(vsp)*4,depth+1,sNormalRipple,0,{distort: true,xscale: _scale,yscale: _scale,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.05,alwaysMove: (isObj(id,ply))});
+				impulse(_f.xDir,_f.yDir,id);
+			}
 		}
 	}
 }
@@ -304,6 +309,7 @@ function grapplePhysics(){
 	if (oGrapple.xDir==-1&&x<oGrapple.x)||(oGrapple.xDir==1&&x>oGrapple.x)||(oGrapple.yDir==-1&&y<oGrapple.y)
 	{
 		state=moveState.falling;
+		if oGrapple.yDir==0&&place_meeting(x,y,oGrapple)&&!groundCollision(x,y+1) vsp=-2; //autojump - not sure if this is a good idea
 		if point_distance(x,y,oGrapple.x,oGrapple.y)<=20
 		{
 			oGrapple.x=x;

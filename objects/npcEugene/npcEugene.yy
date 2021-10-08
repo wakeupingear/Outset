@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_eugene_gameplay",
-    "path": "sprites/spr_eugene_gameplay/spr_eugene_gameplay.yy",
+    "name": "sEugene",
+    "path": "sprites/sEugene/sEugene.yy",
   },
   "solid": false,
   "visible": true,

@@ -24,11 +24,11 @@ math_set_epsilon(0.0001);
 audio_group_load(audiogroup_sounds);
 audio_group_load(audiogroup_music);
 
-#macro isFinal (os_get_config()=="FinalBuild")
 #macro isDev (os_get_config()=="Dev")
 #macro isNewFile (os_get_config()=="NewFile")
 #macro isTest (os_get_config()=="Testing")
 #macro isHtml (os_browser!=browser_not_a_browser)
+#macro isFinal (!isTest&&!isDev&&!isNewFile)
 if isHtml
 {
 	base_width = 384;
@@ -39,7 +39,7 @@ if isHtml
 
 if isFinal
 {
-	gml_pragma("PNGCrush");
+	//gml_pragma("PNGCrush");
 	gml_pragma("UnityBuild", "true");
 	randomize();
 }
@@ -134,23 +134,6 @@ enum grappleState {
 	down
 }
 
-enum control {
-	up,
-	down,
-	left,
-	right,
-	jump,
-	select,
-	start,
-	grapple,
-	item,
-	swapLeft,
-	swapRight,
-	confirm,
-	swing,
-	fullscreen,
-	noclip
-}
 rumble=[0,0];
 rumbleDown=[0,0];
 rumbleStep=0;
@@ -205,6 +188,20 @@ enum dungeons {
 	stronghold,
 	core
 }
+
+//tileset management
+animatedTiles=ds_list_create();
+validAnimatingTiles=[
+	[tilNotdon, tilNotdonNoAnim]
+];
+setTileAnimations=function(on){
+	for (var i=0;i<ds_list_size(animatedTiles);i++)
+	{
+		var _tileID=layer_tilemap_get_id(animatedTiles[|i][0]);
+		tilemap_tileset(_tileID,validAnimatingTiles[animatedTiles[|i][1]][1-on]);
+	}
+}
+
 scrVariables();
 loadPrefs();
 save("TEMPLATE"); //template of default variable data - used when creating new save files
@@ -220,19 +217,6 @@ hudFade=1;
 scanTime=0;
 itemIndex=0;
 itemIndexTime=0;
-
-//tileset management
-animatedTiles=ds_list_create();
-validAnimatingTiles=[
-	[tilNotdon, tilNotdonNoAnim]
-];
-setTileAnimations=function(on){
-	for (var i=0;i<ds_list_size(animatedTiles);i++)
-	{
-		var _tileID=layer_tilemap_get_id(animatedTiles[|i][0]);
-		tilemap_tileset(_tileID,validAnimatingTiles[animatedTiles[|i][1]][1-on]);
-	}
-}
 
 //pause variables
 surfPosX=0;
@@ -426,6 +410,7 @@ else
 	//event_perform(ev_room_start,0);
 }
 
+darknessAlpha=1;
 draw=function(edgeX,edgeY){
 if instance_exists(oDiscoballManager) with oDiscoballManager draw();
 else if global.lightAlpha>0
@@ -444,7 +429,7 @@ else if global.lightAlpha>0
 	}
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
-	draw_surface_ext(global.lightSurf,edgeX,edgeY,1,1,0,-1,1);
+	draw_surface_ext(global.lightSurf,edgeX,edgeY,1,1,0,-1,darknessAlpha);
 }
 
 if !global.notPause//&&global.alive

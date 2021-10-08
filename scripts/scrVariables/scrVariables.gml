@@ -48,7 +48,7 @@ function scrVariables(){
 	global.startY=108+94;
 	global.plyY=global.startY;
 	global.hudColor=0;
-	global.name="Big Chungus";
+	global.name="-------";
 	global.startXscale=1;
 	global.maxBreath=10;//30
 	
@@ -130,14 +130,14 @@ function scrVariables(){
 	#endregion
 	
 	#region Craig
-	global.characters.craig={portrait: [portHarold],diagColor: c_nearWhite,font: fontSizes.harold,
+	global.characters.craig={portrait: [portCraig],diagColor: c_nearWhite,font: fontSizes.harold,
 		portIndList:["smile","neutral","sideNeutral","shifty","angry","sad","surprised"]
 	};
 	addLocation("craig","rTest1","t1",34,132,1,1,"");
 	#endregion
 	 
 	#region Citra
-	global.characters.citra={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
+	global.characters.citra={portrait: [portCitra],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("citra","rNotdon","pro_lb1",1288,404,-1,1,"");
 	addLocation("citra","rNotdon","pro_lb2",1205,404,-1,1,"");
 		addLocationPathFrom("citra","pro_lb1","rNotdon","pro_lb2","rNotdon","simple","");
@@ -161,7 +161,7 @@ function scrVariables(){
 	#endregion
 	
 	#region Eugene
-	global.characters.eugene={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
+	global.characters.eugene={portrait: [portEugene],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("eugene","rNotdon","pro_lb1",1320,404,-1,1,""); //offscreen in intro
 	addLocation("eugene","rNotdon","pro_lb2",1136,404,-1,1,""); //play area
 		addLocationPathFrom("eugene","pro_lb1","rNotdon","pro_lb2","rNotdon","simple","");
@@ -194,7 +194,7 @@ function scrVariables(){
 	#endregion
 	
 	#region Nora
-	global.characters.nora={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
+	global.characters.nora={portrait: [portNora],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("nora","rNotdon","pro_lb1",1339,404,-1,1,""); //offscreen in intro
 	addLocation("nora","rNotdon","pro_lb2",1155,404,-1,1,""); //play area
 		addLocationPathFrom("nora","pro_lb1","rNotdon","pro_lb2","rNotdon","simple","");
@@ -214,7 +214,7 @@ function scrVariables(){
 	#endregion
 	
 	#region Smitten
-	global.characters.smitten={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
+	global.characters.smitten={portrait: [portSmitten],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("smitten","rNotdon","pro_lb1",1358,404,-1,1,""); //offscreen in intro
 	addLocation("smitten","rNotdon","pro_lb2",1174,404,1,1,""); //play area
 		addLocationPathFrom("smitten","pro_lb1","rNotdon","pro_lb2","rNotdon","simple","");
@@ -242,7 +242,7 @@ function scrVariables(){
 	#endregion
 	
 	#region Charlie
-	global.characters.charlie={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
+	global.characters.charlie={portrait: [portCharlie],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("charlie","rNotdon","pro_lb1",1302,404,-1,1,""); //offscreen in intro
 	addLocation("charlie","rNotdon","pro_lb2",1118,404,1,1,""); //play area
 		addLocationPathFrom("charlie","pro_lb1","rNotdon","pro_lb2","rNotdon","simple","");
@@ -271,12 +271,12 @@ function scrVariables(){
 	#endregion
 	
 	#region Matt
-	global.characters.matt={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
+	global.characters.matt={portrait: [portMatt],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("matt","rNotdon","pro_electro",2246,772,1,1,""); //chilling under rocks
 	#endregion
 	
 	#region Chet
-	global.characters.chet={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
+	global.characters.chet={portrait: [portChet],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("chet","rNotdon","pro_search1",2137,628,1,1,""); //starting search
 	
 	addLocation("chet","rWastesCrater","wastes_buried",348,388,1,1,"",{takeDamage: true, damageCutscene:"wastes_chet_pulledOut"}); //buried under jet
@@ -486,11 +486,12 @@ function scrVariables(){
 	
 	global.lightSurf=-1;
 	global.lightAlpha=0;
-	global.lightObj=[ply,oGrapple,npcCitra,npcHarold,
+	global.lightObj=[ply,npcCitra,npcHarold,
 	oSave,
 	oGravityField,
 	oPowerPlantTemp,
-	oSouldropRain,oSouldropRainController,oSouldropCoin
+	oSouldropRain,oSouldropRainController,oSouldropCoin,
+	oGrapple
 	];
 	
 	global.particleSystems=ds_list_create();
@@ -529,6 +530,25 @@ function scrVariables(){
 	global.blurObj=ds_list_create();
 	global.reflectObj=ds_list_create();
 	
+	enum control {
+		up,
+		down,
+		left,
+		right,
+		jump,
+		select,
+		start,
+		grapple,
+		item,
+		swapLeft,
+		swapRight,
+		confirm,
+		swing,
+		fullscreen,
+		noclip,
+		skipDialogue
+	}
+	
 	global.controllerInputs=[
 	[gp_padu,leftStickUp], //up
 	[gp_padd,leftStickDown], //down
@@ -544,7 +564,8 @@ function scrVariables(){
 	[gp_face2], //confirm
 	[gp_shoulderlb], //grapple 2
 	[], //fullscreen
-	[gp_stickr] //debug
+	[gp_stickr], //debug
+	[] //skip dialogue
 	];
 	global.keyboardInputs=[
 	[vk_up,ord("W")], //up
@@ -561,7 +582,8 @@ function scrVariables(){
 	[vk_enter,ord("K")], //confirm
 	[vk_control,ord("H")], //grapple 2
 	[vk_insert,vk_f4], //fullscreen
-	[ord("T")] //debug
+	[ord("T")], //debug
+	[vk_alt] //skip dialogue
 	];
 	
 	global.numOfInputs=array_length(global.keyboardInputs);
@@ -604,10 +626,10 @@ function scrVariables(){
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
 		global.notdonEra=notdonEras.present;
-		//scr_pro_2();
+		scr_pro_2();
 		//scr_wastes_1();
 		//scr_wastes_2();
-		scr_c1_5();
+		//scr_c1_5();
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",

@@ -13,7 +13,9 @@ if keyboard_check_pressed(vk_enter)
 				ds_list_add(commands,_arr[1]);
 				break;
 			case "fps":
-				game_set_speed(_arr[1],gamespeed_fps);
+				if array_length(_arr)==1||_arr[1]=="reset" game_set_speed(60,gamespeed_fps);
+				else game_set_speed(_arr[1],gamespeed_fps);
+				instance_destroy();
 				break;
 			case "tp":
 				if instance_exists(ply)

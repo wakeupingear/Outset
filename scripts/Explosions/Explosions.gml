@@ -11,6 +11,7 @@ function explosionRange(num,xMin,yMin,xMax,yMax,delay){
 	}
 	
 	if !global.alive with oExplosion if image_index==0 image_index=irandom_range(2,4);
+	return _ex; //returns last explosion created - useful when only spawning 1
 }
 
 function explosionCircle(num,_x,_y,radius,delay){

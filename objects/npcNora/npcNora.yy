@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sTestPersonBig",
-    "path": "sprites/sTestPersonBig/sTestPersonBig.yy",
+    "name": "sNora",
+    "path": "sprites/sNora/sNora.yy",
   },
   "solid": false,
   "visible": true,

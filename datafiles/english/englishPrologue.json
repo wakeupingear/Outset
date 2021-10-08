@@ -329,6 +329,7 @@
     ],
 
     "pro_electroFix":[
+        45,
         "$camSet",[2167,580],
         "$oPowerPlantTemp.mode",1,
         "?harold","HIT THE DECK!",
@@ -348,6 +349,7 @@
         "$goto","devv",
         "$camSet",[2167,580],60,
         "$oVShip.alarm[5]",1,
+        "$oVBarrierAll.alarm[2]",1,
         "?smitten","Ha ha!",
         "?eugene","Look, they left a thing.",
         "$camSet",[2574,725],

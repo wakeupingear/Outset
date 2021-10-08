@@ -32,5 +32,5 @@ if !instance_exists(oPlayerMove) npcAnimation();
 
 if goingFast
 {
-	ghostTrail(x,y,4,depth+1,sprite_index,image_index,{xscale:xscale,yscale:yscale,alwaysMove: true,fade: 0.07-(!global.alive)*0.05});
+	ghostTrail(x,y,4,depth+1,sprite_index,image_index,{xscale:xscale,yscale:yscale,alwaysMove: true,fade: 0.07-(!global.alive)*0});
 }

@@ -1,4 +1,6 @@
 /// @description Chunks
+var _d=layer_get_depth(layer_get_id("behind"));
+show_debug_message(_d)
 for (var i=destFrames[0];i<destFrames[1];i++)
 {
 	var _p=particle(partPos.x,partPos.y,0,sprite_index,i,{
@@ -9,6 +11,9 @@ for (var i=destFrames[0];i<destFrames[1];i++)
 		spd: 2+irandom(1),
 		alwaysMove: true,
 		angSpd: round((destFrames[1]-destFrames[0])/(i-destFrames[0])),
-		blend: c_grey
+		blend: c_grey,
+		ghost: true,
+		ghostAlwaysMove: true,
+		ghostDepth: _d
 	});
 }

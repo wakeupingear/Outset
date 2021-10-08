@@ -1,7 +1,9 @@
 function setRoomEra(){
+	controller.darknessAlpha=1;
 	if variable_struct_exists(global.rooms,room_get_name(room)){
 	var _eras=ds_list_create();
 	var _r=global.rooms[$ room_get_name(room)].region;
+	if _r==worldRegion.west darknessAlpha=0;
 	var _pos=global.notdonEra
 	ds_list_add(_eras,"mykoEra","pro1","pro2","pro3","present","future"); //all era layer phrases
 	var _layers=layer_get_all();

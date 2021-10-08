@@ -1,3 +1,3 @@
-fadeIn=[oSkyWastes,oWastesClouds];
-fadeOut=[oOvercast];
+fadeIn=[oSkyWastes,oWastesClouds,oFogBG];
+fadeOut=[oOvercast,oNotdonMountains];
 alpha=1;

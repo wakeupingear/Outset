@@ -97,8 +97,14 @@ drawInteract = function(){
 	setFont(fontSizes.medium);
 }
 
+drawCycle=0;
 drawLight=function(){
-	if image_alpha!=0 draw_circle(round(x)-camX(),round(y)-camY(),24,false);
+	if image_alpha!=0
+	{
+		var _spd=0.01+max(abs(vsp)/2,abs(hsp))*0.005;
+		drawCycle=(drawCycle+_spd)%1;
+		draw_circle(round(x)-camX(),round(y)-camY(),22+sin(drawCycle*2*pi),false);
+	}
 }
 
 //animation

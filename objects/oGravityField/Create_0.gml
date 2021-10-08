@@ -1,8 +1,15 @@
 image_speed=0;
 alarm[0]=60;
+if sprite_index==sPlaceholderPixelB image_alpha=0.6;
 
 objects=ds_list_create();
 pause=-1;
+partProperties={
+	fade:0.05*image_alpha,
+	blend: image_blend,
+	alpha: image_alpha,
+	alwaysMove: true
+};
 
 xDir=0;
 yDir=0;

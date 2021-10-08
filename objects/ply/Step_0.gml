@@ -320,7 +320,10 @@ if goingFast
 }
 else
 {
-	fastIntensity=0;
+	if fastIntensity>0
+	{
+		fastIntensity-=0.1;
+	}
 }
 
 if !global.transitioning&&hsp==0&&abs(_startHsp)>hspMax*1.5&&state!=moveState.ladder shake(1,1,10);

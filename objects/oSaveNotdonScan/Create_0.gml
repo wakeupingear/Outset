@@ -1,4 +1,5 @@
-image_speed=0
+if global.notdonEra<notdonEras.present y=1080;
+image_speed=0;
 hit=instance_create_depth(x,y,depth,oSave);
 
 scanVars();

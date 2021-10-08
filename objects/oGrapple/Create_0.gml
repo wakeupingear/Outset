@@ -8,6 +8,7 @@ yDir=0;
 grappleMode=0; //0=normal, 1=swing, 2=arc, 3=down
 upgrades=[];
 collPointX=[];
+grappleAngle=0;
 
 trackList=[oSouldropCoin,oDroppedItem];
 dragObj=ds_list_create();
@@ -84,6 +85,8 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 	var _onGround=(ply.state<=moveState.running||ply.state==moveState.zipline);
 	if buttonPressed(control.grapple)&&(buttonHold(control.up)||buttonHold(control.down))&&!_onGround&&(place_meeting(x,y,grappleHit)||place_meeting(x,y+ply.vsp*2,grappleHit))
 	{
+		image_index=1;
+		grappleAngle=0;
 		ply.vsp=-5;
 		shake(1,1,10);
 		grappleCollideEffect();
@@ -94,6 +97,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 		{
 			if buttonHold(control.up)&&upgrades[grappleState.arc] //arc
 			{
+				grappleAngle=90;
 				state=1;
 				xDir=ply.xscale;
 				grappleMode=grappleState.arc;
@@ -111,6 +115,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 		{
 			if buttonHold(control.down) //down
 			{
+				image_index=3;
 				if upgrades[grappleState.down]&&(!_onGround||upgrades[4])
 				{
 					state=1;
@@ -125,8 +130,10 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 			{
 				state=1;
 				grappleMode=grappleState.pull;
+				image_index=1+ply.xscale;
 				if buttonHold(control.up) 
 				{
+					image_index=1;
 					if ply.xscale==1
 					{
 						grapplePlyXoff=-1;
@@ -145,6 +152,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 		
 		if state==1
 		{
+			grappleAngle=0;
 			grappleFireEffect();
 		}
 	}
@@ -227,6 +235,7 @@ else if state==1 //move in direction
 	{
 		grappleCollideEffect();
 	}
+	else ghostTrail(x,y,2,depth+1,sprite_index,image_index,{fade:0.1,alpha:0.6,xscaleSpd:0.1,yscaleSpd:0.1,alwaysMove: true});
 }
 else if state==2 //pull player
 {
@@ -257,10 +266,11 @@ else if state<0 //reset
 	var _size=ds_list_size(points);
 	if _size>0
 	{
+		y-=(abs(grappleAngle-180)<45); //compensate for the angle skewing the y offset
 		var _o=points[|ds_list_size(points)-1];
-		point_direction(x,y,_o.x,_o.y);
+		grappleAngle=point_direction(x,y,_o.x,_o.y);
 		x=_o.x;
-		y=_o.y;
+		y=_o.y+(abs(grappleAngle-180)<45);
 		instance_destroy(_o);
 		ds_list_delete(points,ds_list_size(points)-1);
 	}
@@ -289,6 +299,7 @@ else if state<0 //reset
 			_i.y=ply.y;
 		}
 	}
+	else ghostTrail(x,y,4,depth+1,sprite_index,image_index,{fade:0.05,alpha:0.6,angle:grappleAngle,alwaysMove: true});
 }
 
 if state!=0
@@ -354,7 +365,16 @@ if abs(state)==1
 }
 
 drawLight=function(){
-	if image_alpha!=0 draw_circle(round(x)-camX(),round(y)-camY(),16,false);
+	if image_alpha!=0&&instance_exists(ply)
+	{
+		draw_circle(round(x)-camX(),round(y)-camY(),16,false);
+		if instance_exists(oGrapplePoint) with oGrapplePoint draw_circle(round(x)-camX(),round(y)-camY(),8,false);
+		else {
+			for (var i=0;i<1;i+=0.05){
+				draw_circle(round(lerp(ply.x,x,i))-camX(),round(lerp(ply.y,y,i))-camY(),8,false);
+			}
+		}
+	}
 }
 
 event_user(0);

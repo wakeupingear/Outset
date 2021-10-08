@@ -11,7 +11,6 @@ followGrapple=false;
 
 if !global.alive instance_deactivate_object(id);
 
-radius=14;
 drawLight=function(){
-	draw_circle(x-camX()-1,y-camY()-1,radius,false);
+	draw_circle(x-camX()-1,y-camY()-1,15+(ystart-y)/3,false);
 }

@@ -14,5 +14,4 @@ if state!=0
 		pixelLine(points[|_size-1].x,points[|_size-1].y,x,y);
 	}
 }
-
-draw_self();
+draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,grappleAngle,image_blend,image_alpha);

@@ -6,6 +6,7 @@ function resetGrapple(){
 		if oGrapple.state>0 
 		{
 			with oGrapple{
+			image_index=2;
 			grappleTime=0;
 			xDir=0;
 			yDir=0;

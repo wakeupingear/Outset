@@ -19,6 +19,7 @@ followObj=noone;
 ghost=false; //ghostParticle
 ghostFrameOffset=4;
 ghostDepth=depth+1;
+ghostAlwaysMove=false;
 frameLoop=true;
 
 startOffscreen=true; //whether it starts offscreen

@@ -1,4 +1,5 @@
 /// @description Initialize
+if !instance_exists(oVShip) exit;
 if first
 {
 	active=true;

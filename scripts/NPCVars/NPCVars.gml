@@ -64,7 +64,7 @@ function physicsVars(){
 	vspMax=8; //max vertical speed
 	collType=npcHit; //type of collision to interact with
 	collPointX=[0]; //collision x coordinate - default is a single point right below the player
-	collPointY=[8]; //collision y
+	collPointY=[7]; //collision y
 	if !is_undefined(global.physCollPoints[?sprite_index]) //import the sprite's coordinates if it exists
 	{
 		collPointX=global.physCollPoints[?sprite_index][0];

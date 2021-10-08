@@ -46,7 +46,11 @@ function killPlayer(saveText){
 				freezeNPC();
 				createSoulDoors();
 				startSoulPlatforms();
-				if _pId!=-1 instance_create_depth(ply.x,ply.y,ply.depth,oPlayerSoul);
+				if _pId!=-1 
+				{
+					var _s=instance_create_depth(ply.x,ply.y,ply.depth,oPlayerSoul);
+					_s.xscale=_pId.xscale;
+				}
 				//roomChange(global.plyX,global.plyY,global.nextRoom,1,0,0,1);
 			}
 			if _pId!=-1 

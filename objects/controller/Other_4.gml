@@ -111,6 +111,9 @@ switch room //room specific elements
 }
 switch room //skybox/specific configs
 {
+	case rWastesBullet:
+		instance_create_layer(0,0,"bg",oSkyWastes);
+		break;
 	case rWastesIntro:
 	case rWastesBorder:
 		var _c=instance_create_depth(0,200,layer_get_depth(layer_get_id("bg"))-5,oWastesClouds);
@@ -123,15 +126,20 @@ switch room //skybox/specific configs
 			image_yscale=0.6;
 		}
 		if room==rWastesIntro oWastesClouds.y-=20;
+		instance_create_layer(300,60,"bg2",oNotdonMountains);
 		instance_create_layer(0,0,"bg2",oOvercast);
 		var _o=instance_create_layer(0,0,"bg",oOvercast);
 		_o.image_index=1;
 		instance_create_depth(0,0,depth,oWastesBorderBGFade);
 		instance_create_layer(0,0,"bg",oSkyWastes);
 		instance_create_layer(0,0,"bg",oSkyNotdon);
-		break;
-	case rWastesBullet:
-		instance_create_layer(0,0,"bg",oSkyWastes);
+		var _fog=instance_create_layer(0,0,"behindMyko",oFogBG);
+		_fog.xLerp=0;
+		_fog.yLerp=0;
+		_fog.preset=1;
+		_fog.image_xscale=1.5;
+		_fog.image_yscale=0.1;
+		_fog.image_yscale=0.2;
 		break;
 	case rWastesFactoryOutside:
 	case rWastesCrater:

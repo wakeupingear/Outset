@@ -27,7 +27,7 @@ if !sentenceFormatted
 //draw everything
 surface_set_target(global.guiSurf);
 draw_set_alpha(max(0,image_alpha-(1-nameAlpha)));
-if !boxHidden&&portName!=""&&array_length(portLeft)+array_length(portRight)==1
+if false&&!boxHidden&&portName!=""&&array_length(portLeft)+array_length(portRight)==1
 {
 	setFont(fontSizes.small);
 	var _l=string_width(portName);

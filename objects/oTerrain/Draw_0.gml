@@ -56,7 +56,7 @@ if !texRender
 			draw_sprite_repeated(0,0,sNotdonTerrainTexture,texInd,1,1,0,c_white,1,0,0);
 			gpu_set_blendmode(bm_normal);
 			if global.alive texInd=!texInd;
-			alarm[0]=30;
+			alarm[0]=15+(!instance_exists(oVShip));
 			break;
 		case worldRegion.west:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);

@@ -1,5 +1,6 @@
 //Move objects
 if pause>-1 pause--;
+visible=isInRange(x,y);
 /*else if place_meeting(x,y,oPhysicsObj)
 {
 	if xDir==0 xDir="hsp"
