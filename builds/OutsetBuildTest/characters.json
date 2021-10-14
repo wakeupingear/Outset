@@ -1,0 +1,650 @@
+{
+    "charlie": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 6,
+        "locations": {
+            "rNotdon": {
+                "pro_lb2": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb1": {
+                                "path": "simple"
+                            }
+                        }
+                    },
+                    "startX": 1118.0,
+                    "xs": 1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_lb5": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb4": {
+                                "path": "pro_charlie_ledgeJump"
+                            }
+                        }
+                    },
+                    "startX": 1181.0,
+                    "xs": -1.0,
+                    "startY": 403.0,
+                    "ys": 1.0
+                },
+                "pro_lb3": {
+                    "startX": 1109.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_electroPanic": {
+                    "startY": 650.0,
+                    "startX": 2296.0,
+                    "xs": -1.0,
+                    "path": "simpleBackAndForth{2280,705,2312,650}",
+                    "ys": 1.0
+                },
+                "pro_electroTouch": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_electroPanic": {
+                                "path": "simpleAlwaysJump"
+                            }
+                        }
+                    },
+                    "startX": 2515.0,
+                    "xs": 1.0,
+                    "startY": 725.0,
+                    "ys": 1.0
+                },
+                "pro_reactor": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_reactorLeft": {
+                                "path": "simpleAlwaysJump"
+                            }
+                        }
+                    },
+                    "startX": 2601.0,
+                    "xs": 1.0,
+                    "startY": 740.0,
+                    "ys": 1.0
+                },
+                "pro_lb4": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb5": {
+                                "path": "simple"
+                            },
+                            "pro_lb3": {
+                                "path": "simple"
+                            }
+                        }
+                    },
+                    "startX": 1063.0,
+                    "xs": -1.0,
+                    "startY": 403.0,
+                    "ys": 1.0
+                },
+                "pro_electro": {
+                    "startX": 2296.0,
+                    "xs": -1.0,
+                    "startY": 650.0,
+                    "ys": 1.0
+                },
+                "pro_lb1": {
+                    "startX": 1302.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_reactorLeft": {
+                    "startX": 2160.0,
+                    "xs": 1.0,
+                    "startY": 628.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "craigKrisper": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 7,
+        "locations": {
+            "rCoreIntro": {
+                "pro_core": {
+                    "startX": 444.0,
+                    "xs": 1.0,
+                    "startY": 926.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "citra": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 6,
+        "locations": {
+            "rNotdonArchives": {
+                "pro_arch1": {
+                    "startX": 125.0,
+                    "xs": -1.0,
+                    "startY": 179.0,
+                    "ys": 1.0,
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb2": {
+                                "path": "simpleEnterRoom{1300,404}"
+                            }
+                        }
+                    },
+                    "path": "simpleBackAndForth{185,179,125,179}"
+                },
+                "pro_arch2": {
+                    "startY": 179.0,
+                    "startX": 125.0,
+                    "xs": -1.0,
+                    "path": "simpleBackAndForth{185,179,125,179}",
+                    "ys": 1.0
+                },
+                "pro_arch3": {
+                    "startY": 179.0,
+                    "startX": 125.0,
+                    "xs": -1.0,
+                    "path": "simpleBackAndForth{185,179,125,179}",
+                    "ys": 1.0
+                }
+            },
+            "rNotdon": {
+                "pro_lb2": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb1": {
+                                "path": "simple"
+                            }
+                        }
+                    },
+                    "startX": 1205.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_lb3": {
+                    "pathFrom": {
+                        "rNotdonArchives": {
+                            "pro_arch1": {
+                                "path": "pro_citra_archiveLeave"
+                            },
+                            "pro_arch2": {
+                                "path": "pro_citra_archiveLeave"
+                            }
+                        }
+                    },
+                    "startX": 1205.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_electro": {
+                    "startX": 2129.0,
+                    "xs": 1.0,
+                    "startY": 628.0,
+                    "ys": 1.0
+                },
+                "pro_lb1": {
+                    "startX": 1288.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_reactor": {
+                    "startX": 2754.0,
+                    "xs": -1.0,
+                    "startY": 732.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "nora": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 6,
+        "locations": {
+            "rNotdon": {
+                "pro_lb2": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb1": {
+                                "path": "simple"
+                            }
+                        }
+                    },
+                    "startX": 1155.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_lb3": {
+                    "startX": 1197.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_reactor": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_reactorLeft": {
+                                "path": "simpleAlwaysJump"
+                            }
+                        }
+                    },
+                    "startX": 2691.0,
+                    "xs": 1.0,
+                    "startY": 772.0,
+                    "ys": 1.0
+                },
+                "pro_electro": {
+                    "startX": 2214.0,
+                    "xs": -1.0,
+                    "startY": 628.0,
+                    "ys": 1.0
+                },
+                "pro_lb1": {
+                    "startX": 1339.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_reactorLeft": {
+                    "startX": 2244.0,
+                    "xs": 1.0,
+                    "startY": 628.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "harold": {
+        "ch": 1.0,
+        "portrait": [
+            26.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 4,
+        "locations": {
+            "rTest1": {
+                "t1": {
+                    "startX": 34.0,
+                    "xs": 1.0,
+                    "startY": 132.0,
+                    "ys": 1.0
+                }
+            },
+            "rNotdon": {
+                "pro_electro": {
+                    "startX": 2183.0,
+                    "xs": 1.0,
+                    "startY": 719.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "matt": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 6,
+        "locations": {
+            "rNotdon": {
+                "pro_electro": {
+                    "startX": 2246.0,
+                    "xs": 1.0,
+                    "startY": 772.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "test": {
+        "ch": 1.0,
+        "portrait": [
+            20.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 1,
+        "locations": {
+            "rTest1": {
+                "t2": {
+                    "startX": 305.0,
+                    "xs": 1.0,
+                    "startY": 133.0,
+                    "ys": 1.0,
+                    "pathFrom": {
+                        "rTest1": {
+                            "t1": {
+                                "path": "test_rTest1_fromBlockToGround",
+                                "text": "testTextWalk"
+                            }
+                        }
+                    },
+                    "path": "test_rTest1_groundCycle"
+                },
+                "t1": {
+                    "startX": 304.0,
+                    "xs": -1.0,
+                    "startY": 20.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "chet": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 6,
+        "locations": {
+            "rNotdon": {
+                "pro_search1": {
+                    "startX": 2137.0,
+                    "xs": 1.0,
+                    "startY": 628.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "alex": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 6,
+        "locations": {
+            "rNotdonAmphitheater": {
+                "c1_treadmill": {
+                    "startY": 256.0,
+                    "startX": 196.0,
+                    "xs": 1.0,
+                    "path": "c1_treadmill",
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "babishOrange": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 7,
+        "locations": {
+            "rCoreIntro": {
+                "pro_core": {
+                    "startX": 477.0,
+                    "xs": 1.0,
+                    "startY": 926.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "eugene": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 6,
+        "locations": {
+            "rNotdonArchives": {
+                "pro_archGuard": {
+                    "startY": 324.0,
+                    "startX": 231.0,
+                    "xs": -1.0,
+                    "path": "simpleBackAndForth{256,324,213,324}",
+                    "ys": 1.0
+                },
+                "pro_arch1": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb2": {
+                                "path": "simpleEnterRoom{1300,404}"
+                            }
+                        }
+                    },
+                    "startX": 96.0,
+                    "xs": -1.0,
+                    "startY": 324.0,
+                    "ys": 1.0
+                },
+                "pro_archEnter": {
+                    "startY": 324.0,
+                    "startX": 172.0,
+                    "xs": -1.0,
+                    "path": "enterFade",
+                    "ys": 1.0
+                }
+            },
+            "rNotdon": {
+                "pro_lb3": {
+                    "pathFrom": {
+                        "rNotdonArchives": {
+                            "pro_arch1": {
+                                "path": "pro_eugene_archiveLeave"
+                            }
+                        }
+                    },
+                    "startX": 1063.0,
+                    "xs": -1.0,
+                    "startY": 403.0,
+                    "ys": 1.0
+                },
+                "pro_reactor": {
+                    "startX": 2754.0,
+                    "xs": 1.0,
+                    "startY": 772.0,
+                    "ys": 1.0
+                },
+                "pro_lb4": {
+                    "startX": 1063.0,
+                    "xs": -1.0,
+                    "startY": 403.0,
+                    "ys": 1.0
+                },
+                "pro_lbJump": {
+                    "pathFrom": {
+                        "rNotdonArchives": {
+                            "pro_arch1": {
+                                "path": "simpleEnterRoom{198,330}"
+                            },
+                            "pro_archGuard": {
+                                "path": "simpleEnterRoom{198,330}"
+                            }
+                        }
+                    },
+                    "startX": 1063.0,
+                    "xs": -1.0,
+                    "startY": 403.0,
+                    "ys": 1.0
+                },
+                "pro_electro": {
+                    "startX": 2128.0,
+                    "xs": 1.0,
+                    "startY": 628.0,
+                    "ys": 1.0
+                },
+                "pro_grotto": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb4": {
+                                "path": "pro_eugene_cliffJump"
+                            },
+                            "pro_lbJump": {
+                                "path": "pro_eugene_cliffJump"
+                            }
+                        }
+                    },
+                    "startX": 719.0,
+                    "xs": 1.0,
+                    "startY": 612.0,
+                    "ys": 1.0
+                },
+                "pro_lb1": {
+                    "startX": 1320.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_lb2": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb1": {
+                                "path": "simple"
+                            }
+                        }
+                    },
+                    "startX": 1136.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    },
+    "smitten": {
+        "ch": 1.0,
+        "portrait": [
+            11.0
+        ],
+        "ys": 1.0,
+        "diagColor": 15132390.0,
+        "font": 6,
+        "locations": {
+            "rNotdon": {
+                "pro_lb2": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb1": {
+                                "path": "simple"
+                            }
+                        }
+                    },
+                    "startX": 1174.0,
+                    "xs": 1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_launch": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_reactor": {
+                                "path": "pro_smitten_launchWalk"
+                            }
+                        }
+                    },
+                    "startX": 1808.0,
+                    "xs": -1.0,
+                    "startY": 676.0,
+                    "ys": 1.0
+                },
+                "pro_launchWindow": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_launch": {
+                                "path": "pro_smitten_toWindow"
+                            }
+                        }
+                    },
+                    "startX": 1808.0,
+                    "xs": -1.0,
+                    "startY": 644.0,
+                    "ys": 1.0
+                },
+                "pro_lb3": {
+                    "startX": 1160.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_reactor": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_reactorLeft": {
+                                "path": "simpleAlwaysJump"
+                            }
+                        }
+                    },
+                    "startX": 2715.0,
+                    "xs": 1.0,
+                    "startY": 772.0,
+                    "ys": 1.0
+                },
+                "pro_lb4": {
+                    "pathFrom": {
+                        "rNotdon": {
+                            "pro_lb3": {
+                                "path": "simple"
+                            }
+                        }
+                    },
+                    "startX": 1270.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_electro": {
+                    "startX": 2194.0,
+                    "xs": -1.0,
+                    "startY": 628.0,
+                    "ys": 1.0
+                },
+                "pro_lb1": {
+                    "startX": 1358.0,
+                    "xs": -1.0,
+                    "startY": 404.0,
+                    "ys": 1.0
+                },
+                "pro_reactorLeft": {
+                    "startX": 2269.0,
+                    "xs": 1.0,
+                    "startY": 628.0,
+                    "ys": 1.0
+                }
+            }
+        }
+    }
+}

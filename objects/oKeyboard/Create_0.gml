@@ -4,6 +4,8 @@ str="";
 strLen=7;
 output=0;
 
+bgProg=0;
+
 processInput=function(){
 	switch output
 	{
@@ -19,6 +21,7 @@ processInput=function(){
 					break;
 				default: break;
 			}
+			if instance_exists(oCursor) instance_destroy(oCursor);
 			break;
 		default: break;
 	}

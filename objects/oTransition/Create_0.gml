@@ -18,7 +18,7 @@ regionColor[worldRegion.air]=merge_color(c_green,c_black,0.85);
 regionColor[worldRegion.deeptown]=merge_color(c_green,c_black,0.85);
 regionColor[worldRegion.east]=merge_color(c_green,c_black,0.85);
 
-whiteCol=merge_color(c_nearWhite,c_black,0.2);
+whiteCol=merge_color(c_white,c_black,0.2);
 
 draw=function(){
 var _camX=0;//camX(); //drawing to surface not application_surface

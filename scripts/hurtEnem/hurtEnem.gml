@@ -1,10 +1,12 @@
 function hurtEnem(_id,_damage){
+	var _damaged=false;
 	with _id if image_blend!=c_red
 	{
 		myHealth-=_damage;
 		setAnimation("attacked",animation);
 		image_blend=c_red;
 		alarm[0]=30;
+		_damaged=true;
 		
 		var _isWall=object_index==enemWall||object_is_ancestor(object_index,enemWall);
 		if myHealth<=0
@@ -52,4 +54,5 @@ function hurtEnem(_id,_damage){
 		}
 		else if enemHitTrigger!=-1 enemHitTrigger();
 	}
+	return _damaged;
 }

@@ -6,7 +6,7 @@ if global.alive&&instance_exists(ply)
 	{
 		gunBlend=c_white;
 		var _dist=xscale*(ply.x-x)+yscale*(ply.y-y+8);
-		if abs(_dist)<14
+		if abs(_dist)<14&&sign((y+yscale*4)-ply.y)==yscale
 		{
 			mode=0.8;
 			alarm[3]=20;

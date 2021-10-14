@@ -12,6 +12,7 @@ function killPlayer(saveText){
 		}
 		else
 		{
+			shake(2,2,15);
 			if is_undefined(saveText)&&instance_exists(oTextbox) instance_destroy(oTextbox);
 			global.plyHealth=0;
 			load(global.lastFile);

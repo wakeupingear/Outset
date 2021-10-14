@@ -73,11 +73,16 @@ if !texRender
 			//draw_sprite_repeated(0,0,sIslandGroundTexture,0,1,1,0,c_white,0.3,0,0);
 			gpu_set_blendmode(bm_normal);
 			break;
+		case worldRegion.core:
+			shader_set(shd_lighten);
+			shader_set_uniform_f(shader_get_uniform(shd_lighten,"u_bright"),0.5);
+			shader_set_uniform_f(shader_get_uniform(shd_lighten,"u_color"),1,1,1);
 		case worldRegion.testing:
 		case worldRegion.vr:
 			gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
 			draw_sprite_repeated_fullroom(0,0,sMykoBrickGreyTile,0,1,1,0,c_white,1,0,0);
 			gpu_set_blendmode(bm_normal);
+			if shader_current()!=-1 shader_reset();
 			break;
 		default: break;
 	}
@@ -93,6 +98,7 @@ var _col=[color_get_red(image_blend)/255,color_get_green(image_blend)/255,color_
 var _outlineAlpha=1;
 switch (roomType)
 {
+	case worldRegion.core:
 	case worldRegion.west:
 		shader_set(shd_outlineTerrain);
 		shader_set_uniform_f(shader_get_uniform(shd_outlineTerrain,"u_alpha"),_outlineAlpha);
@@ -116,7 +122,7 @@ switch (roomType)
 		break;
 	case worldRegion.testing:
 	case worldRegion.vr:
-		if room!=rVRUnfinished&&vrAlpha<1&&(!instance_exists(oTextbox)||oTextbox.image_alpha==0)&&hasItem("iGrapple") 
+		if room!=rVRUnfinished&&room!=rDevRoom&&vrAlpha<1&&(!instance_exists(oTextbox)||oTextbox.image_alpha==0)&&hasItem("iGrapple") 
 		{
 			if !instance_exists(oVRGrappleBG)
 			{
@@ -147,7 +153,7 @@ _width+1,_height+1,
 );
 if shader_current()!=-1 shader_reset();
 
-if global.alive
+if global.alive&&room!=rCoreIntro
 {
 	if deathScale>0 deathScale-=0.04;
 	if deathDist>0 deathDist=max(deathDist-7,0);
@@ -160,6 +166,10 @@ else if instance_exists(ply)
 if deathScale>0||deathDist>0
 {
 	var _deathCol=merge_color(c_white,global.scanColor,0.5);
+	if room==rCoreIntro
+	{
+		_deathCol=merge_color(c_red,c_white,0.3+0.1*sin((global.roomTime)%360)/360*2*pi);
+	}
 	var _deathCol2=merge_color(_deathCol,c_black,0.3);
 	deathAng=(deathAng-2*ply.xscale)%360;
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);

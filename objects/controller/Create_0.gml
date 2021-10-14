@@ -44,14 +44,14 @@ if isFinal
 	randomize();
 }
 
-display_reset(0,false);
+display_reset(0,false); //allows fps to be changed for debugging
 if (!isDev&&!isTest)//||true
 {
 	display_reset(0,true);
 	window_set_cursor(cr_none);
 }
 else if isDev||isTest
-{
+{ 
 	if !instance_exists(oDebugOverlay) event_perform(ev_keypress,vk_f3);
 	if isTest alarm[3]=20*60;
 }

@@ -9,12 +9,12 @@ startXOff=0;
 startYOff=0;
 startScale=0.5;
 
-objSpr=sBarrelRadius;
+objSpr=sprite_index;
 objIndex=0;
 extraSprites=[];
-isShaded=false;
+isShaded=true;
 alwaysUpdate=false;
-num=20;
+num=40;
 smallScale=0.5;
 objColor=-1;
 objAngle=0;

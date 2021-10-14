@@ -28,15 +28,24 @@ shader_set_uniform_f(shader_get_uniform(shd_water,"u_yoff"),(camY() mod 384)/384
 draw_surface(surf,camX(),camY());
 shader_reset();
 
-if instance_exists(ply)&&ply.breathAlpha>0
+if instance_exists(ply)
 {
-	var _color=merge_color(c_white,c_blue,sqrt(ply.breathAlpha)*0.3);
-	oTerrain.image_blend=_color;
-	if instance_exists(enemWall) enemWall.image_blend=_color;
-	shader_set(shd_invisDraw);
-	shader_set_uniform_f(shader_get_uniform(shd_invisDraw,"u_color"),58/255,61/255,146/255,ply.breathAlpha*0.5);
-	draw_surface(surf,camX(),camY());
-	shader_reset();
+	if !global.alive
+	{
+		if ply.breathAlpha>0 ply.breathAlpha-=0.1;
+		var _color=merge_color(c_white,c_blue,sqrt(ply.breathAlpha)*0.3);
+		oTerrain.image_blend=_color;
+	}
+	else if ply.breathAlpha>0
+	{
+		var _color=merge_color(c_white,c_blue,sqrt(ply.breathAlpha)*0.3);
+		oTerrain.image_blend=_color;
+		if instance_exists(enemWall) enemWall.image_blend=_color;
+		shader_set(shd_invisDraw);
+		shader_set_uniform_f(shader_get_uniform(shd_invisDraw,"u_color"),58/255,61/255,146/255,ply.breathAlpha*0.5);
+		draw_surface(surf,camX(),camY());
+		shader_reset();
+	}
 }
 
 with oWater// if inRange 

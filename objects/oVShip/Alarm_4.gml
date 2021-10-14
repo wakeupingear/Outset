@@ -11,6 +11,7 @@ else
 		_g.xDir=0;
 		_g.hitTerrain=2;
 		_g.image_index=1;
+		_g.trailBlend=c_soulBlue;
 	}
 	else if guns[fireSide]==2
 	{
@@ -26,6 +27,7 @@ else
 		_g.xDir=-_xs;
 		_g.hitTerrain=false;
 		_g.image_index=1;
+		_g.trailBlend=c_soulBlue;
 	}
 	
 	

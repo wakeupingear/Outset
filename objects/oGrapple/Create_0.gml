@@ -57,6 +57,7 @@ pullObjList=[oDroppedItem];
 grappleFireEffect=function(){
 	//particle(ply.x,ply.y,depth+1,sNormalRipple,0,{distort: true,xscale:0.1,yscale:0.1,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.15,followObj: ply});
 	rumbleStart(rumbleType.lightPulse);
+	playSound(sndGrappleFull,false);
 	hitPlaceMoved=false;
 	if place_meeting(x,y,oLadder) hitPlace=oLadder
 	else if place_meeting(x,y,grappleHit) hitPlace=instance_place(x,y,grappleHit);
@@ -65,9 +66,24 @@ grappleFireEffect=function(){
 }
 
 grappleCollideEffect=function(){
-	particle(x,y,depth+1,sNormalRipple,0,{distort: true,xscale:0.1,yscale:0.1,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.15,followObj: id, alwaysMove: true});
+	particle(x,y,depth+1,sNormalRipple,0,{distort: true,xscale:0.1,yscale:0.1,xscaleSpd:0.03 ,yscaleSpd:0.03,fade:0.15,followObj: id, alwaysMove: true});
+	var _num=8;
+	for (var i=0;i<_num;i++)
+	{
+		particle(x,y,depth,sPlaceholderPixelW,0,{
+			dir: i*360/_num,
+			spd: 1,
+			xscale: 3,
+			yscale: 3,
+			alpha: 2,
+			fade: 0.15,
+			alwaysMove: true
+		});
+	}
 	rumbleStart(rumbleType.lightPulse);
-	if instance_exists(followObj)&&object_is_ancestor(followObj.object_index,npc)&&!object_is_ancestor(followObj.object_index,enem)
+	audio_stop_sound(sndGrappleFull);
+	playSound(sndGrappleTouch,false);
+	if instance_exists(followObj)&&isObj(followObj,npc)&&!isObj(followObj,enem)
 	{
 		with followObj event_user(1);
 	}

@@ -30,7 +30,7 @@
         "$global.notdonEra",1,
         "$roomChange",[1368,407,"rNotdon",4,-1,0,-1],
         20,
-        "$camSetInstant",[1246,398],
+        "$camSetInstant",[1246,406],
         120,
         "$cutscene","pro_launchIntroWalk"
     ],
@@ -49,7 +49,7 @@
         "$persistence",true,
         "$roomChange",[1368,407,"rNotdon",4,-1,0,-1],
         20,
-        "$camSetInstant",[1246,398],
+        "$camSetInstant",[1246,406],
         12,
         "$cutscene","pro_launchIntroWalk"
     ],

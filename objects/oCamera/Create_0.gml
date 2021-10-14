@@ -11,7 +11,7 @@ camera_set_proj_mat(global.cam,_pm);
 
 view_camera[0]=global.cam;
 followMode=0; //0= don't track, 1=object, 2=path
-followObj=-1;
+followObj=noone;
 followPath=-1;
 pathSpd=2;
 pathEnd=path_action_stop;
@@ -99,6 +99,7 @@ cameraCondition=function(cond){
 }
 
 findCameraPosition=function(snap){
+	if !instance_exists(followObj) exit;
 	var _x=followObj.x;
 	if followObj.object_index==oPlayerCam&&instance_exists(ply) _x=ply.x;
 	else _x=followObj.x;

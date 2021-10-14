@@ -1,7 +1,5 @@
-
-
 function scrVariables(){
-	//preferences
+	#region Preferences
 	global.lang="english"; //language
 	global.langScript=-1; //empty to load the script into
 	global.buttonText="";
@@ -9,15 +7,16 @@ function scrVariables(){
 	global.discordActive=false;
 	if !isHtml&&steam_initialised() global.lang=steam_current_game_language(); //get the user's default language if possible
 	global.lastFile=0;
-	global.musicVol=0.5*(!isDev&&!isTest&&!isNewFile);
-	global.sfxVol=0.8;
 	global.guiScale=clamp(round(3*display_get_height()/1080),3,6)/3;
 	global.hudSide=0;
 	global.hudAlpha=0.8;
 	global.shakeFactor=1.5;
 	global.accessibility=ds_list_create();
 	ds_list_add(global.accessibility,"interactPrompt");
+	#endregion
 	
+	global.data =ds_map_create(); //dump misc values here
+	#region Engine variables
 	global.notPause=true; //pause menu
 	global.transitioning=false; //moving between rooms
 	global.menuOpen=true; //in-game menu
@@ -34,7 +33,46 @@ function scrVariables(){
 	global.scanObjs=ds_list_create();
 	global.scanObj=-1;
 	
-	//saved files
+	global.persistentEvents=ds_map_create(); //Format: object id, 4 indexes of data
+	
+	global.roomTime=0;
+	global.cam=-1;
+	global.zoomStep=0;
+	global.zoomLevel=1;
+	global.zoomTo=1;
+	
+	global.lightSurf=-1;
+	global.lightAlpha=0;
+	global.lightObj=[ply,npcCitra,npcHarold,
+	oSave,
+	oGravityField,
+	oPowerPlantTemp,
+	oSouldropRain,oSouldropRainController,oSouldropCoin,
+	oGrapple
+	];
+	
+	global.particleSystems=ds_list_create();
+	
+	global.coinColorPoint=4280556782;
+	var _cp=[54,135,rVR1,1];
+	addDataPair("vrcp",_cp);
+	
+	global.alphabet=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 
+	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+	"!","#","$","*"];
+	
+	global.npcStates={};
+	
+	global.pathfindingScripts=-1;
+	global.grav=0.2;
+	
+	global.maxDamage=127;
+	global.inWater=false;
+	
+	global.blurObj=ds_list_create();
+	global.reflectObj=ds_list_create();
+	#endregion
+	#region Saved variables
 	global.maxHealth=6;
 	global.souldrop=0;
 	global.level=0;
@@ -60,7 +98,6 @@ function scrVariables(){
 	global.notdonEra=notdonEras.pro1;
 	global.timeOfDay=times.day;
 	
-	global.data =ds_map_create(); //dump misc values here
 	addDataPair("hotel",rWastesHilltop);
 	global.playerItems=ds_list_create(); //format: "iNameOfItem", number of items
 	global.inventory=ds_list_create();
@@ -81,8 +118,11 @@ function scrVariables(){
 	global.scanList=ds_list_create(); //format: id
 	global.scanProgress=ds_map_create(); //formate: region -> count
 	for (var i=0;i<10;i++) global.scanProgress[? i]=0;
+	#endregion
 	
-	//not saved files
+	#region Characters
+	global.characters={};
+	#region Character functions
 	addLocation = function(_npc,_room,_key,_x,_y,_xs,_ys,_path,_varStruct){
 		if is_undefined(_varStruct) _varStruct={};
 		if !is_string(_room) _room=room_get_name(_room);
@@ -106,7 +146,7 @@ function scrVariables(){
 		global.characters[$ _npc].locations[$ _toRoom][$ _to].pathFrom[$ _fromRoom][$ _from].path=_path;
 		if _text!="" global.characters[$ _npc].locations[$ _toRoom][$ _to].pathFrom[$ _fromRoom][$ _from].text=_text;
 	}
-	global.characters={};
+	#endregion
 	
 	#region Test
 	global.characters.test={
@@ -117,8 +157,7 @@ function scrVariables(){
 	addLocation("test","rTest1","t1",304,20,-1,1,"");
 	addLocation("test","rTest1","t2",305,133,1,1,"test_rTest1_groundCycle");
 		addLocationPathFrom("test","t1",rTest1,"t2","rTest1","test_rTest1_fromBlockToGround","testTextWalk");
-	#endregion
-	
+	#endregion	
 	#region Harold
 	global.characters.harold={portrait: [portHarold],diagColor: c_nearWhite,font: fontSizes.harold,
 		portIndList:["smile","neutral","sideNeutral","shifty","angry","sad","surprised"]
@@ -128,14 +167,12 @@ function scrVariables(){
 	
 	addLocation("harold","rHaroldVRStart","c1_haroldVR",151,170,1,1,""); //house start
 	#endregion
-	
 	#region Craig
 	global.characters.craig={portrait: [portCraig],diagColor: c_nearWhite,font: fontSizes.harold,
 		portIndList:["smile","neutral","sideNeutral","shifty","angry","sad","surprised"]
 	};
 	addLocation("craig","rTest1","t1",34,132,1,1,"");
 	#endregion
-	 
 	#region Citra
 	global.characters.citra={portrait: [portCitra],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("citra","rNotdon","pro_lb1",1288,404,-1,1,"");
@@ -159,7 +196,6 @@ function scrVariables(){
 	addLocation("citra","rNotdon","c1_video",1924,452,-1,1,""); //video
 		addLocationPathFrom("citra","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
 	#endregion
-	
 	#region Eugene
 	global.characters.eugene={portrait: [portEugene],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("eugene","rNotdon","pro_lb1",1320,404,-1,1,""); //offscreen in intro
@@ -192,7 +228,6 @@ function scrVariables(){
 	addLocation("eugene","rWastesNotdon","wastesWait",809,177,-1,1,"jumping"); //line
 		addLocationPathFrom("eugene","c1_video","rNotdon","wastesWait","rWastesNotdon","simpleT{0,0}");
 	#endregion
-	
 	#region Nora
 	global.characters.nora={portrait: [portNora],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("nora","rNotdon","pro_lb1",1339,404,-1,1,""); //offscreen in intro
@@ -212,7 +247,6 @@ function scrVariables(){
 	addLocation("nora","rNotdon","c1_video",1804,452,-1,1,""); //video
 		addLocationPathFrom("nora","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
 	#endregion
-	
 	#region Smitten
 	global.characters.smitten={portrait: [portSmitten],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("smitten","rNotdon","pro_lb1",1358,404,-1,1,""); //offscreen in intro
@@ -235,12 +269,11 @@ function scrVariables(){
 		addLocationPathFrom("smitten","c1_line","rNotdon","c1_stage","rNotdon","simpleT","");
 	addLocation("smitten","rNotdon","c1_bay",1604,644,-1,1,""); //launch bay
 		addLocationPathFrom("smitten","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
-	addLocation("smitten","rNotdon","c1_backpack",2237,628,-1,1,"",{takeDamage: true, damageCutscene:"wastes_chet_pulledOut"}); //backpack
+	addLocation("smitten","rNotdon","c1_backpack",2237,628,-1,1,"",{takeDamage: true, damageCutscene:"c1_smittenBackpack_hit"}); //backpack
 	addLocation("smitten","rNotdon","c1_video",1829,452,1,1,""); //video
 		addLocationPathFrom("smitten","c1_backpack","rNotdon","c1_video","rNotdon","simpleJ","");
 		addLocationPathFrom("smitten","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
-	#endregion
-	
+	#endregion	
 	#region Charlie
 	global.characters.charlie={portrait: [portCharlie],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("charlie","rNotdon","pro_lb1",1302,404,-1,1,""); //offscreen in intro
@@ -268,13 +301,11 @@ function scrVariables(){
 		addLocationPathFrom("charlie","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
 	addLocation("charlie","rNotdon","c1_video",1887,452,1,1,""); //video
 		addLocationPathFrom("charlie","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
-	#endregion
-	
+	#endregion	
 	#region Matt
 	global.characters.matt={portrait: [portMatt],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("matt","rNotdon","pro_electro",2246,772,1,1,""); //chilling under rocks
 	#endregion
-	
 	#region Chet
 	global.characters.chet={portrait: [portChet],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("chet","rNotdon","pro_search1",2137,628,1,1,""); //starting search
@@ -282,7 +313,6 @@ function scrVariables(){
 	addLocation("chet","rWastesCrater","wastes_buried",348,388,1,1,"",{takeDamage: true, damageCutscene:"wastes_chet_pulledOut"}); //buried under jet
 	addLocation("chet","rWastesCrater","wastes_pulledOut",348,388,0,1,""); //pulled out of ground
 	#endregion
-	
 	#region Alex
 	global.characters.alex={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
 	addLocation("alex","rNotdonAmphitheater","c1_treadmill",196,256,1,1,"c1_treadmill"); //treadmill
@@ -297,19 +327,15 @@ function scrVariables(){
 	addLocation("her",rWastesCrater,"treeStuck",662,385,-1,1);
 		addLocationPathFrom("her","boxWaiting",rWastesHilltop,"treeStuck",rWastesCrater,"simpleJT{-100,1000}");
 	#endregion
-	
 	#region Gopher
 	#endregion
-	
 	#region General
 	global.characters.general={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.harold
 	};
 	addLocation("general",rWastesCrater,"preFight",632,385,-1,1);
 	#endregion
-	
 	#region Mineral
 	#endregion
-	
 	#region Ring lady
 	#endregion
 	
@@ -324,12 +350,12 @@ function scrVariables(){
 	global.characters.babishOrange={portrait:[empty],diagColor: c_nearWhite, font: fontSizes.myko};
 	addLocation("babishOrange","rCoreIntro","pro_core",477,926,1,1,""); //core start
 	#endregion
-	
 	#region Craig Krisper
 	global.characters.craigKrisper={portrait:[empty],diagColor: c_nearWhite, font: fontSizes.myko};
 	addLocation("craigKrisper","rCoreIntro","pro_core",444,926,1,1,""); //core start
 	#endregion
 	
+	#region Character starting data
 	var _cL=variable_struct_get_names(global.characters) //add arbitray yscale, check, and nothing location to each character
 	for (var i=0;i<array_length(_cL);i++)
 	{
@@ -357,10 +383,18 @@ function scrVariables(){
 	setNPCRoom("xavier",rIsland,"arrival");
 	setNPCRoom("babishOrange",rCoreIntro,"pro_core");
 	setNPCRoom("craigKrisper",rCoreIntro,"pro_core");
-	
 	global.characterNames=[];
+	#endregion
+	#endregion
+	
+	#region Music
 	global.music=-1;
-	global.regionMusic=[-1,mus_notdon,-1,-1,-1,-1,-1,-1,-1,-1];
+	global.musicVol=0.5*(!isDev&&!isTest&&!isNewFile);
+	global.sfxVol=0.8*(global.musicVol+0.5);
+	global.regionMusic=[musIntro,musNotdon,musWastes,musAir,-1,-1,-1,-1,-1,-1];
+	#endregion
+	
+	#region Items
 	global.itemData=ds_map_create();
 	ds_map_add(global.itemData,"iGrapple",{
 		index: 0,
@@ -396,6 +430,9 @@ function scrVariables(){
 	setItemData("iJet2",17,true);
 	setItemData("iCarPoster",18,true);
 	setItemData("iEgg",19,true);
+	#endregion
+	
+	#region Room functions
 	global.regions=-1; //loads in setText
 	global.rooms={}
 	addRoomCamera=function(roomName,left,top,right,bottom,xPos,yPos,condition){
@@ -446,19 +483,25 @@ function scrVariables(){
 			//npcs: []
 		};
 	}
+	#endregion
+	#region Specific rooms
 	global.rooms.rStartup.region=worldRegion.testing;
 	global.rooms.rTitle.darkness=0;
+	global.rooms.rTitle.musicLoop=false;
+	global.rooms.rCoreIntro.music=musWindWobble;
 	//global.rooms.rTest1.npcs=[npcTest,npcHarold];
 		addRoomCamera("rCoreIntro",576-192,980-192,576+192,980+192,576,980); //center
 	global.rooms.rNotdon.inside=false;
 		addRoomCamera("rNotdon",1562,0,1778,546,1620,468); //bounce pad
 		addRoomCamera("rNotdon",2216,698,2562,2000,2374,798,"notdonEraPastPro3"); //the nook
+		addRoomCamera("rNotdon",1092,262,1496,459,"x",378); //outside archives
 		addRoomCamera("rNotdon",1786,556,1920,768,1760,"y","notdonEraLaunchExists"); //mission control
 		addSoulCamera("rNotdon",928-172,398-148,1052,398+108,914,398); //cliffside
 		addSoulCamera("rNotdon",3444,1148,5000,1336,"x",1294); //pier
 		addRoomCamera("rNotdon",1254,530,1782,660,"x",598); //launch level 1
 		addRoomCamera("rNotdon",1254,660,1782,842,"x",748); //launch level 2
 		addRoomCamera("rNotdon",2822,756,3168,970,2995,888,"notdonEraPresent"); //stage
+	global.rooms.rHarold.music=musHarold;
 	global.rooms.rWastes.inside=false;
 	global.rooms.rWastesBorder.inside=false;
 	global.rooms.rWastesCrater.inside=false;
@@ -474,38 +517,9 @@ function scrVariables(){
 	
 	global.rooms.rIsland.inside=false;
 	}
+	#endregion
 	
-	global.persistentEvents=ds_map_create(); //Format: object id, 4 indexes of data
-	
-	//misc globalvars
-	global.roomTime=0;
-	global.cam=-1;
-	global.zoomStep=0;
-	global.zoomLevel=1;
-	global.zoomTo=1;
-	
-	global.lightSurf=-1;
-	global.lightAlpha=0;
-	global.lightObj=[ply,npcCitra,npcHarold,
-	oSave,
-	oGravityField,
-	oPowerPlantTemp,
-	oSouldropRain,oSouldropRainController,oSouldropCoin,
-	oGrapple
-	];
-	
-	global.particleSystems=ds_list_create();
-	
-	global.coinColorPoint=4280556782;
-	var _cp=[54,135,rVR1,1];
-	addDataPair("vrcp",_cp);
-	
-	global.alphabet=["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 
-	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-	"!","#","$","*"];
-	
-	global.npcStates={};
-	
+	#region UI
 	global.guiSurf=-1;
 	global.interactText=-1;
 	global.interactTextLabels=[]; //loads in setText
@@ -516,19 +530,12 @@ function scrVariables(){
 	];
 	if array_length(global.fonts[round(global.guiScale*3)-3])==0 global.guiScale=4/3; //default to 1440p if fonts aren't added
 	global.hudColorList=[make_color_rgb(96,92,169)]; //possible colors for the hud
+	#endregion
 	
+	#region Controller
 	global.controllerConnected=false;
 	global.controllerSlot=-1;
 	global.controllerType=-1;
-	
-	global.pathfindingScripts=-1;
-	global.grav=0.2;
-	
-	global.maxDamage=127;
-	global.inWater=false;
-	
-	global.blurObj=ds_list_create();
-	global.reflectObj=ds_list_create();
 	
 	enum control {
 		up,
@@ -597,8 +604,9 @@ function scrVariables(){
 			global.doubleInputTime[i]=20;
 			break;
 	}
+	#endregion
 	
-	//dev exceptions
+	#region Dev tools
 	global.devSkips=false;
 	global.devTeleport=false;
 	global.startRoom=rCoreIntro;
@@ -611,7 +619,6 @@ function scrVariables(){
 	}
 	else if isTest
 	{
-		global.startRoom=rCoreIntro;
 		addData("reacSt");
 		addData("respInt");
 		global.devTeleport=true;
@@ -625,11 +632,11 @@ function scrVariables(){
 		//addItem("iWrench1");
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
-		global.notdonEra=notdonEras.present;
-		scr_pro_2();
+		//global.notdonEra=notdonEras.present;
+		//scr_pro_2();
 		//scr_wastes_1();
 		//scr_wastes_2();
-		//scr_c1_5();
+		scr_c1_4();
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",
@@ -638,8 +645,9 @@ function scrVariables(){
 		//scr_island_1();
 		global.startRoom=rNotdon;
 	}
+	#endregion
 	
-	//npc sprite mask data
+	#region NPC sprite mask data
 	global.physCollPoints=ds_map_create();
 	ds_map_add(global.physCollPoints,sPly,[[-3,2,-3,2,-3,2,-3,2],[8,8,4,4,0,0,6,6]]);
 	ds_map_add(global.physCollPoints,sPlySprite,global.physCollPoints[? sPly]);
@@ -662,4 +670,5 @@ function scrVariables(){
 	ds_map_add(global.physCollPoints,sWastesCarWheel,[[-7,0,7],[0,7,0]]);
 	ds_map_add(global.physCollPoints,sWastesCrate,[[-12,12],[15,15]]);
 	ds_map_add(global.physCollPoints,sWastesCrateBig,[[-29,29],[31,31]]);
+	#endregion
 }

@@ -8,6 +8,7 @@ if mode==0&&!global.menuOpen&&!global.transitioning
 		global.interactText=check
 		if (buttonPressed(control.up)||buttonPressed(control.confirm))
 		{
+			playSound(sndDoor,false);
 			if targetroom==room 
 			{
 				global.menuOpen=true;

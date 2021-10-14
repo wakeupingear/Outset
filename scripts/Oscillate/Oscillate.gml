@@ -1,5 +1,3 @@
-
-
 function oscillateVars(period,vAmp) constructor{
 	pos=0;
 	step=2*pi/period/60;

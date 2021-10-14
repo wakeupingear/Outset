@@ -6,6 +6,7 @@ if global.alive
 		global.interactText=check;
 		if (pressed||buttonPressed(control.confirm)||buttonPressed(control.up))
 		{
+			playSound(sndButton,false);
 			pressed=false;
 			if platform.moving||platform.moveDir==moveDir
 			{

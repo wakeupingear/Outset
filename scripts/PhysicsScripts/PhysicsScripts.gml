@@ -176,7 +176,7 @@ function setStateAnimation(forceChange){
 	if lastState!=state||forceChange
 	{
 		lastState=state;
-		if array_length(stateToAnim)>state setAnimation(stateToAnim[state],animation);
+		if array_length(stateToAnim)>state image_index=setAnimation(stateToAnim[state],animation);
 	}
 }
 

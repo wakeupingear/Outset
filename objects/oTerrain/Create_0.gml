@@ -32,7 +32,7 @@ addColorData(worldRegion.west,"4C4C4C","666666");
 addColorData(worldRegion.air,"363636","4C4C4C");
 addColorData(worldRegion.deeptown,"282A66","1E1F4C");
 addColorData(worldRegion.east,"A0410D","000000");
-addColorData(worldRegion.core,"E2E2E2");
+addColorData(worldRegion.core,"E2E2E2","898989");
 addColorData(worldRegion.vr,"333333","4C4C4C");
 addColorData(worldRegion.testing,"333333","4C4C4C");
 

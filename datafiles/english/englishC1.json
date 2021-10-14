@@ -233,7 +233,7 @@
         "Caught!",
         "$oVRUnfinishedFireAll.speed",0,
         "$createLayer",[0,0,"above","oGlitch"],
-        "$createLayer",[522,82,"above","oVRXPError"],
+        "$createLayer",[900,78,"above","oVRXPError"],
         "$lastObj.index",0,
         "$lastObj.alarm[1]",-1,
         90,
@@ -287,6 +287,7 @@
             "Apparently, this is your BACKPACK.",
             "$question1","Take it?",
             "#yes1",
+                "$ply.hasBackpack",true,
                 "$trackObj.index",2,
                 "$addItem",["iBackpack"],
                 "$trackObj.text","",
@@ -298,17 +299,26 @@
     ],
 
     "c1_smittenBackpack":[
+        "$goto","dev",
         30,
-        "$smitten.xscale",-1,
+        "$smitten.facePlayer",
         30,
         "?smitten","Well well well well well...",
         "Look who decided to show up.",
         "Did you know that you've held the whole group up? CITRA is sooooo pissed!",
         "Also, we got BACKPACKS with COOKIES in them. Since you bailed, I went ahead and ate yours too!",
         "...Loser!",
-        "$smitten.xscale",1
+        "$smitten.xscale",1,
+        "#dev"
     ],
     "smitten_c1_backpack_idle":[["What are you looking at?"],["Delicious cookie, by the way."]],
+    "c1_smittenBackpack_hit":[
+        "$trackObj.facePlayer",
+        "OWWWWWWWW!",
+        "CITRA's gonna give you HELL for this!",
+        "$smitten.setRoom",["rNotdon","c1_video"],
+        60,
+    ],
 
     "c1_groupForgetName":[
         "$smitten.setRoom",["rNotdon","c1_video"],
@@ -341,13 +351,19 @@
         "$charlie.setRoom",["rNotdon","c1_bay"],
         "$movePlayer","c1_enterMissionControlPly",
         90,
+        "$playSound",{
+            "sound":"sndTick",
+            "loop":true
+        },
         "$ply.x",1837,
         "$ply.y",711,
         30,
         "$setTime",1,
         120,
         "$script","scr_c1_5",
-        120,
+        60,
+        "$stopSound","sndTick",
+        60,
         "$camReset"
     ],
     "c1_jack":["So you wake up in a gear..."],

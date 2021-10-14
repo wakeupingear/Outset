@@ -171,7 +171,7 @@ if object_index==ply
 		{
 			if global.alive
 			{
-				shake(1,1,10);
+				var _damagedEnem=false;
 				switch (_e.object_index)
 				{
 					case oExplosiveBarrel:
@@ -184,8 +184,21 @@ if object_index==ply
 					default:
 						_e.hsp+=hsp;
 						_e.vsp+=vsp;
-						hurtEnem(_e,1);
+						_damagedEnem=hurtEnem(_e,1);
 						break;
+				}
+				if _damagedEnem
+				{
+					var _pNum=3;
+					var _grappleAng=90;
+					if abs(hsp)>hspMax _grappleAng-=90*sign(hsp);
+					var _aboveDepth=layer_get_depth(layer_get_id("above"));
+					for (var i=-_pNum;i<=_pNum;i++)
+					{
+						var _scaleSpd=0.4;
+						particle(x+sprite_width/2-lengthdir_y(8,_grappleAng+180),y+lengthdir_x(8,_grappleAng+180),_aboveDepth,sPlaceholderPixelR,0,{alpha:1.8,spd:3,fade:0.1,dir: _grappleAng+i*12,xscaleSpd: _scaleSpd,yscaleSpd: _scaleSpd});
+					}
+					shake(1,1,10);
 				}
 			}
 			if !object_is_ancestor(_e.object_index,enemWall)

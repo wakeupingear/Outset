@@ -109,6 +109,10 @@ gpu_set_blendenable(true);
 surface_set_target(application_surface);
 draw(0,0);
 if instance_exists(oTextbox) with oTextbox draw(0,0);
+if instance_exists(oCursor) with oCursor 
+{
+	draw_sprite(sprite_index,image_index,x-camX(),y-camY());
+}
 surface_reset_target();
 
 //draw

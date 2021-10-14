@@ -132,7 +132,7 @@ function commandProcess(command){
 							if _obj.object_index==ply hurtPlayer(_val,0,0);
 							else _obj.myHealth-=_val;
 							break;
-						case "sound":
+						case "playSound":
 							if is_struct(_val)
 							{
 								var _loop=false;
@@ -146,16 +146,19 @@ function commandProcess(command){
 											_loop=_val.loop;
 											break;
 										case "wait":
-											if is_real(_val.wait) alarm[0]=command[diag];
+											if is_real(_val.wait)&&_val.wait>1 alarm[0]=command[diag];
 											else alarm[0]=audio_sound_length(_val.sound);
 											wait=true;
 											break;
 										default: break;
 									}
 								}
-								playSound(_val.sound,false);
+								playSound(_val.sound,_loop);
 							}
 							else playSound(_val,false);
+							break;
+						case "stopSound":
+							audio_stop_sound(asset_get_index(_val));
 							break;
 						//camera
 						case "zoom":
@@ -331,8 +334,19 @@ function commandProcess(command){
 								instance_destroy(oPlayerMove);
 							}
 							break;
+						case "facePlayer":
+							if instance_exists(ply) 
+							{
+								_obj.image_xscale=(_obj.x!=ply.x?-sign(_obj.x-ply.x):1);
+								if isObj(_obj,npc) _obj.xscale=_obj.image_xscale;
+							}
+							diag--;
+							break;
 						case "xscale":
-							if !is_array(_val) _obj.image_xscale=_val;
+							if !is_array(_val) 
+							{
+								_obj.image_xscale=_val;
+							}
 							else
 							{
 								var _e=instance_create_depth(0,0,0,oEffectHelper);

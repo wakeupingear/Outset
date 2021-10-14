@@ -1,0 +1,252 @@
+{
+    "wastes_eugeneStartled":[
+        "?eugene","Oh, so you aren't a sheep either? Come to explore the mechanical walk of life?"
+    ],
+    "eugene_wastesWait":[
+        "Ok, you drive.",
+        "Hmm. We don't seem to have a car.",
+        "Lock your knees!",
+        "$createLayer",[0,0,"player","oCarryObj"],
+        "$lastObj.sprite","sChet",
+        "$eugene.hideNPC"
+    ],
+
+    "wastes_intro":[
+        "$oNotdonJet.xTo",192,
+        "$oNotdonJet.yTo",132,
+        "$goto","dev",
+        60,
+        "?chet","Yessirie, you can just smell that there air!",
+        30,
+        "$shakeToggle",[2,2],
+        30,
+        "PHEWEE, THAT'S FREEDOM!",
+        30,
+        "$shakeToggle",[0,0],
+        30,
+        "#dev",
+        "$oWastesBorderBGFade.alarm[0]",1,
+        "$getPlace",[412,257,"oMissile"],
+        "$lastObj.spd",3,
+        "skip","JOESEPH MOTHER{30}",
+        100,
+        "GREAT JIMMMY JENKINS! MAURICE, EVASIVE MANUEVERS!",
+        "That wasn't even a lil' bit evasive!",
+        "Ohhhhhh. I heard SPECTACULAR MANUEVERS.",
+        "EVASIVE AND SPECTACULAR SOUND NOTHING ALIKE, YA TWERP!",
+        "$oNotdonJet.seethroughOverride",-1,
+    ],
+
+    "wastes_bulletFail":[
+        "$oWastesBulletController.destroy",
+        60,
+        "$removeItem","iGrapple",
+        "$oGrapple.destroy",
+        "$particle",["plyX","plyY","above",{
+            "sprite":"sGrapple",
+            "vsp":-4,
+            "grav":0.1,
+            "dir":180,
+        }],
+        30,
+        "$lastObj.spd",2,
+        "$lastObj.angSpd",3,
+        120,
+        "Damn that caribeener!",
+        "$script","scr_wastes_2",
+        "$oNotFloor.destroy",
+        "end",
+        "${NAME} is a total caribeener!",
+    ],
+
+    "wastes_bulletSurvive":[
+        "$oParachute.destroy"
+    ],
+
+    "wastes_beaconOutside":[
+        "SIGNAL STRENGTH: PRETTY MEDIOCRE HONESTLY BUT WE CAN WORK WITH IT I GUESS"
+    ],
+    "wastes_beaconInside":[
+        "SIGNAL STRENGTH: OH GOD JEEZ NO THIS IS TERRIBLE WHY WOUD YOU PLANT IT UNDERGROUND?"
+    ],
+
+    "wastes_borderDoor":[
+        "A chonky metal door. Probably could withstand a nuclear blast.",
+        "On the other hand, maybe ramming it with something could open it?",
+    ],
+
+    "wastes_barrelRoll":[
+        "$createLayer",[98,764,"people","oExplosiveBarrel"],
+        "$lastObj.move",1
+    ],
+
+    "wastes_hotel_rocketPickup":[
+        "$if1","hasItem",["iRocketBook"],
+        "#false1",
+            "Stacks of laminated instructions sit on the workbench.",
+            "'THE ROCKET EQUATION'\nor\n'GRAVITY IS A HARSH MISTRESS'",
+            "$question1","Take one?",
+            "#yes1",
+                "$addItem",["iRocketBook"],
+            "#no1",
+                "end",
+        "#true1",
+            "More identical copies of that rocket thing."
+    ],
+
+    "wastes_car_garage":[
+        "A large, bony structure lies beyond the tarp. Something oily is dripping off of it...",
+        "...It's oil."
+    ],
+
+    "wastes_her_boxesDiscover":[
+        "Ha!",
+        "$camSet",[641,974],
+        "$her.setRoom",["rWastesHilltop","boxEnter"],
+        "$her.createNPC",
+        "$her.setRoom",["rWastesHilltop","boxWaiting"],
+        60,
+        "YESS, IN YOUR FACE! I knew you were a SPY!",
+        "How else would you know how to breach our defenses twice? Clearly you were trained well.",
+        "BUT NOT WELL ENOUGH!",
+        "HERE ARE OUR DEMANDS! You break us out of here, and no one will know that you're a SPY!",
+        "You wouldn't want everyone to know, would you, SPY?",
+        "$addData","wResistEscape",
+        "$trackObj.key","wastes_her_boxes",
+        "$camReset"
+    ],
+    "wastes_her_boxes":[
+        ["CHOP CHOP!{60} The boxes, of course."],5,
+        ["GOPHER! Where's my late?","...GOPHER?"],
+    ],
+    "wastes_boxesDestroy":[
+        "$addData","wBRack",
+        "$oWastesHerBoxes.destroy",
+        "$her.setRoom",["rWastesHilltop","boxWaiting"],
+        "$her.createNPC",
+        "$her.setRoom",["rWastesCrater","treeStuck"],
+        "HELL YEAH BROTHER!"
+    ],
+
+    "wastes_general_intro":[
+        "$addData","wGen1Start",
+        "$oWastesCatwalk.alarm[0]",1,
+        60,
+        "$destroyPlace",["trackObjX","trackObjY","hitobj"],
+        "$trackObj.destroy",
+        "$cutscene","wastes_car_warehouse"
+    ],
+    "wastes_car_warehouse":[
+        "$createLayer",[881,328,"mykoSpawn","oWastesCar"],
+        "$lastObj.move",-1,
+        "$script","scr_wastes_3"
+    ],
+
+    "wastes_chet_pulledOut":[
+        "$chet.setRoom",["rWastesCrater","wastes_pulledOut"],
+        "?chet",
+        "WHA!"
+    ],
+    "wastes_pulledOutChet":[
+        "$question1","Found those parts yet?",
+        "#yes1",
+            "No you haven't!","end",
+        "#no1",
+            "$question2","Well... want me to come with you?",
+            "#yes2",
+                "PREPARE YOUR SPINAL CORD!",
+                "$createLayer",[0,0,"player","oCarryObj"],
+                "$lastObj.sprite","sChet",
+                "$chet.hideNPC",
+                "end",
+            "#no2",
+                "Look, are you sure that you can do this yourself, little dude?",
+                "It's a scary world ya hear, really turning this PARENTAL STAND-IN's hair grey!",
+                "And I've been such a good guardian! Be careful, small one."
+    ],
+
+    "wastes_crane":[
+        "A ticker-tape prints out a message:",
+        "$if1","hasData",["wCraneButton"],
+        "#false1",
+            "\"CRANE IS OFF\"",
+            "$question1","\"TURN ON?\"",
+            "#yes1","$addData","wCraneButton",
+            "#no1","end",
+        "#true1",
+            "$if2","hasData",["wCraneUnblock"],
+            "#false2",
+                "\"CRANE IS ON\"\n\"ARM IS BLOCKED\"",
+                "end",
+            "#true2",
+                "\"CRANE IS ON\"",
+    ],
+
+    "wastes_factory_poster":[
+        "$popup",{"sprite":"sFactoryPosterPopup"}
+    ],
+
+    "wastes_jet1":[
+        "$addItem",["iJet1"],
+        "$addData","wastes_jet1",
+        "$trackObj.destroy"
+    ],
+    "wastes_jet2":[
+        "$addItem",["iJet2"],
+        "$addData","wastes_jet2",
+        "$trackObj.destroy"
+    ],
+    "wastes_jet3":[
+        "$addItem",["iJet3"],
+        "$addData","wastes_jet3",
+        "$trackObj.destroy"
+    ],
+
+    "wastes_ring1":[
+        "$addItem",["iRing1"],
+        "$addData","wastes_ring1",
+        "$trackObj.destroy"
+    ],
+    "wastes_ring2":[
+        "$addItem",["iRing2"],
+        "$addData","wastes_ring2",
+        "$trackObj.destroy"
+    ],
+    "wastes_ring3":[
+        "$addItem",["iRing3"],
+        "$addData","wastes_ring3",
+        "$trackObj.destroy"
+    ],
+
+    "wastes_carPrinter":[
+        "$if1","hasData",["wCarSearch"],
+        "#false1",
+            "$question1","Summon the CAR back?",
+            "#yes1",
+                "$addData","wCarSearch",
+                "$addItem","iCarPoster",
+                "You recall that the CAR is a 1-ton machine with little to no autonomous capibilities, and therefore unable to come back at the push of a button.",
+                "Stupid, stupid, stupid.",
+                "end",
+            "#no1",
+                "The printer stares at you, nonplussed.",
+                "$end",
+        "#true1",
+            "The poster printer is out of toner.",
+            "$trackObj.key","wastes_carPrinter2"
+    ],
+    "wastes_carPrinter2":[
+        "Upon further inspection, the poster printer is also out of ink.",
+        "It's also out of paper.",
+        "And the power cable has been chewed through.",
+        "And the printer is 20 years past its expiration date.",
+        "$trackObj.key","wastes_carPrinter3"
+    ],
+    "wastes_carPrinter3":[
+        "This printer has been through hell."
+    ],
+
+    "wastes_carPoster":[
+        "$popup",{"sprite":"sCarPosterPopup"}
+    ]
+}

@@ -2,28 +2,32 @@
 //special overrides
 if state==moveState.standing&&!global.menuOpen
 {
-	if buttonHold(control.up)
+	if buttonHold(control.up)&&buttonHold(control.down)
+	{
+		if animation.currentAnimation!="disappointment"
+		{
+			image_index=setAnimation("disappointment",animation);
+		}
+	}
+	else if buttonHold(control.up)
 	{
 		if animation.currentAnimation!="lookingUp"
 		{
-			animation.currentAnimation="lookingUp";
-			animation.animating=true;
+			image_index=setAnimation("lookingUp",animation);
 		}
 	}
 	else if buttonHold(control.down)
 	{
 		if animation.currentAnimation!="lookingDown"
 		{
-			animation.currentAnimation="lookingDown";
-			animation.animating=true;
+			image_index=setAnimation("lookingDown",animation);
 		}
 	}
 	else
 	{
 		if animation.currentAnimation!="standing"
 		{
-			animation.currentAnimation="standing";
-			animation.animating=true;
+			image_index=setAnimation("standing",animation);
 		}
 	}
 }

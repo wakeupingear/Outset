@@ -109,13 +109,20 @@ drawLight=function(){
 
 //animation
 animation.onlyAlive=false;
-animation.ladder={type: animType.singleFrame,startFrame: 16};
-animation.ladderMove={frameTime:9, type: animType.loop,startFrame: 16,endFrame: 17};
-animation.zipline={type: animType.singleFrame,startFrame: 18};
-animation.jumping.startFrame=13;
+animation.standing={type: animType.loop,startFrame: 10,endFrame:43,frameTime:10};
+animation.walking= {frameTime: 7,type: animType.loop,startFrame: 0,endFrame: 1};
+animation.ladder={type: animType.singleFrame,startFrame: 5};
+animation.ladderMove={frameTime:9, type: animType.loop,startFrame: 5,endFrame: 6};
+animation.zipline={type: animType.singleFrame,startFrame: 7};
+animation.jumping.startFrame=4;
 
-animation.lookingUp={type: animType.singleFrame,startFrame: 14};
-animation.lookingDown={type: animType.singleFrame,startFrame: 12};
+newAnimation = new Animation();
+//In step event:
+image_index=updateAnimation(image_index,newAnimation);
+
+animation.lookingUp={type: animType.singleFrame,startFrame: 3};
+animation.lookingDown={type: animType.singleFrame,startFrame: 9};
+animation.disappointment={type: animType.singleFrame,startFrame: 44};
 
 stateToAnim[moveState.running]="walking";
 stateToAnim[moveState.jumping]="jumping";

@@ -13,3 +13,6 @@ subScale=0.1;
 standPos=[0.1,0.3,0.5];
 tunnel= -1;
 tunnelFunc=-1;
+
+hoverOsci=new oscillateVars(6,4);
+hoverOsci.pos=x%256;

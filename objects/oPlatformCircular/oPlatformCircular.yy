@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sPlatformNotdon",
-    "path": "sprites/sPlatformNotdon/sPlatformNotdon.yy",
+    "name": "sPlatformTest",
+    "path": "sprites/sPlatformTest/sPlatformTest.yy",
   },
   "solid": false,
   "visible": true,

@@ -1,7 +1,8 @@
-function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,smallScale,color,angle,alpha,isShaded,drawDir,extraSprites) constructor{
+ function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,smallScale,color,angle,alpha,isShaded,drawDir,extraSprites) constructor{
 	num=sliceNum;
 	scale=smallScale;
 	shade=isShaded;
+	defaultColor=color;
 	slices=array_create(num,[[defaultSprite,defaultIndex,color,angle,alpha]]); //create array of slices
 	updateFunction=updateFunc;
 	update=alwaysUpdate;
@@ -19,7 +20,7 @@ function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,small
 		var p=i/num;
 		for (var j=0;j<array_length(slices[i]);j++)
 		{
-			if shade slices[i][j][2]=merge_color(c_white,c_black,(1-p)*0.5);
+			//if shade array_set( slices[i][j],2,merge_color(color,c_black,(1-p)*0.5)); //THIS LITERALLY DOESN"T WORK!!!!!!! GMS BUG!!!!
 			if updateFunction!=-1 slices[i][j]=updateFunction(i,num,slices[i][j]);
 		}
 	}
@@ -32,7 +33,8 @@ function Obj3D(defaultSprite,defaultIndex,updateFunc,alwaysUpdate,sliceNum,small
 			var _i=i;
 			for (var j=0;j<array_length(slices[i]);j++)
 			{
-				var _c=slices[i][j][2];
+				var _c=defaultColor; //slices[i][j][2];
+				if shade _c=merge_color(_c,c_black,(1-p)*0.7);
 				if update slices[i][j]=updateFunction(_i,num,slices[i][j]);
 				draw_sprite_ext(slices[i][j][0],slices[i][j][1],lerp(x1,x2,p),lerp(y1,y2,p),_s,_s,slices[i][j][3],_c,slices[i][j][4]);
 			}

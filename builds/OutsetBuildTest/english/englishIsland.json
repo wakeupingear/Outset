@@ -1,0 +1,31 @@
+{
+    "island_intro":[
+        "?chet","Folks, folks, SIMMER DOWN!",
+        "Now see, we're nosedivin' into a primative culture inside some loud, flashy flying bus.",
+        "So don't be surprised if they think we're gods or wizards.",
+        "Just roll with it, baby!"
+    ],
+    "island_welcome":[
+        "Ah! Visitors! Yes, yes, it's about time!",
+        "We have a home and beds prepared, if you will all turn heel and follow this way.",
+        "?smitten","$skip","See, this is the part where CITRA would tell us that they're about to take us out back and stab us to death",
+        "We also have ziplines!",
+        "?chet","YEEEEEHAWWWWW!!"
+    ],
+
+    "island_xavierIntro":[
+        "?xavier","My lord!",
+        "I am Xavier Correnti, 7th generation OVERSEER of TEST SITE C: ISLA NOMA DOMA!",
+        "$question1","Shall I start the EXPERIMENT?",
+        "#yes1",
+            "WOOHEEEHAAAAAAAAAHAAAAA!",
+            "I'll run up to our OBSERVATORY and PRESS THE BUTTON!",
+            "Please, mingle with the subjects until then.",
+            "Once again, it is an honor!",
+            "end",
+        "#no1",
+            "My lord, you say this now, but consider that in a parallel universe, you say yes!",
+            "And in one of those parallel universes where you say yes, good things come!",
+            "But I know my place. I will return to our OBSERVATORY and wait for your signal.",
+    ]
+}

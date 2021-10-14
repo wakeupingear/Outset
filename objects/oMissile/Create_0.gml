@@ -20,6 +20,7 @@ spd=2;
 scope=false;
 scopeAlpha=0;
 scopeBlend=[c_white,c_soulBlue];
+trailBlend=c_red;
 
 collPointX=[24];
 collPointY=[0];

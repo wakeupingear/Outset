@@ -14,6 +14,15 @@ function particle(x,y,depth,sprite,ind,struct){
 			if instance_exists(oTerrain) ds_list_add(oTerrain.terrain,_p);
 		}
 	}
+	with _p 
+	{
+		if isBG 
+		{
+			//setBGPosition(x,y);
+			event_perform(ev_step,0);
+			//show_debug_message(xOff)
+		}
+	}
 	return _p;
 }
 

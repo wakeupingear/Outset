@@ -15,9 +15,8 @@ if lastActive!=active
 			{
 				_dist=point_distance(xstart,ystart,parts[i].x,parts[i].y);
 			}
-			else parts[i]=-1;
+			else parts[i]=noone;
 		}
-		
 		for (var i=0;i<destFrames[1]-destFrames[0];i++) if parts[i]==-1
 		{
 			createParticle(i,partSpd,_dist);
@@ -26,7 +25,7 @@ if lastActive!=active
 	else
 	{
 		var _dist=partSpd*(1+ceil(sqrt(sqr(max(xstart,room_width-xstart))+sqr(max(ystart,room_height-ystart)))/partSpd));
-		alarm[1]=_dist/partSpd;
+		alarm[1]=min(_dist,440)/partSpd;
 		for (var i=0;i<4;i++) 
 		{
 			createParticle(i,-partSpd,_dist);

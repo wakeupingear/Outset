@@ -51,6 +51,15 @@
         {"FrameId":{"name":"a268c053-385a-4fe2-82fd-498ce363ebbe","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"dea43bb6-fa14-4a96-9bc7-80e1b243863f","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"a268c053-385a-4fe2-82fd-498ce363ebbe","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"f57e72b7-3de7-43f0-8da6-fb2baeeb1464","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sNotdonTerrainTexture","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"a268c053-385a-4fe2-82fd-498ce363ebbe","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"4ba65ee5-0eeb-41f3-9c1a-08641c9ffa19","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"f470f04d-ac60-41b5-9b34-4214688bef73","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"66302495-facd-47e6-b587-6d882a87ec5e","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"a53f2f35-40d2-4ea1-b217-f258ff673ce0","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"e92e86d2-b06d-47b4-9bef-8f4cf8a7752f","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"dea43bb6-fa14-4a96-9bc7-80e1b243863f","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"LayerId":{"name":"f57e72b7-3de7-43f0-8da6-fb2baeeb1464","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sNotdonTerrainTexture","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","name":"668f4598-41e0-450e-91fb-e0e946749769","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sNotdonTerrainTexture","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},
@@ -60,7 +69,7 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 3.0,
+    "length": 4.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -68,6 +77,7 @@
             {"id":"a3119860-5ee4-4716-904a-11aaaf23bc96","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9e8b9310-dbfc-4dc7-8261-5cc0317c0971","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"54c3f094-ae5b-41f3-a1c6-bcca717e3757","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"95234031-ac2a-4289-946b-3d4f663a2fb9","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"7a8cc106-cb2b-4eb3-acae-1a41561af1b2","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a268c053-385a-4fe2-82fd-498ce363ebbe","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"08afc949-75a2-48c4-a399-8d86f769e381","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"668f4598-41e0-450e-91fb-e0e946749769","path":"sprites/sNotdonTerrainTexture/sNotdonTerrainTexture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
