@@ -16,20 +16,25 @@
         "$cutsceneDelay",{"key":"c1_graduationInterrupt","delay":60}
     ],
     "c1_graduationInterrupt":[
+        "$cutsceneDelayCancel","c1_graduationSpeech",
         "$addData","shoeTrip",
         "$npcCitra.facePlayer",true,
         240,
         "?citra","...kids.",
         "?smitten","Nice one, ditzo!",
+        "$eugene.xscale","ply",
         "?eugene","I don't know if you know, but your shoe is untied.",
+        "$eugene.xscale",1,
         "?citra","A{15}HEM!",
         30,
-        "$npcCitra.facePlayer",false,
+        "$citra.facePlayer",false,
+        "$citra.xscale",-1,
         30,
         "$cutscene","c1_graduationSpeech"
     ],
     "c1_graduationSpeech":[
-        "So the KIDS are leaving! Not for good, just until we know the ANSWERS.",
+        "$cutsceneDelayCancel","c1_graduationTrip",
+        "?citra","So the KIDS are leaving! Not for good, just until we know the ANSWERS.",
         "Scan to the EAST! Scan to the WEST! Scan UP too, I suppose.",
         "Just keep going until we can FIX THE REACTOR.",
         "Please, give it up for the KIDS!",
@@ -313,7 +318,7 @@
     ],
     "smitten_c1_backpack_idle":[["What are you looking at?"],["Delicious cookie, by the way."]],
     "c1_smittenBackpack_hit":[
-        "$trackObj.facePlayer",
+        "$trackObj.xscale","ply",
         "OWWWWWWWW!",
         "CITRA's gonna give you HELL for this!",
         "$smitten.setRoom",["rNotdon","c1_video"],
@@ -322,6 +327,7 @@
 
     "c1_groupForgetName":[
         "$smitten.setRoom",["rNotdon","c1_video"],
+        60,
         "$popup",{"sprite":"empty","forceOpen":true,"objs":[{
             "obj":"oKeyboard",
             "output":0
@@ -366,7 +372,7 @@
         60,
         "$camReset"
     ],
-    "c1_jack":["So you wake up in a gear..."],
+    "c1_jack":["?ply","So you wake up in a gear..."],
 
     "citra_c1_bay":[
         "Stay here, please! As we all saw, there was been another POWER OUTAGE yesterday.",

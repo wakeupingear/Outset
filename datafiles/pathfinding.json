@@ -18,19 +18,19 @@
     ],
 
     "simple":[
-        "xy","x","y",4
+        "xy","x","y",6
     ],
     "simpleT":[
-        "xyt","x","y",4
+        "xyt","x","y",6
     ],
     "simpleJ":[
-        "xyj","x","y",4
+        "xyj","x","y",6
     ],
     "simpleJT":[
-        "xyjt","x","y",4
+        "xyjt","x","y",6
     ],
     "simpleTJ":[
-        "xyjt","x","y",4
+        "xyjt","x","y",6
     ],
 
 
@@ -74,6 +74,7 @@
         "xy",863,1376,8
     ],
     "pro_charlie_ledgeJump":[
+        "xy",1079,423,6,
         "jump",
         "xy",1181,403,4
     ],

@@ -334,18 +334,13 @@ function commandProcess(command){
 								instance_destroy(oPlayerMove);
 							}
 							break;
-						case "facePlayer":
-							if instance_exists(ply) 
-							{
-								_obj.image_xscale=(_obj.x!=ply.x?-sign(_obj.x-ply.x):1);
-								if isObj(_obj,npc) _obj.xscale=_obj.image_xscale;
-							}
-							diag--;
-							break;
 						case "xscale":
 							if !is_array(_val) 
 							{
-								_obj.image_xscale=_val;
+								if _val=="ply" var _scale=(_obj.x!=ply.x?-sign(_obj.x-ply.x):1);
+								else var _scale=_val;
+								if isObj(_obj,npc) _obj.xscale=_scale;
+								else _obj.image_xscale=_scale;
 							}
 							else
 							{
@@ -354,6 +349,7 @@ function commandProcess(command){
 								_e.xscaleTo=_val[0];
 								_e.xscaleStep=_val[1];
 							}
+							break;
 						case "yscale":
 							if !is_array(_val) _obj.image_yscale=_val;
 							else

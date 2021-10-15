@@ -114,6 +114,7 @@ animation.walking= {frameTime: 7,type: animType.loop,startFrame: 0,endFrame: 1};
 animation.ladder={type: animType.singleFrame,startFrame: 5};
 animation.ladderMove={frameTime:9, type: animType.loop,startFrame: 5,endFrame: 6};
 animation.zipline={type: animType.singleFrame,startFrame: 7};
+animation.standingStill={type: animType.singleFrame,startFrame: 0};
 animation.jumping.startFrame=4;
 
 newAnimation = new Animation();

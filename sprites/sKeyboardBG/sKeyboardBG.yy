@@ -25,8 +25,8 @@
   "gridY": 8,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"7ec82119-93e8-4655-9769-064dca8e25e1","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7ec82119-93e8-4655-9769-064dca8e25e1","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"LayerId":{"name":"5ce3a7a5-2171-41cd-bc02-739dc6eb0c20","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"7ec82119-93e8-4655-9769-064dca8e25e1","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"LayerId":{"name":"8218d530-0974-422c-9573-22d6ad5d96a4","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"7ec82119-93e8-4655-9769-064dca8e25e1","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"LayerId":{"name":"5ce3a7a5-2171-41cd-bc02-739dc6eb0c20","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sKeyboardBG","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"resourceVersion":"1.0","name":"7ec82119-93e8-4655-9769-064dca8e25e1","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"99d9cc6c-669c-430c-9115-c9c47401554f","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"99d9cc6c-669c-430c-9115-c9c47401554f","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"LayerId":{"name":"8218d530-0974-422c-9573-22d6ad5d96a4","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},

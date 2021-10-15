@@ -54,6 +54,10 @@ function setRoomEra(){
 			if instance_exists(oWastesBuilding) instance_destroy(oWastesBuilding);
 			scrCreateWastesBuildings();
 			break;
+		case worldRegion.notdon:
+			if instance_exists(oPlatformButton) with oPlatformButton hasPower=roomHasPower();
+			if instance_exists(oPlatform) with oPlatform image_index=roomHasPower();
+			break;
 		default: break;
 	}
 	switch room

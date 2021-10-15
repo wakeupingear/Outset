@@ -15,7 +15,7 @@ if lastActive!=active
 			{
 				_dist=point_distance(xstart,ystart,parts[i].x,parts[i].y);
 			}
-			else parts[i]=noone;
+			else parts[i]=-1;
 		}
 		for (var i=0;i<destFrames[1]-destFrames[0];i++) if parts[i]==-1
 		{

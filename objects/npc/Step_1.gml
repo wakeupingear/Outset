@@ -18,6 +18,20 @@ if pathfinding //process commands
 		{
 			pfInd++;
 			pathfindCommandProcess(moveCommand);
+			if !pathfinding //done
+			{
+				if global.characterLocations[? npcKey][2]!=room instance_destroy();
+				else
+				{
+					var _rm=room_get_name(room);
+					xscale=global.characters[$ npcKey].locations[$ _rm][$ global.characterLocations[? npcKey][4]].xs;
+					if xscale==0 
+					{
+						facePlayer=true;
+						xscale=1;
+					}
+				}
+			}
 		}
 	}
 	else

@@ -28,6 +28,10 @@ else if mode==1
 }
 else if mode==2
 {
+	if instance_exists(oHaroldVideoSnooze)&&oHaroldVideoSnooze.alarm[1]==-1
+	{
+		oHaroldVideoSnooze.alarm[1]=1;
+	}
 	image_xscale-=0.1;
 	image_yscale-=0.1;
 	if image_xscale==0

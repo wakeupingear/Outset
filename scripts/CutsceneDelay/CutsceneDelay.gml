@@ -37,7 +37,13 @@ function createCutsceneDelay(_val){
 	if _cd.startroom!="any"&&_cd.startroom!=room instance_destroy(_cd,false);
 }
 function cancelCutsceneDelay(_key){
-	for (var i=0;i<instance_number(oCutsceneDelay);i++) with instance_find(oCutsceneDelay,0) if _key=="any"||key==_key instance_destroy();
+	for (var i=0;i<instance_number(oCutsceneDelay);i++) with instance_find(oCutsceneDelay,i) 
+	{
+		if _key=="any"||key==_key 
+		{
+			instance_destroy();
+		}
+	}
 }
 
 function scr_pro_launchEugene(){

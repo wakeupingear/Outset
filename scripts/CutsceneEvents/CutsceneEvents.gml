@@ -182,6 +182,7 @@ function scr_c1_2(){
 	setNPCRoom("nora","rNotdon","c1_stage");
 	setNPCRoom("smitten","rNotdon","c1_stage");
 	
+	createCutsceneDelay({key:"c1_graduationSpeech",condition:"plyRight",args:[2820],myRoom:"rNotdon"});
 	createCutsceneDelay({key:"c1_graduationTrip",condition:"plyRight",args:[2720],myRoom:"rNotdon"});
 	
 	addData("reacSt");
@@ -266,7 +267,7 @@ function scr_c1_5(){
 	}
 	
 	instance_create_depth(1474,357,layer_get_depth(layer_get_name("hitPresent")),oNotdonPowerLadder);
-	
+	if instance_exists(oPlatformButton) with oPlatformButton hasPower=roomHasPower();
 	setNPCRoom("smitten","rNotdon","c1_bay");
 	setNPCRoom("citra","rNotdon","c1_bay");
 	setNPCRoom("eugene","rNotdon","c1_bay");

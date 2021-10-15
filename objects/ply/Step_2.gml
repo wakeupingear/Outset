@@ -31,6 +31,10 @@ if state==moveState.standing&&!global.menuOpen
 		}
 	}
 }
+else if state==moveState.standing
+{
+	if animation.currentAnimation!="standingStill" image_index=setAnimation("standingStill",animation);
+}
 
 if !instance_exists(oPlayerMove) npcAnimation();
 

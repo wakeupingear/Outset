@@ -7,7 +7,7 @@ if instance_exists(oCursor) for (var i=1;i<image_number;i++)
 	if place_meeting(x,y,oCursor)
 	{
 		selection=i;
-		if buttonPressed(control.confirm) 
+		if buttonPressed(control.confirm)||buttonPressed(control.grapple)
 		{
 			parentObj.exiting=true;
 			addData("wr"+string(i));

@@ -280,7 +280,7 @@ function scrVariables(){
 	addLocation("charlie","rNotdon","pro_lb2",1118,404,1,1,""); //play area
 		addLocationPathFrom("charlie","pro_lb1","rNotdon","pro_lb2","rNotdon","simple","");
 	addLocation("charlie","rNotdon","pro_lb3",1109,404,-1,1,""); //watching eugene jump
-	addLocation("charlie","rNotdon","pro_lb4",1063,403,-1,1,""); //getting the parachutes
+	addLocation("charlie","rNotdon","pro_lb4",1057,416,-1,1,""); //getting the parachutes
 		addLocationPathFrom("charlie","pro_lb3","rNotdon","pro_lb4","rNotdon","simple","");
 		addLocationPathFrom("charlie","pro_lb5","rNotdon","pro_lb4","rNotdon","simple","");
 	addLocation("charlie","rNotdon","pro_lb5",1181,403,-1,1,""); //walking over to you
@@ -389,7 +389,7 @@ function scrVariables(){
 	
 	#region Music
 	global.music=-1;
-	global.musicVol=0.5*(!isDev&&!isTest&&!isNewFile);
+	global.musicVol=0.5*(isFinal);
 	global.sfxVol=0.8*(global.musicVol+0.5);
 	global.regionMusic=[musIntro,musNotdon,musWastes,musAir,-1,-1,-1,-1,-1,-1];
 	#endregion
@@ -623,7 +623,7 @@ function scrVariables(){
 		addData("respInt");
 		global.devTeleport=true;
 		global.devSkips=true;
-		addItem("iGrapple");
+		//addItem("iGrapple");
 		//addItem("iGrappleArc");
 		//addItem("iGrappleDown");
 		addItem("iSlate");
@@ -636,7 +636,7 @@ function scrVariables(){
 		//scr_pro_2();
 		//scr_wastes_1();
 		//scr_wastes_2();
-		scr_c1_4();
+		scr_pro_3();
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",

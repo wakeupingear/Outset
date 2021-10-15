@@ -21,7 +21,11 @@ else
 	_c.xOff=264+13;
 	_c.yOff=48+13;
 	
-	instance_create_depth(camX()+192,camY()+108,depth-10000,oCursor);
+	instance_create_depth(camX()+64,camY()+64,depth,oCursor);
+	oCursor.keyMove=false;
+	oCursor.x=-100;
+	//oCursor.mouseXPrevious=mouse_x;
+	with oLetter if letter=="A" selected=true;
 }
 
 /*

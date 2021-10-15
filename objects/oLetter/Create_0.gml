@@ -11,3 +11,13 @@ letter="";
 hover=false;
 selected=false;
 active=true;
+
+letterClicked=function(){
+	with oLetter selected=false;
+	selected=true;
+	particle(x,y,depth+1,sprite_index,0,{
+		xscaleSpd:0.05,
+		yscaleSpd:0.05,
+		fade:0.05
+	});
+}

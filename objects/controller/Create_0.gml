@@ -28,7 +28,7 @@ audio_group_load(audiogroup_music);
 #macro isNewFile (os_get_config()=="NewFile")
 #macro isTest (os_get_config()=="Testing")
 #macro isHtml (os_browser!=browser_not_a_browser)
-#macro isFinal (!isTest&&!isDev&&!isNewFile)
+#macro isFinal (!isTest&&!isDev)
 if isHtml
 {
 	base_width = 384;
@@ -39,7 +39,7 @@ if isHtml
 
 if isFinal
 {
-	//gml_pragma("PNGCrush");
+	gml_pragma("PNGCrush");
 	gml_pragma("UnityBuild", "true");
 	randomize();
 }
