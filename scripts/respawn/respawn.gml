@@ -15,6 +15,7 @@ function respawn(xPos,yPos){
 		array_push(_arr,global.dieX,global.dieY,room,x,y);
 		instance_destroy(oPlayerSoul);
 	}
+	shake(2,2,20);
 	for (var i=0;i<instance_number(oSoulBranch);i++) 
 	{
 		var _i=instance_find(oSoulBranch,i);

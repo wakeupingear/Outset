@@ -49,7 +49,10 @@ if isHtml
     }
 }
 
-if buttonPressed(control.fullscreen) window_set_fullscreen(!window_get_fullscreen());
+if buttonPressed(control.fullscreen) 
+{
+	event_user(0);
+}
 
 //open inventory
 if global.alive&&!global.menuOpen&&!global.transitioning&&global.notPause&&buttonPressed(control.select)
@@ -109,3 +112,6 @@ global.roomTime++;
 
 //playtime
 if room!=rTitle global.playtime+=round(delta_time);
+
+//debug timer
+if !global.notPause&&alarm[3]>-1 alarm[3]++;

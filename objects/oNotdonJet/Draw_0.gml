@@ -1,5 +1,5 @@
 /// @description Draw
-if state==0
+if state>=0
 {
 	if flying
 	{

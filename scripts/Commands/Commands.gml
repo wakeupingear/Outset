@@ -339,7 +339,7 @@ function commandProcess(command){
 							{
 								if _val=="ply" var _scale=(_obj.x!=ply.x?-sign(_obj.x-ply.x):1);
 								else var _scale=_val;
-								if isObj(_obj,npc) _obj.xscale=_scale;
+								if isObj(_obj,npc)||isObj(_obj,ply) _obj.xscale=_scale;
 								else _obj.image_xscale=_scale;
 							}
 							else
@@ -361,11 +361,11 @@ function commandProcess(command){
 							}
 							break;
 						case "startAnimation":
-							_obj.currentAnimation=_val;
-							_obj.animating=true;
+							with _obj image_index=setAnimation(_val,animation);
+							break;
 						case "stopAnimation":
 							_obj.currentAnimation="";
-							_obj.animating=true;
+							_obj.animating=false;
 							break;
 						case "sequence":
 							var _seqID=_obj;
@@ -378,14 +378,18 @@ function commandProcess(command){
 							else layer_sequence_create(layer_get_id("aboveAsset"),_seqX,_seqY,_seqID);
 							break;
 						case "resetText":
-							_obj.text=[];
+							with _obj text=[];
 							break;
 						case "speed":
 							with _obj image_speed=_val;
 							break;
 						case "setText":
-							if is_array(_val) _obj.text=_val;
-							else _obj.text=textLoad(_val);
+							if is_array(_val) with _obj text=_val;
+							else with _obj text=textLoad(_val);
+							break;
+						case "setDeadText":
+							if is_array(_val) with _obj deadText=_val;
+							else with _obj deadText=textLoad(_val);
 							break;
 						case "pathfinding":
 							pathfindingStart(_obj,_val);
@@ -531,11 +535,19 @@ function commandProcess(command){
 							break;
 						case "cutsceneCondition":
 						case "cutsceneDelay":
-							createCutsceneDelay(_val,_name);
+							createCutsceneDelay(_val);
 							saved=true;
 							break;
 						case "cutsceneDelayCancel":
 							cancelCutsceneDelay(_val);
+							break;
+						case "top":
+							heightOverride=1;
+							diag--;
+							break;
+						case "bottom":
+							heightOverride=-1;
+							diag--;
 							break;
 						case "font":
 							font=asset_get_index(_val);
@@ -830,6 +842,8 @@ function tCoord(coord){
 		if coord=="startY" return global.startY;
 		if coord=="camX" return oCamera.x;
 		if coord=="camY" return oCamera.y;
+		if coord=="camXCorner" return camX();
+		if coord=="camYCorner" return camY();
 		if coord=="trackObjX" return trackObj.x;
 		if coord=="trackObjY" return trackObj.y;
 	}

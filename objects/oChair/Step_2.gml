@@ -36,7 +36,7 @@ if !global.menuOpen
 			_exit=true;
 			ply.state=moveState.standing;
 		}
-		else if oGrapple.state>1
+		else if instance_exists(oGrapple)&&oGrapple.state>1
 		{
 			_exit=true;
 			ply.state=moveState.pulling;

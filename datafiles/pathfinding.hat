@@ -1,0 +1,175 @@
+{
+    "test_rTest1_fromBlockToGround": [
+        "xy",354,87,16,
+        "pathfinding","npcTest","test_rTest1_groundCycle"
+    ],
+    "test_rTest1_groundCycle": [
+        "#start",
+        "xy",277,152,8,
+        "xy",326,130,8,
+        "jump",70,
+        "goto","start"
+    ],
+
+    "jumping":[
+        "#start",
+        "jump",70,
+        "goto","start"
+    ],
+
+    "simple":[
+        "xy","x","y",6
+    ],
+    "simpleT":[
+        "xyt","x","y",6
+    ],
+    "simpleJ":[
+        "xyj","x","y",6
+    ],
+    "simpleJT":[
+        "xyjt","x","y",6
+    ],
+    "simpleTJ":[
+        "xyjt","x","y",6
+    ],
+
+
+
+    "simpleEnterRoom":[
+        "xy","x","y",2,
+        15,
+        "alpha",0,-0.05
+    ],
+    "simpleTwo": [
+        "xy","x1","y1",6,
+        "xy","x2","y2",6
+    ],
+    "simpleBackAndForth": [
+        "#start",
+        "xy","x1","y1",6,
+        "xy","x2","y2",6,
+        "goto","start"
+    ],
+    "enterFade":[
+        "alpha",0,
+        "alpha",1,0.05
+    ],
+
+    "pro_citra_archiveLeave":[
+        "xy",218,179,3,
+        "jump",
+        "xy",270,250,16,
+        "xy",186,324,3,
+        15,
+        "alpha",0,-0.05
+    ],
+    "pro_eugene_archiveLeave":[
+        "xy",96,324,8,
+        60,
+        "xy",198,330,8,
+        "alpha",0,-0.05
+    ],
+    "pro_eugene_cliffJump":[
+        "jump",
+        "xy",863,1376,8
+    ],
+    "pro_charlie_ledgeJump":[
+        "xy",1079,423,6,
+        "jump",
+        "xy",1181,403,4
+    ],
+    "pro_charlie_reactorWalk":[
+        "xy",2343,662,4,
+        "jump",
+        "xy",2414,696,4,
+        "jump",
+        "xy","endX","endY",4,
+    ],
+    "pro_smitten_launchWalk":[
+        "xyj",1851,438,4,
+        90,
+        "xy",1888,664,8,
+        "xy",1838,708,4,
+        60,
+        "jump",
+        "xy",1808,676,2,
+        "cutsceneForce",["$removeDroppedItem",["iPhoneNote3",1808,676,"rNotdon"],"$cutsceneDelayCancel","pro_switchSmittenLocation"]
+    ],
+    "pro_smitten_toWindow":[
+        "xyj",1855,"y",3,
+        75,
+        "xy",1887,668,2,
+        10,
+        "jump",
+        "xy",1808,644,2
+    ],
+
+    "c1_treadmill":[
+        "#start",
+        "xy","x+30","y",3,
+        "goto","start"
+    ],
+    "c1_graduationTrip":[
+        "xy",2786,775,2,
+        "jump",
+        "xyj",2997,911,4
+    ],
+    "c1_enterLaunchBay":[
+        "xyjt",1805,452,2,
+        "xy",1771,475,2,
+        "jump",
+        "cutsceneForce",["$oGravityFieldAll.pause",300],
+        "simple"
+    ],
+    "c1_enterMissionControl":[
+        "xy",1856,480,8,
+        60,
+        "xyt","endX","endY",2
+    ],
+    "c1_enterMissionControlPly":[
+        "xy",1856,452,4
+    ],
+
+    "c1_jumpingSwitch":[
+        "#start",
+        "jump",
+        180,
+        "goto","start"
+    ],
+
+    "c1_toWastesLeft":[
+        "xyTo",461,786,
+        "xyTo",-160,330
+    ],
+    "c1_toWastesRight":[
+        "xyTo",3440,814,
+        "xyTo",2735,670,
+        "xyTo",2048,300,
+        "xyTo",-160,100
+    ],
+
+    "c1_toAirLeft":[
+        "xyTo",461,-300,
+    ],
+    "c1_toAirRight":[
+        
+    ],
+
+    "c1_toIslandLeft":[
+        "xyTo",461,564,
+        "xyTo",1162,184,
+        "xyTo",3447,748,
+        "xyTo",3785,1229,
+        "xyTo",4288,1289
+    ],
+    "c1_toIslandRight":[
+
+    ],
+
+    "wastes_herBoxes":[
+        "xy",760,1025,4,
+        "jump",
+        "xy",635,982,3
+    ]
+
+}

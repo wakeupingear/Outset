@@ -1,5 +1,7 @@
 
 
 function option(key){
-	return (ds_list_find_index(global.accessibility,key)>-1);
+	var _val=global.accessibility[? key];
+	if is_undefined(_val) return 0;
+	return _val;
 }

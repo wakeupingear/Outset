@@ -20,7 +20,7 @@ function setNPCRoom(npcName,roomName,key){
 	{
 		instance_destroy(_obj);
 	}
-	if instance_exists(_obj) 
+	if _obj!=-1&&instance_exists(_obj) 
 	{
 		with _obj event_user(0);
 	}

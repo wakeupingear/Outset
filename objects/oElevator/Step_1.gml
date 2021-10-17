@@ -1,5 +1,5 @@
 /// @description Move
-if global.alive
+if global.alive&&hasPower
 {
 	if mode==0
 	{

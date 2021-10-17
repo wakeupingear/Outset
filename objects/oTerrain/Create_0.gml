@@ -11,6 +11,9 @@ deathScale=!global.alive;
 deathAng=0;
 deathDistMax=370;
 deathDist=(!global.alive)*deathDistMax;
+deathSaveAng=0;
+deathMaxDistanceToSave=270;
+deathDistanceToSave=deathMaxDistanceToSave;
 
 roomType=0;
 colorData=array_create(30);

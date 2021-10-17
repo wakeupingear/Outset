@@ -42,8 +42,11 @@ if keyboard_check_pressed(vk_enter)
 				controller.ppCompare=!controller.ppCompare;
 				instance_destroy();
 				break;
+			case "test":
+			case "teseting":
 			case "testing":
 				controller.alarm[3]=-1;
+				instance_destroy(oDebugOverlay);
 				instance_destroy();
 				break;
 			case "killplayer":

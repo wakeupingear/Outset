@@ -24,7 +24,6 @@ else
 			if hraxis!=0||vraxis!=0
 			{
 				var _ang = point_direction(0, 0, hraxis,vraxis);
-				show_debug_message(_ang)
 				x+=lengthdir_x(2,_ang);
 				y+=lengthdir_y(2,_ang);
 			}

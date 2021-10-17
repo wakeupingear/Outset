@@ -51,7 +51,7 @@ maxSpd=3;
 spd=0;
 acc=0.1;
 flying=false;
-state=0 //0=normal
+state=0 //0=normal, -1=almost done, -2=in progress, 1=on fire
 startroom=room;
 if startroom==rStartup startroom=rNotdon;
 
@@ -62,6 +62,14 @@ startAng=image_angle;
 
 setState=function(){args=[flying,state,chairData,seethroughOverride,cockpitCheck.key,image_xscale,sitMode,plyRiding,startAng];}; //it's like a react state! hahahaha why has god abandoned us
 setState();
+fireSystem=-1;
+fireEmitter=-1;
+firePart=-1;
+destroyParts=function(){
+	if part_system_exists(fireSystem) part_system_destroy(fireSystem);
+	if part_emitter_exists(fireSystem,fireEmitter) part_emitter_destroy(fireSystem,fireEmitter);
+	if part_type_exists(firePart) part_type_destroy(firePart);
+}
 
 setChairs=function(){
 	for (var i=0;i<array_length(chairData);i++)
@@ -92,4 +100,4 @@ switchRoom=function(xPos,yPos,newRoom,snap,destroy){
 	}
 }
 
-if global.notdonEra==notdonEras.present alarm[0]=1;
+if global.notdonEra==notdonEras.present||room!=rNotdon alarm[0]=1;

@@ -173,7 +173,25 @@ if deathScale>0||deathDist>0
 	var _deathCol2=merge_color(_deathCol,c_black,0.3);
 	deathAng=(deathAng-2*ply.xscale)%360;
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
-	draw_sprite_ext(sDeathCircle,0,ply.x-camX(),ply.y-camY(),deathScale,deathScale,deathAng,_deathCol,1);
+	draw_sprite_ext(sDeathCircle,0,ply.x-camX(),ply.y-camY(),deathScale,deathScale,deathAng,_deathCol,1); //outer death circle
+	var _saveVis=(global.roomTime%180)/180*2*pi;
+	if instance_exists(oSave)&&instance_exists(ply)
+	{
+		var _closestSave=instance_nearest(ply.x,ply.y,oSave);
+		deathDistanceToSave=min(point_distance(_closestSave.x,_closestSave.y,ply.x,ply.y),deathMaxDistanceToSave);
+		deathSaveAng=(deathSaveAng+4-(deathDistanceToSave/deathMaxDistanceToSave)*3.5)%360;
+		for (var i=0;i<instance_number(oSave);i++)
+		{
+			var _s=instance_find(oSave,i);
+			var _rayNum=6;
+			for (var k=0;k<_rayNum;k++)
+			{
+				draw_sprite_ext(sMissileTrail,0,_s.x-camX(),_s.y-camY(),deathScale,deathScale*2,360*k/_rayNum+deathSaveAng,_deathCol,1);
+				draw_sprite_ext(sMissileTrail,0,_s.x-camX(),_s.y-camY(),deathScale,deathScale*2,360*k/_rayNum-deathSaveAng,_deathCol,1);
+			}
+			draw_sprite_ext(sDeathCircle,0,_s.x-camX(),_s.y-camY(),deathScale*0.9-0.1*sin(_saveVis),deathScale*0.9-0.1*sin(_saveVis),cos(_saveVis)*15,_deathCol2,1);
+		}
+	}
 	draw_sprite_ext(sDeathCircle,0,ply.x-camX(),ply.y-camY(),min(deathScale,0.5),min(deathScale,0.5),deathAng,_deathCol2,1);
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();

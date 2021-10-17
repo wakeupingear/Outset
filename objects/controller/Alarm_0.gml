@@ -4,7 +4,8 @@ try
 	global.pathfindingScripts=loadStringJson("pathfinding");
 	global.langScript={};
 	var _importTextData=function(name){
-		global.langScript=addToStruct(global.langScript,loadStringJson(global.lang+"/"+global.lang+name));
+		var _lang=option("lang");
+		global.langScript=addToStruct(global.langScript,loadStringJson(_lang+"/"+_lang+name));
 	}
 	
 	_importTextData("Hud");

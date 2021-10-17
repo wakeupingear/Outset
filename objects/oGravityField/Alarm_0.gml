@@ -1,6 +1,7 @@
 /// @description Particle
-alarm[0]=60;
 if !visible exit;
+alarm[0]=60;
+if !isInRange(x,y) exit;
 if sprite_get_width(sprite_index)+sprite_get_height(sprite_index)==2
 {
 	var _p=particle(x-1,y-1,depth+1,sprite_index,image_index,partProperties); //top

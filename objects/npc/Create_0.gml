@@ -3,6 +3,7 @@ image_speed=0;
 npcKey="";
 location="";
 text=[];
+deadText=[];
 npcMovementVars();
 npcAnimVars();
 if !positionNpc(1) instance_destroy();

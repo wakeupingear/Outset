@@ -54,9 +54,9 @@ function isObj(_id,obj){
 	return _id.object_index==obj||object_is_ancestor(_id.object_index,obj);
 }
 function isInRange(_x,_y){
-	_x-=sprite_get_xoffset(sprite_index);
-	_y-=sprite_get_yoffset(sprite_index);
-	return !((_x+sprite_width<camX()||_x>camX()+384)||(_y+sprite_height<camY()||_y>camY()+216));
+	_x-=sprite_get_xoffset(sprite_index)*image_xscale;
+	_y-=sprite_get_yoffset(sprite_index)*image_yscale;
+	return !(_x+abs(sprite_width)<camX()||_x>camX()+384||_y+abs(sprite_height)<camY()||_y>camY()+216);
 }
 function within(xPos,yPos,radius){
 	return point_distance(x,y,xPos,yPos)<=radius
@@ -98,8 +98,10 @@ function string_contains(str,substr){
 }
 
 //debug
-function printCoords(_x,_y){
-	show_debug_message("X: "+string(_x)+"; Y: "+string(_y));
+function printCoords(_x,_y,label){
+	if is_undefined(label) label="";
+	else label+=":   ";
+	show_debug_message(label+"X: "+string(_x)+"; Y: "+string(_y));
 }
 function printList(list){
 	str="[";

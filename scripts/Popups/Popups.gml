@@ -4,7 +4,7 @@ function createPopup(struct){
 	if instance_exists(oPopup) with oPopup if mode>=0&&stackType!=1 _parent=id;
 	
 	if instance_exists(oPopup) var _o=instance_create_depth(0,0,instance_find(oPopup,instance_number(oPopup)-1).depth-1,oPopup);
-	else var _o=instance_create_depth(0,0,controller.depth-1,oPopup);
+	else var _o=instance_create_depth(0,0,controller.depth-2,oPopup);
 	setObjFromStruct(_o,struct);
 	createPopupCursor(_o);
 	

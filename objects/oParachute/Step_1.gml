@@ -12,6 +12,7 @@ if target!=previousTarget
 
 if alarm[2]==-1&&place_meeting(x,y,oExplosion)
 {
+	image_index++;
 	alarm[2]=30;
 	myHealth--;
 }

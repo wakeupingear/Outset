@@ -1,5 +1,4 @@
-	//cutscene specific scripts go here
-	
+//cutscene specific scripts go here	
 #region Prologue
 function scr_pro_2(){
 	addData("respInt");
@@ -256,9 +255,9 @@ function scr_c1_5(){
 	setDungeonProgress(dungeons.vr,2);
 	var _jet1=instance_create_layer(1627,613,"behind",oNotdonJet);
 	var _jet2=instance_create_layer(1376,613,"behind",oNotdonJet);
-	_jet2.state=1;
+	_jet2.state=-1;
 	var _jet3=instance_create_layer(1627,709,"behind",oNotdonJet);
-	_jet3.state=2;
+	_jet3.state=-2;
 	oNotdonJet.image_xscale=1;
 	with oNotdonJet 
 	{
@@ -329,7 +328,7 @@ function scr_wastes_1(){ //leaving
 	eventAddObject(oDiagTrigger,rWastes,400,939,"player",["wastes_barrelRoll",true,false,1,-100,-150]);
 	
 	var _jet=-1;
-	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
+	if !instance_exists(oNotdonJet) _jet=instance_create_layer(0,0,"behind",oNotdonJet);
 	else with oNotdonJet if state==0&&flying _jet=id;
 	with _jet 
 	{
@@ -340,6 +339,7 @@ function scr_wastes_1(){ //leaving
 		cockpitCheck.key="notdon_jetEmpty";
 		sitMode="";
 		startAng=17;
+		state=1; //fire
 		switchRoom(226,359,rWastesCrater,false,false);
 		if room=rNotdon
 		{
@@ -347,6 +347,7 @@ function scr_wastes_1(){ //leaving
 			image_xscale=-1;
 			flying=true;
 			maxSpd=5;
+			state=0;
 			if x<1245 moveCommand="c1_toWastesLeft";
 			else moveCommand="c1_toWastesRight";
 		}

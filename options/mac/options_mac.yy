@@ -1,4 +1,7 @@
 {
+  "ConfigValues": {
+    "Testing": {"option_mac_enable_steam":"true","option_mac_enable_retina":"true","option_mac_interpolate_pixels":"false","option_mac_allow_fullscreen":"true",},
+  },
   "option_mac_display_name": "Created with GameMaker Studio 2",
   "option_mac_app_id": "com.company.game",
   "option_mac_version": "1.0.0.0",

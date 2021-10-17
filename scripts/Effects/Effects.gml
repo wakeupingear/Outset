@@ -20,7 +20,6 @@ function particle(x,y,depth,sprite,ind,struct){
 		{
 			//setBGPosition(x,y);
 			event_perform(ev_step,0);
-			//show_debug_message(xOff)
 		}
 	}
 	return _p;

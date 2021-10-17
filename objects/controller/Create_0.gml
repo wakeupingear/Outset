@@ -1,7 +1,5 @@
 if instance_number(controller)>1 instance_destroy();
 else{
-window_set_position(display_get_width()/4,display_get_height()/4);
-window_set_size(1280,720);
 draw_set_color(c_white);
 application_surface_draw_enable(false);
 postProcessSurf=-1;
@@ -36,10 +34,15 @@ if isHtml
 	width = base_width;
 	height = base_height;
 }
+else 
+{
+	window_center();
+	window_set_size(1280,720);
+}
 
 if isFinal
 {
-	gml_pragma("PNGCrush");
+	//gml_pragma("PNGCrush");
 	gml_pragma("UnityBuild", "true");
 	randomize();
 }
@@ -55,6 +58,7 @@ else if isDev||isTest
 	if !instance_exists(oDebugOverlay) event_perform(ev_keypress,vk_f3);
 	if isTest alarm[3]=20*60;
 }
+window_center();
 
 #macro STEAM_ID 1256900
 #macro DISCORD_APP_ID "859197742147436554"
@@ -217,86 +221,133 @@ hudFade=1;
 scanTime=0;
 itemIndex=0;
 itemIndexTime=0;
+lastCamX=0;
+lastCamY=0;
 
 //pause variables
 surfPosX=0;
 surfPosY=0;
 pauseAlpha=0;
 pauseAlphaMax=0.6;
+prefsChanged=false;
+closePauseMenu=function(){
+	with oCursor if persistent instance_destroy();
+	savePrefs();
+	ds_stack_clear(menuStack);
+	pauseMenuCurrent="menu1";
+	if sprite_exists(pauseMenuCopied)
+	{
+		sprite_delete(pauseMenuCopied);
+	}
+	surfPosX=0;
+	surfPosY=0;
+	with oPauseButton destroy=true;
+	instance_activate_all();
+	if prefsChanged&&!instance_exists(oSaveIcon) instance_create_depth(0,0,-10005,oSaveIcon);
+	prefsChanged=false;
+	if !hasData("reacSt") instance_deactivate_object(oSouldropCoin);
+	global.notPause=true;
+	//setRoomEra(); //only activate room specifc eras
+	//there was a reason why I put this there because I left a comment
+	//however I am bad at comments and didn't actually explain myself
+	//I don't think this is needed since nothing within the game changes during the pause that requires an era reload
+}
 pauseMenuButtons={
-	musVol: {type: "slider", range: 11, variable: true},
-	sfxVol: {type: "slider", range: 11, variable: true},
-	fullscreen: {type: "toggle", variable: true},
-	camShake: {type: "toggle"},
-	interactPrompt: {type: "toggle"},
-	highlightPlayer: {type: "toggle"},
-	highlightHook: {type: "toggle"},
-	highlightNPC: {type: "toggle"},
-	guiScale: {type: "special"},
-	guiSide: {type: "toggle", labels: "guiSide", variable: true},
-	flashes: {type:"toggle"},
-	quitTitle: {type: "special"},
-	quitDesktop: {type: "special"},
-	
 	menu1: [
-		"fullscreen",
-		"musVol",
-		"sfxVol",
+		"volume",
 		"controls",
-		"gameplay",
 		"visuals",
+		"accessibility",
 		"quitTitle",
 		"quitDesktop"
 	],
+	fullscreen: {type: "toggle"},
+	musicVol: {type: "slider", startPos:0,endPos:1,tick:0.1},
+	sfxVol: {type: "slider", startPos:0,endPos:1,tick:0.1},
+	quitTitle: {type: "special"},
+	quitDesktop: {type: "special"},
 	
-	gameplay: [
-		"interactPrompt"
+	volume:[
+		"musicVol",
+		"sfxVol"
 	],
 	
-	visuals: [
-		"guiScale",
-		"shake",
+	controls:[
+	],
+	
+	accessibility: [
+		"interactText",
 		"flashes",
 		"highlightPlayer",
 		"highlightHook",
 		"highlightNPC"
 	],
+	interactText: {type: "toggle"},
 	
-	controls:[
-	]
+	visuals: [
+		"fullscreen",
+		"guiScale",
+		"guiSide",
+		"camShake",
+		"vsync",
+	],
+	guiScale: {type: "special"},
+	guiSide: {type: "toggle", labels: "guiSide", variable: true},
+	camShake: {type: "toggle"},
+	vsync: {type: "toggle"},
+	flashes: {type:"toggle"},
+	highlightPlayer: {type: "toggle"},
+	highlightHook: {type: "toggle"},
+	highlightNPC: {type: "toggle"},
 };
 pauseMenuCurrent="menu1";
 pausePos=0;
 pauseMenuCopied=-1;
+menuStack=ds_stack_create();
 loadMenu=function(menuKey){
 	if variable_struct_exists(pauseMenuButtons, menuKey)
 	{
-		removeMenuButtons();
+		//manage existing buttons
+		with oPauseButton
+		{
+			active=false;
+			selected=false;
+		}
+		
 		var _struct=pauseMenuButtons[$ menuKey];
 		var _labels=textLoad("pauseLabels");
 		var _first=-1;
 		var _previous=-1;
-		for (var i=0;i<array_length(_struct);i++)
+		var _total=array_length(_struct);
+		for (var i=0;i<_total;i++)
 		{
-			var _b=instance_create_depth(192,200-(array_length(_struct)-i)*24,depth,oPauseButton);
-			if i==0 _first=_b;
+			if _struct[i]=="quitTitle"&&room==rTitle continue;
+			var _b=instance_create_depth(192,108+round((i-_total/2+1)*26),depth-1,oPauseButton);
+			if i==0 
+			{
+				_first=_b;
+				_b.selected=true;
+			}
 			else _previous.next=_b;
 			_b.previous=_previous;
-			_b.pos=0;
+			_b.pos=i;
 			_b.struct=pauseMenuButtons[$ _struct[i]];
 			_b.key=_struct[i];
 			_b.text=_labels[$ _struct[i]];
 			if is_array(pauseMenuButtons[$ _struct[i]]) _b.type="menu";
-			else if variable_struct_exists(pauseMenuButtons[$ _struct[i]],"labels") _b.text=pauseMenuButtons[$ _struct[i]].labels;
-			with _b event_user(0);
+			//else if variable_struct_exists(pauseMenuButtons[$ _struct[i]],"labels") _b.text=pauseMenuButtons[$ _struct[i]].labels;
+			with _b 
+			{
+				image_xscale=string_width(text)/guiX()/sprite_width+1;
+				event_user(0);
+				setChoiceXscale();
+				draw(0,0); //pre-position
+			}
 			_previous=_b;
 		}
 		_first.previous=_previous;
 		_previous.next=_first;
 	}
-}
-removeMenuButtons=function(){
-	if instance_exists(oPauseButton) instance_destroy(oPauseButton);
 }
 
 persistentEventsSet=function(key){
@@ -312,7 +363,7 @@ persistentEventsSet=function(key){
 		{
 			case oParachute:
 				var _obj=instance_nearest(x,y,_arr[i+1]);
-				var _p=instance_create_depth(_obj.x,_obj.y,_obj.depth+1,oParachute);
+				var _p=instance_create_layer(_obj.x,_obj.y,_obj.depth+1,oParachute);
 				_p.target=_obj
 				break;
 			case oVBarrier:
@@ -410,40 +461,21 @@ else
 	//event_perform(ev_room_start,0);
 }
 
-darknessAlpha=1;
+darknessAlpha=1; //controls drawing of light surface - needs to be changed when fading in darkness without changing global.lightAlpha
 draw=function(edgeX,edgeY){
-if instance_exists(oDiscoballManager) with oDiscoballManager draw();
-else if global.lightAlpha>0
-{
-	if !surface_exists(global.lightSurf) global.lightSurf=surface_create(386,218);
-	surface_set_target(global.lightSurf);
-	draw_clear_alpha(c_black,global.lightAlpha);
-	gpu_set_blendmode(bm_subtract);
-	for (var i=0;i<array_length(global.lightObj);i++) if instance_exists(global.lightObj[i]) with global.lightObj[i]
-	{
-		if !variable_instance_exists(id,"drawLight")
-		{
-			if distance_to_point(edgeX+192,edgeY+108)-24<200 draw_circle(floor(x)-edgeX,floor(y)-edgeY,24,false);
-		}
-		else drawLight();
-	}
-	gpu_set_blendmode(bm_normal);
-	surface_reset_target();
-	draw_surface_ext(global.lightSurf,edgeX,edgeY,1,1,0,-1,darknessAlpha);
-}
-
 if !global.notPause//&&global.alive
 {
-	if pauseMenuCopied==-1
+	if !sprite_exists(pauseMenuCopied) //set based on camera before instances are deactivated
 	{
 		surfPosX=edgeX;
 		surfPosY=edgeY;
-		pauseMenuCopied=sprite_create_from_surface(application_surface,0,0,384,216,false,false,0,0);
-		instance_deactivate_all(true);
-		loadMenu(pauseMenuCurrent);
 	}
-	draw_clear_alpha(c_black,1);
-	draw_sprite(pauseMenuCopied,0,surfPosX,surfPosY);
+	else 
+	{
+		draw_clear_alpha(c_black,1);
+		draw_sprite(pauseMenuCopied,0,surfPosX,surfPosY);
+	}
+	if image_alpha>0 image_alpha-=0.1;
 }
 else if !global.transitioning&&!global.menuOpen&&global.alive&&instance_exists(ply)&&instance_find(ply,0).object_index==ply
 {
@@ -455,11 +487,11 @@ else if !global.transitioning&&!global.menuOpen&&global.alive&&instance_exists(p
 	if image_alpha<1 image_alpha+=0.1;
 }
 else if image_alpha>0 image_alpha-=0.1;
-
-if instance_exists(ply)
+if (instance_exists(ply)&&global.notPause)||pauseMenuCopied!=-1
 {
-	draw_set_alpha(hudFade);
+	draw_set_alpha(hudFade); //only applies when alpha isn't explicitly set
 	draw_sprite_ext(sHudHealth,0,getHudX()+edgeX,24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
+	draw_sprite_ext(sHudHealth,1,getHudX()+edgeX,24+edgeY,1,1,0,-1,image_alpha*hudFade);
 	
 	var _bossFight=noone;
 	with boss if enemActive _bossFight=id;
@@ -467,7 +499,6 @@ if instance_exists(ply)
 	{
 		draw_sprite_ext(sHudHealth,0,384-(getHudX()+edgeX),24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
 	}
-	draw_sprite_ext(sHudHealth,0,getHudX()+edgeX,24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
 	
 	if ds_list_size(global.inventory)>0
 	{
@@ -515,5 +546,6 @@ if pauseAlpha>0
 	draw_set_color(c_white);
 	draw_set_alpha(1);
 }
+if !global.notPause with oPauseButton draw(0,0);
 }
 }

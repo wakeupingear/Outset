@@ -174,13 +174,13 @@ if object_index==ply
 				var _damagedEnem=false;
 				switch (_e.object_index)
 				{
-					case oExplosiveBarrel:
+					/*case oExplosiveBarrel:
 						//_e.hsp=sign(hsp)*min(_e.hspMax,hsp);
 						_e.move=sign(hsp);
 						_e.hsp=_e.move*_e.hspMax;
 						_e.moving=true;
 						_e.vsp+=vsp;
-						break;
+						break;*/
 					default:
 						_e.hsp+=hsp;
 						_e.vsp+=vsp;
@@ -196,7 +196,7 @@ if object_index==ply
 					for (var i=-_pNum;i<=_pNum;i++)
 					{
 						var _scaleSpd=0.4;
-						particle(x+sprite_width/2-lengthdir_y(8,_grappleAng+180),y+lengthdir_x(8,_grappleAng+180),_aboveDepth,sPlaceholderPixelR,0,{alpha:1.8,spd:3,fade:0.1,dir: _grappleAng+i*12,xscaleSpd: _scaleSpd,yscaleSpd: _scaleSpd});
+						particle(x+sprite_width/2,y,_aboveDepth,sPlaceholderPixelR,0,{alpha:1.8,spd:3,fade:0.1,dir: _grappleAng+i*12,xscaleSpd: _scaleSpd,yscaleSpd: _scaleSpd});
 					}
 					shake(1,1,10);
 				}
@@ -316,7 +316,7 @@ if global.inWater&&global.alive//&&!global.notPause
 else breath=global.maxBreath;
 //test jump height - 44.69 (nice)
 //if y<jumpStart&&(jumpStart-y)>jumpMax jumpMax=(jumpStart-y);
-//show_debug_message(jumpMax)
+//s/how_debug_message(jumpMax)
 
 //going fast
 if abs(hsp)>hspMax*1.5 goingFast=true;

@@ -13,7 +13,7 @@ function scanDraw(){
 	var _inRange=(global.alive&&!isScanned&&isInRange(x,y));
 	if _inRange
 	{
-		var _touch=place_meeting(x,y,ply);
+		var _touch=instance_exists(ply)&&ply.state<moveState.jumping&&place_meeting(x,y,ply);
 		if !isAdded 
 		{
 			ds_list_add(global.scanInRangeList,id);

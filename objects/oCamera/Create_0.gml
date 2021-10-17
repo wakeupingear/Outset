@@ -24,7 +24,7 @@ soulPositions=global.rooms[$ room_get_name(room)].soulCamera;
 
 camSpd=0.1;
 originalSpd=camSpd;
-maxChange=9;
+maxChange=12;
 xTo=x;
 yTo=y;
 

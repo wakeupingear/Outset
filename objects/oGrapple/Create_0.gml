@@ -200,6 +200,7 @@ else if state==1 //move in direction
 		}
 		else if grappleTime>46||_hit==0 resetGrapple();
 		resetHitPlace();
+		grappleAngle=point_direction(xprevious,yprevious,x,y);
 	}
 	else
 	{

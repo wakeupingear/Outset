@@ -1,4 +1,4 @@
-function BresenhamLine(x1,y1,x2,y2,func) {
+function BresenhamLine(x1,y1,x2,y2,col,func) {
      
     // Differential
     var dx = x2-x1;
@@ -17,7 +17,7 @@ function BresenhamLine(x1,y1,x2,y2,func) {
      
     if (dx > dy) {
         for (var i=0;i<d;i++) {
-            func(x1,y1);
+            func(x1,y1,col);
             x1 += sx;
             r += dy;
             if (r >= dx) {
@@ -28,7 +28,7 @@ function BresenhamLine(x1,y1,x2,y2,func) {
     }
     else {
         for (var i=0;i<d;i++) {
-            func(x1,y1);
+            func(x1,y1,col);
             y1 += sy;
             r += dx;
             if (r >= dy) {
@@ -39,12 +39,13 @@ function BresenhamLine(x1,y1,x2,y2,func) {
     }
 }
 
-function pixelLine(x1,y1,x2,y2){
-	BresenhamLine(x1,y1,x2,y2,function(_x1,_y1) {
+function pixelLine(x1,y1,x2,y2,col){
+	if is_undefined(col) col=c_white;
+	BresenhamLine(x1,y1,x2,y2,col,function(_x1,_y1,col) {
         var xx1 = _x1;
         var yy1 = _y1;
         var xx2 = xx1;
         var yy2 = yy1;
-        draw_rectangle(xx1,yy1,xx2,yy2,false);
+        draw_rectangle_color(xx1,yy1,xx2,yy2,col,col,col,col,false);
     });
 }

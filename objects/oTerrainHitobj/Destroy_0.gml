@@ -1,6 +1,5 @@
 /// @description Chunks
 var _d=layer_get_depth(layer_get_id("behind"));
-show_debug_message(_d)
 for (var i=destFrames[0];i<destFrames[1];i++)
 {
 	var _p=particle(partPos.x,partPos.y,0,sprite_index,i,{

@@ -1,6 +1,6 @@
             
 
-function diagInteract(){
+function diagInteract(text){
 	if !global.menuOpen&&!global.transitioning&&distance_to_object(ply)<64&&(ply.state==moveState.standing||ply.state==moveState.running)
 	{
 		var _alreadyTalking=false;
@@ -13,7 +13,8 @@ function diagInteract(){
 		}
 		if !_alreadyTalking&&(touching(ply,[0,0])||(object_is_ancestor(object_index,npc)&&touching(ply,[round(sprite_width*xscale*0.75),0])))
 		{
-			global.interactText=check;
+			if !global.alive global.interactText=0; //check
+			else global.interactText=check;
 			if buttonPressed(control.up)||buttonPressed(control.confirm)
 			{
 				if is_array(text[0]) //randomize

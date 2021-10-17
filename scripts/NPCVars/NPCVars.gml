@@ -157,13 +157,13 @@ function npcAnimVars(){
 	};
 	
 	stateToAnim=array_create(20,"standing"); //array mapping state to animation name
-	
+	useDefaultAnimations=true;
 	stateToAnim[moveState.running]="walking";
 	stateToAnim[moveState.jumping]="jumping";
 }
 
 function npcAnimation(){
-	setStateAnimation(false);
+	if useDefaultAnimations setStateAnimation(false);
 	image_index=updateAnimation(image_index,animation);
 }
 

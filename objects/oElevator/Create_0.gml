@@ -1,12 +1,16 @@
 image_speed=0;
 animation=new Animation();
-animation.opening={type: animType.oneOff,startFrame:0,endFrame:7,frameTime:1};
-animation.closing={type: animType.oneOff,startFrame:7,endFrame:0,frameTime:1};
+animation.opening={type: animType.oneOff,startFrame:0,endFrame:7,frameTime:0};
+animation.closing={type: animType.oneOff,startFrame:7,endFrame:0,frameTime:0};
 
 mode=0;
 spd=2;
 up="1";
 down="1";
+hasPower=false;
+drawLight=function(){
+	if hasPower draw_circle(round(x-1)-camX(),round(y-1)-camY(),35,false);
+}
 
 check=4;
 

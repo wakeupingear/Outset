@@ -1,21 +1,33 @@
 function scrVariables(){
 	#region Preferences
-	global.lang="english"; //language
 	global.langScript=-1; //empty to load the script into
 	global.buttonText="";
 	global.discordText=-1;
 	global.discordActive=false;
 	if !isHtml&&steam_initialised() global.lang=steam_current_game_language(); //get the user's default language if possible
-	global.lastFile=0;
+	global.lastFile=0; //Variables are redundent but they are a quicker and cleaner lookup for common accessibility options
 	global.guiScale=clamp(round(3*display_get_height()/1080),3,6)/3;
+	
 	global.hudSide=0;
 	global.hudAlpha=0.8;
 	global.shakeFactor=1.5;
-	global.accessibility=ds_list_create();
-	ds_list_add(global.accessibility,"interactPrompt");
+	global.accessibility=ds_map_create();
+	ds_map_add(global.accessibility,"interactPrompt",true);
+	ds_map_add(global.accessibility,"lang","english");
+	ds_map_add(global.accessibility,"fullscreen",false);
+	ds_map_add(global.accessibility,"lastFile",global.lastFile);
+	ds_map_add(global.accessibility,"guiScale",global.guiScale);
+	ds_map_add(global.accessibility,"hudSide",global.hudSide);
+	ds_map_add(global.accessibility,"interactText",true);
+	ds_map_add(global.accessibility,"hudAlpha",global.hudAlpha);
+	ds_map_add(global.accessibility,"camShake",global.shakeFactor);
+	ds_map_add(global.accessibility,"vsync",(!isDev&&!isTest));
 	#endregion
 	
 	global.data =ds_map_create(); //dump misc values here
+	#region Default data
+	ds_map_add(global.data,"chetBP",true);
+	#endregion
 	#region Engine variables
 	global.notPause=true; //pause menu
 	global.transitioning=false; //moving between rooms
@@ -48,6 +60,7 @@ function scrVariables(){
 	oGravityField,
 	oPowerPlantTemp,
 	oSouldropRain,oSouldropRainController,oSouldropCoin,
+	oElevator,
 	oGrapple
 	];
 	
@@ -288,7 +301,7 @@ function scrVariables(){
 	addLocation("charlie","rNotdon","pro_electro",2296,650,-1,1,""); //watching the power demo
 	addLocation("charlie","rNotdon","pro_electroPanic",2296,650,-1,1,"simpleBackAndForth{2280,705,2312,650}"); //panic
 	addLocation("charlie","rNotdon","pro_electroTouch",2515,725,1,1,""); //touching the reactor
-		addLocationPathFrom("charlie","pro_electroPanic","rNotdon","pro_electroTouch","rNotdon","simpleJ","");
+		addLocationPathFrom("charlie","pro_electroPanic","rNotdon","pro_electroTouch","rNotdon","pro_charlie_reactorWalk","");
 	addLocation("charlie","rNotdon","pro_reactorLeft",2160,628,1,1,""); //left of reactor
 	addLocation("charlie","rNotdon","pro_reactor",2601,740,1,1,""); //close to reactor
 		addLocationPathFrom("charlie","pro_reactorLeft","rNotdon","pro_reactor","rNotdon","simpleJ","");
@@ -389,8 +402,8 @@ function scrVariables(){
 	
 	#region Music
 	global.music=-1;
-	global.musicVol=0.5*(isFinal);
-	global.sfxVol=0.8*(global.musicVol+0.5);
+	global.accessibility[? "musicVol"]=0.5*(isFinal);
+	global.accessibility[? "sfxVol"]=0.8*(option("musicVol")+0.5);
 	global.regionMusic=[musIntro,musNotdon,musWastes,musAir,-1,-1,-1,-1,-1,-1];
 	#endregion
 	
@@ -457,7 +470,7 @@ function scrVariables(){
 			}
 		}
 	}
-	if file_exists("rooms.json") global.rooms=loadStringJson("rooms"); //precalculate the room data
+	if file_exists("rooms.hat") global.rooms=loadStringJson("rooms"); //precalculate the room data
 	else {
 	for (var i=0;room_exists(i);i++) //if i!=rStartup 
 	{
@@ -501,6 +514,8 @@ function scrVariables(){
 		addRoomCamera("rNotdon",1254,530,1782,660,"x",598); //launch level 1
 		addRoomCamera("rNotdon",1254,660,1782,842,"x",748); //launch level 2
 		addRoomCamera("rNotdon",2822,756,3168,970,2995,888,"notdonEraPresent"); //stage
+	global.rooms.rVRUnfinished.inside=false;
+		addRoomCamera("rVRUnfinished",956,0,1156,216,960,108); //end of VR chase
 	global.rooms.rHarold.music=musHarold;
 	global.rooms.rWastes.inside=false;
 	global.rooms.rWastesBorder.inside=false;
@@ -528,7 +543,11 @@ function scrVariables(){
 	[small1440,med1440,large1440,extralarge1440,harold1440],
 	[]
 	];
-	if array_length(global.fonts[round(global.guiScale*3)-3])==0 global.guiScale=4/3; //default to 1440p if fonts aren't added
+	if array_length(global.fonts[round(global.guiScale*3)-3])==0 
+	{
+		global.guiScale=4/3; //default to 1440p if fonts aren't added
+		global.accessibility[? "guiScale"]=global.guiScale;
+	}
 	global.hudColorList=[make_color_rgb(96,92,169)]; //possible colors for the hud
 	#endregion
 	
@@ -623,27 +642,29 @@ function scrVariables(){
 		addData("respInt");
 		global.devTeleport=true;
 		global.devSkips=true;
-		//addItem("iGrapple");
-		//addItem("iGrappleArc");
+		addItem("iGrapple");
+		addItem("iGrappleArc");
 		//addItem("iGrappleDown");
 		addItem("iSlate");
-		//addItem("iSolitaire")
+		addItem("iSolitaire")
 		//addItem("iBeacon");
 		//addItem("iWrench1");
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
 		//global.notdonEra=notdonEras.present;
-		//scr_pro_2();
+		//scr_c1_5();
+		scr_wastes_1();
+		scr_wastes_2();
 		//scr_wastes_1();
 		//scr_wastes_2();
-		scr_pro_3();
+		//scr_pro_2();
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rNotdon;
+		global.startRoom=rWastesFactoryEntrance;
 	}
 	#endregion
 	
@@ -666,6 +687,7 @@ function scrVariables(){
 	ds_map_add(global.physCollPoints,sAAGun,[[0],[7]]);
 	
 	ds_map_add(global.physCollPoints,sHer,global.physCollPoints[? sPly]);
+	ds_map_add(global.physCollPoints,sChet,[[0],[4]]);
 	
 	ds_map_add(global.physCollPoints,sWastesCarWheel,[[-7,0,7],[0,7,0]]);
 	ds_map_add(global.physCollPoints,sWastesCrate,[[-12,12],[15,15]]);

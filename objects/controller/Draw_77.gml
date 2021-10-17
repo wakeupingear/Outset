@@ -60,14 +60,21 @@ else if deathGlowProg>0 deathGlowProg-=0.05;
 if deathGlowProg>0 //Death vinette
 {
 	surface_set_target(postProcessSurf);
-	var _prog=87;
-	if instance_exists(oTerrain) _prog+=(1-oTerrain.deathDist/oTerrain.deathDistMax)*140;
+	var _prog=79;
+	var _tunnelColMerge=0.5;
+	if instance_exists(oTerrain) 
+	{
+		_tunnelColMerge-=_tunnelColMerge*(1-oTerrain.deathDistanceToSave/oTerrain.deathMaxDistanceToSave)*deathGlowProg;
+		_prog+=(1-oTerrain.deathDist/oTerrain.deathDistMax)*140;
+		_prog*=min(oTerrain.deathDistanceToSave/oTerrain.deathMaxDistanceToSave+1-deathGlowProg,1);
+	}
 	else _prog+=(deathGlowProg)*140;
+	_prog+=8; //apply "minimum distance"
 	shader_set(shd_tunnelVision);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_pixel"),_w,_h);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_origin"),(lerp(192,_px-camX(),0.5))*_w,(lerp(108,_py-camY(),0.5))*_h);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_dist"),_prog*_w,_prog*_h);
-	var _tunnelCol=merge_color(global.scanColor,c_white,0.5);
+	var _tunnelCol=merge_color(global.scanColor,c_white,_tunnelColMerge);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_tunnelColor"),color_get_red(_tunnelCol)/255,color_get_green(_tunnelCol)/255,color_get_blue(_tunnelCol)/255);
 	draw_surface(application_surface,0,0);
 	shader_reset();
@@ -114,6 +121,24 @@ if instance_exists(oCursor) with oCursor
 	draw_sprite(sprite_index,image_index,x-camX(),y-camY());
 }
 surface_reset_target();
+
+//copy into pause menu when applicable
+if !global.notPause
+{
+	if pauseMenuCopied==-1
+	{
+		//surface_set_target(application_surface);
+		//draw_surface_ext(global.guiSurf,0,0,1/guiX(),1/guiY(),0,-1,1); //ugly downscaling but good enough
+		//surface_reset_target();
+		pauseMenuCopied=sprite_create_from_surface(application_surface,0,0,384,216,false,false,0,0);
+		instance_deactivate_all(true);
+		instance_activate_object(oMouse);
+		var _c=instance_create_depth(camX()+120,camY()+72,depth-1,oCursor);
+		_c.persistent=true; //to differentiate it from any other cursors
+		if global.controllerConnected _c.x=-100;
+		loadMenu(pauseMenuCurrent);
+	}
+}
 
 //draw
 gpu_set_blendenable(false);

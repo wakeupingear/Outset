@@ -3,9 +3,17 @@ if is_array(struct) choice=0;
 else
 {
 	type=struct.type;
-	if variable_struct_exists(struct,"variable")
+	choice=option(key);
+	if type=="toggle" 
 	{
-	
+		if variable_struct_exists(struct,"labels")
+		{
+			labels=textLoad(struct.labels);
+			choiceStr=labels[choice];
+		}
 	}
-	else if type!="special" choice=option(key);
+	else if type=="slider"
+	{
+		choiceStr=string(round(choice*100))+"%";
+	}
 }

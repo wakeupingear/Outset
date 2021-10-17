@@ -10,7 +10,7 @@
   "bbox_left": 0,
   "bbox_right": 118,
   "bbox_top": 3,
-  "bbox_bottom": 287,
+  "bbox_bottom": 271,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -26,9 +26,11 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"1eac0169-e9bf-4a98-858e-632872c09649","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"1eac0169-e9bf-4a98-858e-632872c09649","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"LayerId":{"name":"826a890e-4df4-4823-9199-12f0d5ffc2b3","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"1eac0169-e9bf-4a98-858e-632872c09649","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"LayerId":{"name":"1da83b6c-b171-4bb0-9213-41e8fa4e62a3","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sNotdonLaunchOverlay","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"resourceVersion":"1.0","name":"1eac0169-e9bf-4a98-858e-632872c09649","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"66c72c62-ff13-4b77-9537-c163fb245c38","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"66c72c62-ff13-4b77-9537-c163fb245c38","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"LayerId":{"name":"826a890e-4df4-4823-9199-12f0d5ffc2b3","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"66c72c62-ff13-4b77-9537-c163fb245c38","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"LayerId":{"name":"1da83b6c-b171-4bb0-9213-41e8fa4e62a3","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sNotdonLaunchOverlay","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},"resourceVersion":"1.0","name":"66c72c62-ff13-4b77-9537-c163fb245c38","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -69,6 +71,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"1da83b6c-b171-4bb0-9213-41e8fa4e62a3","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"826a890e-4df4-4823-9199-12f0d5ffc2b3","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,

@@ -1,10 +1,10 @@
 function loadStringJson(file) {
-	if !file_exists(file+".json")
+	if !file_exists(file+".hat")
 	{
 		show_debug_message("Error: File "+file+" does not exist.");
 		return -1;
 	}
-	var JsonFile = file_text_open_read(file+".json");
+	var JsonFile = file_text_open_read(file+".hat");
 	var data = "";
 
 	// Read through the Json file and save the text in the Data variable

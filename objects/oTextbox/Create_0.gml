@@ -86,8 +86,16 @@ setPortPositions=function(portArray){
 	}
 }
 
+heightOverride=0;
 setHeight=function(){
 	if !global.menuOpen exit;
+	if heightOverride!=0
+	{
+		if heightOverride==1 top=true;
+		else top=false;
+		heightOverride=0;
+		exit;
+	}
 	characterFirstLetterUpper=string_upper(string_char_at(character,1))+string_copy(character,2,string_length(character)-1);
 	if character=="" top=(instance_exists(ply)&&ply.y>camY()+108);
 	else
@@ -117,6 +125,7 @@ resetCharacterTestVars=function(){
 resetCharacterTestVars();
 
 portYOff=4;
+barPos=0;
 draw=function(edgeX,edgeY){
 	x=edgeX+(1-image_alpha)*64*(!global.hudSide-global.hudSide);
 	y=edgeY+132*(!top);
@@ -129,13 +138,15 @@ draw=function(edgeX,edgeY){
 	else if instance_exists(oPopup)||mode<0
 	{
 		if barAlpha>0 barAlpha-=0.1;
+		if barPos>0 barPos-=0.1;
 	}
 	else
 	{
 		if barAlpha<1 barAlpha+=0.1;
+		else barPos=(barPos+0.005)%1;
 	}
-	draw_sprite_ext(sTextbox,2,edgeX,edgeY+round((1-barAlpha)*48),1,1,0,c_nearBlack,global.hudAlpha);
-	draw_sprite_ext(sTextbox,2,edgeX,edgeY-251+round(barAlpha*48),1,1,0,c_nearBlack,global.hudAlpha);
+	draw_sprite_ext(sTextbox,2,edgeX,edgeY+6+round((1-barAlpha)*48)-sin(barPos*2*pi)*3,1,1,0,c_nearBlack,global.hudAlpha);
+	draw_sprite_ext(sTextbox,2,edgeX,edgeY-251+round(barAlpha*48)+sin(barPos*2*pi)*3,1,1,0,c_nearBlack,global.hudAlpha);
 
 	if sprite_index==sTextbox
 	{

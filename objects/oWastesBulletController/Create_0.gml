@@ -10,6 +10,6 @@ createMissile=function(xPos,yPos,angle,spd){
 	_g.scope=true;
 	_g.spd=spd;
 	_g.image_angle=angle;
-	_g.image_index=0;
+	_g.image_index=2;
 	return _g;
 }

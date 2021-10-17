@@ -165,7 +165,7 @@ function physics(){
 			//if _f.alarm[0]%3==0
 			{
 				var _scale=0.05;
-				particle(x,y+sign(vsp)*4,depth+1,sNormalRipple,0,{distort: true,xscale: _scale,yscale: _scale,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.05,alwaysMove: (isObj(id,ply))});
+				if _f.visible particle(x,y+sign(vsp)*4,depth+1,sNormalRipple,0,{distort: true,xscale: _scale,yscale: _scale,xscaleSpd:0.02,yscaleSpd:0.02,fade:0.05,alwaysMove: (isObj(id,ply))});
 				impulse(_f.xDir,_f.yDir,id);
 			}
 		}
@@ -176,7 +176,10 @@ function setStateAnimation(forceChange){
 	if lastState!=state||forceChange
 	{
 		lastState=state;
-		if array_length(stateToAnim)>state image_index=setAnimation(stateToAnim[state],animation);
+		if array_length(stateToAnim)>state 
+		{
+			image_index=setAnimation(stateToAnim[state],animation);
+		}
 	}
 }
 

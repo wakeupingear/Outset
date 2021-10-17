@@ -21,8 +21,8 @@
     "path": "texturegroups/Default",
   },
   "swatchColours": null,
-  "gridX": 0,
-  "gridY": 0,
+  "gridX": 12,
+  "gridY": 12,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"0578bc0e-a7b3-4017-8172-cd4a65e38435","path":"sprites/sTilMyko/sTilMyko.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"0578bc0e-a7b3-4017-8172-cd4a65e38435","path":"sprites/sTilMyko/sTilMyko.yy",},"LayerId":{"name":"2c43250c-7e48-4def-9fdb-68ba49281c3e","path":"sprites/sTilMyko/sTilMyko.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},

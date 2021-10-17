@@ -1,5 +1,3 @@
-
-
 function killPlayer(saveText){
 	if !instance_exists(ply)||ply.state!=moveState.floating
 	{

@@ -26,7 +26,7 @@ moveObjects=function(_xDir,_yDir) {
 	for (var i=0;i<ds_list_size(objs);i++)
 	{
 		var _i=objs[|i];
-		if _yDir==-1&&isObj(_i,ply) //stop adjacent conveyors from moving the player multiple times
+		if isObj(_i,ply) //stop adjacent conveyors from moving the player multiple times
 		{
 			if playerMoved continue;
 			with oConveyor playerMoved=true;
@@ -65,6 +65,7 @@ moveObjects=function(_xDir,_yDir) {
 				}
 				ply.hsp=0;
 				ply.vsp=0;
+				grapplePositionFollowCoords();
 			}
 			else while groundCollision(x,y)
 			{

@@ -1,6 +1,10 @@
 event_inherited();
 color=merge_color(c_white,c_black,0.4);
-//extraSprites=[[[sCoreTerrain,1,-1,0,1],0]];
+extraSprites=[
+	[[sCoreTerrain,2,-1,0,1],0.3],
+	[[sCoreTerrain,3,-1,0,1],0.6],
+	[[sCoreTerrain,4,-1,0,1],0.8]
+];
 redCol=merge_color(c_red,c_white,0.6);
 redProg=0;
 startXScale=0.72;

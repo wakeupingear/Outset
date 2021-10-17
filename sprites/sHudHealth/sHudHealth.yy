@@ -27,6 +27,9 @@
     {"compositeImage":{"FrameId":{"name":"349f488c-9cee-4ccd-a86b-ab2efd4c9249","path":"sprites/sHudHealth/sHudHealth.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"349f488c-9cee-4ccd-a86b-ab2efd4c9249","path":"sprites/sHudHealth/sHudHealth.yy",},"LayerId":{"name":"7a651a45-5ffe-4a9b-b5b3-91cf0c36f461","path":"sprites/sHudHealth/sHudHealth.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sHudHealth","path":"sprites/sHudHealth/sHudHealth.yy",},"resourceVersion":"1.0","name":"349f488c-9cee-4ccd-a86b-ab2efd4c9249","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"49c2248d-5c65-4359-8297-80c09a511f96","path":"sprites/sHudHealth/sHudHealth.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"49c2248d-5c65-4359-8297-80c09a511f96","path":"sprites/sHudHealth/sHudHealth.yy",},"LayerId":{"name":"7a651a45-5ffe-4a9b-b5b3-91cf0c36f461","path":"sprites/sHudHealth/sHudHealth.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sHudHealth","path":"sprites/sHudHealth/sHudHealth.yy",},"resourceVersion":"1.0","name":"49c2248d-5c65-4359-8297-80c09a511f96","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sHudHealth","path":"sprites/sHudHealth/sHudHealth.yy",},
@@ -36,12 +39,13 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 2.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"29bba507-aac0-41c2-8182-429a70bf7d36","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"349f488c-9cee-4ccd-a86b-ab2efd4c9249","path":"sprites/sHudHealth/sHudHealth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"909f74c7-27ed-481b-ad44-ccf3515bae19","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"349f488c-9cee-4ccd-a86b-ab2efd4c9249","path":"sprites/sHudHealth/sHudHealth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"be01142a-6d35-4f74-a0e5-666f0acd148b","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"49c2248d-5c65-4359-8297-80c09a511f96","path":"sprites/sHudHealth/sHudHealth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -67,7 +71,31 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7a651a45-5ffe-4a9b-b5b3-91cf0c36f461","tags":[],"resourceType":"GMImageLayer",},
   ],
-  "nineSlice": null,
+  "nineSlice": {
+    "left": 0,
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "guideColour": [
+      4294902015,
+      4294902015,
+      4294902015,
+      4294902015,
+    ],
+    "highlightColour": 1728023040,
+    "highlightStyle": 0,
+    "enabled": false,
+    "tileMode": [
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    "resourceVersion": "1.0",
+    "loadedVersion": null,
+    "resourceType": "GMNineSliceData",
+  },
   "parent": {
     "name": "menus",
     "path": "folders/Sprites/notdon/menus.yy",

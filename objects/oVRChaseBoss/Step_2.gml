@@ -7,6 +7,6 @@ if (camX()+384<room_width)
 }
 else
 {
-	if (x>camX()+xOff*2) x-=0.5;
+	x+=0.5;
 }
 }

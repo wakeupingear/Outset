@@ -83,6 +83,7 @@ breath=global.maxBreath;
 breathAlpha=0;
 
 drawInteract = function(){
+	if !option("interactText") exit;
 	setFont(fontSizes.small);
 	var _xPos=toGuiX(x)-string_width(global.interactTextLabels[interactTextLast])/2;
 	var _yPos=toGuiY(y-8)-string_height(global.interactTextLabels[interactTextLast]);

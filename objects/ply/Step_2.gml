@@ -1,6 +1,7 @@
 /// @description Animation
 //special overrides
-if state==moveState.standing&&!global.menuOpen
+if !instance_exists(oPlayerMove){
+if state==moveState.standing&&!global.menuOpen&&image_blend==c_white
 {
 	if buttonHold(control.up)&&buttonHold(control.down)
 	{
@@ -35,8 +36,8 @@ else if state==moveState.standing
 {
 	if animation.currentAnimation!="standingStill" image_index=setAnimation("standingStill",animation);
 }
-
-if !instance_exists(oPlayerMove) npcAnimation();
+npcAnimation();
+}
 
 if goingFast
 {

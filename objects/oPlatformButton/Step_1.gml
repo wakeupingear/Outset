@@ -7,6 +7,19 @@ if global.alive
 		if (pressed||buttonPressed(control.confirm)||buttonPressed(control.up))
 		{
 			playSound(sndButton,false);
+			rumbleStart(rumbleType.lightPulse);
+			var _num=8;
+			for (var i=0;i<_num;i++)
+			{
+				particle(x,y,depth-1,sPlaceholderPixelW,0,{
+					dir: i*360/_num,
+					spd: 1,
+					xscale: 3,
+					yscale: 3,
+					alpha: 3,
+					fade: 0.15
+				});
+			}
 			pressed=false;
 			if platform.moving||platform.moveDir==moveDir
 			{

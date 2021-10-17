@@ -13,4 +13,4 @@ else
 {
 	global.music=audio_play_sound(music,1,true);
 }
-audio_group_set_gain(audiogroup_music,global.musicVol,0);
+audio_group_set_gain(audiogroup_music,option("musicVol"),0);

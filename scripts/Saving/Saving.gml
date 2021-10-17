@@ -84,40 +84,33 @@ function load(_num){
 
 function savePrefs(){
 	ini_open("prefs.ini");
-	ini_write_string("Data","lang",global.lang);
-	ini_write_real("Data","lastFile",global.lastFile);
-	
-	ini_write_real("Sound","sfx",global.sfxVol);
-	ini_write_real("Sound","music",global.musicVol);
-	
-	ini_write_real("Settings","gui",global.guiScale);
-	ini_write_real("Settings","guiSide",global.hudSide);
-	ini_write_real("Settings","shakeFactor",global.shakeFactor);
-	ini_write_string("Settings","accessibility",ds_list_write(global.accessibility));
+	ini_write_string("Settings","accessibility",ds_map_write(global.accessibility));
 	ini_close();
 }
 
 function loadPrefs(){
 	if !file_exists("prefs.ini")||isDev||isTest||isNewFile savePrefs();
 	ini_open("prefs.ini");
-	global.lang=ini_read_string("Data","lang","english");
-	global.lastFile=ini_read_real("Data","lastFile",0);
-	
-	global.sfxVol=ini_read_real("Sound","sfx",0.8);
-	global.musicVol=ini_read_real("Sound","music",0.5);
-	
-	global.guiScale=ini_read_real("Settings","gui",1);
-	global.hudSide=ini_read_real("Settings","guiSide",0);
-	global.shakeFactor=ini_read_real("Settings","shakeFactor",0);
-	ds_list_read(global.accessibility,ini_read_string("Settings","accessibility",""));
+	ds_map_read(global.accessibility,ini_read_string("Settings","accessibility",""));
 	ini_close();
 	
 	if !isHtml with controller event_perform(ev_alarm,0);
 	else controller.alarm[0]=30;
-	
-	audio_group_set_gain(audiogroup_music,global.musicVol,0);
-	audio_group_set_gain(audiogroup_sounds,global.sfxVol,0);
-	
+	//TODO: convert events to map syntax
+	audio_group_set_gain(audiogroup_music,option("musicVol"),0);
+	audio_group_set_gain(audiogroup_sounds,option("musicVol"),0);
+	global.lastFile=option("lastFile");
+	global.guiScale=option("guiScale");
 	display_set_gui_size(floor(1920*global.guiScale),floor(1080*global.guiScale));
+	global.hudSide=option("hudSide");
+	global.hudAlpha=option("hudAlpha");
+	global.shakeFactor=option("shakeFactor");
+	display_reset(0,option("vsync"));
+	if option("fullscreen") 
+	{
+		window_set_size(1280,720);
+		window_set_fullscreen(option("fullscreen"));
+		controller.alarm[4]=5;
+	}
 	setFont(fontSizes.medium);
 }

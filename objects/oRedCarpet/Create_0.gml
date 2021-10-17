@@ -1,0 +1,9 @@
+event_inherited();
+attacking=false;
+anchorX=299;
+anchorY=240;
+collPointX=[-6,6];
+collPointY=[0,0];
+carpetCol=hex("9E0B0F");
+carpetLen=anchorX-104;
+canDropSoul=false;

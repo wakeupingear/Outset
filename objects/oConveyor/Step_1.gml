@@ -11,6 +11,7 @@ for (var i=0;i<ds_list_size(objs);i++)
 		if !_touch _i.hsp+=image_speed;
 	}
 }
+//moveObjects(0,1);
 moveObjects(0,1);
 moveObjects(-1,0);
 moveObjects(1,0);

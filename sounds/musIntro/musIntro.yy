@@ -2,7 +2,7 @@
   "ConfigValues": {
     "NewFile": {"audioGroupId":"{\"name\":\"audiogroup_music\",\"path\":\"audiogroups/audiogroup_music\"}",},
   },
-  "compression": 2,
+  "compression": 0,
   "volume": 1.0,
   "preload": false,
   "bitRate": 128,

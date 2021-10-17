@@ -18,14 +18,32 @@ else if followMode==2 //path
 
 if x!=xTo||y!=yTo
 {
-	var _xChange=median((xTo-x)*(camSpd+_camSpdExtra),-maxChange,maxChange);
+	var _camDist=median(sqrt(sqr(xTo-x)+sqr(yTo-y))*(camSpd+_camSpdExtra),-maxChange,maxChange);
+	var _camDir=point_direction(x,y,xTo,yTo);
+	y+=lengthdir_y(_camDist,_camDir);
+	var _xChange=lengthdir_x(_camDist,_camDir);
+	var _collided=false;
+	repeat floor(abs(_xChange))
+	{
+		x+=sign(_xChange);
+		 if place_meeting(x,y,oCameraHit)
+		 {
+			 x=round(x);
+			 while place_meeting(x,y,oCameraHit) x-=sign(_xChange);
+			 xTo=x;
+			 _collided=true;
+			 break;
+		 }
+	}
+	if !_collided x+=(abs(_xChange)%1)*sign(_xChange);
+	/*var _xChange=median((xTo-x)*(camSpd+_camSpdExtra),-maxChange,maxChange);
 	x+=_xChange;
 	var _xSign=sign(_xChange);
 	while place_meeting(x,y,oCameraHit) x=round(x)-_xSign;
 	var _yChange=median((yTo-y)*(camSpd+_camSpdExtra),-maxChange,maxChange);
 	y+=_yChange;
 	var _ySign=sign(_yChange);
-	while place_meeting(x,y,oCameraHit) y=round(y)-_ySign;
+	while place_meeting(x,y,oCameraHit) y=round(y)-_ySign;*/
 }
 if abs(x-xTo)<1 x=xTo;
 if abs(y-yTo)<1 y=yTo;
@@ -43,6 +61,8 @@ else
 	shakeRandY=0;
 }
 var _vm=matrix_build_lookat(x,y,-10,x,y,0,0,1,0);
+controller.lastCamX=x-192;
+controller.lastCamY=y-108;
 camera_set_view_mat(global.cam,_vm);
 for (var i=0;i<instance_number(oBackground);i++) with instance_find(oBackground,i) event_user(0);
 
@@ -55,3 +75,4 @@ if isTest||isDev
 		camera_set_view_size(global.cam,384,216);
 	}
 }
+printCoords(x,y,"Camera");
