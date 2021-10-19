@@ -45,8 +45,8 @@ if x!=xTo||y!=yTo
 	var _ySign=sign(_yChange);
 	while place_meeting(x,y,oCameraHit) y=round(y)-_ySign;*/
 }
-if abs(x-xTo)<1 x=xTo;
-if abs(y-yTo)<1 y=yTo;
+if abs(x-xTo)<1 x=round(xTo);
+if abs(y-yTo)<1 y=round(yTo);
 clampCam();
 
 if shakeTime>0||shakeToggle
@@ -75,4 +75,3 @@ if isTest||isDev
 		camera_set_view_size(global.cam,384,216);
 	}
 }
-printCoords(x,y,"Camera");

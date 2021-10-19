@@ -215,7 +215,8 @@ instance_create_depth(0,0,depth-1,oMouse);
 //hud alpha
 image_alpha=0;
 getHudX=function(){
-	return (image_alpha)*64*(!global.hudSide-global.hudSide)-24;//+camX()
+	if global.hudSide return 384+24-(image_alpha)*64;
+	return (image_alpha)*64-24;//+camX()
 }
 hudFade=1;
 scanTime=0;
@@ -252,60 +253,15 @@ closePauseMenu=function(){
 	//however I am bad at comments and didn't actually explain myself
 	//I don't think this is needed since nothing within the game changes during the pause that requires an era reload
 }
-pauseMenuButtons={
-	menu1: [
-		"volume",
-		"controls",
-		"visuals",
-		"accessibility",
-		"quitTitle",
-		"quitDesktop"
-	],
-	fullscreen: {type: "toggle"},
-	musicVol: {type: "slider", startPos:0,endPos:1,tick:0.1},
-	sfxVol: {type: "slider", startPos:0,endPos:1,tick:0.1},
-	quitTitle: {type: "special"},
-	quitDesktop: {type: "special"},
-	
-	volume:[
-		"musicVol",
-		"sfxVol"
-	],
-	
-	controls:[
-	],
-	
-	accessibility: [
-		"interactText",
-		"flashes",
-		"highlightPlayer",
-		"highlightHook",
-		"highlightNPC"
-	],
-	interactText: {type: "toggle"},
-	
-	visuals: [
-		"fullscreen",
-		"guiScale",
-		"guiSide",
-		"camShake",
-		"vsync",
-	],
-	guiScale: {type: "special"},
-	guiSide: {type: "toggle", labels: "guiSide", variable: true},
-	camShake: {type: "toggle"},
-	vsync: {type: "toggle"},
-	flashes: {type:"toggle"},
-	highlightPlayer: {type: "toggle"},
-	highlightHook: {type: "toggle"},
-	highlightNPC: {type: "toggle"},
-};
+
 pauseMenuCurrent="menu1";
 pausePos=0;
 pauseMenuCopied=-1;
+pauseMenuSelection=noone;
 menuStack=ds_stack_create();
+menuStruct=textLoad("pauseMenu");
 loadMenu=function(menuKey){
-	if variable_struct_exists(pauseMenuButtons, menuKey)
+	//if variable_struct_exists(pauseMenuButtons, menuKey)
 	{
 		//manage existing buttons
 		with oPauseButton
@@ -313,15 +269,14 @@ loadMenu=function(menuKey){
 			active=false;
 			selected=false;
 		}
-		
-		var _struct=pauseMenuButtons[$ menuKey];
-		var _labels=textLoad("pauseLabels");
+
+		var _entries=menuStruct[$ menuKey].entries;
 		var _first=-1;
 		var _previous=-1;
-		var _total=array_length(_struct);
+		var _total=array_length(_entries);
 		for (var i=0;i<_total;i++)
 		{
-			if _struct[i]=="quitTitle"&&room==rTitle continue;
+			if _entries[i]=="quitTitle"&&room==rTitle continue;
 			var _b=instance_create_depth(192,108+round((i-_total/2+1)*26),depth-1,oPauseButton);
 			if i==0 
 			{
@@ -331,11 +286,9 @@ loadMenu=function(menuKey){
 			else _previous.next=_b;
 			_b.previous=_previous;
 			_b.pos=i;
-			_b.struct=pauseMenuButtons[$ _struct[i]];
-			_b.key=_struct[i];
-			_b.text=_labels[$ _struct[i]];
-			if is_array(pauseMenuButtons[$ _struct[i]]) _b.type="menu";
-			//else if variable_struct_exists(pauseMenuButtons[$ _struct[i]],"labels") _b.text=pauseMenuButtons[$ _struct[i]].labels;
+			_b.struct=menuStruct[$ _entries[i]];
+			_b.key=_entries[i];
+			_b.text=_b.struct.name;
 			with _b 
 			{
 				image_xscale=string_width(text)/guiX()/sprite_width+1;
@@ -502,7 +455,7 @@ if (instance_exists(ply)&&global.notPause)||pauseMenuCopied!=-1
 	
 	if ds_list_size(global.inventory)>0
 	{
-		var _x=getHudX()+edgeX-12;
+		var _x=getHudX()+edgeX-12*(1-(global.hudSide)*2);
 		var _y=52+edgeY;
 		draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
 		if buttonHold(control.item)
@@ -530,7 +483,7 @@ if (instance_exists(ply)&&global.notPause)||pauseMenuCopied!=-1
 				break;
 			default: break;
 		}
-		draw_sprite(sItems,_ind,getHudX()+edgeX-12,52+edgeY);
+		draw_sprite(sItems,_ind,_x,_y);
 	}
 	draw_set_alpha(1);
 }

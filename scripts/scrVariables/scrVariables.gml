@@ -22,6 +22,7 @@ function scrVariables(){
 	ds_map_add(global.accessibility,"hudAlpha",global.hudAlpha);
 	ds_map_add(global.accessibility,"camShake",global.shakeFactor);
 	ds_map_add(global.accessibility,"vsync",(!isDev&&!isTest));
+	ds_map_add(global.accessibility,"blackBars",true);
 	#endregion
 	
 	global.data =ds_map_create(); //dump misc values here
@@ -522,6 +523,7 @@ function scrVariables(){
 	global.rooms.rWastesCrater.inside=false;
 	global.rooms.rWastesHilltop.inside=false;
 	global.rooms.rWastesFactoryOutside.inside=false;
+	addRoomCamera("rWastesFactory1",436,684,768,760,384,756);
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
@@ -685,6 +687,7 @@ function scrVariables(){
 	ds_map_add(global.physCollPoints,sDragami,[[-14,8,-14,8],[2,2,-25,-25]]);
 	ds_map_add(global.physCollPoints,sTurretSmall,[[0],[6]]);
 	ds_map_add(global.physCollPoints,sAAGun,[[0],[7]]);
+	ds_map_add(global.physCollPoints,sExplosiveBarrel,[[0],[9]]);
 	
 	ds_map_add(global.physCollPoints,sHer,global.physCollPoints[? sPly]);
 	ds_map_add(global.physCollPoints,sChet,[[0],[4]]);

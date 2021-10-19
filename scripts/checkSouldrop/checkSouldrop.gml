@@ -9,14 +9,16 @@ function checkSouldrop(){
 			fade:0.005,
 			radiusSpd:2,
 			blend: c_soulBlue,
+			alwaysMove: true,
 			isBG: true, xLerp:1, yLerp:1, xOff: controller.getHudX(), yOff: 24
 		});
 		particle(x,y,controller.depth,sHudHealth,0,{
 			fade:0.025,
 			alpha: global.hudAlpha,
-			blend: merge_color(global.hudColorList[global.hudColor],c_orange,0.4),
+			blend: merge_color(global.hudColorList[global.hudColor],c_white,0.5),
 			xscaleSpd: 0.05,
 			yscaleSpd:0.05,
+			alwaysMove: true,
 			isBG: true, xLerp:1, yLerp:1, xOff: controller.getHudX(), yOff: 24
 		});
 		particle(x,y,controller.depth,sNormalRipple,0,{

@@ -199,6 +199,7 @@ switch room //skybox/specific configs
 		instance_create_layer(0,0,"bg",oSkyWastes);
 		break;
 	case rWastesFactoryEntrance:
+	case rWastesFactory1:
 		var _til=instance_create_layer(0,0,"bg",oBackground);
 		_til.sprite_index=sMykoMachineBG;
 		_til.tileX=true;
@@ -206,8 +207,14 @@ switch room //skybox/specific configs
 		var _pipe=instance_create_layer(0,0,"bg2",oBackground);
 		_pipe.sprite_index=sMykoMachineBG;
 		_pipe.image_index=1;
-		_pipe.xLerp=0.3;
-		_pipe.yLerp=0.3;
+		_pipe.xLerp=0.15;
+		_pipe.yLerp=0.15;
+		_pipe.tileX=true;
+		_pipe.tileY=true;
+		var _pipe=instance_create_layer(0,0,"bg2",oBackground);
+		_pipe.sprite_index=sMykoMachineBGSmall;
+		_pipe.xLerp=0.35;
+		_pipe.yLerp=0.35;
 		_pipe.tileX=true;
 		_pipe.tileY=true;
 		break;

@@ -2,7 +2,7 @@
 if !global.notPause
 {
 	if pauseAlpha<pauseAlphaMax pauseAlpha+=0.1;
-	if buttonPressed(control.start) 
+	if buttonPressed(control.start)||(((!global.hudSide&&buttonPressed(control.left))||(global.hudSide&&buttonPressed(control.right)))&&instance_exists(pauseMenuSelection)&&pauseMenuSelection.type!="slider")
 	{
 		ds_stack_pop(menuStack);
 		if ds_stack_empty(menuStack) closePauseMenu();

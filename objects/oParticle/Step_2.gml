@@ -34,7 +34,7 @@ if alwaysMove||global.alive
 		y=followObj.y;
 	}
 	
-	if ghost ghostTrail(x,y,ghostFrameOffset,ghostDepth,sprite_index,image_index,{angle:image_angle,xscale:image_xscale,yscale:image_yscale,alwaysMove:ghostAlwaysMove});
+	if ghost ghostTrail(x,y,ghostFrameOffset,ghostDepth,sprite_index,image_index,{angle:image_angle,xscale:image_xscale,yscale:image_yscale,alwaysMove:ghostAlwaysMove, alpha: min(image_alpha,1)});
 }
 if isBG
 {

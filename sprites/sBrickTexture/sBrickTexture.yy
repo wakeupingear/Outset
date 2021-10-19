@@ -26,8 +26,8 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"1ec9b3f2-f118-41f0-8240-3a4fb05e76e7","path":"sprites/sBrickTexture/sBrickTexture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"1ec9b3f2-f118-41f0-8240-3a4fb05e76e7","path":"sprites/sBrickTexture/sBrickTexture.yy",},"LayerId":{"name":"f2dd9fe7-9bad-4d42-bc06-1c200bfa3407","path":"sprites/sBrickTexture/sBrickTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"1ec9b3f2-f118-41f0-8240-3a4fb05e76e7","path":"sprites/sBrickTexture/sBrickTexture.yy",},"LayerId":{"name":"932a1bd3-13ec-4cac-9265-18df959f5699","path":"sprites/sBrickTexture/sBrickTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"1ec9b3f2-f118-41f0-8240-3a4fb05e76e7","path":"sprites/sBrickTexture/sBrickTexture.yy",},"LayerId":{"name":"425e109d-e3be-4245-be01-40e8d5a694e3","path":"sprites/sBrickTexture/sBrickTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"1ec9b3f2-f118-41f0-8240-3a4fb05e76e7","path":"sprites/sBrickTexture/sBrickTexture.yy",},"LayerId":{"name":"932a1bd3-13ec-4cac-9265-18df959f5699","path":"sprites/sBrickTexture/sBrickTexture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sBrickTexture","path":"sprites/sBrickTexture/sBrickTexture.yy",},"resourceVersion":"1.0","name":"1ec9b3f2-f118-41f0-8240-3a4fb05e76e7","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

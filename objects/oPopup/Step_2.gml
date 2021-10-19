@@ -3,7 +3,7 @@
 if mode==1 //fade in
 {
 	image_alpha+=0.1;
-	if image_alpha>=1 mode=0;
+	if image_alpha>1 mode=0;
 }
 else if mode<0 //fade out
 {

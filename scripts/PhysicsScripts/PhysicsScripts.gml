@@ -117,7 +117,7 @@ function physics(){
 			{
 				jumpAdd=0;
 				y=floor(y);
-				if object_index==ply //reset inputs
+				if isObj(id,ply) //reset inputs
 				{
 					if global.inputs[control.jump]>0&&global.inputs[control.jump]<12 global.inputs[control.jump]=0;
 					if global.inputs[control.grapple]>0&&global.inputs[control.grapple]<12 global.inputs[control.grapple]=0;
@@ -325,6 +325,7 @@ function grapplePhysics(){
 		state=moveState.falling;
 		vsp=0;
 		resetGrapple();
+		while groundCollision(x,y) y++;
 	}
 	else if buttonPressed(control.jump)&&groundCollision(x,y+2)
 	{

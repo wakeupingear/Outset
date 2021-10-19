@@ -19,6 +19,7 @@ if active
 {
 	if selected
 	{
+		controller.pauseMenuSelection=id;
 		if buttonPressed(control.down)
 		{
 			buttonFreeze(control.down);
@@ -33,43 +34,47 @@ if active
 			previous.selected=true;
 			oCursor.x=-100;
 		}
-		else if buttonPressed(control.confirm)||buttonPressed(control.grapple)
-		{
-			if is_struct(struct) 
+		else {
+			if buttonPressed(control.confirm)||buttonPressed(control.grapple)
 			{
-				if type=="toggle" 
+				if is_struct(struct) 
 				{
-					choice=!choice;
-					global.accessibility[? key]=choice;
-					controller.prefsChanged=true;
-					if array_length(labels)>0
+					if type=="toggle" 
 					{
-						choiceStr=labels[choice];
-						setChoiceXscale();
+						clickEffect();
+						choice=!choice;
+						global.accessibility[? key]=choice;
+						controller.prefsChanged=true;
+						if array_length(labels)>0
+						{
+							choiceStr=labels[choice];
+							setChoiceXscale();
+						}
+					}
+					switch key //direct variable
+					{
+						case "fullscreen":
+							with controller event_user(0);
+							break;
+						case "guiSide":
+							global.hudSide=choice;
+							break;
+						case "vsync":
+							display_reset(0,option("vsync"));
+							break;
+						case "quitTitle":
+							with controller closePauseMenu();
+							roomChange(0,0,rTitle,transitions.blackToWhite,0,0,1);
+							break;
+						case "quitDesktop":
+							game_end();
+							break;
+						default: break;
 					}
 				}
-				switch key //direct variable
-				{
-					case "fullscreen":
-						with controller event_user(0);
-						break;
-					case "guiSide":
-						global.hudSide=choice;
-						break;
-					case "vsync":
-						display_reset(0,option("vsync"));
-						break;
-					case "quitTitle":
-						with controller closePauseMenu();
-						roomChange(0,0,rTitle,transitions.blackToWhite,0,0,1);
-						break;
-					case "quitDesktop":
-						game_end();
-						break;
-					default: break;
-				}
 			}
-			else //sub menu
+			
+			if type=="menu"&&(buttonPressed(control.confirm)||(!global.hudSide&&buttonPressed(control.right))||(global.hudSide&&buttonPressed(control.left))) //sub menu
 			{
 				justSelected=true;
 				controller.pauseMenuCurrent=key;
@@ -79,27 +84,34 @@ if active
 					loadMenu(pauseMenuCurrent);
 				}
 			}
-		}
-		else if (buttonPressed(control.left)||buttonPressed(control.right))&&type=="slider"
-		{
-			var _dir=(buttonPressed(control.right)-buttonPressed(control.left));
-			if (_dir==1&&choice<struct.endPos)||(_dir==-1&&choice>struct.startPos)
+			
+			if type=="slider"
 			{
-				choice+=struct.tick*_dir;
-				choiceStr=string(round(choice*100))+"%";
-				setChoiceXscale();
-				switch key
+				var _dir=(buttonPressed(control.right)-buttonPressed(control.left));
+				var _selected=(buttonPressed(control.confirm)||buttonPressed(control.grapple));
+				if (_dir==1&&choice<struct.endPos)||(_dir==-1&&choice>struct.startPos)||_selected
 				{
-					case "musicVol":
-						audio_group_set_gain(audiogroup_music,choice,0);
-						break;
-					case "sfxVol":
-						audio_group_set_gain(audiogroup_sounds,choice,0);
-						break;
-					default: break;
+					if _selected choice=!choice;
+					else choice+=struct.tick*_dir;
+					choiceStr=string(round(choice*100))+"%";
+					setChoiceXscale();
+					clickEffect();
+					switch key
+					{
+						case "musicVol":
+							audio_group_set_gain(audiogroup_music,choice,0);
+							break;
+						case "sfxVol":
+							audio_group_set_gain(audiogroup_sounds,choice,0);
+							break;
+						case "camShake":
+							global.shakeFactor=choice;
+							break;
+						default: break;
+					}
+					global.accessibility[? key]=choice;
+					controller.prefsChanged=true;
 				}
-				global.accessibility[? key]=choice;
-				controller.prefsChanged=true;
 			}
 		}
 	}

@@ -168,26 +168,62 @@
         "You feel a sense of pride and accomplishment."
     ],
 
-    "guiSide":["Left","Right"],
-    "pauseLabels": {
-        "volume": "Volume",
-        "musicVol": "Music Volume",
-        "visuals": "Visuals",
-        "sfxVol": "Effects Volume",
-        "fullscreen": "Fullscreen",
-        "camShake": "Screen Shake",
-        "vsync":"Vsync",
-        "interactText": "Interaction Prompts",
-        "highlightPlayer": "Highlight Player",
-        "highlightHook": "Highlight Grappling Hook",
-        "highlightNPC": "Highlight NPCs",
-        "guiScale": "Resolution",
-        "guiSide": "HUD Side",
-        "flashes": "Bright Flashes",
-        "quitTitle": "Quit to Title",
-        "quitDesktop": "Quit to Desktop",
-        "controls": "Controls",
-        "accessibility": "Accessibility",
+    "pauseMenu": {
+        "menu1":{
+            "type":"menu",
+            "entries":[
+                "volume",
+                "controls",
+                "visuals",
+                "accessibility",
+                "quitTitle",
+                "quitDesktop"
+            ]
+        },
+        "volume": {"name":"Volume","type":"menu",
+            "entries":[
+                "musicVol",
+                "sfxVol"
+            ]
+        },
+        "controls": {"name":"Controls","type":"menu",
+            "entries":[
+            ]
+        },
+        "visuals": {"name":"Visuals","type":"menu",
+            "entries":[
+                "fullscreen",
+                "guiScale",
+                "camShake",
+                "blackBars",
+                "vsync",
+                "guiSide"
+            ]
+        },
+        "accessibility": {"name":"Accessibility","type":"menu",
+            "entries":[
+                "interactText",
+                "flashes",
+                "highlightPlayer",
+                "highlightHook",
+                "highlightNPC"
+            ]
+        },
+        "musicVol": {"name":"Music Volume","type":"slider","startPos":0,"endPos":1,"tick":0.1},
+        "sfxVol": {"name":"Effects Volume","type":"slider","startPos":0,"endPos":1,"tick":0.1},
+        "fullscreen": {"name":"Fullscreen","type":"toggle"},
+        "camShake": {"name":"Screen Shake","type":"slider","startPos":0,"endPos":2,"tick":0.1},
+        "vsync": {"name":"Vsync","type":"toggle"},
+        "interactText": {"name":"Interaction Prompts","type":"toggle"},
+        "highlightPlayer": {"name":"Highlight Player","type":"toggle"},
+        "highlightHook": {"name":"Highlight Grappling Hook","type":"toggle"},
+        "highlightNPC": {"name":"Highlight NPCs","type":"toggle"},
+        "guiScale": {"name":"Resolution","type":"special"},
+        "guiSide": {"name":"HUD Side","type":"toggle","labels":["Left","Right"]},
+        "flashes": {"name":"Bright Flashes","type":"toggle"},
+        "quitTitle": {"name":"Quit to Title","type":"special"},
+        "quitDesktop": {"name":"Quit to Desktop","type":"special"},
+        "blackBars": {"name":"Cutscene Letterboxing","type":"toggle"},
     },
     "titleText":[
         "Press Any Key"

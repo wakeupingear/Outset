@@ -4,6 +4,7 @@ sprW=sprite_get_width(spr);
 sprH=sprite_get_height(spr);
 playerMoved=false;
 canMoveGrapple=true;
+hasPower=(global.rooms[$ room_get_name(room)].region!=worldRegion.west||roomHasPower("factory"));
 
 objs=ds_list_create();
 

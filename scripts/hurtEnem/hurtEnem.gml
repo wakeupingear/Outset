@@ -20,6 +20,7 @@ function hurtEnem(_id,_damage){
 			else switch object_index
 			{
 				case oRedCarpet:
+					_damaged=false;
 				case oExplosiveBarrel:
 					move=ply.xscale;
 					break;

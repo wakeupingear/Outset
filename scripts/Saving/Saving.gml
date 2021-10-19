@@ -104,7 +104,7 @@ function loadPrefs(){
 	display_set_gui_size(floor(1920*global.guiScale),floor(1080*global.guiScale));
 	global.hudSide=option("hudSide");
 	global.hudAlpha=option("hudAlpha");
-	global.shakeFactor=option("shakeFactor");
+	global.shakeFactor=option("camShake");
 	display_reset(0,option("vsync"));
 	if option("fullscreen") 
 	{

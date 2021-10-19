@@ -1,6 +1,7 @@
 /// @description Move + animation
 if moving
 {
+	printCoords(x,y)
 	x+=(target_x-x)/6;
 	y+=(target_y-y)/6;
 	if abs(x-target_x)<2&&abs(y-target_y)<2

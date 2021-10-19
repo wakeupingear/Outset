@@ -8,7 +8,7 @@ else
 	{
 		if variable_struct_exists(struct,"labels")
 		{
-			labels=textLoad(struct.labels);
+			labels=struct.labels;
 			choiceStr=labels[choice];
 		}
 	}

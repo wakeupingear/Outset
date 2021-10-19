@@ -27,7 +27,11 @@ function conversation(textData){
 		}
 		catch(_exception) show_debug_message("Error: npcKey not defined for object "+object_get_name(object_index));
 	
-		with _t event_perform(ev_step,ev_step_begin);
+		with _t 
+		{
+			event_perform(ev_step,ev_step_begin);
+			if sentence=="" image_alpha=0; //Stops the box from being visible for 1 frame when it starts with a popup
+		}
 		if !_alreadyOpen&&_t.mode<0 global.menuOpen=false;
 	}
 	

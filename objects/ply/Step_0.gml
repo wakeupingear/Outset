@@ -191,12 +191,16 @@ if object_index==ply
 				{
 					var _pNum=3;
 					var _grappleAng=90;
-					if abs(hsp)>hspMax _grappleAng-=90*sign(hsp);
+					if abs(hsp)>-vsp _grappleAng-=90*sign(hsp);
 					var _aboveDepth=layer_get_depth(layer_get_id("above"));
 					for (var i=-_pNum;i<=_pNum;i++)
 					{
-						var _scaleSpd=0.4;
-						particle(x+sprite_width/2,y,_aboveDepth,sPlaceholderPixelR,0,{alpha:1.8,spd:3,fade:0.1,dir: _grappleAng+i*12,xscaleSpd: _scaleSpd,yscaleSpd: _scaleSpd});
+						var _scaleSpd=0.2;
+						particle(x+lengthdir_x(4,_grappleAng+180),y+lengthdir_y(4,_grappleAng+180),_aboveDepth,sPlaceholderPixelR,0,{
+							xscale:2,yscale:2,alpha:1,spd:2.5,fade:0.05,
+							dir: _grappleAng+i*14,xscaleSpd: _scaleSpd,yscaleSpd: _scaleSpd,
+							ghost: true, ghostFrameOffset: 1
+						});
 					}
 					shake(1,1,10);
 				}

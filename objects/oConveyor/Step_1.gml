@@ -1,5 +1,5 @@
 /// @description Add hsp
-if global.alive{
+if global.alive&&hasPower{
 image_speed=spd;
 for (var i=0;i<ds_list_size(objs);i++)
 {

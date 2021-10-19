@@ -12,7 +12,7 @@ if (buttonPressed(control.select)||(mouse_check_button_pressed(mb_left)&&abs(mou
 else
 {
 	if fade>0 fade-=0.05;
-	if anyButtonPressed()&&showHud
+	if !buttonPressed(control.start)&&anyButtonPressed()&&showHud
 	{
 		if titleAlpha==1&&textAlpha==1 
 		{
