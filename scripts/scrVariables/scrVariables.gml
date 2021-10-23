@@ -58,7 +58,7 @@ function scrVariables(){
 	global.lightAlpha=0;
 	global.lightObj=[ply,npcCitra,npcHarold,
 	oSave,
-	oGravityField,
+	oGravityField,oLight,
 	oPowerPlantTemp,
 	oSouldropRain,oSouldropRainController,oSouldropCoin,
 	oElevator,
@@ -577,7 +577,8 @@ function scrVariables(){
 		skipDialogue
 	}
 	
-	global.controllerInputs=[
+	global.controllerInputs=ds_list_create();
+	ds_list_add(global.controllerInputs,
 	[gp_padu,leftStickUp], //up
 	[gp_padd,leftStickDown], //down
 	[gp_padl,leftStickLeft], //left
@@ -594,8 +595,9 @@ function scrVariables(){
 	[], //fullscreen
 	[gp_stickr], //debug
 	[] //skip dialogue
-	];
-	global.keyboardInputs=[
+	);
+	global.keyboardInputs=ds_list_create();
+	ds_list_add(global.keyboardInputs,
 	[vk_up,ord("W")], //up
 	[vk_down,ord("S")], //down
 	[vk_left,ord("A")], //left
@@ -612,9 +614,9 @@ function scrVariables(){
 	[vk_insert,vk_f4], //fullscreen
 	[ord("T")], //debug
 	[vk_alt] //skip dialogue
-	];
+	);
 	
-	global.numOfInputs=array_length(global.keyboardInputs);
+	global.numOfInputs=ds_list_size(global.keyboardInputs);
 	global.inputs=array_create(global.numOfInputs); //filled in inputForPlayer1
 	global.lastInputs=array_create(global.numOfInputs); //filled in inputForPlayer1
 	global.doubleInput=array_create(global.numOfInputs);
@@ -648,7 +650,7 @@ function scrVariables(){
 		addItem("iGrappleArc");
 		//addItem("iGrappleDown");
 		addItem("iSlate");
-		addItem("iSolitaire")
+		addItem("iSolitaire");
 		//addItem("iBeacon");
 		//addItem("iWrench1");
 		//addItem("iFormula");
@@ -660,6 +662,7 @@ function scrVariables(){
 		//scr_wastes_1();
 		//scr_wastes_2();
 		//scr_pro_2();
+		addData("factoryPower");
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",

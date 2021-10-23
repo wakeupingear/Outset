@@ -4,6 +4,12 @@ image_speed=spd;
 for (var i=0;i<ds_list_size(objs);i++)
 {
 	var _i=objs[|i];
+	if !instance_exists(objs[|i])
+	{
+		ds_list_delete(objs,i);
+		i--;
+		continue;
+	}
 	if (!isObj(_i,ply)||(!instance_exists(oGrapple)||oGrapple.state!=2))&&_i.object_index!=oGrapple&&!place_meeting(x,y-2,_i)//||buttonPressed(control.jump)
 	{
 		var _touch=false;

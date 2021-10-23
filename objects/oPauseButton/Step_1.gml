@@ -37,51 +37,63 @@ if active
 		else {
 			if buttonPressed(control.confirm)||buttonPressed(control.grapple)
 			{
-				if is_struct(struct) 
+				if type=="toggle" 
 				{
-					if type=="toggle" 
+					clickEffect();
+					choice=!choice;
+					global.accessibility[? key]=choice;
+					controller.prefsChanged=true;
+					if array_length(labels)>0
 					{
-						clickEffect();
-						choice=!choice;
-						global.accessibility[? key]=choice;
-						controller.prefsChanged=true;
-						if array_length(labels)>0
-						{
-							choiceStr=labels[choice];
-							setChoiceXscale();
-						}
+						choiceStr=labels[choice];
+						setChoiceXscale();
 					}
-					switch key //direct variable
-					{
-						case "fullscreen":
-							with controller event_user(0);
-							break;
-						case "guiSide":
-							global.hudSide=choice;
-							break;
-						case "vsync":
-							display_reset(0,option("vsync"));
-							break;
-						case "quitTitle":
-							with controller closePauseMenu();
-							roomChange(0,0,rTitle,transitions.blackToWhite,0,0,1);
-							break;
-						case "quitDesktop":
-							game_end();
-							break;
-						default: break;
-					}
+				}
+				
+				switch key //direct variable
+				{
+					case "fullscreen":
+						with controller event_user(0);
+						break;
+					case "guiSide":
+						global.hudSide=choice;
+						break;
+					case "vsync":
+						display_reset(0,option("vsync"));
+						break;
+					case "quitTitle":
+						with controller closePauseMenu();
+						roomChange(0,0,rTitle,transitions.blackToWhite,0,0,1);
+						break;
+					case "quitDesktop":
+						game_end();
+						break;
+					default: break;
 				}
 			}
 			
-			if type=="menu"&&(buttonPressed(control.confirm)||(!global.hudSide&&buttonPressed(control.right))||(global.hudSide&&buttonPressed(control.left))) //sub menu
+			if (buttonPressed(control.confirm)||(!global.hudSide&&buttonPressed(control.right))||(global.hudSide&&buttonPressed(control.left))) //sub menu
 			{
-				justSelected=true;
-				controller.pauseMenuCurrent=key;
-				ds_stack_push(controller.menuStack,key);
-				with controller
+				if type=="menu"
 				{
-					loadMenu(pauseMenuCurrent);
+					justSelected=true;
+					controller.pauseMenuCurrent=key;
+					ds_stack_push(controller.menuStack,key);
+					with controller
+					{
+						loadMenu(pauseMenuCurrent);
+					}
+				}
+				else if type=="object"
+				{
+					var _c=instance_create_depth(x,y,depth-1,asset_get_index(struct.object));
+					controller.menuObj=_c;
+					justSelected=true;
+					with oPauseButton
+					{
+						active=false;
+						selected=false;
+					}
 				}
 			}
 			

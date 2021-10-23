@@ -8,6 +8,8 @@ function resetGrapple(){
 			with oGrapple{
 				image_index=2;
 				grappleTime=0;
+				touchingExtension=false;
+				grappleDistExtra=0;
 				xDir=0;
 				yDir=0;
 				if !place_meeting(x,y,ply)&&grappleMode!=grappleState.arc

@@ -1,7 +1,14 @@
 /// @description Create collision
 frontSpr=sprite_index;
 image_index=2;
-switch sprite_index
+array_push(hit,
+	instance_create_depth(x,y,depth,hitobj)
+);
+hit[0].image_xscale=image_xscale;
+hit[0].image_yscale=image_yscale;
+hit[0].sprite_index=sprite_index;
+hit[0].image_index=3;
+/*switch sprite_index
 {
 	case sWastesBuildingBeam:
 		array_push(hit,
@@ -26,7 +33,7 @@ switch sprite_index
 		hit[0].image_xscale=130;
 		hit[0].image_yscale=4;
 		break;
-}
+}*/
 event_inherited();
 depth=layer_get_depth(layer_get_id("terrain")+1);
 
@@ -38,7 +45,7 @@ if place_meeting(x,y+4,hitobj22)
 else if !place_meeting(x,y+4,oWastesBuilding) //base
 {
 	var _base=instance_create_depth(x,y+abs(sprite_height),depth,oPlaceholder);
-	_base.sprite_index=sprite_index;
+	_base.sprite_index=sWastesBuilding;
 	_base.image_index=3;
 	var _h=instance_create_depth(x+3,y+abs(sprite_height),depth,hitobj);
 	_h.image_xscale=130;

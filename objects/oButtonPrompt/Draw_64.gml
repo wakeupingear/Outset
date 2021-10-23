@@ -3,9 +3,9 @@ if !global.controllerConnected
 {
 	if str==""
 	{
-		for (var i=0;i<array_length(global.keyboardInputs[button]);i++)
+		for (var i=0;i<ds_list_size(global.keyboardInputs[button]);i++)
 		{
-			var _newKey=keyToName(global.keyboardInputs[button][i]);
+			var _newKey=keyToName(global.keyboardInputs[|button][i]);
 			if string_contains(str,_newKey) continue;
 			if i>0 str+=" / ";
 			str+=_newKey;

@@ -8,17 +8,17 @@ if !instance_exists(oDebugCommandLine)&&window_has_focus() for (var i=0;i<global
 	
 	if i==control.confirm&&mouse_check_button(mb_left) _isPressed=true; //mouse exception
 	
-	if !_isPressed for (var k=0;k<array_length(global.keyboardInputs[i]);k++)
+	if !_isPressed for (var k=0;k<array_length(global.keyboardInputs[|i]);k++)
 	{
-		if keyboard_check(global.keyboardInputs[i][k])
+		if keyboard_check(global.keyboardInputs[|i][k])
 		{
 			_isPressed=true;
 			break;
 		}
 	}
-	if global.controllerConnected&&!_isPressed for (var k=0;k<array_length(global.controllerInputs[i]);k++)
+	if global.controllerConnected&&!_isPressed for (var k=0;k<array_length(global.controllerInputs[|i]);k++)
 	{
-		if gamepadPressed(global.controllerInputs[i][k])
+		if gamepadPressed(global.controllerInputs[|i][k])
 		{
 			_isPressed=true;
 			break;

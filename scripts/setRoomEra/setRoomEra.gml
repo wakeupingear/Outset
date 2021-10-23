@@ -46,6 +46,7 @@ function setRoomEra(){
 	ds_list_destroy(_eras);
 	}
 	
+	if global.roomTime<2{
 	switch _r
 	{
 		case worldRegion.west:
@@ -110,4 +111,5 @@ function setRoomEra(){
 		}
 	}
 	setTileAnimations(global.alive);
+	}
 }

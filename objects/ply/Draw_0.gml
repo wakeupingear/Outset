@@ -1,5 +1,7 @@
 
 var _color=image_blend;
+//var _strafe=(min(strafe,1)+1);
+//draw_sprite_ext(sprite_index,image_index,x,y,xscale*_strafe,yscale*_strafe,0,c_white,image_alpha*0.6);
 shader_set(shd_lighten);
 //shader_set_uniform_f(shader_get_uniform(shd_lighten,"u_bright"),max(0,abs(hsp)/hspMax/2-1));
 shader_set_uniform_f(shader_get_uniform(shd_lighten,"u_bright"),fastIntensity);

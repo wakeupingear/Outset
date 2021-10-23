@@ -248,10 +248,12 @@ closePauseMenu=function(){
 	prefsChanged=false;
 	if !hasData("reacSt") instance_deactivate_object(oSouldropCoin);
 	global.notPause=true;
-	//setRoomEra(); //only activate room specifc eras
+	setRoomEra(); //only activate room specifc eras
 	//there was a reason why I put this there because I left a comment
 	//however I am bad at comments and didn't actually explain myself
 	//I don't think this is needed since nothing within the game changes during the pause that requires an era reload
+	
+	//nvm I realized why, it stops old eras from being re-activated/
 }
 
 pauseMenuCurrent="menu1";
@@ -260,6 +262,7 @@ pauseMenuCopied=-1;
 pauseMenuSelection=noone;
 menuStack=ds_stack_create();
 menuStruct=textLoad("pauseMenu");
+menuObj=-1;
 loadMenu=function(menuKey){
 	//if variable_struct_exists(pauseMenuButtons, menuKey)
 	{
@@ -499,6 +502,10 @@ if pauseAlpha>0
 	draw_set_color(c_white);
 	draw_set_alpha(1);
 }
-if !global.notPause with oPauseButton draw(0,0);
+if !global.notPause 
+{
+	with oParticle draw_self();
+	with oPauseDrawParent draw(0,0);
+}
 }
 }

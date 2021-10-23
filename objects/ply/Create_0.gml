@@ -11,6 +11,8 @@ npcMovementVars();
 npcAnimVars();
 collType=hitobj;
 
+strafe=0;
+
 verticalHitTrigger=function(finalSpd){
 	if abs(finalSpd)<1 exit;
 	

@@ -26,3 +26,11 @@ function buttonFreeze(input){
 function buttonDoublePressed(input){
 	return buttonPressed(input)&&global.doubleInput[input]>0;
 }
+
+function getKeyDir(){
+	if buttonPressed(control.up) return control.up;
+	if buttonPressed(control.down) return control.down;
+	if buttonPressed(control.left) return control.left;
+	if buttonPressed(control.right) return control.right;
+	return -1;
+}

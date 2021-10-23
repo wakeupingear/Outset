@@ -186,10 +186,7 @@
                 "sfxVol"
             ]
         },
-        "controls": {"name":"Controls","type":"menu",
-            "entries":[
-            ]
-        },
+        "controls": {"name":"Controls","type":"object","object":"oPauseController"},
         "visuals": {"name":"Visuals","type":"menu",
             "entries":[
                 "fullscreen",
@@ -225,6 +222,25 @@
         "quitDesktop": {"name":"Quit to Desktop","type":"special"},
         "blackBars": {"name":"Cutscene Letterboxing","type":"toggle"},
     },
+    "controls":[
+        "Up",
+        "Down",
+        "Left",
+        "Right",
+        "Jump",
+        "Menu",
+        "Pause",
+        "Grapple",
+        "Item",
+        "Swap Item (Left)",
+        "Swap Item (Right)",
+        "Confirm",
+        "Special Grapple",
+        "Fullscreen",
+        "Debug",
+        "Skip Dialogue"
+    ],
+
     "titleText":[
         "Press Any Key"
     ],

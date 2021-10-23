@@ -18,14 +18,15 @@ slideProg=0;
 slideIn=0;
 destroy=false;
 selectedSlide=0;
+scaleDiff=random_range(1,1.8);
 
-effectList=ds_list_create();
 clickEffect=function(){
 	rumbleStart(rumbleType.lighterPulse);
 	var _p=particle(x,y,depth+1,sprite_index,0,{
 		xscale: image_xscale,
 		yscale: image_yscale,
 		fade:0.05,
+		isBG: true, xOff: x, yOff:y,
 		xscaleSpd:0.05,
 		yscaleSpd:0.05,
 		alwaysMove: true,
@@ -34,7 +35,6 @@ clickEffect=function(){
 		isBG: true,
 		blend: merge_color(global.hudColorList[global.hudColor],c_white,0.5)
 	});
-	ds_list_add(effectList,_p);
 }
 
 setChoiceXscale=function(){
@@ -42,20 +42,8 @@ setChoiceXscale=function(){
 }
 
 draw=function(_x,_y){
-	for (var i=0;i<ds_list_size(effectList);i++)
-	{
-		if !instance_exists(effectList[|i])
-		{
-			ds_list_delete(effectList,i);
-			i--;
-			continue;
-		}
-		effectList[|i].x=_x+effectList[|i].xOff+x;
-		effectList[|i].y=_y+effectList[|i].yOff+y;
-		with effectList[|i] draw_self();
-	}
 	var _a=(1-slideProg*0.5-(1-slideIn))*global.hudAlpha;
-	var _off=160*twerp(TwerpType.linear,0,1,slideProg)-160*twerp(TwerpType.linear,1,0,slideIn);
+	var _off=270*scaleDiff*twerp(TwerpType.linear,0,1,slideProg)-160*twerp(TwerpType.linear,1,0,slideIn);
 	x=192-(_off+selectedSlide)*(1-(global.hudSide)*2);
 	draw_sprite_ext(sprite_index,0,x+_x,y+_y,image_xscale,image_yscale,0,global.hudColorList[global.hudColor],_a);
 	if type=="slider"||choiceStr!=""

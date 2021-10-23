@@ -14,7 +14,9 @@ trackList=[oSouldropCoin,oDroppedItem];
 dragObj=ds_list_create();
 
 grappleDist=80; //max distance
+grappleDistExtra=0;
 grappleTime=0; //time that the grapple has been moving/pulling
+touchingExtension=false;
 grappleReach=3; //final reach distance
 grappleSpd=6; //initial movement speed
 grapplePlyXoff=3; //starting xoff from player (used when grappling up against a wall to compensate for xorigin)
@@ -46,7 +48,7 @@ resetHitPlace=function(){
 	}
 }
 tooFar=function(){
-	return (distance_to_object(ply)>=grappleDist);
+	return (distance_to_object(ply)>=grappleDist+grappleDistExtra);
 	//return (abs(ply.x-x)>=grappleDist||abs(ply.y-y)>=grappleDist);
 }
 
@@ -65,7 +67,7 @@ grappleFireEffect=function(){
 	else hitPlace=-1;
 }
 
-grappleCollideEffect=function(){
+grappleCollideEffect=function(final){
 	particle(x,y,depth+1,sNormalRipple,0,{distort: true,xscale:0.1,yscale:0.1,xscaleSpd:0.03 ,yscaleSpd:0.03,fade:0.15,followObj: id, alwaysMove: true});
 	var _num=8;
 	for (var i=0;i<_num;i++)
@@ -82,10 +84,13 @@ grappleCollideEffect=function(){
 	}
 	rumbleStart(rumbleType.lightPulse);
 	audio_stop_sound(sndGrappleFull);
-	playSound(sndGrappleTouch,false);
-	if instance_exists(followObj)&&isObj(followObj,npc)&&!isObj(followObj,enem)
+	if final
 	{
-		with followObj event_user(1);
+		playSound(sndGrappleTouch,false);
+		if instance_exists(followObj)&&isObj(followObj,npc)&&!isObj(followObj,enem)
+		{
+			with followObj event_user(1);
+		}
 	}
 }
 
@@ -105,7 +110,7 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 		grappleAngle=0;
 		ply.vsp=-5;
 		shake(1,1,10);
-		grappleCollideEffect();
+		grappleCollideEffect(true);
 	}
 	else if _onGround||upgrades[4]||(buttonHold(control.down)&&buttonPressed(control.grapple)&&upgrades[grappleState.down])
 	{
@@ -176,6 +181,21 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 else if state==1 //move in direction
 {
 	grappleTime++;
+	if place_meeting(x,y,oGrappleExtend)
+	{
+		if !touchingExtension
+		{
+			var _g=instance_place(x,y,oGrappleExtend);
+			if yDir!=0||grappleMode==grappleState.arc y=_g.y;
+			else x=_g.x;
+			grappleDistExtra+=grappleDist;
+			touchingExtension=true;
+			grappleTime=0;
+			grappleCollideEffect(false);
+			playSound(sndGrappleFull,false);
+		}
+	}
+	else touchingExtension=false;
 	image_alpha=1;
 	if grappleMode==grappleState.arc //arc
 	{
@@ -189,7 +209,7 @@ else if state==1 //move in direction
 		if place_meeting(x,y,oSpike) _hit=0;
 		else if groundCollision(x,y)&&(groundCollision(x-1,y)&&groundCollision(x+1,y))
 		{
-			if (sign(yprevious-y)<1)&&(!groundCollision(x,yprevious)||groundCollision(xprevious,y)) _hit=2;
+			if (sign(yprevious-y)<1)&&(!groundCollision(x,yprevious)) _hit=2;
 			else _hit=0
 		}
 		if place_meeting(x,y,npc)||place_meeting(x,y,oPlatform)||place_meeting(x,y,grappleHit)||_hit==2
@@ -236,6 +256,11 @@ else if state==1 //move in direction
 				if xDir==0 ply.vsp=min(ply.vsp,-4);
 				else ply.hsp=max(ceil(abs(ply.hsp)),4)*xDir;
 			}
+			
+			if place_meeting(x,y,oConveyor)&&instance_exists(ply) //need to move player off conveyor
+			{
+				
+			}
 		}
 		else if tooFar()||(yDir==-1&&buttonHold(control.down))//||(xDir==1&&buttonHold(control.left))||(xDir==-1&&buttonHold(control.right))
 		{
@@ -250,7 +275,7 @@ else if state==1 //move in direction
 	}
 	if state>1
 	{
-		grappleCollideEffect();
+		grappleCollideEffect(true);
 	}
 	else ghostTrail(x,y,2,depth+1,sprite_index,image_index,{fade:0.1,alpha:0.6,xscaleSpd:0.1,yscaleSpd:0.1,alwaysMove: true});
 }

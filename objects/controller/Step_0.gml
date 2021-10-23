@@ -2,9 +2,14 @@
 if !global.notPause
 {
 	if pauseAlpha<pauseAlphaMax pauseAlpha+=0.1;
-	if buttonPressed(control.start)||(((!global.hudSide&&buttonPressed(control.left))||(global.hudSide&&buttonPressed(control.right)))&&instance_exists(pauseMenuSelection)&&pauseMenuSelection.type!="slider")
+	if buttonPressed(control.start)||(((!global.hudSide&&buttonPressed(control.left))||(global.hudSide&&buttonPressed(control.right)))&&menuObj==-1&&instance_exists(pauseMenuSelection)&&pauseMenuSelection.type!="slider")
 	{
-		ds_stack_pop(menuStack);
+		if menuObj==-1 ds_stack_pop(menuStack);
+		else
+		{
+			menuObj.destroy=true;
+			menuObj=-1;
+		}
 		if ds_stack_empty(menuStack) closePauseMenu();
 		else
 		{

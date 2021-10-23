@@ -85,6 +85,8 @@ function load(_num){
 function savePrefs(){
 	ini_open("prefs.ini");
 	ini_write_string("Settings","accessibility",ds_map_write(global.accessibility));
+	ini_write_string("Controls","controller",ds_list_write(global.controllerInputs));
+	ini_write_string("Controls","keyboard",ds_list_write(global.keyboardInputs));
 	ini_close();
 }
 
@@ -92,6 +94,8 @@ function loadPrefs(){
 	if !file_exists("prefs.ini")||isDev||isTest||isNewFile savePrefs();
 	ini_open("prefs.ini");
 	ds_map_read(global.accessibility,ini_read_string("Settings","accessibility",""));
+	ds_list_read(global.controllerInputs,ini_read_string("Controls","controller",""));
+	ds_list_read(global.keyboardInputs,ini_read_string("Controls","keyboard",""));
 	ini_close();
 	
 	if !isHtml with controller event_perform(ev_alarm,0);
