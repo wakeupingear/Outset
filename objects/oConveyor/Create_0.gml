@@ -5,6 +5,12 @@ if sign(image_xscale)==-1
 	x+=image_xscale;
 	image_xscale=abs(image_xscale);
 }
+if sign(image_yscale)==-1
+{
+	spd*=-1;
+	y+=image_yscale;
+	image_yscale=abs(image_yscale);
+}
 spr=sConveyor;
 sprW=sprite_get_width(spr);
 sprH=sprite_get_height(spr);
@@ -44,9 +50,10 @@ moveObjects=function(_xDir,_yDir) {
 			y+=_yMove;
 			if object_index==oGrapple
 			{
-				if _xDir!=0
+				if instance_exists(ply)
 				{
-					if instance_exists(ply) with ply if place_meeting(x,y+1,oConveyor) y--;
+					ply.state=moveState.conveyor;
+					if _xDir!=0 with ply if place_meeting(x,y+1,oConveyor) y--;
 				}
 				
 				if place_meeting(x,y,oConveyor)
@@ -92,6 +99,11 @@ moveObjects=function(_xDir,_yDir) {
 					grapplePositionFollowCoords();
 					if yDir==-1 grappleAngle=90;
 					else grappleAngle=90-90*xDir;
+				}
+				else while groundCollision(x,y)
+				{
+					x-=sign(_xMove);
+					y-=sign(_yMove);
 				}
 			}
 			else while groundCollision(x,y)

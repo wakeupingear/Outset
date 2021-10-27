@@ -137,7 +137,6 @@ function physics(){
 			state=moveState.falling;
 		}
 	}
-	//if groundCollision(x,y-1) show_message(vsp)
 	
 	//reset coyote time
 	if state<moveState.jumping coyote=coyoteMax;
@@ -230,11 +229,14 @@ function grapplePhysics(){
 					{
 						x-=sign(hsp);
 						//xscale=-oGrapple.xDir;
-						if state!=moveState.hanging
+						if state!=moveState.conveyor
 						{
-							shake(1,1,10);
+							if state!=moveState.hanging
+							{
+								shake(1,1,10);
+							}
+							state=moveState.hanging;
 						}
-						state=moveState.hanging;
 						hsp=0;
 						break;
 					}
@@ -266,11 +268,14 @@ function grapplePhysics(){
 					else
 					{
 						y-=sign(vsp);
-						if state!=moveState.hanging
+						if state!=moveState.conveyor
 						{
-							shake(1,1,10);
+							if state!=moveState.hanging
+							{
+								shake(1,1,10);
+							}
+							state=moveState.hanging;
 						}
-						state=moveState.hanging;
 						vsp=0;
 						break;
 					}
@@ -334,7 +339,7 @@ function grapplePhysics(){
 		jumpAdd+=global.grav*2;
 		resetGrapple();
 	}
-	else if state==moveState.pulling
+	else if hsp!=0||vsp!=0 //state==moveState.pulling
 	{
 		if oGrapple.grappleMode==grappleState.pull
 		{
@@ -347,7 +352,7 @@ function grapplePhysics(){
 			}
 		}
 	}
-	else if state==moveState.hanging
+	else if state==moveState.hanging||state==moveState.conveyor
 	{
 		if oGrapple.grappleMode==grappleState.pull&&buttonPressed(control.jump)
 		{

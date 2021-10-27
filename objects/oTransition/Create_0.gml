@@ -10,6 +10,7 @@ xscale=1;
 
 plyMove=0;
 plySpd=0;
+plyState=(instance_exists(ply)?ply.state:0);
 
 regionColor=array_create(9);
 regionColor[worldRegion.notdon]=merge_color(c_blue,c_black,0.85);

@@ -47,6 +47,7 @@ if pathfinding //process commands
 	}
 }
 
+if phys{
 if jump>0
 {
 	jump++;
@@ -90,9 +91,10 @@ if pathfinding&&!pathfindingInterrupt //get over obstacles
 	}
 	else stuckTime=0;
 }
-}
 else if blockPlayer&&blockWall!=-1
 {
 	instance_destroy(blockWall);
 	blockWall=-1;
+}
+}
 }

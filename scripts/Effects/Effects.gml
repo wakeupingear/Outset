@@ -38,3 +38,27 @@ function ghostTrail(x,y,frameOffset,depth,sprite,ind,struct){
 		if !is_undefined(struct) setObjFromStruct(_p,struct);
 	}
 }
+
+function rectangleOutwardParticle(x,y,_depth,spd,partProperties){
+	var _p=particle(x-1,y-1,_depth,sprite_index,image_index,partProperties); //top
+	_p.image_xscale=image_xscale+2;
+	_p.xscaleSpd=1;
+	_p.yscaleSpd= spd/2;
+	_p.hsp=-spd/2;
+	_p.vsp=-spd/2;
+	
+	_p=particle(x-1,y+sprite_height,_depth,sprite_index,image_index,partProperties); //bottom
+	_p.image_xscale=image_xscale+2;
+	_p.xscaleSpd=1;
+	_p.yscaleSpd= spd/2;
+	_p.hsp=-spd/2;
+	
+	_p=particle(x-1,y,_depth,sprite_index,image_index,partProperties); //left
+	_p.image_yscale=image_yscale;
+	_p.xscaleSpd= spd/2;
+	_p.hsp=-spd/2;
+	
+	_p=particle(x+sprite_width,y,_depth,sprite_index,image_index,partProperties); //right
+	_p.image_yscale=image_yscale;
+	_p.xscaleSpd= spd/2;
+}

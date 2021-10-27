@@ -1,12 +1,11 @@
 function hurtEnem(_id,_damage){
 	var _damaged=false;
-	with _id if image_blend!=c_red
+	with _id if alarm[0]==-1
 	{
 		myHealth-=_damage;
 		setAnimation("attacked",animation);
-		image_blend=c_red;
-		alarm[0]=30;
 		_damaged=true;
+		alarm[0]=30;
 		
 		var _isWall=object_index==enemWall||object_is_ancestor(object_index,enemWall);
 		if myHealth<=0
@@ -19,6 +18,17 @@ function hurtEnem(_id,_damage){
 			}
 			else switch object_index
 			{
+				case oConveyorSwitch:
+					_damaged=false;
+					if hasData("conveyorDir") removeData("conveyorDir");
+					else addData("conveyorDir");
+					shake(1,1,10);
+					with oConveyorDir 
+					{
+						setDirection();
+						rectangleOutwardParticle(x,y,depth+1,2,{blend: image_blend,fade:0.1});
+					}
+					break;
 				case oRedCarpet:
 					_damaged=false;
 				case oExplosiveBarrel:
@@ -53,6 +63,8 @@ function hurtEnem(_id,_damage){
 					}
 					break;
 			}
+			
+			if _damaged image_blend=c_red;
 		}
 		else if enemHitTrigger!=-1 enemHitTrigger();
 	}

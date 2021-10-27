@@ -13,7 +13,6 @@ function roomChange(target_x,target_y,targetroom,transitionType,xmove,ymove,xsca
 	else global.plyY=target_y;
 		
 	with _t event_user(0);
-	if instance_exists(ply)&&ply.state==moveState.ladder _t.ladder=true;
 	if xscale!=0 _t.xscale=xscale;
 	}
 }

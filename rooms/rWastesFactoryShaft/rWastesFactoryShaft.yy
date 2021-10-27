@@ -189,8 +189,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "wastes",
-    "path": "folders/Rooms/wastes.yy",
+    "name": "factory",
+    "path": "folders/Rooms/wastes/factory.yy",
   },
   "resourceVersion": "1.0",
   "name": "rWastesFactoryShaft",

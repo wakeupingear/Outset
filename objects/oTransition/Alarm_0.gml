@@ -1,7 +1,30 @@
 /// @description set player variables
 if instance_exists(ply)
 {
-	if ladder ply.state=moveState.ladder;
+	if plyState==moveState.ladder ply.state=moveState.ladder;
+	else if plyState==moveState.conveyor&&instance_exists(oGrapple)
+	{
+		if ymove==-1
+		{
+			with oGrapple 
+			{
+				state=1;
+				xDir=ply.xscale;
+				while !place_meeting(x,y,oConveyor) x+=xDir;
+				step();
+			}
+		}
+		else
+		{
+			with oGrapple 
+			{
+				state=1;
+				yDir=-1;
+				while !place_meeting(x,y,oConveyor) y--;
+				step();
+			}
+		}
+	}
 	ply.move=move;
 	var _vsp=0;
 	if sign(ymove)==-1

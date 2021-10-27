@@ -1,0 +1,1 @@
+if roomHasPower("factory") instance_destroy();

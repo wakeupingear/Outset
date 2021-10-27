@@ -128,7 +128,8 @@ enum moveState {
 	//grapple specific
 	pulling,
 	hanging,
-	zipline
+	zipline,
+	conveyor
 }
 
 enum grappleState {

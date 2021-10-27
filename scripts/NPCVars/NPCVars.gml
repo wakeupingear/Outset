@@ -7,6 +7,7 @@ function npcSpecialVars(){
 
 function npcMovementVars(){
 	physicsVars();
+	phys=true;
 	jumpSpd=2; //initial jump speed
 	jumpAdd=0; //additional jump speed (set by platforms, other objects that give you momentum)
 	jumpHoldTime=20; //max jump hold button time
