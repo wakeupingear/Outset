@@ -58,8 +58,9 @@ function physicsVars(){
 	cornerCorrectTrigger=function(){};
 	xscaleFlip=true; //whether it automatically flips with move
 	hsp=0; //horizontal speed
-	hspMax=1.2; //max horizontal speed
-	hspAcc=0.6; //perframe horizontal acceleration
+	hspMax=1.5;//1.2; //max horizontal speed
+	//hspRemFrame=0;
+	hspAcc=0.5; //perframe horizontal acceleration
 	vsp=0; //vertical speed
 	gravMultiplier=1;
 	vspMax=8; //max vertical speed

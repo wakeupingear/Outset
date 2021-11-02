@@ -17,6 +17,7 @@ else if global.lightAlpha>0
 		}
 		else drawLight();
 	}
+	with oSparkleController if surface_exists(surf) draw_surface(surf,0,0);
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
 	draw_surface_ext(global.lightSurf,edgeX,edgeY,1,1,0,-1,darknessAlpha);

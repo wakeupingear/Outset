@@ -85,8 +85,9 @@ function setRoomEra(){
 			}
 			else with oWastesCrate state=moveState.floating;
 			break;
+		case rWastesFactoryWorkers:
 		case rWastesFactoryEntrance:
-			with oElevator hasPower=roomHasPower("factory");
+			with oElevator hasPower=roomHasPower();
 			break;
 		case rAir:
 			if instance_exists(oAirFloat) instance_destroy(oAirFloat);

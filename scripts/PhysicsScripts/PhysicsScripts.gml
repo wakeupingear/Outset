@@ -1,4 +1,8 @@
 function physics(){
+	//round back coordinates
+	var _xRem=(abs(x)%1);
+	x-=_xRem*sign(hsp); //gets around shaky collisions when moving at subpixel intervals
+	
 	//horizontal velocity
 	if move!=0&&xscaleFlip xscale=move;
 	if move!=0&&((move==-1&&hsp>-hspMax)||(move==1&&hsp<hspMax))&&!groundCollision(x+move,y-maxYChange)&&canMove
@@ -18,8 +22,9 @@ function physics(){
 		{
 			if abs(hsp)==hspAcc
 			{
-				if !groundCollision(ceil(x),y) x=ceil(x);
-				else x=floor(x);
+				var _endX=ceil(x);
+				if hsp<0 _endX=floor(x);
+				if !groundCollision(_endX,y) x=_endX;
 				hsp=0;
 			}
 			else hsp-=hspAcc*sign(hsp);
@@ -56,11 +61,7 @@ function physics(){
 	//gravity
 	vsp+=global.grav*gravMultiplier;
 	vsp=clamp(vsp,-vspMax,vspMax);
-	//if vsp<vspMax&&state>moveState.running vsp+=global.grav;
-	
-	//horizontal movement
-	//x+=(hsp mod 1)*sign(hsp);
-	repeat abs(round(hsp))
+	repeat floor(abs(hsp))
 	{
 		x+=sign(hsp);
 		if object_index==ply&&goingFast destroyBreakables(oBreakableGlass);
@@ -82,12 +83,16 @@ function physics(){
 			else 
 			{
 				//if state=moveState.standing
-				x=round(x-1);
+				//x=round(x-1);
 				while groundCollision(x,y) x-=sign(hsp);
 				hsp=0;
 				break;
 			}
 		}
+	}
+	if abs(hsp)==hspMax&&(state>=moveState.jumping||groundCollision(x,y+1))&&!groundCollision(x+sign(hsp),y) 
+	{
+		x+=(abs(hsp)%1)*sign(hsp)+_xRem*sign(hsp);
 	}
 	
 	//moving down a slope
@@ -157,7 +162,7 @@ function physics(){
 	//check special collisions
 	if groundCollision(x,y,oGravityField)
 	{
-		var _f=instance_place(x,y,oGravityField); //this is questionable
+		var _f=instance_place(x,y,oGravityField); //this is questionable - collision map isn't same as sprite bounding box
 		if instance_exists(_f)&&_f.pause==-1
 		{
 			//if _f.alarm[0]=-1 _f.alarm[0]=30;

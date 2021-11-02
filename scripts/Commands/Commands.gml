@@ -290,10 +290,7 @@ function commandProcess(command){
 							if !is_array(_val) _obj.image_alpha=_val;
 							else
 							{
-								var _e=instance_create_depth(0,0,0,oEffectHelper);
-								_e.obj=_obj;
-								_e.alphaTo=_val[0];
-								_e.alphaStep=_val[1];
+								animateProperty(_obj,"alpha",TwerpType.linear,_obj.image_alpha,_val[0],_val[1],true);
 							}
 							break;
 						case "userEvent":
@@ -344,20 +341,14 @@ function commandProcess(command){
 							}
 							else
 							{
-								var _e=instance_create_depth(0,0,0,oEffectHelper);
-								_e.obj=_obj;
-								_e.xscaleTo=_val[0];
-								_e.xscaleStep=_val[1];
+								animateProperty(_obj,"xscale",TwerpType.linear,_obj.image_xscale,_val[0],_val[1],true);
 							}
 							break;
 						case "yscale":
 							if !is_array(_val) _obj.image_yscale=_val;
 							else
 							{
-								var _e=instance_create_depth(0,0,0,oEffectHelper);
-								_e.obj=_obj;
-								_e.yscaleTo=_val[0];
-								_e.yscaleStep=_val[1];
+								animateProperty(_obj,"yscale",TwerpType.linear,_obj.image_xscale,_val[0],_val[1],true);
 							}
 							break;
 						case "startAnimation":
@@ -701,10 +692,7 @@ function pathfindCommandProcess(command){
 				_loop=true;
 				if pfInd+2<array_length(command)&&is_real(command[pfInd+2])
 				{
-					var _e=instance_create_depth(0,0,0,oEffectHelper);
-					_e.obj=id;
-					_e.alphaTo=command[pfInd+1];
-					_e.alphaStep=command[pfInd+2];
+					animateProperty(id,"alpha",TwerpType.linear,_obj.image_alpha,command[pfInd+1],command[pfInd+2],true);
 					pfInd+=3;
 				}
 				else

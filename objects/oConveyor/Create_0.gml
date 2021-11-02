@@ -16,7 +16,7 @@ sprW=sprite_get_width(spr);
 sprH=sprite_get_height(spr);
 playerMoved=false;
 canMoveGrapple=true;
-hasPower=(global.rooms[$ room_get_name(room)].region!=worldRegion.west||roomHasPower("factory"));
+hasPower=(global.rooms[$ room_get_name(room)].region!=worldRegion.west||roomHasPower());
 
 objs=ds_list_create();
 
@@ -97,7 +97,7 @@ moveObjects=function(_xDir,_yDir) {
 					ply.hsp=0;
 					ply.vsp=0;
 					grapplePositionFollowCoords();
-					if yDir==-1 grappleAngle=90;
+					if yDir==-1 grappleAngle=90+180*(sign(_this.spd)==-1);
 					else grappleAngle=90-90*xDir;
 				}
 				else while groundCollision(x,y)

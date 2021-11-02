@@ -25,9 +25,9 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"fd005beb-68b6-42b6-a06b-728b7a4fe715","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"fd005beb-68b6-42b6-a06b-728b7a4fe715","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"LayerId":{"name":"97eda33a-18a9-49e4-ad72-ed0f21d1d508","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"fd005beb-68b6-42b6-a06b-728b7a4fe715","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"LayerId":{"name":"137e555e-e2bf-4e9a-97c5-7678bba1863c","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"fd005beb-68b6-42b6-a06b-728b7a4fe715","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"LayerId":{"name":"6ec65dbe-13a3-473e-8bb5-3b0bc8dd7f39","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"fd005beb-68b6-42b6-a06b-728b7a4fe715","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"LayerId":{"name":"97eda33a-18a9-49e4-ad72-ed0f21d1d508","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sWastesFactoryGround","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"resourceVersion":"1.0","name":"fd005beb-68b6-42b6-a06b-728b7a4fe715","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -44,7 +44,7 @@
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"42b93f79-c60a-43ba-a86c-e57060f9fa8a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fd005beb-68b6-42b6-a06b-728b7a4fe715","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,

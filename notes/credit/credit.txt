@@ -17,3 +17,4 @@ PixelatedPope https://pixelatedpope.itch.io/twerp
 Shaders:
 Xor
 EmperorCookie https://github.com/EmperorCookie/GMS-FXAA
+ced30 https://ced30.itch.io/ - Free The Filters

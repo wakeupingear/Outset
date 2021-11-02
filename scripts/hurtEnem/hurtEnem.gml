@@ -19,7 +19,8 @@ function hurtEnem(_id,_damage){
 			else switch object_index
 			{
 				case oConveyorSwitch:
-					_damaged=false;
+					_damaged=false
+					if !roomHasPower() break;
 					if hasData("conveyorDir") removeData("conveyorDir");
 					else addData("conveyorDir");
 					shake(1,1,10);

@@ -1,10 +1,10 @@
 image_speed=0;
 image_alpha=0;
 
-instance_create_depth(0,0,layer_get_depth(layer_get_name("people"))+1,oSparkleController);
+if !instance_exists(oSparkleController) instance_create_depth(0,0,layer_get_depth(layer_get_name("people"))+1,oSparkleController);
 scale=1;
 osci=0;
-//if global.rooms[$ room_get_name(room)].region==worldRegion.vr image_blend=c_green;
+if global.rooms[$ room_get_name(room)].region==worldRegion.west image_blend=c_yellow;
 shimmerDraw=function(){
 	if image_alpha<1 image_alpha+=0.05;
 	if global.alive osci=(osci+0.05)%(2*pi);

@@ -179,15 +179,20 @@ if deathScale>0||deathDist>0
 	{
 		var _closestSave=instance_nearest(ply.x,ply.y,oSave);
 		deathDistanceToSave=min(point_distance(_closestSave.x,_closestSave.y,ply.x,ply.y),deathMaxDistanceToSave);
-		deathSaveAng=(deathSaveAng+4-(deathDistanceToSave/deathMaxDistanceToSave)*3.5)%360;
+		deathSaveAng=(deathSaveAng+4-(deathDistanceToSave/deathMaxDistanceToSave)*3.65)%360;
 		for (var i=0;i<instance_number(oSave);i++)
 		{
 			var _s=instance_find(oSave,i);
 			var _rayNum=6;
 			for (var k=0;k<_rayNum;k++)
 			{
-				draw_sprite_ext(sMissileTrail,0,_s.x-camX(),_s.y-camY(),deathScale,deathScale*2,360*k/_rayNum+deathSaveAng,_deathCol,1);
-				draw_sprite_ext(sMissileTrail,0,_s.x-camX(),_s.y-camY(),deathScale,deathScale*2,360*k/_rayNum-deathSaveAng,_deathCol,1);
+				var _ang=360*k/_rayNum+deathSaveAng;
+				repeat 1+floor(deathDistanceToSave/80)
+				{
+					draw_sprite_ext(sMissileTrail,1,_s.x-camX(),_s.y-camY(),deathScale,deathScale*2,_ang,_deathCol,1);
+					draw_sprite_ext(sMissileTrail,1,_s.x-camX(),_s.y-camY(),deathScale,deathScale*2,_ang,_deathCol,1);
+					_ang-=1.3;
+				}
 			}
 			draw_sprite_ext(sDeathCircle,0,_s.x-camX(),_s.y-camY(),deathScale*0.9-0.1*sin(_saveVis),deathScale*0.9-0.1*sin(_saveVis),cos(_saveVis)*15,_deathCol2,1);
 		}
@@ -206,6 +211,14 @@ if deathScale>0||deathDist>0
 	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_color"),_deathCol2RGB[0],_deathCol2RGB[1],_deathCol2RGB[2]);
 	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_origin"),(ply.x-camX())*_w,(ply.y-camY())*_h);
 	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_dist"),deathDist*_w,deathDist*_h);
+	
+	var _camDiff=0;
+	if instance_exists(oCamera) _camDiff=sqrt(sqr(oCamera.x-oCamera.xprevious)+sqr(oCamera.y-oCamera.yprevious));
+	if _camDiff==0 deathBubbleProg-=ply.xscale*(0.01);
+	else deathBubbleProg=lerp(deathBubbleProg,0.5+ply.xscale*0.45,_camDiff/30);
+	if deathBubbleProg<0 deathBubbleProg=1;
+	else if deathBubbleProg>1 deathBubbleProg=0;
+	shader_set_uniform_f(shader_get_uniform(shd_outlineTerrainDeath,"u_rippleProg"),deathBubbleProg*2*pi);
 }
 else surface_reset_target();
 

@@ -14,6 +14,7 @@ deathDist=(!global.alive)*deathDistMax;
 deathSaveAng=0;
 deathMaxDistanceToSave=270;
 deathDistanceToSave=deathMaxDistanceToSave;
+deathBubbleProg=0;
 
 roomType=0;
 colorData=array_create(30);

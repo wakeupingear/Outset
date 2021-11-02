@@ -72,7 +72,7 @@ if deathGlowProg>0 //Death vinette
 	_prog+=8; //apply "minimum distance"
 	shader_set(shd_tunnelVision);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_pixel"),_w,_h);
-	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_origin"),(lerp(192,_px-camX(),0.5))*_w,(lerp(108,_py-camY(),0.5))*_h);
+	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_origin"),clamp(lerp(192,_px-camX(),0.5),32,362)*_w,clamp(lerp(108,_py-camY(),0.5),16,200)*_h);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_dist"),_prog*_w,_prog*_h);
 	var _tunnelCol=merge_color(global.scanColor,c_white,_tunnelColMerge);
 	shader_set_uniform_f(shader_get_uniform(shd_tunnelVision,"u_tunnelColor"),color_get_red(_tunnelCol)/255,color_get_green(_tunnelCol)/255,color_get_blue(_tunnelCol)/255);

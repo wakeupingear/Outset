@@ -4,6 +4,8 @@ tileX=false;
 tileY=false;
 tileWidth=-1;
 tileHeight=-1;
+tileXSMult=1;
+tileYSMult=1;
 
 xOff=0;
 yOff=0;

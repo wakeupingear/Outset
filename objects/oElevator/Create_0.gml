@@ -3,8 +3,10 @@ animation=new Animation();
 animation.opening={type: animType.oneOff,startFrame:0,endFrame:7,frameTime:0};
 animation.closing={type: animType.oneOff,startFrame:7,endFrame:0,frameTime:0};
 
+target_x=x;
+
 mode=0;
-spd=2;
+spd=3;
 up="1";
 down="1";
 hasPower=false;

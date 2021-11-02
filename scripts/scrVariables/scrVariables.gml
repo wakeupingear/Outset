@@ -524,6 +524,8 @@ function scrVariables(){
 	global.rooms.rWastesHilltop.inside=false;
 	global.rooms.rWastesFactoryOutside.inside=false;
 	addRoomCamera("rWastesFactory1",436,684,768,760,384,756);
+	addRoomCamera("rWastesFactoryWorkers",-200,-400,800,174,"x",108);
+	addRoomCamera("rWastesFactoryWorkers",-200,174,370,1000,192,270);
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
 	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
 	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
@@ -550,7 +552,7 @@ function scrVariables(){
 		global.guiScale=4/3; //default to 1440p if fonts aren't added
 		global.accessibility[? "guiScale"]=global.guiScale;
 	}
-	global.hudColorList=[make_color_rgb(96,92,169)]; //possible colors for the hud
+	global.hudColorList=[make_color_rgb(96,92,169  )]; //possible colors for the hud
 	#endregion
 	
 	#region Controller
@@ -650,15 +652,15 @@ function scrVariables(){
 		addItem("iGrappleArc");
 		//addItem("iGrappleDown");
 		addItem("iSlate");
-		addItem("iSolitaire");
+		//addItem("iSolitaire");
 		//addItem("iBeacon");
 		//addItem("iWrench1");
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
 		//global.notdonEra=notdonEras.present;
-		//scr_c1_5();
-		scr_wastes_1();
-		scr_wastes_2();
+		scr_c1_5();
+		//scr_wastes_1();
+		//scr_wastes_2();
 		//scr_wastes_1();
 		//scr_wastes_2();
 		//scr_pro_2();
@@ -669,7 +671,7 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesFactory1;
+		global.startRoom=rWastesFactoryWorkers;
 	}
 	#endregion
 	

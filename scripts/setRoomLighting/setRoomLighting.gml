@@ -12,7 +12,7 @@ function setRoomLighting(roomName){
 				switch global.rooms[$ roomName].region
 				{
 					case worldRegion.west:
-						if string_contains(roomName,"Factory")&&!roomHasPower("factory") global.lightAlpha=0.55;
+						if string_contains(roomName,"Factory")&&!roomHasPower() global.lightAlpha=0.55;
 						break;
 					default:
 						if global.rooms[$ roomName].inside break;
