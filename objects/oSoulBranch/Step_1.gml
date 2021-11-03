@@ -3,6 +3,7 @@ if active
 {
 	if (image_xscale!=endXS||image_yscale!=endYS)&&(stop==-1||array_pos(global.soulButtons,stop)>-1)
 	{
+		global.mykoTerrain.render=false;
 		image_xscale+=xSpd;
 		image_yscale+=ySpd;
 		if isHit
@@ -40,6 +41,8 @@ else
 {
 	if (image_xscale!=startXS||image_yscale!=startYS)
 	{
+		global.mykoTerrain.render=false;
+		renderTerrain()
 		image_xscale-=xSpd;
 		image_yscale-=ySpd;
 		if isHit updateColl();

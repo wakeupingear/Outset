@@ -7,7 +7,7 @@ function setTerrain(){
 		for (var i=0;i<array_length(_layerNames);i++)
 		{
 			var _n=string_lower(layer_get_name(_layerNames[i]));
-			if _n=="terrain"||(layer_get_visible(_layerNames[i])&&string_pos("terrain",_n)>0)
+			if _n=="terrain"||(_n=="myko"&&layer_exists(layer_get_name("mykoTile")))||(layer_get_visible(_layerNames[i])&&string_pos("terrain",_n)>0)
 			{
 				array_push(_layers,_layerNames[i]);
 				if layer_get_depth(_layerNames[i])<_depth _depth=layer_get_depth(_layerNames[i]);
@@ -16,38 +16,31 @@ function setTerrain(){
 	
 		if array_length(_layerNames)>0
 		{
-			if instance_exists(oTerrain) 
-			{
-				var _t=instance_find(oTerrain,0);
-				with _t
-				{
-					for (var i=0;i<ds_list_size(terrain);i++) if instance_exists(terrain[|i]) instance_destroy(terrain[|i],false);
-					for (var i=0;i<ds_list_size(terrainColor);i++) if instance_exists(terrainColor[|i]) instance_destroy(terrainColor[|i],false);
-					ds_list_clear(terrain);
-					ds_list_clear(terrainColor);
-					render=false;
-				}
-			}
-			else var _t=instance_create_depth(0,0,_depth,oTerrain);
-			with _t event_user(0);
+			if instance_exists(oTerrain) instance_destroy(oTerrain)
 		
 			for (var k=0;k<array_length(_layers);k++)
 			{
-				var _currentTerrain=_t;
+				var _currentTerrain=-1;
 				var _name=layer_get_name(_layers[k]);
 				var _assets=layer_get_all_elements(_layers[k]);
 				var _isEraTerrain=(string_pos("hit",string_lower(_name))>0);
-				var _isSprites=(_name=="terrainSprites");
 				if array_length(_assets)>0
 				{
 					var _objType=hitobj;
 					if _isEraTerrain _objType=oTerrainHitobj;
 					var _nameNum=string_digits(_name)
-					if _nameNum!=""&&string_letters(_name)=="terrain"
+					 if (_nameNum!=""&&string_letters(_name)=="terrain")
 					{
 						_currentTerrain=instance_create_depth(0,0,_depth-2+4*(string_pos("below",string_lower(_name))>0),oTerrain);
 						_currentTerrain.roomRegion=int64(_nameNum);
 						with _currentTerrain event_user(0);
+					}
+					else _currentTerrain=instance_create_layer(0,0,_layers[k],oTerrain);
+					_currentTerrain.layerName=_name;
+					if _name=="myko" 
+					{
+						global.mykoTerrain=_currentTerrain;
+						with oSoulBranchHit ds_list_add(global.mykoTerrain.terrain,id);
 					}
 					for (var i=0;i<array_length(_assets);i++)
 					{
@@ -61,7 +54,7 @@ function setTerrain(){
 						_i.image_yscale=layer_sprite_get_yscale(_assets[i]);
 						_i.image_angle=layer_sprite_get_angle(_assets[i]);
 						layer_sprite_alpha(_assets[i],0);
-						if _isSprites
+						if _name=="terrainSprites"
 						{
 							_i.image_alpha=1;
 							_i.image_speed=1;
@@ -73,8 +66,8 @@ function setTerrain(){
 							ds_list_add(_currentTerrain.terrain,_i);
 						}
 					}
+					_currentTerrain.visible=layer_get_visible(_layers[k]);
 				}
-				_currentTerrain.visible=layer_get_visible(_layers[k]);
 				if _isEraTerrain layer_set_visible(_layers[k],false);
 			}
 		}

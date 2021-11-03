@@ -8,6 +8,6 @@ uniform vec3 u_color;
 
 void main()
 {
-    gl_FragColor = vec4(u_color,v_vColour.a) * texture2D( gm_BaseTexture, v_vTexcoord );
+    gl_FragColor = vec4(u_color,texture2D( gm_BaseTexture, v_vTexcoord ).a);
 }
 

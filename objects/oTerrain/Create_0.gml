@@ -39,8 +39,8 @@ addColorData(worldRegion.east,"A0410D","000000");
 addColorData(worldRegion.core,"E2E2E2","898989");
 addColorData(worldRegion.vr,"333333","4C4C4C");
 addColorData(worldRegion.testing,"333333","4C4C4C");
-
 roomRegion=worldRegion.notdon;
+layerName="";
 var _n=room_get_name(room);
 if variable_struct_exists(global.rooms,_n) roomRegion=global.rooms[$ room_get_name(room)].region;
 
@@ -48,3 +48,8 @@ if variable_struct_exists(global.rooms,_n) roomRegion=global.rooms[$ room_get_na
 vrAlpha=hasItem("iGrapple")*0.975;
 vrBlendInd=20;
 addColorData(vrBlendInd,"FFFFFF","FFFFFF");
+
+mykoBlendInd=21;
+addColorData(mykoBlendInd,"FFFFFF","614A30");
+
+event_user(0);

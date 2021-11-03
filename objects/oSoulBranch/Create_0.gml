@@ -1,4 +1,5 @@
 image_speed=0;
+//if object_index==oSoulBranch image_blend=merge_color(c_white,c_red,0.2);
 ind=1; //image_index not working?
 
 xSpd=0;
