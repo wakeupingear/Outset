@@ -671,7 +671,7 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesFactoryWorkers;
+		global.startRoom=rNotdon;
 	}
 	#endregion
 	

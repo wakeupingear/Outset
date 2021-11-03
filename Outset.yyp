@@ -557,6 +557,7 @@
     {"id":{"name":"oIslandTree1","path":"objects/oIslandTree1/oIslandTree1.yy",},"order":0,},
     {"id":{"name":"oSkyWastes","path":"objects/oSkyWastes/oSkyWastes.yy",},"order":10,},
     {"id":{"name":"musWindWobble","path":"sounds/musWindWobble/musWindWobble.yy",},"order":51,},
+    {"id":{"name":"Timeline1","path":"timelines/Timeline1/Timeline1.yy",},"order":55,},
     {"id":{"name":"sSus","path":"sprites/sSus/sSus.yy",},"order":5,},
     {"id":{"name":"rWastesFactoryOutside","path":"rooms/rWastesFactoryOutside/rWastesFactoryOutside.yy",},"order":11,},
     {"id":{"name":"oRoomswitch","path":"objects/oRoomswitch/oRoomswitch.yy",},"order":0,},
@@ -1131,7 +1132,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/.vscode","resourceVersion":"1.0","name":"settings.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.6.595",
+    "IDEVersion": "23.1.1.421",
   },
   "resourceVersion": "1.4",
   "name": "Outset",

@@ -4,7 +4,7 @@ function scanVars(){
 	holdTime=30;
 	ds_list_add(global.scanObjs,id);
 	drawScanEffect=function(){
-		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,global.scanColor,image_alpha);
+		draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,merge_color(global.scanColor,c_white,0.5),image_alpha);
 	}
 	scanFunc=-1;
 }

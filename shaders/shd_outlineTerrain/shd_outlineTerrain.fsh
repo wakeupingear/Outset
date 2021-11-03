@@ -9,26 +9,26 @@ uniform float u_bw;
 void main()
 {
  gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
- float alpha = v_vColour.a;
- if (alpha==1.0)
+ float alpha = gl_FragColor.a;
+ if (alpha>0.0)
  {
-	  vec2 offsetX;
-	 offsetX.x = u_pixel.x;
-	 vec2 offsetY;
-	 offsetY.y = u_pixel.y;
+	 vec2 offsetX=vec2(0.0,0.0);
+	 offsetX.x=u_pixel.x;
+	 vec2 offsetY=vec2(0.0,0.0);
+	 offsetY.y=u_pixel.y;
  
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + offsetX).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - offsetX).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + offsetY).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - offsetY).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + offsetX+offsetX).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - offsetX-offsetX).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + offsetY+offsetY).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - offsetY-offsetY).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + offsetX+offsetX+offsetY+offsetY).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + offsetX+offsetX-offsetY-offsetY).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - offsetX-offsetX+offsetY+offsetY).a);
-	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - offsetX-offsetX-offsetY-offsetY).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord + offsetX).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord - offsetX).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord + offsetY).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord - offsetY).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord + offsetX+offsetX).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord - offsetX-offsetX).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord + offsetY+offsetY).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord - offsetY-offsetY).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord + offsetX+offsetX+offsetY+offsetY).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord + offsetX+offsetX-offsetY-offsetY).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord - offsetX-offsetX+offsetY+offsetY).a);
+	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord - offsetX-offsetX-offsetY-offsetY).a);
   
 	 if (alpha<13.0) {
 	  if (u_alpha==1.0) gl_FragColor.rgb=u_color;

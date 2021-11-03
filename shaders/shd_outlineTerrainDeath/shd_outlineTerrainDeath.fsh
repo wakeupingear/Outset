@@ -18,9 +18,9 @@ void main()
  {
 	 float amp=(u_pixel.x*50.0);
 	 float scale=(3.0+2.0*clamp(sin(u_rippleProg)*2.0,-1.0,1.0)*abs(sin(u_rippleProg+mod(v_vTexcoord.x,amp)/amp*2.0*M_PI)));
-	  vec2 offsetX;
+	  vec2 offsetX=vec2(0.0,0.0);
 	 offsetX.x = u_pixel.x;//*scale;
-	 vec2 offsetY;
+	 vec2 offsetY=vec2(0.0,0.0);
 	 offsetY.y = u_pixel.y*scale;
  
 	 alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + offsetX).a);
