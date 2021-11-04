@@ -11,6 +11,7 @@ function physics(){
 		if (veltime>=accTime)
 		{
 			if hsp!=0&&sign(hsp)!=move hsp+=1*move*hspAcc;
+			else if hsp==0 hsp=move*hspAcc*2;
 			hsp+=move*hspAcc;
 			veltime=0;
 		}
@@ -253,7 +254,11 @@ function grapplePhysics(){
 		else //up
 		{
 			vsp=oGrapple.yDir*max(abs(vsp),4.6);
-			if buttonPressed(control.jump) resetGrapple();
+			if buttonPressed(control.jump) 
+			{
+				if oGrapple.yDir==-1 hsp=(hspMax)*(buttonHold(control.right)-buttonHold(control.left));
+				resetGrapple();
+			}
 			else repeat abs(vsp)
 			{
 				y+=sign(vsp);
@@ -332,6 +337,10 @@ function grapplePhysics(){
 	}
 	else if buttonPressed(control.down)&&oGrapple.grappleMode!=grappleState.down
 	{
+		if oGrapple.yDir==-1
+		{
+			hsp=(hspMax)*(buttonHold(control.right)-buttonHold(control.left));
+		}
 		state=moveState.falling;
 		vsp=0;
 		resetGrapple();

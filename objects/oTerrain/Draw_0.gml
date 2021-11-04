@@ -49,7 +49,8 @@ if !texRender
 	if layerName=="myko"
 	{
 		gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
-		draw_sprite_repeated(0,0,sMykoBrickTile,texInd,1,1,0,c_white,1,0,0);
+		if global.alive draw_sprite_repeated_fullroom(0,-11,sMykoBrickTile,texInd,1,1,0,c_white,1,0,0);
+		else draw_sprite_repeated(0,-11,sMykoBrickTile,texInd,1,1,0,c_white,1,0,0); //culling fine when updating often instead of only once
 		gpu_set_blendmode(bm_normal);
 		if !global.alive&&alarm[0]<=0
 		{

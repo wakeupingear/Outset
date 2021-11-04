@@ -24,6 +24,25 @@ if !sentenceFormatted
 	sentenceFormatted=true;
 }
 
+//create letters
+while newLetterInd<textInd
+{
+	var _let=string_char_at(sentence,newLetterInd+1)
+	if _let=="\n"
+	{
+		newLetterX=0;
+		newLetterY+=string_height("f");
+	}
+	else
+	{
+		var _d=instance_create_depth(newLetterX,newLetterY,depth-1,oDiagLetter);
+		_d.letter=_let;
+		_d.letterState=letterStates[newLetterInd+1];
+		newLetterX+=string_width(_let);
+	}
+	newLetterInd++;
+}
+
 //draw everything
 surface_set_target(global.guiSurf);
 draw_set_alpha(max(0,image_alpha-(1-nameAlpha)));
@@ -42,6 +61,18 @@ draw_set_alpha(image_alpha);
 var _sentShift=string_copy(sentence,1,textInd);
 var _xPos=round(((x+textX)+leftShift)*guiX());
 var _yPos=round((y+textY)*guiY());
-draw_text(_xPos,_yPos,_sentShift);
+with oDiagLetter 
+{
+	var _x=x;
+	var _y=y-(alarm[0]>-1&&oTextbox.image_alpha==1)*round(image_alpha*5)*guiY();
+	if letterState==textState.vibrate||letterState==textState.boldVibrate
+	{
+		_x+=irandom_range(-vibrateAmp,vibrateAmp);
+		_y+=irandom_range(-vibrateAmp,vibrateAmp);
+	}
+	
+	if letterState==textState.bold||letterState==textState.boldVibrate draw_text_outline_transformed_color(_xPos+_x,_yPos+_y,letter,c_white,c_white,image_alpha,c_nearBlack,c_nearBlack,image_alpha,8,16,1,1,0);
+	else draw_text_color(_xPos+_x,_yPos+_y,letter,c_white,c_white,c_white,c_white,image_alpha);
+}
 surface_reset_target();
 draw_set_alpha(1);

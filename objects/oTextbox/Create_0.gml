@@ -25,6 +25,17 @@ sentence="";
 sentenceFormatted=false;
 textInd=0;
 top=true;
+newLetterInd=0;
+newLetterX=0;
+newLetterY=0;
+
+enum textState{
+	normal,
+	vibrate,
+	bold,
+	boldVibrate
+}
+letterStates=[];
 
 boxHidden=false; //used for things like popups
 portInd=0;

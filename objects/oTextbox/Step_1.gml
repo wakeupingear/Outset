@@ -38,17 +38,21 @@ if mode>-1&&mode<2
 		}
 		
 		charWaitList=array_create(string_length(sentence),0); //process pauses and add them to the charWaitList
+		letterStates=array_create(string_length(sentence)+1,0);
+		var _lastState=0;
 		for (var i=1;i<string_length(sentence);i++) 
 		{
-			if string_char_at(sentence,i)=="," charWaitList[i]=commaWait;
-			else if string_char_at(sentence,i)=="." charWaitList[i]=periodwait;
+			letterStates[i]=_lastState;
+			var _ch=string_char_at(sentence,i);
+			if _ch=="," charWaitList[i]=commaWait;
+			else if _ch=="." charWaitList[i]=periodwait;
 			else if i+1<string_length(sentence)&&string_char_at(sentence,i)=="?"&&string_char_at(sentence,i+1)!="?" charWaitList[i]=questionmarkWait;
 			else if i+1<string_length(sentence)&&string_char_at(sentence,i)=="!"&&string_char_at(sentence,i+1)!="!" charWaitList[i]=exclamationWait;
-			else if string_char_at(sentence,i)=="{"
+			else if _ch=="{"
 			{
 				var _pos=i;
 				while string_char_at(sentence,_pos)!="}" _pos++;
-				try var _num=real(string_digits(string_copy(sentence,i,_pos-i)));
+				var _num=real(string_digits(string_copy(sentence,i,_pos-i)));
 				charWaitList[i]=_num;
 				sentence=string_delete(sentence,i,2+string_length(string(_num)));
 				if i>=string_length(sentence) 
@@ -57,10 +61,34 @@ if mode>-1&&mode<2
 					charWaitList[i-1]=_num;
 				}
 			}
+			else if _ch=="*"
+			{
+				if _lastState==textState.bold _lastState=textState.normal;
+				else if _lastState==textState.boldVibrate _lastState=textState.vibrate;
+				else if _lastState==textState.vibrate _lastState=textState.boldVibrate;
+				else _lastState=textState.bold;
+			}
+			else if _ch=="^"
+			{
+				if _lastState==textState.vibrate _lastState=textState.normal;
+				else if _lastState==textState.boldVibrate _lastState=textState.bold;
+				else if _lastState==textState.bold _lastState=textState.boldVibrate;
+				else _lastState=textState.vibrate;
+			}
 			
+			if letterStates[i]!=_lastState
+			{
+				sentence=string_delete(sentence,i,1);
+				letterStates[i]=_lastState;
+				i--;
+			}
 		}
 		textInd=0;
-		setHeight(); //set the box's position
+		newLetterInd=0;
+		newLetterX=0;
+		newLetterY=0;
+		with oDiagLetter alarm[0]=1;
+		if mode==1 setHeight(); //set the box's position
 		setCharacterDiag(); //reprocess character traits in case something changed
 		sentenceFormatted=false;
 		portOverride=false;
@@ -71,6 +99,7 @@ if mode>-1&&mode<2
 	{
 		if textInd<string_length(sentence)&&charWaitList[textInd]>0 charWaitList[textInd]--; //wait if this character has a pause
 		else textInd++;
+		
 		if textInd>1&&(textInd>string_length(sentence)||(!skip&&buttonPressed(control.confirm)))
 		{
 			textInd=string_length(sentence);

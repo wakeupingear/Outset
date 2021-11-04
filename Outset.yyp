@@ -301,6 +301,7 @@
     {"id":{"name":"oSouldropCoin","path":"objects/oSouldropCoin/oSouldropCoin.yy",},"order":0,},
     {"id":{"name":"sWastesCar","path":"sprites/sWastesCar/sWastesCar.yy",},"order":0,},
     {"id":{"name":"sShoeHole","path":"sprites/sShoeHole/sShoeHole.yy",},"order":7,},
+    {"id":{"name":"oDiagLetter","path":"objects/oDiagLetter/oDiagLetter.yy",},"order":2,},
     {"id":{"name":"oConveyorSwitch","path":"objects/oConveyorSwitch/oConveyorSwitch.yy",},"order":2,},
     {"id":{"name":"sSlopeCrack","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},"order":1,},
     {"id":{"name":"sCamSize","path":"sprites/sCamSize/sCamSize.yy",},"order":7,},
