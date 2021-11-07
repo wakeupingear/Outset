@@ -1,4 +1,5 @@
 /// @description Draw guiSurf + pause menu
+if !surface_exists(global.guiSurf) exit;
 if instance_exists(ply)&&instance_find(ply,0).object_index==ply //check that it's actually the player
 {
 	surface_set_target(global.guiSurf);

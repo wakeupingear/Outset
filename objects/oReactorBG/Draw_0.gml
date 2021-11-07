@@ -27,6 +27,6 @@ if instance_exists(oReactorTunnel)
 	var _y=y-70;
 	draw_circle(_x,_y,16,false);
 	
-	if isInRange(x,y) tunnel.render(_x,_y,oReactorTunnel.x,oReactorTunnel.y);
+	if isInRange(x,y)||isInRange(oReactorTunnel.x,oReactorTunnel.y) tunnel.render(_x,_y,oReactorTunnel.x,oReactorTunnel.y);
 	with oReactorTunnel draw_self();
 }

@@ -28,6 +28,7 @@ top=true;
 newLetterInd=0;
 newLetterX=0;
 newLetterY=0;
+textUpdated=false;
 
 enum textState{
 	normal,

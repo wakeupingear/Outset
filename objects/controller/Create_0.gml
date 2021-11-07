@@ -212,6 +212,8 @@ loadPrefs();
 save("TEMPLATE"); //template of default variable data - used when creating new save files
 setFont(fontSizes.medium);
 instance_create_depth(0,0,depth-1,oMouse);
+fileLoadMap=-1;
+fileLoadBuffers=-1;
 
 //hud alpha
 image_alpha=0;
@@ -447,21 +449,21 @@ else if image_alpha>0 image_alpha-=0.1;
 if (instance_exists(ply)&&global.notPause)||pauseMenuCopied!=-1
 {
 	draw_set_alpha(hudFade); //only applies when alpha isn't explicitly set
-	draw_sprite_ext(sHudHealth,0,getHudX()+edgeX,24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
+	draw_sprite_ext(sHudHealth,0,getHudX()+edgeX,24+edgeY,1,1,0,global.hudColorList[global.hudColor],global.hudAlpha*image_alpha*hudFade);
 	draw_sprite_ext(sHudHealth,1,getHudX()+edgeX,24+edgeY,1,1,0,-1,image_alpha*hudFade);
 	
 	var _bossFight=noone;
 	with boss if enemActive _bossFight=id;
 	if instance_exists(_bossFight)
 	{
-		draw_sprite_ext(sHudHealth,0,384-(getHudX()+edgeX),24+edgeY,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
+		draw_sprite_ext(sHudHealth,0,384-(getHudX()+edgeX),24+edgeY,1,1,0,global.hudColorList[global.hudColor],global.hudAlpha*image_alpha*hudFade);
 	}
 	
 	if ds_list_size(global.inventory)>0
 	{
 		var _x=getHudX()+edgeX-12*(1-(global.hudSide)*2);
 		var _y=52+edgeY;
-		draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,global.hudColorList[global.hudColor],0.8*image_alpha*hudFade);
+		draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,global.hudColorList[global.hudColor],global.hudAlpha*image_alpha*hudFade);
 		if buttonHold(control.item)
 		{
 			if ply.itemFillMax>0

@@ -255,7 +255,7 @@ if object_index==ply
 		var _s=instance_place(x,y,oSwitch);
 		if state<=moveState.running
 		{
-			global.interactText=5;
+			setInteractText(5);
 			if (buttonPressed(control.up)||buttonPressed(control.confirm))
 			{
 				with _s event_user(0);

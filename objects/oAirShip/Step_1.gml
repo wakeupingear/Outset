@@ -5,7 +5,7 @@ if global.alive
 	{
 		if !global.transitioning&&!global.menuOpen&&place_meeting(x,y,ply)&&ply.state<=moveState.running
 		{
-			global.interactText=10;
+			setInteractText(10);
 			if buttonPressed(control.up)||buttonPressed(control.confirm)
 			{
 				boarded=true;

@@ -3,7 +3,7 @@ if isScanned&&!instance_exists(oSouldropRainController)
 {
 	if place_meeting(x,y,ply)
 	{
-		global.interactText=7;
+		setInteractText(7);
 		if buttonPressed(control.up)||buttonPressed(control.confirm)
 		{
 			var _c=instance_create_layer(0,0,"bg2",oSouldropRainController);

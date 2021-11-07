@@ -1,4 +1,5 @@
 text=[];
+diagFunc=-1;
 key="";
 check=0;
 isHit=false;

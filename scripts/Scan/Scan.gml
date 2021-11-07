@@ -78,7 +78,7 @@ function scanDraw(){
 		}
 		else if global.scanObj==-1&&(buttonPressed(control.up)||buttonHold(control.confirm))&&_touch global.scanObj=id;
 		drawScanEffect();
-		if _touch global.interactText=6;
+		if _touch setInteractText(6);
 	}
 	else
 	{

@@ -1,5 +1,5 @@
 /// @description Save
-if alarm[0]==-1&&!touch&&place_meeting(x,y,ply)
+if alarm[0]==-1&&!touch&&instance_exists(ply)&&ply.state!=moveState.floating&&place_meeting(x,y,ply)
 {
 	touch=true;
 	shake(1,1,10);

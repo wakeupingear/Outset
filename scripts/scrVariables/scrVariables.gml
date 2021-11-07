@@ -393,7 +393,8 @@ function scrVariables(){
 	setNPCRoom("nora",rNotdon,"pro_lb1");
 	setNPCRoom("smitten",rNotdon,"pro_lb1");
 	setNPCRoom("charlie",rNotdon,"pro_lb1");
-	setNPCRoom("alex",rNotdonAmphitheater,"c1_treadmill");
+	hideNPC("alex");
+	//setNPCRoom("alex",rNotdonAmphitheater,"c1_treadmill");
 	setNPCRoom("general",rWastesCrater,"preFight");
 	setNPCRoom("xavier",rIsland,"arrival");
 	setNPCRoom("babishOrange",rCoreIntro,"pro_core");
@@ -472,7 +473,7 @@ function scrVariables(){
 			}
 		}
 	}
-	if file_exists("rooms.hat") global.rooms=loadStringJson("rooms"); //precalculate the room data
+	if !isHtml&&file_exists("rooms.hat") global.rooms=loadStringJson("rooms"); //precalculate the room data
 	else {
 	for (var i=0;room_exists(i);i++) //if i!=rStartup 
 	{
@@ -542,6 +543,7 @@ function scrVariables(){
 	#region UI
 	global.guiSurf=-1;
 	global.interactText=-1;
+	global.interactTextObj=noone;
 	global.interactTextLabels=[]; //loads in setText
 	global.fonts=[
 	[],
@@ -672,7 +674,7 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesFactoryEntrance;
+		global.startRoom=rWastesFactory2;
 	}
 	#endregion
 	

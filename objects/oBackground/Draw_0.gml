@@ -1,4 +1,6 @@
 /// @description Draw
+if xOsci!=-1 oscillate(xOsci,"x",false,false);
+if yOsci!=-1 oscillate(yOsci,"y",false,false);
 if tileWidth==-1
 {
 	tileWidth=abs(sprite_width);

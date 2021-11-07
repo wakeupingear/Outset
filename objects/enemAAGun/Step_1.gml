@@ -20,6 +20,8 @@ if global.alive&&instance_exists(ply)
 		_m.xDir=xscale;
 		_m.yDir=-yscale;
 		_m.spd=6;
+		_m.hsp=(x-xprevious);
+		_m.vsp=(y-yprevious);
 		mode=0.2;
 		alarm[4]=80;
 		var _e=instance_create_depth(x+xscale*8,y-yscale*12,depth-2,oExplosion);

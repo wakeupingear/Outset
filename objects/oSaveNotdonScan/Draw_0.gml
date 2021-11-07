@@ -1,5 +1,5 @@
 /// @description Draw tiles below
-if scanDraw() image_blend=global.scanColor;
+if scanDraw() image_blend=merge_color(global.scanColor,c_white,0.5);
 else image_blend=-1;
 for (var i=1;i<6;i++)
 {

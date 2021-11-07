@@ -5,7 +5,7 @@ if global.alive
 	{
 		if instance_exists(ply)&&ply.state<=moveState.running&&place_meeting(x,y,ply) 
 		{
-			global.interactText=11;
+			setInteractText(11);
 			if (buttonPressed(control.up)||buttonPressed(control.confirm))
 			{
 				riding=true;

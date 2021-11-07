@@ -93,16 +93,22 @@ if mode>-1&&mode<2
 		sentenceFormatted=false;
 		portOverride=false;
 		fontOverride=false;
+		textUpdated=false;
 	}
 	
 	if mode==1
 	{
 		if textInd<string_length(sentence)&&charWaitList[textInd]>0 charWaitList[textInd]--; //wait if this character has a pause
-		else textInd++;
+		else 
+		{
+			textInd++;
+			textUpdated=true;
+		}
 		
 		if textInd>1&&(textInd>string_length(sentence)||(!skip&&buttonPressed(control.confirm)))
 		{
 			textInd=string_length(sentence);
+			textUpdated=true;
 			if !skip mode=2;
 			else 
 			{

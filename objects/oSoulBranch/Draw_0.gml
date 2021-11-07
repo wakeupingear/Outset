@@ -17,7 +17,6 @@ else if ySpd<0 //done
 	for (var i=0;i<floor(abs(image_yscale)/12);i++)
 	{
 		for (var k=0;k<abs(image_xscale)/12;k++) draw_sprite_ext(sMykoBrick,ind,x+k*12,y-(i+1)*12,1,1,0,image_blend,1);
-		draw_sprite_ext(sMykoBrick,ind,x+k*12,y-(i+1)*12,1,1,0,image_blend,1);
 	}
 	if floor(image_yscale/12)!=0
 	{

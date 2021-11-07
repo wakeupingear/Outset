@@ -3,7 +3,7 @@ if !global.menuOpen&&!global.transitioning&&distance_to_object(ply)<64&&(ply.sta
 {
 	if !place_meeting(x,y,ply)&&place_meeting(x-image_xscale*12,y,ply)
 	{
-		global.interactText=check;
+		setInteractText(check);
 		if buttonPressed(control.up)||buttonPressed(control.confirm)
 		{
 			addItem("iLadder");

@@ -4,7 +4,7 @@ alarm[0]=60;
 if !isInRange(x,y) exit;
 if sprite_get_width(sprite_index)+sprite_get_height(sprite_index)==2
 {
-	rectangleOutwardParticle(x,y,depth+1,1,partProperties);
+	rectangleOutwardParticle(x,y,depth+1,sPlaceholderPixelB,0,1,partProperties);
 }
 else
 {

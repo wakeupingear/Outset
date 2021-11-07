@@ -119,6 +119,9 @@ if active
 						case "camShake":
 							global.shakeFactor=choice;
 							break;
+						case "hudAlpha":
+							global.hudAlpha=choice;
+							break;
 						default: break;
 					}
 					global.accessibility[? key]=choice;

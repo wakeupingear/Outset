@@ -81,6 +81,8 @@ function scr_pro_3(){
 	addDroppedItem(2361,772,rNotdon,"iPhoneNote2");
 	addDroppedItem(1808,676,rNotdon,"iPhoneNote3");
 	
+	addDataPair("toiletTime",global.roomTime);
+	
 	with controller
 	{
 		setRoomEra(); //reload npcs and era layers

@@ -19,16 +19,10 @@ function hurtEnem(_id,_damage){
 			else switch object_index
 			{
 				case oConveyorSwitch:
-					_damaged=false
+					_damaged=false;
 					if !roomHasPower() break;
-					if hasData("conveyorDir") removeData("conveyorDir");
-					else addData("conveyorDir");
 					shake(1,1,10);
-					with oConveyorDir 
-					{
-						setDirection();
-						rectangleOutwardParticle(x,y,depth+1,2,{blend: image_blend,fade:0.1});
-					}
+					switchConveyors();
 					break;
 				case oRedCarpet:
 					_damaged=false;

@@ -87,8 +87,16 @@ breathAlpha=0;
 drawInteract = function(){
 	if !option("interactText") exit;
 	setFont(fontSizes.small);
+	var _yH=8;
+	switch global.interactTextObj
+	{
+		case oElevator: 
+			_yH=17;
+			break;
+		default: break;
+	}
 	var _xPos=toGuiX(x)-string_width(global.interactTextLabels[interactTextLast])/2;
-	var _yPos=toGuiY(y-8)-string_height(global.interactTextLabels[interactTextLast]);
+	var _yPos=toGuiY(y-_yH)-string_height(global.interactTextLabels[interactTextLast]);
 	surface_set_target(global.guiSurf);
 	draw_set_color(c_white);
 	draw_text_outline_transformed_color(_xPos,_yPos,global.interactTextLabels[interactTextLast],c_nearWhite,c_nearWhite,interactTextAlpha,c_nearBlack,c_nearBlack,interactTextAlpha,6*global.guiScale,12,1,1,0);

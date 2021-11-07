@@ -1,4 +1,5 @@
 /// @description Explode
+if offscreen(x,y) exit;
 explosionCircle(30,x,y,finalRad,0);
 mask_index=sBarrelRadius;
 

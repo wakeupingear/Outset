@@ -6,7 +6,7 @@
     "path": "folders/Scripts/text.yy",
   },
   "resourceVersion": "1.0",
-  "name": "loadStringJson",
+  "name": "JsonFiles",
   "tags": [],
   "resourceType": "GMScript",
 }

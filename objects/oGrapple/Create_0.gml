@@ -98,6 +98,7 @@ grappleCollideEffect=function(final){
 step=function(){ 
 if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 {
+	if ply.state==moveState.floating exit;
 	xDir=0;
 	yDir=0;
 	x=ply.x;
@@ -305,8 +306,29 @@ else if state<0 //reset
 	{
 		if global.inputs[control.grapple]>0 global.inputs[control.grapple]=20; //so that it doesn't auto reset
 	}
-	var _size=ds_list_size(points);
-	if _size>0
+	
+	var _dist=distance_to_object(ply);
+	var _rSpd=4.5+0.5*(_dist>72)+0.5*(_dist>192);
+	y-=(abs(grappleAngle-180)<45);
+	while _rSpd>0&&ds_list_size(points)>0
+	{
+		var _o=points[|ds_list_size(points)-1];
+		grappleAngle=point_direction(x,y,_o.x,_o.y);
+		if point_distance(x,y,_o.x,_o.y)>1
+		{
+			_rSpd-=0.5;
+			x+=lengthdir_x(0.5,grappleAngle);
+			y+=lengthdir_y(0.5,grappleAngle);
+		}
+		if point_distance(x,y,_o.x,_o.y)<=1
+		{
+			instance_destroy(_o);
+			ds_list_delete(points,ds_list_size(points)-1);
+		}
+	}
+	y+=(abs(grappleAngle-180)<45);
+	
+	/*for (var i=0;i<2&&ds_list_size(points)>0;i++) //control speed
 	{
 		y-=(abs(grappleAngle-180)<45); //compensate for the angle skewing the y offset
 		var _o=points[|ds_list_size(points)-1];
@@ -315,7 +337,7 @@ else if state<0 //reset
 		y=_o.y+(abs(grappleAngle-180)<45);
 		instance_destroy(_o);
 		ds_list_delete(points,ds_list_size(points)-1);
-	}
+	}*/
 	
 	if place_meeting(x,y,ply)||ds_list_empty(points)
 	{

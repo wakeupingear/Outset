@@ -25,22 +25,26 @@ if !sentenceFormatted
 }
 
 //create letters
-while newLetterInd<textInd
+if textUpdated&&alarm[0]==-1&&sentence!=""
 {
-	var _let=string_char_at(sentence,newLetterInd+1)
-	if _let=="\n"
+	while newLetterInd<textInd
 	{
-		newLetterX=0;
-		newLetterY+=string_height("f");
+		var _let=string_char_at(sentence,newLetterInd+1)
+		if _let=="\n"
+		{
+			newLetterX=0;
+			newLetterY+=string_height("f");
+		}
+		else
+		{
+			var _d=instance_create_depth(newLetterX,newLetterY,depth-1,oDiagLetter);
+			_d.letter=_let;
+			_d.letterState=letterStates[newLetterInd+1];
+			newLetterX+=string_width(_let);
+		}
+		newLetterInd++;
 	}
-	else
-	{
-		var _d=instance_create_depth(newLetterX,newLetterY,depth-1,oDiagLetter);
-		_d.letter=_let;
-		_d.letterState=letterStates[newLetterInd+1];
-		newLetterX+=string_width(_let);
-	}
-	newLetterInd++;
+	textUpdated=false;
 }
 
 //draw everything

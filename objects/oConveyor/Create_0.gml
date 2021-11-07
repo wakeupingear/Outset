@@ -96,6 +96,7 @@ moveObjects=function(_xDir,_yDir) {
 					}
 					ply.hsp=0;
 					ply.vsp=0;
+					image_index=2;
 					grapplePositionFollowCoords();
 					if yDir==-1 grappleAngle=90+180*(sign(_this.spd)==-1);
 					else grappleAngle=90-90*xDir;
@@ -105,13 +106,20 @@ moveObjects=function(_xDir,_yDir) {
 					x-=sign(_xMove);
 					y-=sign(_yMove);
 				}
+				
+				x=round(x);
+				y=round(y);
 			}
-			else while groundCollision(x,y)
+			else 
 			{
-				x-=sign(_xMove);
-				y-=sign(_yMove);
+				while groundCollision(x,y)
+				{
+					x-=sign(_xMove);
+					y-=sign(_yMove);
+				}
 			}
 		}
+		//if !isObj(_i,ply)&&!place_meeting(x+_xDir,y+_yD ir,_i) impulse(2,0,_i)
 	}
 	y+=2000;
 }

@@ -1,7 +1,7 @@
 {
   "ConfigValues": {
     "Dev": {"option_html5_loadingbar":"Use Default","option_html5_index":"use_default","option_html5_localrunalert":"false","option_html5_foldername":"outset","option_html5_browser_title":"Outset","option_html5_interpolate_pixels":"false",},
-    "Testing": {"option_html5_loadingbar":"Use Default","option_html5_index":"use_default","option_html5_interpolate_pixels":"false","option_html5_browser_title":"Outset","option_html5_icon":"fav.ico",},
+    "Testing": {"option_html5_loadingbar":"Use Default","option_html5_index":"use_default","option_html5_interpolate_pixels":"false","option_html5_browser_title":"Outset","option_html5_icon":"fav.ico","option_html5_webgl":"1","option_html5_foldername":"Outset",},
   },
   "option_html5_browser_title": "Created with GameMaker Studio 2",
   "option_html5_version": "1.0.0.0",

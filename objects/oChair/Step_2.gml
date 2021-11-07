@@ -7,7 +7,7 @@ if !global.menuOpen
 	{
 		if distance_to_object(ply)<=abs(sprite_width)&&ply.visible&&(image_index==0||text!=-1)&&place_meeting(x,y,ply)
 		{
-			global.interactText=check;
+			setInteractText(check);
 			if ply.state<=moveState.running&&(buttonPressed(control.confirm)||buttonPressed(control.up))
 			{
 				if text!=-1

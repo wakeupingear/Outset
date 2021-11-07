@@ -1,11 +1,11 @@
 /// @description Load text files
 try
 {
-	global.pathfindingScripts=loadStringJson("pathfinding");
+	loadStringJson("pathfinding");
 	global.langScript={};
 	var _importTextData=function(name){
 		var _lang=option("lang");
-		global.langScript=addToStruct(global.langScript,loadStringJson(_lang+"/"+_lang+name));
+		loadStringJson(_lang+"/"+_lang+name);
 	}
 	
 	_importTextData("Hud");

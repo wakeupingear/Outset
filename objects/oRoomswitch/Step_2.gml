@@ -5,7 +5,7 @@ if mode==0&&!global.menuOpen&&!global.transitioning
 {
 	if door&&distance_to_object(ply)<sprite_width*image_xscale&&(ply.state==moveState.standing||ply.state==moveState.running)&&place_meeting(x,y,ply)
 	{
-		global.interactText=check
+		setInteractText(check);
 		if (buttonPressed(control.up)||buttonPressed(control.confirm))
 		{
 			playSound(sndDoor,false);

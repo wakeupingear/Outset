@@ -6,7 +6,7 @@ if global.alive&&hasPower
 		if instance_exists(ply)&&ply.state!=moveState.floating&&place_meeting(x,y,ply)
 		{
 			if animation.currentAnimation!="opening" setAnimation("opening",animation);
-			global.interactText=check;
+			setInteractText(check);
 			if up!=""&&(buttonPressed(control.up)||buttonPressed(control.confirm))
 			{
 				if up!="1" conversation(up);
