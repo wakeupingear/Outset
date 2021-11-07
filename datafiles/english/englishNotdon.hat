@@ -45,7 +45,7 @@
             "$roomChange",[656,375,"rHaroldServer",0,0,0,-1],
             "end",
         "#true1",
-            "As you start to push the door open, an unseen force pushes back from the other side.",
+            "As you start to push the door open, an unseen force pushes back from the other side."
     ],
 
     "notdon_mykoObservatory":[
@@ -74,7 +74,7 @@
         "$trackObj.setText","notdon_doorBroken2"
     ],
     "notdon_doorBroken2":[
-        "The door is broken?",
+        "The door is broken?"
     ],
 
     "notdon_jetEmpty":[
@@ -85,5 +85,11 @@
     "notdon_jetEmpty2":["Sooner or later..."],
     "notdon_jetWaiting":[
         "Hup Hup Hup, let's go, let's go!"
+    ],
+
+    "notdon_toilet":[
+        [
+            "You don't need to go right now!"
+        ]
     ]
 }

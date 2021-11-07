@@ -16,7 +16,7 @@
             "objs":[
                 {
                     "obj":"oDonutBoxPopup",
-                    "trackObj":"$oTextbox.trackObj",
+                    "trackObj":"$oTextbox.trackObj"
                 },
                 {
                     "obj":"oDonutNote"

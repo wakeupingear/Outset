@@ -234,7 +234,7 @@
 
     "eugene_pro_grotto_dead":[
         "?ply","EUGENE stands here, quietly frozen in time...",
-        "His chest is still and his breath is silent, yet he is alive.",
+        "His chest is still and his breath is silent, yet he is alive."
     ],
 
     "pro_respawn":[
@@ -575,5 +575,5 @@
         "$camSet",["x",0],
         30,
         "$script","scr_c1_1"
-    ],
+    ]
 }

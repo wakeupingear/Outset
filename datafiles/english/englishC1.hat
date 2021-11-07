@@ -214,7 +214,7 @@
         "OH GOD NO THE CLASSIC SECOND PHAAAAAAAASE!!!",
         "$addData","oVRBoss",
         "$oVRUnfinishedFireAll.ySpd",-1,
-        "$shake",[1,1,20000],
+        "$shake",[1,1,20000]
     ],
 
     "c1_vrChaseStart":[
@@ -250,7 +250,7 @@
         90,
         "$create",[0,0,-100000,"oVRBluescreen"],
         "$script","scr_c1_4",
-        "$roomChange",[195,238,"rHarold",5,0,0,-1],
+        "$roomChange",[195,238,"rHarold",5,0,0,-1]
     ],
     "c1_vrHarold":[
         180,
@@ -323,7 +323,7 @@
         "OWWWWWWWW!",
         "CITRA's gonna give you HELL for this!",
         "$smitten.setRoom",["rNotdon","c1_video"],
-        60,
+        60
     ],
 
     "c1_groupForgetName":[
@@ -349,7 +349,7 @@
         "?eugene","Death",
         "?ply","Somehow, the SHORT VIDEO PRESENTATION fills you with a sense of urgency.",
         "#dev",
-        "$cutscene","c1_enterBay",
+        "$cutscene","c1_enterBay"
     ],
     "c1_videoSleep":[
         "?smitten","WAKE UP AND SMELL THE CHEDDAR!",
@@ -363,7 +363,7 @@
         "$oHaroldVideoSnooze.alarm[4]",1,
         120,
         "?craig","...*SNIFF*",
-        "$cutscene","c1_enterBay",
+        "$cutscene","c1_enterBay"
     ],
     "c1_jack":["?ply","So you wake up in a gear..."],
 
@@ -473,7 +473,7 @@
         20,
         "$eugene.setRoom",["rWastesNotdon","wastesWait"],
         "$cutsceneCondition",{"key":"wastes_eugeneStartled","myRoom":"rWastesNotdon","condition":"plyLeft","args":[862]},
-        "$cutscene","c1_ditch",
+        "$cutscene","c1_ditch"
     ],
     "c1_islandChoice":[
         "$global.currentChapter",3,
@@ -483,7 +483,7 @@
     ],
     "c1_wastesChoice":[
         "$global.currentChapter",4,
-        "$cutscene","c1_ditch",
+        "$cutscene","c1_ditch"
     ],
 
     "c1_outtaHere":[
@@ -521,7 +521,7 @@
             "end",
         "#false3",
             "...So what now?",
-            "end",
+            "end"
     ],
 
     "toAir":[
@@ -532,7 +532,7 @@
             "end",
         "#false3",
             "...So what now?",
-            "end",
+            "end"
     ],
 
     "toIsland":[
@@ -543,6 +543,6 @@
             "end",
         "#false3",
             "...So what now?",
-            "end",
+            "end"
     ]
 }

@@ -83,7 +83,7 @@
         "jump",
         "xy",2414,696,4,
         "jump",
-        "xy","endX","endY",4,
+        "xy","endX","endY",4
     ],
     "pro_smitten_launchWalk":[
         "xyj",1851,438,4,
@@ -149,7 +149,7 @@
     ],
 
     "c1_toAirLeft":[
-        "xyTo",461,-300,
+        "xyTo",461,-300
     ],
     "c1_toAirRight":[
         

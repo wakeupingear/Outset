@@ -34,7 +34,7 @@
         "That wasn't even a lil' bit evasive!",
         "Ohhhhhh. I heard SPECTACULAR MANUEVERS.",
         "EVASIVE AND SPECTACULAR SOUND NOTHING ALIKE, YA TWERP!",
-        "$oNotdonJet.seethroughOverride",-1,
+        "$oNotdonJet.seethroughOverride",-1
     ],
 
     "wastes_bulletFail":[
@@ -46,7 +46,7 @@
             "sprite":"sGrapple",
             "vsp":-3,
             "grav":0.1,
-            "dir":180,
+            "dir":180
         }],
         25,
         "$lastObj.spd",2,
@@ -57,7 +57,7 @@
         "$script","scr_wastes_2",
         "$oNotFloor.destroy",
         "end",
-        "${NAME} is a total caribeener!",
+        "${NAME} is a total caribeener!"
     ],
 
     "wastes_bulletSurvive":[
@@ -68,12 +68,12 @@
         "SIGNAL STRENGTH: PRETTY MEDIOCRE HONESTLY BUT WE CAN WORK WITH IT I GUESS"
     ],
     "wastes_beaconInside":[
-        "SIGNAL STRENGTH: OH GOD JEEZ NO THIS IS TERRIBLE WHY WOUD YOU PLANT IT UNDERGROUND?"
+        "SIGNAL STRENGTH: OH GOD JEEZ NO THIS IS TERRIBLE WHY WOULD YOU PLANT IT UNDERGROUND?"
     ],
 
     "wastes_borderDoor":[
         "A chonky metal door. Probably could withstand a nuclear blast.",
-        "On the other hand, maybe ramming it with something could open it?",
+        "On the other hand, maybe ramming it with something could open it?"
     ],
 
     "wastes_barrelRoll":[
@@ -118,7 +118,7 @@
     ],
     "wastes_her_boxes":[
         ["CHOP CHOP!{60} The boxes, of course."],5,
-        ["GOPHER! Where's my late?","...GOPHER?"],
+        ["GOPHER! Where's my late?","...GOPHER?"]
     ],
     "wastes_boxesDestroy":[
         "$addData","wBRack",
@@ -147,7 +147,7 @@
         "WHA!",
         "$chet.startAnimation","popUp",
         60,
-        "$chet.setRoom",["rWastesCrater","wastes_pulledOut"],
+        "$chet.setRoom",["rWastesCrater","wastes_pulledOut"]
     ],
     "chet_wastes_pulledOut":[
         "$question1","Found those parts yet?",
@@ -181,7 +181,7 @@
                 "\"CRANE IS ON\"\n\"ARM IS BLOCKED\"",
                 "end",
             "#true2",
-                "\"CRANE IS ON\"",
+                "\"CRANE IS ON\""
     ],
 
     "wastes_factory_poster":[
