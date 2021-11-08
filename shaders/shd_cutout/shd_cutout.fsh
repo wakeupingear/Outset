@@ -8,13 +8,14 @@ uniform float right;
 
 void main()
 {
+	gl_FragColor=vec4(0.0); //unix needs this for stopping garbage texture data from appearing around the cutout
 	float _x=v_vTexcoord.x;
 	float _y=v_vTexcoord.y;
-    if (_y>(top/216.0)&&_y<(bot/216.0))
+    if (_y>top&&_y<bot)
 	{
-		if (_x>(left/384.0)&&_x<(right/384.0))
+		if (_x>left&&_x<right)
 		{
-			gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+			gl_FragColor = v_vColour*texture2D( gm_BaseTexture, v_vTexcoord );
 		}
 	}
 }

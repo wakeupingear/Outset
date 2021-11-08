@@ -102,18 +102,21 @@ if false&&global.rooms[$ _roomName].region==worldRegion.west
 	removePPPart();
 }
 }
-
-//draw transition
-if instance_exists(oTransition)
-{
-	surface_set_target(postProcessSurf);
-	with oTransition draw();
-	removePPPart();
-}
 gpu_set_blendenable(true);
 
 //draw hud
 surface_set_target(application_surface);
+//draw transition
+if instance_exists(oTransition)
+{
+	//surface_set_target(postProcessSurf);
+	//shader_set(shd_premultiplyAlpha);
+	//draw_surface(application_surface,0,0);
+	with oTransition draw();
+	//draw_sprite_ext(spr_FTF_blurNoise,0,192,108,1,1,0,-1,0.5);
+	//if shader_current()!=-1 shader_reset();
+	//removePPPart();
+}
 draw(0,0);
 if instance_exists(oTextbox) with oTextbox draw(0,0);
 if instance_exists(oCursor) with oCursor 

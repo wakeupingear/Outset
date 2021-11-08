@@ -209,7 +209,7 @@ function groundCollision(_x,_y,_coll,float){
 }
 
 function grapplePhysics(){
-	if oGrapple.xDir!=0 xscale=oGrapple.xDir;
+	if oGrapple.xDir!=0&&!groundCollision(x+oGrapple.xDir,y) xscale=oGrapple.xDir;
 	if oGrapple.grappleMode==grappleState.pull
 	{
 		if oGrapple.xDir!=0 //left/right
@@ -243,6 +243,8 @@ function grapplePhysics(){
 							}
 							state=moveState.hanging;
 						}
+						var _facing=buttonPressed(control.right)-buttonPressed(control.left);
+						if _facing!=0 xscale=_facing;
 						hsp=0;
 						break;
 					}

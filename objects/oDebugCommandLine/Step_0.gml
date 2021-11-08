@@ -7,7 +7,7 @@ if keyboard_check_pressed(vk_enter)
 		ds_list_add(commands,keyboard_string);
 		var _arr=explodeString(" ",keyboard_string);
 		var _lower=string_lower(_arr[0]);
-		switch _lower
+		try switch _lower
 		{
 			case "echo":
 				ds_list_add(commands,_arr[1]);
@@ -171,6 +171,10 @@ if keyboard_check_pressed(vk_enter)
 					}
 				}
 				break;
+		}
+		catch (e)
+		{
+			ds_list_add(commands,"ERROR: invalid command '"+keyboard_string+"'");
 		}
 	}
 	keyboard_string="";

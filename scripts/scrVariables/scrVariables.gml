@@ -21,7 +21,7 @@ function scrVariables(){
 	ds_map_add(global.accessibility,"interactText",true);
 	ds_map_add(global.accessibility,"hudAlpha",global.hudAlpha);
 	ds_map_add(global.accessibility,"camShake",global.shakeFactor);
-	ds_map_add(global.accessibility,"vsync",(!isDev&&!isTest));
+	ds_map_add(global.accessibility,"vsync",(!isDev&&!isTest)||isLinux);
 	ds_map_add(global.accessibility,"blackBars",true);
 	#endregion
 	
