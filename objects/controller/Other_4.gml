@@ -3,10 +3,12 @@ global.roomTime=0;
 if !visitedRoom(room) ds_list_add(global.visitedRooms,room);
 
 //show layers
-var _l=layer_get_id("bg");
-if _l>-1 layer_set_visible(_l,true);
-_l=layer_get_id("bg2");
-if _l>-1 layer_set_visible(_l,true);
+var _lArr=["bg","bg2","above"];
+for (var i=0;i<array_length(_lArr);i++)
+{
+	var _l=layer_get_id(_lArr[i]);
+	if _l>-1 layer_set_visible(_l,true);
+}
 
 //change music
 if instance_exists(oMusicChange) instance_destroy(oMusicChange);

@@ -390,12 +390,42 @@ function scr_air_1(){
 	global.currentChapter=chapters.air;
 	global.startRoom=rAir;
 	global.timeOfDay=times.day;
-	global.startX=2122;
-	global.startY=1442;
+	global.startX=2262;
+	global.startY=2220;
 	
-	
+	createCutsceneDelay({key:"air_intro1",myRoom: "rAir"});
 	
 	var _jet=-1;
+	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
+	else with oNotdonJet if state==0&&flying _jet=id;
+	with _jet 
+	{
+		image_xscale=1;
+		flying=true;
+		seethroughOverride=1;
+		plyRiding=false;
+		cockpitCheck.key="notdon_jetEmpty";
+		sitMode="";
+		switchRoom(2300,2226,rAir,false,false);
+		if room=rNotdon
+		{
+			plyRiding=hasData("ditch1");
+			image_xscale=-1;
+			flying=true;
+			maxSpd=5;
+			if x<1245 moveCommand="c1_toAirLeft";
+			else moveCommand="c1_toAirRight";
+		}
+	}
+}
+function scr_air_2(){
+	global.notdonEra=notdonEras.present;
+	global.currentChapter=chapters.air;
+	global.startRoom=rAir;
+	global.timeOfDay=times.day;
+	global.startX=2262;
+	global.startY=2220;
+	
 	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
 	else with oNotdonJet if state==0&&flying _jet=id;
 	with _jet 

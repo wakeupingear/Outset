@@ -1,6 +1,6 @@
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
-const float Quality = 32;
+const float Quality = 32.0;
 
 void main()
 {

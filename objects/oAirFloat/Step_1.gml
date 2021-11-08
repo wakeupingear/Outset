@@ -1,8 +1,8 @@
 /// @description 
 if global.alive
 {
-	vars=oscillate(vars,"y",false,true);
-	var _change=round(sin(vars.pos)*amp);
+	oscillate(vars,"y",true,true);
+	var _change=round(y-yprevious);
 	for (var j=0;j<array_length(layers);j++)
 	{
 		var _a=layer_get_all_elements(layers[j]);
@@ -35,6 +35,8 @@ if global.alive
 			case oGrapple:
 				if oGrapple.state>0 moveObj(objList[i],_change);
 				break;
+			case oNotdonJet:
+				if oNotdonJet.flying break; //technically breaks for more than 1 jet
 			default:
 				moveObj(objList[i],_change);
 				break;

@@ -101,11 +101,15 @@ cameraCondition=function(cond){
 findCameraPosition=function(snap){
 	if !instance_exists(followObj) exit;
 	var _x=followObj.x;
-	if followObj.object_index==oPlayerCam&&instance_exists(ply) _x=ply.x;
-	else _x=followObj.x;
+	var _y=followObj.y;
+	if followObj.object_index==oPlayerCam&&instance_exists(ply) 
+	{
+		_x=ply.x;
+		_y=ply.y;
+	}
 	if global.alive for (var i=0;i<array_length(positions);i++)
 	{
-		if _x>positions[i][0]&&followObj.y>positions[i][1]&&_x<positions[i][2]&&followObj.y<positions[i][3]&&cameraCondition(positions[i][6])
+		if _x>positions[i][0]&&_y>positions[i][1]&&_x<positions[i][2]&&_y<positions[i][3]&&cameraCondition(positions[i][6])
 		{
 			setRoomCamera(positions[i]);
 			break;
@@ -113,7 +117,7 @@ findCameraPosition=function(snap){
 	}
 	else for (var i=0;i<array_length(soulPositions);i++)
 	{
-		if _x>soulPositions[i][0]&&followObj.y>soulPositions[i][1]&&_x<soulPositions[i][2]&&followObj.y<soulPositions[i][3]&&cameraCondition(positions[i][6])
+		if _x>soulPositions[i][0]&&_y>soulPositions[i][1]&&_x<soulPositions[i][2]&&_y<soulPositions[i][3]&&cameraCondition(positions[i][6])
 		{
 			setRoomCamera(soulPositions[i]);
 			break;

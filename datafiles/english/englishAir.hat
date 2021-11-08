@@ -1,4 +1,15 @@
 {
+    "air_intro1":[
+        120,
+        "?chet","Emptier than the ARCHIVES on a summer's day!",
+        "$oNotdonJet.xTo",2319,
+        "$oNotdonJet.yTo",1897,
+        60,
+        "$shake",[1,1,10],
+        60,
+        "$script","scr_air_2"
+    ],
+
     "air_donutBox":[
         "$popup",
         {

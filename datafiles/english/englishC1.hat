@@ -459,7 +459,7 @@
     ],
 
     "c1_ditch":[
-        "I ain't waiting! 30 SECONDS TO DECIDE, starting now.",
+        "?chet","I ain't waiting! 30 SECONDS TO DECIDE, starting now.",
         "$cutsceneDelay",{"delay":360,"key":"c1_outtaHere","myRoom":"rNotdon"}
     ],
 

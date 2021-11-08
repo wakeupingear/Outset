@@ -242,6 +242,9 @@ function scrVariables(){
 		
 	addLocation("eugene","rWastesNotdon","wastesWait",809,177,-1,1,"jumping"); //line
 		addLocationPathFrom("eugene","c1_video","rNotdon","wastesWait","rWastesNotdon","simpleT{0,0}");
+	addLocation("eugene","rWastesIntro","wastes_intro",219,128,-1,1); //wastes intro
+	addLocation("eugene","rWastes","wastes_crashed",2026,777,-1,1); //post-parachute
+		addLocationPathFrom("eugene","wastes_intro","rWastesIntro","wastes_crashed","rWastes","simpleT{0,400}");
 	#endregion
 	#region Nora
 	global.characters.nora={portrait: [portNora],diagColor: c_nearWhite,font: fontSizes.notdon};
@@ -316,6 +319,9 @@ function scrVariables(){
 		addLocationPathFrom("charlie","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
 	addLocation("charlie","rNotdon","c1_video",1887,452,1,1,""); //video
 		addLocationPathFrom("charlie","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
+		
+	addLocation("charlie","rWastesIntro","wastes_intro",238,128,-1,1); //wastes intro
+	addLocation("charlie","rWastes","wastes_crashed",2126,777,-1,1); //post-parachute
 	#endregion	
 	#region Matt
 	global.characters.matt={portrait: [portMatt],diagColor: c_nearWhite,font: fontSizes.notdon};
@@ -521,6 +527,7 @@ function scrVariables(){
 		addRoomCamera("rVRUnfinished",956,0,1156,216,960,108); //end of VR chase
 	global.rooms.rHarold.music=musHarold;
 	global.rooms.rWastes.inside=false;
+		addRoomCamera("rWastes",2020,720,2150,1000,2047,828); //starting building
 	global.rooms.rWastesBorder.inside=false;
 	global.rooms.rWastesCrater.inside=false;
 	global.rooms.rWastesHilltop.inside=false;
@@ -662,19 +669,20 @@ function scrVariables(){
 		//addItem("iLavaSwitch");
 		//global.notdonEra=notdonEras.present;
 		scr_c1_5();
+		//scr_air_1();
 		//scr_wastes_1();
 		//scr_wastes_2();
 		//scr_wastes_1();
 		//scr_wastes_2();
 		//scr_pro_2();
-		addData("factoryPower");
+		//addData("factoryPower");
 		/*createCutsceneDelay({
 			key:"c1_5",
 			myRoom:"rNotdon",
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rWastesFactory2;
+		global.startRoom=rNotdon;
 	}
 	#endregion
 	

@@ -34,7 +34,30 @@
         "That wasn't even a lil' bit evasive!",
         "Ohhhhhh. I heard SPECTACULAR MANUEVERS.",
         "EVASIVE AND SPECTACULAR SOUND NOTHING ALIKE, YA TWERP!",
-        "$oNotdonJet.seethroughOverride",-1
+        "$oNotdonJet.seethroughOverride",-1,
+        
+        "$charlie.setRoom",["rWastesIntro","wastes_intro"],
+        "$charlie.createNPC",
+        "$eugene.setRoom",["rWastesIntro","wastes_intro"],
+        "$eugene.createNPC",
+
+        60,
+        "WE GONNA DO SOME JUMPING TODAY! TRUST YOUR BACKPACKS!",
+        60,
+        "$charlie.setRoom",["rWastes","wastes_crashed"],
+        "$eugene.setRoom",["rWastes","wastes_crashed"],
+
+        "$cutsceneDelay",{"delay":180,"key":"wastes_bulletFallCharlie","myRoom":"rWastesBullet"}
+    ],
+    "charlie_wastes_intro":["oh god oh *heck* oh god oh *crud*"],
+
+    "wastes_bulletFallCharlie":[
+        "$particle",[192,-20,"bg2",{
+            "sprite":"sCharlie",
+            "vsp":2,
+            "yscale":-1,
+            "ghost":true
+        }],
     ],
 
     "wastes_bulletFail":[

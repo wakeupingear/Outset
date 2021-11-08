@@ -1,0 +1,1 @@
+canDropSoul=false;

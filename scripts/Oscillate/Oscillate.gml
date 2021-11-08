@@ -14,9 +14,9 @@ function oscillate(vars,axis,reset,onlyAlive){
 	if global.alive||!onlyAlive vars.pos=(vars.pos+vars.step) mod (2*pi);
 	if argument_count>1
 	{
-		change=round(sin(vars.pos)*vars.amp);
-		if axis=="x" x+=change;
-		else if axis=="y" y+=change;
+		vars.change=round(sin(vars.pos)*vars.amp);
+		if axis=="x" x+=vars.change;
+		else if axis=="y" y+=vars.change;
 	}
 	return vars;
 }

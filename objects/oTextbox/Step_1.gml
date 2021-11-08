@@ -24,6 +24,7 @@ if mode>-1&&mode<2
 				}
 			}
 			mode=-1;
+			sentence="";
 		}
 		else if string_copy(sentence,1,5)=="alarm"
 		{
@@ -40,7 +41,7 @@ if mode>-1&&mode<2
 		charWaitList=array_create(string_length(sentence),0); //process pauses and add them to the charWaitList
 		letterStates=array_create(string_length(sentence)+1,0);
 		var _lastState=0;
-		for (var i=1;i<string_length(sentence);i++) 
+		for (var i=1;i<string_length(sentence)+1;i++) 
 		{
 			letterStates[i]=_lastState;
 			var _ch=string_char_at(sentence,i);

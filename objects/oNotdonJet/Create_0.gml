@@ -29,6 +29,15 @@ cockpitCheck.image_xscale=20;
 cockpitCheck.image_yscale=20;
 cockpitCheck.onlyAlive=true;
 
+exhaustPoints=array_create(3,array_create(2,0));
+distortAdded=false;
+distortDraw=function(){
+	for (var i=0;i<array_length(exhaustPoints);i++)
+	{
+		draw_sprite_ext(sNormalCircleSmall,0,exhaustPoints[i][0]-camX(),exhaustPoints[i][1]-camY(),0.5,0.5,(global.roomTime%60)*6,-1,0.1);
+	}
+}
+
 followObjs=[seethrough,hit,cockpitCheck,finGrapple];
 
 chairs=array_create(6);

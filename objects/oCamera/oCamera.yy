@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sCamSize",
-    "path": "sprites/sCamSize/sCamSize.yy",
+    "name": "sCamSizeFrame",
+    "path": "sprites/sCamSizeFrame/sCamSizeFrame.yy",
   },
   "solid": false,
   "visible": false,

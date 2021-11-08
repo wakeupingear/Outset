@@ -33,7 +33,11 @@ if ds_list_size(global.distortObj)>0 //Distortion
 			i--;
 			continue;
 		}
-		with global.distortObj[|i] draw_sprite_ext(sprite_index,image_index,x-camX(),y-camY(),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		with global.distortObj[|i] 
+		{
+			if variable_instance_exists(id,"distortDraw") distortDraw();
+			else draw_sprite_ext(sprite_index,image_index,x-camX(),y-camY(),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+		}
 	}
 	//gpu_set_blendmode(bm_subtract);
 	//with ply draw_sprite(sprite_index,image_index,x-camX(),y-camY());

@@ -160,7 +160,7 @@ draw=function(edgeX,edgeY){
 	draw_sprite_ext(sTextbox,2,edgeX,edgeY+6+round((1-barAlpha)*48)-sin(barPos*2*pi)*3,1,1,0,c_nearBlack,global.hudAlpha);
 	draw_sprite_ext(sTextbox,2,edgeX,edgeY-251+round(barAlpha*48)+sin(barPos*2*pi)*3,1,1,0,c_nearBlack,global.hudAlpha);
 
-	if sprite_index==sTextbox
+	if sprite_index==sTextbox&&global.lightAlpha==0
 	{
 		draw_sprite_ext(sprite_index,0,x,y,1,1,0,global.hudColorList[global.hudColor],image_alpha*global.hudAlpha);
 		draw_sprite_ext(sprite_index,1,x,y,1,1,0,-1,image_alpha);

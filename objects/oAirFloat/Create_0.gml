@@ -7,8 +7,7 @@ for (var i=0;i<array_length(_a);i++)
 		array_push(layers,_a[i]);
 	}
 }
-amp=1;
-vars=new oscillateVars(4,amp);
+vars=new oscillateVars(6,2);
 
 objList=[ply,oAirShip,oGrapple,
 	oNotdonJet

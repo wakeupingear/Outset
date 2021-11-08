@@ -209,6 +209,16 @@ function groundCollision(_x,_y,_coll,float){
 }
 
 function grapplePhysics(){
+	if (x%1!=0)
+	{
+		x=ceil(x);
+		if groundCollision(x,y) x--;
+	}
+	if (y%1!=0)
+	{
+		y=ceil(y);
+		if groundCollision(x,y) y--;
+	}
 	if oGrapple.xDir!=0&&!groundCollision(x+oGrapple.xDir,y) xscale=oGrapple.xDir;
 	if oGrapple.grappleMode==grappleState.pull
 	{

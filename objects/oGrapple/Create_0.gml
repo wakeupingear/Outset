@@ -101,9 +101,9 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 	if ply.state==moveState.floating exit;
 	xDir=0;
 	yDir=0;
-	x=ply.x;
+	x=round(ply.x);
 	grapplePlyXoff=0;
-	y=ply.y+grapplePlyYoff;
+	y=round(ply.y)+grapplePlyYoff;
 	var _onGround=(ply.state<=moveState.running||ply.state==moveState.zipline);
 	if buttonPressed(control.grapple)&&(buttonHold(control.up)||buttonHold(control.down))&&!_onGround&&(place_meeting(x,y,grappleHit)||place_meeting(x,y+ply.vsp*2,grappleHit))
 	{
@@ -308,7 +308,7 @@ else if state<0 //reset
 	}
 	
 	var _dist=distance_to_object(ply);
-	var _rSpd=4.5+0.5*(_dist>72)+0.5*(_dist>192);
+	var _rSpd=5+1*(_dist>64)+1*(_dist>192);
 	y-=(abs(grappleAngle-180)<45);
 	while _rSpd>0&&ds_list_size(points)>0
 	{

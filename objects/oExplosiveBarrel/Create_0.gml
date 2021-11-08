@@ -8,3 +8,4 @@ radius=0;
 flashTime=40;
 flash=true;
 finalRad=sprite_get_width(sBarrelRadius)/2;
+angle=0;

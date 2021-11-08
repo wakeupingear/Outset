@@ -11,7 +11,7 @@ xDir=0;
 yDir=0;
 
 hsp=0;
-vsp=-5;
+vsp=0;
 myHealth=99;
 state=moveState.falling;
 
