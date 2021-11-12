@@ -32,11 +32,11 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Children",
-    "path": "folders/FTF_Free_The_Filters/Objects/Children.yy",
+    "name": "Stackable",
+    "path": "folders/FTF_Free_The_Filters/Objects/Children/Stackable.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_FTF_UnderWater",
+  "name": "obj_FTF_underWater",
   "tags": [],
   "resourceType": "GMObject",
 }

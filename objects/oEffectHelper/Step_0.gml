@@ -18,7 +18,7 @@ for (var i=0;i<ds_list_size(lerpList);i++)
 	{
 		case "alpha":
 			_obj.image_alpha=_newVal;
-			if (_arr[5]>=1&&obj.image_alpha==0) instance_destroy(obj); //disappear
+			//if (_arr[5]>=1&&_obj.image_alpha==0) instance_destroy(_obj); //disappear
 			break;
 		case "xscale":
 			_obj.image_xscale=_newVal;

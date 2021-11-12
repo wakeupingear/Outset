@@ -24,8 +24,14 @@
 	
 	shader         = noone;
 	surface        = noone;
+	
+	var _w = camera_get_view_width(view_camera[0]);
+	var _h = camera_get_view_height(view_camera[0]);
+	surface_resize(application_surface, 
+				   _w,
+				   _h);
 				   
-	surface_width  = 384;
-	surface_height = 216;
+	surface_width  = _w;
+	surface_height = _h;
 
 #endregion

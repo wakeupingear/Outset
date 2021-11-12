@@ -129,6 +129,8 @@ function scrVariables(){
 	global.souldropCollect=ds_list_create(); //format: unique coin id
 	
 	global.distortObj=ds_list_create();
+	global.distortObjAberrate=ds_list_create();
+	distortModes=[global.distortObjAberrate,global.distortObj];
 	
 	global.scanList=ds_list_create(); //format: id
 	global.scanProgress=ds_map_create(); //formate: region -> count

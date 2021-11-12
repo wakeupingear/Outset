@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_FTF_blank_panel",
-    "path": "sprites/spr_FTF_blank_panel/spr_FTF_blank_panel.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -32,8 +29,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Children",
-    "path": "folders/FTF_Free_The_Filters/Objects/Children.yy",
+    "name": "Stackable",
+    "path": "folders/FTF_Free_The_Filters/Objects/Children/Stackable.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_FTF_blur",

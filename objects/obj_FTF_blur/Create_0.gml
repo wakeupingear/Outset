@@ -9,7 +9,7 @@
 	#region Pass_Uniforms
 	
 		Pass_Uniforms = function(){
-			var _sampler = shader_get_sampler_index(shader, "g_NoiseTexture");
+			/*var _sampler = shader_get_sampler_index(shader, "g_NoiseTexture");
 			var _texture = sprite_get_texture(sprite_noise, 0);			
 			texture_set_stage(_sampler, _texture);
 			
@@ -19,7 +19,8 @@
 			shader_set_uniform_f_array(U_SurfaceDimensions, [surface_width,
 												             surface_height]);
 												
-			shader_set_uniform_f(U_radius, radius);
+			shader_set_uniform_f(U_radius, radius);*/
+			shader_set_uniform_f(U_quality,floor(quality));
 		}
 	
 	#endregion
@@ -28,15 +29,18 @@
 
 #region declarations
 	
-	shader              = shd_large_blur_shader;
-	radius              = desired_radius;
-	U_SurfaceDimensions = shader_get_uniform(shader, "gm_pSurfaceDimensions");
-	U_textureDimensions = shader_get_uniform(shader, "g_NoiseTextureDimensions");
-	U_radius            = shader_get_uniform(shader, "g_Radius");
+	shader              = shd_blur;
+	//radius              = desired_radius;
+	//U_SurfaceDimensions = shader_get_uniform(shader, "gm_pSurfaceDimensions");
+	//U_textureDimensions = shader_get_uniform(shader, "g_NoiseTextureDimensions");
+	//U_radius            = shader_get_uniform(shader, "g_Radius");
+	U_quality            = shader_get_uniform(shader, "u_quality");
 	
-	sprite_noise        = spr_FTF_blurNoise;
+	quality=8;
+	
+	/*sprite_noise        = spr_FTF_blurNoise;
 	if(sprite_exists(desired_sprite_noise)){
 		sprite_noise = desired_sprite_noise;	
-	}
+	}*/
 	
 #endregion

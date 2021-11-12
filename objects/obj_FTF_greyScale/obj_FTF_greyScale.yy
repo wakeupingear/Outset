@@ -33,8 +33,8 @@
     {"propertyId":{"name":"parent_FTF","path":"objects/parent_FTF/parent_FTF.yy",},"objectId":{"name":"parent_FTF","path":"objects/parent_FTF/parent_FTF.yy",},"value":"_filter_greyscale_shader","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Children",
-    "path": "folders/FTF_Free_The_Filters/Objects/Children.yy",
+    "name": "Stackable",
+    "path": "folders/FTF_Free_The_Filters/Objects/Children/Stackable.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_FTF_greyScale",

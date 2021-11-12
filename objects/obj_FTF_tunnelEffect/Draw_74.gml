@@ -17,8 +17,8 @@
 
 #region declarations
 
-	var _camX = camX();
-	var _camY = camY();
+	var _camX = camera_get_view_x(view_camera[0]);
+	var _camY = camera_get_view_y(view_camera[0]);
 
 #endregion
 
@@ -35,7 +35,14 @@
 	shader_set(shader);
 	
 		Pass_Uniforms();		
-			draw_surface_part_ext(surface, 0,0, 384, 216,_camX,_camY, 1, 1, c_white, image_alpha);
+			draw_surface_ext(surface, 
+						     _camX, 
+							 _camY, 
+							 1, 
+							 1, 
+							 image_angle, 
+							 c_white, 
+							 image_alpha);
 			
 	shader_reset();
 

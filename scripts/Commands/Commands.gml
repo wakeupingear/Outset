@@ -570,10 +570,11 @@ function commandProcess(command){
 							break;
 						//mechanics
 						case "particle":
-							var _oInd=oParticle;
-							if variable_struct_exists(_val[3],"distort") _oInd=oParticleDistort;
-							lastObj=instance_create_depth(tCoord(_val[0]),tCoord(_val[1]),layer_get_depth(layer_get_id(_val[2])),_oInd);
-							setObjFromStruct(lastObj,_val[3]);
+							//var _oInd=oParticle;
+							//if variable_struct_exists(_val[3],"distort") _oInd=oParticleDistort;
+							//lastObj=instance_create_depth(tCoord(_val[0]),tCoord(_val[1]),layer_get_depth(layer_get_id(_val[2])),_oInd);
+							//setObjFromStruct(lastObj,_val[3]);
+							lastObj=particle(tCoord(_val[0]),tCoord(_val[1]),layer_get_depth(layer_get_id(_val[2])),empty,0,_val[3]);
 							break;
 						case "projectile":
 							lastObj=projectile(tCoord(_val[0]),tCoord(_val[1]),_val[2],_val[3]);

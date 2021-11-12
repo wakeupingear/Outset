@@ -1,2 +1,2 @@
 /// @description Remove obj
-ds_list_deleteValue(global.distortObj,id);
+ds_list_deleteValue(list,id);

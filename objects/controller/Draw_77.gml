@@ -20,42 +20,49 @@ if instance_exists(ply)
 	_py=ply.y;
 }
 
-if ds_list_size(global.distortObj)>0 //Distortion
+for (var j=0;j<array_length(distortModes);j++)
 {
-	if !surface_exists(distSurf) distSurf=surface_create(384,216)
-	surface_set_target(distSurf);
-	draw_clear_alpha(COLOUR_FOR_NO_MOVE,0);
-	for (var i=0;i<ds_list_size(global.distortObj);i++)
+	var _l=distortModes[j];
+	if ds_list_size(_l)>0 //Distortion
 	{
-		if !instance_exists(global.distortObj[|i])
+		if !surface_exists(distSurf) distSurf=surface_create(384,216)
+		surface_set_target(distSurf);
+		draw_clear_alpha(COLOUR_FOR_NO_MOVE,0);
+		for (var i=0;i<ds_list_size(_l);i++)
 		{
-			ds_list_delete(global.distortObj,i);
-			i--;
-			continue;
+			if !instance_exists(_l[|i])
+			{
+				ds_list_delete(_l,i);
+				i--;
+				continue;
+			}
+			with _l[|i] 
+			{
+				if variable_instance_exists(id,"distortDraw") distortDraw();
+				else draw_sprite_ext(sprite_index,image_index,x-camX(),y-camY(),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+			}
 		}
-		with global.distortObj[|i] 
-		{
-			if variable_instance_exists(id,"distortDraw") distortDraw();
-			else draw_sprite_ext(sprite_index,image_index,x-camX(),y-camY(),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-		}
-	}
-	//gpu_set_blendmode(bm_subtract);
-	//with ply draw_sprite(sprite_index,image_index,x-camX(),y-camY());
-	//gpu_set_blendmode(bm_normal);
-	//if instance_exists(ply) draw_sprite(sNormalRipple,0,ply.x-camX(),ply.y-camY());
-	surface_reset_target();
+		//gpu_set_blendmode(bm_subtract);
+		//with ply draw_sprite(sprite_index,image_index,x-camX(),y-camY());
+		//gpu_set_blendmode(bm_normal);
+		//if instance_exists(ply) draw_sprite(sNormalRipple,0,ply.x-camX(),ply.y-camY());
+		surface_reset_target();
 
-	var surface_texture_page=surface_get_texture(distSurf);
-	shader_set(shd_distort);
-	texture_set_stage(distortion_stage, surface_texture_page);
-	surface_set_target(postProcessSurf);
-	draw_surface(application_surface,0,0);
-	shader_reset();
-	//draw_surface(distSurf,0,0)
-	removePPPart();
-	//with ply draw_sprite(sprite_index,image_index,x-camX(),y-camY());
+		var surface_texture_page=surface_get_texture(distSurf);
+		shader_set(shd_distort);
+		shader_set_uniform_f(shader_get_uniform(shd_distort,"OffsetX"),14/384);
+		shader_set_uniform_f(shader_get_uniform(shd_distort,"OffsetX"),14/384);
+		shader_set_uniform_f(shader_get_uniform(shd_distort,"aberration"),_l==global.distortObjAberrate);
+		texture_set_stage(distortion_stage, surface_texture_page);
+		surface_set_target(postProcessSurf);
+		draw_surface(application_surface,0,0);
+		shader_reset();
+		//draw_surface(distSurf,0,0)
+		removePPPart();
+		//with ply draw_sprite(sprite_index,image_index,x-camX(),y-camY());
+	}
+	else if j==array_length(distortModes)-1 surface_free(distSurf);
 }
-else surface_free(distSurf);
 if !global.alive&&instance_exists(ply)&&abs(ply.x-(camX()+192))<300&&abs(ply.y-(camY()+108))<200
 {
 	if deathGlowProg<1 deathGlowProg+=0.05;

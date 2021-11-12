@@ -22,7 +22,7 @@ function checkSouldrop(){
 			isBG: true, xLerp:1, yLerp:1, xOff: controller.getHudX(), yOff: 24
 		});
 		particle(x,y,controller.depth,sNormalRipple,0,{
-			distort: true,xscale:0.05,yscale:0.05,xscaleSpd:0.035,yscaleSpd:0.035,
+			distort: true,aberration: false,xscale:0.05,yscale:0.05,xscaleSpd:0.035,yscaleSpd:0.035,
 			fade:0.025,alpha:3,alwaysMove: true,
 			isBG: true, xLerp:1, yLerp:1, xOff: controller.getHudX(), yOff: 24
 		});

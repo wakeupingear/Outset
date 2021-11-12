@@ -25,17 +25,18 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":74,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
-  "properties": [
-    {"varType":0,"value":"4","rangeEnabled":true,"rangeMin":1.0,"rangeMax":32.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"desired_color_level","tags":[],"resourceType":"GMObjectProperty",},
-  ],
+  "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Stackable",
-    "path": "folders/FTF_Free_The_Filters/Objects/Children/Stackable.yy",
+    "name": "Post_prod(don't work with each other)",
+    "path": "folders/FTF_Free_The_Filters/Objects/Children/Post_prod(don't work with each other).yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_FTF_posterize",
+  "name": "obj_FTF_tunnelEffect",
   "tags": [],
   "resourceType": "GMObject",
 }

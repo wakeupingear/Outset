@@ -1,9 +1,13 @@
 function particle(x,y,depth,sprite,ind,struct){
 	var _objInd=oParticle;
-	if variable_struct_exists(struct,"distort") _objInd=oParticleDistort;
+	if variable_struct_exists(struct,"distort") 
+	{
+		_objInd=oParticleDistort;
+	}
 	var _p=instance_create_depth(x,y,depth,_objInd);
 	_p.sprite_index=sprite;
 	_p.image_index=ind;
+	if variable_struct_exists(struct,"aberration") _objInd.list=global.distortObj;
 	setObjFromStruct(_p,struct);
 	if variable_struct_exists(struct,"isHit") 
 	{
