@@ -20,16 +20,16 @@ if active
 	if selected
 	{
 		controller.pauseMenuSelection=id;
-		if buttonPressed(control.down)
+		if buttonPressedRepeat(control.down)
 		{
-			buttonFreeze(control.down);
+			buttonIncrement(control.down);
 			selected=false;
 			next.selected=true;
 			oCursor.x=-100;
 		}
-		else if buttonPressed(control.up)
+		else if buttonPressedRepeat(control.up)
 		{
-			buttonFreeze(control.up);
+			buttonIncrement(control.up);
 			selected=false;
 			previous.selected=true;
 			oCursor.x=-100;
@@ -99,7 +99,7 @@ if active
 			
 			if type=="slider"
 			{
-				var _dir=(buttonPressed(control.right)-buttonPressed(control.left));
+				var _dir=(buttonPressedRepeat(control.right)-buttonPressedRepeat(control.left));
 				var _selected=(buttonPressed(control.confirm)||buttonPressed(control.grapple));
 				if (_dir==1&&choice<struct.endPos)||(_dir==-1&&choice>struct.startPos)||_selected
 				{

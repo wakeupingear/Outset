@@ -20,7 +20,7 @@ if instance_exists(ply)
 	_py=ply.y;
 }
 
-for (var j=0;j<array_length(distortModes);j++)
+if global.notPause||pauseMenuCopied==-1 for (var j=0;j<array_length(distortModes);j++) //make sure distortions aren't processed when the instances are deactivated
 {
 	var _l=distortModes[j];
 	if ds_list_size(_l)>0 //Distortion

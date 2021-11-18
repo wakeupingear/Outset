@@ -23,6 +23,8 @@ void main()
     if (distort_amount.y > 0.5) {distort_amount.y -= 1.0;}// wrap around
     distort_amount /= 7.0;
 	
+	if (distort_amount.x==0.0&&distort_amount.y==0.0) return;
+	
 	if (aberration)
 	{
 		float prog=max(abs(distort_amount.x),abs(distort_amount.y))*80.0*distort_data.a;//sqrt(pow(distort_amount.x,2.0)+pow(distort_amount.y,2.0));
@@ -44,10 +46,13 @@ void main()
 			vecB.y = mod(vecB.y, 1.0);
 
 
-	    gl_FragColor = vec4(texture2D(gm_BaseTexture, vecR).r, 
+			gl_FragColor = vec4(texture2D(gm_BaseTexture, vecR).r, 
 								texture2D(gm_BaseTexture, vecG).g, 
 								texture2D(gm_BaseTexture, vecB).b, 
-								distort_data.a);
+								1.0);
 	}
-	else gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord+distort_amount*distort_data.a);
+	else 
+	{
+		gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord+distort_amount*distort_data.a);
+	}
 }

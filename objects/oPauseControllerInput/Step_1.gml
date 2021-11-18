@@ -25,7 +25,7 @@ if !destroy
 				var _id=inputs[_dir][mode];
 				selected=false;
 				with oPauseControllerInput if pos==_id selected=true;
-				buttonFreeze(_dir);
+				buttonIncrement(_dir);
 			}
 		}
 	}

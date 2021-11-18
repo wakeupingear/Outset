@@ -23,6 +23,7 @@ function scrVariables(){
 	ds_map_add(global.accessibility,"camShake",global.shakeFactor);
 	ds_map_add(global.accessibility,"vsync",(!isDev&&!isTest)||isLinux);
 	ds_map_add(global.accessibility,"blackBars",true);
+	ds_map_add(global.accessibility,"flashes",true);
 	#endregion
 	
 	global.data =ds_map_create(); //dump misc values here

@@ -10,6 +10,13 @@ function buttonHold(input){
 	return false;
 }
 
+function buttonPressedRepeat(input,holdTime,startOffset){
+	if is_undefined(holdTime) holdTime=7;
+	if is_undefined(startOffset) startOffset=15;
+	var _i=global.inputs[input];
+	return _i>0&&(_i==1||(_i>startOffset&&(_i-startOffset)%holdTime==0));
+}
+
 function buttonReleased(input){
 	return (global.inputs[input]==0&&global.lastInputs[input]>0);
 }
@@ -22,15 +29,19 @@ function anyButtonPressed(){
 function buttonFreeze(input){
 	global.inputs[input]=-1;
 }
+function buttonIncrement(input,amount){
+	if is_undefined(amount) amount=1;
+	global.inputs[input]++;
+}
 
 function buttonDoublePressed(input){
 	return buttonPressed(input)&&global.doubleInput[input]>0;
 }
 
-function getKeyDir(){
-	if buttonPressed(control.up) return control.up;
-	if buttonPressed(control.down) return control.down;
-	if buttonPressed(control.left) return control.left;
-	if buttonPressed(control.right) return control.right;
+function getKeyDir(holdTime,startOffset){
+	if buttonPressedRepeat(control.up,holdTime,startOffset) return control.up;
+	if buttonPressedRepeat(control.down,holdTime,startOffset) return control.down;
+	if buttonPressedRepeat(control.left,holdTime,startOffset) return control.left;
+	if buttonPressedRepeat(control.right,holdTime,startOffset) return control.right;
 	return -1;
 }

@@ -211,7 +211,7 @@
         "musicVol": {"name":"Music Volume","type":"slider","startPos":0,"endPos":1,"tick":0.1},
         "sfxVol": {"name":"Effects Volume","type":"slider","startPos":0,"endPos":1,"tick":0.1},
         "fullscreen": {"name":"Fullscreen","type":"toggle"},
-        "camShake": {"name":"Screen Shake","type":"slider","startPos":0,"endPos":2,"tick":0.1},
+        "camShake": {"name":"Screen Shake","type":"slider","startPos":0,"endPos":3,"tick":0.1},
         "vsync": {"name":"Vsync","type":"toggle"},
         "interactText": {"name":"Interaction Prompts","type":"toggle"},
         "highlightPlayer": {"name":"Highlight Player","type":"toggle"},
