@@ -671,7 +671,7 @@ function scrVariables(){
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
 		//global.notdonEra=notdonEras.present;
-		scr_c1_5();
+		scr_pro_2();
 		//scr_air_1();
 		//scr_wastes_1();
 		//scr_wastes_2();

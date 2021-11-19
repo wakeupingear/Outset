@@ -4,7 +4,7 @@ if alarm[0]==-1&&!touch&&instance_exists(ply)&&ply.state!=moveState.floating&&pl
 	touch=true;
 	shake(1,1,10);
 	rumbleStart(rumbleType.heavyPulse);
-	particle(x,y,depth+1,sNormalRipple,0,{distort: true,xscale:0.05,yscale:0.05,xscaleSpd:0.035,yscaleSpd:0.035,fade:0.025,alpha:2,alwaysMove: true});
+	particle(x,y,depth+1,sNormalRipple,0,{distort: true,xscale:0.05,yscale:0.05,xscaleSpd:0.035,yscaleSpd:0.035,fade:0.015,alpha:1.3,alwaysMove: true});
 	alarm[0]=40;
 	if global.alive
 	{

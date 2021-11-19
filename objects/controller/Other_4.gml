@@ -88,6 +88,10 @@ switch room //room specific elements
 		instance_create_layer(0,0,"bg",oOvercast);
 		var _o=instance_create_layer(0,0,"bg",oOvercast);
 		_o.image_index=1;
+		instance_create_depth(0,0,layer_get_depth(layer_get_id("behindMyko"))+1,oSmokeBG);
+		oSmokeBG.xLerp=0.3;
+		oSmokeBG.yLerp=0.3;
+		instance_create_depth(0,0,layer_get_depth(layer_get_id("behindMyko"))+2,oSmokeBG);
 		break;
 	case rWastesNotdon:
 	case rNotdonWell:

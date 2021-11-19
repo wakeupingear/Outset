@@ -1,15 +1,12 @@
 {
-  "spriteId": {
-    "name": "sSkyNotdon",
-    "path": "sprites/sSkyNotdon/sSkyNotdon.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oSky",
-    "path": "objects/oSky/oSky.yy",
+    "name": "oBackground",
+    "path": "objects/oBackground/oBackground.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -24,16 +21,18 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Outset",
-    "path": "Outset.yyp",
+    "name": "background",
+    "path": "folders/Objects/background.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oSkyNotdon",
+  "name": "oSmokeBG",
   "tags": [],
   "resourceType": "GMObject",
 }
