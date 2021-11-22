@@ -23,6 +23,7 @@ audio_group_load(audiogroup_sounds);
 audio_group_load(audiogroup_music);
 
 #macro isDev (os_get_config()=="Dev")
+
 #macro isNewFile (os_get_config()=="NewFile")
 #macro isTest (os_get_config()=="Testing")
 #macro isHtml (os_browser!=browser_not_a_browser)
@@ -208,12 +209,28 @@ setTileAnimations=function(on){
 	}
 }
 
+hudResolution=[[1280,720],[1920,1080],[2560,1440],[3840,2160]];
+setHudSize=function(){
+	if array_length(global.fonts[global.guiScale])==0 
+	{
+		global.guiScale=2; //default to 1440p if fonts aren't added
+		global.accessibility[? "guiScale"]=global.guiScale;
+	}
+	display_set_gui_size(hudResolution[global.guiScale][0],hudResolution[global.guiScale][1]);
+}
+setDefaultHudSize=function(){
+	global.guiScale=array_length(hudResolution)-1; //clamp(round(3*display_get_height()/1080),3,6)-3;
+	while global.guiScale>0&&hudResolution[global.guiScale][1]>display_get_height() global.guiScale--; //scale down
+	if global.guiScale<array_length(hudResolution)-1&&display_get_height()>hudResolution[global.guiScale][1] global.guiScale++; //scale up to next highest for taller aspect ratios
+}
+
 scrVariables();
 loadPrefs();
 save("TEMPLATE"); //template of default variable data - used when creating new save files
 setFont(fontSizes.medium);
 instance_create_depth(0,0,depth-1,oMouse);
 fileLoadMap=-1;
+
 fileLoadBuffers=-1;
 
 //hud alpha

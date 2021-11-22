@@ -42,7 +42,11 @@ function respawn(xPos,yPos){
 	_p.xscale=_xs;
 	_p.yscale=_ys;
 		
-	if hasData("reacSt") instance_activate_object(oSouldropCoin);
+	if hasData("reacSt") 
+	{
+		instance_activate_object(oSouldropCoin);
+		ds_list_add(global.distortObj,oSouldropCoin);
+	}
 	
 	with controller setTileAnimations(true);
 }

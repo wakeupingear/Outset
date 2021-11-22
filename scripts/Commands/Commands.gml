@@ -348,7 +348,7 @@ function commandProcess(command){
 							if !is_array(_val) _obj.image_yscale=_val;
 							else
 							{
-								animateProperty(_obj,"yscale",TwerpType.linear,_obj.image_xscale,_val[0],_val[1],true);
+								animateProperty(_obj,"yscale",TwerpType.linear,_obj.image_yscale,_val[0],_val[1],true);
 							}
 							break;
 						case "startAnimation":

@@ -169,6 +169,11 @@
         "You feel a sense of pride and accomplishment."
     ],
 
+    "textbox_question":[
+        "Yes",
+        "No"
+    ],
+
     "pauseMenu": {
         "menu1":{
             "type":"menu",
@@ -192,10 +197,10 @@
             "entries":[
                 "fullscreen",
                 "guiScale",
-                "hudAlpha",
                 "camShake",
-                "blackBars",
                 "vsync",
+                "blackBars",
+                "saveIcon",
                 "guiSide"
             ]
         },
@@ -205,7 +210,8 @@
                 "flashes",
                 "highlightPlayer",
                 "highlightHook",
-                "highlightNPC"
+                "highlightNPC",
+                "hudAlpha"
             ]
         },
         "musicVol": {"name":"Music Volume","type":"slider","startPos":0,"endPos":1,"tick":0.1},
@@ -217,13 +223,14 @@
         "highlightPlayer": {"name":"Highlight Player","type":"toggle"},
         "highlightHook": {"name":"Highlight Grappling Hook","type":"toggle"},
         "highlightNPC": {"name":"Highlight NPCs","type":"toggle"},
-        "guiScale": {"name":"Resolution","type":"special"},
+        "guiScale": {"name":"HUD Resolution","type":"slider","labels":["HD (720p)","FHD (1080p)","QHD (1440p)","UHD (2160p)"]},
         "guiSide": {"name":"HUD Side","type":"toggle","labels":["Left","Right"]},
         "hudAlpha": {"name":"HUD Transparency","type":"slider","startPos":0,"endPos":1,"tick":0.1},
         "flashes": {"name":"Bright Flashes","type":"toggle"},
         "quitTitle": {"name":"Quit to Title","type":"special"},
         "quitDesktop": {"name":"Quit to Desktop","type":"special"},
-        "blackBars": {"name":"Cutscene Letterboxing","type":"toggle"}
+        "blackBars": {"name":"Cutscene Letterboxing","type":"toggle"},
+        "saveIcon": {"name":"Save Icon","type":"toggle"}
     },
     "controls":[
         "Up",

@@ -15,6 +15,7 @@ if active&&image_index==0
 			shake(1,1,10);
 			_o.goingFast=true;
 			_o.justLaunched=true;
+			_o.state=moveState.jumping;
 		}
 	}
 }

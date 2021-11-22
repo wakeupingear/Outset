@@ -136,7 +136,26 @@ with oGrapple if active step();
 //movement
 var _startHsp=hsp;
 var _startVsp=vsp;
-if state==moveState.ladder||state==moveState.ladderMove ladderPhysics();
+if reverse
+{
+	state=moveState.floating;
+	repeat 2
+	{
+		var _s=ds_stack_size(lastCoord);
+		if _s==0
+		{
+			state=moveState.falling;
+			reverse=false;
+			break;
+		}
+		var _arr=ds_stack_top(lastCoord);
+		x=_arr[0];
+		y=_arr[1];
+		image_index=_arr[2];
+		ds_stack_pop(lastCoord);
+	}
+}
+else if state==moveState.ladder||state==moveState.ladderMove ladderPhysics();
 else 
 {
 	if !instance_exists(oGrapple)||(oGrapple.state<2||oGrapple.grappleMode==grappleState.arc) physics();
@@ -150,6 +169,13 @@ else
 		vsp=0;
 		if groundCollision(x,y) while groundCollision(x,y) y--;
 	}
+	
+	if state==moveState.standing||state==moveState.running||state==moveState.pulling
+	{
+		ds_stack_clear(lastCoord);
+		ds_stack_push(lastCoord,[x,y,image_index]); //the last standing location
+	}
+	else if state!=moveState.floating ds_stack_push(lastCoord,[x,y,image_index]);
 }
 
 //check collision

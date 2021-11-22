@@ -14,3 +14,7 @@ if !global.alive instance_deactivate_object(id);
 drawLight=function(){
 	draw_circle(x-camX()-1,y-camY()-1,15+(ystart-y)/3,false);
 }
+
+distortDraw=function(){
+	draw_sprite_ext(sNormalCircleSmall,0,x-camX(),y-camY(),0.5,0.5,-(global.roomTime%100)/100*360,-1,0.5);
+}

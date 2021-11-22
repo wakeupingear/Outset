@@ -1,3 +1,5 @@
+if !option("saveIcon") instance_destroy();
+
 image_speed=0;
 alarm[0]=1;
 

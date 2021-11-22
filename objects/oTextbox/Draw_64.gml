@@ -37,14 +37,32 @@ if textUpdated&&alarm[0]==-1&&sentence!=""
 		}
 		else
 		{
-			var _d=instance_create_depth(newLetterX,newLetterY,depth-1,oDiagLetter);
-			_d.letter=_let;
-			_d.letterState=letterStates[newLetterInd+1];
-			newLetterX+=string_width(_let);
+			createLetter(_let);
 		}
 		newLetterInd++;
 	}
 	textUpdated=false;
+	
+	if mode==2&&question
+	{
+		textboxQuestionLetters=[[],[]];
+		newLetterY+=string_height("f");
+		newLetterX=toGuiX(camX()+64)-round(string_width(textboxQuestionData[0])/2);
+		textboxQuestionX[0]=floor(newLetterX/guiX());
+		confirmIcon.x=textboxQuestionX[questionChoice];
+		for (var i=0;i<string_length(textboxQuestionData[0]);i++) 
+		{
+			var _l=createLetter(string_char_at(textboxQuestionData[0],i+1),textState.bold);
+			array_push(textboxQuestionLetters[0],_l);
+		}
+		newLetterX=toGuiX(camX()+216)-round(string_width(textboxQuestionData[1])/2);
+		textboxQuestionX[1]=floor(newLetterX/guiX());
+		for (var i=0;i<string_length(textboxQuestionData[1]);i++)
+		{
+			var _l=createLetter(string_char_at(textboxQuestionData[1],i+1),textState.normal);
+			array_push(textboxQuestionLetters[1],_l);
+		}
+	}
 }
 
 //draw everything
@@ -77,6 +95,12 @@ with oDiagLetter
 	
 	if letterState==textState.bold||letterState==textState.boldVibrate draw_text_outline_transformed_color(_xPos+_x,_yPos+_y,letter,c_white,c_white,image_alpha,c_nearBlack,c_nearBlack,image_alpha,8,16,1,1,0);
 	else draw_text_color(_xPos+_x,_yPos+_y,letter,c_white,c_white,c_white,c_white,image_alpha);
+}
+if question
+{
+	gpu_set_blendmode(bm_subtract);
+	drawIcon(0,guiX(),0,guiY());
+	gpu_set_blendmode(bm_normal);
 }
 surface_reset_target();
 draw_set_alpha(1);

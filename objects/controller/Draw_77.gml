@@ -36,7 +36,11 @@ if global.notPause||pauseMenuCopied==-1 for (var j=0;j<array_length(distortModes
 				i--;
 				continue;
 			}
-			with _l[|i] 
+			if _l[|i]==oSouldropCoin
+			{
+				with oSouldropCoin distortDraw();
+			}
+			else with _l[|i] 
 			{
 				if variable_instance_exists(id,"distortDraw") distortDraw();
 				else draw_sprite_ext(sprite_index,image_index,x-camX(),y-camY(),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
@@ -63,6 +67,7 @@ if global.notPause||pauseMenuCopied==-1 for (var j=0;j<array_length(distortModes
 	}
 	else if j==array_length(distortModes)-1 surface_free(distSurf);
 }
+
 if !global.alive&&instance_exists(ply)&&abs(ply.x-(camX()+192))<300&&abs(ply.y-(camY()+108))<200
 {
 	if deathGlowProg<1 deathGlowProg+=0.05;
@@ -117,6 +122,10 @@ gpu_set_blendenable(true);
 
 //draw hud
 surface_set_target(application_surface);
+
+//draw souldrop
+with oSouldropCoin draw_sprite(sprite_index,image_index,x-camX(),y-camY());
+
 //draw transition
 if instance_exists(oTransition)
 {
@@ -158,6 +167,7 @@ if !global.notPause
 gpu_set_blendenable(false);
 var _x=0;
 var _y=0;
+draw_surface_ext(application_surface, _x*_scX, _y*_scY, _scX,_scY, 0, c_white, 1); //under shake
 if instance_exists(oCamera) //fix camera shake
 {
 	_x=oCamera.shakeRandX;

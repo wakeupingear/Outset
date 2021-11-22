@@ -47,6 +47,7 @@ barAlpha=(global.roomTime<4);
 question=false;
 questionNum=0;
 questionChoice=0;
+lastQuestionChoice=0;
 
 portOverride=false;
 fontOverride=false;
@@ -134,10 +135,21 @@ resetCharacterTestVars=function(){
 	}
 }
 
+confirmIcon=noone;
+
 resetCharacterTestVars();
 
 portYOff=4;
 barPos=0;
+blackBars=true;
+drawIcon=function(_x,_xS,_y,_yS){
+	if !question with confirmIcon draw_sprite_ext(sprite_index,image_index,(oTextbox.x+324+_x)*_xS,(oTextbox.y+60+_y)*_yS,image_xscale*_xS,image_yscale*_yS,image_angle,image_blend,image_alpha);
+	else 
+	{
+		with confirmIcon draw_sprite_ext(sprite_index,image_index,(oTextbox.x+48+x+_x)*_xS,(oTextbox.y+26+round(oTextbox.newLetterY/guiY())+_y)*_yS,image_xscale*_xS,image_yscale*(1+(xprevious!=x)*sqrt(abs(xprevious-x)*0.1))*_yS,image_angle,image_blend,image_alpha);
+		if _xS!=1 printCoords(_xS,_yS)
+	}
+}
 draw=function(edgeX,edgeY){
 	x=edgeX+(1-image_alpha)*64*(!global.hudSide-global.hudSide);
 	y=edgeY+132*(!top);
@@ -147,7 +159,7 @@ draw=function(edgeX,edgeY){
 
 	//bars
 	if instance_exists(oVRBluescreen)||instance_exists(oVRXPError)||!option("blackBars") barAlpha=0;
-	else if instance_exists(oPopup)||mode<0
+	else if instance_exists(oPopup)||mode<0||!blackBars
 	{
 		if barAlpha>0 barAlpha-=0.1;
 		if barPos>0 barPos-=0.1;
@@ -179,4 +191,31 @@ draw=function(edgeX,edgeY){
 			rightShift+=(32+padding);
 		}
 	}
+	
+	if instance_exists(confirmIcon) 
+	{
+		if question
+		{
+			if lastQuestionChoice!=questionChoice
+			{
+				lastQuestionChoice=questionChoice;
+				animateProperty(confirmIcon,"x",TwerpType.out_quad,confirmIcon.x,textboxQuestionX[questionChoice],0.075,false);
+				for (var i=0;i<array_length(textboxQuestionLetters[!questionChoice]);i++) textboxQuestionLetters[!questionChoice][i].letterState=textState.normal;
+				for (var i=0;i<array_length(textboxQuestionLetters[questionChoice]);i++) textboxQuestionLetters[questionChoice][i].letterState=textState.bold;
+			}
+		}
+		drawIcon(0,1,0,1);
+	}
+}
+
+textboxQuestionData=textLoad("textbox_question");
+textboxQuestionX=array_create(2,0);
+textboxQuestionLetters=[[],[]];
+createLetter=function(letter,letterState){
+	var _d=instance_create_depth(newLetterX,newLetterY,depth-1,oDiagLetter);
+	_d.letter=letter;
+	if is_undefined(letterState) _d.letterState=letterStates[newLetterInd+1];
+	else _d.letterState=letterState;
+	newLetterX+=string_width(letter);
+	return _d;
 }

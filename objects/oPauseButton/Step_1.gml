@@ -101,7 +101,37 @@ if active
 			{
 				var _dir=(buttonPressedRepeat(control.right)-buttonPressedRepeat(control.left));
 				var _selected=(buttonPressed(control.confirm)||buttonPressed(control.grapple));
-				if (_dir==1&&choice<struct.endPos)||(_dir==-1&&choice>struct.startPos)||_selected
+				show_debug_message(labels)
+				if array_length(labels)>0
+				{
+					if _selected
+					{
+						switch key
+						{
+							case "guiScale":
+								with controller setDefaultHudSize();
+								choice=global.guiScale;
+								break;
+							default: break;
+						}
+					}
+					else 
+					{
+						choice+=_dir;
+						if choice<0 choice=array_length(labels)-1;
+						else if choice>array_length(labels)-1 choice=0;
+						switch key
+						{
+							case "guiScale":
+								global.guiScale=choice;
+								with controller setHudSize();
+								break;
+							default: break;
+						}
+					}
+					choiceStr=labels[choice];
+				}
+				else if (_dir==1&&choice<struct.endPos)||(_dir==-1&&choice>struct.startPos)||_selected
 				{
 					if _selected choice=!choice;
 					else choice+=struct.tick*_dir;

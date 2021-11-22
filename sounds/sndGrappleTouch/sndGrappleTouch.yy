@@ -2,6 +2,7 @@
   "ConfigValues": {
     "Testing": {"audioGroupId":"{\"name\":\"audiogroup_sounds\",\"path\":\"audiogroups/audiogroup_sounds\"}",},
   },
+  "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
   "preload": false,

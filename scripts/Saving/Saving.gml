@@ -105,7 +105,6 @@ function loadPrefs(){
 	audio_group_set_gain(audiogroup_sounds,option("musicVol"),0);
 	global.lastFile=option("lastFile");
 	global.guiScale=option("guiScale");
-	display_set_gui_size(floor(1920*global.guiScale),floor(1080*global.guiScale));
 	global.hudSide=option("hudSide");
 	global.hudAlpha=option("hudAlpha");
 	global.shakeFactor=option("camShake");
@@ -116,5 +115,6 @@ function loadPrefs(){
 		window_set_fullscreen(option("fullscreen"));
 		controller.alarm[4]=5;
 	}
+	setHudSize();
 	setFont(fontSizes.medium);
 }

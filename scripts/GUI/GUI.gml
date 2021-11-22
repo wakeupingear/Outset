@@ -1,11 +1,11 @@
 
 
 function guiX(){
-	return global.guiScale*1920/384;
+	return controller.hudResolution[global.guiScale][0]/384;
 }
 
 function guiY(){
-	return global.guiScale*1080/216;
+	return controller.hudResolution[global.guiScale][1]/216;
 }
 
 function toGuiX(xPos){

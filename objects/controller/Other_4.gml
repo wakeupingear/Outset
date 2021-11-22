@@ -18,6 +18,9 @@ instance_create_depth(x,y,0,oMusicChange);
 if !instance_exists(oCamera) createCamera();
 
 //set era-specific stuff
+ds_list_clear(global.distortObj);
+ds_list_add(global.distortObj,oSouldropCoin);
+
 setRoomEra();
 setRoomLighting(_rName);
 

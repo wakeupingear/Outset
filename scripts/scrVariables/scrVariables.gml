@@ -6,7 +6,8 @@ function scrVariables(){
 	global.discordActive=false;
 	if !isHtml&&steam_initialised() global.lang=steam_current_game_language(); //get the user's default language if possible
 	global.lastFile=0; //Variables are redundent but they are a quicker and cleaner lookup for common accessibility options
-	global.guiScale=clamp(round(3*display_get_height()/1080),3,6)/3;
+	global.guiScale=0;
+	setDefaultHudSize();
 	
 	global.hudSide=0;
 	global.hudAlpha=0.8;
@@ -24,6 +25,7 @@ function scrVariables(){
 	ds_map_add(global.accessibility,"vsync",(!isDev&&!isTest)||isLinux);
 	ds_map_add(global.accessibility,"blackBars",true);
 	ds_map_add(global.accessibility,"flashes",true);
+	ds_map_add(global.accessibility,"saveIcon",true);
 	#endregion
 	
 	global.data =ds_map_create(); //dump misc values here
@@ -556,15 +558,12 @@ function scrVariables(){
 	global.interactTextObj=noone;
 	global.interactTextLabels=[]; //loads in setText
 	global.fonts=[
-	[],
-	[small1440,med1440,large1440,extralarge1440,harold1440],
-	[]
+	[], //720
+	[small1440,med1080,large1440,extralarge1440,harold1440], //1080
+	[small1440,med1440,large1440,extralarge1440,harold1440], //1440
+	[] //2160
 	];
-	if array_length(global.fonts[round(global.guiScale*3)-3])==0 
-	{
-		global.guiScale=4/3; //default to 1440p if fonts aren't added
-		global.accessibility[? "guiScale"]=global.guiScale;
-	}
+	setHudSize();
 	global.hudColorList=[make_color_rgb(96,92,169  )]; //possible colors for the hud
 	#endregion
 	
@@ -665,13 +664,14 @@ function scrVariables(){
 		addItem("iGrappleArc");
 		//addItem("iGrappleDown");
 		addItem("iSlate");
-		//addItem("iSolitaire");
+		addItem("iSolitaire");
 		//addItem("iBeacon");
 		//addItem("iWrench1");
 		//addItem("iFormula");
 		//addItem("iLavaSwitch");
 		//global.notdonEra=notdonEras.present;
-		scr_pro_2();
+		//scr_pro_2();
+		scr_c1_5();
 		//scr_air_1();
 		//scr_wastes_1();
 		//scr_wastes_2();

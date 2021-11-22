@@ -38,6 +38,7 @@ if mode>-1&&mode<2
 			sentence="";
 		}
 		
+		//if question sentence+="\n  Yes                No";
 		charWaitList=array_create(string_length(sentence),0); //process pauses and add them to the charWaitList
 		letterStates=array_create(string_length(sentence)+1,0);
 		var _lastState=0;
@@ -84,6 +85,8 @@ if mode>-1&&mode<2
 				i--;
 			}
 		}
+		questionChoice=0;
+		lastQuestionChoice=0;
 		textInd=0;
 		newLetterInd=0;
 		newLetterX=0;
@@ -110,13 +113,22 @@ if mode>-1&&mode<2
 		{
 			textInd=string_length(sentence);
 			textUpdated=true;
-			if !skip mode=2;
+			if skip mode=0;
 			else 
 			{
-				mode=0;
+				confirmIcon=instance_create_depth(0,0,depth,oPlaceholder);
+				confirmIcon.sprite_index=sDialogueConfirm;
+				confirmIcon.image_speed=1;
+				confirmIcon.image_xscale=0.5;
+				//confirmIcon.image_blend=c_orange;
+				confirmIcon.visible=false;
+				if question confirmIcon.image_angle=90;
+				animateProperty(confirmIcon,"yscale",TwerpType.linear,0,0.5,0.1,false);
+				mode=2;
 			}
 		}
 	}
+	
 }
 else if mode==2
 {
@@ -152,6 +164,7 @@ else if mode==2
 				questionNum=0;
 			}
 			mode=0;
+			animateProperty(confirmIcon,"yscale",TwerpType.linear,confirmIcon.image_yscale,0,0.3,false,true);
 			skip=false;
 			if lastName!=portName
 			{

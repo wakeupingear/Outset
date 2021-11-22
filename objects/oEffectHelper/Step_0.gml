@@ -13,7 +13,6 @@ for (var i=0;i<ds_list_size(lerpList);i++)
 	lerpList[|i][5]+=lerpList[|i][6];
 	var _arr=lerpList[|i];
 	var _newVal=twerp(_arr[2],_arr[3],_arr[4],_arr[5]);
-	
 	switch _arr[1]
 	{
 		case "alpha":

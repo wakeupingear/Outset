@@ -3,6 +3,7 @@
     "NewFile": {"audioGroupId":"{\"name\":\"audiogroup_music\",\"path\":\"audiogroups/audiogroup_music\"}",},
     "Testing": {"audioGroupId":"{\"name\":\"audiogroup_music\",\"path\":\"audiogroups/audiogroup_music\"}",},
   },
+  "conversionMode": 0,
   "compression": 2,
   "volume": 1.0,
   "preload": false,

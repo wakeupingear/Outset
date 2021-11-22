@@ -37,5 +37,16 @@
     ],
     "air_donutBoxNote":[
         "$addItem",["iPhoneNote1"]
+    ],
+    "air_resp":[
+        "As you plummet to the ground, you squeeze your eyes tight.",
+        "$createLayer",[0,0,"highest","oEyesShut"],
+        "$lastObj.mode",2,
+        150,
+        "$trackObj.mode",1,
+        "$lastObj.mode",-1,
+        60,
+        "$addData","respAir",
+        "$lastObj.destroy"
     ]
 }
