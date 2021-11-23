@@ -13,8 +13,15 @@ if keyboard_check_pressed(vk_enter)
 				ds_list_add(commands,_arr[1]);
 				break;
 			case "fps":
+				display_reset(0,false);
 				if array_length(_arr)==1||_arr[1]=="reset" game_set_speed(60,gamespeed_fps);
 				else game_set_speed(_arr[1],gamespeed_fps);
+				instance_destroy();
+				break;
+			case "fwd":
+				display_reset(0,false);
+				if game_get_speed(gamespeed_fps)==60 game_set_speed(300,gamespeed_fps);
+				else game_set_speed(60,gamespeed_fps);
 				instance_destroy();
 				break;
 			case "tp":

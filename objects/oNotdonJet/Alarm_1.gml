@@ -7,5 +7,5 @@ if pfInd<array_length(moveCommand)
 		alarm[1]=pfWait;
 		pfWait=0;
 	}
-	if pfInd>=array_length(moveCommand) moveCommand=-1;
 }
+else moveCommand=-1;

@@ -35,6 +35,10 @@ function diagCondition(key,args){
 		case "objRight":
 			var _a=asset_get_index(args[0]);
 			return (instance_exists(_a)&&_a.x>args[1]);
+		case "jetStopped": 
+			if !instance_exists(oNotdonJet) return false;
+			with oNotdonJet if lastXTo!=xTo||lastYTo!=yTo return false;
+			return true;
 		default: return false;
 	}
 }

@@ -1,5 +1,5 @@
 /// @description 
-if global.alive
+if global.alive&&global.notPause&&false
 {
 	oscillate(vars,"y",true,true);
 	var _change=round(y-yprevious);

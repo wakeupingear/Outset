@@ -1,6 +1,7 @@
 image_speed=0;
 
 npcMovementVars();
+collType=airHitobj;
 hspAcc=0.3;
 hspMax=3.2;
 vspMax=4;

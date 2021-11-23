@@ -45,7 +45,8 @@ function respawn(xPos,yPos){
 	if hasData("reacSt") 
 	{
 		instance_activate_object(oSouldropCoin);
-		ds_list_add(global.distortObj,oSouldropCoin);
+		with oSouldropCoin if !offscreen(x,y,0) collectParticle(sPlaceholderPixelB);
+		ds_list_add(global.distortObjAberrate,oSouldropCoin);
 	}
 	
 	with controller setTileAnimations(true);

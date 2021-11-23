@@ -6,6 +6,7 @@ if !visitedRoom(room) ds_list_add(global.visitedRooms,room);
 var _lArr=["bg","bg2","above"];
 for (var i=0;i<array_length(_lArr);i++)
 {
+	
 	var _l=layer_get_id(_lArr[i]);
 	if _l>-1 layer_set_visible(_l,true);
 }
@@ -19,7 +20,8 @@ if !instance_exists(oCamera) createCamera();
 
 //set era-specific stuff
 ds_list_clear(global.distortObj);
-ds_list_add(global.distortObj,oSouldropCoin);
+ds_list_clear(global.distortObjAberrate);
+ds_list_add(global.distortObjAberrate,oSouldropCoin);
 
 setRoomEra();
 setRoomLighting(_rName);
@@ -48,6 +50,7 @@ global.inWater=false;
 if instance_exists(ply) with ply global.inWater=place_meeting(x,y,oWater);
 
 //DEBUG: player position
+global.menuOpen=false;
 if global.devTeleport&&!instance_exists(oTextbox)
 {
 	if instance_exists(ply)

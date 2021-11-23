@@ -22,7 +22,7 @@ function scrVariables(){
 	ds_map_add(global.accessibility,"interactText",true);
 	ds_map_add(global.accessibility,"hudAlpha",global.hudAlpha);
 	ds_map_add(global.accessibility,"camShake",global.shakeFactor);
-	ds_map_add(global.accessibility,"vsync",(!isDev&&!isTest)||isLinux);
+	ds_map_add(global.accessibility,"vsync",(!isDev&&!isTest)||(isLinux));
 	ds_map_add(global.accessibility,"blackBars",true);
 	ds_map_add(global.accessibility,"flashes",true);
 	ds_map_add(global.accessibility,"saveIcon",true);
@@ -269,6 +269,10 @@ function scrVariables(){
 		addLocationPathFrom("nora","c1_stage","rNotdon","c1_bay","rNotdon","c1_enterLaunchBay","");
 	addLocation("nora","rNotdon","c1_video",1804,452,-1,1,""); //video
 		addLocationPathFrom("nora","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
+		
+	addLocation("nora","rAir","air_jet",1750,1168,1,1);
+	addLocation("nora","rAir","air_intro",2280,1232,-1,1);
+		addLocationPathFrom("nora","air_jet","rAir","air_intro","rAir","simple");
 	#endregion
 	#region Smitten
 	global.characters.smitten={portrait: [portSmitten],diagColor: c_nearWhite,font: fontSizes.notdon};
@@ -296,6 +300,10 @@ function scrVariables(){
 	addLocation("smitten","rNotdon","c1_video",1829,452,1,1,""); //video
 		addLocationPathFrom("smitten","c1_backpack","rNotdon","c1_video","rNotdon","simpleJ","");
 		addLocationPathFrom("smitten","c1_video","rNotdon","c1_bay","rNotdon","c1_enterMissionControl");
+		
+	addLocation("smitten","rAir","air_jet",1750,1168,1,1);
+	addLocation("smitten","rAir","air_intro",2335,1232,1,1);
+		addLocationPathFrom("smitten","air_jet","rAir","air_intro","rAir","simple");
 	#endregion	
 	#region Charlie
 	global.characters.charlie={portrait: [portCharlie],diagColor: c_nearWhite,font: fontSizes.notdon};
@@ -327,6 +335,10 @@ function scrVariables(){
 		
 	addLocation("charlie","rWastesIntro","wastes_intro",238,128,-1,1); //wastes intro
 	addLocation("charlie","rWastes","wastes_crashed",2126,777,-1,1); //post-parachute
+		
+	addLocation("charlie","rAir","air_jet",1742,1170,1,1);
+	addLocation("charlie","rAir","air_intro",2295,1232,1,1);
+		addLocationPathFrom("charlie","air_jet","rAir","air_intro","rAir","simple");
 	#endregion	
 	#region Matt
 	global.characters.matt={portrait: [portMatt],diagColor: c_nearWhite,font: fontSizes.notdon};
@@ -338,6 +350,10 @@ function scrVariables(){
 	
 	addLocation("chet","rWastesCrater","wastes_buried",348,388,1,1,"",{takeDamage: true, damageCutscene:"wastes_chet_pulledOut"}); //buried under jet
 	addLocation("chet","rWastesCrater","wastes_pulledOut",348,388,0,1,""); //pulled out of ground
+		
+	addLocation("chet","rAir","air_jet",1750,1168,1,1);
+	addLocation("chet","rAir","air_intro",2356,1235,1,1);
+		addLocationPathFrom("chet","air_jet","rAir","air_intro","rAir","simple");
 	#endregion
 	#region Alex
 	global.characters.alex={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.notdon};
@@ -671,7 +687,9 @@ function scrVariables(){
 		//addItem("iLavaSwitch");
 		//global.notdonEra=notdonEras.present;
 		//scr_pro_2();
-		scr_c1_5();
+		//scr_c1_5();
+		//scr_c1_6();
+		scr_air_1();
 		//scr_air_1();
 		//scr_wastes_1();
 		//scr_wastes_2();
@@ -685,7 +703,7 @@ function scrVariables(){
 			delay:4
 		});*/
 		//scr_island_1();
-		global.startRoom=rNotdon;
+		global.startRoom=rAir;
 	}
 	#endregion
 	

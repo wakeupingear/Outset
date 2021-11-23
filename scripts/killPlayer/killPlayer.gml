@@ -30,7 +30,11 @@ function killPlayer(saveText){
 			}
 			global.dieRoom=room;
 			global.soulButtons=[];
-			if instance_exists(oSouldropCoin) instance_deactivate_object(oSouldropCoin);
+			if instance_exists(oSouldropCoin) 
+			{
+				with oSouldropCoin if !offscreen(x,y,0) collectParticle(sPlaceholderPixelR);
+				instance_deactivate_object(oSouldropCoin);
+			}
 			if instance_exists(oInventory) oInventory.open=false;
 			if instance_exists(oPopup) oPopup.exiting=true;
 			global.menuOpen=false;

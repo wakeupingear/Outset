@@ -392,6 +392,7 @@ function scr_air_1(){
 	global.timeOfDay=times.day;
 	global.startX=2262;
 	global.startY=2220;
+	global.devTeleport=false;
 	
 	createCutsceneDelay({key:"air_intro1",myRoom: "rAir"});
 	
@@ -403,7 +404,7 @@ function scr_air_1(){
 		image_xscale=1;
 		flying=true;
 		seethroughOverride=1;
-		plyRiding=false;
+		plyRiding=true;
 		cockpitCheck.key="notdon_jetEmpty";
 		sitMode="";
 		switchRoom(2300,2226,rAir,false,false);
@@ -423,29 +424,21 @@ function scr_air_2(){
 	global.currentChapter=chapters.air;
 	global.startRoom=rAir;
 	global.timeOfDay=times.day;
-	global.startX=2262;
-	global.startY=2220;
+	global.startX=1949;
+	global.startY=1142;
 	
 	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
-	else with oNotdonJet if state==0&&flying _jet=id;
+	else with oNotdonJet if state==0 _jet=id;
 	with _jet 
 	{
 		image_xscale=1;
 		flying=false;
+		
 		seethroughOverride=0;
-		plyRiding=false
+		plyRiding=false;
 		cockpitCheck.key="notdon_jetEmpty";
 		sitMode="";
-		switchRoom(1953,1431,rAir,false,false);
-		if room=rNotdon
-		{
-			plyRiding=hasData("ditch1");
-			image_xscale=-1;
-			flying=true;
-			maxSpd=5;
-			if x<1245 moveCommand="c1_toAirLeft";
-			else moveCommand="c1_toAirRight";
-		}
+		switchRoom(1782,1171,rAir,false,false);
 	}
 }
 #endregion

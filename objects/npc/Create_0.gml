@@ -24,6 +24,6 @@ else
 		pathfindingStart(id,_st[$ "path"]);
 	}
 	
-	while groundCollision(x,y) y--;
+	//while groundCollision(x,y) y--;
 }
 }

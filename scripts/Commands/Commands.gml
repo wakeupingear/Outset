@@ -405,11 +405,17 @@ function commandProcess(command){
 								positionNpc(1);
 							}
 							break;
+						case "to":
+							_obj.xTo=_val[0];
+							_obj.yTo=_val[1];
+							break;
+						case "createNpc":
 						case "createNPC":
-							diag--;
+							diag--;  
 							if asset_get_index(_obj)==-1 _val=asset_get_index("npc"+capitalizeFirstLetter(_obj));
 							if instance_exists(_obj) break;
 							lastObj=instance_create_layer(0,0,"people",_obj);
+							printCoords(lastObj.x,lastObj.y,"cnpc")
 							break;
 						case "create":
 							lastObj=instance_create_depth(tCoord(_val[0]),tCoord(_val[1]),_val[2],asset_get_index(_val[3]));
@@ -512,11 +518,18 @@ function commandProcess(command){
 							break;
 							saved=true;
 						case "script":
+							var _scr="";
 							if is_array(_val)
 							{
 								script_execute_ext(asset_get_index(_val[0]),_val[1]);
+								_scr=_val[0];
 							}
-							else script_execute(asset_get_index(_val));
+							else 
+							{
+								script_execute(asset_get_index(_val));
+								_scr=_val;
+							}
+							if string_contains(_scr,"scr_") saved=true;
 							break;
 						//cutscene
 						case "cutscene":
