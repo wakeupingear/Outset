@@ -689,7 +689,8 @@ function scrVariables(){
 		//scr_pro_2();
 		//scr_c1_5();
 		//scr_c1_6();
-		scr_air_1();
+		//scr_air_1();
+		scr_air_2();
 		//scr_air_1();
 		//scr_wastes_1();
 		//scr_wastes_2();

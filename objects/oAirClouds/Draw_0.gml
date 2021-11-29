@@ -10,7 +10,7 @@ surface_reset_target();
 
 surface_set_target(surf2);
 draw_clear_alpha(c_black,0);
-with oClouds draw(-camX(),-camY());
+for (var i=0;i<ds_list_size(clouds);i++) with clouds[|i] draw(-camX(),-camY());
 gpu_set_blendmode(bm_subtract);
 shader_set(shd_cloudEdge);
 draw_surface(surf,0,0);

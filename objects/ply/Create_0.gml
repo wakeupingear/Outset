@@ -1,6 +1,10 @@
 image_speed=0;
 if isDev sprite_index=sPly;
 mask_index=sPly;
+
+lastCoord=ds_stack_create();
+reverse=false;
+
 if object_index==ply&&!global.alive
 {
 	instance_create_layer(global.plyX,global.plyY,layer,oPlayerSoul);
@@ -144,9 +148,6 @@ stateToAnim[moveState.ladderMove]="ladderMove";
 
 hasBackpack=false;
 event_user(0);
-
-lastCoord=ds_stack_create();
-reverse=false;
 
 //for jump testing
 //jumpStart=y;

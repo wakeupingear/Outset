@@ -427,6 +427,11 @@ function scr_air_2(){
 	global.startX=1949;
 	global.startY=1142;
 	
+	setNPCRoom("charlie",rAir,"air_jet");
+	setNPCRoom("chet",rAir,"air_intro");
+	setNPCRoom("nora",rAir,"air_intro");
+	setNPCRoom("smitten",rAir,"air_intro");
+	
 	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
 	else with oNotdonJet if state==0 _jet=id;
 	with _jet 

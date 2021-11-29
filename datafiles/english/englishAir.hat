@@ -27,8 +27,8 @@
         "$nora.setRoomTeleport",["rAir","air_jet"],
         "?nora","I guess we're running now?",
         "$nora.setRoom",["rAir","air_intro"],
-        "$script","scr_air_2",
         "$charlie.setRoomTeleport",["rAir","air_jet"],
+        "$script","scr_air_2",
         "$camReset"
     ],
 
