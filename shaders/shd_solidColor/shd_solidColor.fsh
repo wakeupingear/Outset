@@ -8,7 +8,7 @@ uniform vec3 u_color;
 
 void main()
 {
-    if (texture2D( gm_BaseTexture, v_vTexcoord ).a>0.0) gl_FragColor = vec4(u_color,texture2D( gm_BaseTexture, v_vTexcoord ).a);
+    if (texture2D( gm_BaseTexture, v_vTexcoord ).a>0.0) gl_FragColor = v_vColour*vec4(u_color,texture2D( gm_BaseTexture, v_vTexcoord ).a);
 	else gl_FragColor=texture2D( gm_BaseTexture, v_vTexcoord );
 }
 

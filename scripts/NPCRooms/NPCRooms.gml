@@ -2,7 +2,6 @@ function setNPCRoom(npcName,roomName,key){
 	if !is_string(roomName) roomName=room_get_name(roomName);
 	var _lastKey=global.characterLocations[? npcName][4];
 	var _struct=global.characters[$ npcName].locations[$ roomName][$ key];
-	show_debug_message(global.characterLocations)
 	global.characterLocations[? npcName][0]=_struct.startX;
 	global.characterLocations[? npcName][1]=_struct.startY;
 	global.characterLocations[? npcName][2]=asset_get_index(roomName);

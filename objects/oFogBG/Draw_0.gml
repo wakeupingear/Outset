@@ -7,5 +7,5 @@ if preset==1 //wastes
 	stepNum=18.0-((room_height-camY())/216);
 }
 
-if global.alive fogTime=(fogTime+0.001)%1;
-ppFog(spr,x,y,image_xscale,image_yscale,image_alpha,image_blend,stepNum,-fogTime,false);
+if global.alive fogTime=(fogTime+spd)%1;
+ppFog(spr,x,y,image_xscale,image_yscale,image_alpha,image_blend,stepNum,fogTime,false);

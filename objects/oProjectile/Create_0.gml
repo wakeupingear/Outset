@@ -17,7 +17,7 @@ hurtsPlayer=false;
 collideParent=false;
 
 collidable=true;
-collType=hitobj;
+collType=[hitobj];
 state=moveState.standing;
 collPointX=[0];
 collPointY=[1];

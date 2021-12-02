@@ -6,7 +6,7 @@ xscale=1;
 
 collPointX=[0];
 collPointY=[0];
-collType=hitobj;
+collType=[hitobj];
 state=moveState.standing;
 drawCycle=0;
 drawLight=function(){

@@ -3,6 +3,7 @@
 	uniform vec3 fog_color;
 	uniform float alpha;
 	uniform float stepNum;
+	
     //velocity vectors
     const vec2 A_dir = vec2(0.76604,0.64279);
     const vec2 B_dir = vec2(0.58207,-0.48841);
@@ -32,6 +33,5 @@
         //or to make the fog appear more patchy or more uniform
         //For example, to make the fog much thinner, you could multiply "fog" by itself a few times:
         //fog = fog * fog * fog;
- 
         gl_FragColor = vec4(fog_color,fog*alpha);
     }

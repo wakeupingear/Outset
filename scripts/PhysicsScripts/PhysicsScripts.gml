@@ -204,7 +204,9 @@ function groundCollision(_x,_y,_coll,float){
 	if is_undefined(_coll) _coll=collType;
 	if is_undefined(float) float=true;
 	if state==moveState.floating&&float return false;
-	for (var i=0;i<array_length(collPointX);i++) if collision_point(_x+collPointX[i],_y+collPointY[i],_coll,true,true) return true;
+	for (var j=0;j<array_length(_coll);j++){
+		for (var i=0;i<array_length(collPointX);i++) if collision_point(_x+collPointX[i],_y+collPointY[i],_coll[j],true,true) return true;
+	}
 	return false;
 }
 

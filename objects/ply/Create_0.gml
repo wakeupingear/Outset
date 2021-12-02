@@ -13,7 +13,7 @@ if object_index==ply&&!global.alive
 
 npcMovementVars();
 npcAnimVars();
-collType=hitobj;
+collType=[hitobj];
 
 strafe=0;
 
