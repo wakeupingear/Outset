@@ -202,6 +202,7 @@ function push(xDir,yDir){
 
 function groundCollision(_x,_y,_coll,float){
 	if is_undefined(_coll) _coll=collType;
+	if !is_array(_coll) _coll=[_coll]; //might be slow
 	if is_undefined(float) float=true;
 	if state==moveState.floating&&float return false;
 	for (var j=0;j<array_length(_coll);j++){

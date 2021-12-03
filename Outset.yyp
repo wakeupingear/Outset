@@ -17,6 +17,7 @@
     {"id":{"name":"tilWastes","path":"tilesets/tilWastes/tilWastes.yy",},"order":2,},
     {"id":{"name":"oHaroldBGCrack","path":"objects/oHaroldBGCrack/oHaroldBGCrack.yy",},"order":13,},
     {"id":{"name":"sHaroldBGCrack2","path":"sprites/sHaroldBGCrack2/sHaroldBGCrack2.yy",},"order":12,},
+    {"id":{"name":"shd_outlineOutside","path":"shaders/shd_outlineOutside/shd_outlineOutside.yy",},"order":20,},
     {"id":{"name":"sGrapple","path":"sprites/sGrapple/sGrapple.yy",},"order":4,},
     {"id":{"name":"sChetBackpack","path":"sprites/sChetBackpack/sChetBackpack.yy",},"order":3,},
     {"id":{"name":"sAllPort","path":"sprites/sAllPort/sAllPort.yy",},"order":0,},
@@ -1165,7 +1166,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/.vscode","resourceVersion":"1.0","name":"settings.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.7.603",
+    "IDEVersion": "23.1.1.434",
   },
   "resourceVersion": "1.4",
   "name": "Outset",

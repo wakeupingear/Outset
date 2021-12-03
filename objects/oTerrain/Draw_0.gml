@@ -1,3 +1,4 @@
+var _col=[color_get_red(image_blend)/255,color_get_green(image_blend)/255,color_get_blue(image_blend)/255];
 if !render||!surface_exists(surf)
 {
 	if !surface_exists(surf) surf=surface_create(room_width,room_height);
@@ -94,6 +95,20 @@ if !texRender
 			if shader_current()!=-1 shader_reset();
 			break;
 	}
+	if instance_number(oTerrain)>1&&layerName!="myko"
+	{
+		gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_src_alpha);
+		shader_set(shd_outlineOutside);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineOutside,"u_alpha"),1);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineOutside,"u_pixel"),1/room_width,1/room_height);
+		shader_set_uniform_f(shader_get_uniform(shd_outlineOutside,"u_color"),colorData[roomType].outlineCol[0]*_col[0],colorData[roomType].outlineCol[1]*_col[1],colorData[roomType].outlineCol[2]*_col[2]);
+		with oTerrain if layerName=="myko"&&surface_exists(surf)
+		{
+			draw_surface(surf,0,0);
+		}
+		gpu_set_blendmode(bm_normal);
+		shader_reset();
+	}
 	surface_reset_target();
 	texRender=true;
 }
@@ -102,7 +117,6 @@ var _width=min(386,room_width);
 var _height=min(218,room_height);
 var _posX=max(floor(camX()),0);
 var _posY=max(floor(camY()),0);
-var _col=[color_get_red(image_blend)/255,color_get_green(image_blend)/255,color_get_blue(image_blend)/255];
 var _outlineAlpha=1;
 if !surface_exists(surf2) surf2=surface_create(386,218);
 surface_set_target(surf2);
