@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "sBreadnought",
-    "path": "sprites/sBreadnought/sBreadnought.yy",
+    "name": "sPlaceholderPixelR",
+    "path": "sprites/sPlaceholderPixelR/sPlaceholderPixelR.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "hitobj",
-    "path": "objects/hitobj/hitobj.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,18 +21,18 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "events",
-    "path": "folders/Objects/air/events.yy",
+    "name": "background",
+    "path": "folders/Objects/background.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBreadnought",
+  "name": "oAirCloudsParticleSys",
   "tags": [],
   "resourceType": "GMObject",
 }

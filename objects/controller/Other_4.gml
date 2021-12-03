@@ -117,7 +117,7 @@ switch room //room specific elements
 		}
 		break;
 	case rAir:
-		instance_create_layer(0,0,"bg2",oAirClouds);
+		instance_create_layer(1200,600,"bg2",oAirClouds);
 		break;
 	default: break;
 }

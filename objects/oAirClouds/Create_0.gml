@@ -2,6 +2,8 @@
 surf=-1;
 surf2=-1;
 
+image_blend=merge_color(c_white,c_yellow,0.2);
+
 clouds=ds_list_create();
 for (var i=0.4;i<=1;i+=0.2)
 {
@@ -24,6 +26,7 @@ cloudColl=function(){
 	if !instance_exists(ply) return !collision_point(global.plyX,global.plyY,airHitobj,true,true);
 	return !collision_point(ply.x,ply.y,airHitobj,true,true);
 }
+cloudRippleProg=0;
 fogAlpha=0.5;
 fogProg=cloudColl();
 fogSpd=0.02;
