@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "sTestPersonBig",
-    "path": "sprites/sTestPersonBig/sTestPersonBig.yy",
+    "name": "s4frameBlue",
+    "path": "sprites/s4frameBlue/s4frameBlue.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "oPhysicsObj",
-    "path": "objects/oPhysicsObj/oPhysicsObj.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -26,15 +23,16 @@
   "eventList": [
     {"isDnD":false,"eventNum":1,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "events",
-    "path": "folders/Objects/air/events.yy",
+    "name": "wind",
+    "path": "folders/Sprites/platforming/wind.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oAirShip",
+  "name": "oWind",
   "tags": [],
   "resourceType": "GMObject",
 }

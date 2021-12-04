@@ -6,13 +6,34 @@ net.sprite_index=sprite_index;
 net.image_speed=0;
 net.image_index=2;
 
+back=instance_create_layer(x,y,"behind",oPlaceholder);
+back.sprite_index=sprite_index;
+back.image_speed=0;
+back.image_index=3;
+
 smokestacks=[
-	instance_create_depth(x-80-40,y-184+32,depth+1,oPlaceholder),
-	instance_create_depth(x+80-40,y-184+32,depth+1,oPlaceholder),
-	instance_create_depth(x+80-40,y-184+32-112,depth+1,oPlaceholder)
+	instance_create_depth(x-80-80,y-184+32,depth+1,oPlaceholder),
+	instance_create_depth(x+80-80,y-184+32,depth+1,oPlaceholder),
+	instance_create_depth(x+80-80,y-184+32-112,depth+1,oPlaceholder)
 ];
+objects=ds_list_create();
+var _l=objects;
 for (var i=0;i<array_length(smokestacks);i++) with smokestacks[i] {
 	sprite_index=sBreadnoughtSmokestack;
+	if (i!=1) {
+		image_index=1;
+		var _h=instance_create_layer(x,y,"people",hitobj);
+		_h.sprite_index=sprite_index;
+		_h.image_index=2;
+		var _w=instance_create_layer(x+8,y-82,"people",oWind);
+		_w.image_xscale=72;
+		_w.image_yscale=82;
+		_w.direction=90;
+		_w.spd=0.5;
+		
+		ds_list_add(_l,_h);
+	}
+	image_speed=0;
 }
 
 partSys=part_system_create_layer("behindAsset",false);

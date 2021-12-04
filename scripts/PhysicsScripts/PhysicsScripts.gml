@@ -21,6 +21,7 @@ function physics(){
 	{
 		if (veltime>=decTime)
 		{
+			
 			if abs(hsp)==hspAcc
 			{
 				var _endX=ceil(x);

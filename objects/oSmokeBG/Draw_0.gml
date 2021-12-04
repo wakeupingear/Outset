@@ -5,7 +5,7 @@ part_emitter_stream(partSys, partEmitter, partType, 6+round(_dist*20));
 part_type_speed(partType,0.3+(_dist+oSkyNotdon.vShipTime)*0.5,0.3+(_dist+oSkyNotdon.vShipTime),0,0);
 part_type_color1(partType,merge_color(image_blend,merge_color(c_red,c_white,0.4),oSkyNotdon.vShipTime));
 part_system_position(partSys,x,y);
-if global.alive repeat 1+(global.roomTime==1)*60 part_system_update(partSys);
+if global.alive repeat 1+(global.roomTime==-1)*60 part_system_update(partSys);
 
 /*var _p=particle(camX()+irandom(384),camY()+216+irandom(24),depth,sPlaceholderPixelW,0,{
 	alpha:0.1,

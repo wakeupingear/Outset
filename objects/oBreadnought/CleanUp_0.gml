@@ -5,3 +5,4 @@ for (var i=0;i<ds_list_size(partData);i++){
 }
 part_system_destroy(partSys);
 ds_list_destroy(partData);
+ds_list_destroy(objects);

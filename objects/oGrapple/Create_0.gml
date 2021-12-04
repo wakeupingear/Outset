@@ -98,7 +98,12 @@ grappleCollideEffect=function(final){
 step=function(){ 
 if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 {
-	if ply.state==moveState.floating exit;
+	if ply.state==moveState.floating
+	{
+		if !place_meeting(ply.x,ply.y,oAirShip){
+			exit;
+		}
+	}
 	xDir=0;
 	yDir=0;
 	x=round(ply.x);

@@ -327,6 +327,7 @@
     {"id":{"name":"oReactor","path":"objects/oReactor/oReactor.yy",},"order":7,},
     {"id":{"name":"s4frameBlue","path":"sprites/s4frameBlue/s4frameBlue.yy",},"order":20,},
     {"id":{"name":"shd_distort","path":"shaders/shd_distort/shd_distort.yy",},"order":17,},
+    {"id":{"name":"oWind","path":"objects/oWind/oWind.yy",},"order":0,},
     {"id":{"name":"oHaroldHouse","path":"objects/oHaroldHouse/oHaroldHouse.yy",},"order":10,},
     {"id":{"name":"oAirRebound","path":"objects/oAirRebound/oAirRebound.yy",},"order":4,},
     {"id":{"name":"PostProcess","path":"scripts/PostProcess/PostProcess.yy",},"order":76,},
@@ -582,6 +583,7 @@
     {"id":{"name":"oOuthouse","path":"objects/oOuthouse/oOuthouse.yy",},"order":19,},
     {"id":{"name":"rNotdonAdults","path":"rooms/rNotdonAdults/rNotdonAdults.yy",},"order":6,},
     {"id":{"name":"setRoomEra","path":"scripts/setRoomEra/setRoomEra.yy",},"order":34,},
+    {"id":{"name":"sEntrance","path":"sprites/sEntrance/sEntrance.yy",},"order":1,},
     {"id":{"name":"oVShock","path":"objects/oVShock/oVShock.yy",},"order":2,},
     {"id":{"name":"sLogoBig","path":"sprites/sLogoBig/sLogoBig.yy",},"order":3,},
     {"id":{"name":"createCamera","path":"scripts/createCamera/createCamera.yy",},"order":73,},
@@ -1145,6 +1147,7 @@
     {"folderPath":"folders/FTF_Free_The_Filters/Objects/Children/Post_prod(don't work with each other).yy","order":1,"resourceVersion":"1.0","name":"Post_prod(don't work with each other)","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/FTF_Free_The_Filters/Objects/Children/Stackable.yy","order":2,"resourceVersion":"1.0","name":"Stackable","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/air/aesthetic.yy","order":3,"resourceVersion":"1.0","name":"aesthetic","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/platforming/wind.yy","order":11,"resourceVersion":"1.0","name":"wind","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -1170,7 +1173,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/.vscode","resourceVersion":"1.0","name":"settings.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.7.603",
+    "IDEVersion": "23.1.1.441",
   },
   "resourceVersion": "1.4",
   "name": "Outset",

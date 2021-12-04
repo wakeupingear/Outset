@@ -28,4 +28,6 @@ if global.alive
 		else if oGrapple.state>1 eject(false);
 	}
 	physics();
+	hit.x=x;
+	hit.y=y;
 }

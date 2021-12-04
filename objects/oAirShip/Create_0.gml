@@ -6,6 +6,9 @@ hspAcc=0.3;
 hspMax=3.2;
 vspMax=4;
 
+hit=instance_create_depth(x,y,depth,grappleHit);
+hit.sprite_index=sprite_index;
+
 boarded=false;
 eject=function(die){
 	persistent=false;
