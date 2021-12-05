@@ -1,6 +1,5 @@
 smokeSys=part_system_create_layer("above",false);
 part_system_position(smokeSys,0,0);
-ds_list_add(global.particleSystems,smokeSys);
 smokeEmitter=part_emitter_create(smokeSys);
 density=0.5;
 smokePart=part_type_create();

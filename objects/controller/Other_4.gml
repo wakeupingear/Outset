@@ -116,6 +116,7 @@ switch room //room specific elements
 			yLerp=0.65;
 		}
 		break;
+	case rAirSatelliteOutside:
 	case rAir:
 		instance_create_layer(1200,600,"bg2",oAirClouds);
 		break;
@@ -282,6 +283,7 @@ switch room //skybox/specific configs
 	case rIsland:
 		instance_create_layer(0,0,"bg",oSkyIsland);
 		break;
+	case rAirSatelliteOutside:
 	case rAir:
 		instance_create_layer(0,0,"bg2",oOvercast);
 		var _o=instance_create_layer(0,0,"bg",oOvercast);

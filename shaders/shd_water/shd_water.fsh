@@ -10,6 +10,6 @@ uniform float u_yoff;
 void main()
 {
     //vec2 Coord = v_vTexcoord + vec2(cos((v_vTexcoord.y+u_yoff)*20.0+u_time*6.2831)/100.0,0);
-    vec2 Coord = v_vTexcoord + vec2(cos((v_vTexcoord.y)*20.0+u_time*6.2831)/100.0,0);
+    vec2 Coord = clamp(v_vTexcoord + vec2(cos((v_vTexcoord.y)*20.0+u_time*6.2831)/100.0,0.0),0.0,1.0);
     gl_FragColor = v_vColour * texture2D( gm_BaseTexture, Coord);
 }

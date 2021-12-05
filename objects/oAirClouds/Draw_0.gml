@@ -15,12 +15,11 @@ gpu_set_blendmode(bm_subtract);
 shader_set(shd_cloudEdge);
 if global.alive cloudRippleProg=(cloudRippleProg+0.025)%1;
 shader_set_uniform_f(shader_get_uniform(shd_cloudEdge,"u_time"),cloudRippleProg);
+shader_set_uniform_f(shader_get_uniform(shd_solidColor,"u_color"),0,0,0);
 draw_surface(surf,0,0);
-shader_reset();
 gpu_set_blendmode(bm_normal);
 surface_reset_target();
 
-shader_set(shd_solidColor);
 shader_set_uniform_f(shader_get_uniform(shd_solidColor,"u_color"),1,1,1);
 draw_surface_ext(surf,camX(),camY(),1,1,0,-1,image_alpha*0.5);
 shader_reset();

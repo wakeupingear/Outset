@@ -16,14 +16,14 @@ void main()
 	vec2 vecG = vec2(v_vTexcoord.x + OffsetX*0.0943, v_vTexcoord.y - OffsetY * 0.05829);
 	vec2 vecB = vec2(v_vTexcoord.x - OffsetX*0.042,  v_vTexcoord.y + OffsetY * 0.0624);
 	
-		vecR.x = mod(vecR.x, 1.0);
-		vecR.y = mod(vecR.y, 1.0);
+		vecR.x = clamp(vecR.x,0.0, 1.0);
+		vecR.y = clamp(vecR.y,0.0, 1.0);
 		
-		vecG.x = mod(vecG.x, 1.0);
-		vecG.y = mod(vecG.y, 1.0);
+		vecG.x = clamp(vecG.x,0.0, 1.0);
+		vecG.y = clamp(vecG.y,0.0, 1.0);
 		
-		vecB.x = mod(vecB.x, 1.0);
-		vecB.y = mod(vecB.y, 1.0);
+		vecB.x = clamp(vecB.x,0.0, 1.0);
+		vecB.y = clamp(vecB.y,0.0, 1.0);
 	
 	if(col != vec4(0.0)){
 		gl_FragColor = vec4(texture2D(gm_BaseTexture, vecR).r, 

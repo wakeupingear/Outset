@@ -91,7 +91,7 @@ if mode>-1&&mode<2
 		newLetterInd=0;
 		newLetterX=0;
 		newLetterY=0;
-		with oDiagLetter alarm[0]=1;
+		if mode!=-1 with oDiagLetter alarm[0]=1;
 		if mode==1 setHeight(); //set the box's position
 		setCharacterDiag(); //reprocess character traits in case something changed
 		sentenceFormatted=false;
@@ -164,6 +164,7 @@ else if mode==2
 				questionNum=0;
 			}
 			mode=0;
+			if instance_exists(oItemFanfare) oItemFanfare.mode=0;
 			animateProperty(confirmIcon,"yscale",TwerpType.linear,confirmIcon.image_yscale,0,0.3,false,true);
 			skip=false;
 			if lastName!=portName

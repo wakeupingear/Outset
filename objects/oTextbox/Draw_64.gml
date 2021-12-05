@@ -81,20 +81,21 @@ if false&&!boxHidden&&portName!=""&&array_length(portLeft)+array_length(portRigh
 draw_set_alpha(image_alpha);
 
 var _sentShift=string_copy(sentence,1,textInd);
-var _xPos=round(((x+textX)+leftShift)*guiX());
+var _xPos=round(((x+textX))*guiX());
 var _yPos=round((y+textY)*guiY());
 with oDiagLetter 
 {
 	var _x=x;
-	var _y=y-(alarm[0]>-1&&oTextbox.image_alpha==1)*round(image_alpha*5)*guiY();
+	var _y=y;//-(alarm[0]>-1&&oTextbox.image_alpha==1)*round(image_alpha*5)*guiY();
 	if letterState==textState.vibrate||letterState==textState.boldVibrate
 	{
 		_x+=irandom_range(-vibrateAmp,vibrateAmp);
 		_y+=irandom_range(-vibrateAmp,vibrateAmp);
 	}
 	
-	if letterState==textState.bold||letterState==textState.boldVibrate draw_text_outline_transformed_color(_xPos+_x,_yPos+_y,letter,c_white,c_white,image_alpha,c_nearBlack,c_nearBlack,image_alpha,8,16,1,1,0);
-	else draw_text_color(_xPos+_x,_yPos+_y,letter,c_white,c_white,c_white,c_white,image_alpha);
+	var _a=image_alpha*oTextbox.image_alpha;
+	if letterState==textState.bold||letterState==textState.boldVibrate draw_text_outline_transformed_color(_xPos+_x+leftShift*guiX(),_yPos+_y,letter,c_white,c_white,image_alpha,c_nearBlack,c_nearBlack,_a,8,16,1,1,0);
+	else draw_text_color(_xPos+_x+leftShift*guiX(),_yPos+_y,letter,c_white,c_white,c_white,c_white,_a);
 }
 if question
 {

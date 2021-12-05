@@ -37,6 +37,7 @@ function commandProcess(command){
 			var _name=string_copy(command[diag],2,string_length(command[diag])-1);
 			if _name=="ply"
 			{
+				character="";
 				resetCharacterTestVars();
 			}
 			else
@@ -47,7 +48,6 @@ function commandProcess(command){
 					portInd=command[diag+1];
 					diag++;
 				}
-				setCharacterDiag();	
 			}
 			diag++;
 		}

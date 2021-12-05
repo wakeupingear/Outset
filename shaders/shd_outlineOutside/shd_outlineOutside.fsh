@@ -7,7 +7,6 @@ uniform vec3 u_color;
 
 void main()
 {
- gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
  float alpha = texture2D( gm_BaseTexture, v_vTexcoord ).a;
  
  if (alpha==0.0)
@@ -32,5 +31,6 @@ void main()
 	  gl_FragColor.a=1.0;
 	 }
  }
+ else gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 
 }

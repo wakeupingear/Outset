@@ -45,6 +45,11 @@ justLaunched=false;
 
 x=global.plyX;
 y=global.plyY;
+if instance_exists(oAirShip)&&oAirShip.persistent{
+	oAirShip.x=x;
+	oAirShip.y=y;
+	with oAirShip board();
+}
 
 if !instance_exists(oGrapple)&&hasItem("iGrapple") instance_create_depth(x,y,depth-1,oGrapple);
 

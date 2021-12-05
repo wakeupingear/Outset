@@ -70,5 +70,11 @@
         60,
         "$addData","respAir",
         "$lastObj.destroy"
+    ],
+
+    "air_satelliteIntro":[
+        "$addData","satelliteIntro",
+        60,
+        "$roomChange",["plyX","plyY","rNotdon",5,0,0,1]
     ]
 }

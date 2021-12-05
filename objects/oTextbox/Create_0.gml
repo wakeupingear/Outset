@@ -40,6 +40,7 @@ letterStates=[];
 
 boxHidden=false; //used for things like popups
 portInd=0;
+portProg=0;
 lastName="";
 nameAlpha=1;
 barAlpha=(global.roomTime<4);
@@ -82,9 +83,23 @@ setCharacterDiag = function(){
 		}
 		if !portOverride setPortPositions(global.characters[$ character].portrait);
 	}
+	else portProg=-0.01;
 }
 
+createPort=function(_x,_y,spr,ind,_map){
+	if ds_map_exists(_map,spr){
+		var _p=_map[? spr];
+		_p.image_index=ind;
+		_p.alarm[1]=1;
+		_p.active=true;
+		exit;
+	}
+	var _p=instance_create_depth(_x,_y,depth,oPortrait);
+	_p.sprite_index=spr;
+	_p.image_index=ind;
+}
 setPortPositions=function(portArray){
+	if mode==-1 exit;
 	for (var i=0;i<array_length(portArray);i++)
 	{
 		if portArray[i]==empty continue;
@@ -97,6 +112,26 @@ setPortPositions=function(portArray){
 		}
 		else array_push(portLeft,portArray[i]);
 	}
+	
+	leftShift=0;
+	rightShift=0;
+	var _map=ds_map_create();
+	with oPortrait {
+		active=false;
+		ds_map_add(_map,sprite_index,id);
+	}
+	for (var i=0;i<array_length(portLeft);i++)
+	{
+		createPort(16+textX+leftShift*i,textY+16+portYOff,portLeft[i],portInd,_map)
+		leftShift+=(32+padding); //assumes that portraits stay on the same side of the screen
+	}
+	for (var i=0;i<array_length(portRight);i++)
+	{
+		if createPort(384-(16+textX+rightShift*i),textY+16+portYOff,portRight[i],portInd,_map) 
+		rightShift+=(32+padding);
+	}
+	with oPortrait if !active alarm[0]=1;
+	ds_map_destroy(_map);
 }
 
 heightOverride=0;
@@ -154,9 +189,6 @@ draw=function(edgeX,edgeY){
 	x=edgeX+(1-image_alpha)*64*(!global.hudSide-global.hudSide);
 	y=edgeY+132*(!top);
 
-	leftShift=0;
-	rightShift=0;
-
 	//bars
 	if instance_exists(oVRBluescreen)||instance_exists(oVRXPError)||!option("blackBars") barAlpha=0;
 	else if instance_exists(oPopup)||mode<0||!blackBars
@@ -177,20 +209,9 @@ draw=function(edgeX,edgeY){
 		draw_sprite_ext(sprite_index,0,x,y,1,1,0,global.hudColorList[global.hudColor],image_alpha*global.hudAlpha);
 		draw_sprite_ext(sprite_index,1,x,y,1,1,0,-1,image_alpha);
 	}
-
-	if !boxHidden
-	{
-		for (var i=0;i<array_length(portLeft);i++)
-		{
-			draw_sprite_ext(portLeft[i],portInd,x+16+textX+leftShift*i,y+textY+16+portYOff,1,1,0,-1,image_alpha)
-			leftShift+=(32+padding);
-		}
-		for (var i=0;i<array_length(portRight);i++)
-		{
-			draw_sprite_ext(portRight[i],portInd,x+384-(16+textX+rightShift*i),y+textY+16+portYOff,1,1,0,-1,image_alpha)
-			rightShift+=(32+padding);
-		}
-	}
+	
+	//portraits
+	with oPortrait draw_sprite_ext(sprite_index,image_index,oTextbox.x+x,oTextbox.y+y,image_xscale,image_yscale,image_angle,image_blend,image_alpha*oTextbox.image_alpha);
 	
 	if instance_exists(confirmIcon) 
 	{
@@ -213,6 +234,7 @@ textboxQuestionX=array_create(2,0);
 textboxQuestionLetters=[[],[]];
 createLetter=function(letter,letterState){
 	var _d=instance_create_depth(newLetterX,newLetterY,depth-1,oDiagLetter);
+	_d.leftShift=leftShift;
 	_d.letter=letter;
 	if is_undefined(letterState) _d.letterState=letterStates[newLetterInd+1];
 	else _d.letterState=letterState;

@@ -5,3 +5,4 @@ if instance_exists(oAirClouds){
 }
 resizeSmoke(image_alpha);
 part_emitter_stream(smokeSys,smokeEmitter,smokePart,rate);
+repeat 1+(global.roomTime==1)*60 part_system_update(smokeSys);
