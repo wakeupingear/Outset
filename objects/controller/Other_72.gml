@@ -14,5 +14,4 @@ else
 	ds_map_delete(fileLoadBuffers,_file);
 	if ds_map_empty(fileLoadBuffers) ds_map_destroy(fileLoadBuffers);
 	addJsonData(file,json_parse(_str));
-	show_debug_message(global.langScript)
 }

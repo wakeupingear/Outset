@@ -101,7 +101,6 @@ if active
 			{
 				var _dir=(buttonPressedRepeat(control.right)-buttonPressedRepeat(control.left));
 				var _selected=(buttonPressed(control.confirm)||buttonPressed(control.grapple));
-				show_debug_message(labels)
 				if array_length(labels)>0
 				{
 					if _selected

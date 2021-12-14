@@ -27,7 +27,7 @@ addColorData=function(region,color,outlineCol){
 	if !is_undefined(outlineCol) 
 	{
 		if is_string(outlineCol) outlineCol=hex(outlineCol);
-		colorData[region].outlineCol=[color_get_red(outlineCol)/255,color_get_green(outlineCol)/255,color_get_blue(outlineCol)/255];
+		colorData[region].outlineCol=[color_get_red(outlineCol)/255,color_get_green(outlineCol)/255,color_get_blue(outlineCol)/255,outlineCol];
 	}
 }
 

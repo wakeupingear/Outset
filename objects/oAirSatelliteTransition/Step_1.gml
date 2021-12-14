@@ -1,9 +1,9 @@
 if global.alive{
-	if mode==0{
+	if round(mode)==0{
 		direction=(direction+1+(abs(direction-90)>28)*8)%360;
 		if place_meeting(x,y,oGrapple)&&oGrapple.followObj=id{
-			mode=1;
 			if !hasData("satelliteIntro") conversation("air_satelliteIntro");
+			else mode=1;
 			buttonFreeze(control.up);
 		}
 	}

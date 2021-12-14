@@ -91,9 +91,11 @@ if mode>-1&&mode<2
 		newLetterInd=0;
 		newLetterX=0;
 		newLetterY=0;
-		if mode!=-1 with oDiagLetter alarm[0]=1;
+		if mode!=-1 {
+			with oDiagLetter alarm[0]=1;
+			setCharacterDiag(); //reprocess character traits in case something changed
+		}
 		if mode==1 setHeight(); //set the box's position
-		setCharacterDiag(); //reprocess character traits in case something changed
 		sentenceFormatted=false;
 		portOverride=false;
 		fontOverride=false;

@@ -7,7 +7,7 @@ if isHit>0
 		hit=instance_create_depth(x,y,depth,hitobj);
 		hit.image_alpha=0
 		hit.visible=false;
-		ds_list_add(oTerrain.terrain,hit);
+		ds_list_add(oTerrain.terrain,id);
 	}
 	else 
 	{

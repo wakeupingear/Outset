@@ -95,6 +95,7 @@ createPort=function(_x,_y,spr,ind,_map){
 		exit;
 	}
 	var _p=instance_create_depth(_x,_y,depth,oPortrait);
+	_p.parent=id;
 	_p.sprite_index=spr;
 	_p.image_index=ind;
 }
@@ -116,21 +117,24 @@ setPortPositions=function(portArray){
 	leftShift=0;
 	rightShift=0;
 	var _map=ds_map_create();
+	var _id=id;
 	with oPortrait {
-		active=false;
-		ds_map_add(_map,sprite_index,id);
+		if parent==_id {
+			active=false;
+			ds_map_add(_map,sprite_index,id);
+		}
 	}
 	for (var i=0;i<array_length(portLeft);i++)
 	{
-		createPort(16+textX+leftShift*i,textY+16+portYOff,portLeft[i],portInd,_map)
+		createPort(16+textX+leftShift*i,textY+16+portYOff,portLeft[i],portInd,_map);
 		leftShift+=(32+padding); //assumes that portraits stay on the same side of the screen
 	}
 	for (var i=0;i<array_length(portRight);i++)
 	{
-		if createPort(384-(16+textX+rightShift*i),textY+16+portYOff,portRight[i],portInd,_map) 
+		createPort(384-(16+textX+rightShift*i),textY+16+portYOff,portRight[i],portInd,_map);
 		rightShift+=(32+padding);
 	}
-	with oPortrait if !active alarm[0]=1;
+	with oPortrait if !active&&parent==_id alarm[0]=1;
 	ds_map_destroy(_map);
 }
 
@@ -211,7 +215,8 @@ draw=function(edgeX,edgeY){
 	}
 	
 	//portraits
-	with oPortrait draw_sprite_ext(sprite_index,image_index,oTextbox.x+x,oTextbox.y+y,image_xscale,image_yscale,image_angle,image_blend,image_alpha*oTextbox.image_alpha);
+	var _id=id;
+	with oPortrait if parent==_id draw_sprite_ext(sprite_index,image_index,parent.x+x,parent.y+y,image_xscale,image_yscale,image_angle,image_blend,image_alpha*oTextbox.image_alpha);
 	
 	if instance_exists(confirmIcon) 
 	{

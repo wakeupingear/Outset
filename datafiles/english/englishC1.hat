@@ -180,11 +180,20 @@
     "c1_vrBossIntro":[
         60,
         "?harold","COMRADE! HELLLLLLLP!",
-        "$cutsceneDelay",{"key":"c1_vrBossAwake","myRoom":"rVRBoss","condition":"plyBelow","args":[150]},
-        "$addData","oVRBossIntro"
+        "$if1","plyBelow",[108],
+        "#true1",
+            "Just don't get on the ground-",
+            "...OH DEAR!",
+            "$cutscene","c1_vrBossAwake2",
+        "#false1",
+            "$cutsceneDelay",{"key":"c1_vrBossAwake","myRoom":"rVRBoss","condition":"plyBelow","args":[150]},
+            "$addData","oVRBossIntro"
     ],
     "c1_vrBossAwake":[
         "?harold","YOU'VE BLOWN THE OPERATION!",
+        "$cutscene","c1_vrBossAwake2"
+    ],
+    "c1_vrBossAwake2":[
         "$oVRBoss.phase",0,
         20,
         "$particle",[156,160,"people",{"sprite":"sNormalRipple","xscale":0.05,"yscale":0.05,"distort":true,"alpha":3,"fade":0.07,"xscaleSpd":0.05,"yscaleSpd":0.05}],
@@ -196,7 +205,8 @@
         50,
         "$ply.impulse",[1.5,0],
         25,
-        "$oVRBoss.enemActive",true
+        "$oVRBoss.enemActive",true,
+        "$end"
     ],
 
     "c1_vrBossDefeat":[

@@ -6,20 +6,22 @@ function setTerrain(){
 		var _depth=10000;
 		for (var i=0;i<array_length(_layerNames);i++)
 		{
+			show_debug_message(layer_get_name(_layerNames[i]))
+			if !layer_exists(_layerNames[i]) continue;
 			var _n=string_lower(layer_get_name(_layerNames[i]));
-			if _n=="terrain"||(_n=="myko"&&layer_exists(layer_get_name("mykoTile")))||(layer_get_visible(_layerNames[i])&&string_pos("terrain",_n)>0)
+			if _n=="terrain"||(_n=="myko"&&layer_exists(layer_get_id("mykoTile")))||(layer_get_visible(_layerNames[i])&&string_pos("terrain",_n)>0)
 			{
 				array_push(_layers,_layerNames[i]);
 				if layer_get_depth(_layerNames[i])<_depth _depth=layer_get_depth(_layerNames[i]);
 			}
 		}
-	
 		if array_length(_layerNames)>0
 		{
 			if instance_exists(oTerrain) instance_destroy(oTerrain)
 		
 			for (var k=0;k<array_length(_layers);k++)
 			{
+				if !layer_exists(_layers[k]) continue;
 				var _currentTerrain=-1;
 				var _name=layer_get_name(_layers[k]);
 				var _assets=layer_get_all_elements(_layers[k]);

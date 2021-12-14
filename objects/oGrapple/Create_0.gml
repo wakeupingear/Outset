@@ -161,13 +161,10 @@ if state==0&&!global.transitioning&&!global.menuOpen //check for inputs
 				if buttonHold(control.up) 
 				{
 					image_index=1;
-					if ply.xscale==1
-					{
-						grapplePlyXoff=-1;
-					}
-					else 
-					{
-						grapplePlyXoff=0;
+					if groundCollision(x,y) {
+						var _dir=0;
+						with ply _dir=groundCollision(x+1,y)-groundCollision(x-1,y);
+						grapplePlyXoff-=_dir;
 					}
 					x+=grapplePlyXoff;
 					yDir=-1; //up
@@ -238,7 +235,10 @@ else if state==1 //move in direction
 		if yDir!=0 repeat grappleSpd
 		{
 			y+=yDir;
-			if groundCollision(x,y) break;
+			if groundCollision(x,y)&&!groundCollision(x,y-yDir) {
+				show_debug_message(delta_time)
+				break;
+			}
 		}
 		var _x=x;
 		var _y=y;

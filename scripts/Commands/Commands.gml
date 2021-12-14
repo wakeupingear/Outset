@@ -3,7 +3,7 @@
 function commandProcess(command){
 	while true
 	{
-		if diag>=array_length(command)||is_undefined(command[diag])||command[diag]=="end"
+		if diag>=array_length(command)||is_undefined(command[diag])||command[diag]=="end"||command[diag]=="$end"
 		{
 			return "stopDiag";
 		}
