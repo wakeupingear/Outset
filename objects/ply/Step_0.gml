@@ -189,14 +189,17 @@ if object_index==ply
 	else if place_meeting(x,y,enem)
 	{
 		var _e=instance_place(x,y,enem);
+		if !_e.damaged{
 		if !_e.enemActive switch (_e.object_index)
 		{
 			default: break;
 		}
 		else if (instance_exists(oGrapple)&&oGrapple.state>1)||(goingFast&&alarm[0]<5)
 		{
+			with enem damaged=false;
 			if global.alive
 			{
+				_e.damaged=true;
 				var _damagedEnem=false;
 				switch (_e.object_index)
 				{
@@ -275,6 +278,8 @@ if object_index==ply
 			}
 		}
 	}
+	}
+	else with enem damaged=false;
 	
 	if place_meeting(x,y,oSwitch)
 	{
@@ -356,7 +361,10 @@ else if justLaunched
 	goingFast=true;
 	if abs(hsp)<=hspMax*1.5&&abs(vsp)<1 justLaunched=false;
 }
-else goingFast=false;
+else {
+	if goingFast with enem damaged=false;
+	goingFast=false;
+}
 if goingFast
 {
 	fastIntensity=1;

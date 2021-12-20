@@ -26,6 +26,8 @@ ds_list_add(global.distortObjAberrate,oSouldropCoin);
 setRoomEra();
 setRoomLighting(_rName);
 
+scrAirChange();
+
 //load npcs
 createNPCs();
 

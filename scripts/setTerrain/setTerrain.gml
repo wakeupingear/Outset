@@ -6,7 +6,6 @@ function setTerrain(){
 		var _depth=10000;
 		for (var i=0;i<array_length(_layerNames);i++)
 		{
-			show_debug_message(layer_get_name(_layerNames[i]))
 			if !layer_exists(_layerNames[i]) continue;
 			var _n=string_lower(layer_get_name(_layerNames[i]));
 			if _n=="terrain"||(_n=="myko"&&layer_exists(layer_get_id("mykoTile")))||(layer_get_visible(_layerNames[i])&&string_pos("terrain",_n)>0)

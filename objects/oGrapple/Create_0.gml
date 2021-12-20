@@ -93,6 +93,7 @@ grappleCollideEffect=function(final){
 		}
 	}
 }
+detachDelay=0; //coyote time for collision abruptly disappearing
 
 //step event is run by the player as a function to control the exact timing
 step=function(){ 
@@ -236,7 +237,7 @@ else if state==1 //move in direction
 		{
 			y+=yDir;
 			if groundCollision(x,y)&&!groundCollision(x,y-yDir) {
-				show_debug_message(delta_time)
+				
 				break;
 			}
 		}
@@ -301,6 +302,12 @@ else if state==2 //pull player
 			ply.vsp=-7.8;
 			resetGrapple();
 		}
+	}
+	
+	if !place_meeting(x,y,grappleHit)&&!place_meeting(x,y,npc)&&!groundCollision(x,y){
+		detachDelay++;
+		if detachDelay>6 resetGrapple();
+		//state=1;
 	}
 }
 else if state<0 //reset

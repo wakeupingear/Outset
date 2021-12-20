@@ -92,7 +92,8 @@ function Animation() constructor{
 	animating= true; //whether a non-default animation is set
 	onlyAlive= true; //whether animations run while dead
 	initialSet=false; //set the initial frame even when dead
-	standing= {type: animType.singleFrame,startFrame: 0};
+	standing= {type: animType.singleFrame,startFrame: 0}; //need a default animation
+	
 }
 function setAnimation(newAnimation,animation){
 	animation.animating=true;

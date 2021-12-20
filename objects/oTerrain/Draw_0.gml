@@ -261,6 +261,7 @@ if deathScale>0||deathDist>0
 else surface_reset_target();
 
 draw_surface(surf2,_posX,_posY);
+//if layerName!="myko" draw_surface(surf2,_posX,_posY);
 if shader_current()!=-1 shader_reset();
 
 //if !global.alive pauseAlarms(0);

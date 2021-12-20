@@ -1,4 +1,4 @@
-function scrVariables(){
+	function scrVariables(){
 	#region Preferences
 	global.langScript=-1; //empty to load the script into
 	global.buttonText="";
@@ -703,8 +703,8 @@ function scrVariables(){
 			myRoom:"rNotdon",
 			delay:4
 		});*/
-		//scr_island_1();
-		global.startRoom=rAirSatelliteOutside;
+			//scr_island_1();
+			global.startRoom=rAir;
 	}
 	#endregion
 	

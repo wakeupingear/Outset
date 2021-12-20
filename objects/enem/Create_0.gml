@@ -4,6 +4,7 @@ xscale=image_xscale;
 damage=1;
 attacking=true;
 enemHitTrigger=-1;
+damaged=false;
 
 animation.standing={type: animType.pingPong,startFrame: 0,endFrame:1,frameTime:12};
 

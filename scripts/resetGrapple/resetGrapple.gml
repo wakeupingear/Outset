@@ -8,6 +8,8 @@ function resetGrapple(){
 			with oGrapple{
 				image_index=2;
 				grappleTime=0;
+				detachDelay=0;
+				
 				touchingExtension=false;
 				grappleDistExtra=0;
 				xDir=0;

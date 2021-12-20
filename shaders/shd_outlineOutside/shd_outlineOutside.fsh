@@ -11,11 +11,13 @@ void main()
  
  if (alpha==0.0)
  {
+	 gl_FragColor=vec4(0.0);
+	 
 	 vec2 offsetX=vec2(0.0,0.0);
 	 offsetX.x=u_pixel.x;
 	 vec2 offsetY=vec2(0.0,0.0);
 	 offsetY.y=u_pixel.y;
- 
+  
 	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord + offsetX).a);
 	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord - offsetX).a);
 	 alpha += (texture2D( gm_BaseTexture, v_vTexcoord + offsetY).a);
@@ -32,5 +34,4 @@ void main()
 	 }
  }
  else gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
-
 }
