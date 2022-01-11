@@ -1,0 +1,1 @@
+if !global.alive||!hasData("airAtWar") pauseAlarms(0);	

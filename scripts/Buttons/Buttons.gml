@@ -31,7 +31,7 @@ function buttonFreeze(input){
 }
 function buttonIncrement(input,amount){
 	if is_undefined(amount) amount=1;
-	global.inputs[input]++;
+	global.inputs[input]+=amount;
 }
 
 function buttonDoublePressed(input){

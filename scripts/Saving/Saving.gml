@@ -1,4 +1,5 @@
 function save(_num){
+	show_debug_message("saving")
 	ini_open("file"+string(_num)+".ini");
 	ini_write_real("Player","health",global.maxHealth);
 	ini_write_real("Player","souldrop",global.souldrop);

@@ -141,6 +141,7 @@
     {"id":{"name":"rTest2","path":"rooms/rTest2/rTest2.yy",},"order":2,},
     {"id":{"name":"sPipe","path":"sprites/sPipe/sPipe.yy",},"order":7,},
     {"id":{"name":"oCursor","path":"objects/oCursor/oCursor.yy",},"order":6,},
+    {"id":{"name":"oGeneralBoss","path":"objects/oGeneralBoss/oGeneralBoss.yy",},"order":3,},
     {"id":{"name":"oGrapplePoint","path":"objects/oGrapplePoint/oGrapplePoint.yy",},"order":3,},
     {"id":{"name":"spr_FTF_blurNoise","path":"sprites/spr_FTF_blurNoise/spr_FTF_blurNoise.yy",},"order":3,},
     {"id":{"name":"oWaterController","path":"objects/oWaterController/oWaterController.yy",},"order":10,},
@@ -1192,7 +1193,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/.vscode","resourceVersion":"1.0","name":"settings.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "23.1.1.451",
+    "IDEVersion": "23.1.1.454",
   },
   "resourceVersion": "1.4",
   "name": "Outset",

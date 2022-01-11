@@ -16,6 +16,7 @@ function respawn(xPos,yPos){
 		instance_destroy(oPlayerSoul);
 	}
 	shake(2,2,20);
+	with boss resetFunc();
 	for (var i=0;i<instance_number(oSoulBranch);i++) 
 	{
 		var _i=instance_find(oSoulBranch,i);

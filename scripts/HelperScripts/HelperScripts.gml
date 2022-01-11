@@ -28,6 +28,18 @@ function array_pos(array,val){
 	for (var i=0;i<array_length(array);i++) if array[i]==val return i;
 	return -1;
 }
+function arrayString(array)
+{
+	var _str="[";
+	for (var i=0;i<array_length(array);i++)
+	{
+		if i>0 _str+=", ";
+		var _val=array[i];
+		if is_string(_val) _str+=_val;
+		else if is_real(_val) _str+=string(_val);
+	}
+	return _str+"]";
+}
 
 //structs
 function addToStruct(originalStruct,addStruct){

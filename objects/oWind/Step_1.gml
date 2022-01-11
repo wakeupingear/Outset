@@ -9,4 +9,10 @@ if (onlyAlive&&global.alive)||(onlyDead&&!global.alive){
 		_i.hsp+=_xC;
 		_i.vsp+=_yC;
 	}
+	if instance_exists(oGrapple)&&oGrapple.state==1&&place_meeting(x,y,oGrapple) {
+		grappleTime++;
+		oGrapple.x+=_xC*grappleTime;
+		oGrapple.y+=_yC*grappleTime;
+	}
+	else grappleTime=0;
 }

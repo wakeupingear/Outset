@@ -422,7 +422,7 @@
 	setNPCRoom("charlie",rNotdon,"pro_lb1");
 	hideNPC("alex");
 	//setNPCRoom("alex",rNotdonAmphitheater,"c1_treadmill");
-	setNPCRoom("general",rWastesCrater,"preFight");
+	hideNPC("general");
 	setNPCRoom("xavier",rIsland,"arrival");
 	setNPCRoom("babishOrange",rCoreIntro,"pro_core");
 	setNPCRoom("craigKrisper",rCoreIntro,"pro_core");
@@ -704,7 +704,7 @@
 			delay:4
 		});*/
 			//scr_island_1();
-			global.startRoom=rAir;
+			global.startRoom=rWastesCrater;
 	}
 	#endregion
 	

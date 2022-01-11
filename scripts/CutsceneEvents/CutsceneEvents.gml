@@ -13,7 +13,7 @@ function scr_pro_2(){
 	setRoomLighting(room_get_name(room));
 	
 	//destroy all old objects
-	destroyArray([oMissile],false); 
+	destroyArray([oMissile],false);
 	destroyArray([oVShip,oVBarrier,oExplosion,npc,oTextbox]);
 	
 	var _str={key:"pro_electroTest",condition:"plyRight",args:[2082],myRoom: "rNotdon"};
@@ -431,6 +431,8 @@ function scr_air_2(){
 	setNPCRoom("chet",rAir,"air_intro");
 	setNPCRoom("nora",rAir,"air_intro");
 	setNPCRoom("smitten",rAir,"air_intro");
+	
+	createCutsceneDelay({key:"air_intro2",myRoom: "rAir",condition: "plyRight", args: [2297]});
 	
 	if !instance_exists(oNotdonJet) var _jet=instance_create_layer(0,0,"behind",oNotdonJet);
 	else with oNotdonJet if state==0 _jet=id;

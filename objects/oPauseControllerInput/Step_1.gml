@@ -26,10 +26,11 @@ if !destroy
 				selected=false;
 				with oPauseControllerInput if pos==_id selected=true;
 				buttonIncrement(_dir);
+				oCursor.x=-100;
 			}
 		}
 	}
-	else if place_meeting(x+camX(),y+camY(),oCursor) //not working
+	else if place_meeting(x+camX(),y+camY(),oCursor)
 	{
 		with oPauseControllerInput selected=false;
 		selected=true;
@@ -40,4 +41,3 @@ else
 	image_alpha-=0.1;
 	if image_alpha<=0 instance_destroy();
 }
-printCoords(x,y)

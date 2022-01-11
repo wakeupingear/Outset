@@ -32,6 +32,10 @@
         "$camReset"
     ],
 
+    "air_intro2":[
+        "$addData","airAtWar",
+    ],
+
     "air_donutBox":[
         "$popup",
         {

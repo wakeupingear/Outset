@@ -26,16 +26,12 @@ if image_index==0
 	catwalkFloor.image_xscale=60;
 	catwalkFloor.image_yscale=4;
 	
-	var _int=instance_create_depth(x,y-26,depth,oInteractable);
-	_int.sprite_index=sPlaceholderDoor;
-	if !hasData("wGen1Start")
+	if !hasData("oGeneralBossIntro")
 	{
-		_int.key="wastes_general_intro";
+		var _int=instance_create_depth(x,y-26,depth,oInteractable);
+		_int.sprite_index=sPlaceholderDoor;
+		_int.key="wastes_general_eavesdrop";
 		_int.check=12;
-	}
-	else
-	{
-		_int.check=13;
 	}
 	
 	with oWastesTower if x>oWastesWarehouse.x y=ystart;

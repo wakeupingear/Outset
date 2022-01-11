@@ -480,7 +480,7 @@ if (instance_exists(ply)&&global.notPause)||pauseMenuCopied!=-1
 	if ds_list_size(global.inventory)>0
 	{
 		var _x=getHudX()+edgeX-12*(1-(global.hudSide)*2);
-		var _y=52+edgeY;
+		var _y=52+edgeY+2;
 		draw_sprite_ext(sHudItem,0,_x,_y,1,1,0,global.hudColorList[global.hudColor],global.hudAlpha*image_alpha*hudFade);
 		if buttonHold(control.item)
 		{
@@ -525,7 +525,7 @@ if pauseAlpha>0
 }
 if !global.notPause 
 {
-	with oParticle draw_self();
+	with oParticle if sprite_index!=-1 draw_self();
 	with oPauseDrawParent draw(0,0);
 }
 }

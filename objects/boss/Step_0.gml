@@ -2,11 +2,15 @@
 if global.alive&&!instance_exists(oTextbox){
 if enemActive
 {
-	
+	if ai!=-1 ai();
 }
 else if !startCutsceneTriggered&&myHealth>0
 {
-	checkActive();
+	if checkActive()
+	{
+		startCutsceneTriggered=true;
+		alarm[1]=startDelay;
+	}
 }
 }
 

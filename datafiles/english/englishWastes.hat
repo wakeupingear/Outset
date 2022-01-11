@@ -152,13 +152,14 @@
         "HELL YEAH BROTHER!"
     ],
 
-    "wastes_general_intro":[
-        "$addData","wGen1Start",
+    "wastes_general_eavesdrop":[
+        "$addData","oGeneralBossIntro",
+        "?chet","Fight time",
         "$oWastesCatwalk.alarm[0]",1,
         60,
         "$destroyPlace",["trackObjX","trackObjY","hitobj"],
         "$trackObj.destroy",
-        "$cutscene","wastes_car_warehouse"
+        "$addData","oGeneralBossIntroFinish",
     ],
     "wastes_car_warehouse":[
         "$createLayer",[881,328,"mykoSpawn","oWastesCar"],

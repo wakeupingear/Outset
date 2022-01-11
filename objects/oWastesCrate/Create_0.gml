@@ -1,3 +1,9 @@
+if isTest&&layer_exists(layer)&&layer_get_name(layer)=="crateTest" {
+	show_debug_message(arrayString([x,y,object_get_name(object_index)])+",");
+	instance_destroy(id,false);
+	exit;
+}
+
 image_speed=0;
 variations=2;
 if sprite_index==sWastesCrateBig variations=3;
@@ -8,6 +14,14 @@ physicsVars();
 contents=[]; //array of structs
 above=-1;
 behind=-1;
+moving=false;
+xTo=x;
+yTo=y;
+spd=2;
+
+spawned=false; //whether another object created it (like general battle)
+spawnIndex=-1;
+spawnParent=-1;
 
 mode=0;
 delay=60;
@@ -81,6 +95,24 @@ damageCrate=function(){
 		damageAdjacentCrate(0,1,_list);
 		ds_list_destroy(_list);
 		instance_destroy();
+	}
+	
+	if spawned&&mode!=0
+	{
+		switch spawnParent {
+			case oGeneralBoss:
+				if array_length(contents)>0{
+					for (var i=0;i<ds_list_size(oGeneralBoss.containers);i++){
+						if oGeneralBoss.containers[|i]==spawnIndex{
+							ds_list_delete(oGeneralBoss.containers,i);
+							break;
+						}
+					}
+				}
+				if mode>1 oGeneralBoss.objects[|spawnIndex]=noone;
+				break;
+			default: break;
+		}
 	}
 }
 
