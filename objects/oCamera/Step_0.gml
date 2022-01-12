@@ -48,7 +48,6 @@ if x!=xTo||y!=yTo
 if abs(x-xTo)<1 x=round(xTo);
 if abs(y-yTo)<1 y=round(yTo);
 clampCam();
-
 if shakeTime>0||shakeToggle
 {
 	if !shakeToggle shakeTime--;

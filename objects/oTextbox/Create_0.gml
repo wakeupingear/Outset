@@ -186,7 +186,6 @@ drawIcon=function(_x,_xS,_y,_yS){
 	else 
 	{
 		with confirmIcon draw_sprite_ext(sprite_index,image_index,(oTextbox.x+48+x+_x)*_xS,(oTextbox.y+26+round(oTextbox.newLetterY/guiY())+_y)*_yS,image_xscale*_xS,image_yscale*(1+(xprevious!=x)*sqrt(abs(xprevious-x)*0.1))*_yS,image_angle,image_blend,image_alpha);
-		if _xS!=1 printCoords(_xS,_yS)
 	}
 }
 draw=function(edgeX,edgeY){

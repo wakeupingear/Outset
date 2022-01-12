@@ -32,6 +32,7 @@ function npcMovementVars(){
 		reachedTarget=true; //whether the object has reached its last pathfinding coordinate
 		jumpCheck=false; //whether the object should check for holes to jump over
 		teleportOffscreen=false; //teleport to position when offscreen
+		alwaysJump=false; //always jump during pathfinding
 		
 		npcSpecialVars();
 		

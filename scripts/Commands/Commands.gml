@@ -653,7 +653,7 @@ function pathfindCommandProcess(command){
 		if pfInd>=array_length(command)||is_undefined(command[pfInd])||command[pfInd]=="end"
 		{
 			pathfinding=false;
-			event_user(0); //set text at location
+			if !isObj(id,enem) event_user(0); //set text at location
 		}
 		else if is_real(command[pfInd])
 		{
@@ -695,6 +695,11 @@ function pathfindCommandProcess(command){
 			case "jump":
 				jump=1;
 				pfInd++;
+				_loop=true;
+				break;
+			case "alwaysJump":
+				alwaysJump=command[pfInd+1];
+				pfInd+=2;
 				_loop=true;
 				break;
 			case "jumpCheck":

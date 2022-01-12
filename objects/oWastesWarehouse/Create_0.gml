@@ -7,6 +7,10 @@ alarm[1]=1;
 hit=instance_create_depth(x,y,depth,hitobj);
 hit.sprite_index=sprite_index;
 hit.image_index=3; //stops npcs from getting ejected out of the warehouse on creation
+npcBarrier=instance_create_depth(x,y,depth,npcHit);
+npcBarrier.sprite_index=sprite_index;
+npcBarrier.image_index=3;
+npcBarrier.image_xscale=-1;
 
 behindWall=instance_create_depth(x,y,depth+1,oPlaceholder);
 behindWall.sprite_index=sprite_index;

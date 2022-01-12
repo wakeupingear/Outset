@@ -1,15 +1,10 @@
-if isTest&&layer_exists(layer)&&layer_get_name(layer)=="crateTest" {
-	show_debug_message(arrayString([x,y,object_get_name(object_index)])+",");
-	instance_destroy(id,false);
-	exit;
-}
-
 image_speed=0;
 variations=2;
 if sprite_index==sWastesCrateBig variations=3;
 image_index=irandom(variations-1);
 
 physicsVars();
+collType=[npcHit,oWastesCrate];
 
 contents=[]; //array of structs
 above=-1;
@@ -23,13 +18,17 @@ spawned=false; //whether another object created it (like general battle)
 spawnIndex=-1;
 spawnParent=-1;
 
-mode=0;
+myHealth=2;	
 delay=60;
 startUnder=false;
-hit=instance_create_depth(x-(sprite_get_xoffset(sprite_index)),y+(sprite_height-sprite_get_yoffset(sprite_index))-1,depth,hitobj);
-hit.image_xscale=sprite_width;
-hit.image_yscale=-sprite_height
-//hit.visible=true;
+
+hit=noone;
+if object_index!=oWastesCrateStand{
+	hit=instance_create_depth(x-(sprite_get_xoffset(sprite_index)),y+(sprite_height-sprite_get_yoffset(sprite_index))-1,depth,hitobj);
+	hit.image_xscale=sprite_width;
+	hit.image_yscale=-sprite_height;
+	//hit.visible=true;
+}
 alarm[0]=1;
 
 damageAdjacentCrate=function(xOff,yOff,list){
@@ -37,28 +36,24 @@ damageAdjacentCrate=function(xOff,yOff,list){
 	var _m=(object_index==oWastesCrateBig)*2;
 	for (var i=0;i<ds_list_size(list);i++) if list[|i]!=id with list[|i] if object_index!=oWastesCrateBig
 	{
-		mode=_m;
+		myHealth=_m;
 		alarm[2]=30;
 	}
 }
 
+
 damageCrate=function(){
-	if alarm[1]>-1 exit;
-	mode++;
-	if mode!=3&&place_meeting(x,y-1,oWastesCrate)
-	{
-		if object_index==oWastesCrateBig mode=0;
-		else mode=2;
-	}
-	if mode==1
+	if alarm[1]>-1||(place_meeting(x,y-1,oWastesCrate)) exit;
+	myHealth-=(1+(array_length(contents)==0));
+	if myHealth==1
 	{
 		shake(2,2,10);
 		if array_length(contents)>0&&object_index==oWastesCrateBig image_index=2;
 		image_index+=variations;
-		var _list=ds_list_create();
-		damageAdjacentCrate(-1,0,_list);
-		damageAdjacentCrate(1,0,_list);
-		ds_list_destroy(_list);
+		//var _list=ds_list_create();
+		//damageAdjacentCrate(-1,0,_list);
+		//damageAdjacentCrate(1,0,_list);
+		//ds_list_destroy(_list);
 		//alarm[1]=delay;
 		setHitHeight();
 		for (var i=0;i<array_length(contents);i++) 
@@ -72,7 +67,7 @@ damageCrate=function(){
 				_o.canDropSoul=false;
 				_o.soulNum=0;
 			}
-			if object_is_ancestor(_o.object_index,oPhysicsObj) with _o while groundCollision(x,y) y--;
+			if isObj(_o,oPhysicsObj) with _o while groundCollision(x,y) y--;
 		}
 		above=instance_create_layer(x,y,"above",oPlaceholder);
 		above.sprite_index=sprite_index;
@@ -97,22 +92,24 @@ damageCrate=function(){
 		instance_destroy();
 	}
 	
-	if spawned&&mode!=0
-	{
-		switch spawnParent {
+	if spawned&&instance_exists(spawnParent){
+		switch spawnParent.object_index {
 			case oGeneralBoss:
-				if array_length(contents)>0{
+				if myHealth==1&&array_length(contents)>0{
 					for (var i=0;i<ds_list_size(oGeneralBoss.containers);i++){
-						if oGeneralBoss.containers[|i]==spawnIndex{
+						if oGeneralBoss.containers[|i]==id{
 							ds_list_delete(oGeneralBoss.containers,i);
 							break;
 						}
 					}
 				}
-				if mode>1 oGeneralBoss.objects[|spawnIndex]=noone;
+				if myHealth==0 oGeneralBoss.objects[|spawnIndex]=noone;
 				break;
 			default: break;
 		}
+	}
+	if myHealth==0{
+		instance_destroy();
 	}
 }
 

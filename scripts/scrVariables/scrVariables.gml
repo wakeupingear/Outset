@@ -553,16 +553,16 @@
 	global.rooms.rWastesCrater.inside=false;
 	global.rooms.rWastesHilltop.inside=false;
 	global.rooms.rWastesFactoryOutside.inside=false;
-	addRoomCamera("rWastesFactory1",436,684,768,760,384,756);
-	addRoomCamera("rWastesFactoryWorkers",-200,-400,800,174,"x",108);
-	addRoomCamera("rWastesFactoryWorkers",-200,174,370,1000,192,270);
+		addRoomCamera("rWastesFactory1",436,684,768,760,384,756);
+		addRoomCamera("rWastesFactoryWorkers",-200,-400,800,174,"x",108);
+		addRoomCamera("rWastesFactoryWorkers",-200,174,370,1000,192,270);
 	//global.rooms.rNotdonArchives.npcs=[npcEugene,npcCitra];
-	addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
-	addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
-	addBothCamera("rNotdonArchives",0,0,384,210,192,108); //citra office
+		addRoomCamera("rNotdonAdults",384,216,768,432,576,324);
+		addBothCamera("rWastesNotdon",762,-20,1251,212,963,108); //wastes transition tunnel
+		addBothCamera("rNotdonArchives",0,0,384,210,192,108); //citra office
 	
-	addRoomCamera("rWastesHilltop",934,696,1070,1300,996,743); //Garage
-	addRoomCamera("rWastesFactoryOutside",0,0,500,250,320,160); //factory crane
+		addRoomCamera("rWastesHilltop",934,696,1070,1300,996,743); //Garage
+		addRoomCamera("rWastesFactoryOutside",0,0,500,250,320,160); //factory crane
 	
 	global.rooms.rIsland.inside=false;
 	}
@@ -691,6 +691,7 @@
 		//scr_c1_6();
 		//scr_air_1();
 		scr_air_2();
+		//scr_wastes_3()
 		//scr_air_1();
 		//scr_wastes_1();
 		//scr_wastes_2();
@@ -732,6 +733,7 @@
 	
 	ds_map_add(global.physCollPoints,sWastesCarWheel,[[-7,0,7],[0,7,0]]);
 	ds_map_add(global.physCollPoints,sWastesCrate,[[-12,12],[15,15]]);
+	ds_map_add(global.physCollPoints,sWastesCrateStand,global.physCollPoints[? sWastesCrate]);
 	ds_map_add(global.physCollPoints,sWastesCrateBig,[[-29,29],[31,31]]);
 	#endregion
 }

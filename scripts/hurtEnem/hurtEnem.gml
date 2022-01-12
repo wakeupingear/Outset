@@ -8,7 +8,7 @@ function hurtEnem(_id,_damage){
 		alarm[0]=30;
 		
 		var _isWall=object_index==enemWall||object_is_ancestor(object_index,enemWall);
-		if myHealth<=0
+		if myHealth<=dieThreshold
 		{
 			if isObj(id,boss)
 			{

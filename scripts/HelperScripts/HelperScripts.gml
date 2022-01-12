@@ -35,8 +35,7 @@ function arrayString(array)
 	{
 		if i>0 _str+=", ";
 		var _val=array[i];
-		if is_string(_val) _str+=_val;
-		else if is_real(_val) _str+=string(_val);
+		_str+=toString(_val);
 	}
 	return _str+"]";
 }
@@ -89,6 +88,13 @@ function explodeString(del,str)
     }
     return arr;
 }
+function toString(val,typeOptional){
+	if is_undefined(typeOptional) typeOptional="";
+	if typeOptional=="list" return listString(val);
+	if is_real(val) return string(val);
+	if is_array(val) return arrayString(val);
+	return val;
+}
 function listString(list)
 {
 	var _str="{";
@@ -96,8 +102,7 @@ function listString(list)
 	{
 		if i>0 _str+=", ";
 		var _val=list[|i];
-		if is_string(_val) _str+=_val;
-		else if is_real(_val) _str+=string(_val);
+		_str+=toString(_val);
 	}
 	return _str+"}";
 }

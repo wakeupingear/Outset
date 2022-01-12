@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "sPlaceholderPixelR",
-    "path": "sprites/sPlaceholderPixelR/sPlaceholderPixelR.yy",
+    "name": "sWastesCrateStand",
+    "path": "sprites/sWastesCrateStand/sWastesCrateStand.yy",
   },
   "solid": false,
-  "visible": false,
+  "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oWastesCrate",
+    "path": "objects/oWastesCrate/oWastesCrate.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -26,11 +29,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "collision",
-    "path": "folders/Objects/collision.yy",
+    "name": "crates",
+    "path": "folders/Objects/platforming/crates.yy",
   },
   "resourceVersion": "1.0",
-  "name": "npcHit",
+  "name": "oWastesCrateStand",
   "tags": [],
   "resourceType": "GMObject",
 }

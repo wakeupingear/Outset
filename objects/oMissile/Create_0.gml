@@ -6,6 +6,7 @@ canDropSoul=false;
 soulNum=0;
 
 startOffscreen=offscreen(x,y,0);
+target=noone;
 
 xDir=0;
 yDir=0;

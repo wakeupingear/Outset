@@ -6,6 +6,10 @@ function pathfindingStart(obj,path){
 	pfInd=0;
 	pathfinding=true;
 	pathfindingInterrupt=false;
+	if string_contains(path,"_ALWAYSJUMP"){
+		alwaysJump=true;
+		path=string_replace(path,"_ALWAYSJUMP","");
+	}
 	//text=[]; //this might be a mistake - it was a mistake (overrides idle/default text)
 	if string_pos("simpleEnterRoom",path)==1
 	{
@@ -56,6 +60,7 @@ function pathfindingStart(obj,path){
 	}
 	else if !is_array(path) moveCommand=pathLoad(path);
 	else moveCommand=path;
+	show_debug_message(moveCommand)
 	pathfindCommandProcess(moveCommand);
 	}
 }

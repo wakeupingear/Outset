@@ -3,7 +3,7 @@ var _pfX=pfX;
 if _pfX=="x" _pfX=x;
 var _pfY=pfY;
 if _pfY=="y" _pfY=y;
-	
+
 if global.alive{
 if pathfinding //process commands
 {
@@ -20,11 +20,13 @@ if pathfinding //process commands
 			pathfindCommandProcess(moveCommand);
 			if !pathfinding //done
 			{
-				if global.characterLocations[? npcKey][2]!=room instance_destroy();
+				if alwaysJump jump=0;
+				alwaysJump=false;
+				if !isObj(id,enem)&&global.characterLocations[? npcKey][2]!=room instance_destroy();
 				else
 				{
 					var _rm=room_get_name(room);
-					xscale=global.characters[$ npcKey].locations[$ _rm][$ global.characterLocations[? npcKey][4]].xs;
+					xscale=(!isObj(id,enem))?global.characters[$ npcKey].locations[$ _rm][$ global.characterLocations[? npcKey][4]].xs:0;
 					if xscale==0 
 					{
 						facePlayer=true;
@@ -48,6 +50,7 @@ if pathfinding //process commands
 }
 
 if phys{
+if jump==0&&alwaysJump&&groundCollision(x,y+1) jump=1;
 if jump>0
 {
 	jump++;

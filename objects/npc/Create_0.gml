@@ -1,4 +1,4 @@
-image_speed=0;
+	image_speed=0;
 
 npcKey="";
 location="";
@@ -12,7 +12,7 @@ if object_is_ancestor(object_index,enem)
 {
 	npcHealthVars();
 }
-else 
+else
 {
 	lastSentence=-1; //for random selections in Idle conversation
 	event_user(0);

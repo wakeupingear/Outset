@@ -154,7 +154,7 @@
 
     "wastes_general_eavesdrop":[
         "$addData","oGeneralBossIntro",
-        "?chet","Fight time",
+        "?chet","Fight time","OK!",
         "$oWastesCatwalk.alarm[0]",1,
         60,
         "$destroyPlace",["trackObjX","trackObjY","hitobj"],

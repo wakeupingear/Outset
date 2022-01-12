@@ -1,2 +1,2 @@
 /// @description Physics
-physics();
+event_inherited();
