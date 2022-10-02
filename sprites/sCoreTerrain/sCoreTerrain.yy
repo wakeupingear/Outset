@@ -83,7 +83,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCoreTerrain","path":"sprites/sCoreTerrain/sCoreTerrain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCoreTerrain",
     "tags": [],
     "resourceType": "GMSequence",

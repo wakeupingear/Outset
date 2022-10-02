@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sReactor","path":"sprites/sReactor/sReactor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sReactor",
     "tags": [],
     "resourceType": "GMSequence",

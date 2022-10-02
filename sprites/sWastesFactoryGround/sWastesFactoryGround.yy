@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesFactoryGround","path":"sprites/sWastesFactoryGround/sWastesFactoryGround.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesFactoryGround",
     "tags": [],
     "resourceType": "GMSequence",

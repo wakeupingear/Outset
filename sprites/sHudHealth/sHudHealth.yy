@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHudHealth","path":"sprites/sHudHealth/sHudHealth.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHudHealth",
     "tags": [],
     "resourceType": "GMSequence",

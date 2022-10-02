@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_wastes_hotel_top_out","path":"sprites/spr_wastes_hotel_top_out/spr_wastes_hotel_top_out.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "",
     "tags": [],
     "resourceType": "GMSequence",

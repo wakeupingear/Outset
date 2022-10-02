@@ -91,7 +91,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBlockCrack","path":"sprites/sBlockCrack/sBlockCrack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBlockCrack",
     "tags": [],
     "resourceType": "GMSequence",

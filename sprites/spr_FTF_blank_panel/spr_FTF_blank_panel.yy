@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_FTF_blank_panel","path":"sprites/spr_FTF_blank_panel/spr_FTF_blank_panel.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_FTF_blank_panel",
     "tags": [],
     "resourceType": "GMSequence",

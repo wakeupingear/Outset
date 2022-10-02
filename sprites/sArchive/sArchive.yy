@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sArchive","path":"sprites/sArchive/sArchive.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sArchive",
     "tags": [],
     "resourceType": "GMSequence",

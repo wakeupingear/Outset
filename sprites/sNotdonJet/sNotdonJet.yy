@@ -78,7 +78,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonJet","path":"sprites/sNotdonJet/sNotdonJet.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonJet",
     "tags": [],
     "resourceType": "GMSequence",

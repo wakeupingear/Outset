@@ -90,7 +90,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWrenchCountdown","path":"sprites/sWrenchCountdown/sWrenchCountdown.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWrenchCountdown",
     "tags": [],
     "resourceType": "GMSequence",

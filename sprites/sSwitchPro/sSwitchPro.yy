@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSwitchPro","path":"sprites/sSwitchPro/sSwitchPro.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSwitchPro",
     "tags": [],
     "resourceType": "GMSequence",

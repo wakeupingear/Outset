@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIslandTreeBG","path":"sprites/sIslandTreeBG/sIslandTreeBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sIslandTreeBG",
     "tags": [],
     "resourceType": "GMSequence",

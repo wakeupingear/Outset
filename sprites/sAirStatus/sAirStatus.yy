@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sAirStatus","path":"sprites/sAirStatus/sAirStatus.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sAirStatus",
     "tags": [],
     "resourceType": "GMSequence",

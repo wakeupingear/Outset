@@ -94,7 +94,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesBombRack","path":"sprites/sWastesBombRack/sWastesBombRack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesBombRack",
     "tags": [],
     "resourceType": "GMSequence",

@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPowerPlantTemp","path":"sprites/sPowerPlantTemp/sPowerPlantTemp.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPowerPlantTemp",
     "tags": [],
     "resourceType": "GMSequence",

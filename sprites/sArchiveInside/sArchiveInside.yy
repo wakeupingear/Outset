@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sArchiveInside","path":"sprites/sArchiveInside/sArchiveInside.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sArchiveInside",
     "tags": [],
     "resourceType": "GMSequence",

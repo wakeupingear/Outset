@@ -86,7 +86,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTitleBG","path":"sprites/sTitleBG/sTitleBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTitleBG",
     "tags": [],
     "resourceType": "GMSequence",

@@ -133,7 +133,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSlateVideo","path":"sprites/sSlateVideo/sSlateVideo.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSlateVideo",
     "tags": [],
     "resourceType": "GMSequence",

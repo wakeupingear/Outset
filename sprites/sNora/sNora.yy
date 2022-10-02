@@ -82,7 +82,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNora","path":"sprites/sNora/sNora.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNora",
     "tags": [],
     "resourceType": "GMSequence",

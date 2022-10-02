@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sFog","path":"sprites/sFog/sFog.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sFog",
     "tags": [],
     "resourceType": "GMSequence",

@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSouldropCoin","path":"sprites/sSouldropCoin/sSouldropCoin.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSouldropCoin",
     "tags": [],
     "resourceType": "GMSequence",

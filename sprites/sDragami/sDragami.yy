@@ -149,7 +149,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sDragami","path":"sprites/sDragami/sDragami.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sDragami",
     "tags": [],
     "resourceType": "GMSequence",

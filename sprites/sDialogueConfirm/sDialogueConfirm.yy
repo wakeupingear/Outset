@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sDialogueConfirm","path":"sprites/sDialogueConfirm/sDialogueConfirm.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sDialogueConfirm",
     "tags": [],
     "resourceType": "GMSequence",

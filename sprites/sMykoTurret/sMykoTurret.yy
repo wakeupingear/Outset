@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoTurret","path":"sprites/sMykoTurret/sMykoTurret.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoTurret",
     "tags": [],
     "resourceType": "GMSequence",

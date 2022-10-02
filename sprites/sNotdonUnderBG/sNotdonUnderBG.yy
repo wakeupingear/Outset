@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonUnderBG","path":"sprites/sNotdonUnderBG/sNotdonUnderBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonUnderBG",
     "tags": [],
     "resourceType": "GMSequence",

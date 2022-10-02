@@ -98,7 +98,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHarold","path":"sprites/sHarold/sHarold.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHarold",
     "tags": [],
     "resourceType": "GMSequence",

@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sArchivesWrenches","path":"sprites/sArchivesWrenches/sArchivesWrenches.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sArchivesWrenches",
     "tags": [],
     "resourceType": "GMSequence",

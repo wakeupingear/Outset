@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldVideoSnooze","path":"sprites/sHaroldVideoSnooze/sHaroldVideoSnooze.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldVideoSnooze",
     "tags": [],
     "resourceType": "GMSequence",

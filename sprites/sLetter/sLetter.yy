@@ -85,7 +85,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sLetter","path":"sprites/sLetter/sLetter.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sLetter",
     "tags": [],
     "resourceType": "GMSequence",

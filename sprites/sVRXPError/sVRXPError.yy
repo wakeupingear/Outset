@@ -106,7 +106,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRXPError","path":"sprites/sVRXPError/sVRXPError.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRXPError",
     "tags": [],
     "resourceType": "GMSequence",

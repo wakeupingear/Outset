@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKoopaDisplace","path":"sprites/sKoopaDisplace/sKoopaDisplace.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKoopaDisplace",
     "tags": [],
     "resourceType": "GMSequence",

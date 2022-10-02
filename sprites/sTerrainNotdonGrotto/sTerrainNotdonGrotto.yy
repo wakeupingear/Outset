@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTerrainNotdonGrotto","path":"sprites/sTerrainNotdonGrotto/sTerrainNotdonGrotto.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTerrainNotdonGrotto",
     "tags": [],
     "resourceType": "GMSequence",

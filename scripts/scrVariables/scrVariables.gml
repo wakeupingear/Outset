@@ -370,10 +370,11 @@
 		addLocationPathFrom("her","boxWaiting",rWastesHilltop,"treeStuck",rWastesCrater,"simpleJT{-100,1000}");
 	#endregion
 	#region Gopher
+	global.characters.gopher={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.harold};
+	addLocation("gopher",rWastesCrater,"preFight",632,385,-1,1);
 	#endregion
 	#region General
-	global.characters.general={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.harold
-	};
+	global.characters.general={portrait: [empty],diagColor: c_nearWhite,font: fontSizes.harold};
 	addLocation("general",rWastesCrater,"preFight",632,385,-1,1);
 	#endregion
 	#region Mineral
@@ -676,8 +677,8 @@
 		addData("respInt");
 		global.devTeleport=true;
 		global.devSkips=true;
-		addItem("iGrapple");
-		addItem("iGrappleArc");
+		//addItem("iGrapple");
+		//addItem("iGrappleArc");
 		//addItem("iGrappleDown");
 		addItem("iSlate");
 		addItem("iSolitaire");

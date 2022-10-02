@@ -98,7 +98,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sDiscoball","path":"sprites/sDiscoball/sDiscoball.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sDiscoball",
     "tags": [],
     "resourceType": "GMSequence",

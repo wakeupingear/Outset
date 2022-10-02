@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesTerrainPix","path":"sprites/sWastesTerrainPix/sWastesTerrainPix.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesTerrainPix",
     "tags": [],
     "resourceType": "GMSequence",

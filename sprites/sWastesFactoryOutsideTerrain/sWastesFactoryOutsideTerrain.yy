@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesFactoryOutsideTerrain","path":"sprites/sWastesFactoryOutsideTerrain/sWastesFactoryOutsideTerrain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesFactoryOutsideTerrain",
     "tags": [],
     "resourceType": "GMSequence",

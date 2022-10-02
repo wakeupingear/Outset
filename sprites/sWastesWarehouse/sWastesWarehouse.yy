@@ -103,7 +103,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesWarehouse","path":"sprites/sWastesWarehouse/sWastesWarehouse.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesWarehouse",
     "tags": [],
     "resourceType": "GMSequence",

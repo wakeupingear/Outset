@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHotelLobbyColl","path":"sprites/sHotelLobbyColl/sHotelLobbyColl.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHotelLobbyColl",
     "tags": [],
     "resourceType": "GMSequence",

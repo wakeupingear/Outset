@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlatformTest","path":"sprites/sPlatformTest/sPlatformTest.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlatformTest",
     "tags": [],
     "resourceType": "GMSequence",

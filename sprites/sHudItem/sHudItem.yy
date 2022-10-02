@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHudItem","path":"sprites/sHudItem/sHudItem.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHudItem",
     "tags": [],
     "resourceType": "GMSequence",

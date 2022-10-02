@@ -87,7 +87,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSlate","path":"sprites/sSlate/sSlate.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSlate",
     "tags": [],
     "resourceType": "GMSequence",

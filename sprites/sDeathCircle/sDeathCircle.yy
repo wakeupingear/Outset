@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sDeathCircle","path":"sprites/sDeathCircle/sDeathCircle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sDeathCircle",
     "tags": [],
     "resourceType": "GMSequence",

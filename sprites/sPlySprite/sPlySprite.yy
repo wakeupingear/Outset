@@ -238,7 +238,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlySprite","path":"sprites/sPlySprite/sPlySprite.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlySprite",
     "tags": [],
     "resourceType": "GMSequence",

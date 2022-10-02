@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlaceholderBubbleTerrain","path":"sprites/sPlaceholderBubbleTerrain/sPlaceholderBubbleTerrain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlaceholderBubbleTerrain",
     "tags": [],
     "resourceType": "GMSequence",

@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWrenchGear","path":"sprites/sWrenchGear/sWrenchGear.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWrenchGear",
     "tags": [],
     "resourceType": "GMSequence",

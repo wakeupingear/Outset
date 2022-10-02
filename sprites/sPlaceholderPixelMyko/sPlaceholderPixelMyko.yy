@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlaceholderPixelMyko","path":"sprites/sPlaceholderPixelMyko/sPlaceholderPixelMyko.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlaceholderPixelMyko",
     "tags": [],
     "resourceType": "GMSequence",

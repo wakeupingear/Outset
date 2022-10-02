@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sGrapple","path":"sprites/sGrapple/sGrapple.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sGrapple",
     "tags": [],
     "resourceType": "GMSequence",

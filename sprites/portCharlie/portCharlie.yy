@@ -82,7 +82,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portCharlie","path":"sprites/portCharlie/portCharlie.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portCharlie",
     "tags": [],
     "resourceType": "GMSequence",

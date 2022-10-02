@@ -108,7 +108,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesCrateBig","path":"sprites/sWastesCrateBig/sWastesCrateBig.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesCrateBig",
     "tags": [],
     "resourceType": "GMSequence",

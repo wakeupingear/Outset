@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoBrickGreyTile","path":"sprites/sMykoBrickGreyTile/sMykoBrickGreyTile.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoBrickGreyTile",
     "tags": [],
     "resourceType": "GMSequence",

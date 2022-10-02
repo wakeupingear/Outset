@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesCarWheel","path":"sprites/sWastesCarWheel/sWastesCarWheel.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesCarWheel",
     "tags": [],
     "resourceType": "GMSequence",

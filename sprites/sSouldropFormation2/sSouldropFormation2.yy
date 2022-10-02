@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSouldropFormation2","path":"sprites/sSouldropFormation2/sSouldropFormation2.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSouldropFormation2",
     "tags": [],
     "resourceType": "GMSequence",

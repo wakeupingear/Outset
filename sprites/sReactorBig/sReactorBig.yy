@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sReactorBig","path":"sprites/sReactorBig/sReactorBig.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sReactorBig",
     "tags": [],
     "resourceType": "GMSequence",

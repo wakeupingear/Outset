@@ -94,7 +94,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portCitra","path":"sprites/portCitra/portCitra.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portCitra",
     "tags": [],
     "resourceType": "GMSequence",

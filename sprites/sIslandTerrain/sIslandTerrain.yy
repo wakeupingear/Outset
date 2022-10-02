@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIslandTerrain","path":"sprites/sIslandTerrain/sIslandTerrain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sIslandTerrain",
     "tags": [],
     "resourceType": "GMSequence",

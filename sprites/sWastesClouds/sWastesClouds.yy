@@ -68,7 +68,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesClouds","path":"sprites/sWastesClouds/sWastesClouds.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesClouds",
     "tags": [],
     "resourceType": "GMSequence",

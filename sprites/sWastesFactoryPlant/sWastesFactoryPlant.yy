@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesFactoryPlant","path":"sprites/sWastesFactoryPlant/sWastesFactoryPlant.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesFactoryPlant",
     "tags": [],
     "resourceType": "GMSequence",

@@ -98,7 +98,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRTerrain","path":"sprites/sVRTerrain/sVRTerrain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRTerrain",
     "tags": [],
     "resourceType": "GMSequence",

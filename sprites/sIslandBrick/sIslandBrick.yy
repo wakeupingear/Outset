@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIslandBrick","path":"sprites/sIslandBrick/sIslandBrick.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sIslandBrick",
     "tags": [],
     "resourceType": "GMSequence",

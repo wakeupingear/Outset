@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesFactoryElevator","path":"sprites/sWastesFactoryElevator/sWastesFactoryElevator.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesFactoryElevator",
     "tags": [],
     "resourceType": "GMSequence",

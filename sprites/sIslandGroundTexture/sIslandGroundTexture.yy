@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIslandGroundTexture","path":"sprites/sIslandGroundTexture/sIslandGroundTexture.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sIslandGroundTexture",
     "tags": [],
     "resourceType": "GMSequence",

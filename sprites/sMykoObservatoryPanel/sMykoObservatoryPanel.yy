@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoObservatoryPanel","path":"sprites/sMykoObservatoryPanel/sMykoObservatoryPanel.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoObservatoryPanel",
     "tags": [],
     "resourceType": "GMSequence",

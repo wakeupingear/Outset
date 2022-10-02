@@ -21,7 +21,7 @@ function commandProcess(command){
 			args=[];
 			if is_array(command[diag+2]) args=command[diag+2];
 			if diagCondition(command[diag+1],args) while command[diag]!="#true"+_num diag++;
-			else while command[diag]!="#false"+_num diag++;
+			else while	 command[diag]!="#false"+_num diag++;
 			diag++;
 		}
 		else if string_pos("question",command[diag])==2
@@ -200,7 +200,7 @@ function commandProcess(command){
 							break;
 						case "camReset":
 							thisCameraChanged=false;
-							global.menuOpen=false;
+							//global.menuOpen=false;
 							if !instance_exists(oCamera) createCamera();
 							with oCamera
 							{
@@ -352,7 +352,8 @@ function commandProcess(command){
 							}
 							break;
 						case "startAnimation":
-							with _obj image_index=setAnimation(_val,animation);
+							if is_array(_val) with _obj image_index=setAnimation(_val[1],variable_instance_get(id,_val[0]));
+							else with _obj image_index=setAnimation(_val,variable_instance_get(id,animation));
 							break;
 						case "stopAnimation":
 							_obj.currentAnimation="";
@@ -442,8 +443,8 @@ function commandProcess(command){
 							if place_meeting(tCoord(_val[0]),tCoord(_val[1]),asset_get_index(_val[2])) instance_destroy(instance_place(tCoord(_val[0]),tCoord(_val[1]),asset_get_index(_val[2])));
 							break;
 						case "xy":
-							_obj.x=_val[0];
-							_obj.y=_val[1];
+							_obj.x=tCoord(_val[0]);
+							_obj.y=tCoord(_val[1]);
 							break;
 						case "movePlayer":
 							lastObj=instance_create_layer(0,0,"people",oPlayerMove);

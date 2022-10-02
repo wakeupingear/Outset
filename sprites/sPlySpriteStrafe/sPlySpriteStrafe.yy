@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlySpriteStrafe","path":"sprites/sPlySpriteStrafe/sPlySpriteStrafe.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlySpriteStrafe",
     "tags": [],
     "resourceType": "GMSequence",

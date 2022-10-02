@@ -95,7 +95,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sConveyor","path":"sprites/sConveyor/sConveyor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sConveyor",
     "tags": [],
     "resourceType": "GMSequence",

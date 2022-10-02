@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sChairNotdon","path":"sprites/sChairNotdon/sChairNotdon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sChairNotdon",
     "tags": [],
     "resourceType": "GMSequence",

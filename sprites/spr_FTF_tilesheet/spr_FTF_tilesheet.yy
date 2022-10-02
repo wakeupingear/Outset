@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_FTF_tilesheet","path":"sprites/spr_FTF_tilesheet/spr_FTF_tilesheet.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_FTF_tilesheet",
     "tags": [],
     "resourceType": "GMSequence",

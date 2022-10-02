@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesFactoryCraneBG","path":"sprites/sWastesFactoryCraneBG/sWastesFactoryCraneBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesFactoryCraneBG",
     "tags": [],
     "resourceType": "GMSequence",

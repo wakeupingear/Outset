@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sGroundGradient","path":"sprites/sGroundGradient/sGroundGradient.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sGroundGradient",
     "tags": [],
     "resourceType": "GMSequence",

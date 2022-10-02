@@ -73,7 +73,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sRadioWave","path":"sprites/sRadioWave/sRadioWave.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sRadioWave",
     "tags": [],
     "resourceType": "GMSequence",

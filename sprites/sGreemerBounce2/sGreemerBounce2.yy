@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sGreemerBounce2","path":"sprites/sGreemerBounce2/sGreemerBounce2.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sGreemerBounce2",
     "tags": [],
     "resourceType": "GMSequence",

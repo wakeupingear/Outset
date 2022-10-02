@@ -82,7 +82,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEugene","path":"sprites/sEugene/sEugene.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEugene",
     "tags": [],
     "resourceType": "GMSequence",

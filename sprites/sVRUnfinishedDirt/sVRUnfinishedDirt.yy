@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRUnfinishedDirt","path":"sprites/sVRUnfinishedDirt/sVRUnfinishedDirt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRUnfinishedDirt",
     "tags": [],
     "resourceType": "GMSequence",

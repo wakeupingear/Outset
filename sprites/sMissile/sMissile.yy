@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMissile","path":"sprites/sMissile/sMissile.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMissile",
     "tags": [],
     "resourceType": "GMSequence",

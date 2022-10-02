@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSkyVR","path":"sprites/sSkyVR/sSkyVR.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSkyVR",
     "tags": [],
     "resourceType": "GMSequence",

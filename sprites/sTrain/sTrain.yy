@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTrain","path":"sprites/sTrain/sTrain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTrain",
     "tags": [],
     "resourceType": "GMSequence",

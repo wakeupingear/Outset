@@ -85,7 +85,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSlopeCrack","path":"sprites/sSlopeCrack/sSlopeCrack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSlopeCrack",
     "tags": [],
     "resourceType": "GMSequence",

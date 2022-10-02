@@ -12,5 +12,7 @@ function seethroughFade(){
 		{
 			if image_alpha<1 image_alpha+=0.1;
 		}
+		return _touching;
 	}
+	return false;
 }

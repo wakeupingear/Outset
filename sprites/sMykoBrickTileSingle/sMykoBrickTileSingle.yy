@@ -115,7 +115,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoBrickTileSingle","path":"sprites/sMykoBrickTileSingle/sMykoBrickTileSingle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoBrickTileSingle",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCardHit","path":"sprites/sCardHit/sCardHit.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCardHit",
     "tags": [],
     "resourceType": "GMSequence",

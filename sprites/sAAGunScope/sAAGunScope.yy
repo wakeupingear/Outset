@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sAAGunScope","path":"sprites/sAAGunScope/sAAGunScope.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sAAGunScope",
     "tags": [],
     "resourceType": "GMSequence",

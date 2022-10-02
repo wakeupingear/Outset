@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoSmallTurret","path":"sprites/sMykoSmallTurret/sMykoSmallTurret.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoSmallTurret",
     "tags": [],
     "resourceType": "GMSequence",

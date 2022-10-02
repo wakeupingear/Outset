@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTilMyko","path":"sprites/sTilMyko/sTilMyko.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTilMyko",
     "tags": [],
     "resourceType": "GMSequence",

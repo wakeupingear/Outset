@@ -80,7 +80,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTileCrack","path":"sprites/sTileCrack/sTileCrack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTileCrack",
     "tags": [],
     "resourceType": "GMSequence",

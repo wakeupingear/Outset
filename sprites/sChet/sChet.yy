@@ -94,7 +94,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sChet","path":"sprites/sChet/sChet.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sChet",
     "tags": [],
     "resourceType": "GMSequence",

@@ -74,7 +74,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_wastes_bomb","path":"sprites/spr_wastes_bomb/spr_wastes_bomb.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "",
     "tags": [],
     "resourceType": "GMSequence",

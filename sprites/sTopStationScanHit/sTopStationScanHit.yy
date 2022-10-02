@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTopStationScanHit","path":"sprites/sTopStationScanHit/sTopStationScanHit.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTopStationScanHit",
     "tags": [],
     "resourceType": "GMSequence",

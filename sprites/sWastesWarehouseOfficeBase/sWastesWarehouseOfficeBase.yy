@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesWarehouseOfficeBase","path":"sprites/sWastesWarehouseOfficeBase/sWastesWarehouseOfficeBase.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesWarehouseOfficeBase",
     "tags": [],
     "resourceType": "GMSequence",

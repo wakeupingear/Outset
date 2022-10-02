@@ -73,7 +73,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldNote","path":"sprites/sHaroldNote/sHaroldNote.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldNote",
     "tags": [],
     "resourceType": "GMSequence",

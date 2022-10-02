@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_FTF_bg2","path":"sprites/spr_FTF_bg2/spr_FTF_bg2.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_FTF_bg2",
     "tags": [],
     "resourceType": "GMSequence",

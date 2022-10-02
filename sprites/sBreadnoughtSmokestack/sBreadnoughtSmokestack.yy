@@ -85,7 +85,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBreadnoughtSmokestack","path":"sprites/sBreadnoughtSmokestack/sBreadnoughtSmokestack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBreadnoughtSmokestack",
     "tags": [],
     "resourceType": "GMSequence",

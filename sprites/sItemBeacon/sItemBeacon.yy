@@ -148,7 +148,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sItemBeacon","path":"sprites/sItemBeacon/sItemBeacon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sItemBeacon",
     "tags": [],
     "resourceType": "GMSequence",

@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesTower","path":"sprites/sWastesTower/sWastesTower.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesTower",
     "tags": [],
     "resourceType": "GMSequence",

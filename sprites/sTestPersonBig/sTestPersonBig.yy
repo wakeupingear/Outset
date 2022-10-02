@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTestPersonBig","path":"sprites/sTestPersonBig/sTestPersonBig.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTestPersonBig",
     "tags": [],
     "resourceType": "GMSequence",

@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldRecruitPopup","path":"sprites/sHaroldRecruitPopup/sHaroldRecruitPopup.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldRecruitPopup",
     "tags": [],
     "resourceType": "GMSequence",

@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlaceholderPurpleSq","path":"sprites/sPlaceholderPurpleSq/sPlaceholderPurpleSq.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlaceholderPurpleSq",
     "tags": [],
     "resourceType": "GMSequence",

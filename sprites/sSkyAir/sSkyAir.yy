@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSkyAir","path":"sprites/sSkyAir/sSkyAir.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSkyAir",
     "tags": [],
     "resourceType": "GMSequence",

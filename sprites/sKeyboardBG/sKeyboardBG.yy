@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKeyboardBG","path":"sprites/sKeyboardBG/sKeyboardBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKeyboardBG",
     "tags": [],
     "resourceType": "GMSequence",

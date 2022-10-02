@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBrickTexture","path":"sprites/sBrickTexture/sBrickTexture.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBrickTexture",
     "tags": [],
     "resourceType": "GMSequence",

@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEntrance","path":"sprites/sEntrance/sEntrance.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEntrance",
     "tags": [],
     "resourceType": "GMSequence",

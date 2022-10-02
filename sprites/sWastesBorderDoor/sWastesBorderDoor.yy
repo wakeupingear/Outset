@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesBorderDoor","path":"sprites/sWastesBorderDoor/sWastesBorderDoor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesBorderDoor",
     "tags": [],
     "resourceType": "GMSequence",

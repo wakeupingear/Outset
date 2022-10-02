@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonPodium","path":"sprites/sNotdonPodium/sNotdonPodium.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonPodium",
     "tags": [],
     "resourceType": "GMSequence",

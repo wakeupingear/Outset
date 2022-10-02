@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIslandFlat","path":"sprites/sIslandFlat/sIslandFlat.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sIslandFlat",
     "tags": [],
     "resourceType": "GMSequence",

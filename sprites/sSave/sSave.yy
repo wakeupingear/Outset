@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSave","path":"sprites/sSave/sSave.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSave",
     "tags": [],
     "resourceType": "GMSequence",

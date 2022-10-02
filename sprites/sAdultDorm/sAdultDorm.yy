@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sAdultDorm","path":"sprites/sAdultDorm/sAdultDorm.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sAdultDorm",
     "tags": [],
     "resourceType": "GMSequence",

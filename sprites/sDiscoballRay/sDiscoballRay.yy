@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sDiscoballRay","path":"sprites/sDiscoballRay/sDiscoballRay.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sDiscoballRay",
     "tags": [],
     "resourceType": "GMSequence",

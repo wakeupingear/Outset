@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sOvercast","path":"sprites/sOvercast/sOvercast.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sOvercast",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCageChain","path":"sprites/sCageChain/sCageChain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCageChain",
     "tags": [],
     "resourceType": "GMSequence",

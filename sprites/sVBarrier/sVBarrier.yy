@@ -87,7 +87,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVBarrier","path":"sprites/sVBarrier/sVBarrier.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVBarrier",
     "tags": [],
     "resourceType": "GMSequence",

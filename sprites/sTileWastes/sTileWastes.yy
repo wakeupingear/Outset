@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTileWastes","path":"sprites/sTileWastes/sTileWastes.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTileWastes",
     "tags": [],
     "resourceType": "GMSequence",

@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sStickyPad","path":"sprites/sStickyPad/sStickyPad.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sStickyPad",
     "tags": [],
     "resourceType": "GMSequence",

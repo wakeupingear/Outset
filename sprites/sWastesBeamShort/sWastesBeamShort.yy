@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesBeamShort","path":"sprites/sWastesBeamShort/sWastesBeamShort.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesBeamShort",
     "tags": [],
     "resourceType": "GMSequence",

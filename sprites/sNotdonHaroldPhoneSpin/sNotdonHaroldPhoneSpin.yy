@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonHaroldPhoneSpin","path":"sprites/sNotdonHaroldPhoneSpin/sNotdonHaroldPhoneSpin.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonHaroldPhoneSpin",
     "tags": [],
     "resourceType": "GMSequence",

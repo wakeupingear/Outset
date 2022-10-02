@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldJunkHit","path":"sprites/sHaroldJunkHit/sHaroldJunkHit.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldJunkHit",
     "tags": [],
     "resourceType": "GMSequence",

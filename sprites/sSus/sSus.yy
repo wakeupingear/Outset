@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSus","path":"sprites/sSus/sSus.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSus",
     "tags": [],
     "resourceType": "GMSequence",

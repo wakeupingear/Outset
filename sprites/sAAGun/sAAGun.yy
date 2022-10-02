@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sAAGun","path":"sprites/sAAGun/sAAGun.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sAAGun",
     "tags": [],
     "resourceType": "GMSequence",

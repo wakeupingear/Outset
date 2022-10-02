@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sAllPort","path":"sprites/sAllPort/sAllPort.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sAllPort",
     "tags": [],
     "resourceType": "GMSequence",

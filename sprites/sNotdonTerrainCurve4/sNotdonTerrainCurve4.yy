@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonTerrainCurve4","path":"sprites/sNotdonTerrainCurve4/sNotdonTerrainCurve4.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonTerrainCurve4",
     "tags": [],
     "resourceType": "GMSequence",

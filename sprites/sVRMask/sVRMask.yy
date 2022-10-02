@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRMask","path":"sprites/sVRMask/sVRMask.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRMask",
     "tags": [],
     "resourceType": "GMSequence",

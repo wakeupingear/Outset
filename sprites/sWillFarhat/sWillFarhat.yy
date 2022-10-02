@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWillFarhat","path":"sprites/sWillFarhat/sWillFarhat.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWillFarhat",
     "tags": [],
     "resourceType": "GMSequence",

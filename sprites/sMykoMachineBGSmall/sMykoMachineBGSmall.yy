@@ -141,7 +141,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoMachineBGSmall","path":"sprites/sMykoMachineBGSmall/sMykoMachineBGSmall.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoMachineBGSmall",
     "tags": [],
     "resourceType": "GMSequence",

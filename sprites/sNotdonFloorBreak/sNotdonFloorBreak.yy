@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonFloorBreak","path":"sprites/sNotdonFloorBreak/sNotdonFloorBreak.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonFloorBreak",
     "tags": [],
     "resourceType": "GMSequence",

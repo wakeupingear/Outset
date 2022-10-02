@@ -74,7 +74,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesBuildingSideHole","path":"sprites/sWastesBuildingSideHole/sWastesBuildingSideHole.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesBuildingSideHole",
     "tags": [],
     "resourceType": "GMSequence",

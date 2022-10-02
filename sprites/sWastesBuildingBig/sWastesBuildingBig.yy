@@ -86,7 +86,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesBuildingBig","path":"sprites/sWastesBuildingBig/sWastesBuildingBig.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesBuildingBig",
     "tags": [],
     "resourceType": "GMSequence",

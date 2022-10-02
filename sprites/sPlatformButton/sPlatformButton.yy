@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlatformButton","path":"sprites/sPlatformButton/sPlatformButton.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlatformButton",
     "tags": [],
     "resourceType": "GMSequence",

@@ -76,7 +76,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPerson","path":"sprites/sPerson/sPerson.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPerson",
     "tags": [],
     "resourceType": "GMSequence",

@@ -103,7 +103,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoBrickTile","path":"sprites/sMykoBrickTile/sMykoBrickTile.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoBrickTile",
     "tags": [],
     "resourceType": "GMSequence",

@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesNotdon","path":"sprites/sWastesNotdon/sWastesNotdon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesNotdon",
     "tags": [],
     "resourceType": "GMSequence",

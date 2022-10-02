@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHotelFloorRoom","path":"sprites/sHotelFloorRoom/sHotelFloorRoom.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHotelFloorRoom",
     "tags": [],
     "resourceType": "GMSequence",

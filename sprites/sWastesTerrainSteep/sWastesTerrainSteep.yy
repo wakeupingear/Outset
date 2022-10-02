@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesTerrainSteep","path":"sprites/sWastesTerrainSteep/sWastesTerrainSteep.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesTerrainSteep",
     "tags": [],
     "resourceType": "GMSequence",

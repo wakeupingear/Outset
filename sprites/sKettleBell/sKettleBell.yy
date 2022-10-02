@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKettleBell","path":"sprites/sKettleBell/sKettleBell.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKettleBell",
     "tags": [],
     "resourceType": "GMSequence",

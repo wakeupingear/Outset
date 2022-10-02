@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEarthGroundCircle","path":"sprites/sEarthGroundCircle/sEarthGroundCircle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEarthGroundCircle",
     "tags": [],
     "resourceType": "GMSequence",

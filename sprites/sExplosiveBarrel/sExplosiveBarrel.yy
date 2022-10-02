@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sExplosiveBarrel","path":"sprites/sExplosiveBarrel/sExplosiveBarrel.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sExplosiveBarrel",
     "tags": [],
     "resourceType": "GMSequence",

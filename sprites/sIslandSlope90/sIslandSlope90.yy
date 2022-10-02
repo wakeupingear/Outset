@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIslandSlope90","path":"sprites/sIslandSlope90/sIslandSlope90.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sIslandSlope90",
     "tags": [],
     "resourceType": "GMSequence",

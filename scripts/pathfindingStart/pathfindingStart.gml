@@ -60,7 +60,6 @@ function pathfindingStart(obj,path){
 	}
 	else if !is_array(path) moveCommand=pathLoad(path);
 	else moveCommand=path;
-	show_debug_message(moveCommand)
 	pathfindCommandProcess(moveCommand);
 	}
 }

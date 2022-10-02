@@ -82,7 +82,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portMatt","path":"sprites/portMatt/portMatt.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portMatt",
     "tags": [],
     "resourceType": "GMSequence",

@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonLaunchOverlay","path":"sprites/sNotdonLaunchOverlay/sNotdonLaunchOverlay.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonLaunchOverlay",
     "tags": [],
     "resourceType": "GMSequence",

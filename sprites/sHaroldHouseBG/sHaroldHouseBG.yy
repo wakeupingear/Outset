@@ -230,7 +230,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldHouseBG","path":"sprites/sHaroldHouseBG/sHaroldHouseBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldHouseBG",
     "tags": [],
     "resourceType": "GMSequence",

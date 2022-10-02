@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonTerrainWell","path":"sprites/sNotdonTerrainWell/sNotdonTerrainWell.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonTerrainWell",
     "tags": [],
     "resourceType": "GMSequence",

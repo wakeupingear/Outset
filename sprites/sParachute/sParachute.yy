@@ -98,7 +98,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sParachute","path":"sprites/sParachute/sParachute.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sParachute",
     "tags": [],
     "resourceType": "GMSequence",

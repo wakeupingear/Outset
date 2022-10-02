@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesTerrainEdge","path":"sprites/sWastesTerrainEdge/sWastesTerrainEdge.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesTerrainEdge",
     "tags": [],
     "resourceType": "GMSequence",

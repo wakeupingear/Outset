@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesBeam","path":"sprites/sWastesBeam/sWastesBeam.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesBeam",
     "tags": [],
     "resourceType": "GMSequence",

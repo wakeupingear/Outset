@@ -370,10 +370,16 @@ function scr_wastes_2(){ //crash land
 function scr_wastes_3(){ //defeat general
 	global.notdonEra=notdonEras.present;
 	global.currentChapter=chapters.wastes;
-	global.startRoom=rWastes;
+	global.startRoom=rWastesCrater;
 	global.timeOfDay=times.day;
-	global.startX=1949;
-	global.startY=919;
+	global.startX=513;
+	global.startY=372;
+	global.startXscale=-1;
+	
+	with oGeneralBoss destroyObjects();
+	with oWastesWarehouse {
+		while place_meeting(x,y,oWastesCrate) instance_destroy(instance_place(x,y,oWastesCrate));
+	}
 	
 	addDataPair("wWare",4);
 	if instance_exists(oWastesWarehouse) with oWastesWarehouse event_perform(ev_alarm,1);

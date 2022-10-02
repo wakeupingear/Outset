@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSkyBrighten","path":"sprites/sSkyBrighten/sSkyBrighten.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSkyBrighten",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCamSizeFrame","path":"sprites/sCamSizeFrame/sCamSizeFrame.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCamSizeFrame",
     "tags": [],
     "resourceType": "GMSequence",

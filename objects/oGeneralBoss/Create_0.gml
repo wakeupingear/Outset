@@ -19,7 +19,8 @@ enum GeneralFight {
 	shootPly,
 	defeated
 }
-delay=60;
+delay=10;
+hspMax=2;
 fightState=GeneralFight.idle;
 nextState=GeneralFight.calling;
 
@@ -77,7 +78,7 @@ resetExtra=function(){
 
 attackAnimation=new Animation();
 
-dieThreshold=4;
+dieThreshold=maxHealth-1;
 dieCutscene="wastes_car_warehouse";
 enemHitTrigger=function(){
 	image_blend=c_red;
@@ -102,6 +103,14 @@ moveToSide=function(isRight){
 	var _x=(!isRight)?(oWastesWarehouse.x-110):(oWastesWarehouse.x+110);
 	var _y=oWastesWarehouse.y+60;
 	pathfindingStart(id,"simpleJ{"+string(_x)+","+string(_y)+"}_ALWAYSJUMP");
+}
+
+destroyObjects=function(){
+	for (var i=0;i<ds_list_size(objects);i++){
+		if instance_exists(objects[|i]) instance_destroy(objects[|i]);
+	}
+	ds_list_clear(objects);
+	ds_list_clear(containers);
 }
 
 ai=function(){
@@ -155,11 +164,7 @@ ai=function(){
 					_p=randomPatterns[|patternInd];
 				}
 				
-				for (var i=0;i<ds_list_size(objects);i++){
-					if instance_exists(objects[|i]) instance_destroy(objects[|i]);
-				}
-				ds_list_clear(objects);
-				ds_list_clear(containers);
+				destroyObjects();
 				for (var i=0;i<array_length(_p);i++){
 					var _o=instance_create_depth(_p[i][0],_p[i][1],depth,_p[i][2]);
 					var _ind=ds_list_size(objects);
@@ -194,5 +199,4 @@ ai=function(){
 		}
 		fightState=nextState;
 	}
-	show_debug_message(jumpAdd)
 }

@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonTerrainBump","path":"sprites/sNotdonTerrainBump/sNotdonTerrainBump.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonTerrainBump",
     "tags": [],
     "resourceType": "GMSequence",

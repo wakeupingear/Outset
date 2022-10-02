@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRCity","path":"sprites/sVRCity/sVRCity.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRCity",
     "tags": [],
     "resourceType": "GMSequence",

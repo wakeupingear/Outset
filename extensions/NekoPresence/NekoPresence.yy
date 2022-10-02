@@ -1,6 +1,6 @@
 {
   "ConfigValues": {
-    "Testing": {"copyToTargets":"64",},
+    "Testing": {"copyToTargets":"192",},
   },
   "optionsFile": "options.json",
   "options": [],

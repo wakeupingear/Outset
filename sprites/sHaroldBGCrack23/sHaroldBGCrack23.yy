@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldBGCrack23","path":"sprites/sHaroldBGCrack23/sHaroldBGCrack23.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldBGCrack23",
     "tags": [],
     "resourceType": "GMSequence",

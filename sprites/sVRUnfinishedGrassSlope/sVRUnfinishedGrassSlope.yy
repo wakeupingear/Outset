@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRUnfinishedGrassSlope","path":"sprites/sVRUnfinishedGrassSlope/sVRUnfinishedGrassSlope.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRUnfinishedGrassSlope",
     "tags": [],
     "resourceType": "GMSequence",

@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBreakable","path":"sprites/sBreakable/sBreakable.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBreakable",
     "tags": [],
     "resourceType": "GMSequence",

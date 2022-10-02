@@ -161,7 +161,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portHer","path":"sprites/portHer/portHer.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portHer",
     "tags": [],
     "resourceType": "GMSequence",

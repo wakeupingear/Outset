@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"_4ccff1c2_47e6_4434_801a_31183c2a0164","path":"sprites/_4ccff1c2_47e6_4434_801a_31183c2a0164/_4ccff1c2_47e6_4434_801a_31183c2a0164.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "_4ccff1c2_47e6_4434_801a_31183c2a0164",
     "tags": [],
     "resourceType": "GMSequence",

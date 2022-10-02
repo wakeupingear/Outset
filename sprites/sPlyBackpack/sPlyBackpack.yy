@@ -138,7 +138,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlyBackpack","path":"sprites/sPlyBackpack/sPlyBackpack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlyBackpack",
     "tags": [],
     "resourceType": "GMSequence",

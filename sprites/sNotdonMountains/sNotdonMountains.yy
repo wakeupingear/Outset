@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonMountains","path":"sprites/sNotdonMountains/sNotdonMountains.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonMountains",
     "tags": [],
     "resourceType": "GMSequence",

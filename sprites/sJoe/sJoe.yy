@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sJoe","path":"sprites/sJoe/sJoe.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sJoe",
     "tags": [],
     "resourceType": "GMSequence",

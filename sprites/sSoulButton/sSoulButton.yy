@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSoulButton","path":"sprites/sSoulButton/sSoulButton.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSoulButton",
     "tags": [],
     "resourceType": "GMSequence",

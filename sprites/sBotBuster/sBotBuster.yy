@@ -82,7 +82,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBotBuster","path":"sprites/sBotBuster/sBotBuster.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBotBuster",
     "tags": [],
     "resourceType": "GMSequence",

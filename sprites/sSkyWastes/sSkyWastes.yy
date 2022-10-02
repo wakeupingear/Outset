@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSkyWastes","path":"sprites/sSkyWastes/sSkyWastes.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSkyWastes",
     "tags": [],
     "resourceType": "GMSequence",

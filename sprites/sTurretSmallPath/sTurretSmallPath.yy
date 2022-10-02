@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTurretSmallPath","path":"sprites/sTurretSmallPath/sTurretSmallPath.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTurretSmallPath",
     "tags": [],
     "resourceType": "GMSequence",

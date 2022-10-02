@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSouldropRain","path":"sprites/sSouldropRain/sSouldropRain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSouldropRain",
     "tags": [],
     "resourceType": "GMSequence",

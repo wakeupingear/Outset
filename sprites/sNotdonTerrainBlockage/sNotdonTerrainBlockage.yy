@@ -78,7 +78,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonTerrainBlockage","path":"sprites/sNotdonTerrainBlockage/sNotdonTerrainBlockage.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonTerrainBlockage",
     "tags": [],
     "resourceType": "GMSequence",

@@ -85,7 +85,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonCrane","path":"sprites/sNotdonCrane/sNotdonCrane.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonCrane",
     "tags": [],
     "resourceType": "GMSequence",

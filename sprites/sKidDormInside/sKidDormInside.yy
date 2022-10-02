@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sKidDormInside","path":"sprites/sKidDormInside/sKidDormInside.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sKidDormInside",
     "tags": [],
     "resourceType": "GMSequence",

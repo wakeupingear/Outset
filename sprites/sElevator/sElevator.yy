@@ -102,7 +102,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sElevator","path":"sprites/sElevator/sElevator.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sElevator",
     "tags": [],
     "resourceType": "GMSequence",

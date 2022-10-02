@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonWastesBorder","path":"sprites/sNotdonWastesBorder/sNotdonWastesBorder.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonWastesBorder",
     "tags": [],
     "resourceType": "GMSequence",

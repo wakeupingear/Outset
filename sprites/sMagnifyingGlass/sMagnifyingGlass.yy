@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMagnifyingGlass","path":"sprites/sMagnifyingGlass/sMagnifyingGlass.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMagnifyingGlass",
     "tags": [],
     "resourceType": "GMSequence",

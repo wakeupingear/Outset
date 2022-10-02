@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSkyIsland","path":"sprites/sSkyIsland/sSkyIsland.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSkyIsland",
     "tags": [],
     "resourceType": "GMSequence",

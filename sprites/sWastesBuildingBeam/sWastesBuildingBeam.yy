@@ -162,7 +162,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesBuildingBeam","path":"sprites/sWastesBuildingBeam/sWastesBuildingBeam.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesBuildingBeam",
     "tags": [],
     "resourceType": "GMSequence",

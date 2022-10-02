@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIslandTree4","path":"sprites/sIslandTree4/sIslandTree4.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sIslandTree4",
     "tags": [],
     "resourceType": "GMSequence",

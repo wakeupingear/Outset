@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sLogoBig","path":"sprites/sLogoBig/sLogoBig.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sLogoBig",
     "tags": [],
     "resourceType": "GMSequence",

@@ -901,9 +901,8 @@
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
   ],
-  "isDnDProject": false,
+  "defaultScriptType": 1,
   "isEcma": false,
-  "tutorialPath": "",
   "configs": {
     "name": "Default",
     "children": [
@@ -1177,8 +1176,8 @@
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_music","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
-    {"ConfigValues":{"Testing":{"groupParent":"null","isScaled":"true",},"Dev":{"groupParent":"null",},},"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
-    {"ConfigValues":{"Testing":{"groupParent":"null",},"Dev":{"groupParent":"null",},"NewFile":{"groupParent":"null",},},"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"texTerrain","resourceType":"GMTextureGroup",},
+    {"ConfigValues":{"Testing":{"groupParent":"null","isScaled":"true",},"Dev":{"groupParent":"null",},},"isScaled":true,"compressFormat":"bz2","autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
+    {"ConfigValues":{"Testing":{"groupParent":"null",},"Dev":{"groupParent":"null",},"NewFile":{"groupParent":"null",},},"isScaled":true,"compressFormat":"bz2","autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"texTerrain","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [
     {"ConfigValues":{"Dev":{"CopyToMask":"153157610357391598",},},"CopyToMask":-1,"filePath":"datafiles/english","resourceVersion":"1.0","name":"englishHud.hat","resourceType":"GMIncludedFile",},
@@ -1195,9 +1194,9 @@
     {"CopyToMask":-1,"filePath":"datafiles/.vscode","resourceVersion":"1.0","name":"settings.json","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "23.1.1.454",
+    "IDEVersion": "2022.300.0.499",
   },
-  "resourceVersion": "1.4",
+  "resourceVersion": "1.5",
   "name": "Outset",
   "tags": [],
   "resourceType": "GMProject",

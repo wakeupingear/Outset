@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s4frame","path":"sprites/s4frame/s4frame.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s4frame",
     "tags": [],
     "resourceType": "GMSequence",

@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRUnfinishedInvis","path":"sprites/sVRUnfinishedInvis/sVRUnfinishedInvis.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRUnfinishedInvis",
     "tags": [],
     "resourceType": "GMSequence",

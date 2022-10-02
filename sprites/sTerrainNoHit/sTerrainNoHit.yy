@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTerrainNoHit","path":"sprites/sTerrainNoHit/sTerrainNoHit.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTerrainNoHit",
     "tags": [],
     "resourceType": "GMSequence",

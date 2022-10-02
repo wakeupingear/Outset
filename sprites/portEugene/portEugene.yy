@@ -90,7 +90,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portEugene","path":"sprites/portEugene/portEugene.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portEugene",
     "tags": [],
     "resourceType": "GMSequence",

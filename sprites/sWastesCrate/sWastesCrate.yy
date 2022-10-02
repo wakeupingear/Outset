@@ -93,7 +93,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesCrate","path":"sprites/sWastesCrate/sWastesCrate.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesCrate",
     "tags": [],
     "resourceType": "GMSequence",

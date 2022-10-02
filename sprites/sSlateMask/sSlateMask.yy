@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSlateMask","path":"sprites/sSlateMask/sSlateMask.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSlateMask",
     "tags": [],
     "resourceType": "GMSequence",

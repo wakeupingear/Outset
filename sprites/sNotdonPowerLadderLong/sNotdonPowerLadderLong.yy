@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonPowerLadderLong","path":"sprites/sNotdonPowerLadderLong/sNotdonPowerLadderLong.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonPowerLadderLong",
     "tags": [],
     "resourceType": "GMSequence",

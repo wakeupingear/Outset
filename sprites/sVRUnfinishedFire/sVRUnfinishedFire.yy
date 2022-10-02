@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRUnfinishedFire","path":"sprites/sVRUnfinishedFire/sVRUnfinishedFire.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRUnfinishedFire",
     "tags": [],
     "resourceType": "GMSequence",

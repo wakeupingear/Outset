@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSolitaireTable","path":"sprites/sSolitaireTable/sSolitaireTable.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSolitaireTable",
     "tags": [],
     "resourceType": "GMSequence",

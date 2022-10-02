@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sLadderTest","path":"sprites/sLadderTest/sLadderTest.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sLadderTest",
     "tags": [],
     "resourceType": "GMSequence",

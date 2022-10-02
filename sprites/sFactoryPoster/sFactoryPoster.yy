@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sFactoryPoster","path":"sprites/sFactoryPoster/sFactoryPoster.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sFactoryPoster",
     "tags": [],
     "resourceType": "GMSequence",

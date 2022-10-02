@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sItemLadder","path":"sprites/sItemLadder/sItemLadder.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sItemLadder",
     "tags": [],
     "resourceType": "GMSequence",

@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonJetColl","path":"sprites/sNotdonJetColl/sNotdonJetColl.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonJetColl",
     "tags": [],
     "resourceType": "GMSequence",

@@ -78,7 +78,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesCraneWrecked","path":"sprites/sWastesCraneWrecked/sWastesCraneWrecked.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesCraneWrecked",
     "tags": [],
     "resourceType": "GMSequence",

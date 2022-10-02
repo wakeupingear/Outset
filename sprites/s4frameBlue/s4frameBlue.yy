@@ -71,7 +71,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"s4frameBlue","path":"sprites/s4frameBlue/s4frameBlue.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "s4frameBlue",
     "tags": [],
     "resourceType": "GMSequence",

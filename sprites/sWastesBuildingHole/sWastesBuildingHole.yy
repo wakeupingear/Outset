@@ -74,7 +74,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesBuildingHole","path":"sprites/sWastesBuildingHole/sWastesBuildingHole.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesBuildingHole",
     "tags": [],
     "resourceType": "GMSequence",

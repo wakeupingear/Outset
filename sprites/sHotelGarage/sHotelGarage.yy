@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHotelGarage","path":"sprites/sHotelGarage/sHotelGarage.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHotelGarage",
     "tags": [],
     "resourceType": "GMSequence",

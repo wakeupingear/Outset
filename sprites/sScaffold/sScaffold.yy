@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sScaffold","path":"sprites/sScaffold/sScaffold.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sScaffold",
     "tags": [],
     "resourceType": "GMSequence",

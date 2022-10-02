@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBarrelRadius","path":"sprites/sBarrelRadius/sBarrelRadius.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBarrelRadius",
     "tags": [],
     "resourceType": "GMSequence",

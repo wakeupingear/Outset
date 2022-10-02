@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNormalCircleSmall","path":"sprites/sNormalCircleSmall/sNormalCircleSmall.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNormalCircleSmall",
     "tags": [],
     "resourceType": "GMSequence",

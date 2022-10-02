@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesHillBG","path":"sprites/sWastesHillBG/sWastesHillBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesHillBG",
     "tags": [],
     "resourceType": "GMSequence",

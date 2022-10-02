@@ -78,7 +78,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoMachineBG","path":"sprites/sMykoMachineBG/sMykoMachineBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoMachineBG",
     "tags": [],
     "resourceType": "GMSequence",

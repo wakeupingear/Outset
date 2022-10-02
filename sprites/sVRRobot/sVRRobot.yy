@@ -154,7 +154,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRRobot","path":"sprites/sVRRobot/sVRRobot.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRRobot",
     "tags": [],
     "resourceType": "GMSequence",

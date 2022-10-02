@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRUnfinishedTrigger","path":"sprites/sVRUnfinishedTrigger/sVRUnfinishedTrigger.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRUnfinishedTrigger",
     "tags": [],
     "resourceType": "GMSequence",

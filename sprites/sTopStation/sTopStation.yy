@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTopStation","path":"sprites/sTopStation/sTopStation.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTopStation",
     "tags": [],
     "resourceType": "GMSequence",

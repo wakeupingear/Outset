@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoObservatoryPhoto","path":"sprites/sMykoObservatoryPhoto/sMykoObservatoryPhoto.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoObservatoryPhoto",
     "tags": [],
     "resourceType": "GMSequence",

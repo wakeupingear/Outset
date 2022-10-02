@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSlateChoice","path":"sprites/sSlateChoice/sSlateChoice.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSlateChoice",
     "tags": [],
     "resourceType": "GMSequence",

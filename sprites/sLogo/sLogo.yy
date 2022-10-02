@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sLogo","path":"sprites/sLogo/sLogo.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sLogo",
     "tags": [],
     "resourceType": "GMSequence",

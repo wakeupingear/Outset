@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNPCBlockHit","path":"sprites/sNPCBlockHit/sNPCBlockHit.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNPCBlockHit",
     "tags": [],
     "resourceType": "GMSequence",

@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sChetBackpack","path":"sprites/sChetBackpack/sChetBackpack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sChetBackpack",
     "tags": [],
     "resourceType": "GMSequence",

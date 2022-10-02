@@ -181,7 +181,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portCraig","path":"sprites/portCraig/portCraig.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portCraig",
     "tags": [],
     "resourceType": "GMSequence",

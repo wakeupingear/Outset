@@ -75,7 +75,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVShip","path":"sprites/sVShip/sVShip.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVShip",
     "tags": [],
     "resourceType": "GMSequence",

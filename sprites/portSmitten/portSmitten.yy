@@ -78,7 +78,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portSmitten","path":"sprites/portSmitten/portSmitten.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portSmitten",
     "tags": [],
     "resourceType": "GMSequence",

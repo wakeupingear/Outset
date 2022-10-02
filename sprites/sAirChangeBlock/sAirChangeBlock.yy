@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sAirChangeBlock","path":"sprites/sAirChangeBlock/sAirChangeBlock.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sAirChangeBlock",
     "tags": [],
     "resourceType": "GMSequence",

@@ -134,7 +134,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sGreemer","path":"sprites/sGreemer/sGreemer.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sGreemer",
     "tags": [],
     "resourceType": "GMSequence",

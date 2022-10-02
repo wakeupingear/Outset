@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonAmphitheaterInside","path":"sprites/sNotdonAmphitheaterInside/sNotdonAmphitheaterInside.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonAmphitheaterInside",
     "tags": [],
     "resourceType": "GMSequence",

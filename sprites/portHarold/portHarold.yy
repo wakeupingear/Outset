@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portHarold","path":"sprites/portHarold/portHarold.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portHarold",
     "tags": [],
     "resourceType": "GMSequence",

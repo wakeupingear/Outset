@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonCameraStack","path":"sprites/sNotdonCameraStack/sNotdonCameraStack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonCameraStack",
     "tags": [],
     "resourceType": "GMSequence",

@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"papa","path":"sprites/papa/papa.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "papa",
     "tags": [],
     "resourceType": "GMSequence",

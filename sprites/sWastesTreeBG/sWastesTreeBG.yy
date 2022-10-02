@@ -74,7 +74,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesTreeBG","path":"sprites/sWastesTreeBG/sWastesTreeBG.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesTreeBG",
     "tags": [],
     "resourceType": "GMSequence",

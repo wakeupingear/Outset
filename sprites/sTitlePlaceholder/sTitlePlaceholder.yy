@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTitlePlaceholder","path":"sprites/sTitlePlaceholder/sTitlePlaceholder.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTitlePlaceholder",
     "tags": [],
     "resourceType": "GMSequence",

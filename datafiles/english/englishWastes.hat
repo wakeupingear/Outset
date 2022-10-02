@@ -162,9 +162,31 @@
         "$addData","oGeneralBossIntroFinish",
     ],
     "wastes_car_warehouse":[
-        "$createLayer",[881,328,"mykoSpawn","oWastesCar"],
+        "$goto","dev",
+        "?gopher","OH NO I AM SO, SO SORRY GENERAL!",
+        "?general", "I WILL KILL EVERY LAST... person... in this city...",
+        "Look, ok, ok, you've won this one. Not this fight, but this war.",
+        "Did you know that TITAN ROCK has had 84 GENERALS in my lifetime?",
+        "Of course you did. That's why you're here. To be GENERAL 85.",
+        "skip","I think my father is why I made the BOMB. He never got me that tricycle",
+        "#dev",
+        "$camSet",[1248,352],90,
+        "$createLayer",[1466,366,"mykoSpawn","oWastesCar"],
         "$lastObj.move",-1,
-        "$script","scr_wastes_3"
+        200,
+        "$shake",[3,3,60],
+        "$script","scr_wastes_3",
+        "$lastObj.xy",[543,326],
+        "$lastObj.move",0,
+        "$ply.xy",["startX","startY"],
+        "$oGeneralBoss.xy",[475,380],
+        "$oGeneralBoss.startAnimation","buried",
+        "$ply.xscale",1,
+        60,
+        "$camReset",
+        "$oWastesWarehouse.touch",false,
+        200,
+        "?her","GANGWAY, GANG!"
     ],
 
     "wastes_chet_pulledOut":[

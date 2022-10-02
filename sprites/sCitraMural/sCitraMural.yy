@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCitraMural","path":"sprites/sCitraMural/sCitraMural.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCitraMural",
     "tags": [],
     "resourceType": "GMSequence",

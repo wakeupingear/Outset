@@ -86,7 +86,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTerrainNotdon","path":"sprites/sTerrainNotdon/sTerrainNotdon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTerrainNotdon",
     "tags": [],
     "resourceType": "GMSequence",

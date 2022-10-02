@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldHouse","path":"sprites/sHaroldHouse/sHaroldHouse.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldHouse",
     "tags": [],
     "resourceType": "GMSequence",

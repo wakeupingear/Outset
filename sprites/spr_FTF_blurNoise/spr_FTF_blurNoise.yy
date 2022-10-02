@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_FTF_blurNoise","path":"sprites/spr_FTF_blurNoise/spr_FTF_blurNoise.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_FTF_blurNoise",
     "tags": [],
     "resourceType": "GMSequence",

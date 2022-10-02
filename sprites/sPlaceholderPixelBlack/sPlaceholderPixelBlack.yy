@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlaceholderPixelBlack","path":"sprites/sPlaceholderPixelBlack/sPlaceholderPixelBlack.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlaceholderPixelBlack",
     "tags": [],
     "resourceType": "GMSequence",

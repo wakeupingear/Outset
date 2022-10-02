@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesTerrainSlope","path":"sprites/sWastesTerrainSlope/sWastesTerrainSlope.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesTerrainSlope",
     "tags": [],
     "resourceType": "GMSequence",

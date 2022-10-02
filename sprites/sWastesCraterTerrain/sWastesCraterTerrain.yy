@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesCraterTerrain","path":"sprites/sWastesCraterTerrain/sWastesCraterTerrain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesCraterTerrain",
     "tags": [],
     "resourceType": "GMSequence",

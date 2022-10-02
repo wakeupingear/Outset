@@ -82,7 +82,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSmitten","path":"sprites/sSmitten/sSmitten.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSmitten",
     "tags": [],
     "resourceType": "GMSequence",

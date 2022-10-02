@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSkyNotdon","path":"sprites/sSkyNotdon/sSkyNotdon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSkyNotdon",
     "tags": [],
     "resourceType": "GMSequence",

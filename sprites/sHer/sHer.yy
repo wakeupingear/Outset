@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHer","path":"sprites/sHer/sHer.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHer",
     "tags": [],
     "resourceType": "GMSequence",

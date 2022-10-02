@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlaceholderPixelP","path":"sprites/sPlaceholderPixelP/sPlaceholderPixelP.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlaceholderPixelP",
     "tags": [],
     "resourceType": "GMSequence",

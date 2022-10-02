@@ -87,7 +87,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sMykoBrick","path":"sprites/sMykoBrick/sMykoBrick.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sMykoBrick",
     "tags": [],
     "resourceType": "GMSequence",

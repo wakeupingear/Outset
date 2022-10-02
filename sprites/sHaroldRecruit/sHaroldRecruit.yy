@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldRecruit","path":"sprites/sHaroldRecruit/sHaroldRecruit.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldRecruit",
     "tags": [],
     "resourceType": "GMSequence",

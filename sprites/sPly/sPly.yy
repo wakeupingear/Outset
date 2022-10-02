@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPly","path":"sprites/sPly/sPly.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPly",
     "tags": [],
     "resourceType": "GMSequence",

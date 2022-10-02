@@ -86,7 +86,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBreadnought","path":"sprites/sBreadnought/sBreadnought.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBreadnought",
     "tags": [],
     "resourceType": "GMSequence",

@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlaceholderBounceAngle","path":"sprites/sPlaceholderBounceAngle/sPlaceholderBounceAngle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlaceholderBounceAngle",
     "tags": [],
     "resourceType": "GMSequence",

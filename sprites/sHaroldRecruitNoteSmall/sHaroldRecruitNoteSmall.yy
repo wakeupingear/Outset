@@ -65,7 +65,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldRecruitNoteSmall","path":"sprites/sHaroldRecruitNoteSmall/sHaroldRecruitNoteSmall.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldRecruitNoteSmall",
     "tags": [],
     "resourceType": "GMSequence",

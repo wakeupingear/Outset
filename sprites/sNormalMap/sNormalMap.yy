@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNormalMap","path":"sprites/sNormalMap/sNormalMap.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNormalMap",
     "tags": [],
     "resourceType": "GMSequence",

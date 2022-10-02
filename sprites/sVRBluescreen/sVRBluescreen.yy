@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sVRBluescreen","path":"sprites/sVRBluescreen/sVRBluescreen.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sVRBluescreen",
     "tags": [],
     "resourceType": "GMSequence",

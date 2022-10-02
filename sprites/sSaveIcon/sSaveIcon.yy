@@ -106,7 +106,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSaveIcon","path":"sprites/sSaveIcon/sSaveIcon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSaveIcon",
     "tags": [],
     "resourceType": "GMSequence",

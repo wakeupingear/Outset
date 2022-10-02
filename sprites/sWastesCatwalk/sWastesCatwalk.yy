@@ -74,7 +74,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesCatwalk","path":"sprites/sWastesCatwalk/sWastesCatwalk.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesCatwalk",
     "tags": [],
     "resourceType": "GMSequence",

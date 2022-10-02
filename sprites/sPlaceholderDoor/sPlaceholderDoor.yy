@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlaceholderDoor","path":"sprites/sPlaceholderDoor/sPlaceholderDoor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sPlaceholderDoor",
     "tags": [],
     "resourceType": "GMSequence",

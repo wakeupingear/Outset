@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sEarthGround","path":"sprites/sEarthGround/sEarthGround.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sEarthGround",
     "tags": [],
     "resourceType": "GMSequence",

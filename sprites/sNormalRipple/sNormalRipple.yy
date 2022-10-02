@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNormalRipple","path":"sprites/sNormalRipple/sNormalRipple.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNormalRipple",
     "tags": [],
     "resourceType": "GMSequence",

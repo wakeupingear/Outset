@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sWastesHilltopTerrain","path":"sprites/sWastesHilltopTerrain/sWastesHilltopTerrain.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sWastesHilltopTerrain",
     "tags": [],
     "resourceType": "GMSequence",

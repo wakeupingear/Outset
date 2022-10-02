@@ -61,7 +61,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sReactorTunnelPylon","path":"sprites/sReactorTunnelPylon/sReactorTunnelPylon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sReactorTunnelPylon",
     "tags": [],
     "resourceType": "GMSequence",

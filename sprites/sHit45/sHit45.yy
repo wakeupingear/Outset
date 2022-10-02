@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHit45","path":"sprites/sHit45/sHit45.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHit45",
     "tags": [],
     "resourceType": "GMSequence",

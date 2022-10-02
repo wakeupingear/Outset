@@ -70,7 +70,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonBackpackShelf","path":"sprites/sNotdonBackpackShelf/sNotdonBackpackShelf.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonBackpackShelf",
     "tags": [],
     "resourceType": "GMSequence",

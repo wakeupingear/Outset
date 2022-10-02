@@ -63,7 +63,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHudSelect","path":"sprites/sHudSelect/sHudSelect.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHudSelect",
     "tags": [],
     "resourceType": "GMSequence",

@@ -149,7 +149,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"portNora","path":"sprites/portNora/portNora.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "portNora",
     "tags": [],
     "resourceType": "GMSequence",

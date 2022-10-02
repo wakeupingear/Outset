@@ -66,7 +66,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sIslandSlopeSteep","path":"sprites/sIslandSlopeSteep/sIslandSlopeSteep.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sIslandSlopeSteep",
     "tags": [],
     "resourceType": "GMSequence",

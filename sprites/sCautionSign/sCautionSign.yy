@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCautionSign","path":"sprites/sCautionSign/sCautionSign.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCautionSign",
     "tags": [],
     "resourceType": "GMSequence",

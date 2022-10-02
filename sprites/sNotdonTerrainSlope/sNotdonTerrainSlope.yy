@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sNotdonTerrainSlope","path":"sprites/sNotdonTerrainSlope/sNotdonTerrainSlope.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sNotdonTerrainSlope",
     "tags": [],
     "resourceType": "GMSequence",

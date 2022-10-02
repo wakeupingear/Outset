@@ -60,7 +60,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sTilNotdon","path":"sprites/sTilNotdon/sTilNotdon.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sTilNotdon",
     "tags": [],
     "resourceType": "GMSequence",

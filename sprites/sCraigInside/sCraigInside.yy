@@ -62,7 +62,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCraigInside","path":"sprites/sCraigInside/sCraigInside.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCraigInside",
     "tags": [],
     "resourceType": "GMSequence",

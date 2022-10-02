@@ -67,7 +67,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sAirHitobj","path":"sprites/sAirHitobj/sAirHitobj.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sAirHitobj",
     "tags": [],
     "resourceType": "GMSequence",

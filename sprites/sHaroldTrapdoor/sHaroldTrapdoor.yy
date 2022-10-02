@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sHaroldTrapdoor","path":"sprites/sHaroldTrapdoor/sHaroldTrapdoor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sHaroldTrapdoor",
     "tags": [],
     "resourceType": "GMSequence",
